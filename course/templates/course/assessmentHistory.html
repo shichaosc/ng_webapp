@@ -1,0 +1,189 @@
+{% extends 'course/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+
+    <div>
+        <div class="pc">
+
+            <div class="pop-card-container pc" style="width: 648px; margin: 50px auto">
+                <div class="pop-card-circle-container">
+                    <div class="pop-card-circle">
+                        <div class="flex-column-center" style="margin-top: 23px">
+                            <img src="{% static 'images/pop-question.png' %}" style="width: 56px;height: 56px">
+                            <p>
+                                {% trans 'Assessmet History' %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pop-card-top-up pc" style="padding: 1px;;">
+                    <div class="flex-center" style="margin-top: 90px">
+                        <div style="margin-left: 10px" class="col-md-3 col-xs-10" id="question_num">
+
+                        </div>
+                        <div style="width: 450px" id="pc_question_content">
+
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
+                            {% if request.user.is_authenticated %}
+                            {% else %}
+                                <a href="{% url 'updateAssessment' %}"
+                                   class="btn btn-social btn-fill btn-round btn-twitter">
+                                    {% trans "Back to result" %}
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 10px">
+                        <div style="margin-bottom: 50px" class="col-md-6 col-md-offset-3 text-center">
+                            <button style="margin-right: 10px" onclick="clickLast()" class="btn btn-lg  btn-round">
+                                {% trans "previous" %}
+                            </button>
+                            <button style="margin-left: 10px" onclick="clickNext()"
+                                    class="btn btn-lg  btn-round ">{% trans "next" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section section-gray phone" xmlns="http://www.w3.org/1999/html">
+            <div class="container">
+                <div class="card">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-md-3" id="question_title">
+
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="text-center">{% trans "Assessmet History" %}</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div style="margin-left: 10px" class="col-md-3 col-xs-10" id="question_num">
+
+                            </div>
+                            <div class="col-md-5 col-xs-8" id="question_content">
+
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
+                                {% if request.user.is_authenticated %}
+                                {% else %}
+                                    <a href="{% url 'updateAssessment' %}"
+                                       class="btn btn-social btn-fill btn-round btn-twitter">
+                                        {% trans "Back to result" %}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 10px">
+                            <div style="margin-bottom: 10px" class="col-md-6 col-md-offset-3 text-center">
+                                <button style="margin-right: 10px" onclick="clickLast()" class="btn btn-lg  btn-round">
+                                    {% trans "previous" %}
+                                </button>
+                                <button style="margin-left: 10px" onclick="clickNext()"
+                                        class="btn btn-lg  btn-round ">{% trans "next" %}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+        <script src="{% static "js/jquery-ui.js" %}" type="text/javascript"></script>
+        <script>
+            var questList = {{questionList|safe}}; //store all questions
+            var num = 0; //current question num
+            showQuestion(0)
+
+            function showQuestion(obj) {
+                $('#question_content').empty();
+                $('#pc_question_content').empty();
+                var no = parseInt(obj);
+                var stemList = questList[no].stem;
+                stemHtml = '<li style="list-style: none"><label style="font-size: 16px">' + (no + 1) + '、';
+                stemHtml = stemHtml + '{% if isdebug  %}（'+ questList[no].no +'）{% endif %}'
+                for (var i = 0; i < stemList.length; i++) {
+                    var temp = stemList[i];
+                    stemHtml = stemHtml + temp + '</br>';
+                }
+                stemHtml = stemHtml + '</label></li>'
+
+                Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + 'A:' + questList[no].alternative.A + '</button></li>';
+                Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B"  onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent ">' + 'B:' + questList[no].alternative.B + '</button></li>';
+                Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" style="text-align: left;border: 0px;background-color: transparent " onclick="clickAnswer(this)">' + 'C:' + questList[no].alternative.C + '</button></li>';
+                Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D"  onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent ">' + 'D:' + questList[no].alternative.D + '</button></li>';
+                var quesobj = questList[no];
+                var answer = quesobj.answer;
+                answer.split(' ').join('');
+                answer = answer.charAt(0)
+                var select = quesobj.select;
+                if (answer == 'A') {
+                    Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'A:' + quesobj.alternative.A + '</button></li>';
+                } else if (answer == 'B') {
+                    Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'B:' + quesobj.alternative.B + '</button></li>';
+                } else if (answer == 'C') {
+                    Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'C:' + quesobj.alternative.C + '</button></li>';
+                } else {
+                    Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'D:' + quesobj.alternative.D + '</button></li>';
+                }
+                if (answer != select) {
+                    if (select == 'A') {
+                        Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' + 'A:' + quesobj.alternative.A + '</button></li>';
+                    } else if (select == 'B') {
+                        Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B" id="errorBtn" style="text-align: left;border: 0px; border-radius: 5px; background-color: #FF9500">' + 'B:' + quesobj.alternative.B + '</button></li>';
+                    } else if (select == 'C') {
+                        Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" id="errorBtn" style="text-align: left; border: 0px; border-radius: 5px; background-color: #FF9500">' + 'C:' + quesobj.alternative.C + '</button></li>';
+                    } else if (select == 'D') {
+                        Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D" id="errorBtn" style="text-align: left;border: 0px ;border-radius: 5px; background-color: #FF9500">' + 'D:' + quesobj.alternative.D + '</button></li>';
+                    } else {
+
+                    }
+                } else {
+                    if (answer == 'A') {
+                        Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'A:' + quesobj.alternative.A + '</button></li>';
+                    } else if (answer == 'B') {
+                        Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'B:' + quesobj.alternative.B + '</button></li>';
+                    } else if (answer == 'C') {
+                        Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'C:' + quesobj.alternative.C + '</button></li>';
+                    } else {
+                        Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'D:' + quesobj.alternative.D + '</button></li>';
+                    }
+                }
+                html = '<ul>' + stemHtml + Ahtml + Bhtml + Chtml + Dhtml + '</ul>';
+                $(html).appendTo('#question_content');
+                $(html).appendTo('#pc_question_content');
+            }
+
+            function clickLast() {
+                if (num == 0) {
+                    alert('{% trans 'First question' %}');
+                } else {
+                    num--;
+                    showQuestion(num);
+                }
+            }
+
+            function clickNext() {
+                num++;
+                if (num == questList.length) {
+                    num = questList.length - 1;
+                } else {
+                    showQuestion(num);
+                }
+            }
+
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+
+{% endblock %}

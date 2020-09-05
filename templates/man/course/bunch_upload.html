@@ -1,0 +1,36 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Bunch Upload" %}{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <!-- Bunch upload -->
+                    <form class="upload-form" action="{% url 'bunch_upload' %}" method="post"
+                          enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="status-selector">
+                            <select name="file_type">
+                                <option value="CourseWare">CourseWare</option>
+                                <option value="HomeWork">HomeWork</option>
+                                <option value="TeachPlan">TeachPlan</option>
+                            </select>
+                        </div>
+                        <input type="file" multiple name="upload_files">
+                        <input type="submit" value="upload" class="p-btn"/>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+
+   

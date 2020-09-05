@@ -1,0 +1,78 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Teachers of management" %}{% endblock %}
+
+{% block content %}
+	<div class="content">
+		<h1 style="text-align: center">数目详情</h1>
+		<br><br>
+		 <div class="row">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="text-center">
+                                    <td>{% trans "title" %}</td>
+                                    <td>{% trans "author" %}</td>
+                                    <td>{% trans "press" %}</td>
+                                    <td>{% trans "original_price" %}</td>
+                                    <td>{% trans "price" %}</td>
+                                    <td>{% trans "quality" %}</td>
+                                    <td>{% trans "category" %}</td>
+                                    <td>{% trans "intro" %}</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for book in books %}
+                                    <tr class="text-center">
+                                        <td>{{ book.title }}</td>
+
+                                        <td>{{ book.author }}</td>
+
+                                        <td>
+                                            {{ book.press }}
+                                        </td>
+                                        <td>
+                                            {{ book.original_price }}
+                                        </td>
+                                        <td>
+                                            {{ book.price }}
+                                        </td>
+	                                    <td>
+                                            {{ book.quality }}
+                                        </td>
+                                        <td>
+
+	                                        {% ifequal book.category 0 %}
+                                            easy
+	                                        {% endifequal %}
+	                                        {% ifequal book.category 1 %}
+	                                        normal
+                                        {% endifequal %}
+	                                       {% ifequal book.category 2 %}
+	                                        hard
+	                                        {% endifequal %}
+                                        </td>
+                                        <td>
+                                            {{ book.intro }}
+                                        </td>
+
+                                    </tr>
+                                {% endfor %}
+                            <tr class="text-center">
+	                            <td></td><td><a href="{% url 'campaignAddress' %}">返回</a></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            </tbody>
+                    </table>
+
+                    </div>
+                </div>
+
+
+        </div>
+	</div>
+
+{% endblock %}
+
+   

@@ -1,0 +1,224 @@
+{% extends 'tutor/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% load time_filter %}
+
+
+{% block content %}
+
+<style>
+.filter-box{
+	width: 1170px;
+	display: flex;
+	padding: 20px 80px 20px 30px;
+}
+.filter-box input[type="button"]{
+	width: 90px;
+    height: 30px;
+    padding: 0 5px 0;
+    border: none;
+    background-color: #5cc2d0;
+    border-radius: 5px;
+    color: white;
+	outline: none;
+}
+.chose-item{
+	flex: 1;
+}
+.chose-item>div>span{
+	display: inline-block;
+	margin-right: 30px;
+}
+.status-item{
+	display: inline-block;
+	width: 200px;
+}
+.status-item input{
+	margin-right: 5px;
+}
+</style>
+
+<div class="section section-gray">
+	<div class="container">
+        <div class="filter-box">
+			<div class="chose-item">
+				{% if programmes %}
+				<div><span>老师版本</span>
+					{% for programme in programmes %}
+					<div class="status-item">
+						{% if programme.id in cur_programme  %}
+							<input style="color: red;" type="checkbox"  name="programme" value="{{ programme.id }}" checked/>  	{{ programme.edition_name }}
+						{% else %}
+							<input type="checkbox"  name="programme" value="{{ programme.id }}"/>{{ programme.edition_name }}
+						{% endif %}
+					</div>
+					{% endfor %}
+				</div>
+				{% endif %}<br>
+				<div>
+					<span>老师状态</span>
+                    {% if 3 in tutor_status %}
+					<div class="status-item">
+						<input type="checkbox"  name="tutor_status" id="hidden" value="3" checked/>未激活
+					</div>
+					{% else %}
+					<div class="status-item">
+						<input type="checkbox"  name="tutor_status" id="hidden" value="3" />未激活
+					</div>
+					{% endif %}
+
+                    {% if 1 in tutor_status %}
+					<div class="status-item">
+						<input type="checkbox"  name="tutor_status" id="hidden" value="1" checked/>仅老生可见
+					</div>
+					{% else %}
+					<div class="status-item">
+						<input type="checkbox"  name="tutor_status" id="hidden" value="1" />仅老生可见
+					</div>
+					{% endif %}
+
+					{% if 0 in tutor_status %}
+						<div class="status-item">
+							<input type="checkbox"  name="tutor_status" id="show" value="0" checked/>在岗
+						</div>
+					{% else %}
+					<div class="status-item">
+						<input type="checkbox"  name="tutor_status" id="show" value="0"/>在岗
+					</div>
+					{% endif %}
+
+					{% if 2 in tutor_status %}
+					<div class="status-item">
+						<input type="checkbox"  name="tutor_status" id="delete" value="2" checked/>离岗
+					</div>
+					{% else %}
+					<div class="status-item">
+						<input type="checkbox"  name="tutor_status" id="delete" value="2" />离岗
+					</div>
+					{% endif %}
+				</div>
+			</div>
+            <input type="button" name="submmit" value="查询" id="query_tutor" onclick="filterTutors()"/>
+        </div>
+		<br>
+		{% if tutors %}
+            <div>条数：{{ tutors.count }}</div>
+			<div class="row" id="tutors">
+				{% for tutor in tutors %}
+					<div class="col-md-4">
+						<div class="card card-user">
+							<div class="image">
+							</div>
+
+							<div class="content">
+								<div class="author">
+									<a id="scheduler_a" onclick="clickEvent({{ tutor.id }})">
+										{% if tutor.avatar %}
+											<img src="{{ tutor.avatar }}" alt="..." class="avatar"/>
+										{% else %}
+											<img src="{% static 'images/avatar/placeholder.png' %}" alt="..."
+											     class="avatar"/>
+										{% endif %}
+										<h4 class="title">{{ tutor.real_name }}</h4>
+									</a>
+								</div>
+
+								<p class="text-center muted-text">
+									{% with 'images/flag/640px-Flag_of_'|add:tutor.nationality|add:'.png' as image_static %}
+										<img src="{% static image_static %}" width="50" class="image-shadow">
+									{% endwith %}
+									{{ tutor.nationality }}
+								</p>
+								<br>
+								<div class="col-md-10 col-md-offset-1">
+									<div class="row">
+										<div class="col-md-6">{% trans 'Years of teaching' %}:</div>
+										<div class="col-md-5">{{ tutor.teaching_start_time | timesince | upto:',' }}</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">{% trans 'Rating' %}:</div>
+										<div class="col-md-5 text-right">
+											<div class="star-box"
+											     style="width:auto ;white-space: nowrap;position: relative;">
+												<span class="unfilled"
+												      style="color:#d3d3d3; position: absolute;top: 0;left: 0;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+												<span class="filled"
+												      style="color:#e9ce18; white-space: nowrap; overflow: hidden;position: absolute;top: 0;left: 0;width:{{ tutor.rating|get_digit:'1' }}em">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+											</div>
+
+										</div>
+									</div>
+
+									<br>
+									<div class="row">
+										{% ifequal request.LANGUAGE_CODE 'zh-hans'  %}
+											<div class="col-md-11">{{ tutor.description_zh }}</div>
+										{% else %}
+											<div class="col-md-11">{{ tutor.description_en }}</div>
+										{% endifequal %}
+									</div>
+									<br><br>
+								</div>
+
+							</div>
+
+							<hr>
+							<div class="text-center">
+								<a id="scheduler_a" href="/man/man_event/?user={{ tutor.id }}&role=opt"
+								   class="btn btn-info btn-round btn-fill">{% trans 'go to scheduler' %}</a>
+							</div>
+							<br>
+						</div> <!-- end card -->
+					</div>
+					{% if forloop.counter|divisibleby:3 %}
+						<div class="row"></div>{% endif %}
+				{% endfor %}
+			</div>
+		{% endif %}
+
+
+	</div>
+</div><!-- section -->
+{% endblock %}
+
+{% block extra_ending %}
+	{{ block.super }}
+	<script type="text/javascript" src="{% static 'js/bootstrap-select.js' %}"></script>
+
+	<script type="text/javascript">
+
+		function formatDate(date) {
+            var month2 = (date.getMonth() + 1);
+			if (month2 < 10) {
+			    month2 = '0' + month2;
+			}
+			var day2 = date.getDate();
+			if (day2 < 10) {
+				day2 = '0' + day2;
+			}
+			var hours = "00";
+			console.log(typeof (date.getFullYear()));
+			return date.getFullYear().toString() + month2 + day2 + hours;
+		}
+
+		function filterTutors() {
+		    var programme_check = $("input:checkbox[name='programme']:checked"); //得到所有被选中的checkbox
+            var programme_ids = [];              //定义变量
+            programme_check.each(function(i) {         //循环拼装被选中项的值
+                programme_ids.push($(this).val());
+            });
+
+            var tutor_status = [];
+            var tutor_status_check = $("input[name='tutor_status']:checked");
+            tutor_status_check.each(function(i) {         //循环拼装被选中项的值
+                tutor_status.push($(this).val());
+            });
+            programme_ids = programme_ids.join(',');
+            tutor_status = tutor_status.join(',');
+            var url = "{{ request.path }}?programme_ids=" + programme_ids + "&tutor_status=" + tutor_status;
+
+            window.location.href=url
+
+		}
+	</script>
+{% endblock %}

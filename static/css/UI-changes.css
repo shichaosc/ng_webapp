@@ -1,0 +1,102 @@
+  /*ui改版样式*/
+        .g-card {
+            border-radius: 0;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.23);
+            padding-top: 60px;
+            padding-bottom: 60px;
+            background:rgba(255,255,255,1);
+            text-align: center;
+        }
+        /*修改密码样式*/
+        .g-title{
+            display: inline-block;
+            font-size:21px;
+            color:rgba(36,203,218,1);
+            margin-left: 15px;
+            /*letter-spacing: 5px;*/
+            margin-bottom: 40px;
+        }
+       .g-logo{
+            display: inline-block;
+            width:30px;
+            height:30px;
+            background: url("/static/images/reset-icon.png") no-repeat top left;
+            background-size:cover;
+            margin-bottom: -7px;
+        }
+       .g-logoOne{
+           background: url("/static/images/back-icon.png") no-repeat top left;
+           background-size:cover;
+       }
+        .g-prompt{
+            font-size:13px;
+            font-weight:400;
+            color:#3B3B4D;
+            margin-bottom: 30px;
+        }
+        .g-sub{
+            width:70% !important;
+            height:32px;
+            background:rgba(36,203,218,1) !important;
+            border-radius:50px !important;
+            line-height: 2px;
+            margin-left: 20%;
+            border: none;
+            font-weight:400;
+            color:rgba(255,255,255,1) !important;
+            margin: 0 auto 20px auto;
+        }
+        .g-tel{
+            font-size:14px;
+            font-weight:400;
+            color:rgba(59,59,77,1);
+        }
+        .password_reset>p>label{
+            font-weight:bold;
+            color:rgba(59,59,77,1);
+        }
+        .password_reset>ul>li{
+            font-size:14px;
+            font-weight:400;
+            color:darkred;
+            list-style-type: none;
+        }
+       .password_reset>p>input{
+            width:80%;
+            height:28px;
+            background:rgba(255,255,255,1);
+            border-radius:5px;
+            border:1px solid rgba(92,194,208,1);
+            margin-bottom: 20px;
+            outline:none;
+        }
+       .password_reset>input{
+           background: red;
+       }
+        /*退出界面样式*/
+        .g-backBtn{
+            width:80px !important;
+            height:35px;
+            border-radius:50px;
+            border:1px solid rgba(36,203,218,1);
+            text-align: center;
+            font-size:13px;
+            font-weight:500;
+            color:rgba(36,203,218,1);
+            margin-top: -10px;
+            outline:none;
+            cursor: pointer;
+        }
+        .g-exitBtn{
+            margin-top: -10px;
+            width:80px !important;
+            height:35px;
+            background:rgba(36,203,218,1);
+            border-radius:50px;
+            text-align: center;
+            border: none;
+            font-size:14px;
+            font-weight:500;
+            color:rgba(255,255,255,1);
+            outline:none;
+        }

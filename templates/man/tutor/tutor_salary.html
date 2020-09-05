@@ -1,0 +1,325 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Teachers of management" %}{% endblock %}
+{% block extra_head %}
+    <link href="{% static 'css/bootstrap-datepicker.css' %}" rel="stylesheet">
+    <style>
+        h2 {
+            margin-top: 0;
+        }
+
+        .card, .header, .content {
+            overflow: hidden
+        }
+
+        .group-addon {
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .card .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .btn-info {
+            vertical-align: bottom;
+        }
+
+        .card {
+            padding-bottom: 30px
+        }
+
+        .btn-info:hover {
+            background: #1DC7EA;
+            color: #fff;
+            border-color: #1DC7EA;
+        }
+
+        .bootstrap-table .fixed-table-container .table thead th .th-inner {
+            padding: .75rem 0;
+        }
+
+        .bootstrap-table .fixed-table-container .table thead th:nth-child(2) .th-inner {
+            text-align: left;
+        }
+
+        .card .table thead th:first-child {
+            padding-left: 0;
+        }
+
+        .open {
+            opacity: 1;
+            display: block !important;
+            visibility: visible !important;
+        }
+
+        .datepicker table {
+            width: 240px;
+        }
+
+        .modal-backdrop.modal-backdrop {
+            z-index: 2;
+            display: none;
+        }
+
+        #myModal {
+            z-index: 9;
+            background: rgba(0, 0, 0, .5);
+        }
+
+        #tutor_salary {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #tutor_salary span {
+            font-weight: bold;
+            color: #000;
+            padding: 0 5px;
+        }
+
+        #tutor_info h4 {
+            font-size: 18px;
+        }
+
+        #myModal .modal-content {
+            padding: 0 10px;
+        }
+
+        .modal-header {
+            overflow: hidden;
+        }
+
+        .main-panel > .content {
+            padding: 0 15px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title col-md-3">老师数量：{{ tutor_count }}</h4>
+                            <h4 class="title col-md-4">{{ data_date }}待发放课酬：{{ tutor_salary_sum_cny }}CNY + {{ tutor_salary_sum_sgd }}SGD</h4>
+                            <div class="col-md-3">
+                                <input
+                                        class="form-control col-md-12"
+                                        id="endTime"
+                                        readonly
+                                        data-date-format="yyyymm"
+                                        type="text"
+                                        data-provide="datepicker"
+                                        placeholder="选择年月"/>
+                            </div>
+                            <div class="col-md-2" style="text-align:right">
+                                <button type="button" class="btn btn-info" onclick="update_pay_status()">批量发放</button>
+                            </div>
+                        </div>
+                        <div class="content table-responsive bootstrap-table">
+                            {# 老师用户名,老师姓名,本月上课课时,本月上课,学生数量,本月课酬/元,课酬状态 #}
+                            <table
+                                    class="table table-hover table-tableCen table-bordered"
+                                    id="table"
+                                    data-id-field="id"
+                                    data-toggle="table"
+                                    data-sortable="true"
+                            >
+                                <thead>
+                                <tr>
+                                    <th data-field="user_id" data-checkbox="true"></th>
+                                    <th style="text-align:left;">{% trans 'teacher name' %}</th>
+                                    <th>{% trans 'teacher realname' %}</th>
+                                    <th>身份证姓名</th>
+                                    <th data-field="salary" data-sortable="true">{% trans 'the month salary' %}</th>
+                                    <th data-field="lesson_num"
+                                        data-sortable="true">{% trans 'the month class num' %}</th>
+                                    <th data-field="student_num" data-sortable="true">{% trans 'students number' %}</th>
+                                    <th>身份证号</th>
+                                    <th>银行账号</th>
+                                    <th>开户行</th>
+                                    <th>支行名称</th>
+                                    <th>{% trans 'pay status' %}</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody">
+                                {% for salary in tutor_salary %}
+                                    <tr id="{{ salary.user_id }}">
+                                        <td></td>
+                                        <td>{{ salary.username }}</td>
+                                        <td>{{ salary.real_name }}</td>
+                                        <td>{{ salary.card_name }}</td>
+                                        <td>{{ salary.salary }}{{ salary.currency }}</td>
+                                        <td>{{ salary.lesson_num }}</td>
+                                        <td>{{ salary.student_num }}</td>
+
+                                        <td>{{ salary.card_number }}</td>
+                                        <td>{{ salary.bank_account_number }}</td>
+                                        <td>{{ salary.bank_name }}</td>
+                                        <td>{{ salary.bank_branch_name }}</td>
+                                        {% if salary.pay_status == 1 %}
+                                            <td>已支付</td>
+                                        {% elif salary.pay_status == 0 %}
+                                            <td>未支付</td>
+                                        {% else %}
+                                            <td>{{ salary.pay_status }}</td>
+                                        {% endif %}
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <div id="tutor_info" class="col-md-12"></div>
+                </div>
+                <div id="tutor_salary"></div>
+                <table class="table table-hover table-tableCen table-bordered">
+                    <thead>
+                    <tr>
+                        {#                            上课时间 基础课时费/元 学生  学生缺席 补偿/元 老师缺席 罚金/元 学生 课程#}
+                        <th>上课时间</th>
+                        <th>基础课时费/元</th>
+                        <th>学生课程奖励/元</th>
+                        <th>学生缺席补偿/元</th>
+                        <th>老师缺席罚金/元</th>
+                        <th>学生</th>
+                        <th>课程</th>
+                    </tr>
+                    </thead>
+                    <tbody id="detail_tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_ending %}
+    <script src="{% static 'js/jquery.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bootstrap-table.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js' %}" type="text/javascript"></script>
+    <script type="text/javascript">
+        var checkTime = location.search.split("=")[1];
+        $(function () {
+            $('#table').bootstrapTable();
+            $('#endTime').datepicker({
+                format: "yyyy-mm",
+                minViewMode: 'months',
+                maxViewMode: 2,
+                viewMode: 'months',
+                autoclose: true,
+                monthsShort: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+                forceParse: false,
+            }).on('changeDate', function (ev) {
+                var date = new Date(ev.date);
+                var Y = date.getFullYear();
+                var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+                window.location.href = '/man/tutor/tutor_salary/?data_date=' + (String(Y) +String(M))
+            })
+        })
+
+        function update_pay_status(data) {
+            var teacher_ids = Array();
+            $("#tbody").find(":checkbox:checked").each(function () {
+                var val = $(this).parents("tr").attr('id');
+                teacher_ids.push(val)
+            });
+            var date = new Date();
+            var Y = date.getFullYear();
+            var M = (date.getMonth() < 10 ? '0' + (date.getMonth()) : date.getMonth());
+            {#var data_date = data ? data:String(Y) + String(M);#}
+            var data_date = checkTime ? checkTime :String(Y) + String(M);
+            $.ajax({
+                type: "POST",
+                url: "/man/tutor/update_pay_status/",
+                traditional: true,
+                {#contentType:'application/json',#}
+                data: {'teacher_ids': teacher_ids, "data_date": data_date},
+                success: function (result) {
+                    if (result.code == 1) {
+                        alert(result.message)
+                    } else {
+                        alert("success")
+                        window.location.href = window.location.href;
+                    }
+                },
+                error: function (e) {
+                    alert(e);
+                    console.log(e.status);
+                    console.log(e.responseText);
+                }
+
+            });
+        }
+
+        $('#table').on('click-row.bs.table', function (e, row, $element) {
+            $('#myModal').modal();
+            var teacher_id = $element.attr('id');
+            var teacher_name = $element.find('td').eq(1).text();
+            var data_date = {{ data_date }};
+
+            $.ajax({
+                type: "GET",
+                url: "/man/tutor/tutor_salary_detail/",
+                traditional: true,  //传的参数是数组时需要
+                {#contentType:'application/json',#}
+                data: {'teacher_id': teacher_id, "data_date": data_date},
+                success: function (result) {
+                    result = JSON.parse(result);
+                    var tutor_detail = result['tutor_detail'];
+                    var tutor_salary = result['tutor_salary'];
+                    var html = "";
+                    var salary_sum = 0;
+                    var programme_name = '';
+                    for (var i = 0; i < tutor_detail.length; i++) {
+                        programme_name = tutor_detail[i]["programme_name"] == 'Advanced' ? '高级版' : tutor_detail[i]["programme_name"] == 'International Lite' ? '国际版' : '-' ;
+                        html = html + "<tr>";
+                        html = html + "<td>" + tutor_detail[i].scheduled_time + "</td>";
+                        html = html + "<td>" + tutor_detail[i]['salary']['base_salary'] + "</td>";
+                        html = html + "<td>" + tutor_detail[i]['salary']['incentive_salary'] + "</td>";
+                        html = html + "<td>" + tutor_detail[i]['salary']['student_absence_salary'] + "</td>";
+                        html = html + "<td>" + tutor_detail[i]['salary']['tutor_absence_salary'] + "</td>";
+                        html = html + "<td>" + tutor_detail[i]["studentname"] + "</td>";
+                        if (tutor_detail[i]["course_level"]) {
+                            html = html + "<td>" + programme_name +' L'+ tutor_detail[i]["course_level"] + ' Lesson' + tutor_detail[i]["course_session"] + "</td>";
+                        }else{
+                            html = html + "<td>---</td>";
+                        }
+
+                        html = html + "</tr>";
+                        salary_sum = salary_sum + tutor_detail[i]['salary']['base_salary'] + tutor_detail[i]['salary']['incentive_salary'] + tutor_detail[i]['salary']['student_absence_salary'] + tutor_detail[i]['salary']['tutor_absence_salary']
+                    }
+                    $("#detail_tbody").html(html);
+                    $("#tutor_salary").html("本月课酬 <span>" + salary_sum + tutor_salary.currency + "</span> = 基础课时费<span>" + tutor_salary.base_salary + "</span> + 奖励<span>" + tutor_salary.incentive_salary + "</span> + 学生缺席补偿<span>" + tutor_salary.student_absence_salary + "</span> - 老师缺席罚金<span>" + tutor_salary.tutor_absence_salary + '</span>');
+                    $("#tutor_info").html("<h4 class='col-md-3' id='myModalLabel'>统计周期：" + tutor_salary.data_date +
+                        "<h4 class='col-md-3'>老  师：" + teacher_name +
+                        "</h4><h4 class='col-md-3'>课时数量：" + tutor_salary.lesson_num + "</h4>")
+                },
+                error: function (e) {
+                    alert(e);
+                    console.log(e.status);
+                    console.log(e.responseText);
+                }
+
+            });
+
+        });
+
+
+    </script>
+{% endblock %}

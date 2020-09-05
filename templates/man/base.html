@@ -1,0 +1,493 @@
+{% load i18n %}
+{% load staticfiles %}
+{% load tz_detect %}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>{% trans "Management Panel for PPLingo" %} - {% block title %}{% endblock %}</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="{% static 'css/bootstrap-table.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
+
+    <!-- Animation library for notifications   -->
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="{% static 'css/light-bootstrap-dashboard.css' %}" rel="stylesheet"/>
+
+    <!-- 自定义CSS -->
+    <link href="{% static 'css/man-upload.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/pp-global.css' %}" rel="stylesheet"/>
+
+
+    <!--     Fonts and icons     -->
+{#    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">#}
+{#    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>#}
+    <link href="{% static "css/pe-icon-7-stroke.css" %}" rel="stylesheet"/>
+
+    {% block extra_head %}{% endblock %}
+
+</head>
+<body>
+    <!-- 上传作业页面新建按钮弹框 -->
+    <div class="modal fade" id="newHomework" tabindex="-1" role="dialog" aria-labelledby="newHomeworkLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div>
+                    <div class="modal-header" style="text-align: center;">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="newHomeworkLabel">新建作业</h4>
+                        <h5>请选择题目类型和题目数量</h5>
+                    </div>
+                </div>
+                <div class="outline-content" style="max-height: 500px; overflow: scroll;"></div>
+                <button type="button" class="add-subject">增加题目</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary jump-detail">提交更改</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!-- 修改大题题目描述弹框 -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="display: flex;">
+              <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; flex: 1;">修改</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary sava-change">Save changes</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- 选择知识点 -->
+    <div class="modal fade" id="knowledge" tabindex="-1" role="dialog" aria-labelledby="knowledgeLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header flex">
+              <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; flex: 1;">知识点设置</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="save-knowledge">Save changes</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- 知识点大纲 -->
+    <div class="modal fade" id="knowledgePoint" tabindex="-1" role="dialog" aria-labelledby="knowledgePointLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header flex">
+              <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; flex: 1;">设置知识点</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <textarea name="" id="" cols="30" rows="10" style="width: 100%; resize: none; border-color: #eee;" placeholder="点击输入本节课考查内容"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="save-outline-knowledge">Save changes</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- 题目调整 -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            ...
+          </div>
+        </div>
+    </div>
+
+    <!-- 预览 -->
+    <div class="modal fade bd-example-modal-lg preview" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-body preview-page-container">
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="adjustment" tabindex="-1" role="dialog" aria-labelledby="adjustmentLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header flex">
+              <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; flex: 1;">题目调整</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="adjust-outline">Save changes</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- loading -->
+    <div class="modal fade" id="loadingModal" backdrop="static" keyboard="false">
+    　　
+        <div style="width: 200px;height:100px; z-index: 20000; position: absolute; text-align: center; left: 50%; top: 50%;margin-left:-100px;margin-top:-10px">
+            　　　　
+            <div class="progress progress-striped active"style="margin-bottom: 0;height:50px; text-align:center;line-height: 50px;font-size:large;">
+                  loading......　　　　
+            </div>
+            　　
+        </div>
+    </div>
+
+<div class="wrapper">
+
+    {% block sidebar %}
+    <div class="sidebar" data-color="azure">
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+
+        {# 临时加一个背景颜色 #}
+    	<div class="sidebar-wrapper" style="background-color: #2ba9e6;">
+            <div class="logo">
+                <a href="http://www.pplingo.com" class="simple-text">
+                    PPLingo
+                </a>
+            </div>
+
+            <ul class="nav">
+    <!--
+
+                <li class="active">
+                    <a href="dashboard.html">
+                        <i class="pe-7s-graph"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="user.html">
+                        <i class="pe-7s-user"></i>
+                        <p>User Profile</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="table.html">
+                        <i class="pe-7s-note2"></i>
+                        <p>Table List</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="icons.html">
+                        <i class="pe-7s-science"></i>
+                        <p>Icons</p>
+                    </a>
+                </li>
+    -->
+                <li>
+                    <a href="{% url 'course_preview' %}">
+                        <i class="pe-7s-bookmarks"></i>
+                        <p>课件预览</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'course_upload' %}">
+                        <i class="pe-7s-cloud-upload"></i>
+                        <p>{% trans 'Courseware Upload' %}</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'questionnaire' %}">
+                        <i class="pe-7s-cloud-upload"></i>
+                        <p>{% trans 'Questionnaire' %}</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'assessment_preview' %}">
+                    <a href="/man/examassement/preview/">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>{% trans 'Exambank' %}</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'examassement_list' %}">
+                        <i class="pe-7s-cloud-upload"></i>
+                        <p>{% trans 'Exambank Upload' %}</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'homework' %}">
+                        <i class="pe-7s-note2"></i>
+                        <p>{% trans 'Homework' %}</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'homeworkupload' %}">
+                        <i class="pe-7s-cloud-upload"></i>
+                        <p>{% trans 'Homework Upload' %}</p>
+                    </a>
+                </li>
+                 <li>
+                    <a href="{% url 'teachplan' %}">
+                        <i class="pe-7s-notebook"></i>
+                        <p>{% trans 'TeachingPlan Review' %}</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'teachplanupload' %}">
+                        <i class="pe-7s-cloud-upload"></i>
+                        <p>{% trans 'TeachingPlan Upload' %}</p>
+                    </a>
+                </li>
+                <li>
+                <a href="{% url 'all_tutor_list' %}">
+                        <i class="pe-7s-clock"></i>
+                        <p>{% trans 'Review schedule' %}</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'vc_list' %}">
+                        <i class="pe-7s-video"></i>
+                        <p>{% trans 'Monitor Virtualclass' %}</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'Convert_list' %}">
+                        <i class="pe-7s-monitor"></i>
+                        <p>{% trans 'Convert Virtualclass' %}</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'tutor_salary' %}">
+                        <i class="pe-7s-cash"></i>
+                        <p>{% trans 'Payment of Teachers' %}</p>
+                    </a>
+                </li>
+{#                <li>#}
+{#                    <a href="{% url 'withdrawal_review' %}">#}
+{#                        <i class="pe-7s-cash"></i>#}
+{#                        <p>{% trans 'Withdrawal Review' %}</p>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <li>#}
+{#                    <a href="{% url 'explorer_index' %}">#}
+{#                        <i class="pe-7s-graph2"></i>#}
+{#                        <p>{% trans 'Dashboard' %}</p>#}
+{#                    </a>#}
+{#                </li>#}
+                <li>
+                    <a href="{% url 'tutor_management' %}">
+                        <i class="pe-7s-music"></i>
+                        <p>{% trans 'Teachers of management' %}</p>
+                    </a>
+                </li>
+	            <li>
+{#                    <a href="{% url 'campaignAddress' %}">#}
+{#                        <i class="pe-7s-music"></i>#}
+{#                        <p>{% trans 'Campaign Address' %}</p>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <li>#}
+{#                    <a href="{% url 'bunch_upload' %}">#}
+{#                        <i class="pe-7s-upload"></i>#}
+{#                        <p>{% trans 'Bunch Upload' %}</p>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <li>#}
+{#                    <a href="{% url 'april_refer_mobile' %}">#}
+{#                        <i class="pe-7s-upload"></i>#}
+{#                        <p>April referral </p>#}
+{#                    </a>#}
+{#                </li>#}
+
+            </ul>
+    	</div>
+    </div>
+	{% endblock %}
+
+    <div class="main-panel">
+    {% block header %}
+
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Dashboard</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-dashboard"></i>
+                            </a>
+                        </li>
+                        <!--
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-globe"></i>
+                                    <b class="caret"></b>
+                                    <span class="notification">5</span>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Notification 1</a></li>
+                                <li><a href="#">Notification 2</a></li>
+                                <li><a href="#">Notification 3</a></li>
+                                <li><a href="#">Notification 4</a></li>
+                                <li><a href="#">Another notification</a></li>
+                              </ul>
+                        </li>
+                         -->
+                        <li>
+                           <a href="">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                           <a href="">
+                               Account
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Dropdown
+                                    <b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                              </ul>
+                        </li>
+                        <li>
+                            <a href="/accounts/logout/">
+                                Log out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+
+        <footer class="footer" style="display: none">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Portfolio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                               Blog
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; 2016 <a href="http://www.pplingo.com">PPLINGO</a>, made with love for a better web
+                </p>
+            </div>
+        </footer>
+    {% endblock %}
+
+    </div>
+</div>
+
+{% tz_detect %}
+
+</body>
+	{% block extra_ending %}
+
+    <!--   Core JS Files   -->
+    <script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+	<script src="{% static "js/jquery.mousewheel.min.js" %}" type="text/javascript"></script>
+	<script src="{% static "js/bootstrap.min.js" %}" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="{% static "js/bootstrap-checkbox-radio-switch.js" %}"></script>
+
+	<!--  Charts Plugin -->
+	<script src="{% static "js/chartist.min.js" %}"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="{% static "js/bootstrap-notify.js" %}"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+    <script src="{% static "js/light-bootstrap-dashboard.js" %}"></script>
+
+    <!-- 富文本编辑器 -->
+    <script src="{% static "js/wangEditor.min.js" %}"></script>
+
+    <script src="{% static "js/man-upload.js" %}"></script>
+    <script src="{% static "js/ajax.js" %}"></script>
+
+	{% endblock %}
+
+</html>

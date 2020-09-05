@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load static %}
+{% block extra_head %}
+    <style>
+        .rating-form{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .modal-body{
+            margin: 30px auto;
+            border-radius: 20px;
+            background:#fff;
+        }
+        .rating-group{
+            display:flex;
+            margin:10px 0;
+            width:395px;
+        }
+        .rating-group span{
+            display:block;
+            width:160px;
+        }
+        .click-demo{
+            width:auto !important;
+        }
+        .click-demo img{
+            width:20px;
+            margin-right:5px;
+        }
+        .btn-gradient-background{
+            width: 200px;
+            height: 44px;
+            display: block;
+            margin:0 auto;
+        }
+        .homework-tit{
+            background:#EFF9FB;
+            padding:15px 10px;
+            text-align:center;
+            color:#64CCDB;
+        }
+        .homework-tit h5{
+            font-size:24px;
+        }
+        .homework-news img{
+            width:20px;
+            vertical-align:text-bottom;
+        }
+        .homework-news span{
+            margin-left:10px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="rating-form">
+        <div class="modal-body">
+            <div class="homework-tit">
+                <h5>
+                    {% trans 'Student`s Feedback' %}
+                </h5>
+                <p class="homework-news">
+                    {% ifequal class_type.type_name 'smallclass' %}
+                        <img src="{% static 'images/small-class/icon-my-class-group.png' %}" />
+                    {% endifequal %}
+                    <span>{{ scheduled_time }}</span>
+                    <span>{% trans 'session' %}:Level {{ session.course.course_level }} - lesson {{ session.session_no }}</span>
+                    <span>{% trans 'teacher' %}:{{ user }}</span>
+                </p>
+            </div>
+            <form action="/virtualclass/evaluate/" method="POST" id="classroom-score-form">
+                {% csrf_token %}
+                <div class="rating-group">
+                    <span>{% trans 'Professional Knowledge' %}</span>
+                    <div class="click-demo"></div>
+                    <input type="hidden" name="PK" value="4">
+                </div>
+                <div class="rating-group">
+                    <span>{% trans 'Instructional Delivery' %}</span>
+                    <div class="click-demo"></div>
+                    <input type="hidden" name="ID" value="4">
+                </div>
+                <div class="rating-group">
+                    <span>{% trans 'Learning Environment' %}</span>
+                    <div class="click-demo"></div>
+                    <input type="hidden" name="LE" value="4">
+                </div>
+                <div class="rating-group">
+                    <span>{% trans 'Comments' %}</span>
+                </div>
+                <textarea class="form-control" id="comment" name="comment" placeholder="{% trans 'pls input your comments' %}" rows="3"></textarea>
+                <br><br>
+                <div class="form-group">
+                    <input type="hidden" name="vc_id" value="{{ vc_id }}">
+                    <input type="hidden" name="user" value="{{ user.id }}">
+                    <button type="submit" class="btn-gradient-background">{% trans "Submit" %}</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_ending %}
+    {{ block.super }}
+    <script src="{% static 'js/jquery.raty.min.js' %}"></script>
+    <script>
+    $.fn.raty.defaults.path = "{% static 'libs/img' %}";
+    $('.click-demo').raty({
+        score:4,
+        number:5,
+        hints : ['1','2','3','4','5'],
+        click: function(score, evt) {
+            $(this).siblings('input').val(score)
+        }
+    });
+    </script>
+{% endblock %}

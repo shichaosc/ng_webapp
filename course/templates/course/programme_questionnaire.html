@@ -1,0 +1,605 @@
+{% extends 'course/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{% trans "Questionnaire" %}{% endblock %}
+{% block header %}{% endblock header %}
+{% block extra_head %}
+    <link href="{% static "css/questionnaire.css" %}" rel="stylesheet"/>
+    <style>
+    input{
+        outline: 0;
+    }
+    #cont_info{
+        {#width:800px;#}
+        margin:0 50px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .prevent-btn{
+        {#padding:0 20px;#}
+        height:52px;
+        border-radius:25px;
+        font-size:22px;
+        text-align:center;
+        line-height:52px;
+        margin:95px auto 0;
+        background:#fff;
+        color:#5CC2D0;
+        cursor:pointer;
+        border:none;
+        border:2px solid #5CC2D0;
+    }
+    .select{
+        {#padding:0 50px;#}
+        {#width:90%;#}
+        display:flex;
+        justify-content: space-around;
+        align-content: center;
+        {#margin-left:-60px;#}
+     }
+    .select button{
+        {#width:126px;#}
+        width:150px;
+        font-size:16px;
+    }
+    .content-ct{
+        {#width:75%;#}
+        margin-bottom:0;
+        padding: 0 50px  ;
+        display:flex;
+        flex-direction: column;
+    }
+    .cont-info{
+          padding: 0 0 100px 0;
+      }
+    .content-ct h4{
+        font-size:20px;
+    }
+    .mask{
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+        background:rgba(0,0,0,.3)      ;
+        display:none;
+    }
+    .maskBox{
+        width:50%;
+        min-height:350px;
+        background:#fff;
+        position:fixed;
+        top:50%;
+        left:50%;
+        margin-left:-25%;
+        margin-top:-225px;
+        border-radius:15px;
+    }
+    .title-lang{
+        display:flex;
+        justify-content: space-around;
+    }
+    .title-lang img{
+        width:11px;
+        height:45px
+    }
+    @media (max-width: 750px) {
+        .content-ct {
+            width: 90%;
+            padding: 0;
+        }
+
+        .next-btn {
+            padding: 0 15px
+        }
+
+        .select {
+            width: auto;
+        }
+
+        #cont_info {
+            margin: 0 20px;
+        }
+
+        .maskBox {
+            width: 90%;
+            min-height: 450px;
+            background: #fff;
+            position: fixed;
+            left: 50%;
+            border-radius: 15px;
+            margin-left: -45%;
+
+        }
+    }
+    </style>
+{% endblock %}
+{% block content %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <div class="content">
+        <div class="nav-tp">
+            <img src="{% static 'images/questionnaire/logo.png' %}" />
+        </div>
+        <div class="content-ct">
+            <h4 class="title-lang">
+                <img src="{% static 'images/questionnaire/icon2.png' %}" />
+                <span>回答下面几个问题，我们将为孩子安排最合适的课程和老师</span>
+                <img class="rightImg" src="{% static 'images/questionnaire/icon3.png' %}" />
+            </h4>
+            <span class="nav-bor"></span>
+
+            <div class="cont-info" id="cont_info"></div>
+           <form id="form_layer" action="/course/level_questionnaire/" method="POST" enctype="multipart/form-data" >
+                <input class="hide score-input" name="score">
+                <input id="click_submit" type="submit" class="hide">
+            </form>
+        </div>
+        <div class="mask">
+             <div class="maskBox"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    <script>
+        var Dorecord =[];
+        var SGgrade="";//新加坡地区年级
+        var Titlenumber=1;//题号
+        var nextPrev=true;//判断是上一步还是下一步  上一步false 下一步true
+        var Otherareas="";//第一题填的其他地区
+        var answerRecord=[];//答题记录
+        var programe='';//版本
+        var course_level='';//级别
+        var LessonSG="";//双语版的课程
+        var Classhour="";//课时
+        var programme = {{ programme | safe}}; //存储所有题目
+        var Aftertreatment={};//题的分类例如 定版本的新加坡地区和其他地区，或者高级的题、国际的题、双语版的题
+        var Singapore=[];//新加坡的题
+        var Other=[];//其他的题
+        var International=[];//国际的题
+        var Advanced=[];//高级
+        var SG=[];//双语版
+        var Firstquestion=[];//第一题
+        var returnClass="";//上一步按钮
+        var prevFlag=0;
+        var sgcourse_level="";
+        programme.forEach(item=>{
+            if(JSON.parse(item.detail).no.slice(-3,-2)==0){//新加坡定版本题
+               Singapore.push(item)
+            }
+            if(JSON.parse(item.detail).no.slice(-3,-2)==1){//其他地区定版本题
+               Other.push(item)
+            }
+            if(JSON.parse(item.detail).no.slice(1,2)==0){//国际题
+               International.push(item)
+            }
+            if(JSON.parse(item.detail).no.slice(1,2)==1){//高级题
+               Advanced.push(item)
+            }
+            if(JSON.parse(item.detail).no.slice(1,2)==2){//双语版题
+               SG.push(item)
+            }
+            if(JSON.parse(item.detail).no.slice(-2,-1)==1){//第一题
+                Firstquestion.push(item)
+            }
+        })
+        Aftertreatment.Singapore=Singapore
+        Aftertreatment.Other=Other
+        Aftertreatment.International=International
+        Aftertreatment.Advanced=Advanced
+        Aftertreatment.SG=SG
+        Aftertreatment.Firstquestion=Firstquestion
+        var Currenttopic=Firstquestion;//当前展示的题目；
+        var Answer=[];//存放用户答题的答案
+        var numObj =[];
+        var judge=[];//高级的得分
+        var count=0;
+        var selectCard="";
+        var type="";//类型   例如：高级、国际、双语
+        programmeList()
+        var lang_nav = (navigator.systemLanguage ? navigator.systemLanguage : navigator.language);
+        var lang = lang_nav.substr(0, 2);
+        function programmeList (){ // 定版本
+            programe="";
+            course_level="";
+            var lang_nav = (navigator.systemLanguage ? navigator.systemLanguage : navigator.language);
+            var lang = lang_nav.substr(0, 2);
+            (lang == 'zh') ? $('.title-lang span').text('用一分钟时间回答下面几个问题，我们将为您的孩子安排最合适的课程和老师') : $('.title-lang').html(`<img src="{% static 'images/questionnaire/icon2.png' %}" />Take 1 minute to answer the following questions, and we will arrange the most suitable course and teacher for the child.<img src="{% static 'images/questionnaire/icon3.png' %}" />`)
+            var stemHtml = '';
+            Currenttopic.forEach(val=>{
+                var obj = JSON.parse(val.detail);
+                var objnoFlag=true;
+                var alternatives = obj.alternatives;//选项
+                stemHtml += `<div class="info-item">`;
+                if(SGgrade&&Titlenumber==6){
+                  stemHtml += (lang == 'zh') ? `<h5>${Titlenumber++}、${obj.tittle}</h5>` : `<h5>${Titlenumber++}、Which lesson is the child currently learning at school?</h5>`
+
+                }
+                else{
+                 stemHtml += (lang == 'zh') ? `<h5>${Titlenumber++}、${obj.tittle}</h5>` : `<h5>${Titlenumber++}、${obj.tittle_en}</h5>`
+                }
+                 alternatives.forEach((item,index)=>{
+                    if (item.detail.content) {
+                        if(item.detail.content=="其他："){
+                            stemHtml += `<em class="select_sel" data-only='${obj.no}'  data-score='${item.detail.score}'>`
+                            stemHtml += (lang == 'zh') ? `<span data-only='${obj.no}' data-score='${item.detail.score}' data-id=${item.id}>${item.id}、<label>${item.detail.content}<input style="border:1px solid #ccc;width:150px;padding:0 5px" placeholder="请输入地区" /></label></span></em>` : `<span data-only='${obj.no}' data-score='${item.detail.score}' data-id=${item.id}>${item.id}、${item.detail.content_en}<input style="border:1px solid #ccc;width:150px;padding:0 5px" placeholder="Please enter the area" /></label></span></em>`
+                        }
+                        else{
+                             stemHtml += `<em class="select_sel" data-only='${obj.no}'  data-score='${item.detail.score}'>`
+                             stemHtml += (lang == 'zh') ? `<span data-only='${obj.no}' data-score='${item.detail.score}' data-value=${item.detail.content} data-id=${item.id}>${item.id}、${item.detail.content}</span></em>` : `<span data-only='${obj.no}' data-score='${item.detail.score}' data-value=${item.detail.content} data-id=${item.id}>${item.id}.${item.detail.content_en}</span></em>`
+                        }
+                    }
+                    else if(item.detail.content==""&&index===0){
+                        if(SGgrade=="小学一年级"){
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="A"  data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="25">A、第11课 我的同学</span></em>`:`<em  class="select_sel" data-only='${obj.no}' data-id="A"  data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="25">A、Lesson11 我的同学</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="B"  data-score='${item.detail.score}'><span data-id="B" data-only='${obj.no}' data-classnum="27">B、第12课 我爱干净</span></em>`:
+                                                       `<em  class="select_sel" data-only='${obj.no}' data-id="B"  data-score='${item.detail.score}'><span data-id="B"  data-only='${obj.no}' data-classnum="27">B、Lesson12 我爱干净</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="C"  data-score='${item.detail.score}'><span data-id="C" data-only='${obj.no}' data-classnum="29">C、第13课 你看见我的袜子了吗</span></em>`:
+                                                       `<em  class="select_sel" data-only='${obj.no}' data-id="C"  data-score='${item.detail.score}'><span data-id="C" data-only='${obj.no}' data-classnum="29">C、Lesson13 你看见我的袜子了吗</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="D"  data-score='${item.detail.score}'><span data-id="D" data-only='${obj.no}' data-classnum="33">D、第14课 家里这么干净啊</span></em>`:
+                                                       `<em  class="select_sel" data-only='${obj.no}' data-id="D"  data-score='${item.detail.score}'><span data-id="D" data-only='${obj.no}' data-classnum="33">D、Lesson14 家里这么干净啊</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="E"   data-score='${item.detail.score}'><span data-id="E" data-only='${obj.no}' data-classnum="35">E、第15课 你想吃什么</span></em>` :
+                                                       `<em  class="select_sel" data-only='${obj.no}' data-id="E"   data-score='${item.detail.score}'><span data-id="E" data-only='${obj.no}' data-classnum="35">E、Lesson15 你想吃什么</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="F"   data-score='${item.detail.score}'><span  data-id="F" data-only='${obj.no}' data-classnum="37">F、第16课 我最喜欢吃西瓜</span></em>`:
+                                                       `<em  class="select_sel" data-only='${obj.no}' data-id="F"   data-score='${item.detail.score}'><span data-id="F" data-only='${obj.no}' data-classnum="37">F、Lesson16 我最喜欢吃西瓜</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="G"   data-score='${item.detail.score}'><span data-id="G" data-only='${obj.no}' data-classnum="41">G、第17课 我们一起来庆祝</span></em>`:
+                                                        `<em  class="select_sel" data-only='${obj.no}' data-id="G"   data-score='${item.detail.score}'><span data-id="G" data-only='${obj.no}' data-classnum="41">G、Lesson17 我们一起来庆祝</span></em>`
+                            stemHtml +=(lang == 'zh')? `<em  class="select_sel" data-only='${obj.no}' data-id="H"   data-score='${item.detail.score}'><span data-id="H" data-only='${obj.no}' data-classnum="43">H、第18课 到动物园去</span></em>`:
+                                                        `<em  class="select_sel" data-only='${obj.no}' data-id="H"   data-score='${item.detail.score}'><span data-id="H" data-only='${obj.no}' data-classnum="43">H、Lesson18 到动物园去</span></em>`
+                            stemHtml +=(lang == 'zh')? `<em  class="select_sel" data-only='${obj.no}' data-id="I"   data-score='${item.detail.score}'><span data-id="I" data-only='${obj.no}' data-classnum="45">I、第19课 我家附近有公园</span></em>`:
+                                                        `<em  class="select_sel" data-only='${obj.no}' data-id="I"   data-score='${item.detail.score}'><span data-id="I" data-only='${obj.no}' data-classnum="45">I、Lesson19 我家附近有公园</span></em>`
+                         }
+                         else if(SGgrade=="小学二年级"){
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="25">A、第11课 你玩过这个游戏吗</span></em>`:`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="25">A、Lesson11 你玩过这个游戏吗</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="B" data-score='${item.detail.score}'><span data-id="B" data-only='${obj.no}' data-classnum="27">B、第12课 过生日</span></em>` :`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="27">B、Lesson12 过生日</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="C" data-score='${item.detail.score}'><span data-id="C" data-only='${obj.no}' data-classnum="30">C、第13课 你想养什么宠物</span></em>` :`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="30">C、Lesson13 你想养什么宠物</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="D" data-score='${item.detail.score}'><span data-id="D" data-only='${obj.no}' data-classnum="32">D、第14课 我和小乐和好了</span></em>`:`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="32">D、Lesson14 我和小乐和好了</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="E" data-score='${item.detail.score}'><span data-id="E" data-only='${obj.no}' data-classnum="35">E、第15课 这些我都爱吃</span></em>`:`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="35">E、Lesson15 这些我都爱吃</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="F" data-score='${item.detail.score}'><span data-id="F" data-only='${obj.no}' data-classnum="37">F、第16课 飞进书的世界</span></em>` :`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="37">F、Lesson16 飞进书的世界</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="G" data-score='${item.detail.score}'><span data-id="G" data-only='${obj.no}' data-classnum="40">G、第17课 夜市真热闹</span></em>`    :`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="40">G、Lesson17 夜市真热闹</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="H" data-score='${item.detail.score}'><span data-id="H" data-only='${obj.no}' data-classnum="42">H、第18课 新加坡真好玩</span></em>`   :`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="42">H、Lesson18 新加坡真好玩</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="I" data-score='${item.detail.score}'><span data-id="I" data-only='${obj.no}' data-classnum="45">I、第19课 我们的生活少不了水</span></em>` :`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="45">I、Lesson19 我们的生活少不了水</span></em>`
+                         }
+                         else if(SGgrade=='小学三年级'){
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="25">A、第10课 我住的地方真干净</span></em>` : `<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="25">A、Lesson10 我住的地方真干净</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="B" data-score='${item.detail.score}'><span data-id="B"data-only='${obj.no}' data-classnum="27">B、第11课 环保小天使</span></em>`    :   `<em  class="select_sel" data-only='${obj.no}' data-id="B" data-score='${item.detail.score}'><span data-id="B"data-only='${obj.no}' data-classnum="27">B、Lesson11 环保小天使</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="C" data-score='${item.detail.score}'><span data-id="C"data-only='${obj.no}' data-classnum="31">C、第12课 我爱新加坡</span></em>`     :  `<em  class="select_sel" data-only='${obj.no}' data-id="C" data-score='${item.detail.score}'><span data-id="C"data-only='${obj.no}' data-classnum="31">C、Lesson12 我爱新加坡</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="D" data-score='${item.detail.score}'><span data-id="D"data-only='${obj.no}' data-classnum="33">D、第13课 动物世界</span></em>`     :   `<em  class="select_sel" data-only='${obj.no}' data-id="D" data-score='${item.detail.score}'><span data-id="D"data-only='${obj.no}' data-classnum="33">D、Lesson13 动物世界</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="E" data-score='${item.detail.score}'><span data-id="E"data-only='${obj.no}' data-classnum="37">E、第14课 奇妙的动物</span></em>`    :   `<em  class="select_sel" data-only='${obj.no}' data-id="E" data-score='${item.detail.score}'><span data-id="E"data-only='${obj.no}' data-classnum="37">E、Lesson14 奇妙的动物</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="F" data-score='${item.detail.score}'><span data-id="F"data-only='${obj.no}' data-classnum="39">F、第15课 华文真有趣</span></em>`   :    `<em  class="select_sel" data-only='${obj.no}' data-id="F" data-score='${item.detail.score}'><span data-id="F"data-only='${obj.no}' data-classnum="39">F、Lesson15 华文真有趣</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="G" data-score='${item.detail.score}'><span data-id="G"data-only='${obj.no}' data-classnum="43">G、第16课 学习要认真</span></em>`   :    `<em  class="select_sel" data-only='${obj.no}' data-id="G" data-score='${item.detail.score}'><span data-id="G"data-only='${obj.no}' data-classnum="43">G、Lesson16 学习要认真</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="H" data-score='${item.detail.score}'><span data-id="H"data-only='${obj.no}' data-classnum="45">H、第17课 好孩子</span></em>`     :   `<em  class="select_sel" data-only='${obj.no}' data-id="H" data-score='${item.detail.score}'><span data-id="H"data-only='${obj.no}' data-classnum="45">H、Lesson17 好孩子</span></em>`
+                         }
+                         else if(SGgrade=='小学四年级'){
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="25">A、第10课 这样才对</span></em>`    :    `<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="25">A、Lesson10 这样才对</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="B" data-score='${item.detail.score}'><span data-id="B"data-only='${obj.no}' data-classnum="27">B、第11课 天天运动身体好</span></em>`  :    `<em  class="select_sel" data-only='${obj.no}' data-id="B" data-score='${item.detail.score}'><span data-id="B"data-only='${obj.no}' data-classnum="27">B、Lesson11 天天运动身体好</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="C" data-score='${item.detail.score}'><span data-id="C"data-only='${obj.no}' data-classnum="31">C、第12课 我是小导游</span></em>`     :   `<em  class="select_sel" data-only='${obj.no}' data-id="C" data-score='${item.detail.score}'><span data-id="C"data-only='${obj.no}' data-classnum="31">C、Lesson12 我是小导游</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="D" data-score='${item.detail.score}'><span data-id="D"data-only='${obj.no}' data-classnum="33">D、第13课 美猴王孙悟空</span></em>`      :  `<em  class="select_sel" data-only='${obj.no}' data-id="D" data-score='${item.detail.score}'><span data-id="D"data-only='${obj.no}' data-classnum="33">D、Lesson13 美猴王孙悟空</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="E" data-score='${item.detail.score}'><span data-id="E"data-only='${obj.no}' data-classnum="37">E、第14课 这个主意真棒</span></em>`     :  `<em  class="select_sel" data-only='${obj.no}' data-id="E" data-score='${item.detail.score}'><span data-id="E"data-only='${obj.no}' data-classnum="37">E、Lesson14 这个主意真棒</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="F" data-score='${item.detail.score}'><span data-id="F"data-only='${obj.no}' data-classnum="39">F、第15课 一年四季好风光</span></em>`    :  `<em  class="select_sel" data-only='${obj.no}' data-id="F" data-score='${item.detail.score}'><span data-id="F"data-only='${obj.no}' data-classnum="39">F、Lesson15 一年四季好风光</span></em>`
+                            stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="G" data-score='${item.detail.score}'><span data-id="G"data-only='${obj.no}' data-classnum="43">G、第16课 多彩的动物世界</span></em>`     : `<em  class="select_sel" data-only='${obj.no}' data-id="G" data-score='${item.detail.score}'><span data-id="G"data-only='${obj.no}' data-classnum="43">G、Lesson16 多彩的动物世界</span></em>`
+                          }
+                         else if(SGgrade=='小学五年级'){
+                             stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="25">A、普华第9课/高华第10课 成长的烦恼</span></em>`   :     `<em  class="select_sel" data-only='${obj.no}' data-id="A" data-score='${item.detail.score}'><span data-id="A" data-only='${obj.no}' data-classnum="25">A、普华Lesson9/高华Lesson10 成长的烦恼</span></em>`
+                             stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="B" data-score='${item.detail.score}'><span data-id="B"data-only='${obj.no}' data-classnum="27">B、普华第10课/高华第11课 同学之间</span></em>`    :     `<em  class="select_sel" data-only='${obj.no}' data-id="B" data-score='${item.detail.score}'><span data-id="B"data-only='${obj.no}' data-classnum="27">B、普华Lesson10/高华Lesson11 同学之间</span></em>`
+                             stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="C" data-score='${item.detail.score}'><span data-id="C"data-only='${obj.no}' data-classnum="31">C、普华第11课/高华第12课 新加坡，我为你骄傲</span></em>` :   `<em  class="select_sel" data-only='${obj.no}' data-id="C" data-score='${item.detail.score}'><span data-id="C"data-only='${obj.no}' data-classnum="31">C、普华Lesson11/高华Lesson12 新加坡，我为你骄傲</span></em>`
+                             stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="D" data-score='${item.detail.score}'><span data-id="D"data-only='${obj.no}' data-classnum="33">D、普华第12课/高华第13课 汉字王国</span></em>`      :   `<em  class="select_sel" data-only='${obj.no}' data-id="D" data-score='${item.detail.score}'><span data-id="D"data-only='${obj.no}' data-classnum="33">D、普华Lesson12/高华Lesson13 汉字王国</span></em>`
+                             stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="E" data-score='${item.detail.score}'><span data-id="E"data-only='${obj.no}' data-classnum="37">E、普华第13课/高华第14课 老师，谢谢您！</span></em>` :     `<em  class="select_sel" data-only='${obj.no}' data-id="E" data-score='${item.detail.score}'><span data-id="E"data-only='${obj.no}' data-classnum="37">E、普华Lesson13/高华Lesson14 老师，谢谢您！</span></em>`
+                             stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="F" data-score='${item.detail.score}'><span data-id="F"data-only='${obj.no}' data-classnum="39">F、普华第14课/高华第15课 想当一棵树</span></em>`   :     `<em  class="select_sel" data-only='${obj.no}' data-id="F" data-score='${item.detail.score}'><span data-id="F"data-only='${obj.no}' data-classnum="39">F、普华Lesson14/高华Lesson15 想当一棵树</span></em>`
+                             stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="G" data-score='${item.detail.score}'><span data-id="G"data-only='${obj.no}' data-classnum="43">G、高华第16课 语言的力量</span></em>`         :      `<em  class="select_sel" data-only='${obj.no}' data-id="G" data-score='${item.detail.score}'><span data-id="G"data-only='${obj.no}' data-classnum="43">G、高华Lesson16 语言的力量</span></em>`
+                             stemHtml += (lang == 'zh')?`<em  class="select_sel" data-only='${obj.no}' data-id="H" data-score='${item.detail.score}'><span data-id="H"data-only='${obj.no}' data-classnum="45">H、普华第15课/高华第17课 世界那么大</span></em>`   :     `<em  class="select_sel" data-only='${obj.no}' data-id="H" data-score='${item.detail.score}'><span data-id="H"data-only='${obj.no}' data-classnum="45">H、普华lesson15/高华Lesson17 世界那么大</span></em>`
+                         }
+                    }
+                 })
+                })
+                stemHtml += `</div>`
+                stemHtml+="<div class='select'>"
+                if(prevFlag){
+                    stemHtml+=(lang == 'zh')?'<button class="flex-column-center prevent-btn" type="button">上一步</button>' : '<button class="flex-column-center prevent-btn" type="button">Return</button>'
+                }
+                stemHtml += (lang == 'zh') ? `<button class="flex-column-center next-btn" type="button" style="background:#ccc">下一步</button>` : `<button class="flex-column-center next-btn" type="button" style="background:#ccc">Continue</button>`
+                stemHtml+="</div>"
+            $('#cont_info').html(stemHtml);
+        }
+        $(document).on('click','.select_sel',function(){//点击选项
+            if($(this).find('span').find('input')){
+                $(this).find('input').css({'color':"#6C7B8A"})
+            }
+                $(this).find('span').css({"background":"#5CC2D0"})//添加样式
+                $(this).find('span').css({"color":"#fff"})//添加样式
+                $(this).siblings('em').find('span').css({"color":"#6C7B8A"});
+                $(this).siblings('em').find('span').css({"background":"#fff"});
+                $(this).siblings('em').find('span').find('input').value="";
+                $(this).find('span').attr('data-select','true');//添加选中标识
+                $(this).siblings('em').find('span').attr('data-select',"")
+                var quantity=0;
+                $('.select_sel').toArray().forEach(item=>{
+                    var ele=$(item).find('span')[0];
+                 if($(ele).attr('data-select')=='true'||$(item)[0].tagName=="INPUT") {
+                      quantity++;
+                 }
+                })
+          if(quantity==$('.info-item').find('h5').length ){
+
+           $('.next-btn').css({background:"#5CC2D0"})
+           $('.next-btn').addClass('colorBtn')
+
+        }
+        })
+        $('body').on('click','.next-btn',function(){//点击下一步
+          Dorecord.push(Currenttopic);
+          nextPrev=true;
+          prevFlag=1
+          count++;
+          Topicquantity=$('.info-item').find('h5').length;  //几道题
+          quantityCount=0;
+          var option=$('.select_sel').toArray();
+           //判断是否答完当前显示的题
+          if($('.next-btn.colorBtn').length) {
+              option.forEach(item => {//获取用户选中的值
+                  var ele = $(item).find('span')[0];
+                  //如果做答题进行一下判断
+                  if ($(ele).attr('data-select') == 'true' || $(item)[0].tagName == "INPUT") {
+                      quantityCount++;
+                      var obj = {};
+                      //作答的题和答案保留起来 （input值）
+                      if ($(item)[0].tagName == 'INPUT') {//输入框item
+                          obj[$(item).attr('data-only')] = $(item)[0].value
+                          answerRecord.push(obj)//将答案记录到答案记录中[{题号:答案}]
+                      }
+                      else {
+                          if ($(ele).attr('data-only') == "33101211" && $(ele).attr('data-id') !== "C") {
+                              if ($(ele).find('input')[0]) {
+                                       obj[$(ele).attr('data-only')] = $(ele).find('input')[0].value? $(ele).find('input')[0].value:"其他"
+                                       answerRecord.push(obj)//将答案记录到答案记录中[{题号:答案}]
+                              }
+                              else {
+                                  obj[$(ele).attr('data-only')] = Otherareas ? Otherareas : $(ele).attr('data-id')
+                                  answerRecord.push(obj)//将答案记录到答案记录中[{题号:答案}]
+                              }
+                              Aftertreatment.Other.sort((a, b) => {
+                                  return JSON.parse(a.detail).no.slice(-2, -1) - JSON.parse(b.detail).no.slice(-2, -1)
+                              })
+                              let OtherFlag = Aftertreatment.Other.every(item => {
+                                  return JSON.parse(item.detail).no.slice(-2, -1)
+                              })
+                              if (OtherFlag) {
+                                  Currenttopic = [];
+                                  Currenttopic = Aftertreatment.Other
+                                  programmeList()
+                              }
+                          } else {
+                              obj[$(ele).attr('data-only')] = $(ele).attr('data-id')
+                              answerRecord.push(obj)//将答案记录到答案记录中[{题号:答案}]
+                          }
+                      }
+                      //选择新加坡的话讲当前题目切刀新加坡的题
+                      if ($(ele).attr('data-id') == "C" && $(ele).attr('data-only') == "33101211") {
+                          var variable = [];
+                          Aftertreatment.Singapore.sort((a, b) => {
+                              return JSON.parse(a.detail).no.slice(-2, -1) - JSON.parse(b.detail).no.slice(-2, -1)
+                          })
+                          Aftertreatment.Singapore.forEach(item => {
+                              variable.push(JSON.parse(item.detail).no.slice(-2, -1))
+                          })
+                          let flag = variable.every(item => {
+                              return item == 2
+                          })
+                          if (!flag) {//不相等就是一个一个出现
+                              Currenttopic = [];
+                              Currenttopic.push(Aftertreatment.Singapore[0])
+                              programmeList()
+                          }
+                      }
+                      //新加坡第二题选A
+                      else if ($(ele).attr('data-id') === 'A' && $(ele).attr('data-only') == "33101022") {
+                          programe = $(ele).attr('data-score')
+                          Currenttopic = [];
+                          Currenttopic = Aftertreatment[$(ele).attr('data-score')]
+                          programmeList()
+                      }
+                      //新加坡第二题选C
+                      else if ($(ele).attr('data-id') === 'C' && $(ele).attr('data-only') == "33101022") {
+                          programe = $(ele).attr('data-score')
+                          Currenttopic = [];
+                          Currenttopic = Aftertreatment[$(ele).attr('data-score')]
+                          programmeList()
+                      }
+                      //新加坡第二题选择B
+                      else if ($(ele).attr('data-id') === 'B' && $(ele).attr('data-only') == "33101022") {
+                          Aftertreatment.Singapore.forEach(item => {
+                              if (JSON.parse(item.detail).no.slice(-2, -1) == 3) {
+                                  Currenttopic = []
+                                  Currenttopic.push(item)
+                                  programmeList()
+                              }
+                          })
+                      }
+                      //新加坡第三题  判断等级
+                      else if ($(ele).attr('data-only') === '33101033' && $(ele).attr('data-score')) {
+                          SGgrade=$(ele).attr('data-value')
+                          $(ele).attr('data-score').split(',').forEach(item => {
+                              if(isNaN($(ele).attr('data-score').split(',')[0])) {
+                                  if (isNaN(item)) {
+                                      programe = item
+                                  } else {
+                                      sgcourse_level = item
+                                  }
+                              }
+                          })
+                          if (programe !== "Advanced"&&SGgrade!=='小学六年级') {//双语
+                              Currenttopic = [];
+                              Currenttopic = Aftertreatment.SG;
+                              programmeList()
+                          }
+                         else {//高级
+                              Currenttopic = [];
+                              Currenttopic = Aftertreatment.Advanced;
+                              programmeList()
+
+                          }
+                      }
+                      //双语版的级别课程                                                                           
+                      if ($(item).attr('data-only').slice(1, 2) == '2' && $(ele).attr('data-classnum')&&SGgrade!=='小学六年级') {
+                          Classhour=$(ele).attr('data-classnum')                                           
+                             programe="SG"
+                          if(Classhour&&$('.next-btn.colorBtn').length){
+                              course_level=sgcourse_level;
+                             ResulFn(programe, course_level)      //展示结果
+                          }
+
+                      }                                                                                    
+                      //第一题选择其他地区后
+                      else if ($(ele).attr('data-only') === "33101142") {
+                          programe = $(ele).attr('data-score');
+                          Currenttopic = [];
+                          Currenttopic = Aftertreatment[$(ele).attr('data-score')]
+                          programmeList()
+                      }
+                      //国际版本定级
+                      else if ($(ele).attr('data-only')&&$(ele).attr('data-only').slice(1, 2) == 0 && $(ele).attr('data-score')&&SGgrade!=='小学六年级') {
+                          InternationalFn($(ele).attr('data-score'))
+                      }                                                                                                           
+                      //高级版本定级                                                                                              
+                      else if ($(ele).attr('data-only').slice(1, 2) == 1 && $(ele).attr('data-score')) {
+                           AdvancedFn($(ele).attr('data-score'))
+                      }                                                                                                     
+                      //添加上一步按钮
+                      returnClass = "";
+                      if (count >= 1) {
+                          $('.select').prepend(returnClass)
+                      }
+                  }
+              })
+          }
+        })
+        //判断国际版本的级别
+        function InternationalFn(scroe){
+            if(scroe){
+              course_level=scroe;
+            }
+            programe="International"
+            ResulFn(programe,course_level)  //展示结果
+        }
+        //判断高级版的级别
+        function AdvancedFn(score){
+            judge.push(score);
+            var num =0;
+            if(judge.length==2){
+                judge.forEach(item=>{
+                    num+=item*1
+                })
+            }
+                if (num != 0) {//判断级别
+                    if (num >= 1 && num <= 3) {
+                        course_level = "1"
+                    } else if (num >= 4 && num <= 6) {
+                        course_level = "2"
+                    } else if (num == 7) {
+                        course_level = "3"
+                    } else if (num == 8) {
+                        course_level = "4"
+                    } else if (num == 9) {
+                        course_level = "5"
+                    } else if (num == 10) {
+                        course_level = "6"
+                    }
+                }
+                programe='Advanced'
+                 ResulFn(programe,course_level)  //展示结果
+        }
+         //展示结果
+        function ResulFn(programe,course_level){
+            if(programe,course_level){
+                var Resulthtml="";
+                Resulthtml+=`<div class="bg-img"  ><img src="{% static "images/questionnaire/layer.png" %}" /></div>`
+                Resulthtml+=(lang == 'zh')?`<p class="flex-column-center lang-switching lang-switching1">适合孩子学习的课程为</p>`:`<p class="flex-column-center lang-switching lang-switching1">The course suitable for the child is</p>`
+                course_level=='1'?Resulthtml+=`<p class="stars-img"><em class="active"></em><em></em><em></em><em></em><em></em><em></em></p>`:
+                course_level=='2'?Resulthtml+=`<p class="stars-img"><em class="active"></em><em class="active"></em><em></em><em></em><em></em><em></em></p>`:
+                course_level=='3'?Resulthtml+=`<p class="stars-img"><em class="active"></em><em class="active"></em><em class="active"></em><em></em><em></em><em></em></p>`:
+                course_level=='4'?Resulthtml+=`<p class="stars-img"><em class="active"></em><em class="active"></em><em class="active"></em><em class="active"></em><em></em><em></em></p>`:
+                course_level=='5'?Resulthtml+=`<p class="stars-img"><em class="active"></em><em class="active"></em><em class="active"></em><em class="active"></em><em class="active"></em><em></em></p>`:
+                                  Resulthtml+=`<p class="stars-img"><em class="active"></em><em class="active"></em><em class="active"></em><em class="active"></em><em class="active"></em><em class="active"></em></p>`
+                programe=='SG'?Resulthtml+=(lang == 'zh')?`<h4 class="grade-level lang-switching lang-switching2"><em>双语版</em><em style="width:10%"></em>LEVEL`:`<h4 class="grade-level lang-switching lang-switching2"><em>Bilingual Chinese </em><em style="width:10%"></em>LEVEL` :
+                programe=='International'?Resulthtml+=(lang == 'zh')?`<h4 class="grade-level lang-switching lang-switching2"><em>国际</em>中文LEVEL`:`<h4 class="grade-level lang-switching lang-switching2"><em>International Chinese </em>LEVEL` :
+                                     Resulthtml+=(lang == 'zh')?`<h4 class="grade-level lang-switching lang-switching2"><em>高级</em>中文LEVEL`:`<h4 class="grade-level lang-switching lang-switching2"><em>Advanced Chinese </em>LEVEL`
+                course_level=='1'?Resulthtml+=`<span>1</span></h4>`:
+                course_level=='2'?Resulthtml+=`<span>2</span></h4>`:
+                course_level=='3'?Resulthtml+=`<span>3</span></h4>`:
+                course_level=='4'?Resulthtml+=`<span>4</span></h4>`:
+                course_level=='5'?Resulthtml+=`<span>5</span></h4>`:
+                                  Resulthtml+=`<span>6</span></h4>`
+                Resulthtml+=(lang == 'zh')?`<p class="resources-text lang-switching lang-switching3" style="padding:0 20px"><span>*</span>级别供参考，最终级别以授课老师评定为准。</p>`:`<p class="resources-text lang-switching lang-switching3" style="padding:0 20px"><span>*</span>The level here is for reference only , the specific rating is determined by the teacher.</p>`
+                Resulthtml+=(lang == 'zh')?`<h4 class="admission lang-switching lang-switching4" style="padding:0 20px">免费试听课程已发放，即刻约课开启中文之旅吧</h4>`:`<h4 class="admission lang-switching lang-switching4" style="padding:0 20px">The free trial class is in your account , you can book a class and start a Chinese tour now !</h4>`
+                Resulthtml+=(lang == 'zh')?`<div class="submit-bt lang-switching lang-switching10" onclick="onClickButton() "><a href="javascript:;">确定</a></div>`:`<div class="submit-bt lang-switching lang-switching10" onclick="onClickButton() "><a href="javascript:;">OK</a></div>`
+                $('.maskBox').html(Resulthtml);
+                $('.mask').show();
+                 var obj={};
+                 obj. programme=programe.trim();
+                 obj. course_level=course_level;
+                 obj. Classhour=Classhour;
+                 obj. answerRecord=JSON.stringify(answerRecord);
+                 console.log(obj)
+                    if(obj. programme&&obj. course_level&&obj. answerRecord){
+                        saveFn(obj)
+                    }
+
+                }
+
+        }
+         function saveFn(param){
+                  $.ajax({
+                         type: "post",
+                         dataType: "json",
+                         url: '/course/questionnaire_level_done/',
+                         data: param,
+                         success: function (data) {
+                             if(data.status==1){
+                                 alert((lang == 'zh')?data.message:data.message_en)
+                                 window.location.reload();
+                             }
+                         },
+                         error:function (err) {
+                             console.log("这是请求失败的");
+                         }
+                     });
+         }
+        //点击确定按钮进入网页
+         function onClickButton() {
+              var url = window.location.href;
+              if((url.indexOf('source=') == -1 && !sessionStorage.getItem('source')) && !sessionStorage.getItem('connect')){ // 不是ipad和手机
+                  window.location.href='/accounts/profile/';
+              }else{
+                   window.webkit.messageHandlers.doFinishedQuestionnaire.postMessage(null);
+              }
+
+         }
+        //点击上一步
+        $('body').on('click','.prevent-btn',function(){
+            var nowNum=$('.info-item').find('h5').length;
+            nextPrev=false
+             count--;
+             prevFlag=count;
+            var prevtopic=answerRecord[answerRecord.length-1];
+            var prevNo=Object.keys(prevtopic)[0]//获取上一题的题号
+            answerRecord.forEach((item,index)=>{
+                if(prevNo.slice(-2,-1)!=Object.keys(item)[0].slice(-2,-1)){
+                   answerRecord=answerRecord.splice(index,1)
+                }
+            })
+            for(var i=0;i<answerRecord.length;i++){
+                if(prevNo.slice(-2,-1)!=Object.keys(answerRecord[i])[0].slice(-2,-1)) {
+                     answerRecord=answerRecord.splice(i,1)
+                }
+           }
+            Currenttopic=[];
+            Currenttopic=Dorecord[Dorecord.length-1]
+            Dorecord.length =Dorecord.length-1
+            var backNum= Currenttopic.length*1+nowNum*1
+            Titlenumber= Titlenumber-backNum
+            Dorecord.length==0? answerRecord=[]: answerRecord=answerRecord
+            programmeList()
+        })
+    </script>
+{% endblock footer %}

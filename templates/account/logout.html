@@ -1,0 +1,53 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+{% block extra_head %}
+    <link href="{% static "css/UI-changes.css" %}" rel="stylesheet"/>
+{% endblock %}
+{% block content %}
+    <div class="section section-gray">
+        <div class="container">
+            <div class="row">
+                <div class="card g-card">
+                    <div class="card-block">
+                        <div class="row text-center">
+                            <div class="g-logo g-logoOne"></div>
+                            <div class="g-title">{% trans "Sign Out" %}</div>
+                        </div>
+                        <div class="row text-center">
+                            <label class="g-prompt">
+                                {% trans "Are you sure you want to sign out ?" %}
+                            </label>
+                        </div>
+                        <form method="post" id="sign-out-form" action="{% url 'account_logout' %}">
+                            {% csrf_token %}
+                            {% if redirect_field_value %}
+                                <input type="hidden" name="{{ redirect_field_name }}"
+                                       value="{{ redirect_field_value }}"/>
+                            {% endif %}
+                            <div class="row text-center" style="margin-top: 10px;">
+                                <input class="g-backBtn" onclick="goBack()" value="{% trans "Go Back" %}"
+                                       style="width: 100px; margin-bottom: 10px;margin-right: 10px"
+                                       class="btn btn-info btn-primary">
+                                <input  class="g-exitBtn" id="sign-out" type="button" value="{% trans "Sign Out" %}"
+                                       style="width: 100px;margin-bottom: 10px;margin-left: 10px"
+                                       class="btn btn-fill btn-info btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        $("#sign-out").on('click', function () {
+            $("#sign-out-form").submit();
+        });
+
+    </script>
+{% endblock %}
+

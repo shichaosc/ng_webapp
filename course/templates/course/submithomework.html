@@ -1,0 +1,457 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %} {% trans 'Upload Homework' %} {% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static "css/webuploader.css" %}">
+    <link rel="stylesheet" href="{% static "css/diyuploader.css" %}">
+    <style>
+        
+        .img_picture {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+
+        }
+
+        .custom_delete {
+            position: absolute;
+            right:0;
+            top: 0;
+            z-index: 9;
+            display:block;
+            height:30px;
+            background:rgba(0,0,0,.6);
+            width:100%;
+            text-align:right;
+        }
+        .custom_delete img{
+            margin-right:5px;
+            margin-top:5px;
+        }
+         .container .row{
+           margin:0 0 10px 0;
+        }
+        .homework-tit{
+            background:#EFF9FB;
+            padding:15px 0;
+            text-align:center;
+            color:#64CCDB;
+        }
+        .homework-tit h5{
+            font-size:24px; 
+        }
+        .card{
+            margin-top:30px;
+            overflow:hidden;
+            padding-bottom:30px;
+        }
+        .homework-news img{
+            width:20px;
+            vertical-align:text-bottom;
+        }
+        .homework-news span{
+            margin-left:10px;
+        }
+        .card-block{
+            margin:30px 0;
+        }
+        .student-item ul{
+            padding:0;
+            display:flex;
+            height:60px;
+            line-height:60px;
+            background:#D0EFF4;
+            border-top:2px solid #64CCDB;
+            color:#64CCDB;
+        }
+        .student-item ul li{
+            width:100%;
+            text-align:center;
+            border-left:1px solid #64CCDB;
+            display:flex;
+            align-items:center;
+            padding:0 5px;
+        }
+        .student-item ul li select{
+            height:30px;
+            line-height:30px;
+            width: 55px;
+            border:1px solid #64CCDB;
+        }
+        .student-item ul li:first-child{
+            border:none
+        }
+        .student-item ul li.active{
+            background:#fff;
+        }
+        .student-item ul li.active span{
+            color:#4A4A4A;
+        }
+        .submit-homework{
+            background:#64CCDB;
+            border-radius:6px;
+            border-color:#64CCDB;
+            color:#fff;
+            height:60px;
+            width:100%;
+            line-height:60px;
+        }
+        #box{
+            margin:0 auto 30px auto;
+            background: url("../../../static/images/homework_placeholder.png") no-repeat center;
+        }
+        .div_img{
+            width:170px;
+            height:170px;
+            margin-right:30px;
+            margin-top:10px;
+            background:#f5f5f5;
+            box-shadow:0px 2px 30px 0px rgba(0, 0, 0, 0.06);
+            float:left;
+            border-radius:10px;
+            overflow:hidden;
+            border:1px solid #5CC2D0;
+        }
+        .look-img{
+            width:170px;
+            height:170px;
+        }
+        .div_img:nth-child(3n){
+            margin-right:0;
+        }
+        .modal-body{
+            padding:0;
+        }
+        .btn-info{
+            border-color:#5CC2D0;
+            color:#5CC2D0;
+            border-radius:20px;
+        }
+        .btn-info:hover{
+            background:#5CC2D0;
+            color:#fff;
+            border-color:#5CC2D0;
+        }
+    #box{
+            margin:0 auto 30px auto;
+            background: url("../../../static/images/homework_placeholder.png") no-repeat center;
+        }
+        @media (max-device-width: 599px){
+             #box{
+                margin:0 auto 30px auto;
+                 width:100%;
+                background: url("../../../static/images/homework_placeholder.png") no-repeat center;
+             }
+            .webuploader-pick{
+                margin-left:10px;
+            }
+            .parentFileBox>.fileBoxUl>li,.div_img{
+                margin:0 auto 5px auto;
+                float:inherit;
+            }
+         }
+    </style>
+{% endblock %}
+
+
+
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="card">
+                    <div class="card-block">
+                        <div class="row homework-row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="homework-tit">
+                                    <h5>
+                                        {% if not homeworkresult.score %}
+                                            {% trans 'Upload Homework' %}
+                                        {% else %}
+                                            {% trans 'Homework corrected' %}
+                                        {% endif %}
+                                    </h5>
+                                    <p class="homework-news">
+                                        <span>{% trans 'session' %}：Level {{ session.course.course_level }} - lesson {{ session.session_no }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {% if doneHomework %}
+                                {% if not homeworkresult.score %}
+                                    <div class="col-md-3 col-md-offset-3" style="margin-bottom: 10px" id="again_button">
+                                        <button type="submit" onclick="uploadAgain()"
+                                                class="form-actions btn btn-social btn-block  btn-info">{% trans "Upload Again" %}</button>
+                                    </div>
+                                    <form action="/course/deleteHomework/" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="session_id" value="{{ session.id }}"/>
+                                        <input type="hidden" name="course" value="{{ course.first.id }}"/>
+                                        <div class="col-md-3" style="margin-bottom: 10px" id="detelHome">
+                                            <div id="complete" style="display: none"
+                                                 class="form-actions btn btn-social btn-block  btn-info">{% trans "Done" %}</div>
+
+                                            <div style="margin-top:auto " id="edit_homework"
+                                                 class="form-actions btn btn-social btn-block  btn-info">{% trans "Edit" %}</div>
+
+                                        </div>
+                                    </form>
+                                {% else %}
+                                    <p class="col-md-6 col-md-offset-1">
+                                        <img src="{% static 'images/small-class/icon-student-score.png' %}" />
+                                        {% trans 'Score:' %}{{ homeworkresult.score }}
+                                    </p>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% if doneHomework %}
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1" id="homework_file">
+                                {% if not result %}
+                                    {% for file in doneHomework %}
+                                        <div class="div_img">
+                                            <div img_id="{{ file.id }}" class="img_picture">
+                                                <img class="look-img" data-toggle="modal" data-target="#alertModalImg" alt="{% trans "Homework has been uploaded successfully, please check later!" %}"
+                                                     src="{{ file.result_content.url }}" to>
+                                                <a href="javascript:void(0)"
+                                                   class="hide delete-btn custom_delete"><img
+                                                        src="/static/images/small-class/icon-homwork-del.png" alt="" title="Click the delete"></a>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <div class="plug_in">
+                        <input id="session_data" type="hidden" name="session_id" value="{{ session.id }}"/>
+                        <input id="course_data" type="hidden" name="course" value="{{ course.first.id }}"/>
+                        <div class="row" id="upload_homework">
+                            <div id="box" class="homework-bg">
+                                <div id="test"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{#点击查看大图#}
+    <div class="modal fade" id="alertModalImg" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <div id="img_show">
+                        <img style="max-width:100%"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/jquery-ui.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/webuploader.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/diyupload.js" %}" type="text/javascript"></script>
+    <script>
+        var filelis = {{listDone|safe}}; //存储所有题目
+        if (filelis.length > 0) {
+            $('#upload_homework').hide()
+            $('#upload_button').hide()
+        } else {
+            $('#upload_homework').show()
+            $('#upload_button').show()
+        }
+
+        function uploadAgain() {
+            $('#again_button').hide();
+            $('#detelHome').hide();
+            $('#homework_file').hide();
+            $('#upload_homework').show();
+            $('#upload_button').show();
+        }
+
+
+        $('#test').diyUpload({
+            url: "/course/submitresult/",
+            success: function (data) {
+                console.log(data)
+
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+        $('#homework_file .div_img').on('click',function(){
+            var imgUrl = $(this).find('.look-img').attr('src');
+            $('#img_show').find('img').attr('src',imgUrl);
+        })
+
+        $("#edit_homework").click(function () {
+
+            $(this).css("display", "none");
+            $("#complete").css("display", "");
+
+            var img_a = $('.img_picture').children("a");
+
+            img_a.removeClass("hide");
+            img_a.off("click");
+            img_a.on("click", function () {
+                var that = this;
+                var img_id = $(that).parent().attr("img_id")
+
+                $(that).parents('.div_img').remove();
+                $.ajax({
+                    url: "/course/deleteHomework/",
+                    type: "get",
+                    data: {"img_id": img_id},
+                    success: function (data) {
+                        console.log(data)
+                    },
+                    error: function () {
+                        alert("Delete failed")
+                    }
+
+                });
+
+
+            });
+
+
+        });
+
+
+        $("#complete").click(function () {
+            var session_id = $("#session_data").val();
+            location.href = "/course/submithomework/?session_id=" + session_id;
+
+        });
+
+
+        function getOption(objId) {
+            var session_id = $("#session_data").val();
+
+            return {
+                pick: {
+                    id: objId,
+                    label: "{% trans "Select the file"%}"
+
+                },
+                accept: {
+                    title: "Images",
+                    extensions: "gif,jpg,jpeg,bmp,png",
+                    mimeTypes: "image/jpg,image/jpeg,image/png,image/gif,image/bmp"
+                },
+                thumb: {
+                    width: 300,
+                    height: 500,
+                    quality: 200,
+                    allowMagnify: false,
+                    crop: false,
+                    type: "image/jpeg"
+                },
+                method: "POST",
+                //服务器地址
+                server: "/course/submitresult/",
+                formData: {"session_id": session_id, "csrfmiddlewaretoken": $("[name = 'csrfmiddlewaretoken']").val()},
+                // 进程数
+                threads:1,
+                sendAsBinary: false,
+                //分片上传
+                chunked: false,
+                fileNumLimit: 6,
+                fileSizeLimit: 80000 * 1024,
+                fileSingleSizeLimit: 8000 * 1024
+            };
+        }
+
+        function createBox($fileInput, file, webUploader) {
+            var file_id = file.id;
+            var $parentFileBox = $fileInput.next('.parentFileBox');
+            if ($parentFileBox.length <= 0) {
+                var div = '<div class="parentFileBox"> \
+						<ul class="fileBoxUl"></ul>\
+					</div>';
+                $fileInput.after(div);
+                $parentFileBox = $fileInput.next('.parentFileBox');
+            }
+            if ($parentFileBox.find('.diyButton').length <= 0) {
+                var div = '<div class="diyButton"> \
+						<a class="diyStart" href="javascript:void(0)">{% trans "Start upload" %}</a> \
+						<a class="diyCancelAll" href="javascript:void(0)">{% trans "Delete All" %}</a> \
+					</div>';
+                $parentFileBox.append(div);
+                var $startButton = $parentFileBox.find('.diyStart');
+                var $cancelButton = $parentFileBox.find('.diyCancelAll');
+                var uploadStart = function () {
+
+                    webUploader.upload();
+                    $startButton.text('pause').one('click', function () {
+                        webUploader.stop();
+                        $(this).text('Continue to').one('click', function () {
+                            uploadStart();
+                        });
+                    });
+
+
+                };
+
+
+                $startButton.one('click', uploadStart);
+                $cancelButton.bind('click', function () {
+                    var fileArr = webUploader.getFiles('queued');
+                    $.each(fileArr, function (i, v) {
+                        removeLi($('#fileBox_' + v.id), v.id, webUploader);
+                    });
+                });
+            }
+            var li = '<li id="fileBox_' + file_id + '" class="diyUploadHover"> \
+					<div class="viewThumb"><div class="correct-icon"></div></div> \
+					<div class="diyCancel"><img src="/static/images/small-class/icon-homwork-del.png" /></div> \
+					<div class="diySuccess"><img src="/static/images/check_alt.png" /></div> \
+					<div class="diyFileName">' + file.name + '</div>\
+					<div class="diyBar"> \
+							<div class="diyProgress"></div> \
+							<div class="diyProgressText">0%</div> \
+					</div> \
+				</li>';
+            $parentFileBox.children('.fileBoxUl').append(li);
+            var $width = $('.fileBoxUl>li').length * 180;
+            var $maxWidth = $fileInput.parent().width();
+            $width = $maxWidth > $width ? $width : $maxWidth;
+            $parentFileBox.width($width);
+            var $fileBox = $parentFileBox.find('#fileBox_' + file_id);
+            var $diyCancel = $fileBox.children('.diyCancel').one('click', function () {
+                removeLi($(this).parent('li'), file_id, webUploader);
+            });
+            if (file.type.split("/")[0] != 'image') {
+                var liClassName = getFileTypeClassName(file.name.split(".").pop());
+                $fileBox.addClass(liClassName);
+                return;
+            }
+            webUploader.makeThumb(file, function (error, dataSrc) {
+                if (!error) {
+                    $fileBox.find('.viewThumb').append('<img src="' + dataSrc + '" >');
+                }
+            });
+        }
+
+        function removeLi($li, file_id, webUploader) {
+            webUploader.removeFile(file_id);
+            if ($li.siblings('li').length <= 0) {
+                $li.parents('.parentFileBox').remove();
+            } else {
+                $li.remove();
+            }
+        }
+
+
+    </script>
+{% endblock %}

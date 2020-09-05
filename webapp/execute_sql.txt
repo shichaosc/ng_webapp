@@ -1,0 +1,222 @@
+
+#  ng_webapp
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS accounts_coupon;
+DROP TABLE IF EXISTS accounts_exchangerate;
+DROP TABLE IF EXISTS accounts_package;
+DROP TABLE IF EXISTS accounts_price;
+DROP TABLE IF EXISTS accounts_redeem;
+DROP TABLE IF EXISTS accounts_salesorder;
+DROP TABLE IF EXISTS accounts_subscription;
+DROP TABLE IF EXISTS accounts_subscriptionusage;
+DROP TABLE IF EXISTS accounts_transfer;
+DROP TABLE IF EXISTS accounts_withdrawal;
+DROP TABLE IF EXISTS ambassador_account;
+DROP TABLE IF EXISTS ambassador_ambassador;
+DROP TABLE IF EXISTS ambassador_code;
+DROP TABLE IF EXISTS ambassador_generalcode;
+DROP TABLE IF EXISTS campaign_businessrule;
+DROP TABLE IF EXISTS campaign_campaignaddress;
+DROP TABLE IF EXISTS campaign_campaignaddress_books;
+DROP TABLE IF EXISTS campaign_campaignbook;
+DROP TABLE IF EXISTS campaign_ruleformula;
+DROP TABLE IF EXISTS campaign_socialuser;
+DROP TABLE IF EXISTS classroom_virtualclass;
+DROP TABLE IF EXISTS course_assessmentresult;
+DROP TABLE IF EXISTS course_course;
+DROP TABLE IF EXISTS course_coursetest;
+DROP TABLE IF EXISTS course_courseware;
+DROP TABLE IF EXISTS course_donehomework;
+DROP TABLE IF EXISTS course_extcourse;
+DROP TABLE IF EXISTS course_extcourseoptag;
+DROP TABLE IF EXISTS course_extcourseowner;
+DROP TABLE IF EXISTS course_extcoursetag;
+DROP TABLE IF EXISTS course_extcourseware;
+DROP TABLE IF EXISTS course_extusercourse;
+DROP TABLE IF EXISTS course_homework;
+DROP TABLE IF EXISTS course_homeworkassessed;
+DROP TABLE IF EXISTS course_homeworkresult;
+DROP TABLE IF EXISTS course_parentquestionnaire;
+DROP TABLE IF EXISTS course_programme;
+DROP TABLE IF EXISTS course_questionnaireresult;
+DROP TABLE IF EXISTS course_session;
+DROP TABLE IF EXISTS course_sessiontkfile;
+DROP TABLE IF EXISTS course_teachplan;
+DROP TABLE IF EXISTS course_testquestion;
+DROP TABLE IF EXISTS course_testresult;
+DROP TABLE IF EXISTS course_usercourse;
+DROP TABLE IF EXISTS courseware_course;
+DROP TABLE IF EXISTS courseware_courseware;
+DROP TABLE IF EXISTS courseware_program;
+DROP TABLE IF EXISTS paypal_ipn;
+DROP TABLE IF EXISTS scheduler_appointment;
+DROP TABLE IF EXISTS scheduler_appointment_hosts;
+DROP TABLE IF EXISTS scheduler_appointment_invitees;
+DROP TABLE IF EXISTS scheduler_cancelsubscription;
+DROP TABLE IF EXISTS scheduler_canlenderdemo;
+DROP TABLE IF EXISTS scheduler_changerequest;
+DROP TABLE IF EXISTS scheduler_event;
+DROP TABLE IF EXISTS scheduler_eventsubscription;
+DROP TABLE IF EXISTS scheduler_eventsubscription_sub_invitees;
+DROP TABLE IF EXISTS socialaccount_socialaccount;
+DROP TABLE IF EXISTS socialaccount_socialapp;
+DROP TABLE IF EXISTS socialaccount_socialapp_sites;
+DROP TABLE IF EXISTS socialaccount_socialtoken;
+DROP TABLE IF EXISTS student_classtype;
+DROP TABLE IF EXISTS student_groupoperatingrecord;
+DROP TABLE IF EXISTS student_learninggroup;
+DROP TABLE IF EXISTS student_membership;
+DROP TABLE IF EXISTS tutor_grade;
+DROP TABLE IF EXISTS tutor_student;
+DROP TABLE IF EXISTS tutor_tutor;
+DROP TABLE IF EXISTS tutor_tutor_class_type;
+DROP TABLE IF EXISTS tutor_tutor_course;
+DROP TABLE IF EXISTS tutor_tutorgrade;
+DROP TABLE IF EXISTS tutor_tutorsalary;
+DROP TABLE IF EXISTS userprofile_appversion;
+DROP TABLE IF EXISTS userprofile_referencedata;
+DROP TABLE IF EXISTS userprofile_userdetail;
+DROP TABLE IF EXISTS userprofile_usermessage;
+DROP TABLE IF EXISTS userprofile_userprofile;
+DROP TABLE IF EXISTS userprofile_userreferrer;
+DROP TABLE IF EXISTS virtualclass_classcomment;
+DROP TABLE IF EXISTS virtualclass_classevaluation;
+DROP TABLE IF EXISTS virtualclass_studentinouttime;
+DROP TABLE IF EXISTS virtualclass_tkclassvideo;
+DROP TABLE IF EXISTS virtualclass_userclasstype;
+DROP TABLE IF EXISTS virtualclass_virtualclass;
+DROP TABLE IF EXISTS virtualclass_virtualclassresource;
+DROP TABLE IF EXISTS postman_message;
+DROP TABLE IF EXISTS report_builder_displayfield;
+DROP TABLE IF EXISTS report_builder_filterfield;
+DROP TABLE IF EXISTS report_builder_format;
+DROP TABLE IF EXISTS report_builder_report;
+DROP TABLE IF EXISTS report_builder_report_starred;
+DROP TABLE IF EXISTS menus_cachekey;
+DROP TABLE IF EXISTS filer_clipboard;
+DROP TABLE IF EXISTS filer_clipboarditem;
+DROP TABLE IF EXISTS filer_file;
+DROP TABLE IF EXISTS filer_folder;
+DROP TABLE IF EXISTS filer_folderpermission;
+DROP TABLE IF EXISTS filer_image;
+DROP TABLE IF EXISTS filer_thumbnailoption;
+DROP TABLE IF EXISTS last_seen_devicedata;
+DROP TABLE IF EXISTS last_seen_devicedatas;
+DROP TABLE IF EXISTS last_seen_lastseen;
+DROP TABLE IF EXISTS `manager_virtualclass_exception`;
+DROP TABLE IF EXISTS `manager_courseadviser_student`;
+DROP TABLE IF EXISTS `manager_learnmanager_student`;
+DROP TABLE IF EXISTS djcelery_crontabschedule;
+DROP TABLE IF EXISTS djcelery_intervalschedule;
+DROP TABLE IF EXISTS djcelery_periodictask;
+DROP TABLE IF EXISTS djcelery_periodictasks;
+DROP TABLE IF EXISTS djcelery_taskstate;
+DROP TABLE IF EXISTS djcelery_workerstate;
+DROP TABLE IF EXISTS djkombu_message;
+DROP TABLE IF EXISTS djkombu_queue;
+DROP TABLE IF EXISTS easy_thumbnails_source;
+DROP TABLE IF EXISTS easy_thumbnails_thumbnail;
+DROP TABLE IF EXISTS easy_thumbnails_thumbnaildimensions;
+
+CREATE TABLE `manager_virtualclass_exception` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `result` smallint(6) NOT NULL,
+  `create_time` datetime NOT NULL,
+  `update_time` datetime NOT NULL,
+  `cms_user_id` int(11) NOT NULL,
+  `virtual_class_id` bigint(11) NOT NULL,
+  `description` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `virtualclass_id` (`virtual_class_id`),
+  KEY `manager_virtualclass_cms_user_id_c802d1b4_fk_manager_u` (`cms_user_id`),
+  CONSTRAINT `manager_virtualclass_cms_user_id_c802d1b4_fk_manager_u` FOREIGN KEY (`cms_user_id`) REFERENCES `manager_user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `manager_student_remark`;
+CREATE TABLE `manager_student_remark` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` varchar(200) NOT NULL,
+  `create_time` datetime NOT NULL,
+  `student_id` bigint(20) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `manager_student_remark_user_id_bf31b2f1_fk_manager_user_id` (`user_id`),
+  CONSTRAINT `manager_student_remark_user_id_bf31b2f1_fk_manager_user_id` FOREIGN KEY (`user_id`) REFERENCES `manager_user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `manager_ext_student`;
+CREATE TABLE `manager_ext_student` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `weixin` varchar(30) DEFAULT NULL,
+  `whatsapp` varchar(30) DEFAULT NULL,
+  `class_year` varchar(30) DEFAULT NULL,
+  `school` varchar(30) DEFAULT NULL,
+  `school_nature` varchar(30) DEFAULT NULL,
+  `source_channel` varchar(30) DEFAULT NULL,
+  `pay_action` smallint(6) NOT NULL,
+  `create_time` datetime NOT NULL,
+  `update_time` datetime NOT NULL,
+  `student_id` bigint(20) NOT NULL,
+  `age` smallint(6) DEFAULT NULL,
+  `equipment` varchar(50) DEFAULT NULL,
+  `test_result` varchar(30) DEFAULT NULL,
+  `test_time` datetime DEFAULT NULL,
+  `phone` varchar(30) DEFAULT NULL,
+  `student_location` varchar(100) DEFAULT NULL,
+  `student_name` varchar(50) DEFAULT NULL,
+  `reference_name` varchar(50) DEFAULT NULL,
+  `gender` smallint(4) DEFAULT '3',
+  `teacher` varchar(50) DEFAULT NULL,
+  `teach_time` varchar(50) DEFAULT NULL,
+  `study_time` varchar(50) DEFAULT NULL,
+  `nature` varchar(50) DEFAULT NULL,
+  `hobby` varchar(50) DEFAULT NULL,
+  `favorite_subject` varchar(50) DEFAULT NULL,
+  `can_appointment` smallint(4) DEFAULT '3',
+  `change_teacher` smallint(4) DEFAULT '3',
+  `has_chinese_env` smallint(4) DEFAULT '3',
+  `study_target` varchar(50) DEFAULT NULL,
+  `parental_expectation` varchar(50) DEFAULT NULL,
+  `learning_brother` smallint(4) DEFAULT NULL,
+  `feedback` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `tutor_tutorsalary` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lesson_num` int(11) NOT NULL,
+  `delivery_salary` double NOT NULL,
+  `incentive_salary` double NOT NULL,
+  `absenc_compensation_salary` double NOT NULL,
+  `no_show_salary` double NOT NULL,
+  `data_date` varchar(10) NOT NULL,
+  `pay_status` tinyint(1) NOT NULL,
+  `create_time` datetime NOT NULL,
+  `update_time` datetime NOT NULL,
+  `tutor_user_id` bigint(20) NOT NULL,
+  `student_num` double NOT NULL,
+  `order_no` varchar(50) DEFAULT NULL,
+  `pay_user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `tutor_tutorsalary_user_id_data_date_56ee9ac3_uniq` (`tutor_user_id`,`data_date`),
+  KEY `tutor_tutorsalary_pay_user_id_f1f7e5ae_fk_auth_user_id` (`pay_user_id`),
+  CONSTRAINT `tutor_tutorsalary_pay_user_id_f1f7e5ae_fk_auth_user_id` FOREIGN KEY (`pay_user_id`) REFERENCES `auth_user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2209 DEFAULT CHARSET=utf8
+
+truncate table explorer_query;
+truncate table explorer_querylog;
+
+-- 修改django log表的字符集， 使admin可以插入中文
+ALTER TABLE `django_admin_log`  MODIFY COLUMN `object_repr` varchar(200)  CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+
+
+
+INSERT INTO `ng_webapp`.`explorer_query`(`id`, `title`, `sql`, `description`, `created_at`, `last_run_date`, `created_by_user_id`, `snapshot`) VALUES (1, 'Scorecard - monthly new paid customer', 'SELECT YEAR(t.time_first_topup), MONTH(t.time_first_topup), count(*)\r\nFROM\r\n  (SELECT upi.id,\r\n          count(fbc.amount) AS 充值次数, sum(fbc.amount) AS 充值点数, DATE_FORMAT(CONVERT_TZ(min(fbc.create_time), \'+00:00\', \'+08:00\'), \'%Y-%m-%d %H:%i:%s\') AS time_first_topup,\r\n                                                          DATE_FORMAT(CONVERT_TZ(max(fbc.create_time), \'+00:00\', \'+08:00\'), \'%Y-%m-%d %H:%i:%s\') AS 最新充值日期\r\n   FROM finance_balance_change fbc,\r\n        user_parent_info upi\r\n   WHERE fbc.reason IN (3, 16)\r\n     AND fbc.user_id = upi.id\r\n     and upi.role <> 5\r\n     or (fbc.reason=10 and fbc.amount>=2 and fbc.user_id = upi.id and upi.role <> 5)\r\n   GROUP BY upi.id\r\n   ORDER BY time_first_topup DESC) t\r\ngroup by MONTH(t.time_first_topup), YEAR(t.time_first_topup) \r\nORDER BY Year(t.time_first_topup) DESC, Month(t.time_first_topup) DESC', '', '2019-12-25 02:37:31', '2019-12-25 02:38:11', 1592, 0);
+INSERT INTO `ng_webapp`.`explorer_query`(`id`, `title`, `sql`, `description`, `created_at`, `last_run_date`, `created_by_user_id`, `snapshot`) VALUES (2, 'Scorecard - monthly top_up', 'select Year(fro.create_time) as year, \r\n	Month(fro.create_time) as month, \r\n    sum(fro.recharge_amount) as sum_recharge_amount, \r\n    sum(fro.incentive_amount) as sum_incentive_amount, \r\n    sum(fro.total_price) as total_price,\r\n    count(*) as recharge_person_time from finance_recharge_order fro \r\nwhere fro.status=1\r\nGROUP BY Year(fro.create_time),\r\n         Month(fro.create_time)\r\nORDER BY Year(fro.create_time) DESC, Month(fro.create_time) DESC', '', '2019-12-25 03:14:09', '2019-12-27 07:47:02', 1592, 0);
+INSERT INTO `ng_webapp`.`explorer_query`(`id`, `title`, `sql`, `description`, `created_at`, `last_run_date`, `created_by_user_id`, `snapshot`) VALUES (3, 'Tutor -  tutor\'s 28 days classes', 'SELECT\r\n	IFNULL( IFNULL( uti.username, uti.email ), uti.phone ) as tutor_name,\r\n	usi.real_name as student_name,\r\n	IFNULL( IFNULL( upi.username, upi.email ), upi.phone ) as parent_name,\r\n	stt.start_time,\r\n	(select count(*) from classroom_virtualclass_info tcvi left join schedule_virtualclass_member tsvm on tsvm.virtual_class_id=tcvi.id\r\n	where tsvm.student_user_id=svm.student_user_id and tcvi.status=3 and tcvi.start_time <= cvi.start_time) as student_lesson_sum,\r\n	cvi.actual_start_time,\r\n	cvi.actual_end_time,\r\n	(\r\n	CASE\r\n			cvi.reason \r\n			WHEN 0 THEN\r\n			\'正常\' \r\n			WHEN 1 THEN\r\n			\'学生缺席\' \r\n			WHEN 2 THEN\r\n			\'学生设备或网络故障\' \r\n			WHEN 11 THEN\r\n			\'教师缺席\' \r\n			WHEN 12 THEN\r\n			\'老师设备或网络故障\' \r\n			WHEN 20 THEN\r\n			\'其他\' \r\n			WHEN 21 THEN\r\n			\'学生老师均未出席\' \r\n		END \r\n		) end_reason\r\n	FROM\r\n		classroom_virtualclass_info cvi\r\n		LEFT JOIN schedule_tutor_timetable stt ON cvi.id = stt.virtual_class_id\r\n		LEFT JOIN user_tutor_info uti ON uti.id = stt.tutor_user_id\r\n		RIGHT JOIN schedule_virtualclass_member svm ON svm.virtual_class_id = cvi.id\r\n		LEFT JOIN user_student_info usi ON usi.id = svm.student_user_id\r\n		LEFT JOIN user_parent_info upi ON upi.id = usi.parent_user_id \r\n	WHERE\r\n		stt.STATUS = 1 \r\n		AND cvi.STATUS IN ( 3, 4 ) \r\n		AND DATE_SUB( CURDATE( ), INTERVAL 28 DAY ) <= date( stt.start_time ) AND now( ) >= stt.start_time \r\n		AND ( uti.username LIKE \'%$$tutor_name$$%\' OR uti.email LIKE \'%$$tutor_name$$%\' OR uti.phone LIKE \'%$$tutor_name$$%\' ) \r\n	ORDER BY\r\n		uti.id,\r\n	usi.id,\r\n	stt.start_time DESC', '', '2019-12-25 06:57:55', '2019-12-27 10:21:22', 1592, 0);
+INSERT INTO `ng_webapp`.`explorer_query`(`id`, `title`, `sql`, `description`, `created_at`, `last_run_date`, `created_by_user_id`, `snapshot`) VALUES (4, 'Student - student  first appointment and first recharge', 'SELECT\r\n	CONVERT_TZ(cvi.start_time, \'+00:00\', \'+08:00\') as start_time,\r\n	IFNULL( IFNULL( uti.username, uti.email ), uti.phone ) AS tutor_name,\r\n	usi.real_name as student_name,\r\n	IFNULL( IFNULL( upi.username, upi.email ), upi.phone ) as parent_name,\r\n	upi.balance,\r\n	upi.bonus_balance,\r\n	fro.create_time as first_recharge_time,\r\n	fro.recharge_amount,\r\n	fro.incentive_amount,\r\n	usi.course_edition_id,\r\n	usi.course_level,\r\n	usi.lesson_no,\r\n	upi.adviser_user_name,\r\n	upi.xg_user_name\r\nFROM\r\n	classroom_virtualclass_info cvi\r\n	RIGHT JOIN schedule_virtualclass_member svm ON svm.virtual_class_id = cvi.id\r\n	LEFT JOIN user_student_info usi ON usi.id = svm.student_user_id\r\n	LEFT JOIN user_parent_info upi ON upi.id = usi.parent_user_id\r\n	LEFT JOIN user_tutor_info uti ON uti.id = cvi.tutor_user_id \r\n	left join finance_recharge_order fro on fro.id=(select fro.id from finance_recharge_order fro where fro.parent_user_id=usi.parent_user_id and fro.status=1 order by fro.create_time limit 1	)\r\nWHERE\r\n	svm.first_course =1\r\n	and DATE(CONVERT_TZ(cvi.start_time, \'+00:00\', \'+08:00\'))<=\'$$end_time$$\'\r\n	and DATE(CONVERT_TZ(cvi.start_time, \'+00:00\', \'+08:00\'))>=\'$$start_time$$\'\r\n	order by cvi.start_time  desc', '', '2019-12-25 09:34:52', '2019-12-27 07:40:49', 1592, 0);
+INSERT INTO `ng_webapp`.`explorer_query`(`id`, `title`, `sql`, `description`, `created_at`, `last_run_date`, `created_by_user_id`, `snapshot`) VALUES (5, 'Operation - All topup record', 'SELECT\r\n	IFNULL( IFNULL( upi.username, upi.email ), upi.phone ) as parent_name,\r\n    CONVERT_TZ(fro.create_time, \'+00:00\', \'+08:00\') as recharge_time,\r\n	fro.order_no,\r\n	fro.recharge_type,\r\n	fro.recharge_amount,\r\n	fro.incentive_amount,\r\n	fro.total_price,\r\n	fro.currency,\r\n    amu.username as adviser_user,\r\n    xmu.username as xg_user\r\nFROM\r\n	lingoacedb.finance_recharge_order fro\r\n	LEFT JOIN lingoacedb.user_parent_info upi ON upi.id = fro.parent_user_id\r\n    left join lingoacedb.finance_balance_change fbc on fbc.reference=fro.order_no\r\n    left join ng_webapp.manager_user amu on amu.id=fbc.adviser_user_id\r\n    left join ng_webapp.manager_user xmu on xmu.id=fbc.xg_user_id\r\nWHERE\r\n	fro.STATUS = 1\r\n    and DATE(CONVERT_TZ(fro.create_time, \'+00:00\', \'+08:00\')) >= \'$$start_date$$\'\r\n	and DATE(CONVERT_TZ(fro.create_time, \'+00:00\', \'+08:00\')) <= \'$$end_date$$\'\r\n    and (upi.username like \'%$$tutor_name$$%\' or upi.email like \'%$$tutor_name$$%\' or upi.phone like \'%$$tutor_name$$%\')', '', '2019-12-25 10:21:00', '2019-12-25 10:44:00', 1592, 0);
+INSERT INTO `ng_webapp`.`explorer_query`(`id`, `title`, `sql`, `description`, `created_at`, `last_run_date`, `created_by_user_id`, `snapshot`) VALUES (6, 'Scorecard - active paid customer list', 'select IFNULL(IFNULL(upi.username, upi.email), upi.phone) as parent_name, count(fro.recharge_amount) as recharge_count, sum(fro.recharge_amount) as recharge_amount_sum, sum(fro.incentive_amount) as incentive_amount_sum, min(fro.create_time) as first_recharge_time, max(fro.create_time) as last_recharge_time from finance_recharge_order fro \r\nleft join user_parent_info upi on upi.id=fro.parent_user_id\r\nwhere fro.status=1 \r\ngroup by fro.parent_user_id', '', '2019-12-26 03:01:47', '2019-12-26 03:01:47', 1592, 0);
+INSERT INTO `ng_webapp`.`explorer_query`(`id`, `title`, `sql`, `description`, `created_at`, `last_run_date`, `created_by_user_id`, `snapshot`) VALUES (7, 'Customer Care - 90 days active students', 'SELECT\r\n	usi.real_name,\r\n	IFNULL( IFNULL( upi.username, upi.email ), upi.phone ) AS parent_name,\r\n	count(*) as number_of_class,\r\n	max(fbc.create_time) as lastest_class_time\r\nFROM\r\n	user_parent_info upi\r\n	RIGHT JOIN user_student_info usi ON usi.parent_user_id = upi.id\r\n	RIGHT JOIN finance_balance_change fbc ON usi.id = fbc.user_id \r\nWHERE\r\n	fbc.reason = 1 \r\n	AND fbc.create_time >= DATE( NOW( ) ) - INTERVAL 90 DAY \r\n	AND fbc.create_time <= DATE( NOW( ) ) - INTERVAL 0 DAY \r\nGROUP BY\r\n	usi.id\r\nORDER BY lastest_class_time', '', '2019-12-26 04:17:44', '2019-12-26 04:17:44', 1592, 0);
+INSERT INTO `ng_webapp`.`explorer_query`(`id`, `title`, `sql`, `description`, `created_at`, `last_run_date`, `created_by_user_id`, `snapshot`) VALUES (8, 'Operation - accountbalancechange compensation and penality', 'SELECT\r\n	fbc.create_time,\r\n    fbc.user_id,\r\n    fbc.role,\r\n	( CASE fbc.reason WHEN 13 THEN \'ABSENCE_PENALTY\' WHEN 14 THEN \'NO_SHOW_COMPENSATION\' WHEN 113 THEN \'ABSENCE_COMPENSATION\' WHEN 114 THEN \'NO_SHOW_PENALTY\' END ) AS reason,\r\n	fbc.amount,\r\n	fbc.reference,\r\n	usi.real_name as student_name,\r\n	IFNULL( IFNULL( upi.username, upi.email ), upi.phone ) as parent_name\r\nFROM\r\n	finance_balance_change fbc\r\n	LEFT JOIN user_student_info usi ON usi.id = fbc.user_id\r\n	LEFT JOIN user_parent_info upi ON upi.id = usi.parent_user_id \r\nWHERE\r\n	fbc.reason IN ( 13, 14, 113, 114 )', '查询学生补偿(NO_SHOW_COMPENSATION)和罚金（ABSENCE_PENALTY）的记录，老师补偿(ABSENCE_COMPENSATION)和罚金（NO_SHOW_PENALTY）的记录', '2019-12-26 07:48:23', '2019-12-26 08:02:23', 1592, 0);
+INSERT INTO `ng_webapp`.`explorer_query`(`id`, `title`, `sql`, `description`, `created_at`, `last_run_date`, `created_by_user_id`, `snapshot`) VALUES (9, 'Operation - upcoming classes', 'SELECT\r\n	CONVERT_TZ(core.start_time, \'+00:00\', \'+08:00\') as start_time,\r\n	IFNULL(IFNULL(uti.username, uti.email), uti.phone) as tutor_name,\r\n	usi.real_name,\r\n	IFNULL(IFNULL(upi.username, upi.email), upi.phone) as parent_name,\r\n	tutor_tmp.num_of_classes as tutor_sum,\r\n	student_tmp.num_of_classes as student_sum\r\nFROM\r\n	(\r\n	SELECT\r\n		cvi.tutor_user_id,\r\n		svm.student_user_id,\r\n		cvi.start_time \r\n	FROM\r\n		classroom_virtualclass_info cvi\r\n		RIGHT JOIN schedule_virtualclass_member svm ON svm.virtual_class_id = cvi.id \r\n	WHERE\r\n		cvi.start_time BETWEEN NOW( ) \r\n		AND DATE_ADD( NOW( ), INTERVAL 7 DAY ) \r\n		AND cvi.STATUS = 1 \r\n	) core\r\n	LEFT JOIN user_tutor_info uti ON uti.id = core.tutor_user_id\r\n	LEFT JOIN user_student_info usi ON usi.id = core.student_user_id\r\n	LEFT JOIN user_parent_info upi ON upi.id = usi.parent_user_id\r\n	LEFT JOIN ( SELECT cvi.tutor_user_id, count( * ) AS num_of_classes FROM classroom_virtualclass_info cvi WHERE cvi.STATUS = 3 GROUP BY cvi.tutor_user_id ORDER BY NULL ) tutor_tmp ON tutor_tmp.tutor_user_id = core.tutor_user_id\r\n	LEFT JOIN (\r\n	SELECT\r\n		svm.student_user_id,\r\n		count( * ) AS num_of_classes \r\n	FROM\r\n		classroom_virtualclass_info cvi\r\n		RIGHT JOIN schedule_virtualclass_member svm ON svm.virtual_class_id = cvi.id \r\n	WHERE\r\n		cvi.STATUS = 3 \r\n	GROUP BY\r\n		svm.student_user_id \r\n	ORDER BY\r\nNULL \r\n	) student_tmp ON student_tmp.student_user_id = core.student_user_id', 'classes in next specific days', '2019-12-27 07:42:33', '2019-12-27 07:43:26', 1592, 0);
+INSERT INTO `ng_webapp`.`explorer_query`(`id`, `title`, `sql`, `description`, `created_at`, `last_run_date`, `created_by_user_id`, `snapshot`) VALUES (10, 'Scorecard - monthly new paid customer', 'SELECT YEAR\r\n	( t.time_first_topup ),\r\n	MONTH ( t.time_first_topup ),\r\n	count( * ) \r\nFROM\r\n	(\r\n	SELECT\r\n		fro.parent_user_id,\r\n		IFNULL( IFNULL( upi.username, upi.email ), upi.phone ) AS parent_name,\r\n		min( fro.create_time ) AS time_first_topup \r\n	FROM\r\n		finance_recharge_order fro\r\n		LEFT JOIN user_parent_info upi ON upi.id = fro.parent_user_id \r\n	WHERE\r\n		fro.STATUS = 1 \r\n	GROUP BY\r\n		fro.parent_user_id \r\n	) t \r\nGROUP BY\r\n	MONTH ( t.time_first_topup ),\r\n	YEAR ( t.time_first_topup ) \r\nORDER BY\r\n	YEAR ( t.time_first_topup ) DESC,\r\n	MONTH ( t.time_first_topup ) DESC', '', '2019-12-27 10:18:09', '2019-12-27 10:18:09', 1592, 0);

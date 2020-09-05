@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% load account socialaccount %}
+
+{% block itle %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+    <style>
+        .login-container {
+            background-color: #F9FAFB;
+            color: #3B3B4D;
+        }
+
+        .container-prompt {
+            font-family: 'Josefin Sans', sans-serif;
+            color: #3B3B4D;
+            margin-bottom: 30px;
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .container-prompt a {
+            color: #5DC2D0;
+        }
+
+        .login-container .account-input {
+            -webkit-box-shadow: 0 0 0px 1000px white inset;
+            width: 100%;
+            height: 40px;
+            padding: 0 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(203, 214, 226, 1);
+            background-color: white;
+            outline: none;
+        }
+
+        .login-container .account-button {
+            width: 100%;
+            height: 40px;
+            padding: 0 10px;
+            color: #3B3B4D;
+            border-radius: 4px;
+            border: 1px solid rgba(203, 214, 226, 1);
+            background-color: white;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container .account-button img {
+            margin-right: 10px;
+        }
+
+        .login-logo {
+            margin: 10px auto 26px;
+            display: block;
+        }
+
+        .content-wrapper {
+            background-color: #F9FAFB;
+        }
+
+        .bootstrap-row-center {
+            float: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .login-container .submit-btn {
+            background: rgba(119, 196, 179, 1);
+            border: none;
+            color: white;
+        }
+
+        .input-label {
+            color: #6C7B8A;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+{% block header %}
+{% endblock %}
+    <div class="section login-container">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2 ">
+                <div class="row">
+                    <div class="row flex-center">
+                        <img class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 col-xs-6 col-xs-offset-3 col-lg-3 col-lg-offset-6 img-responsive login-logo"
+                             alt="Responsive image"
+                             src="{% static 'images/logo@2x.png' %}">
+                    </div>
+
+                    <form action="/accounts/login/" method="POST" id="login-form">
+                        {% csrf_token %}
+                        {% if form.non_field_errors %}
+                            <div class="row text-center"><label style="color: red">{{ form.non_field_errors }}</label>
+                            </div>
+                        {% endif %}
+                        {% if redirect_field_value %}
+                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-lg-7 col-lg-offset-3 bootstrap-row-center">
+                                <div class="input-group-lg" style="margin-bottom: 20px;">
+                                    <p class="input-label">{% trans 'username or email' %}</p>
+                                    <input type="text" autofocus="autofocus" required="required"
+                                           class="form-control account-input"
+                                           id="username" name="login">
+                                </div>
+                                <div class="input-group-lg mb-3" style="margin-bottom: 20px;">
+                                    <p class="input-label">{% trans 'Password' %}</p>
+                                    <input required="required" id="password" name="password" type="password"
+                                           class="form-control account-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-3 col-sm-5 col-sm-offset-2 col-xs-4 col-xs-offset-2">
+                                <input class="border-0" type="checkbox" value="True" id="remember-me" name="remember"
+                                       data-toggle="checkbox" checked>
+                                <span style="font-size: 100%;font-family: 'Muli'; color: #08415c;">{% trans "Remember Me" %}</span>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-lg-7 col-lg-offset-3 bootstrap-row-center">
+                                <div class="form-group">
+                                    <button type="submit" class="account-button submit-btn">{% trans "login" %}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+
+{#<div class="section section-gray">#}
+{#	<div class="container">#}
+{#		<div class="col-md-8 col-md-offset-2">#}
+{#		#}
+{#			<div class="card">#}
+{#	#}
+{#<h4 class="text-center">{% trans 'Log In' %}</h4>#}
+{#<hr>#}
+{##}
+{##}
+{#  {% if socialaccount_providers  %}#}
+{#  <div class="text-center">#}
+{#    {% include "account/provider_panel.html" with process="login" %}#}
+{#  </div>#}
+{#  {% endif %}#}
+{##}
+{#  <div class="form">#}
+{#    <form class="login" method="POST" action="{% url 'account_login' %}">#}
+{#      <span class="pull-right">{% trans 'Not yet a member?' %} <a href="{% url 'account_signup' %}">{% trans 'Sign up' %}</a></span>#}
+{#      {% csrf_token %}#}
+{#      {% bootstrap_form form %}#}
+{#      {% if redirect_field_value %}#}
+{#      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />#}
+{#      {% endif %}#}
+{#      <div class="form-actions">#}
+{#        <button class="btn btn-primary pull-right" type="submit">{% trans "Sign In" %}</button>#}
+{#        <a class="btn" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>#}
+{#      </div>#}
+{#    </form>#}
+{#  </div>#}
+{##}
+{##}
+{#			</div>#}
+{#		</div>  	#}
+{#  	</div>#}
+{#</div>#}

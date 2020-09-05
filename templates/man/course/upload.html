@@ -1,0 +1,83 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Courseware Upload" %}{% endblock %}
+
+{% block content %}
+ 		<div class="content">
+            <div class="container-fluid">
+                <div class="row">
+					<div class="col-md-12">
+    <!-- List of courses -->
+    {% if courses %}
+        <table class="table">
+        {% for programme in programmes %}
+        <tr>
+            <td>    {% trans programme.edition_name %}</td>
+        {#{% for course in courses %}#}course
+            {% for course in programme.course_info.all %}
+	            {% ifequal cur_course course.id %}
+	        <td><a style="color: red;" href="{% url 'course_upload' %}?course={{ course.id }}">{{ course.course_name }}</a></td>
+	            {% else %}
+	                <td><a href="{% url 'course_upload' %}?course={{ course.id }}">{{ course.course_name }}</a></td>
+	            {% endifequal %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% else %}
+        <a href="{% url 'course_upload' %}">Reselect course</a>
+    {% endif %}
+
+        <!-- Upload form. Note enctype attribute! -->
+        {% if form %}
+        <form class="upload-form" action="{% url 'course_upload' %}" method="post" enctype="multipart/form-data" onsubmit="return checkCoursewareSubmit()">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+            <p>{{ form.cw_content.label_tag }} {{ form.cw_content.help_text }}</p>
+            {{ form.cw_content.errors }}
+            {{ form }}
+{#            <div class="status-selector"><input type="radio" name="status_type" value="Archived">Archived&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="status_type" value="Active" checked="checked">Active</div>#}
+            <div class="status-selector"><input type="radio" name="cw_type" value="1" checked="checked">PPT课件&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="cw_type" value="5">Cocos课件</div>
+            <input type="submit" value="upload" class="p-btn" />
+        </form>
+        {% endif %}
+
+    <!-- List of uploaded documents -->
+    {% if coursewares %}
+        <ul>
+        {% for courseware in coursewares %}
+        {% ifequal courseware.cw_type Courseware.IMAGE %}
+            <a href="#" onclick="changeImage('{{ courseware.cw_content.url }}')">{{ courseware.cw_seq }}</a>,
+        {% endifequal %}
+        {% endfor %}
+        </ul>
+    <ul>
+        <img src="{{ coursewares.1.cw_content.url }}" alt="courseware" id="myImage">
+    </ul>
+
+    {% endif %}
+
+    {% if result %}
+        <span>{{ result }}</span>
+    {% endif %}
+
+    			</div>
+   			 </div>
+    	</div>
+    </div>
+{% endblock %}
+
+{% block extra_ending %}
+{{ block.super }}
+<script>
+
+function changeImage(target) {
+    var image = document.getElementById('myImage');
+{#    alert(target);#}
+    image.src = target;
+}
+</script>
+{% endblock %}
+

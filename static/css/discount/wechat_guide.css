@@ -1,0 +1,129 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  color: #3B3B4D; }
+
+* {
+  outline: none;
+  margin: 0;
+  padding: 0; }
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+a:active, a:hover, a:visited {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none; }
+
+input {
+  -webkit-box-shadow: 0 0 0 1000px white inset; }
+
+.text-center {
+  text-align: center; }
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.logo {
+  width: 37.6vw;
+  display: block;
+  margin: 8.5333333333vw auto 0 auto; }
+
+.common-input {
+  width: 77.3333333333vw;
+  height: 10.1333333333vw;
+  padding: 0 2.6666666667vw;
+  font-size: 3.2vw;
+  box-sizing: border-box;
+  border: 1px #CBD6E2 solid;
+  border-radius: 1.0666666667vw;
+  outline: none;
+  display: block;
+  margin: auto; }
+
+.common-input::-webkit-input-placeholder {
+  color: #6C7B8A; }
+
+.submit-btn {
+  border-radius: 100px;
+  height: 10.9333333333vw;
+  background-color: #24CBDA;
+  margin: auto;
+  display: block;
+  width: 77.3333333333vw;
+  text-align: center;
+  color: white;
+  font-size: 4vw; }
+
+.submit-btn:disabled {
+  background-color: #EDEDED;
+  color: #999999; }
+
+.smile {
+  width: 28.5333333333vw;
+  display: block;
+  margin: 10.4vw auto auto; }
+
+.congratulations {
+  text-align: center;
+  color: #24CBDA;
+  font-size: 4.2666666667vw;
+  margin-bottom: 8.4vw;
+  margin-top: 8vw;
+  font-weight: 500; }
+  .congratulations span {
+    color: #F88741; }
+
+.contact-wrapper {
+  display: block;
+  margin: 0 4vw;
+  background-color: #F6FEFE;
+  border-radius: 1.3333333333vw;
+  padding: 4.2666666667vw 2.6666666667vw; }
+  .contact-wrapper .contact-container {
+    border-radius: 1.0666666667vw;
+    border-width: 0.2666666667vw;
+    border-style: dashed;
+    border-color: #5CC2D0;
+    padding: 7.7333333333vw 4.6666666667vw 10vw; }
+    .contact-wrapper .contact-container .add-wechat-label {
+      padding: 2.8vw 3.7333333333vw 2.8vw 3.7333333333vw;
+      border-radius: 100px;
+      border-width: 0.2666666667vw;
+      border-style: solid;
+      border-color: #24CBDA;
+      display: flex;
+      align-items: flex-start; }
+      .contact-wrapper .contact-container .add-wechat-label .path {
+        display: block;
+        width: 4.9333333333vw;
+        margin-right: 1.6vw; }
+      .contact-wrapper .contact-container .add-wechat-label .label {
+        display: block;
+        width: 63.2vw;
+        font-size: 3.4666666667vw;
+        line-height: 5.3333333333vw; }
+
+.contact-group {
+  margin-top: 13.7333333333vw;
+  display: flex;
+  justify-content: center; }
+  .contact-group .title {
+    font-size: 3.4666666667vw; }
+  .contact-group .contact-img {
+    margin: 1.8666666667vw 0 1.6vw;
+    width: 22.1333333333vw; }
+  .contact-group .footer {
+    font-size: 3.4666666667vw; }
+
+.contact-app {
+  margin-left: 19.0666666667vw; }
+
+/*# sourceMappingURL=wechat_guide.css.map */

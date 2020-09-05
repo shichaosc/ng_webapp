@@ -1,0 +1,63 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>缤纷开学季 书香满星城</title>
+    <link href="{% static 'css/campaign-index.css' %}" rel="preload" as="style">
+    <link href="{% static 'css/campaign-chunk-vendors.css' %}" rel=preload as=style>
+    <link href="{% static 'js/campaign-index.js' %}" rel=preload as=script>
+    <link href="{% static 'js/campaign-chunk-vendors.js' %}" rel=preload as=script>
+    <link href="{% static 'css/campaign-index.css' %}" rel=stylesheet>
+    <link href="{% static 'css/campaign-chunk-vendors.css' %}" rel=stylesheet>
+    <script src="{% static 'js/jweixin-1.4.0.js' %}"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+<body>
+<script>
+    var signature = '{{ signature }}';
+    var random_str = '{{ noncestr }}';
+    var timestamp = '{{ timestamp }}';
+    var url = '{{ url }}';
+    var userinfoDic = {{userinfo|safe}};
+    nickname = userinfoDic.nickname;
+    headimgurl = userinfoDic.headimgurl;
+
+    wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: 'wx9afc33a0c87d2b5b', // 必填，公众号的唯一标识
+        timestamp: timestamp, // 必填，生成签名的时间戳
+        nonceStr: random_str, // 必填，生成签名的随机串
+        signature: signature,// 必填，签名
+        jsApiList: [
+            'onMenuShareTimeline', // 分享给好友
+            'onMenuShareAppMessage' // 朋友圈
+        ] // 必填，需要使用的JS接口列表
+    });
+    wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
+
+        wx.onMenuShareTimeline({
+            title: '缤纷开学季 书香满星城', // 分享标题
+            desc: 'PPChinese图书团购服务，给孩子最好的新学期礼物，让书香飘满星城！', // 分享描述
+            link: url, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: 'https://susuaddison.cn/static/img/wx_share_icon.png', // 分享图标
+        });
+
+        wx.onMenuShareAppMessage({
+            title: '缤纷开学季 书香满星城', // 分享标题
+            desc: 'PPChinese图书团购服务，给孩子最好的新学期礼物，让书香飘满星城！', // 分享描述
+            link: url, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: 'https://susuaddison.cn/static/img/wx_share_icon.png', // 分享图标
+        });
+    });
+</script>
+<noscript><strong>We're sorry but taoyuan-project doesn't work properly without JavaScript enabled. Please enable it to
+    continue.</strong></noscript>
+<div id="app"></div>
+<script src="{% static 'js/campaign-index.js' %}"></script>
+<script src="{% static 'js/campaign-chunk-vendors.js' %}"></script>
+</body>
+</html>

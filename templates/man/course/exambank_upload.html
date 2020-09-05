@@ -1,0 +1,47 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Exambank Upload" %}{% endblock %}
+   
+{% block content %}
+ 		<div class="content">
+            <div class="container-fluid">
+                <div class="row">
+					<div class="col-md-12">
+		{% if messages %}
+			{% for message in messages %}
+		  <div class="alert alert-success alert-auto-close">
+			  <!-- you can add the class "alert-auto-close" and the alert notification will be closed in 5 seconds -->
+
+            <div class="container">
+	        {{ message }}
+            </div>
+          </div>
+          	{% endfor %}
+		{% endif %}    
+	
+		<h4>{% trans 'select course_test to change' %} </h4>
+		    
+        {% if tests %}
+        {% for test in tests%}
+        <p><a href="{% url 'exambank_edit' test.pk %}">{{ test.course.course_name }}</a></p>
+        {% endfor %}
+        {% endif %}
+        
+        {% if form %}
+        <!-- Upload form. Note enctype attribute! -->
+        <form action="{% url 'exambank_upload' test.pk %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+            
+                {{ form.as_p }}
+            <p><input type="submit" value="Upload" /></p>
+        </form>
+    
+        {% endif %}
+    			</div>
+   			 </div>
+    	</div>
+    </div>
+{% endblock %}    
+

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Register for an account" %}{% endblock %}
+
+{% block content %}
+
+
+<div class="section">
+	<div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+		    	<div class="card card-horizontal">
+	
+    <form method='post' action=''>
+    {% csrf_token %}
+
+
+    	<div class="input-group">
+    	<input id="id_username" class="form-control" maxlength="30" name="username" type="text" placeholder="username"/>
+        <span class="input-group-addon"><i class="pe-7s-id"></i></span>
+        </div>
+        
+        <div class="input-group">
+        <input id="id_email" class="form-control" name="email" type="email" placeholder="email"/>
+        <span class="input-group-addon"><i class="pe-7s-id"></i></span>
+        </div>
+        
+        <div class="input-group">
+        <input id="id_password1" class="form-control" name="password1" type="password"  placeholder="password"/>
+        <span class="input-group-addon"><i class="pe-7s-door-lock"></i></span>
+        </div>
+        
+        <div class="input-group">
+        <input id="id_password2" class="form-control" name="password2" type="password"  placeholder="password confirmation"/>
+        <span class="input-group-addon"><i class="pe-7s-door-lock"></i></span>
+		</div>
+		
+		<div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">{% trans "Register" %}</button>
+        </div>
+    </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

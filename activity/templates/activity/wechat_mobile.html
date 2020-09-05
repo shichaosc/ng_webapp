@@ -1,0 +1,82 @@
+{% extends 'discount_base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/discount/wechat_mobile.css' %}">
+{% endblock %}
+{% block content %}
+    <main>
+        <form action="{% url 'wechat_mobile' %}" id="phone-form" method="post">
+            <img src="/media/{{ s_referrer.app_avatar }}"
+                 class="head-image">
+
+            <h4>{{ s_referrer.app_username }}邀请你领取价值<span>S$84</span>免费课<br>开启LingoAce华文学习之旅</h4>
+
+
+            <div class="input-title">
+                <p class="area-code">区号</p>
+                <p class="phone-number">电话号</p>
+            </div>
+
+            <div style="display: flex">
+                <input name="country" value="+65" id="country">
+                <input type="number" required id="phone-input" name="number">
+            </div>
+
+            <p class="error-message" id=""></p>
+
+
+            <input style="display: none" value="{{ referrer_id }}" name="referrer_id">
+            <input value="" style="display: none;" id="mobile" name="mobile">
+            <input style="display: none;" value="{{ openid }}" name="openid">
+
+            <button class="submit-btn" onclick="submitForm()" type="button">提交</button>
+        </form>
+
+        <p class="contact-us">如果您有疑问请随时与我们联系</p>
+
+        <div class="contact-group">
+            <div class="contact-wechat flex-column-center">
+                <p class="title">Wechat:</p>
+                <img src="{% static 'img/qr-code.png' %}" class="contact-img">
+                <p class="footer">扫码咨询</p>
+            </div>
+
+            <div class="contact-app flex-column-center">
+                <p class="title">WhatsApp:</p>
+                <img src="{% static 'img/contact-lingoace.png' %}" class="contact-img">
+                <p class="footer">+65 8618 3670</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block script %}
+    <script>
+
+        function submitForm() {
+            var countryPrefix = $("#country").val();
+            var prefixValidator = new Validator();
+            prefixValidator.add(countryPrefix, "isNotPrefix", "请输入正确的区号！");
+            var prefixErrorMsg = prefixValidator.check();
+            if (prefixErrorMsg) {
+                $(".error-message").text(prefixErrorMsg);
+                return;
+            }
+
+            var phoneNumber = $("#phone-input").val();
+            var phoneValidator = new Validator();
+            phoneValidator.add(phoneNumber, "isNotEmpty", "电话号码不能为空");
+            var phoneErrorMsg = phoneValidator.check();
+            if (phoneErrorMsg) {
+                $(".error-message").text(phoneErrorMsg);
+                return;
+            }
+
+
+            const mobile = countryPrefix + phoneNumber;
+            $("#mobile").val(mobile);
+            $("#phone-form").submit();
+        }
+    </script>
+{% endblock %}

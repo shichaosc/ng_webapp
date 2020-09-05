@@ -1,0 +1,83 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+{% block title %}referrer detail{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <td colspan="3" class="text"><h5>signed detail</h5></td>
+        </tr>
+        <tr>
+            <td><b>wechat avatar</b></td>
+            <td><b>wechat name</b></td>
+            <td><b>username</b></td>
+            <td><b>Email</b></td>
+            <td><b>joined time</b></td>
+            <td><b>status</b></td>
+        </tr>
+        </thead>
+        {% for r_s in referees_signed %}
+            <tr>
+                <td>
+                    {{ r_s.app_avatar }}
+                </td>
+                <td>
+                    {{ r_s.app_username}}
+                </td>
+                <td>
+                    {{ r_s.user.username}}
+                </td>
+                <td>
+                    {{ r_s.user.email }}
+                </td>
+                <td>
+                    {{ r_s.user.date_joined}}
+                </td>
+                <td>
+                    {{ r_s.status}}
+                </td>
+
+            </tr>
+        {% endfor %}
+    </table>
+    <table class="table">
+        <thead>
+        <tr>
+            <td colspan="3" class="text"><h5>paid detail</h5></td>
+        </tr>
+        <tr>
+            <td><b>wechat avatar</b></td>
+            <td><b>wechat name</b></td>
+            <td><b>username</b></td>
+            <td><b>Email</b></td>
+            <td><b>paid time</b></td>
+            <td><b>points</b></td>
+        </tr>
+        </thead>
+        {% for r_p in referees_paid %}
+            <tr>
+                <td>
+                    {{ r_p.app_avatar }}
+                </td>
+                <td>
+                    {{ r_p.app_username}}
+                </td>
+                <td>
+                    {{ r_p.user.username}}
+                </td>
+                <td>
+                    {{ r_p.user.email }}
+                </td>
+                <td>
+                    {{ r_p.account_balance.updated_on}}
+                </td>
+                <td>
+                    {{ r_p.account_balance.balance}}
+                </td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

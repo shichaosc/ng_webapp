@@ -1,0 +1,34 @@
+[
+	{
+		"answer": "C",
+		"status": true,
+		"level": "0.7",
+		"no": "010297",
+		"alternative": {
+			"C": "\u4e00\u5339",
+			"B": "\u4e00\u53ea",
+			"A": "\u4e00\u5934",
+			"D": "\u4e00\u6761"
+		},
+		"stem": [
+			"\u8bf7\u9009\u62e9\u6070\u5f53\u7684\u8bcd\u8bed\u586b\u7a7a\u3002\uff08    \uff09",
+			"\u5c71\u4e0a\u6709___________\u9a6c\u3002"
+		]
+	},
+	{
+		"answer": "D",
+		"status": true,
+		"level": "0.7",
+		"no": "010297",
+		"alternative": {
+			"C": "\u4e00\u5339",
+			"B": "\u4e00\u53ea",
+			"A": "\u4e00\u5934",
+			"D": "\u4e00\u6761"
+		},
+		"stem": [
+			"\u8bf7\u9009\u62e9\u6070\u5f53\u7684\u8bcd\u8bed\u586b\u7a7a\u3002\uff08    \uff09",
+			"\u5c71\u4e0a\u6709___________\u9a6c\u3002"
+		]
+	}
+]

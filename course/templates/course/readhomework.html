@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% block extra_head %}
+    <style>
+        .btn-bg,.btn-bg:hover{
+            width: 150px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            border-radius:20px;
+            border-color:#5CC2D0;
+            color:#5CC2D0;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="section section-gray">
+    <div class="container">
+        <div class="row">
+            <div class="card">
+                <div class="card-block" style="height:80vh;padding-top:30vh;">
+                    <div class="row text-center">
+                        <h4>{% trans "Ratings success" %}</h4>
+                    </div>
+                    <div class="row text-center">
+                        <a href="/userprofile/tutor_profile/" class="btn btn-info btn-primary btn-bg">
+                            {% trans "Back My account" %}
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

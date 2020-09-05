@@ -1,0 +1,88 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  color: #3B3B4D; }
+
+* {
+  outline: none;
+  margin: 0;
+  padding: 0; }
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+a:active, a:hover, a:visited {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none; }
+
+input {
+  -webkit-box-shadow: 0 0 0 1000px white inset; }
+
+.text-center {
+  text-align: center; }
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.logo {
+  width: 37.6vw;
+  display: block;
+  margin: 8.5333333333vw auto 0 auto; }
+
+.common-input {
+  width: 77.3333333333vw;
+  height: 10.1333333333vw;
+  padding: 0 2.6666666667vw;
+  font-size: 3.2vw;
+  box-sizing: border-box;
+  border: 1px #CBD6E2 solid;
+  border-radius: 1.0666666667vw;
+  outline: none;
+  display: block;
+  margin: auto; }
+
+.common-input::-webkit-input-placeholder {
+  color: #6C7B8A; }
+
+.submit-btn {
+  border-radius: 100px;
+  height: 10.9333333333vw;
+  background-color: #24CBDA;
+  margin: auto;
+  display: block;
+  width: 77.3333333333vw;
+  text-align: center;
+  color: white;
+  font-size: 4vw; }
+
+.submit-btn:disabled {
+  background-color: #EDEDED;
+  color: #999999; }
+
+.input-account-title {
+  margin: 8.2666666667vw 0 2.1333333333vw 0;
+  font-size: 4.2666666667vw; }
+
+.common-input {
+  margin-top: 5.3333333333vw; }
+
+#user-name-error-msg {
+  width: 77.3333333333vw;
+  margin: 2.1333333333vw auto 0;
+  height: 4.4vw;
+  font-size: 3.2vw;
+  color: #F88741; }
+
+.gift {
+  width: 62.2666666667vw;
+  display: block;
+  margin: 6.9333333333vw auto 6.6666666667vw; }
+
+/*# sourceMappingURL=wechat_virify_user.css.map */

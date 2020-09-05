@@ -1,0 +1,90 @@
+{% extends 'discount_base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/discount/wechat_virify_user.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <img alt="logo" src="{% static 'images/logo@2x.png' %}" class="logo"/>
+
+    <p class="input-account-title text-center">输入您的电子邮箱</p>
+
+    <form id="email-form" method="post" action="/campaign/wechat_generate_poster/">
+        <input name="email" id="email" class="common-input" placeholder="LingoAce电子邮箱">
+        <input style="display: none" name="openid" id="openid" class="common-input" value="{{ openid }}">
+    </form>
+
+    <p id="user-name-error-msg"></p>
+
+    <img class="gift" src="{% static 'img/gift.png' %}">
+
+    <button id="submit-btn" class="submit-btn" disabled onclick="submitEmail()">获取您的专属海报</button>
+{% endblock %}
+
+{% block script %}
+    <script>
+        const button_message = {
+            requesting: {
+                text: "验证中...",
+            },
+            normal: {
+                text: "获取您的专属海报",
+            },
+        };
+
+        $("#email").on("input", function () {
+            if ($(this).val().trim().length <= 0) {
+                $(".submit-btn").attr("disabled", "");
+            } else {
+                $(".submit-btn").removeAttr("disabled");
+            }
+        });
+
+        function submitEmail() {
+            const email_input = document.getElementById("email");
+            const email = email_input.value;
+            const emailChecker = new Validator();
+            emailChecker.add(email, "isNotEmpty", "电子邮箱不允许为空");
+            emailChecker.add(email, "isNotEmail", "请输入正确的电子邮箱");
+            const errorMsg = emailChecker.check();
+            if (errorMsg) {
+                document.getElementById("user-name-error-msg").innerText = errorMsg;
+                return;
+            }
+
+            $("#submit-btn").text(button_message.requesting.text);
+            $(".submit-btn").attr("disabled", "");
+
+            checkUserInfo({
+                param: {"email": email, "type": "email"},
+                success: function (data) {
+                    if (data.msg) {
+                        localStorage.setItem("user-email", email);
+                        $("#email-form").submit();
+                    } else {
+                        $("#user-name-error-msg").text("电子邮箱不存在");
+                    }
+                },
+                error: function () {
+                    window.alert("网络异常");
+                },
+
+                complete() {
+                    $("#submit-btn").text(button_message.normal.text);
+                    $(".submit-btn").removeAttr("disabled");
+                }
+            });
+        }
+
+        (function () {
+            {#localStorage.removeItem('user-email');#}
+            var local_data = localStorage.getItem("user-email");
+            if (local_data) {
+                $("#email").val(local_data);
+                $("#email-form").submit();
+            }
+        })();
+    </script>
+{% endblock %}

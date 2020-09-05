@@ -1,0 +1,57 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Homework Upload" %}{% endblock %}
+
+{% block content %}
+    <!-- List of courses -->
+    {% if courses %}
+        <table class="table">
+        <tr>
+        <td>    {% trans 'course' %}</td>
+        {% for course in courses %}
+	        {% ifequal cur_course course.id %}
+            <td><a style="color: red;" href="{% url 'homeworkupload' %}?course={{ course.id }}">{{ course.course_name }}</a></td>
+            {% else %}
+	        <td><a href="{% url 'homeworkupload' %}?course={{ course.id }}">{{ course.course_name }}</a></td>
+            {% endifequal %}
+        {% endfor %}
+        </tr>
+    </table>
+
+    {% else %}
+        <a href="{% url 'homeworkupload' %}">Reselect course</a>
+    {% endif %}
+
+    {% if lessons %}
+    <!-- Upload form. Note enctype attribute! -->
+        <form class="upload-form" style="margin-left: 8px"
+              action="{% url 'homeworkupload' %}"
+              method="post" enctype="multipart/form-data"
+              onsubmit="return checkCoursewareSubmit()">
+            {% csrf_token %}
+        lesson:
+            <select class="select-class">
+                {% for lesson in lessons %}
+                    <option value="{{ lesson.id }}">{{ lesson.lesson_name }}</option>
+                {% endfor %}
+            </select>
+            <div class="homework-btns" style="margin-bottom: 20px; margin-top: 20px;">
+                <button type="button" style="margin-right: 20px;" id="new-outline">新建</button>
+                <button type="button" style="margin-right: 20px;" id="homework-preview-in-lessonpage">预览</button>
+                <button type="button" style="margin-right: 20px;" data-toggle="modal" data-target="#knowledgePoint">知识点大纲</button>
+                
+                <button type="button" style="margin-right: 20px;" id="publish-homework-subject">发布</button>
+            </div>
+            <div class="mt50 mb20 old-upload">
+                <input type="file" accept="image/*, application/pdf" id="old-edition-upload-homework-input" class="mb10"/>
+                <input type="button" id="old-edition-upload-homework" value="上传">
+            </div>
+            <!-- <p><input type="submit" value="upload" class="old-edition-upload-homework"/></p> -->
+        </form>
+    {% endif %}
+{% endblock %}
+
+{% block extra_ending %}
+{{ block.super }}
+{% endblock %}

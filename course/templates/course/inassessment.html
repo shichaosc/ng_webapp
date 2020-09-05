@@ -1,0 +1,957 @@
+{% extends 'course/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{% trans "Assessment" %}{% endblock %}
+
+{% block content %}
+
+    <style>
+        .row {
+            margin: 0;
+        }
+
+
+        audio {
+            margin-top: 30px;
+        }
+    </style>
+
+    <div class="pop-card-container pc" style="width: 648px;margin: 50px auto 50px">
+        <div class="pop-card-circle-container">
+            <div class="pop-card-circle">
+                <div class="flex-column-center" style="margin-top: 23px">
+                    <img src="{% static 'images/top_up.png' %}">
+                    <p>{% trans "Assessment" %}</p>
+                </div>
+            </div>
+        </div>
+        <div class="pop-card-top-up" style="padding: 75px 1px 1px 1px">
+            <div class="card-block">
+                <div class="row">
+                    <div class="modal fade" id="loading" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel"
+                         data-backdrop='static'>
+
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">{% trans "Notice" %}</h4>
+                                </div>
+                                <div class="modal-body">{% trans "loading...." %}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="margin-left: 10px" id="pc_question_num">
+
+                    </div>
+                    <div>
+                        <div class="row" id="pc_question_stem" style="margin-left: 20px">
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" id="pc_alternativeA">
+
+                            </div>
+                            <div class="col-md-6" id="pc_alternativeB">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" id="pc_alternativeC">
+
+                            </div>
+                            <div class="col-md-6" id="pc_alternativeD">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-4">
+
+                    </div>
+                    {% if request.user.is_authenticated %}
+                    {% else %}
+                        <div class="col-md-3 col-xs-3" id="pc_hide_Sign">
+                            <a href="/accounts/signup/" style="margin-top: 50%;margin-right: 10px"
+                               class="btn pull-right  btn-social btn-fill btn-round btn-twitter">
+                                {% trans "Sign Up" %}
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    <div id="show_grade" style="margin-bottom: 10px"
+                         class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
+
+                    </div>
+                    <div id="pc_show_button" style="margin-bottom: 10px"
+                         class="col-md-6 col-md-offset-3 text-center">
+                        <button style="margin-right: 10px" onclick="clickLast()"
+                                class="btn btn-lg  btn-round">
+                            {% trans "previous" %}
+                        </button>
+                        <button style="margin-left: 10px" onclick="clickNext()"
+                                class="btn btn-lg  btn-round ">{% trans "next" %}</button>
+                    </div>
+                    <form class="form" id="updateAssessment_form" action="/course/updateAssessment/"
+                          method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="rightnumber" id="rightnumber"/>
+                        <input type="hidden" name="detail" id="detail"/>
+                        <input type="hidden" name="course_level" id="course_level"/>
+                        <input type="hidden" name="programme" id="programme"/>
+                    </form>
+                    <button onclick="clickNext()"
+                            style="width: 200px;height: 44px;font-size: 16px;display: block;margin: 30px auto 17px"
+                            class="btn-gradient-background">
+                        {% trans "skip" %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-gray phone" xmlns="http://www.w3.org/1999/html">
+        <div class="container">
+            <div class="card">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-md-3" id="question_title">
+
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="text-center">{% trans title %}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                             data-backdrop='static'>
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="myModalLabel">{% trans "Notice" %}</h4>
+                                    </div>
+                                    <div class="modal-body">{% trans "loading...." %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="margin-left: 10px" class="col-md-3 col-xs-5" id="question_num">
+
+                        </div>
+                        <div class="col-md-5 col-xs-8">
+                            <div class="row" id="question_stem" style="margin-left: 20px">
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6" id="alternativeA">
+
+                                </div>
+                                <div class="col-md-6" id="alternativeB">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6" id="alternativeC">
+
+                                </div>
+                                <div class="col-md-6" id="alternativeD">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-4">
+                            <div class="col-md-3 col-xs-4 col-xs-offset-8" id="hide_submit">
+                                <button onclick="clickNext()" style="margin-top: 10px;margin-right: 10px"
+                                        class="btn pull-right btn-social btn-fill btn-round btn-twitter">
+                                    {# class="btn pull-right btn-block btn-social btn-fill btn-round btn-twitter"#}
+                                    {% trans "skip" %}
+                                </button>
+                            </div>
+                        </div>
+                        {% if request.user.is_authenticated %}
+                        {% else %}
+                            <div class="col-md-3 col-xs-3 hidden" id="hide_Sign">
+                                <a href="/accounts/signup/" style="margin-top: 50%;margin-right: 10px"
+                                   class="btn pull-right  btn-social btn-fill btn-round btn-twitter">
+                                    {% trans "Sign Up" %}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="row">
+                        <div id="show_grade" style="margin-bottom: 10px"
+                             class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
+
+                        </div>
+                        <div id="show_button" style="margin-bottom: 10px" class="col-md-6 col-md-offset-3 text-center hidden">
+                            <button style="margin-right: 10px" onclick="clickLast()" class="btn btn-lg  btn-round">
+                                {% trans "previous" %}
+                            </button>
+                            <button style="margin-left: 10px" onclick="clickNext()"
+                                    class="btn btn-lg  btn-round ">{% trans "next" %}</button>
+                        </div>
+                        <form class="form" id="updateAssessment_form" action="/course/updateAssessment/" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="rightnumber" id="rightnumber"/>
+                            <input type="hidden" name="detail" id="detail"/>
+                            <input type="hidden" name="course_level" id="course_level"/>
+                            <input type="hidden" name="programme" id="programme"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+    {#    <script src="{% static "js/jquery-ui.js" %}" type="text/javascript"></script>#}
+    <script>
+        $("#show_button").hide();
+        $("#pc_show_button").hide();
+        $("#hide_Sign").hide();
+        $("#pc_hide_Sign").hide();
+        var timerGet = null;
+        var continuRight = 0;
+        var continuWrong = 0;
+        var highOrLow = 0;
+        {# 0:年级不变 1：年级+ 2：年级- #}
+        var lowQues;
+        var currentQus;
+        var highQues;
+        var allQuestionNum = 15;
+
+        // 最高级别
+        var highgrade = {{ high_level|safe}};
+        // 当前级别
+        var lowgrade = {{ low_level|safe}};
+        // 获取版本类型
+        var programme_name = {{ programme_name|safe}};
+        if(programme_name == "Advanced"){
+            allQuestionNum =10
+        }
+
+        var testgrade = lowgrade;
+        var judgeNum = 0;
+        var clearJudge = false;
+        var num = 0; //当前第几题
+        var judgeArr = new Array(); //临时判断题目数组
+        var questList = {{ questions|safe}}; //存储所有题目
+        var hasArray = new Array();  //存储已做题目
+        var isSubmit = false;
+        showQuestion(0);
+
+        function preloadImg(srcArr) {
+            if (srcArr instanceof Array) {
+                for (var i = 0; i < srcArr.length; i++) {
+                    var oImg = new Image();
+                    oImg.src = srcArr[i];
+                }
+            }
+        }
+
+        function clickLast() {
+            if (num == 0)
+                alert("第一道题目");
+            else {
+                num--;
+                if (!isSubmit) {
+                    showQuestion(num);
+                } else {
+                    if (ExitHasQues()) {
+                        showSelectAn(num)
+                    } else {
+                        showRightSelect(num);
+                    }
+                }
+            }
+        }
+
+        // 取下一道题
+        function getReadlyQues() {
+
+            if (testgrade > 1) {
+                getLastGradeQuest();
+            }
+            if (testgrade < highgrade) {
+                getNextGradeQuest();
+            }
+            getCurrentGradeQuest();
+        }
+
+        function getCurrentGradeQuest() {
+            var questionNo = '';
+            for (var i in questList) {
+                var detailJson = questList[i].detail
+                detailObj = JSON.parse(detailJson)
+                var tempNo = detailObj.no + ',';
+                questionNo = questionNo + tempNo;
+            }
+            questionNo = questionNo.substr(0, questionNo.length - 1);
+            $.get("/course/getTestQuestion/", {course_level: testgrade, level: "1", e: questionNo , programme_name:programme_name}, function (data) {
+                currentQus = data[0];
+
+            }, "json");
+        }
+
+        function getLastGradeQuest() {
+            var questionNo = '';
+            for (var i in questList) {
+                var detailJson = questList[i].detail
+                detailObj = JSON.parse(detailJson)
+                var tempNo = detailObj.no + ',';
+                questionNo = questionNo + tempNo;
+            }
+            questionNo = questionNo.substr(0, questionNo.length - 1);
+            var lastgrade = testgrade - 1;
+            $.get("/course/getTestQuestion/", {course_level: lastgrade, level: "1", e: questionNo ,programme_name:programme_name}, function (data) {
+                lowQues = data[0];
+            }, "json");
+        }
+
+        function getNextGradeQuest() {
+            var questionNo = '';
+            for (var i in questList) {
+                var detailJson = questList[i].detail
+                detailObj = JSON.parse(detailJson)
+                var tempNo = detailObj.no + ',';
+                questionNo = questionNo + tempNo;
+            }
+            questionNo = questionNo.substr(0, questionNo.length - 1);
+            var nextgrade = testgrade + 1;
+            $.get("/course/getTestQuestion/", {course_level: nextgrade, level: "1", e: questionNo , programme_name:programme_name}, function (data) {
+                highQues = data[0];
+            }, "json");
+        }
+
+        function gotoNextQues() {
+            num++;
+
+            if (num >= allQuestionNum) {
+                num = allQuestionNum - 1;
+                if (!isSubmit) {
+                    submitAnswer()
+                }
+            } else if (num == questList.length - 1 && questList.length < allQuestionNum) {
+                showQuestion(num);
+                getReadlyQues();
+            } else {
+                if (num > 2) {
+                    judgeIsAdd();
+                    getReadlyQues();
+                }
+
+                if (num < questList.length) {
+                    showQuestion(num)
+                } else {
+                    $('#loading').modal('show');
+                    timerGet = window.setInterval(timerGetQuestion, 1000);
+
+                }
+            }
+        }
+
+        function clickNext() {
+            num++;
+            if (num >= allQuestionNum) {
+                if (!isSubmit) {
+                    if (!exitJudgeArr(num - 1)) {
+                        var tempObj = questList[num - 1];
+                        var detailJson = tempObj.detail
+                        var detailObj = JSON.parse(detailJson)
+                        detailObj.titleNum = num - 1;
+                        judgeGrade(detailObj)
+
+                        {#                    var questionObj = questList[num - 1];#}
+                        detailObj.select = "";
+                        {#                    detailObj.titleNum = num - 1;#}
+                        if (!ExitHasQues()) {
+                            hasArray.push(detailObj);
+                        }
+                    }
+                    submitAnswer()
+                }
+                num = allQuestionNum - 1
+            } else if (questList.length < allQuestionNum) {
+                if (!isSubmit) {
+                    if (!exitJudgeArr(num - 1)) {
+                        var tempObj = questList[num - 1];
+                        var detailJson = tempObj.detail
+                        var detailObj = JSON.parse(detailJson)
+                        detailObj.titleNum = num - 1;
+                        judgeGrade(detailObj)
+                        {#                    var questionObj = questList[num - 1];#}
+                        detailObj.select = "";
+                        {#                    questionObj.titleNum = num - 1;#}
+                        if (!ExitHasQues()) {
+                            hasArray.push(detailObj);
+                        }
+                    }
+                    if (num == questList.length - 1) {
+                        if (!isSubmit) {
+                            getReadlyQues();
+                        }
+                    } else if (num > questList.length - 1) {
+                        if (num > questList.length - 1) {
+                            $('#loading').modal('show');
+                            timerGet = window.setInterval(timerGetQuestion, 1000);
+                        } else {
+                            judgeIsAdd()
+                            if (!isSubmit) {
+                                getReadlyQues()
+                            }
+                        }
+                    }
+                    if (num < questList.length) {
+                        showQuestion(num)
+                    }
+                } else {
+                    if (ExitHasQues()) {
+                        showSelectAn(num);
+                    } else {
+                        showRightSelect(num);
+                    }
+                }
+            } else {
+                if (!isSubmit) {
+                    if (num < questList.length) {
+                        showQuestion(num)
+                    } else {
+                        num--;
+                    }
+                } else {
+                    if (ExitHasQues()) {
+                        showSelectAn(num);
+                    } else {
+                        showRightSelect(num);
+                    }
+                }
+            }
+        }
+
+        function timerGetQuestion() {
+            judgeIsAdd();
+            if (num < questList.length) {
+                $('#loading').modal('hide');
+                showQuestion(num)
+                window.clearTimeout(timerGet);
+                getReadlyQues();
+            }
+        }
+
+        function judgeIsAdd() {
+            switch (highOrLow) {
+                case 0: {
+                    if (currentQus != null) {
+                        questList.push(currentQus);
+                        currentQus = null;
+                        highQues = null;
+                        lowQues = null;
+                    }
+                    break;
+                }
+                case 1: {
+                    if (highQues != null) {
+                        questList.push(highQues)
+                        currentQus = null;
+                        highQues = null;
+                        lowQues = null;
+                    }
+                    break;
+                }
+                case 2: {
+                    if (lowQues != null) {
+                        questList.push(lowQues)
+                        currentQus = null;
+                        highQues = null;
+                        lowQues = null;
+                    }
+                    break;
+                }
+            }
+        }
+
+        function showStem(obj) {
+            $('#question_stem').empty();
+            $('#pc_question_stem').empty();
+
+            var stemObj = obj.stem
+            if (stemObj.length === 2) {
+                var type = stemObj[0].type
+                var content = stemObj[0].content
+                if (type == 'text') {
+
+                    stem_Html = '<li style="list-style: none"><label style="font-size: 16px">' + '{% if isdebug  %}（'
+                        + obj.no +'）{% endif %}' + ' ' + content + '</label></li>';
+
+                    $(stem_Html).appendTo('#question_stem');
+                    $(stem_Html).appendTo('#pc_question_stem');
+                    if (stemObj[1].type == 'audio') {
+                        stemHtml = '<audio controls autoplay class="audio_stem"><source width="100%"  src="' + obj.stem[1].content + '"' + '><audio>'
+
+                    } else if (stemObj[1].type == 'image') {
+                        stemHtml = '<img width="100%"  src="' + obj.stem[1].content + '"' + '>'
+
+                    } else {
+                        stemHtml = ""
+                    }
+
+                    $(stemHtml).appendTo('#question_stem');
+                    $(stemHtml).appendTo('#pc_question_stem');
+
+                }
+            } else {
+
+                //   var no = obj.no
+                var type = stemObj.type
+                var content = stemObj.content
+                if (type == 'text') {
+                    stemHtml = '<li style="list-style: none"><label style="font-size: 16px">' + '{% if isdebug  %}（'
+                        + obj.no +'）{% endif %}' + ' ' + content + '</label></li>';
+                } else {
+                    stemHtml = '<p>' + '{% if isdebug  %}（'+ obj.no +
+                        '）{% endif %}' + '</p>' + '<img width="100%"  src="' + content + '"' + '>'
+                }
+                $(stemHtml).appendTo('#question_stem');
+                $(stemHtml).appendTo('#pc_question_stem');
+            }
+
+        }
+
+        function showAlternativeA(obj) {
+            $('#alternativeA').empty();
+            $('#pc_alternativeA').empty();
+            var detail = obj.detail
+            var type = detail.type
+            var content = detail.content
+            if (type == 'text') {
+                Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + 'A:' + content + '</button></li>';
+            } else if (type == 'audio') {
+                Ahtml = '<span>' + '<img style="visibility: visible" class="alter" width="25px" src="/static/images/Thehorn.png">' + '<audio onended="audio_end(this)"><source  src="' + content + '"' + '><audio>' + '</span>';
+                Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + 'A:' + '</button></li>' + Ahtml;
+
+            } else {
+                Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + '<h4>A:</h4>' + '<img width="100%"  src="' + content + '"' + '>' + '</button></li>';
+            }
+            $(Ahtml).appendTo('#alternativeA');
+            $(Ahtml).appendTo('#pc_alternativeA');
+        }
+
+        function showAlternativeB(obj) {
+            $('#alternativeB').empty();
+            $('#pc_alternativeB').empty();
+            var detail = obj.detail
+            var type = detail.type
+            var content = detail.content
+            if (type == 'text') {
+                Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + 'B:' + content + '</button></li>';
+            } else if (type == 'audio') {
+                Bhtml = '<span>' + '<img class="alter" width="25px" src="/static/images/Thehorn.png">' + '<audio onended="audio_end(this)"><source  src="' + content + '"' + '><audio>' + '</span>';
+                Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + 'B:' + '</button></li>' + Bhtml;
+
+            } else {
+                Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + '<h4>B:</h4>' + '<img width="100%"  src="' + content + '"' + '>' + '</button></li>';
+            }
+            $(Bhtml).appendTo('#alternativeB');
+            $(Bhtml).appendTo('#pc_alternativeB');
+        }
+
+        function showAlternativeC(obj) {
+            $('#alternativeC').empty();
+            $('#pc_alternativeC').empty();
+            var detail = obj.detail
+            var type = detail.type
+            var content = detail.content
+            if (type == 'text') {
+                Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + 'C:' + content + '</button></li>';
+            } else if (type == 'audio') {
+                Chtml = '<span>' + '<img class="alter" width="25px" src="/static/images/Thehorn.png">' + '<audio onended="audio_end(this)"><source  src="' + content + '"' + '><audio>' + '</span>';
+                Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + 'C:' + '</button></li>' + Chtml;
+
+            } else {
+                Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + '<h4>C:</h4>' + '<img width="100%"  src="' + content + '"' + '>' + '</button></li>';
+            }
+            $(Chtml).appendTo('#alternativeC');
+            $(Chtml).appendTo('#pc_alternativeC');
+        }
+
+        function showAlternativeD(obj) {
+            $('#alternativeD').empty();
+            $('#pc_alternativeD').empty();
+            var detail = obj.detail
+            var type = detail.type
+            var content = detail.content
+            if (type == 'text') {
+                if (content.length > 0) {
+                    Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + 'D:' + content + '</button></li>'
+                    $(Dhtml).appendTo('#alternativeD');
+                    $(Dhtml).appendTo("#pc_alternativeD");
+                }
+
+            } else if (type == 'audio') {
+                if (content.length > 0) {
+                    Dhtml = '<span>' + '<img class="alter" width="25px" src="/static/images/Thehorn.png">' + '<audio onended="audio_end(this)"><source  src="' + content + '"' + '><audio>' + '</span>';
+                    Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + 'D:' + '</button></li>' + Dhtml;
+
+                }
+            } else {
+                if (content.length > 0) {
+                    Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D" onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + '<h4>D:</h4>' + '<img width="100%"  src="' + content + '"' + '>' + '</button></li>'
+                    $(Dhtml).appendTo('#alternativeD');
+                    $(Dhtml).appendTo("#pc_alternativeD");
+                }
+
+            }
+
+        }
+
+        function showQuestion(obj) {
+            var no = parseInt(obj);
+            var detailJson = questList[no].detail
+            detailObj = JSON.parse(detailJson)
+            showStem(detailObj)
+            var alternatives = detailObj.alternatives
+            showAlternativeA(alternatives[0])
+            showAlternativeB(alternatives[1])
+            showAlternativeC(alternatives[2])
+            showAlternativeD(alternatives[3])
+
+            // 控制音频的播放/暂停
+            $(".alter").on("click", function () {
+
+                $(".alter").attr('src', "/static/images/Thehorn.png")
+                this.src = "/static/images/play.png";
+                var audio = $(this).next()[0]
+                if (audio.paused) {
+                    audio.play();
+
+                } else {
+                    this.src = "/static/images/Thehorn.png"
+                    audio.pause();
+                }
+            })
+
+            var audios = document.getElementsByTagName("audio");
+
+            // 暂停函数
+            function pauseAll() {
+                var self = this;
+                [].forEach.call(audios, function (i) {
+                    // 将audios中其他的audio全部暂停
+                    i !== self && i.pause();
+                })
+            }
+
+            // 给play事件绑定暂停函数
+            [].forEach.call(audios, function (i) {
+                i.addEventListener("play", pauseAll.bind(i))
+
+            })
+
+            $(".audio_stem").on('click', function () {
+                $(".alter").attr("src", '/static/images/Thehorn.png')
+            })
+
+
+        }
+
+        // 音频播放完毕触发的函数
+        function audio_end(obj) {
+            var audio_img = $(obj).prev()[0]
+            audio_img.src = '/static/images/Thehorn.png'
+        }
+
+
+        function clickAnswer(obj) {
+
+            var userAns = obj.value;
+            if(num>=questList.length){
+                num--
+            }
+            var questionjson = questList[num].detail;
+            questionObj = JSON.parse(questionjson)
+
+            questionObj.select = userAns;
+            questionObj.titleNum = num;
+
+            if (!ExitHasQues()) {
+                hasArray.push(questionObj);
+            }
+            if (!exitJudgeArr(num)) {
+                judgeGrade(questionObj);
+            }
+            gotoNextQues();
+        }
+
+        function exitJudgeArr(quesnum) {
+            for (var i in judgeArr) {
+                var questionObj = judgeArr[i];
+                var hasTitleNum = questionObj.titleNum;
+                if (hasTitleNum == quesnum) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function ExitHasQues() {
+            for (var i in hasArray) {
+                var questionObj = hasArray[i];
+                var hasTitleNum = questionObj.titleNum;
+                if (hasTitleNum == num) {
+                    return true
+                }
+            }
+            return false;
+        }
+
+
+        function judgeGrade(obj) {
+            judgeArr.push(obj);
+            var answer = obj.answer;
+            answer.split(' ').join('');
+            var select = obj.select;
+            if (select == answer) {
+                continuRight++;
+                continuWrong = 0;
+            } else {
+                continuWrong++;
+                continuRight = 0;
+            }
+            // 三道题全部回答正确
+            if (continuRight == 3) {
+                if (testgrade < highgrade) {
+                    testgrade++;
+                    highOrLow = 1;
+                } else {
+                    highOrLow = 0;
+                }
+                continuRight = 0;
+            }
+            // 全部回答错误
+            else if (continuWrong == 3) {
+                if (testgrade > 1) {
+                    testgrade--;
+                    highOrLow = 2;
+                } else {
+                    highOrLow = 0;
+                }
+                continuWrong = 0;
+            } else {
+                highOrLow = 0;
+            }
+        }
+
+        function submitResult() {
+            var rightNumber = statistRightOrWrong();
+            var answerDetailArr = getAnswerDetail();
+            var answerObj = new Object()
+            answerObj['version'] = 2.0
+            answerObj['detail'] = answerDetailArr
+            var detailJson = JSON.stringify(answerObj);
+            //    var judgeright = parseInt(rightNumber)
+            //   if (judgeright >= 6) {
+            //     testgrade = highgrade
+            //   } else {
+            //       testgrade = lowgrade
+            //   }
+            document.getElementById("detail").value = detailJson;
+            document.getElementById("course_level").value = testgrade;
+            document.getElementById("rightnumber").value = rightNumber;
+            document.getElementById("programme").value = programme_name;
+            document.getElementById("updateAssessment_form").submit();
+        }
+
+        function getAnswerDetail() {
+            var detailArr = new Array();
+            for (var i in  hasArray) {
+                var detailObj = new Object();
+                detailObj.no = hasArray[i].no;
+                detailObj.correct_answer = hasArray[i].answer.split(' ').join('');
+                detailObj.answer = hasArray[i].select;
+                detailArr.push(detailObj);
+            }
+            return detailArr
+        }
+
+        function submitAnswer() { //提交答案
+            allQuestionNum = questList.length;
+            isSubmit = true;
+            submitResult();
+        }
+
+        function statistRightOrWrong() {
+            var rightCount = 0;
+            for (var i in hasArray) {
+                var questionObject = hasArray[i];
+                var answer = questionObject.answer;
+                answer.split(' ').join('');
+                var select = questionObject.select;
+                if (answer == select) {
+                    rightCount++;
+                }
+            }
+            return rightCount;
+        }
+
+        function showSelectResult() { //显示答题结果
+            if (ExitHasQues()) {
+                showSelectAn(num);
+            } else {
+                showRightSelect(num);
+            }
+        }
+
+        function showSelectAn(quesnum) {
+            var no = parseInt(quesnum);
+            var quesobj = questList[no]
+            var answer = quesobj.answer;
+            answer.split(' ').join('');
+            var select = quesobj.select;
+            $('#question_content').empty();
+            showOption(quesnum);
+            if (answer == 'A') {
+                Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'A:' + quesobj.alternative.A + '</button></li>';
+            } else if (answer == 'B') {
+                Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'B:' + quesobj.alternative.B + '</button></li>';
+            } else if (answer == 'C') {
+                Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'C:' + quesobj.alternative.C + '</button></li>';
+            } else {
+                Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'D:' + quesobj.alternative.D + '</button></li>';
+            }
+            if (answer != select) {
+                if (select == 'A') {
+                    Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px ;border-radius: 5px; background-color: #FF9500">' + 'A:' + quesobj.alternative.A + '</button></li>';
+                } else if (select == 'B') {
+                    Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B" id="errorBtn" style="text-align: left;border: 0px ;border-radius: 5px; background-color: #FF9500">' + 'B:' + quesobj.alternative.B + '</button></li>';
+                } else if (select == 'C') {
+                    Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" id="errorBtn" style="text-align: left;border: 0px ;border-radius: 5px; background-color: #FF9500">' + 'C:' + quesobj.alternative.C + '</button></li>';
+                } else if (select == 'D') {
+                    Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D" id="errorBtn" style="text-align: left;border: 0px ;border-radius: 5px; background-color: #FF9500">' + 'D:' + quesobj.alternative.D + '</button></li>';
+                }
+            } else {
+                if (answer == 'A') {
+                    Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'A:' + quesobj.alternative.A + '</button></li>';
+                } else if (answer == 'B') {
+                    Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'B:' + quesobj.alternative.B + '</button></li>';
+                } else if (answer == 'C') {
+                    Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'C:' + quesobj.alternative.C + '</button></li>';
+                } else {
+                    Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D" id="successBtn" style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'D:' + quesobj.alternative.D + '</button></li>';
+                }
+            }
+            html = '<ul>' + stemHtml + Ahtml + Bhtml + Chtml + Dhtml + '</ul>';
+            $(html).appendTo('#question_content');
+
+        }
+
+        function showOption(quesnum) {
+            var no = parseInt(quesnum);
+            var quesobj = questList[no];
+            stemHtml = '<li style="list-style: none"><label style="font-size: 16px">' + (no + 1) + '、' + quesobj.stem + '（' + questList[no].no + '）' + '</label></li>';
+            var stemList = quesobj.stem;
+            stemHtml = '<li style="list-style: none"><label style="font-size: 16px">' + (no + 1) + '、';
+            stemHtml = stemHtml + '{% if isdebug  %}（'+ questList[no].no +'）{% endif %}'
+            for (var i = 0; i < stemList.length; i++) {
+                var temp = stemList[i];
+                stemHtml = stemHtml + temp + '</br>';
+            }
+            stemHtml = stemHtml + '</label></li>'
+
+            Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" style="text-align: left;border: 0px;background-color: transparent">' + 'A:' + quesobj.alternative.A + '</button></li>';
+            Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B" style="text-align: left;border: 0px;background-color: transparent ">' + 'B:' + quesobj.alternative.B + '</button></li>';
+            Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" style="text-align: left;border: 0px;background-color: transparent">' + 'C:' + quesobj.alternative.C + '</button></li>';
+            Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D" style="text-align: left;border: 0px;background-color: transparent ">' + 'D:' + quesobj.alternative.D + '</button></li>';
+        }
+
+        function showRightSelect(quesnum) {
+            var no = parseInt(quesnum);
+            var quesobj = questList[no];
+            var right = quesobj.answer;
+            right.split(' ').join('');
+            $('#question_content').empty();
+            showOption(quesnum);
+            if (right == 'A') {
+                Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid limegreen;border-radius: 5px; background-color: transparent" value="A" id="successBtn" >' + 'A:' + quesobj.alternative.A + '</button></li>';
+            } else if (right == 'B') {
+                Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="B" id="successBtn" style="text-align: left;border: 2px solid limegreen;border-radius: 5px; background-color: transparent">' + 'B:' + quesobj.alternative.B + '</button></li>';
+            } else if (right == 'C') {
+                Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="C" id="successBtn" style="text-align: left;border: 2px solid limegreen;border-radius: 5px; background-color: transparent">' + 'C:' + quesobj.alternative.C + '</button></li>';
+            } else {
+                Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="D" id="successBtn" style="text-align: left;border: 2px solid limegreen;border-radius: 5px; background-color: transparent">' + 'D:' + quesobj.alternative.D + '</button></li>';
+            }
+            html = '<ul>' + stemHtml + Ahtml + Bhtml + Chtml + Dhtml + '</ul>';
+            $(html).appendTo('#question_content');
+        }
+
+        function clickQuestNo(obj) {
+            var quesno = obj.value;
+            num = quesno;
+            if (ExitHasQues()) {
+                showSelectAn(quesno)
+            } else {
+                showRightSelect(quesno);
+            }
+        }
+
+        function showQuesNo() {
+            var allNumber = questList.length;
+            var rowCount = 0;
+            //平台、设备和操作系统
+            var system = {
+                win: false,
+                mac: false,
+                xll: false,
+                ipad: false
+            };
+            //检测平台
+            var p = navigator.platform;
+            system.win = p.indexOf("Win") == 0;
+            system.mac = p.indexOf("Mac") == 0;
+            system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+            system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
+            //跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面
+            var count = 0;
+            if (system.win || system.mac || system.xll) {
+                count = 3
+            } else if (system.ipad) {
+                count = 4
+            } else {
+                return;
+            }
+            if (allNumber % count == 0) {
+                rowCount = allNumber / count;
+            } else {
+                rowCount = allNumber / count + 1;
+            }
+            var html = '<table style="margin-left:5px;border-collapse:separate;border-spacing:5px">'
+            for (var i = 0; i < rowCount; i++) {
+                html += '<tr>';
+                for (var j = 0; j < count; j++) {
+                    if ((i * count + j) < allNumber) {
+                        var value = i * count + j;
+                        html += '<td>';
+                        html += '<button onclick="clickQuestNo(this)" class="btn pull-right  btn-round btn-twitter"' + 'value=' + value + '>' + ((i * count + j) + 1) + '</button>';
+                        html += '</td>';
+                    }
+                }
+                html += '</tr>';
+            }
+            html += '</table>';
+
+            $(html).appendTo('#question_num');
+            $(html).appendTo('#pc_question_num');
+            var titlehtml = '<h4 style="margin-left: 20px">';
+            titlehtml += '{% trans "List" %}' + '</h4>';
+            $(titlehtml).appendTo('#question_title');
+        }
+
+
+    </script>
+{% endblock %}

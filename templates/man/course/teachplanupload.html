@@ -1,0 +1,31 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Teachplan Upload" %}{% endblock %}
+
+{% block content %}
+    <!-- List of courses -->
+    {% if courses %}
+        <table class="table">
+        <tr>
+        <td>  {% trans 'teachplan' %}</td>
+        {% for course in courses %}
+	        {% ifequal cur_course course.id %}
+            <td><a style="color: red;" href="{% url 'teachplanupload' %}?course={{ course.id }}">{{ course.course_name }}</a></td>
+            {% else %}
+	        <td><a href="{% url 'teachplanupload' %}?course={{ course.id }}">{{ course.course_name }}</a></td>
+            {% endifequal %}
+        {% endfor %}
+        </tr>
+    </table>
+
+    {% else %}
+        <a href="{% url 'teachplanupload' %}">Reselect course</a>
+    {% endif %}
+    <!-- Upload form. Note enctype attribute! -->
+        <form action="{% url 'teachplanupload' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                {{ form }}
+            <p><input type="submit" value="Upload" /></p>
+        </form>
+{% endblock %}

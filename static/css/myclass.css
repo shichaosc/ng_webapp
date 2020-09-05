@@ -1,0 +1,478 @@
+.small-class-conter{
+    position: relative;
+    max-width: 1120px;
+    font-family: PingFangSC-Regular, sans-serif;
+    margin: 17px auto 30px auto;
+    padding: 1px;
+    min-height: 200px
+}
+
+.small-class-nav{
+    height:110px;
+    background: url(../images/small-class/small-class-banner.png) no-repeat top center;
+    position: relative;
+}
+.small-class-nav-info{
+    position: absolute;
+    left:80px;
+    top:17px;
+    display:flex;
+}
+.lt-title{
+    line-height:50px;
+    font-size:34px;
+    font-weight:400;
+    color:#fff;
+    margin:0;
+}
+.lt-subtitle{
+    text-align: center;
+    font-size:16px;
+    color:#FFE300;
+    display:block;
+}
+.nav-info-rt{
+    margin:5px 0 0 20px;
+    line-height:20px;
+}
+.nav-info-rt span{
+    display:block;
+    font-size:14px;
+    color:#fff;
+}
+.nav-info-rt span i{
+    display:inline-block;
+    width:3px;
+    height:3px;
+    background:#fff;
+    vertical-align: middle;
+    border-radius:100%;
+    -webkit-border-radius:100%;
+    -moz-border-radius:100%;
+    -ms-border-radius:100%;
+    -o-border-radius:100%;
+}
+
+.my-class-info{
+    background:#fff;
+    padding:20px 0;
+    margin-top:15px;
+    overflow:hidden;
+    text-align:center;
+    border-radius:12px;
+    -webkit-border-radius:12px;
+    -moz-border-radius:12px;
+    -ms-border-radius:12px;
+    -o-border-radius:12px;
+}
+.my-class-info h4,.my-class-card h4{
+    font-size: 20px;
+    font-weight: 400;
+    color: #3B3B4D;
+    margin:0;
+    border-radius: 2px;
+    border-bottom: 2px solid #5CC2D0;
+    display: inline-block;
+    padding-bottom: 3px;
+}
+.my-class-info .my-class-member{
+    display:grid;
+    justify-content: center;
+    margin:0 auto;
+    text-align:left;
+}
+.my-class-info .my-class-member img{
+    width:17px;
+    margin-right:5px;
+    cursor:pointer;
+}
+.my-class-info .my-class-member p.classmetas span,.my-class-info .my-class-member p.classmetas em,.my-class-info .my-class-member p.classmetas img{
+    display:block;
+    float:left;
+}
+.my-class-info .my-class-member p {
+    width:100%;
+    line-height:22px;
+    font-size:16px;
+    margin:15px 0 0 0;
+}
+.my-class-info .my-class-member p span{
+    font-weight:bold;
+}
+
+.my-class-info .my-class-member p em{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-style: normal;
+    max-width:135px;
+    margin-right:20px;
+}
+.my-class-info .my-class-member p i{
+    font-style: normal;
+}
+.my-class-info .my-class-member p form{
+    display:inline-block;
+}
+.my-class-info .my-class-member p input{
+    min-width:240px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+.my-class-info .my-class-member .hide{
+    display:none;
+}
+.modify-submit{
+    border-radius:13px;
+    padding:0 10px;
+    border:1px solid #5CC2D0;
+    font-size:14px;
+    color:#5CC2D0;
+}
+.my-class-member p.classmetas img{
+    margin-right:10px;
+}
+.my-class-card{
+    background:#fff;
+    padding:20px 45px;
+    margin-top:16px;
+}
+.my-class-card-tit{
+    width:100%;
+    overflow:hidden;
+    display:flex;
+    justify-content: space-between;
+}
+.my-class-card-tit a{
+    display:block;
+    height:26px;
+    line-height:23px;
+    border-radius:14px;
+    -webkit-border-radius:14px;
+    -moz-border-radius:14px;
+    -ms-border-radius:14px;
+    -o-border-radius:14px;
+    border:2px solid #5CC2D0;
+    color:#5CC2D0;
+    font-size:14px;
+    padding:0 10px;
+    text-align:center;
+}
+.my-class-card .list .item {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    margin: 0 30px;
+}
+
+.my-class-card .list .item .courseware, .my-class-card .list .item a,.arrangement-record {
+    color:#5CC2D0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.my-class-card ul a {
+    color: #3B3B4D !important;
+    font-size: 16px;
+}
+
+.my-class-card .list {
+    background: #FCFCFC;
+    margin: 21px 0 42px 0;
+}
+.arrangement-icon{
+    width:22px;
+}
+.my-class-card .item{
+    display:flex;
+    justify-content: space-between;
+    border-bottom:1px solid #d5d5d8;
+}
+.my-class-card .item:last-child{
+    border-bottom:none;
+}
+.my-class-card .item .arrangement-icon{
+    width:20px;
+}
+.my-class-card .item .arrangement-group{
+    width:20px;
+}
+.my-class-card .arrangement-time span{
+    padding:0 5px;
+}
+.appointment-more{
+    text-align:center;
+    color:#189BD8;
+}
+.appointment-more span{
+    display:inline-block;
+    cursor:pointer;
+}
+.appointment-more img{
+    margin-left:5px;
+}
+.arrangement-cancel{
+    color:#189BD8;
+    cursor: pointer;
+}
+.empty-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-data img {
+    width: 82px;
+    margin-right: 20px;
+}
+
+.empty-data p {
+    margin: 0;
+    font-size: 15px;
+    color: #3B3B4D;
+}
+.small-pc{
+    display:block
+}
+.small-phone,.mobile-class-code{
+    display:none
+}
+.sidebar-code{
+    width:60px;
+    background:#fff;
+    position:fixed;
+    left:50%;
+    margin-left:-626px;
+    top:60%;
+}
+.sidebar-my-class{
+    text-align:center;
+    margin-top:10px;
+    cursor:pointer;
+    position:relative;
+}
+.sidebar-my-class a{
+    display:block;
+    color:#3B3B4D;
+}
+.sidebar-my-class img{
+    display:block;
+    margin:0 auto;
+    width:50px;
+}
+.sidebar-my-class span{
+    font-size:12px;
+    line-height:20px;
+    margin:5px 0;
+    display:block;
+}
+.connect-code{
+    margin-top:20px;
+}
+.sidebar-my-class:hover .qr-code{
+    display:block;
+}
+.qr-code{
+    width:165px;
+    position:absolute;
+    top:0;
+    left:60px;
+    display:none;
+}
+.code-wrap{
+    width:100%;
+    height:100%;
+    display: flex;
+}
+.triangle{
+    margin-top:50px;
+    width: 0;
+    height: 0;
+    border-width: 12px;
+    border-style: solid;
+    border-color: transparent #EEFCFF transparent transparent;
+}
+.code-info{
+    background:#EEFCFF;
+    border-radius:5px;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    text-align:center;
+    padding-top:10px;
+}
+.code-info img{
+    width:90px;
+    margin:8px auto;
+}
+.code-info p{
+    font-size: 12px;
+    line-height:20px;
+    margin-bottom:0;
+}
+.class-tit .triangle{
+    margin-top:19px;
+}
+.class-tit .code-info{
+    padding:10px 5px;
+}
+.small-no-data{
+    background:#fff;
+    height:80vh;
+    display:flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content:center;
+}
+.no-class-info{
+    max-width:620px;
+    min-height:202px;
+    margin:0 auto;
+    text-align: center;
+}
+.no-class-info img{
+    display:block;
+    width:80px;
+    margin:0 auto 20px;
+}
+.no-class-info p{
+    font-size:20px;
+    line-height:30px;
+    margin:0;
+}
+.go-class{
+    font-size:22px;
+    color:#fff;
+    display:inline-block;
+    padding:0 30px;
+    height:50px;
+    line-height:50px;
+    background:#5CC2D0;
+    margin:20px auto 0;
+    border-radius:26px;
+    -webkit-border-radius:26px;
+    -moz-border-radius:26px;
+    -ms-border-radius:26px;
+    -o-border-radius:26px;
+}
+.go-class:hover{
+    color:#fff;
+}
+.modify-btn{
+    width:14px;
+}
+@media (max-device-width: 599px){
+    .small-pc{
+        display:none
+    }
+    .small-phone{
+        display:block
+    }
+    .small-class-conter{
+        margin:0;
+    }
+    .small-class-nav-info{
+        left:20px;
+        display:initial;
+        width:65%;
+    }
+    .small-class-nav-phone img{
+        display:block;
+        width:100%;
+    }
+    .small-phone .lt-title{
+        font-size:22px;
+        line-height:40px;
+        text-align:center;
+    }
+    .small-phone .lt-subtitle{
+        font-size:14px;
+    }
+    .my-class-info{
+        padding:20px 15px;
+        margin-top:0;
+        border-radius:0;
+        -webkit-border-radius:0;
+        -moz-border-radius:0;
+        -ms-border-radius:0;
+        -o-border-radius:0;
+}
+    .my-class-member-phone{
+        text-align: left;
+    }
+    .user-info-time{
+        margin-top:15px;
+        font-size:16px;
+        font-weight: bold;
+        color: #7DCCD8;
+    }
+    .user-info-time img{
+        width: 18px;
+        margin-right:10px;
+        vertical-align: sub;
+    }
+    .time-info {
+       padding:10px 0 0 35px;
+    }
+    .time-info span{
+        display:block;
+        font-size:14px;
+        line-height:25px;
+    }
+    .time-classmetas em{
+        float:left;
+        margin-left:5px;
+        display:block;
+        font-style:normal;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        font-size:14px;
+        max-width:100px;
+    }
+    .time-classmetas em:first-child{
+        margin-left:0;
+    }
+    .sidebar-code{
+        display:none;
+    }
+    .my-class-card{
+        padding:20px 15px;
+    }
+    .my-class-card .list .item{
+        margin:0;
+        display:inherit;
+        padding:20px 0;
+    }
+    .my-class-card .list .item-phone{
+        display:flex;
+        justify-content:inherit;
+        margin-top:15px;
+    }
+    .my-class-card .list{
+        margin:20px 0;
+    }
+    .no-class-info p{
+        font-size:16px;
+        padding:0 20px;
+    }
+    .go-class{
+        font-size:18px;
+        height:40px;
+        line-height:40px;
+    }
+    .arrangement-touter .a-text{
+        color:#333;
+    }
+    #teacherModal .modal-dialog{
+        height:430px;
+    }
+    #teacherModal .modal-content,#teacherModal .embed-responsive-4by3{
+        height:100%;
+    }
+}
+
+
+
+

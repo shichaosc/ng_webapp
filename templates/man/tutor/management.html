@@ -1,0 +1,605 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Teachers of management" %}{% endblock %}
+{% block extra_head %}
+    <style>
+        h2{margin-top:0;}
+        .card,.header,.content{overflow:hidden}
+        .group-addon{
+            margin-bottom:5px;
+            display:block;
+        }
+        .btn-info{vertical-align: bottom;}
+        .card{padding-bottom:30px}
+        .btn-info:hover{
+            background:#1DC7EA;
+            color:#fff;
+            border-color:#1DC7EA;
+        }
+        .subBtn, .sub_position_btn{
+            outline:none;
+            background:#fff;
+            color:#1DC7EA;
+            border:1px solid #1DC7EA;
+            width:60px;
+            height:30px;
+            border-radius:5px;
+            margin-left:10px;
+            font-size:14px;
+            line-height:25px;
+
+        }
+        .position_status div{
+            margin-bottom: 8px;
+            padding-left: 20px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <h2 class="col-md-12">{% trans "Teachers of management" %}</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h4 id="tutor_name" class="title col-md-9">{% trans 'Choose Tutor' %}</h4>
+                            <div class="col-md-3">
+                                <input type="text" id="teacher_name" />
+                                <input type="button" value="查询" id="search_teacher"/>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="col-md-6">
+                                <span class="group-addon">中文介绍</span>
+                                <div class="input-group">
+                                    <input id="description_zhhans" type="text" class="form-control" value="">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" onclick="edit_desc_zhhans()">修改</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="group-addon">英文介绍</span>
+                                <div class="input-group">
+                                    <input id="description" type="text" class="form-control" value="">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" onclick="edit_desc()">修改</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title col-md-9">{% trans "Set Tutor Courses" %}</h4>
+                        </div>
+                        <div class="content">
+                            <div class="col-md-6">
+                                <span class="group-addon">{% trans 'All courses' %}</span>
+                                <select multiple="multiple" class="selectpicker" id="selectpicker-courses"
+                                        data-style="btn-info btn-fill btn-block"
+                                        style="width: 60%;height: 250px;">
+                                    {% for course in courses %}
+                                        <option value="{{ course.id }}">{{ course.course_name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <button class="btn btn-info btnW" type="button" onclick="add_courses()">增加</button>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="group-addon">{% trans 'Tutor courses' %}</span>
+                                <select multiple="multiple" class="selectpicker" id="selectpicker-tutor-courses"
+                                        data-style="btn-info btn-fill btn-block"
+                                        style="width: 60%;height: 250px;">
+                                </select>
+                                <button class="btn btn-info btnW " type="button" onclick="delete_courses()">删除</button>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="col-md-6">
+                                <span class="group-addon">{% trans 'Teachable Class Type' %}</span>
+                                <select multiple="multiple" class="selectpicker" id="selectpicker-class_type"
+                                        data-style="btn-info btn-fill btn-block"
+                                        style="width: 60%;height: 150px;">
+                                    {% for class_type in class_type %}
+                                        <option value="{{ class_type.id }}">{{ class_type.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <button class="btn btn-info btnW" type="button" onclick="add_class_type()">增加</button>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="group-addon">{% trans 'Teachable Class Type' %}</span>
+                                <select multiple="multiple" class="selectpicker" id="selectpicker-tutor-class_type"
+                                        data-style="btn-info btn-fill btn-block"
+                                        style="width: 60%;height: 150px;">
+                                </select>
+                                <button class="btn btn-info btnW " type="button" onclick="delete_class_type()">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div>
+                                <div class="header">
+                                    <h4 class="title col-md-9">设置教师等级 <button class="subBtn">提交</button></h4>
+                                </div>
+                                {% for programme in programmes %}
+                                    <div class="selectAll">
+                                        <input data-id="{{ programme.id }}" type="text" value="{{ programme.edition_name }}"/>
+                                        <select class="selectDom" id="{{ programme.edition_name }}">
+                                            <option disabled selected>请选择</option>
+                                            {% for grade in grades %}
+                                                <option value="{{ grade.id }}">
+                                                    {{ grade.remark }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <div class="header">
+                                    <h4 class="title col-md-9">设置教师状态 <button class="sub_position_btn">提交</button></h4>
+                                </div>
+                                <div class="position_status">
+                                    <div><input type="radio" name="position" value="3"> 未激活 </div>
+                                    <div><input type="radio" name="position" value="0"> 在岗 </div>
+                                    <div><input type="radio" name="position" value="1"> 仅老生可见 </div>
+                                    <div><input type="radio" name="position" value="2"> 离岗 </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <div class="header">
+                                    <h4 class="title col-md-9">设置教师类型 <button class="sub_area_btn">提交</button></h4>
+                                </div>
+                                <div class="position_status">
+                                    <div><input type="radio" name="local_area" value="2"> 非新加坡老师 </div>
+                                    <div><input type="radio" name="local_area" value="1"> 新加坡老师 </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_ending %}
+    <script src="{% static 'js/jquery.js' %}" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#selectpicker-programmes").change(function () {
+                var programme_id=$(this).children('option:selected').val();
+                //alert(programme_id);
+                $(".selectpicker-courses").empty();
+                $.get("{% url 'get_courses_by_programme' %}",{'programme_id':programme_id},function(data,status){
+                    console.log(status);
+                    if(status == 'success'){
+                        var data = JSON.parse(data);
+                        console.log(typeof(data));
+                        $.each(data, function(n, value) {
+                            var course_id = value['pk'];
+                            var course_name = value['course_name'];
+                            console.log(course_id);
+                            console.log(course_name);
+                            var option = '<option value="'+course_id+'">'+course_name+'</option>';
+                            $(".selectpicker-courses").append(option);
+                        });
+
+                    }
+                });
+            });
+            // 可教班级类型
+            $("#dgFlowList").find(":checkbox:checked").each(function(){
+                 var val = $(this).val();
+                data.push(val);
+             });
+
+            $("#search_teacher").click(function(){
+                var tutor_name = $("#teacher_name").val();
+                $.get("{% url 'get_tutor_courses' %}",{'tutor_name':tutor_name},function(data,status){
+                    console.log(status);
+                    if(status == 'success'){
+                        var data = JSON.parse(data);
+                        var courses = data[0]['course'];
+                        var description_zhhans = data[0]['description_zh'];
+                        var description = data[0]['description_en'];
+                        var class_type = data[0]['class_type'];
+                        var tutor_level = data[0]['tutor_level'];
+                        var local_area = data[0]['local_area'];
+                        var real_name = data[0]['real_name'];
+
+                        $("#tutor_name").text(real_name);
+
+                        $(":radio[name='local_area'][value='" + local_area + "']").prop("checked", "checked");
+                        if(courses.length == 0){
+                            console.log('meiyou !');
+                            var option = "<option disabled selected>"+"该老师没有设置courses!"+"</option>";
+                            $("#selectpicker-tutor-courses").empty();
+                            $("#selectpicker-tutor-courses").append(option);
+                        }else {
+                            $("#selectpicker-tutor-courses").empty();
+                            var obj = $("#selectpicker-courses").children();
+                            console.log(obj);
+                            for(var i = 0; i < courses.length; i++) {
+                                var index = courses[i]-1;
+                                var course_name = obj[index].text;
+                                var option = '<option value="'+courses[i]+'">'+course_name+'</option>';
+                                $("#selectpicker-tutor-courses").append(option);
+                            }
+                        }
+                        if(class_type.length == 0){
+                            console.log('meiyou !');
+                            var option = "<option disabled selected>"+"该老师没有设置可教班型默认为oneonone"+"</option>";
+                            $("#selectpicker-tutor-class_type").empty();
+                            $("#selectpicker-tutor-class_type").append(option);
+                        }else {
+                            $("#selectpicker-tutor-class_type").empty();
+                            var obj = $("#selectpicker-class_type").children();
+
+                            for(var i = 0; i < class_type.length; i++) {
+                                var index = class_type[i]-1;
+                                console.log(class_type[i])
+                                var type_name = obj[index].text;
+                                var option = '<option value="'+class_type[i]+'">'+type_name+'</option>';
+                                $("#selectpicker-tutor-class_type").append(option);
+                            }
+                        }
+                        if(tutor_level.length == 0){
+                            console.log('meiyou  tutor level!');
+                        }
+                        $("#description_zhhans").val(description_zhhans);
+                        $("#description").val(description);
+                    }
+                });
+
+                $.ajax({
+                    type: 'GET',
+                    url: "{% url 'get_tutor_status' %}",
+                    datatype: "json",
+                    data: {"tutor_name": tutor_name},
+                    success: function (data) { //返回json结果
+                        var data = JSON.parse(data);
+                        if(data.code == 1){
+                            alert(data.msg);
+                        }else {
+                            console.log(data);
+                            var tutor_status = data.data['tutor_status'];
+                            var tutor_level = data.data['tutor_levels'];
+
+                            $(":radio[name='position'][value='" + tutor_status + "']").prop("checked", "checked");
+                            for (var key in tutor_level) {
+                                $("[id='" + key + "'] option[value='" + tutor_level[key] + "']").attr("selected", "selected");
+                            }
+                        }
+                    }
+                })
+
+            });
+
+        });
+
+        //中文介绍
+        function edit_desc_zhhans() {
+            var description_zhhans = $("#description_zhhans").val();
+            var tutor_name = $("#teacher_name").val();
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'get_tutor_courses' %}",
+                datatype: "json",
+                data: {"tutor_name": tutor_name, "description_zhhans": description_zhhans},
+                success: function (data) { //返回json结果
+                    //alert(data);
+                    alert('修改成功！');
+                    var data = JSON.parse(data);
+                    var description_zhhans = data[0]['description_zh'];
+                    $("#description_zhhans").val(description_zhhans);
+
+                }
+            });
+        }
+        // 英文介绍修改
+        function edit_desc() {
+            var description = $("#description").val();
+            var tutor_name = $("#teacher_name").val();
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'get_tutor_courses' %}",
+                datatype: "json",
+                data: {"tutor_name": tutor_name, "description": description},
+                success: function (data) { //返回json结果
+                    //alert(data);
+                    alert('修改成功！');
+                    var data = JSON.parse(data);
+                    var description = data[0]['description_en'];
+                    $("#description").val(description);
+                }
+            });
+        }
+
+        //增加课程
+        function add_courses() {
+            var courses_id=[];
+            var obj = document.getElementById("selectpicker-courses");
+            for(var i=0; i<obj.options.length; i++){
+                if(obj.options[i].selected){
+                    courses_id.push(obj.options[i].value);// 收集选中项
+                }
+            }
+            courses_id = JSON.stringify(courses_id);
+            var tutor_name = $("#teacher_name").val();
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'get_tutor_courses' %}",
+                datatype: "json",
+                data: {"tutor_name": tutor_name, "courses_id": courses_id},
+                success: function (data) { //返回json结果
+                    //alert(data);
+                    var data = JSON.parse(data);
+                    var courses = data[0]['course'];
+                    if(courses.length == 0){
+                        console.log('meiyou !');
+                        var option = "<option disabled selected>"+"该老师没有设置courses!"+"</option>";
+                        $("#selectpicker-tutor-courses").empty();
+                        $("#selectpicker-tutor-courses").append(option);
+                    }else {
+                        $("#selectpicker-tutor-courses").empty();
+                        var obj = $("#selectpicker-courses").children();
+                        for(var i = 0; i < courses.length; i++) {
+                            var index = courses[i]-1;
+                            var course_name = obj[index].text;
+                            var option = '<option value="'+courses[i]+'">'+course_name+'</option>';
+                            $("#selectpicker-tutor-courses").append(option);
+                        }
+                    }
+                    alert('增加成功！');
+                }
+            });
+        }
+
+        //删除课程
+        function delete_courses() {
+            var courses_id=[];
+            var obj = document.getElementById("selectpicker-tutor-courses");
+            for(var i=0; i<obj.options.length; i++){
+                if(obj.options[i].selected){
+                    courses_id.push(obj.options[i].value);// 收集选中项
+                }
+            }
+            courses_id = JSON.stringify(courses_id);
+            {#var tutor_id=$('#selectpicker-users').children('option:selected').val();#}
+            var tutor_name = $("#teacher_name").val();
+            var is_delete = 1;
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'get_tutor_courses' %}",
+                datatype: "json",
+                data: {"tutor_name": tutor_name, "courses_id": courses_id, 'is_delete':is_delete},
+                success: function (data) { //返回json结果
+                    var data = JSON.parse(data);
+                    var courses = data[0]['course'];
+                    if(courses.length == 0){
+                        console.log('meiyou !');
+                        var option = "<option disabled selected>"+"该老师没有设置courses!"+"</option>";
+                        $("#selectpicker-tutor-courses").empty();
+                        $("#selectpicker-tutor-courses").append(option);
+                    }else {
+                        //alert(courses);
+                        $("#selectpicker-tutor-courses").empty();
+                        var obj = $("#selectpicker-courses").children();
+                        for(var i = 0; i < courses.length; i++) {
+                            var index = courses[i]-1;
+                            var course_name = obj[index].text;
+                            var option = '<option value="'+courses[i]+'">'+course_name+'</option>';
+                            $("#selectpicker-tutor-courses").append(option);
+                        }
+                    }
+                    alert('删除成功！');
+                }
+            });
+
+        }
+
+        //增加可教班型
+        function add_class_type (){
+            var class_type=[];
+            var obj = document.getElementById("selectpicker-class_type");
+            for(var i=0; i<obj.options.length; i++){
+                if(obj.options[i].selected){
+                    class_type.push(obj.options[i].value);
+                }
+            }
+            class_type = JSON.stringify(class_type);
+            {#var tutor_id=$('#selectpicker-users').children('option:selected').val();#}
+            var tutor_name = $("#teacher_name").val();
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'get_tutor_courses' %}",
+                datatype: "json",
+                data: {"tutor_name": tutor_name, "class_type": class_type},
+                success: function (data) { //返回json结果
+                    var data = JSON.parse(data);
+                    var class_type = data[0]['class_type'];
+                    if(class_type.length == 0){
+                        console.log('meiyou !');
+                        var option = "<option disabled selected>"+"该老师没有设置可教班型默认为oneonone"+"</option>";
+                        $("#selectpicker-tutor-class_type").empty();
+                        $("#selectpicker-tutor-class_type").append(option);
+                    }else {
+                        $("#selectpicker-tutor-class_type").empty();
+                        var obj = $("#selectpicker-class_type").children();
+                        for(var i = 0; i < class_type.length; i++) {
+                            var index = class_type[i]-1;
+                            var type_name = obj[index].text;
+                            var option = '<option value="'+class_type[i]+'">'+type_name+'</option>';
+                            $("#selectpicker-tutor-class_type").append(option);
+                        }
+                    }
+                    alert('增加成功！');
+                }
+            });
+        }
+
+        //删除可教班型
+        function delete_class_type (){
+            var class_type=[];
+            var obj = document.getElementById("selectpicker-tutor-class_type");
+            for(var i=0; i<obj.options.length; i++){
+                if(obj.options[i].selected){
+                    class_type.push(obj.options[i].value);
+                }
+            }
+            class_type = JSON.stringify(class_type);
+            {#var tutor_id=$('#selectpicker-users').children('option:selected').val();#}
+            var tutor_name = $("#teacher_name").val();
+            var is_delete = 1;
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'get_tutor_courses' %}",
+                datatype: "json",
+                data: {"tutor_name": tutor_name, "class_type": class_type, 'is_delete':is_delete},
+                success: function (data) { //返回json结果
+                    var data = JSON.parse(data);
+                    var class_type = data[0]['class_type'];
+                    if(class_type.length == 0){
+                        console.log('meiyou !');
+                        var option = "<option disabled selected>"+"该老师没有设置可教班型默认为oneonone"+"</option>";
+                        $("#selectpicker-tutor-class_type").empty();
+                        $("#selectpicker-tutor-class_type").append(option);
+                    }else {
+                        $("#selectpicker-tutor-class_type").empty();
+                        var obj = $("#selectpicker-class_type").children();
+                        for(var i = 0; i < class_type.length; i++) {
+                            var index = class_type[i]-1;
+                            var type_name = obj[index].text;
+                            var option = '<option value="'+class_type[i]+'">'+type_name+'</option>';
+                            $("#selectpicker-tutor-class_type").append(option);
+                        }
+                    }
+                    alert('删除成功！');
+                }
+            });
+        }
+        $('.subBtn').click(function(){
+             var tutor_grade=[];
+            $('.selectAll input').toArray().forEach((item,index)=>{
+                if($('.selectDom')[index].value!="请选择"){
+                    var obj={};
+                    {#obj['programme'] = $(item).attr('data-id');#}
+                    {#obj.programme=$(item).attr('data-id')#}
+                    {#obj.grade=$('.selectDom')[index].value#}
+                     tutor_grade.push({
+                         "programme": $(item).attr('data-id'),
+                         "grade": $('.selectDom')[index].value
+                     });
+                }
+
+
+            })
+
+            {#var teacher_id=$('#selectpicker-users').val();//选择老师的ID#}
+            var tutor_name = $("#teacher_name").val();
+
+            if(tutor_name==null){
+              alert('请选择老师!')
+            } else {
+                 $.ajax({
+                    url: "/man/tutor/tutor_grade_add/",
+                    type: "POST",
+                    data: {
+                          "tutor_name":tutor_name,
+                          "tutor_grade":JSON.stringify(tutor_grade)
+                    },
+                    success: function (result) {
+                        var res = $.parseJSON(result);
+                        alert(res['message']);
+                        if(res['status'] == 2){
+                            window.location.href="/accounts/login/?next=/man/tutor/management/"
+                        }
+                    },
+                     error: function(result) {
+                        alert("fail")
+                     }
+                  })
+            }
+        });
+
+        $('.sub_position_btn').click(function () {
+            //在职状态
+            var position_status = $("input[name='position']:checked").val();//选择老师的在职状态
+            {#var teacher_id=$('#selectpicker-users').val();//选择老师的ID#}
+            var tutor_name = $("#teacher_name").val();
+            console.log(position_status)
+            if(tutor_name==null){
+              alert('请选择老师!')
+            }else if(position_status==null) {
+                alert('请选择在职状态！')
+            } else {
+                $.ajax({
+                    url: "/man/set_tutor_status/",
+                    type: "post",
+                    data: {
+                        "tutor_name":tutor_name,
+                        "tutor_status": position_status
+                    },
+                    success: function (result) {
+                        var res = $.parseJSON(result);
+                        alert(res['msg']);
+                        if(res['status'] == 2){
+                            window.location.href="/accounts/login/?next=/man/tutor/management/"
+                        }
+                    },
+                     error: function(result) {
+                        alert("fail")
+                     }
+                })
+            }
+        });
+        $('.sub_area_btn').click(function () {
+            //在职状态
+            var local_area_status = $("input[name='local_area']:checked").val();//选择老师的在职状态
+            {#var teacher_id=$('#selectpicker-users').val();//选择老师的ID#}
+            var tutor_name = $("#teacher_name").val();
+            console.log(local_area_status)
+            if(tutor_name==null){
+              alert('请选择老师!')
+            }else if(local_area_status==null) {
+                alert('请选择教师类型！')
+            } else {
+                $.ajax({
+                    url: "/man/set_tutor_area/",
+                    type: "post",
+                    data: {
+                        "tutor_name":tutor_name,
+                        "local_area_status": local_area_status
+                    },
+                    success: function (result) {
+                        var res = $.parseJSON(result);
+                        alert(res['msg']);
+                        if(res['status'] == 2){
+                            window.location.href="/accounts/login/?next=/man/tutor/management/"
+                        }
+                    },
+                     error: function(result) {
+                        alert("fail")
+                     }
+                })
+            }
+        })
+    </script>
+{% endblock %}
+

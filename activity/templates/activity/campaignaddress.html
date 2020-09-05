@@ -1,0 +1,416 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "CampaignAddress" %}{% endblock %}
+
+{% block content %}
+	<div class="content">
+		<div class="row">
+			<div class="col-md-6">
+				<form class="form-inline" action="{% url 'campaignAddress' %}" method="get">
+					<div class="form-group">
+						<label for="exampleInputName2">查找用户名</label>
+						<input type="text" class="form-control" name="username"  placeholder="">
+					</div>
+
+					<button type="submit" class="btn btn-default">submit</button>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<form class="form-inline" action="{% url 'campaignAddress' %}" method="get">
+					<div class="form-group">
+						<label for="exampleInputName2">查找地址</label>
+						<input type="text" class="form-control" name="address" placeholder="">
+					</div>
+
+					<button type="submit" class="btn btn-default">submit</button>
+				</form>
+			</div>
+		</div>
+		<br><br>
+		 <div class="row">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="text-center">
+                                    <td>{% trans "order_id" %}</td>
+                                    <td>收件人姓名</td>
+                                    <td>{% trans "wechat_name" %}</td>
+                                    <td>{% trans "wechat_avatar" %}</td>
+                                    <td>{% trans "address" %}</td>
+                                    <td>{% trans "phone" %}</td>
+                                    <td>{% trans "is_freeDelivery" %}</td>
+                                    <td>{% trans "price" %}</td>
+                                    <td>{% trans "deliveryCharge" %}</td>
+                                    <td>{% trans "function" %}</td>
+                                    <td>{% trans "status" %}</td>
+                                    <td>{% trans "shared_image" %}</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% if add_totals %}
+                                {% for add_total in add_totals %}
+                                    <tr class="text-center">
+                                        <td>{{ add_total.0.id }}</td>
+
+                                        <td>{{ add_total.0.name }}</td>
+                                        <td>{{ add_total.0.wechat_name }}</td>
+	                                    {% if add_total.0.wechat_avatar %}
+                                        <td><img alt="图片丢失" src="{{ MEDIA_URL }}{{ add_total.0.wechat_avatar }}"></td>
+	                                    {% else %}
+                                        <td>用户未上传微信头像</td>
+										{% endif %}
+                                        <td>
+                                            {{ add_total.0.address }}
+                                        </td>
+                                        <td>
+                                            {{ add_total.0.phone }}
+                                        </td>
+	                                    <td>
+                                            {{ add_total.0.freeDelivery }}
+                                        </td>
+                                        <td>
+                                            {{ add_total.1 }}
+                                        </td>
+                                        <td>
+                                            {{ add_total.0.deliveryCharge }}
+                                        </td>
+                                        <td>
+	                                        <button id="{{ add_total.0.id }}" value="{{ add_total.0.freeDelivery }}" onclick="is_freeDelivery(this.id, this.value, this)">免费邮</button>
+                                            <br>
+	                                        <a href="{% url 'booksdetail' %}?id={{ add_total.0.id }}">书目详情</a>
+                                        </td>
+                                        <td>
+	                                        <select>
+		                                        {% for sc in scs %}
+			                                        {% ifequal sc.0 add_total.0.status %}
+
+											  <option value ="{{ sc.0 }}" selected = "selected">{{ sc.1 }}</option>
+			                                        {% else %}
+		                                        <option value ="{{ sc.0 }}" >{{ sc.1 }}</option>
+
+			                                        {% endifequal %}
+		                                        {% endfor %}
+											</select>
+
+                                            <button id="{{ add_total.0.id }}" onclick="changeStatus(this)" >修改</button>
+                                        </td>
+
+                                        <td>
+                                           <button id="{{ add_total.0.id }}" onclick="generateSharedImg('{{ add_total.0.openID }}')">生成图片</button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            <tr class="text-center"><td></td><td></td><td></td><td><a href="{% url 'campaignAddress' %}">返回</a></td><td></td><td></td><td></td><td></td><td></td>
+             </tr>
+                                               {% else %}
+                                <tr class="text-center">
+                                    <td>查询无结果！</td>
+                                    <td><a href="{% url 'campaignAddress' %}">返回</a></td>
+                                </tr>
+                            {% endif %}
+                            </tbody>
+                    </table>
+
+                    </div>
+                </div>
+
+                <nav aria-label="Page navigation" style="text-align: center">
+                  <ul class="pagination">
+                      <li>
+                        {% if referral_rewards_details.has_previous %}
+                            <a href="?page={{ referral_rewards_details.previous_page_number }}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        {% endif %}
+                      </li>
+                    {% for page in referral_rewards_details.paginator.page_range %}
+                    {% ifequal page referral_rewards_details.number %}
+                        <li class="active" ><a href="?page={{ page }}">{{ page }}</a></li>
+                    {% else %}
+                        <li><a href="?page={{ page }}">{{ page }}</a></li>
+                    {% endifequal %}
+                    {% endfor %}
+                    <li>
+                        {% if referral_rewards_details.has_next %}
+                            <a href="?page={{ referral_rewards_details.next_page_number }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        {% endif %}
+                    </li>
+                  </ul>
+                </nav>
+
+        </div>
+	</div>
+
+{% endblock %}
+
+{% block extra_ending %}
+	<script src="{% static 'js/jquery.js' %}" type="text/javascript"></script>
+	<script type="text/javascript">
+
+
+		function is_freeDelivery(id, is_freeDelivery, obj) {
+
+			$.ajax({
+				type: 'POST',
+				url: "{% url 'setfreedelivery' %}",
+				datatype: "json",
+				data: {"id": id, "is_freeDelivery": is_freeDelivery},
+				success: function (data) { //返回json结果
+					//alert(data);
+					alert('修改成功！');
+					window.location.href="{% url 'campaignAddress' %}";
+
+					console.log('数据库返回的desc:' + data);
+
+				}
+			});
+
+		}
+		function changeStatus(obj){
+			var id = obj.id;
+			var status = $(obj).prev().find("option:selected").val();
+			$.ajax({
+				type: 'POST',
+				url: "{% url 'changestatus' %}",
+				datatype: "json",
+				data: {"id": id, "status": status},
+				success: function (data) { //返回json结果
+					//alert(data);
+					alert('修改成功！');
+					window.location.href="{% url 'campaignAddress' %}";
+
+					console.log('数据库返回的desc:' + data);
+
+				}
+			});
+		}
+
+        function generateSharedImg(openID) {
+            {#window.open("./generatesharedimage.html?openID=" + openID)#}
+            window.open("{% url 'generatesharedimage' %}?openID=" + openID)
+        }
+
+
+
+		//alert('??');
+		$(function () {
+			$("#selectpicker-programmes").change(function () {
+				var programme_id = $(this).children('option:selected').val();
+				//alert(programme_id);
+				$(".selectpicker-courses").empty();
+				$.get("{% url 'get_courses_by_programme' %}", {'programme_id': programme_id}, function (data, status) {
+					console.log(status);
+					if (status == 'success') {
+						console.log(typeof(data));
+						console.log(data);
+						//alert("Data: " + data + "nStatus: " + status);
+						var data = JSON.parse(data);
+						console.log(typeof(data));
+						$.each(data, function (n, value) {
+
+							var course_id = value['pk'];
+							var course_name = value['fields']['course_name'];
+							console.log(course_id);
+							console.log(course_name);
+							var option = '<option value="' + course_id + '">' + course_name + '</option>';
+							$(".selectpicker-courses").append(option);
+						});
+
+					}
+				});
+			});
+
+			$("#selectpicker-users").change(function () {
+				var tutor_id = $(this).children('option:selected').val();
+				//alert(tutor_id);
+				$.get("{% url 'get_tutor_courses' %}", {'tutor_id': tutor_id}, function (data, status) {
+					console.log(status);
+					if (status == 'success') {
+						console.log(typeof(data));
+						console.log(data);
+						//alert("Data: " + data + "nStatus: " + status);
+						var data = JSON.parse(data);
+						console.log(typeof(data));
+						var courses = data[0]['fields']['course'];
+						var description_zhhans = data[0]['fields']['description_zhhans'];
+						var description = data[0]['fields']['description'];
+						console.log(courses);
+						console.log(description_zhhans);
+						console.log(typeof(courses));
+						if (courses.length == 0) {
+							console.log('meiyou !');
+							var option = "<option disabled selected>" + "该老师没有设置courses!" + "</option>";
+							$("#selectpicker-tutor-courses").empty();
+							$("#selectpicker-tutor-courses").append(option);
+						} else {
+							//alert(courses);
+							$("#selectpicker-tutor-courses").empty();
+							var obj = $("#selectpicker-courses").children();
+							console.log(obj);
+							//var obj = document.getElementById("selectpicker-courses");
+							//alert(obj);
+							for (var i = 0; i < courses.length; i++) {
+								//alert(i);
+								//alert(courses[i]);
+								var index = courses[i];
+								var course_name = obj[index].text;
+								//alert(course_name);
+								var option = '<option value="' + courses[i] + '">' + course_name + '</option>';
+								$("#selectpicker-tutor-courses").append(option);
+							}
+						}
+						$("#description_zhhans").val(description_zhhans);
+						$("#description").val(description);
+					}
+				});
+			});
+
+		});
+		function edit_desc_zhhans() {
+			var description_zhhans = $("#description_zhhans").val();
+			var tutor_id = $('#selectpicker-users').children('option:selected').val();
+			console.log('输入的desc:' + description_zhhans);
+			console.log(tutor_id);
+			$.ajax({
+				type: 'POST',
+				url: "{% url 'get_tutor_courses' %}",
+				datatype: "json",
+				data: {"tutor_id": tutor_id, "description_zhhans": description_zhhans},
+				success: function (data) { //返回json结果
+					//alert(data);
+					alert('修改成功！');
+					var data = JSON.parse(data);
+					var description_zhhans = data[0]['fields']['description_zhhans'];
+					$("#description_zhhans").val(description_zhhans);
+					console.log('数据库返回的desc:' + description_zhhans);
+
+				}
+			});
+		}
+		function edit_desc() {
+			var description = $("#description").val();
+			var tutor_id = $('#selectpicker-users').children('option:selected').val();
+			console.log('输入的desc:' + description);
+			console.log(tutor_id);
+			$.ajax({
+				type: 'POST',
+				url: "{% url 'get_tutor_courses' %}",
+				datatype: "json",
+				data: {"tutor_id": tutor_id, "description": description},
+				success: function (data) { //返回json结果
+					//alert(data);
+					alert('修改成功！');
+					var data = JSON.parse(data);
+					var description = data[0]['fields']['description'];
+					$("#description").val(description);
+					console.log('数据库返回的desc:' + description);
+				}
+			});
+		}
+		function add_courses() {
+			var courses_id = [];
+			var obj = document.getElementById("selectpicker-courses");
+			for (var i = 0; i < obj.options.length; i++) {
+				if (obj.options[i].selected) {
+					courses_id.push(obj.options[i].value);// 收集选中项
+				}
+			}
+			courses_id = JSON.stringify(courses_id);
+			var tutor_id = $('#selectpicker-users').children('option:selected').val();
+			$.ajax({
+				type: 'POST',
+				url: "{% url 'get_tutor_courses' %}",
+				datatype: "json",
+				data: {"tutor_id": tutor_id, "courses_id": courses_id},
+				success: function (data) { //返回json结果
+					//alert(data);
+					var data = JSON.parse(data);
+					var courses = data[0]['fields']['course'];
+					//var description = data[0]['fields']['description'];
+					//$("#description").val(description);
+					//alert(data);
+					if (courses.length == 0) {
+						console.log('meiyou !');
+						var option = "<option disabled selected>" + "该老师没有设置courses!" + "</option>";
+						$("#selectpicker-tutor-courses").empty();
+						$("#selectpicker-tutor-courses").append(option);
+					} else {
+						//alert(courses);
+						$("#selectpicker-tutor-courses").empty();
+						var obj = $("#selectpicker-courses").children();
+						console.log(obj);
+						//var obj = document.getElementById("selectpicker-courses");
+						//alert(obj);
+						for (var i = 0; i < courses.length; i++) {
+							//alert(i);
+							//alert(courses[i]);
+							var index = courses[i] - 1;
+							var course_name = obj[index].text;
+							//alert(course_name);
+							var option = '<option value="' + courses[i] + '">' + course_name + '</option>';
+							$("#selectpicker-tutor-courses").append(option);
+						}
+					}
+					alert('增加成功！');
+				}
+			});
+		}
+		function delete_courses() {
+			var courses_id = [];
+			var obj = document.getElementById("selectpicker-tutor-courses");
+			for (var i = 0; i < obj.options.length; i++) {
+				if (obj.options[i].selected) {
+					courses_id.push(obj.options[i].value);// 收集选中项
+				}
+			}
+			courses_id = JSON.stringify(courses_id);
+			var tutor_id = $('#selectpicker-users').children('option:selected').val();
+			var is_delete = 1;
+			console.log(courses_id);
+			console.log(is_delete);
+			$.ajax({
+				type: 'POST',
+				url: "{% url 'get_tutor_courses' %}",
+				datatype: "json",
+				data: {"tutor_id": tutor_id, "courses_id": courses_id, 'is_delete': is_delete},
+				success: function (data) { //返回json结果
+					//alert(data);
+					var data = JSON.parse(data);
+					var courses = data[0]['fields']['course'];
+					//var description = data[0]['fields']['description'];
+					//$("#description").val(description);
+					//alert(data);
+					if (courses.length == 0) {
+						console.log('meiyou !');
+						var option = "<option disabled selected>" + "该老师没有设置courses!" + "</option>";
+						$("#selectpicker-tutor-courses").empty();
+						$("#selectpicker-tutor-courses").append(option);
+					} else {
+						//alert(courses);
+						$("#selectpicker-tutor-courses").empty();
+						var obj = $("#selectpicker-courses").children();
+						console.log(obj);
+						//var obj = document.getElementById("selectpicker-courses");
+						//alert(obj);
+						for (var i = 0; i < courses.length; i++) {
+							//alert(i);
+							//alert(courses[i]);
+							var index = courses[i] - 1;
+							var course_name = obj[index].text;
+							//alert(course_name);
+							var option = '<option value="' + courses[i] + '">' + course_name + '</option>';
+							$("#selectpicker-tutor-courses").append(option);
+						}
+					}
+					alert('删除成功！');
+				}
+			});
+		}
+	</script>
+{% endblock %}
+
+   

@@ -1,0 +1,12 @@
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+media
+build
+.idea
+.history
+test.py
+__pycache__/
+*.pyc

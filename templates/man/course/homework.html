@@ -1,0 +1,77 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Homewok Preview" %}{% endblock %}
+
+{% block content %}
+	<div class="content">
+            <div class="container-fluid">
+    <!-- List of courses -->
+    	<div class="row">
+
+    {% if courses %}
+
+        <table class="table">
+        <tr>
+        <td>    {% trans 'course' %}</td>
+        {% for course in courses %}
+	        {% ifequal cur_course course.id %}
+            <td><a style="color: red;" href="/man/course/homework/?course={{ course.id }}">{{ course.course_name }}</a></td>
+            {% else %}
+	        <td><a href="/man/course/homework/?course={{ course.id }}">{{ course.course_name }}</a></td>
+            {% endifequal %}
+        {% endfor %}
+        </tr>
+        </table>
+
+    {% else %}
+        <a href="/man/course/homework/">Reselect course</a>
+    {% endif %}
+    </div>
+
+    <!-- List of sessions -->
+    	<div class="row">
+
+    {% if sessions %}
+
+    <table class="table">
+        <tr>
+            <td>    {% trans 'session' %}</td>
+            <td>
+        {% for session in sessions %}
+	        {% ifequal cur_session session.id %}
+            <a style="color: red;" href="/man/course/homework/?course={{ session.course.id }}&session={{ session.id}}">{{ session.lesson_no }}</a> &nbsp;
+            {% else %}
+	        <a href="/man/course/homework/?course={{ session.course.id }}&session={{ session.id}}">{{ session.lesson_no }}</a> &nbsp;
+            {% endifequal %}
+	        {% if forloop.counter == 25 %}
+            <br>
+            {% endif %}
+        {% endfor %}
+            </td>
+        </tr>
+    </table>
+    {% else %}
+{#        {% trans 'session does not exist or homework is not selected' %}#}
+    {% endif %}
+    {% if new_homework %}
+        <div><button data-lesson_id="{{ new_homework.lesson_id }}" id="homework-page-preview">预览</button></div>
+    {% endif %}
+    <table width="80%">
+        <tr>
+            <td>{% trans "preview" %}</td>
+            <td style="margin-left: 10px">
+                {% for hw in homeworks %}
+                    <a href="{{ hw.hw_content }}">{% trans "File URL:" %}{{ hw.hw_content }}</a>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+               {% for hw in homeworks %}
+                    <embed  width="100%" height="500" src="{{ hw.hw_content }}" type="application/pdf"> </embed>
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% load i18n %}
+{% load tz %}
+{% block title %}{% trans "Promotion" %}{% endblock %}
+
+
+{% block content %}
+<div class="section section-gray">
+	<div class="container">
+		<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-12 text-center">
+					<h4>{% trans 'Our Price' %}</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-1 col-xs-12">
+						<p>{% trans "Each class is 45 minutes, costing 1 point.The cost of each point is as listed as follows,with bonus points awarded depending on your top up amount." %}
+						</p>
+						<a href="#top-up_bonus" class="btn btn-warning btn-fill btn-round btn-block">{% trans 'check detail' %}</a>
+						<div class="table-responsive">
+					    <table class="table">
+					        <thead>
+					            <tr>
+					                <th class="text-center">{% trans 'Currency' %}</th>
+					                <th class="text-right">{% trans 'Price per Class' %}</th>
+					            </tr>
+					        </thead>
+					        <tbody>
+					        	<tr>
+					                <td class="text-center">AUD</td>
+					                <td class="text-right">42.00</td>
+					            </tr>
+					            <tr>
+					                <td class="text-center">CAD</td>
+					                <td class="text-right">42.00</td>
+					            </tr>
+					            <tr>
+					                <td class="text-center">EUR</td>
+					                <td class="text-right">30.00</td>
+					            </tr>
+					            <tr>
+					                <td class="text-center">GBP</td>
+					                <td class="text-right">25.00</td>
+					            </tr>
+					            <tr>
+					                <td class="text-center">HKD</td>
+					                <td class="text-right">240.00</td>
+					            </tr>
+					            <tr>
+					                <td class="text-center">MYR</td>
+					                <td class="text-right">135.00</td>
+					            </tr>
+					            <tr>
+					                <td class="text-center">NZD</td>
+					                <td class="text-right">45.00</td>
+					            </tr>
+					            <tr>
+					                <td class="text-center">SGD</td>
+					                <td class="text-right">42.00</td>
+					            </tr>
+					            <tr>
+					                <td class="text-center">USD</td>
+					                <td class="text-right">30.00</td>
+					            </tr>
+					        </tbody>
+					    </table>
+					    </div>    
+					    
+					    <p class="description">{% trans 'Terms and Conditions' %}</p>
+						{% trans 'Refunds are available upon request,no questions asked.We’ll process the refund using the same payment gateway.' %}
+					</div>
+					<div class="col-md-5 col-md-offset-1 col-xs-12 img-wrapper">
+						<img src="{% static "images/promotion_0.png" %}" class="img-responsive">
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="space-50"></div>
+				</div>
+		</div>
+			
+	</div>
+</div>
+
+
+<div class="section section-white">
+	<div class="container">
+		<div class="col-md-12" id="free_trial">
+			
+				<div class="row">
+					<div class="col-md-12 text-center">
+					<h4>{% trans 'Free trial class' %}</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5 col-md-offset-1 img-wrapper">
+						<img src="{% static "images/promotion_1.png" %}" class="img-responsive">
+					</div>
+					<div class="col-md-5">
+						<p class="description">{% trans 'We offer users 2 points to participate in Online Course for free,The points for trial class will be directly deposited into your account balance after you sign up,Then you will be asked to have an assessment,then making an appointment and enjoying the online class on time(Making an appointment one day in advance).'%}</p>
+						<br>
+						<p class="description">{% trans 'After signing up, you will be led to free trial class application automatically.' %} {% trans 'please go to' %}: 
+						</p>
+						{% if request.user %}
+						<a href="/accounts/free_trial/" class="btn btn-warning btn-fill btn-round btn-block">{% trans 'apply free trial' %}</a>
+						{% else %}
+						<a href="/accounts/signup/?next=/accounts/free_trial/" class="btn btn-warning btn-fill btn-round btn-block">{% trans 'apply free trial' %}</a>
+						{% endif %}
+						<br>
+						
+						<p class="description">{% trans 'Terms and Conditions:' %}</p>
+						{% trans '1.Every user can only enjoy one-time free trial class application. If the user already applied it once, the user can not enjoy it again.' %}
+						<br>
+						{% trans '2.The 2 points for free trial are not eligible for refund.' %}
+						<br>
+						{% trans '3.Only new registered users can enjoy free trials.If the user has already participated in related courses, the user can not enjoy the benefit anymore.' %}
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="space-50"></div>
+				</div>
+			
+		</div>
+	</div>
+</div>		
+
+<div class="section section-gray">
+	<div class="container">
+		<div class="col-md-12" id="top-up_bonus">
+				<div class="row">
+					<div class="col-md-12 text-center">
+					<h4>{% trans 'Top-up Bonus' %}</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5 col-md-offset-1 col-xs-12">
+						<p class="description">{% trans 'We offer tiered bonuses based on your top-up amount.Refunds are available at any time,no questions asked.' %}</p>
+						<br>
+						<div class="table-responsive">
+					    <table class="table">
+					        <thead>
+					            <tr>
+					                <th class="text-center">{% trans 'Top-up' %}</th>
+					                <th class="text-center">{% trans 'Special Promotion - Bonus' %}</th>
+					                <th class="text-center">{% trans 'Bonus' %}</th>
+					            </tr>
+					        </thead>
+					        <tbody>
+					        	{% for table in bonus_table.bonus_table %}
+					        	<tr>
+					                <td class="text-center">{{ table.min_amount}} {% trans 'point' %}</td>
+					                <td class="text-center">{{ table.bonus}} {% trans 'point' %}</td>
+					                <td class="text-right"><strike>{{ table.usual_bonus}} {% trans 'point' %}</strike></td>
+					                
+					            </tr>
+					            {% endfor %}
+					        </tbody>
+					    </table>
+					    </div>    
+						
+						<br>
+						<p class="description"> {% trans 'please go to' %}:</p>
+						<a href="/accounts/topup/" class="btn btn-warning btn-fill btn-round btn-block">{% trans 'top up' %}</a>
+						<br>
+						<p class="description">{% trans 'Terms and Conditions' %}</p>
+						{% localtime on %}
+						{% trans '1. Promotion period starts from ' %} {{ bonus_table.start_time|date:"DATETIME_FORMAT" }} {% trans ' to ' %} {{ bonus_table.end_time|date:"DATETIME_FORMAT"  }}.
+						{% endlocaltime %}
+						<br>
+						{% trans '2.The bonus will be deposited into your account instantly.' %}
+						<br>
+						{% trans '3.Bonus are not eligible for refund.When you request refund,the bonus of designated transaction will be deducted firstly,and the remaining points will be refunded.' %}
+                        <br>
+                        {% trans '4.You will receive extra bonus,if you register your referral information.' %}
+						
+					</div>
+					<div class="col-md-5 col-xs-12 img-wrapper">
+						<img src="{% static "images/promotion_2.jpg" %}" class="img-responsive">
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="space-50"></div>
+				</div>
+		</div>
+			
+	</div>
+</div>
+
+<div class="section section-white">
+	<div class="container">
+		<div class="col-md-12">
+			
+				<div class="row">
+					<div class="col-md-12 text-center">
+					<h4>{% trans 'Referral Awards' %}</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5 col-md-offset-1 img-wrapper">
+						<img src="{% static "images/promotion_3.png" %}" class="img-responsive">
+					</div>
+					<div class="col-md-5">
+						<p class="description">{% trans "If you like PPChinese, please share it with your friends. While they enjoy the good service, you can also enjoy rewards. Every 10 points (1 point for 1 class) top-up from your referral, you will get 1 point referral reward." %}</p>
+						<p class="description">{% trans "If you hear about PPChinese from your friend, please nominate your friend as referrer in the system, then you will also enjoy 1 point when you first top up." %}</p>
+						
+						<!-- 
+						<br>
+						<p class="description"> {% trans 'please go to' %} <a href="#">{% trans 'referral' %}</a>.</p>
+						 -->
+						<br>
+						<p class="description">{% trans 'Terms and Conditions' %}</p>
+						{% trans '1.The bonus will be deposited into your account instantly, when your referrals tops up.' %}
+						<br>
+						{% trans '2.You can get rewards - 1 point for every 10 points,your referee tops up.' %}
+						<br>
+						{% trans '3.When your referral requests refund,referral bonus of designated transaction will be deducted accordingly.' %}
+					
+					</div>
+				</div>
+				<div class="row">
+					<div class="space-50"></div>
+				</div>
+			
+		</div>
+	</div>
+</div>
+
+{% endblock %}

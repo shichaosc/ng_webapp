@@ -1,0 +1,17 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Homewok Preview" %}{% endblock %}
+
+{% block content %}
+
+<div class="homework-detail-content">
+    <header>
+        <button id="adjustment-order">调整</button>
+        <button id="homework-preview">预览</button>
+        <button id="upload-homework">上传</button>
+        <button id="save-homework">保存</button>
+    </header>
+</div>
+
+{% endblock %}

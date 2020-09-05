@@ -1,0 +1,330 @@
+{% extends 'base.html' %}
+
+{% load i18n %} 
+{% load staticfiles %}
+
+{% block title %}{% trans "Homepage of PPLingo" %}{% endblock %}
+{% block description %}<meta name="description" content="Online Learning Platform - Learn Mandarin from Local Chinese Teacher. The interactive teaching experience is enabled by 1-on-1 video conferencing and rich format of courseware!" />{% endblock %}
+
+{% block extra_head %}
+<style>
+.section-bg-blue {
+	padding-bottom:0;
+	background:url({% static "images/bg_blue.jpg" %}) no-repeat #fff;
+	background-size:cover	
+}
+
+.section-bg-purple {
+	padding-bottom:0;
+	background:url({% static "images/bg_purple.jpg" %}) no-repeat #fff;
+	background-size:cover	
+}
+</style>
+{% endblock %}
+
+{% block body_class %} class="home"{% endblock %}
+{% block header %}
+{% with 'navbar-fixed-top' as navbar_style %}
+{{ block.super }}
+{% endwith %}
+{% endblock%}
+
+{% block content %}
+<div class="parallax-c hidden-xs container-margin" style="background-image: url({% static 'images/vision_3.jpg' %})">
+	<div class="info-center text-white mb-100">
+		<div class="col-md-2 col-md-offset-3 col-sm-3 col-sm-offset-2">
+            <a href="/accounts/free_trial/" class="btn btn-primary btn-round btn-fill btn-block">{% trans 'Get a free class trial' %}</a>
+        </div>
+        <div class="col-md-2 col-md-offset-2 col-sm-3 col-sm-offset-2">
+            <a href="/course/reminder/" class="btn btn-info btn-round btn-fill btn-block">{% trans 'Assessment' %}</a>
+        </div>
+	</div>
+</div>
+
+<div class="carousel xs-landscape-only" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{% static 'images/vision_3_m.jpg' %}" alt="..." width="100%" >
+      <div class="caption-t-c text-white">
+        <div class="space-200"></div>
+        <div class="col-xs-5 col-xs-offset-1 ">
+            <a href="/accounts/free_trial/" class="btn btn-primary btn-round btn-fill btn-block">{% trans 'Get a free class trial' %}</a>
+        </div>
+        <div class="col-xs-5  ">
+            <a href="/course/reminder/" class="btn btn-info btn-round btn-fill btn-block">{% trans 'Assessment' %}</a>
+        </div>
+		
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="carousel-product" class="carousel xs-portrait-only" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{% static 'images/vision_3_mobile.jpg' %}" alt="..." width="100%" >
+      <div class="caption-t-c text-white">
+        <div class="space-50"></div>
+        <div class="col-md-4 col-md-offset-4">
+            <a href="/accounts/free_trial/" class="btn btn-primary btn-round btn-fill btn-block">{% trans 'Get a free class trial' %}</a>
+        </div>
+		<br><br>
+        <div class="col-md-4 col-md-offset-4">
+            <a href="/course/reminder/" class="btn btn-info btn-round btn-fill btn-block">{% trans 'Assessment' %}</a>
+        </div>
+		
+      </div>
+    </div>
+  </div>
+</div>
+
+	<div class="section section-white">
+           <div class="container">
+               <h3 class="section-title">{% trans 'Why choose PPChinese' %}</h3>
+               <div class="row">
+                   <div class="col-md-4">
+                       <div class="info">
+                            <div class="icon icon-azure">
+                                <i class="pe-7s-users"></i>
+                            </div>
+                            <div class="description">
+                                <h5> {% trans 'Personalized support for your child' %} </h5>
+                                <p class="text-muted">{% trans 'PPLingo certified teachers will provide one-on-one Chinese tuition service, with personalized learning experience. A smart adaptive assessment will be conducted, to recommend appropriate level to you.' %}</p>
+                            </div>
+                        </div>
+                     </div>
+                      
+                     <div class="col-md-4">
+                       <div class="info">
+                            <div class="icon icon-pink">
+                                <i class="pe-7s-study"></i>
+                            </div>
+                            <div class="description">
+                                <h5> {% trans 'Only certified, native language teachers' %} </h5>
+                                <p class="text-muted">{% trans 'All PPLingo certified tutors are public accredited teachers from public and private institutions in China. Those tutors have rich teaching experience, with native tongue.' %}</p>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                       <div class="info">
+                            <div class="icon icon-purple">
+                                <i class="pe-7s-science"></i>
+                            </div>
+                            <div class="description">
+                                <h5> {% trans 'Proven curriculum, developed by experts' %} </h5>
+                                <p class="text-muted">{% trans 'PPLingo focuses on Chinese learning for K-12 students, from 6 to 18 years old. The curriculum adopts the same framework as public school in China. You may learn more culture in China together with the language.' %}</p>
+                            </div>
+                        </div>
+                     </div>
+                     
+               </div>
+           </div>
+    </div><!-- section -->
+	
+	
+	<div class="section section-bg-blue">
+        <div class="container">
+            <h3 class="section-title text-white">{% trans 'How it works' %}</h3>
+            <br>
+
+            <div class="row">
+    
+    				<div class="col-md-4 col-md-offset-1">
+    					<div class="card card-background">
+    				
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/how_it_works.png' %}" class="img-responsive">
+                            </div>
+                        </div>    
+                    </div>
+					
+					<div class="col-md-5 col-md-offset-2">
+                        <div class="card card-background">
+                            <div class="video">
+                                <video id="video-source2" preload="auto" volume="0">
+                                    <source src="{% static 'video/how_it_works.mp4' %}" type="video/mp4">
+                                    Video not supported
+                                </video>
+                                <div class="filter"></div>
+                            </div>
+                            <div class="footer">
+                                 <button type="button" data-video="video-source2" data-toggle="video" class="btn btn-neutral btn-round">
+                                    <i class="fa fa-play"></i> Play
+                                </button>
+	                        </div> <!-- end card -->
+    	                </div>
+    				</div>
+    		</div>
+    		<div class="space-50"></div>
+    		
+    	</div>
+    </div>
+
+	<div class="section section-white">
+        <div class="container">
+        <br>
+            <h2 class="section-title">{% trans 'What people think...' %}</h2>
+            <div id="testimonials-carousel" class="carousel slide" data-ride="carousel">
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <div class="row">
+                            <div class="col-md-5 col-md-offset-1">
+                                 <div class="card card-plain">
+                                    <div class="content">
+                                            <h5 class="title">
+                                            {% trans 'Jeremy told us that Yumeng Laoshi is very cute, and he would continue to learn from her. To us, it is the most important thing to keep him being interested in Chinese, and he will be there eventually. ' %}
+                                            </h5>
+                                         <div class="footer">
+                                            <div class="author">
+                                                <a class="card-link" href="#">
+                                                   <img src="{% static 'images/avatar/face-1.jpg' %}" alt="..." class="avatar">
+                                                   <span> {% trans "Jeremy's Dad" %} </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card -->
+                             </div>
+                             <div class="col-md-5">
+                                 <div class="card card-plain">
+                                    <div class="content">
+                                            <h5 class="title">
+                                            {% trans "Jack hasn't been through a systematic learning as his friends in China, even though he is quite good at reading and speaking. Mr. Zou identifies the key areas to be improved, through 1-on-1 session. We can clearly see the improvement within 2 months." %}
+                                            </h5>
+
+                                         <div class="footer">
+                                            <div class="author">
+                                                <a class="card-link" href="#">
+                                                   <img src="{% static 'images/avatar/face-2.jpg' %}" alt="..." class="avatar">
+                                                   <span> {% trans "Jack's Mom" %} </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card -->
+                             </div>
+                        </div> <!-- end row -->
+                    </div>
+                    <div class="item">
+                      <div class="row">
+                          <div class="col-md-5 col-md-offset-1">
+                                <div class="card card-plain">
+                                    <div class="content">
+                                        <a target="_blank" href="">
+                                            <h5 class="title">
+											{% trans "We save the effort of commuting between tuition center and home, after we choose PPChinese. Emily can even attend the class with iPad, when we are not at home. Since it is so convenient, we can take more classes, and hope Emily can catch up with her friends in China." %}
+											</h5>
+                                        </a>
+                                         <div class="footer">
+                                            <div class="author">
+                                                <a class="card-link" href="#">
+                                                   <img src="{% static 'images/avatar/face-3.jpg' %}" alt="..." class="avatar">
+                                                   <span> {% trans "Emily's Dad" %} </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card -->
+                             </div>
+                             <div class="col-md-5">
+                                 <div class="card card-plain">
+                                    <div class="content">
+                                        <h5 class="title">
+                                        {% trans "Joanna spends much less time on Chinese learning, than her friends in China. The learning unit structure lets her focus on specific topic and area within one month, and it is a very effective approach, which is good for Joanna and students outside of China. Therefore, we can see her tangible improvement as well." %}
+                                        </h5>
+                                         <div class="footer">
+                                            <div class="author">
+                                                <a class="card-link" href="#">
+                                                   <img src="{% static 'images/avatar/face-4.jpg' %}" alt="..." class="avatar">
+                                                   <span> {% trans "Joanna's Mom" %} </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card -->
+                             </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#testimonials-carousel" data-slide="prev">
+                    <span class="fa fa-angle-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#testimonials-carousel" data-slide="next">
+                    <span class="fa fa-angle-right"></span>
+                  </a>
+            </div>
+				
+            <div class="space-50"></div>
+           </div>
+    </div><!-- section -->
+    
+    <div class="section section-bg-purple">
+        <div class="container">
+
+            <h2 class="section-title text-white">{% trans 'Our Service Commitment' %}</h2>
+            <div class="row">
+    				<div class="col-md-10 col-md-offset-1 text-center">
+                            <div class="icon icon-orange">
+                                <i class="pe-7s-monitor"></i>
+                            </div>
+                    </div>
+                    
+                    <div class="col-md-10 col-md-offset-1">        
+                            <div class="description text-white text-center">
+                                <h5> {% trans 'Easy-to-use, live video platform' %} </h5>
+                                <p>{% trans 'PPLingo adopts rich media communication technologies. You can have face to face communications anywhere, without installing any client application. Courseware and tutor’s talk will be presented at same time, to deliver the best quality of class delivery. You can preview and review the courseware, as well as interact with tutor during the class. PPLingo’s online course can save your time commuting to tuition centre, and make sure you have same and even better progress as tuition centre.' %}</p>
+                            </div>
+                    </div>
+            </div>
+            
+            <div class="row">         
+            	<div class="col-md-10 col-md-offset-1 text-center">
+                    <div class="icon icon-blue">
+                        <i class="pe-7s-graph2"></i>
+                    </div>
+                </div>
+                    
+                    <div class="col-md-10 col-md-offset-1">        
+                            <div class="description text-white text-center">
+                        	<h5> {% trans 'Keep track of your child progress' %}</h5>
+                        	<p>{% trans 'PPlingo keeps the learning record of each lesson, with evaluation from tutor. And periodic test will be held, to evaluate the progress of learning. All the records will clearly demonstrate the progress.' %}</p>
+                    	</div>
+                	</div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <div class="icon icon-green">
+                        <i class="pe-7s-cash"></i>
+                    </div>
+                </div>
+                    
+                    <div class="col-md-10 col-md-offset-1">        
+                        <div class="description text-white text-center">
+                        <h5> {% trans 'No commitment, just pay-as-you-go' %} </h5>
+                        <p>{% trans 'PPLingo provide easy and hassle-free payment, and we accept most of the debit card and credit card globally. You can choose pay as lesson, or prepaid with discount. You can get refund anytime, if you choose prepaid mode.' %}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space"></div>
+            
+            <div class="row">
+               	<div class="col-md-4 col-md-offset-4">
+               		<a href="/promotion/#free_trial" class="btn btn-info btn-round btn-fill btn-block">{% trans 'Get a free class trial' %}</a>
+               	</div>
+            </div>
+            
+            <div class="space"></div>
+            	
+    	</div>
+    </div>
+		
+	 
+                
+{% endblock %}    

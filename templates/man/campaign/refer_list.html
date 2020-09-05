@@ -1,0 +1,53 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+{% block title %}referrer list{% endblock %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <td colspan="3" class="text"><h5>referrer list</h5></td>
+        </tr>
+        <tr>
+            <td><b>wechat avatar</b></td>
+            <td><b>wechat name</b></td>
+            <td><b>username</b></td>
+            <td><b>Email</b></td>
+            <td><b>page visit</b></td>
+            <td><b>signup referree</b></td>
+            <td><b>paid referree</b></td>
+            <td><b>new referree</b></td>
+        </tr>
+        </thead>
+        {% for s_u in s_us %}
+            <tr>
+                <td>
+                    <img src="/media/{{ s_u.social_user.app_avatar }}"/>
+                </td>
+                <td>
+                    {{ s_u.social_user.app_username}}
+                </td>
+                <td>
+                    {{ s_u.social_user.user.username}}
+                </td>
+                <td>
+                    {{ s_u.social_user.user.email }}
+                </td>
+                <td>
+                    {{ s_u.referees_sum}}
+                </td>
+                <td>
+                    {{ s_u.referees_sign_sum}}
+                </td>
+                <td>
+                    {{ s_u.referees_topup_sum}}
+                </td>
+                <td>
+                    <a href="{% url 'april_refer_detail' %}?referrer_id={{ s_u.social_user.user.id }}">detail</a>
+                </td>
+
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

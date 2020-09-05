@@ -1,0 +1,747 @@
+{% load i18n %}
+{% load staticfiles %}
+{% load tz_detect %}
+
+
+<!doctype html>
+<html lang="en" {% block htmlattr %}{% endblock %}>
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138582242-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-138582242-1');
+    </script>
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/apple-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon.png' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!-- Facebook Pixel Code -->
+{#    <script>#}
+{#        !function (f, b, e, v, n, t, s) {#}
+{#            if (f.fbq) return;#}
+{#            n = f.fbq = function () {#}
+{#                n.callMethod ?#}
+{#                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)#}
+{#            };#}
+{#            if (!f._fbq) f._fbq = n;#}
+{#            n.push = n;#}
+{#            n.loaded = !0;#}
+{#            n.version = '2.0';#}
+{#            n.queue = [];#}
+{#            t = b.createElement(e);#}
+{#            t.async = !0;#}
+{#            t.src = v;#}
+{#            s = b.getElementsByTagName(e)[0];#}
+{#            s.parentNode.insertBefore(t, s)#}
+{#        }(window, document, 'script',#}
+{#            'https://connect.facebook.net/en_US/fbevents.js');#}
+{#        fbq('init', '335949320359345');#}
+{#        fbq('track', 'PageView');#}
+{#    </script>#}
+    <title>{% block title %}{% trans "Welcome to LingoAce" %}{% endblock %}</title>
+    {% block description %}
+        <meta name="description"
+              content="Online Learning Platform - Learn Mandarin from Local Chinese Teacher. The interactive teaching experience is enabled by 1-on-1 video conferencing and rich format of courseware!"/>
+    {% endblock %}
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta name="viewport" content="width=device-width"/>
+    <script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet"/>
+    <link href="{% static "css/bootstrap-select.min.css" %}" rel="stylesheet"/>
+    <link href="{% static "css/gsdk.css" %}" rel="stylesheet"/>
+    <link href="{% static "css/ng_webapp.css" %}" rel="stylesheet"/>
+    <!--     Fonts and icons     -->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <link href="{% static 'css/pe-icon-7-stroke.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/global.js' %}"></script>
+
+
+    {% block extra_head %}{% endblock %}
+    <style type="text/css">
+        @media screen and (min-width: 500px) {
+
+            #loginModal .modal-content {
+                background-image: url('{% static 'images/login/background-login.png' %}');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+
+            #loginModal .modal-body {
+                background-color: #f4f4f6;
+            }
+        }
+
+        .phone {
+            display: none;
+        }
+
+
+    </style>{% block style_class %}{% endblock %}
+    <script>
+        $(function(){
+             // ui改版交互函数
+             $(".password_reset>p>input")
+                 .attr("placeholder","")
+                 .focus(function () {
+                 $(this).css({
+                "-webkit-transition":"border linear .2s,-webkit-box-shadow linear .5s",
+                "border-color":"rgba(36,203,218,0.75)",
+                "box-shadow":"0 0 5px rgba(36,203,218,0.45)"
+                 })
+                     .blur(function () {
+                         $(this).css({
+                                "-webkit-transition":"border linear .2s,-webkit-box-shadow linear .5s",
+                                "border-color":"rgba(36,203,218,1)",
+                                "box-shadow":"none"
+                         })
+                     })
+             });
+            var url = window.location.href;
+            if(url.indexOf('source=') == -1 && !sessionStorage.getItem('source')){ //不是ipad
+                var style = document.createElement("style");
+                    style.type = "text/css";
+                    style.appendChild(document.createTextNode("@media (max-device-width:599px){.phone {display: block;}.pc {display: none;}}"));
+                    var head = document.getElementsByTagName("head")[0];
+                    head.appendChild(style);
+            }else{
+                sessionStorage.setItem('source','ipad');
+                }
+            if(url.indexOf('connect=CONNECT') != -1){ //手机端打开用于家长问卷
+                sessionStorage.setItem('connect','iphone');
+            }
+            if(url.indexOf('container=mobile') !=-1 && !sessionStorage.getItem('lang_type')){
+                sessionStorage.setItem('lang_type','lang_type');
+                var lang_nav = (navigator.systemLanguage ? navigator.systemLanguage : navigator.language);
+                var lang_type = lang_nav.substring(0, 2);
+                $("#connect-name").val(lang_type);
+                $("#connect-form").submit();
+            }
+        })
+    </script>
+
+</head>
+<body{% block body_class %}{% endblock %}>
+
+<div class="body-wrapper">
+    {% block header %}
+
+        <nav class="navbar navbar-fixed-top navbar-ct-azure {{ navbar_style | default:'navbar-default' }} navbar-icons phone"
+             role="navigation">
+            <div class="container">
+
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button id="menu-toggle" type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span style="background-color: #3B3B4D !important;" class="icon-bar bar1"></span>
+                        <span style="background-color: #3B3B4D !important;" class="icon-bar bar2"></span>
+                        <span style="background-color: #3B3B4D !important;" class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" href="https://www.lingoace.com"><img class="icon-middle"
+                                                                                 src="{% static 'images/logo.png' %}"></a>
+                </div>
+
+                {% if request.user.username %}
+                    {% include "menu_member.html" %}
+                {% else %}
+                    {% include "menu_anonymous.html" %}
+                {% endif %}
+
+
+            </div>
+        </nav>
+
+
+        <div class="pc">
+            {% if request.user.username %}
+                <nav style="background: #E8F0EE;" role="navigation">
+                    <div class="container">
+
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <a class="navbar-brand" href="/"><img class="icon-middle" style="width: 147px"
+                                                              src="{% static 'images/logo@2x.png' %}"></a>
+
+                        {% include "menu_member.html" %}
+                    </div>
+                </nav>
+            {% else %}
+                <nav class="navbar navbar-fixed-top navbar-ct-azure {{ navbar_style | default:'navbar-default' }} navbar-icons"
+                     role="navigation">
+                    <div class="container">
+
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button id="menu-toggle" type="button" class="navbar-toggle">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar bar1"></span>
+                                <span class="icon-bar bar2"></span>
+                                <span class="icon-bar bar3"></span>
+                            </button>
+                            <a class="navbar-brand" href="https://www.lingoace.com"><img class="icon-middle"
+                                                                                         src="{% static 'images/logo.png' %}"></a>
+                        </div>
+                        {% include "menu_anonymous.html" %}
+                    </div>
+                </nav>
+            {% endif %}
+        </div>
+
+    {% endblock %}
+
+    {% block hidden_content %}
+
+        <!-- Login Modal Core -->
+
+        <div class="modal fade text-center" id="loginModal" tabindex="-1" role="dialog"
+             aria-labelledby="loginModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog " style="display: inline-block; width: auto;">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-10 col-sm-2 col-sm-offset-10 col-2 col-offset-10 col-xs-2 col-xs-offset-10">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <img class="img-responsive" alt="Responsive image"
+                                             src="{% static 'images/login/x-button.png' %}">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-5 col-sm-6 col-sm-offset-3 col-6 col-offset-3 col-xs-6 col-xs-offset-3">
+                                    <img class="img-responsive" alt="Responsive image"
+                                         src="{% static 'images/login/login1.png' %}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-8 col-offset-2">
+                                    <p class="h5"
+                                       style="font-family: 'Josefin Sans'; color: #08415c">{% trans "Welcome back!" %}</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-8 col-offset-2"
+                                     style="float: none;display: block;margin-left: auto;margin-right: auto">
+                                    <a title="Facebook" class="socialaccount_provider facebook"
+                                       href="/accounts/facebook/login/?process=login">
+                                        <img class="img-responsive" alt="Responsive image"
+                                             src="{% static 'images/login/badge-fb.png' %}">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-8 col-offset-2"
+                                     style="margin-top: 10px;float: none;display: block;margin-left: auto;margin-right: auto">
+                                    <a title="Google" class="socialaccount_provider google"
+                                       href="/accounts/google/login/?process=login">
+                                        <img class="img-responsive" alt="Responsive image"
+                                             src="{% static 'images/login/badge-google.png' %}">
+                                    </a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12"
+                                     style="float: none;display: block;margin-left: auto;margin-right: auto; height: 2.7%;text-align: center;">
+                                    <p style="font-family: 'Josefin Sans'; color: #08415c;margin-bottom: 5px;">{% trans "or, login here:" %}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <form action="/accounts/login/" method="POST" id="login-form">
+                                        {% csrf_token %}
+
+                                        <div class="input-group-sm mb-3 " style="margin-bottom: 15px;">
+                                            <input type="text" required="required" class="form-control" id="username"
+                                                   name="login" placeholder="{% trans 'username or email' %}"
+                                                   class="form-control" style="border-radius:50px;">
+                                        </div>
+                                        <div class="input-group-sm mb-0">
+                                            <input required="required" id="password" name="password" type="password"
+                                                   placeholder="{% trans "Password" %}" class="form-control"
+                                                   style="border-radius:50px;">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 offset-md-0 col-sm-4 offset-sm-0 col-4 offset-0 col-xs-6 ">
+                                                <input class="border-0" type="checkbox" value="Ture" id="remember-me"
+                                                       name="remember" data-toggle="checkbox" checked>
+                                                <span style="font-size: 100%;font-family: 'Muli'; color: #08415c;">{% trans "Remember Me" %}</span>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6  col-6 col-xs-6">
+                                                <a href="/accounts/password/reset/"
+                                                   style="font-size: 100%;font-family: 'Muli'; color: #08415c;">{% trans 'Forget Password？' %}</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row" style="margin-top: 15px;">
+                                            <div class="col-md-6 col-md-offset-3 col-sm-4 col-sm-offset-4 col-4 col-offset-4">
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-danger btn-sm btn-block"
+                                                            style="font-family: 'Josefin Sans';border-radius:20px;background-color:#fe5554;box-shadow:2px 4px 6px #ed3c3b; border-style: none;color: #FFFFFF;">{% trans "login" %}</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 代码写的真好！！！ -->
+                        <div id="br">
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {% if messages %}
+            <!-- Modal -->
+            <div id="messageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-layerbg">
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title">{% trans 'Notification' %}</h4>
+                        </div>
+                        <div class="modal-body text-center" >
+                            {% for message in messages %}
+                                <p class="message-{{ message.tags }} ">{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="modal-footer text-center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">{% trans 'Close' %}</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        {% endif %}
+
+    {% endblock %}
+
+    <div class="wrapper">
+
+        <div class="content-wrapper">
+            {% block content %}
+
+                {% block sidebar %}
+                {% endblock sidebar %}
+
+                {% block maincontent %}
+                {% endblock maincontent %}
+
+            {% endblock content %}
+        </div>
+
+        {% block footer %}
+
+            <style>
+                .footer-container {
+                    background: #35475C;
+                    color: #FFFFFF;
+                }
+
+                .footer-content {
+                    margin: auto;
+                    max-width: 1200px;
+                }
+
+                .link-tag {
+                    margin: auto;
+                    justify-content: space-between;
+                    display: flex;
+                    padding-top: 48px;
+                }
+
+                .link-tag h4 {
+                    margin-bottom: 26px;
+                }
+
+                .link-tag li {
+                    margin-bottom: 30px;
+                }
+
+                .bottom-container {
+                    border-top: #979797 1px solid;
+                    height: 57px;
+                    text-align: end;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row-reverse;
+                }
+
+                .bottom-container p {
+                    margin: 0;
+                }
+
+                .link-tag h4 {
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+
+                .link-tag li, .link-tag a {
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    font-size: 12px;
+                }
+
+            </style>
+
+            <footer id="footer" class="pc">
+                <div class="footer-container">
+                    <div class="footer-content">
+                        <div class="link-tag">
+                            <ul style="list-style: none">
+                                <h4>About Us</h4>
+                                <li><a href="https://www.lingoace.com/page/how-we-teach.html" target="_blank">How We Teach</a></li>
+                            </ul>
+
+                            <ul style="list-style: none">
+                                <h4>Programme</h4>
+                                <li><a href="https://www.lingoace.com/page/curriculum.html" target="_blank">Curriculum</a></li>
+                                <li><a href="https://www.lingoace.com/page/tutors.html" target="_blank">Tutors</a></li>
+                                <li><a href="https://www.lingoace.com/page/pricing.html" target="_blank">Pricing</a></li>
+                                <li class="footer-small-class"><a href="/student/group/">Small Class</a></li>
+                            </ul>
+
+                            <ul style="list-style: none">
+                                <h4>Support</h4>
+                                <li><a href="https://www.lingoace.com/page/contact_us.html" target="_blank">Contact Us</a></li>
+                                <li><a href="/legal/" target="_blank">Terms & Conditions</a></li>
+                                <li><a href="/legal#privacy" target="_blank">Privacy Policy</a></li>
+                            </ul>
+
+                            <ul class="link-follow" style="list-style: none">
+                                <h4>Follow</h4>
+                                <li><a href="https://www.facebook.com/LingoAce/" target="_blank">Facebook</a></li>
+                                <li><a href="https://twitter.com/LingoAce" target="_blank">Twitter</a></li>
+                                <li><a href="https://www.instagram.com/lingoace_global/" target="_blank">Instagram</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="bottom-container">
+                            <p>&#169 2018 PPLingo, Communication Inspires Future</p>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+            <footer class="footer footer-big footer-black footer-position phone">
+                <!-- .footer-black is another class for the footer, for the transparent version, we recommend you to change the url of the image with your favourite image.          -->
+
+{#                <div class="container">#}
+{#                    <div class="row">#}
+{#                        <div class="col-md-2">#}
+{#                            <h5 class="title">{% trans 'Company' %}</h5>#}
+{#                            <nav>#}
+{#                                <ul>#}
+{#                                    <li>#}
+{#                                        <a href="/">#}
+{#                                            {% trans 'Home' %}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="/how-we-teach/">#}
+{#                                            {% trans 'Teaching Approach' %}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="/tutors/">#}
+{#                                            {% trans 'Our Tutors' %}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="/curriculum/">#}
+{#                                            {% trans 'Our Curriculum' %}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="#">#}
+{#                                            {% trans 'About Us' %}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                </ul>#}
+{#                            </nav>#}
+{#                        </div>#}
+{#                        <div class="col-md-3 col-md-offset-1">#}
+{#                            <h5 class="title"> {% trans 'Support' %}</h5>#}
+{#                            <nav>#}
+{#                                <ul>#}
+{#                                    <li>#}
+{#                                        <a href="#">#}
+{#                                            {% trans 'Contact Us' %}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="#">#}
+{#                                            {% trans 'How it works' %}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="#">#}
+{#                                            {% trans '24/7 Available' %}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="#">#}
+{#                                            We are hiring#}
+{#                                        </a>#}
+{#                                    </li>#}
+{##}
+{#                                </ul>#}
+{#                            </nav>#}
+{#                        </div>#}
+{#                        <div class="col-md-3">#}
+{#                            <h5 class="title"> {% trans 'Help' %}</h5>#}
+{#                            <nav>#}
+{#                                <ul>#}
+{#                                    <li>#}
+{#                                        <a href="#">#}
+{#                                            {% trans 'Contact Us' %}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="/legal/">#}
+{#                                            {% trans 'Terms & Conditions' %}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="/legal#privacy">#}
+{#                                            {% trans 'Privacy Policy' %}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                </ul>#}
+{#                            </nav>#}
+{##}
+{#                        </div>#}
+{##}
+{#                        <div class="col-md-3">#}
+{#                            <h5 class="title">{% trans 'Latest News' %}</h5>#}
+{#                            <nav>#}
+{#                                <ul>#}
+{#                                    <li>#}
+{#                                        <a href="#">#}
+{#                                            <i class="fa fa-twitter"></i> <b>LingoAce</b>#}
+{#                                            - Online Mandarin learning is launched ...#}
+{#                                            <hr class="hr-small">#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                </ul>#}
+{#                            </nav>#}
+{#                        </div>#}
+{##}
+{#                    </div>#}
+{#                    <hr/>#}
+{#                    <div class="copyright">#}
+{#                        &copy; 2018 PPLingo, Communication Inspires Future#}
+{#                    </div>#}
+{#                </div>#}
+            </footer>
+        {% endblock %}
+
+        {% tz_detect %}
+        <form class="dropdown-menu"action="/accounts/set_lang/" method="post" id="connect-form">
+            {% csrf_token %}
+            <input name="language" id="connect-name" type="hidden" value=""/>
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+        </form>
+    </div>
+</div>
+
+</body>
+{% block extra_ending %}
+
+    <!--  jQuery and Bootstrap core files    -->
+    <script src="{% static "js/bootstrap.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/bootstrap-select.min.js" %}" type="text/javascript"></script>
+
+    <!--  Get Shit Done Kit PRO Core javascript 	 -->
+    <script src="{% static "js/get-shit-done.js" %}" type="text/javascript"></script>
+
+    <script src="{% static "js/promoBox.min.js" %}" type="text/javascript"></script>
+
+    <script src="{% static 'js/utils.js' %}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var big_image;
+        $().ready(function () {
+            if (document.cookie.indexOf('identity=tutor') != -1) {
+                $('.footer-small-class').hide();
+            }
+            responsive = $(window).width();
+
+            if (window.innerWidth < 500) {
+                console.log('shoujiliulan.');
+                $("#br").hide();
+                $("#sign_br").hide();
+            }
+            if (responsive >= 768) {
+                big_image = $('.parallax-image').find('img');
+                $(window).on('scroll', function () {
+
+                    //parallax();
+                });
+            }
+
+            if ($("#messageModal").length > 0) {
+                $("#messageModal").modal();
+                setTimeout(function () {
+                    $('#messageModal').modal('hide');
+                }, 3000);
+            }
+
+            var imgURL = "{% static 'images/promotion_201708.jpg' %}";
+
+            if (window.innerHeight > window.innerWidth) {
+                imgURL = "{% static 'images/promotion_201708_mobile.jpg' %}";
+            }
+
+            promoBox({
+                imagePath: imgURL,
+                link: '/promotion#top-up_bonus',
+                target: '_blank',
+                disableOverlay: false,
+                disableOverlayClose: false,
+                disableStyles: false,
+                disableCloseButton: false,
+                disableKeyClose: false,
+                closeButtonText: '',
+//                    showScrollbar: true,
+//                    randomWeight: 0.5,
+//                    showOnUrl: ["/", "/accounts/profile"],
+//                    hideOnUrl: '?disable',
+                startDate: 'August 15, 2017 00:00:00',
+                endDate: 'September 16, 2017 00:00:00',
+                frequency: 1,
+                deleteCookieOnUrl: '#clear',
+                fadeInDuration: 0.5,
+                fadeOutDuration: 0.2,
+//                    loadDelay: 0.5,
+//                    interstitialSkipText: 'Skip this advertisement',
+//                    interstitialText: 'or wait %s secs',
+                autoCloseSeconds: 30
+            });
+
+        });
+
+
+        var parallax = function () {
+            var current_scroll = $(this).scrollTop();
+
+            oVal = ($(window).scrollTop() / 3);
+            big_image.css('top', oVal);
+        };
+
+        function selectOnchang(obj) {
+            //set site language
+            //alert(obj.selectedIndex);
+            var lang_code = obj.options[obj.selectedIndex].value;
+            //alert(lang_code);
+            $("#lang_name").val(lang_code);
+            $("#lang_form").submit();
+        }
+
+        function setUrlCoolie(key, value) {
+            if (value === null || value.trim().length === 0) {
+                console.log("not have url cookie value");
+                return;
+            }
+
+            var exp = new Date();
+            exp.setTime(exp.getTime() + 1000 * 60 * 60 * 24 * 30);
+            document.cookie = key + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/;domain=.lingoace.com";
+        }
+        (function () {
+            var S1 = "s1";
+            var S2 = "s2";
+            var S3 = "s3";
+            var UTM_SOURCE = "utm_source";
+            var UTM_MEDIUM = "utm_medium";
+            var UTM_CAMPAIGN = "utm_campaign";
+            var UTM_TERM = "utm_term";
+            var UTM_CONTENT = "utm_content";
+            var REF_URL = "refurl";
+
+            setUrlCoolie(S1, getNativeUrlParam(S1));
+            setUrlCoolie(S2, getNativeUrlParam(S2));
+            setUrlCoolie(S3, getNativeUrlParam(S3));
+            setUrlCoolie(UTM_SOURCE, getNativeUrlParam(UTM_SOURCE));
+            setUrlCoolie(UTM_MEDIUM, getNativeUrlParam(UTM_MEDIUM));
+            setUrlCoolie(UTM_CAMPAIGN, getNativeUrlParam(UTM_CAMPAIGN));
+            setUrlCoolie(UTM_TERM, getNativeUrlParam(UTM_TERM));
+            setUrlCoolie(UTM_CONTENT, getNativeUrlParam(UTM_CONTENT));
+            // 先不加这个
+            // setUrlCoolie(REF_URL, window.document.referrer);
+        })();
+
+
+    </script>
+    {% if not DEBUG and request.session.container != 'mobile' %}
+        <!-- Start of pplingo Zendesk Widget script -->
+        <script>/*<![CDATA[*/
+        window.zEmbed || function (e, t) {
+            var n, o, d, i, s, a = [], r = document.createElement("iframe");
+            window.zEmbed = function () {
+                a.push(arguments)
+            }, window.zE = window.zE || window.zEmbed, r.src = "javascript:false", r.title = "", r.role = "presentation", (r.frameElement || r).style.cssText = "display: none", d = document.getElementsByTagName("script"), d = d[d.length - 1], d.parentNode.insertBefore(r, d), i = r.contentWindow, s = i.document;
+            try {
+                o = s
+            } catch (e) {
+                n = document.domain, r.src = 'javascript:var d=document.open();d.domain="' + n + '";void(0);', o = s
+            }
+            o.open()._l = function () {
+                var e = this.createElement("script");
+                n && (this.domain = n), e.id = "js-iframe-async", e.src = "https://assets.zendesk.com/embeddable_framework/main.js", this.t = +new Date, this.zendeskHost = "pplingo.zendesk.com", this.zEQueue = a, this.body.appendChild(e)
+            }, o.write('<body onload="document._l();">'), o.close()
+        }();
+        /*]]>*/</script>
+        <!-- End of pplingo Zendesk Widget script -->
+    {% endif %}
+
+{% endblock %}
+<!--<style>-->
+    <!--.phone {-->
+        <!--display: none;-->
+    <!--}-->
+
+    <!--.pc {-->
+
+    <!--}-->
+
+    <!--@media (max-device-width: 599px) {-->
+        <!--.phone {-->
+            <!--display: block;-->
+        <!--}-->
+
+        <!--.pc {-->
+            <!--display: none;-->
+        <!--}-->
+
+        <!--.pop-card-circle-container {-->
+            <!--display: none;-->
+        <!--}-->
+
+        <!--.pop-card-top-up {-->
+            <!--display: none;-->
+        <!--}-->
+    <!--}-->
+<!--</style>-->
+</html>

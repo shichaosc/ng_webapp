@@ -1,0 +1,101 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/discount/base.css' %}">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/zepto.min.js' %}"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+{% block content %}
+{% endblock %}
+</body>
+<style>{% block style %}{% endblock %}</style>
+<script>
+    const strategy = {
+        MIN_WIDTH: 8,
+
+        isNotEmpty: function (toCheck, failureMsg) {
+            console.log(toCheck)
+            if (toCheck === null || toCheck.trim().length === 0) {
+                return failureMsg;
+            }
+        },
+
+        minLength: function (toCheck, failureMsg) {
+            if (toCheck.trim().length < 8) {
+                return failureMsg;
+            }
+        },
+
+        isNotEmail: function (toCheck, failureMsg) {
+            if (isNotEmail(toCheck)) {
+                return failureMsg;
+            }
+        },
+
+        isNotSame: function (toCheck, failureMsg) {
+            if (toCheck[0] !== toCheck[1]) {
+                return failureMsg;
+            }
+        },
+
+        isNotPrefix: function (toCheck, failureMsg) {
+            if (isNotCountryPrefix(toCheck)) {
+                return failureMsg;
+            }
+        },
+
+        isNotNumber: function (toCheck, failureMsg) {
+            if (isNotNumber(toCheck)) {
+                return failureMsg;
+            }
+        }
+    };
+
+    class Validator {
+        constructor() {
+            this.validationQueue = [];
+        }
+
+        add(value, rule, errorMsg) {
+            this.validationQueue.push(function () {
+                return strategy[rule](value, errorMsg);
+            });
+        }
+
+        check() {
+            for (let validation of this.validationQueue) {
+                const msg = validation();
+                if (msg) {
+                    return msg;
+                }
+            }
+        }
+    }
+
+    function checkUserInfo(request) {
+        $.ajax({
+            url: "/campaign/check_user_info/",
+            type: "post",
+            data: request.param,
+            success: function (res) {
+                request.success(JSON.parse(res));
+            },
+            error: function (res) {
+                request.error(res);
+            },
+
+            complete: function (res) {
+                if (request.complete) {
+                    request.complete(res);
+                }
+            }
+        });
+    }
+</script>
+{% block script %}{% endblock %}
+</html>

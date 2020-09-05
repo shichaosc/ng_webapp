@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% load account socialaccount %}
+
+{% block itle %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<style>
+    .login-container {
+        background-color: #F9FAFB;
+        color: #3B3B4D;
+    }
+
+    .container-prompt {
+        font-family: 'Josefin Sans', sans-serif;
+        color: #5CC2D0;
+        margin-bottom: 10px;
+        margin-top: 0;
+        font-size: 26px;
+    }
+
+    .container-prompt a {
+        color: #5DC2D0;
+    }
+
+    .prompt-tittle {
+        font-family: 'Josefin Sans', sans-serif;
+        color: #5CC2D0;
+        margin-bottom: 30px;
+        margin-top: 0;
+        font-size: 18px;
+    }
+
+    .login-container .account-input {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+        width: 100%;
+        height: 40px;
+        padding: 0 10px;
+        border-radius: 4px;
+        border: 1px solid rgba(203, 214, 226, 1);
+        background-color: white;
+        outline: none;
+    }
+
+    .login-container .account-button {
+        width: 100%;
+        height: 40px;
+        padding: 0 10px;
+        color: #3B3B4D;
+        border-radius: 4px;
+        border: 1px solid rgba(203, 214, 226, 1);
+        background-color: white;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-container .account-button img {
+        margin-right: 10px;
+    }
+
+    .login-logo {
+        margin: 10px auto 26px;
+        display: block;
+    }
+
+    .content-wrapper {
+        background-color: #F9FAFB;
+    }
+
+    .bootstrap-row-center {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .login-container .submit-btn {
+        background: rgba(119, 196, 179, 1);
+        border: none;
+        color: white;
+    }
+
+    /* Pen-specific styles */
+
+
+    .qr-container {
+        display: flex;
+        width: 360px;
+        height: 212px;
+    }
+
+    .qr-app-tittle {
+        font-size: 14px;
+        font-family: PingFangSC-Semibold;
+        font-weight: 600;
+        color: rgba(59, 59, 77, 1);
+    }
+
+    .qr-app-contact {
+        margin-top: 40px;
+        font-size: 18px;
+        font-family: PingFangSC-Semibold;
+        color: rgba(59, 59, 77, 1);
+    }
+
+    .qr-app-code {
+        font-size: 12px;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        margin-top: 10px;
+        color: rgba(92, 194, 208, 1);
+    }
+
+    .left-half {
+        flex: 1;
+        padding: 1rem;
+    }
+
+    .right-half {
+        flex: 1;
+        padding: 1rem;
+    }
+
+    .qr-flex-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .qr-flex-center p {
+        text-align: -webkit-left;
+    }
+
+    .qr-flex-center img {
+        text-align: -webkit-center;
+    }
+
+    .divcss {
+        border: 1px dashed #979797;
+    }
+
+</style>
+{% get_providers as socialaccount_providers %}
+
+
+<div class="section login-container">
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2 ">
+            <div class="row">
+                <div class="row flex-center">
+
+                    <img class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 col-xs-6 col-xs-offset-3 col-lg-3 col-lg-offset-6 img-responsive login-logo"
+                         alt="Responsive image"
+                         src="{% static 'images/logo@2x.png' %}">
+                    <img class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 col-xs-6 col-xs-offset-3 col-lg-3 col-lg-offset-6 img-responsive login-logo"
+                         alt="Responsive image"
+                         src="{% static 'images/congratulation_smile.png' %}">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="text-align: center">
+                        <p class="h5 container-prompt">Congratulations！</p>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="text-align: center">
+                        <p class="h5 prompt-tittle">5 Chinese classes are in your account！</p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-lg-7 col-lg-offset-3 bootstrap-row-center">
+                        <div class="form-group">
+                            <a href="/accounts/profile/">
+                                <button type="submit" class="account-button submit-btn">Go to my account</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row flex-center">
+                        <p class="h5 qr-app-contact">Any questions, contact us</p>
+                        <section class="qr-container divcss">
+                            <div class="left-half">
+                                <article>
+                                    <div class="qr-flex-center">
+                                        <p class="qr-app-tittle">Wechat:</p>
+                                        <img alt="Responsive image"
+                                             src="{% static 'images/wechat_qr_code@2x.png' %}">
+                                        <p class="qr-app-code">Scan QR Code</p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="right-half">
+                                <article>
+                                    <div class="qr-flex-center">
+                                        <p class="qr-app-tittle">WhatsApp:</p>
+                                        <img alt="Responsive image"
+                                             src="{% static 'images/whatsapp_position@2x.png' %}">
+                                        <p class="qr-app-code">+6586183670</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

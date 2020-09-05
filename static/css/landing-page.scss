@@ -1,0 +1,510 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-row-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+
+@function px2vw($values) {
+  $root: 3.75;
+  $unit: vw;
+  $list: ();
+  @each $v in $values {
+    @if ($v == auto) {
+      $list: append($list, auto);
+    } @else {
+      $value: (strip-units($v)) / $root;
+      @if ($value == 0) {
+        $list: append($list, 0);
+      } @else {
+        $res: $value + $unit;
+        $list: append($list, $res);
+      }
+    }
+  }
+  @return $list;
+}
+
+$theme-blue: #5CC2D0;
+$theme-font-black: #3B3B4D;
+$theme-black: #020202;
+
+html, body {
+  color: $theme-font-black;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+* {
+  margin: 0;
+}
+
+
+.banner {
+  background-color: $theme-blue;
+
+
+  .banner-content {
+    padding: 18px 109px 21px;
+    margin: auto;
+    @include flex-column-center;
+    max-width: 1200px;
+    position: relative;
+
+
+    h1 {
+      font-size: 30px;
+      color: white;
+      line-height: 36px;
+      font-weight: bold;
+      font-family: Helvetica-Bold, sans-serif;
+      text-align: center;
+    }
+
+    .description {
+      font-size: 16px;
+      color: white;
+      line-height: 20px;
+      font-family: Verdana, sans-serif;
+      margin: 11px 0 18px;
+      width: 629px;
+      text-align: center;
+    }
+
+
+    .welcome-girl {
+      width: 253px;
+      position: absolute;
+      left: 73px;
+      bottom: 0;
+    }
+
+    .welcome-boy {
+      width: 175px;
+      position: absolute;
+      right: 109px;
+      bottom: 0;
+    }
+
+    .concat-form {
+      width: 470px;
+      background: rgba(0, 0, 0, 0.4);;
+      padding: 22px 17px 24px;
+      box-sizing: border-box;
+      font-size: 12px;
+
+      label {
+        display: inline-block;
+        color: white;
+      }
+
+      .email-label {
+        margin-top: 23px;
+      }
+
+      .text-input {
+        box-sizing: border-box;
+        display: block;
+        padding: 8px 13px;
+        border: none;
+        outline: none;
+        margin-top: 4px;
+        width: 436px;
+      }
+
+      .submit-btn {
+        height: 30px;
+        margin-top: 30px;
+        width: 436px;
+        color: white;
+        display: block;
+        border: none;
+        background-color: $theme-blue;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.advantage {
+  padding-top: 29px;
+
+  h2 {
+    font-size: 30px;
+    text-align: center;
+    font-family: Helvetica-Bold, sans-serif;
+    font-weight: bold;
+  }
+
+  .advantage-list {
+    margin-top: 29px;
+    @include flex-center;
+
+    .item-container {
+      .num {
+        display: none;
+      }
+
+      .item {
+        @include flex-column-center;
+        margin: 0 22px;
+
+        .title {
+          font-size: 20px;
+          font-family: Helvetica-Bold, sans-serif;
+          font-weight: bold;
+        }
+
+        .description {
+          width: 229px;
+          height: 88px;
+          text-align: center;
+          font-size: 12px;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  height: 60px;
+  background-color: $theme-black;
+  display: flex;
+  align-items: center;
+  padding: 0 17px 0 16px;
+
+  p {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    flex: 1;
+  }
+
+  .footer-icon-group {
+    img {
+      width: 22px;
+      height: 22px;
+      margin-left: 10px;
+    }
+  }
+}
+
+header {
+  height: 71px;
+  background-color: #FAFAFA;
+  @include flex-row-center;
+
+  img {
+    width: 108px;
+    display: block;
+    margin-left: 12px;
+  }
+}
+
+
+// 手机
+@media (max-width: 767px) {
+  header {
+    height: auto;
+
+    img {
+      width: px2vw(73);
+      margin: px2vw(3 auto);
+      display: block;
+    }
+  }
+
+  .banner {
+    .banner-content {
+      padding: px2vw(15 19 26);
+
+      .welcome-children {
+        @include flex-center;
+
+        .welcome-girl-container {
+          width: px2vw(153);
+          height: px2vw(153);
+          border-radius: 100px;
+          background-color: #5BBCCA;
+
+          .welcome-girl {
+            width: px2vw(119);
+            position: static;
+            display: block;
+            margin: auto;
+            padding-top: px2vw(7);
+          }
+        }
+
+        .welcome-boy-container {
+          margin-left: px2vw(26);
+          width: px2vw(153);
+          height: px2vw(153);
+          border-radius: 100px;
+          background-color: #5BBCCA;
+
+          .welcome-boy {
+            display: block;
+            margin: auto;
+            padding-top: px2vw(7);
+            width: px2vw(88);
+            position: static;
+          }
+        }
+      }
+
+      h1 {
+        font-size: px2vw(23);
+        text-align: start;
+        line-height: px2vw(28);
+        margin-top: px2vw(9);
+      }
+
+      .description {
+        font-size: px2vw(13);
+        line-height: px2vw(16);
+        width: auto;
+        text-align: start;
+        margin: px2vw(11 0);
+      }
+
+      .concat-form {
+        width: px2vw(330);
+        padding: px2vw(18 10 29);
+
+        label {
+          font-size: px2vw(11);
+        }
+
+        .text-input {
+          width: px2vw(310);
+          height: px2vw(30);
+        }
+
+        .submit-btn {
+          font-size: px2vw(11);
+          width: px2vw(310);
+        }
+      }
+    }
+  }
+
+  .advantage {
+    padding-top: px2vw(36);
+
+    h2 {
+      font-size: px2vw(23);
+    }
+
+    .advantage-list {
+      flex-direction: column;
+      margin-bottom: px2vw(8);
+
+      .item-container {
+        @include flex-row-center;
+        margin-bottom: px2vw(28.5);
+
+        .num {
+          display: block;
+          width: px2vw(44.5);
+        }
+
+
+        .item {
+          align-items: start;
+          margin-left: px2vw(35.5);
+
+          .title {
+            font-size: px2vw(17);
+            font-weight: bold;
+            text-align: start;
+            line-height: px2vw(16);
+          }
+
+          .description {
+            color: rgba(59, 59, 77, 0.6);
+            font-weight: bold;
+            text-align: start;
+            height: auto;
+            margin-top: px2vw(8);
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: px2vw(36.5);
+
+    p {
+      font-weight: 500;
+      font-size: px2vw(11);
+    }
+
+    .footer-icon-group {
+      img {
+        width: px2vw(11);
+        height: px2vw(11);
+      }
+    }
+  }
+}
+
+// 平板
+@media (min-width: 768px) {
+  .banner {
+    .banner-content {
+      .concat-form {
+        width: px2vw(130);
+
+        label {
+        }
+
+        .text-input {
+          width: px2vw(115);
+          height: px2vw(13);
+        }
+
+        .submit-btn {
+          width: px2vw(115);
+          font-size: px2vw(6);
+        }
+
+        .email-label {
+          margin-top: px2vw(8);
+        }
+      }
+
+      .welcome-girl {
+        width: px2vw(90);
+      }
+
+      .welcome-boy {
+        width: px2vw(62);
+      }
+    }
+  }
+}
+
+// 平板 pro
+@media (min-width: 992px) {
+
+}
+
+// pc
+@media (min-width: 1200px) {
+  .banner {
+    background-color: $theme-blue;
+
+
+    .banner-content {
+      padding: 18px 109px 21px;
+      margin: auto;
+      @include flex-column-center;
+      max-width: 1200px;
+      position: relative;
+
+
+      h1 {
+        font-size: 30px;
+        color: white;
+        line-height: 36px;
+        font-weight: bold;
+        font-family: Helvetica-Bold, sans-serif;
+        text-align: center;
+      }
+
+      .description {
+        font-size: 16px;
+        color: white;
+        line-height: 20px;
+        font-family: Verdana, sans-serif;
+        margin: 11px 0 18px;
+        width: 629px;
+        text-align: center;
+      }
+
+
+      .welcome-girl {
+        width: 253px;
+        position: absolute;
+        left: 73px;
+        bottom: 0;
+      }
+
+      .welcome-boy {
+        width: 175px;
+        position: absolute;
+        right: 109px;
+        bottom: 0;
+      }
+
+      .concat-form {
+        width: 470px;
+        background: rgba(0, 0, 0, 0.4);;
+        padding: 22px 17px 24px;
+        box-sizing: border-box;
+        font-size: 12px;
+
+        label {
+          display: inline-block;
+          color: white;
+        }
+
+        .email-label {
+          margin-top: 23px;
+        }
+
+        .text-input {
+          height: auto;
+          box-sizing: border-box;
+          display: block;
+          padding: 8px 13px;
+          border: none;
+          outline: none;
+          margin-top: 4px;
+          width: 436px;
+        }
+
+        .submit-btn {
+          font-size: 14px;
+          height: 30px;
+          margin-top: 30px;
+          width: 436px;
+          color: white;
+          display: block;
+          border: none;
+          background-color: $theme-blue;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

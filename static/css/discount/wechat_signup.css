@@ -1,0 +1,158 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  color: #3B3B4D; }
+
+* {
+  outline: none;
+  margin: 0;
+  padding: 0; }
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+a:active, a:hover, a:visited {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none; }
+
+input {
+  -webkit-box-shadow: 0 0 0 1000px white inset; }
+
+.text-center {
+  text-align: center; }
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.logo {
+  width: 37.6vw;
+  display: block;
+  margin: 8.5333333333vw auto 0 auto; }
+
+.common-input, .username-input-container, .email-input-container, .password-input-container, .password-2-input-container {
+  width: 77.3333333333vw;
+  height: 10.1333333333vw;
+  padding: 0 2.6666666667vw;
+  font-size: 3.2vw;
+  box-sizing: border-box;
+  border: 1px #CBD6E2 solid;
+  border-radius: 1.0666666667vw;
+  outline: none;
+  display: block;
+  margin: auto; }
+
+.common-input::-webkit-input-placeholder, .username-input-container::-webkit-input-placeholder, .email-input-container::-webkit-input-placeholder, .password-input-container::-webkit-input-placeholder, .password-2-input-container::-webkit-input-placeholder {
+  color: #6C7B8A; }
+
+.submit-btn {
+  border-radius: 100px;
+  height: 10.9333333333vw;
+  background-color: #24CBDA;
+  margin: auto;
+  display: block;
+  width: 77.3333333333vw;
+  text-align: center;
+  color: white;
+  font-size: 4vw; }
+
+.submit-btn:disabled {
+  background-color: #EDEDED;
+  color: #999999; }
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+input {
+  padding-left: 3.0666666667vw; }
+
+p[id$='error-msg'] {
+  color: #F88741;
+  font-size: 2.9333333333vw;
+  margin-top: 1.3333333333vw; }
+
+.username-input-container {
+  padding-left: 9.8666666667vw;
+  display: flex;
+  align-items: center;
+  background-image: url("/static/img/user.png");
+  background-repeat: no-repeat;
+  background-size: 3.7333333333vw auto;
+  background-position: center left 3.2vw; }
+  .username-input-container input {
+    border: none;
+    border-left: 1px solid #CBD6E2; }
+  .username-input-container.active {
+    border-color: #24CBDA;
+    background-image: url("/static/img/user-focus.png"); }
+
+.email-input-container {
+  padding-left: 9.8666666667vw;
+  display: flex;
+  align-items: center;
+  background-image: url("/static/img/email.png");
+  background-repeat: no-repeat;
+  background-size: 3.7333333333vw auto;
+  background-position: center left 3.2vw; }
+  .email-input-container input {
+    border: none;
+    border-left: 1px solid #CBD6E2; }
+  .email-input-container.active {
+    border-color: #24CBDA;
+    background-image: url("/static/img/email-focus.png"); }
+
+.password-input-container {
+  padding-left: 9.8666666667vw;
+  display: flex;
+  align-items: center;
+  background-image: url("/static/img/password.png");
+  background-repeat: no-repeat;
+  background-size: 3.7333333333vw auto;
+  background-position: center left 3.2vw; }
+  .password-input-container input {
+    border: none;
+    border-left: 1px solid #CBD6E2; }
+  .password-input-container.active {
+    border-color: #24CBDA;
+    background-image: url("/static/img/password-focus.png"); }
+
+.password-2-input-container {
+  padding-left: 9.8666666667vw;
+  display: flex;
+  align-items: center;
+  background-image: url("/static/img/password.png");
+  background-repeat: no-repeat;
+  background-size: 3.7333333333vw auto;
+  background-position: center left 3.2vw; }
+  .password-2-input-container input {
+    border: none;
+    border-left: 1px solid #CBD6E2; }
+  .password-2-input-container.active {
+    border-color: #24CBDA;
+    background-image: url("/static/img/password-focus.png"); }
+
+.input-label {
+  display: block;
+  color: #6C7B8A;
+  font-size: 3.4666666667vw;
+  margin-bottom: 1.8666666667vw;
+  margin-top: 4vw; }
+
+.form-register {
+  margin-top: 7.4666666667vw; }
+
+.username-label {
+  width: 77.3333333333vw; }
+
+.submit-btn {
+  margin-top: 15.8666666667vw; }
+
+/*# sourceMappingURL=wechat_signup.css.map */

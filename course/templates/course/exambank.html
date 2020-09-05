@@ -1,0 +1,24 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+
+{% for question in questions %}
+
+<li>{{question.no}}</li>
+
+<ul>
+{% for s in question.stem %}
+{{s}} <br>
+{% endfor %}
+</ul>
+
+<li>A: {{question.alternative.A}}</li>
+<li>B: {{question.alternative.B}}</li>
+<li>C: {{question.alternative.C}}</li>
+<li>D: {{question.alternative.D}}</li>
+
+答案：{{question.answer}} <BR>
+
+难度：{{question.level}} <BR>
+{% endfor %}
+      

@@ -1,0 +1,98 @@
+.content-ct{
+    background:#fff;
+    max-width:1200px;
+    margin:30px auto 0 auto;
+    padding:40px;
+    border-radius:10px;
+}
+.content-ct .salary-tit{
+    font-size: 28px;
+    color:#3B3B4D;
+    line-height:40px;
+    text-align:center;
+}
+.content-ct .salary-tit em{
+    font-style: inherit;
+    padding-left:40px;
+}
+.content-ct .salary-tit i,.payment-class span em{
+    font-style: inherit;
+}
+.content-ct .salary-tit span{
+    color:#FF402E;
+    font-weight:bold;
+    padding-right:5px;
+}
+.total-remuneration{
+    font-size:18px;
+    color:#3B3B4D;
+}
+.total-remuneration span{
+    color:#666666;
+    font-size:16px;
+}
+.payment-details{
+    margin-top:25px;
+    overflow:hidden;
+    padding-bottom:25px;
+    border:1px solid #D5D5D8;
+}
+.payment-tit{
+    height:48px;
+    background:#FCFCFC;
+    border-bottom:1px solid #D5D5D8;
+}
+.payment-tit.col-md-12,.payment-ct.col-md-12{
+    padding-left:0;
+    padding-right:0;
+}
+.payment-tit .col-md-4,.payment-ct .col-md-4{
+    padding-left:0;
+    padding-right:0;
+    font-size:14px;
+    color:#3B3B4D;
+}
+.payment-tit .col-md-8,.payment-ct .col-md-8{
+    padding-left:30px;
+    padding-right:0;
+    font-size:14px;
+    color:#3B3B4D;
+}
+.payment-info,.payment-class{
+    width:100%;
+    display:flex;
+    align-items:center;
+    min-height:48px;
+    padding:5px 0;
+
+}
+.payment-info span,.payment-class span{
+    width:100%;
+    text-align: center;
+}
+.payment-ct .payment-info{
+    border-bottom:1px solid #D5D5D8;
+    border-left:4px solid #fff;
+    cursor:pointer;
+}
+.payment-ct .payment-class{
+    border-bottom:1px solid #D5D5D8;
+}
+.payment-ct .payment-info span:last-child{
+    position: relative;
+}
+.payment-ct .payment-info span:last-child img{
+    position: absolute;
+    right:10px;
+    top:0px;
+}
+.payment-ct .payment-info.active{
+    border-left:4px solid #5CC2D0;
+    background:#F6FCFC;
+}
+.payment-info em{
+    font-style: inherit;
+}
+.payment-ct .payment-class:hover{
+    background:#f5f5f5;
+}

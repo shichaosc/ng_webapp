@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+<div class="section section-gray">
+    <div class="container">
+
+	<div class="card card-price">
+	<div class="content text-center">
+	<h6>{% trans 'Change Student Course & Session Level' %}</h6>
+	<BR>
+	<BR>	
+{% if students %}
+<form method="POST" action="/course/change_student_grade/" id="selectForm">
+{% csrf_token %}
+
+{% trans 'Select Student:' %}
+<select name="student_id" onchange="select_stu(this)" id="selectStu">
+{% for s in students %}
+    {% if student %}
+        {% ifequal student.username s.1 %}
+            <option value="{{ s.0 }}" selected>{{ s.1 }}</option>
+        {% else %}
+            <option value="{{ s.0 }}">{{ s.1 }}</option>
+        {% endifequal %}
+    {% else %}
+        <option value="{{ s.0 }}">{{ s.1 }}</option>
+
+    {% endif %}
+
+{% endfor %}
+</select>
+</form>
+<BR>
+<BR>
+<BR>
+
+{% if student and user_course %}
+<form method="POST" action="/course/change_student_grade/" id="changeForm">
+{% csrf_token %}
+
+{% trans 'Change Course & Level:' %}
+<select name="course_id">
+{% for c in courses %}
+{% ifequal c  user_course.course %}
+<option value="{{ c.id }}" selected>{{ c }}</option>
+{% else %}
+<option value="{{ c.id }}">{{ c }}</option>
+{% endifequal %}
+
+{% endfor %}
+</select>
+
+<input type="hidden" id="sessionToPost" name="sessionToPost" value="{{ percent_session_no }}">
+<input type="hidden" name="student_id" value="{{student.id}}">
+
+<BR>
+<BR>
+
+
+{% trans 'Current session:' %} <input disabled="disabled" id="percent_session" value="{{ percent_session_no  }}"></input>
+<BR>
+<BR>
+
+		<div id="slider-session" class="slider-info"></div>
+		
+<BR>		
+<button class="btn btn-primary center-block" onclick="submit_data('#changeForm')">{% trans "change" %}</button>
+
+</form>
+
+{% else %}
+none
+{% endif %}
+{% else %}
+
+
+{% endif %}
+			</div>
+		</div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block extra_ending %}
+{{ block.super }}
+<script src="{% static "js/jquery-ui.js" %}" type="text/javascript"></script>
+
+<script type="text/javascript">
+$( "#slider-session" ).slider({value: $("#sessionToPost").val(), 
+	orientation: "horizontal", 
+	range: "min", 
+	animate: true,
+	//this updates the value of your hidden field when user stops dragging
+    change: function(event, ui) {
+      $('#sessionToPost').attr('value', ui.value);
+       $('#percent_session').attr('value', ui.value);
+    }
+	});
+	
+function submit_data(formID, input) {
+
+	$(formID).submit();
+	
+}	
+function select_stu(obj) {
+	var student_id = $("#selectStu option:selected").val();
+	//alert(student_id);
+	var url = "/course/change_student_grade/?student_id=" + student_id;
+	//alert(url);
+	location.href=url;
+}
+</script>
+{% endblock %}

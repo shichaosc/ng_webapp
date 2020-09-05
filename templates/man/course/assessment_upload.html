@@ -1,0 +1,257 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block title %}{% trans "Exambank Upload" %}{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <li>
+            <a href="/man/exambank/preview/">
+                <i class="pe-7s-news-paper"></i>
+                <p>{% trans 'Advance exam' %}</p>
+            </a>
+        </li>
+        <li>
+            <a href="/man/exambank/list/">
+                <i class="pe-7s-cloud-upload"></i>
+                <p>{% trans 'Advance Exambank Upload' %}</p>
+            </a>
+        </li>
+        <div class="container-fluid">
+            <form action="/man/examaassessment/upload/" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        {% if testquestion_obj %}
+                            <input required="required" name="stemno" class="form-control" placeholder="请输入题号"
+                                   value="{{ testquestion_obj.question_no }}"></input>
+                        {% else %}
+                            <input required="required" name="stemno" class="form-control" placeholder="请输入题号"></input>
+                        {% endif %}
+                        <input id="input_selected" type="hidden" name="select_value" value="0">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>{% trans 'Select course' %}
+                        </h4>
+                        <select id="selected_course" name="course_id" class="selectpicker" data-style="form-control">
+                            {% for course in courses %}
+                                {% if testquestion_obj.course_id == course.id %}
+                                    <option selected value="{{ course.id }}">{{ course }} </option>
+                                {% else %}
+                                    {% if CourseId == course.id %}
+                                        <option selected value="{{ course.id }}">{{ course }}</option>
+                                    {% else %}
+                                        <option value="{{ course.id }}">{{ course }} </option>
+                                    {% endif %}
+
+                                {% endif %}
+
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>{% trans 'Select type' %}</h4>
+                        <select name="questiontype" class="selectpicker" data-style="form-control">
+
+                            {% if testquestion_obj.question_type == 1 %}
+                                <option selected value="1">单选</option>
+                            {% else %}
+                                <option value="1">单选</option>
+                            {% endif %}
+
+
+                            {% if testquestion_obj.question_type == 2 %}
+                                <option selected value="2">多选</option>
+                            {% else %}
+                                <option value="2">多选</option>
+                            {% endif %}
+
+
+                            {% if testquestion_obj.question_type == 3 %}
+                                <option selected value="3">连线</option>
+                            {% else %}
+                                <option value="3">连线</option>
+                            {% endif %}
+
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-md-6">
+                        <select name="status" class="selectpicker" data-style="form-control">
+
+                            {% if testquestion_obj.status == 1 %}
+                                <option selected value="1">{% trans 'active' %} </option>
+                            {% else %}
+                                <option value="1">{% trans 'active' %} </option>
+                            {% endif %}
+
+                            {% if testquestion_obj.status == 2 %}
+                                <option selected value="2">{% trans 'archived' %} </option>
+                            {% else %}
+                                <option value="2">{% trans 'archived' %} </option>
+                            {% endif %}
+
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>{% trans 'Stem' %}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {% if question_detail.stem.type == "text" %}
+                            <textarea name="stemcontent" class="form-control" placeholder=""
+                                      rows="6">{{ question_detail.stem.content }}</textarea>
+                        {% elif question_detail.stem.0.type == "text" %}
+                            <textarea name="stemcontent" class="form-control" placeholder=""
+                                      rows="6">{{ question_detail.stem.0.content }}</textarea>
+                        {% else %}
+                            <textarea name="stemcontent" class="form-control" placeholder="" rows="6"></textarea>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" name="stem" id="stem"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>{% trans 'Answer' %}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {% if question_detail %}
+                        {% else %}
+                        {% endif %}
+
+
+                        {% if question_detail.alternatives.0.detail.type == "text" %}
+                            <input name="answerA" class="form-control"
+                                   value="{{ question_detail.alternatives.0.detail.content }}"></input>
+                        {% else %}
+                            <input name="answerA" class="form-control" placeholder="请输入选项A"></input>
+                        {% endif %}
+
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" name="answerfileA" id="answerA"/>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 5px">
+                    <div class="col-md-6">
+                        {% if question_detail.alternatives.1.detail.type == "text" %}
+                            <input name="answerB" class="form-control"
+                                   value="{{ question_detail.alternatives.1.detail.content }}"></input>
+                        {% else %}
+                            <input name="answerB" class="form-control" placeholder="请输入选项B"></input>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" name="answerfileB" id="answerB"/>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 5px">
+                    <div class="col-md-6">
+
+                        {% if question_detail.alternatives.2.detail.type == "text" %}
+                            <input name="answerC" class="form-control"
+                                   value="{{ question_detail.alternatives.2.detail.content }}"></input>
+                        {% else %}
+                            <input name="answerC" class="form-control" placeholder="请输入选项C"></input>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" name="answerfileC" id="answerC"/>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 5px">
+                    <div class="col-md-6">
+
+                        {% if question_detail.alternatives.3.detail.type == "text" %}
+                            <input name="answerD" class="form-control"
+                                   value="{{ question_detail.alternatives.3.detail.content }}"></input>
+                        {% else %}
+                            <input name="answerD" class="form-control" placeholder="请输入选项D"></input>
+                        {% endif %}
+
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" name="answerfileD" id="answerD"/>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 5px">
+                    <div class="col-md-6">
+                        <h4>{% trans 'Correct Answer' %}</h4>
+
+                        {% if question_detail.answer %}
+                            <input value="{{ question_detail.answer }}" type="text" required="required"
+                                   class="form-control" id="Correct" name="answercorrect"
+                                   class="form-control">
+                        {% else %}
+                            <input type="text" required="required" class="form-control" id="Correct"
+                                   name="answercorrect"
+                                   class="form-control">
+                        {% endif %}
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <h4>{% trans 'Degress of difficulty' %}</h4>
+
+                        {% if question_detail.level %}
+                            <input type="text" required="required" class="form-control" id="difficult" name="difficult"
+                                   class="form-control" value="{{ question_detail.level }}">
+                        {% else %}
+                            <input type="text" required="required" class="form-control" id="difficult" name="difficult"
+                                   class="form-control">
+                        {% endif %}
+
+                    </div>
+                </div>
+                <div class="row text-center" style="margin-top: 20px">
+                    <div class="col-md-6 col-md-offset-3">
+
+                        {% if testquestion_obj %}
+                            <input class="form-actions btn btn-social btn-lg btn-info" type="submit"
+                                   value="{% trans 'submit' %}"
+                                   style=" font-size: 16px; height: 60px;width: 350px; white-space: normal;">
+
+                            <a href="/man/examassement/preview/?course_id={{ testquestion_obj.course_id }}"
+                               class="form-actions btn btn-social btn-lg btn-info"
+                               style=" font-size: 16px; height: 60px; white-space: normal;width: 350px;">{% trans "Cancel" %}</a>
+                        {% else %}
+                            <input class="form-actions btn btn-social btn-lg btn-info" type="submit"
+                                   value="{% trans 'Save' %}"
+                                   style=" font-size: 16px; height: 60px;width: 350px; white-space: normal;">
+                            <button id="form_btn" class="form-actions btn btn-social btn-lg btn-info"
+                                    type="button"
+                                    style=" font-size: 16px; height: 60px;width: 350px; white-space: normal;">{% trans 'Save and add another' %}</button>
+                            <input id="click_submit" type="submit" class="hide">
+                        {% endif %}
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+    <script>
+
+        $("#form_btn").click(function () {
+            var select_ed = $("#selected_course option:selected").val();
+            $("#input_selected").attr("value", select_ed)
+            $("#click_submit").click();
+        })
+
+
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+.p-btn {
+    color: #fff;
+    background-color: #409EFF;
+    width: 80px;
+    height: 30px;
+    border: 1px solid #409EFF;
+    border-radius: 3px;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+}

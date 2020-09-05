@@ -1,0 +1,484 @@
+{% extends 'course/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{% trans "Assessment" %}{% endblock %}
+
+{% block content %}
+
+    <div class="pop-card-container pc" style="width: 951px;margin: 50px auto">
+        <div class="pop-card-circle-container">
+            <div class="pop-card-circle">
+                <div class="flex-column-center" style="margin-top: 23px">
+                    <img src="{% static 'images/recommended_course.png' %}" style="width: 53px">
+                    <p>{% trans "Recommended Course" %}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pop-card-top-up" style="padding: 1px;">
+            <div id="pc_programme_introduce">
+                <div style="display: flex;margin-top: 50px;justify-content: center;padding-bottom: 32px">
+                    <div style="position: relative" class="course-chooser-card">
+                        <h5 style="text-align: center">{% trans 'LingoAce Advanced Programme' %}</h5>
+
+                        <p>{% trans 'This course is divided into six levels, and follows the course book developed by China&#39s Ministry of Education. Students are expected to make progress in all aspects of Chinese language, including listening, speaking, reading and writing. This programme is suitable for students who have a certain basis for Chinese listening and speaking, or students who have Chinese listening and speaking environment and want to improve Chinese skills and literature (writing, intensive reading, ancient literature learning).' %}</p>
+
+                        <button class="btn-gradient-background" value="A" onclick="clickAnswer(this)"
+                                style="font-size: 16px;width: 200px;height: 44px;display: block;margin: auto;position: absolute;left: 0;right: 0;bottom: 20px">{% trans 'Choose' %}
+                        </button>
+                    </div>
+
+                    <div class="course-chooser-card" style="margin-left: 118px;position: relative">
+                        <h5 style="text-align: center">{% trans 'LingoAce International Programme' %}</h5>
+
+                        <p>{% trans 'This course is designed for non-native Chinese speakers, and takes a fun approach to learning Chinese. Through the six levels, students will improve their listening, speaking, reading and writing skills and the understanding of Chinese culture. This course is suitable for students whose mother tongue are non-Chinese and want to learn daily communication, or students who have examination requirements such as YCT.' %}</p>
+
+                        <button class="btn-gradient-background" value="B" onclick="clickAnswer(this)"
+                                style="font-size: 16px;width: 200px;height: 44px;display: block;margin: auto;position: absolute;left: 0;right: 0;bottom: 20px">{% trans 'Choose' %}
+                        </button>
+                    </div>
+
+                </div>
+                <button value="C" onclick="clickAnswer(this)"
+                        style="padding-bottom: 50px;text-align: left;border: 0;background-color: transparent;display: block;margin: auto;color: #4A90E2">{% trans 'I am not sure what course my child should choose' %}
+                </button>
+            </div>
+
+
+            <div id="question-container" style="padding: 75px 20px 33px;display: none">
+
+                <div style="padding-left: 80px">
+                    <div class="">
+                        <div style="margin-top: 10px" class="course-title"
+                             id="pc_question_stem">
+                        </div>
+                    </div>
+
+
+                    <div id="pc_question_content" class="course-title">
+
+                    </div>
+                </div>
+
+
+                <div id="result_content">
+
+                </div>
+
+                <div id="pc_agreement_content">
+
+
+                    <div id="result" style="display: flex;justify-content: space-around;">
+                        <div style="width: 434px;display: flex;flex-direction: column;align-items: center;text-align: start;border: 1px solid rgba(108,123,138,0.3); padding: 22px 10px 25px 34px">
+                            <p style="margin: 22px 0 14px 0;color: #3B3B4D;font-size: 12px;">{% trans 'LingoAce Parents Agreement' %}</p>
+                            <p style="margin: 0;font-size: 10px;color: #6C7B8A;line-height: 14px">{% trans 'I agree not to assist my child in any way to understand the content of the test (I may assist my child with technical difficulties).I agree to not provide any answers or read for my child during the test. I can understand that when I help my child answer the test questions, my child might place in a level that&#39s beyond their ability. This is bad for my child to learn Chinese.' %}</p>
+                            <p style="margin:50px 0 18px 0;background:linear-gradient(135deg, rgba(45,201,235,1) 0%, rgba(20,210,184,1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">{% trans 'I agree, continue to the test.' %}</p>
+                            <p style="margin: 0 0 20px 0;color: #6C7B8A;font-size: 10px">{% trans 'Next, please ask your child to come to the computer. And ensure that your device can play the audio properly, then turn on the stereo or put on the earphone. If you are ready, please click "OK".' %}</p>
+
+                            <button onclick="clickOK()" class="btn-gradient-background"
+                                    style="width: 200px;height: 44px;font-size: 16px">OK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="section section-gray phone" xmlns="http://www.w3.org/1999/html">
+        <div class="container">
+            <div class="card">
+                <div class="card-block">
+                    <div class="row" id="programme_introduce">
+                        <div class="col-md-5 col-xs-8" style="margin-left: 70px;margin-top: 20px">
+                            <label>
+                                {% trans 'LingoAce Advanced Programme:' %}
+                                <br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{% trans 'This course is divided into six levels, and follows the course book developed by China&#39s Ministry of Education. Students are expected to make progress in all aspects of Chinese language, including listening, speaking, reading and writing. This programme is suitable for students who have a certain basis for Chinese listening and speaking, or students who have Chinese listening and speaking environment and want to improve Chinese skills and literature (writing, intensive reading, ancient literature learning).' %}
+                            </label>
+                        </div>
+
+                        <div class="col-md-5 col-xs-8" style="margin-top: 20px;margin-left: 50px">
+                            <label>
+                                {% trans 'LingoAce International Programme:' %}
+                                <br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{% trans 'This course is designed for non-native Chinese speakers, and takes a fun approach to learning Chinese. Through the six levels, students will improve their listening, speaking, reading and writing skills and the understanding of Chinese culture. This course is suitable for students whose mother tongue are non-Chinese and want to learn daily communication, or students who have examination requirements such as YCT.' %}
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div style="margin-top: 10px" class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-2"
+                             id="question_stem">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="question_content" class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-2">
+
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div id="result_content" class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-2">
+
+                        </div>
+                    </div>
+                    <div class="row text-center" id="agreement_content">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+                                {% trans 'LingoAce Parents Agreement' %}
+                                <br><br>
+                                {% trans 'I agree not to assist my child in any way to understand the content of the test (I may assist my child with technical difficulties).I agree to not provide any answers or read for my child during the test. I can understand that when I help my child answer the test questions, my child might place in a level that&#39s beyond their ability. This is bad for my child to learn Chinese.' %}
+                                <br><br>
+                                {% trans 'I agree, continue to the test.' %}
+                                <br><br>
+                                {% trans 'Next, please ask your child to come to the computer. And ensure that your device can play the audio properly, then turn on the stereo or put on the earphone. If you are ready, please click "OK".' %}
+                                <br><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button style="margin-right: 10px" onclick="clickOK()" class="btn btn-lg  btn-round">
+                                OK
+                            </button>
+                            <br><br>
+                        </div>
+                    </div>
+                    <form class="form" id="assessmentquestions_form" action="/course/assessmentquestions/"
+                          method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="programmer_name" id="programmer_name"/>
+                        <input type="hidden" name="course_level" id="course_level"/>
+                    </form>
+                    <form id="updateAssessment-form" action="/course/updateAssessment/" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="programme" id="updateAssessment_programme"/>
+                        <input type="hidden" name="course_level" id="updateAssessment_course_level"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-modal-dialog">
+        <button id="btn-modal" type="button" class="btn btn-primary btn-lg hide" data-toggle="modal"
+                data-target="#myModal">
+        </button>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"></button>
+                        <h4 class="modal-title"
+                            id="myModalLabel">{% trans 'My child is the beginner of Chinese learning, and I am sure level one is suitable for him(her), so the following test is unnnecessary.' %}
+                        </h4>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button id="btn_yes" type="button"
+                                class="btn btn-primary">{% trans 'YES' %}</button>
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">{% trans 'NO' %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/jquery-ui.js" %}" type="text/javascript"></script>
+    <script>
+        $('#agreement_content').hide();
+        $('#pc_agreement_content').hide();
+        var firstprogramm = ''
+        var firstlevel = ''
+        var userscore = 0
+        var inscore = 0
+        var num = 0
+
+        // 根据上面的介绍，你会为孩子选择什么课程
+        var stemarray = ['', '{% trans 'How about parents&#39 Chinese?' %}', '{% trans 'How often does your child speak Chinese at home?' %}', '{% trans 'At present, what is your target for child&#39s Chinese?' %}', '{% trans 'How old is your child?' %}', '{% trans 'Have your child learned Chinese before? (If learned) How long have your child learned?'%}', '{% trans 'How long does your child usually spend on learning Chinese?' %}', '{% trans 'How is your child&#39s Chinese listening and speaking skills? (From low to high)' %}', '{% trans 'How is your child&#39s Chinese reading and writing skills? (From low to high)' %}', '{% trans 'What kind of language does your child speak at home?' %}']
+
+        // A:PPChinese高级中文课程  B:PPChinese国际中文课程-Lite版
+        var alterOnearr = ['{% trans 'LingoAce Advanced Programme.'%}', '{% trans 'LingoAce International Programme.'%}', '{% trans ' Not sure.' %}']
+
+
+        var alterTwoarr = ['{% trans 'Chinese is none of parents&#39 mother tongue.'%}', '{% trans 'Chinese is one of parents’ mother tongue.'%}', '{% trans 'Chinese is both of parents&#39 mother tongue.' %}']
+        var alterThreearr = ['{% trans 'Never speak Chinese at home.'%}', '{% trans 'Sometimes speak simple Chinese at home.'%}', '{% trans 'Always speak Chinese at home.' %}']
+        var alertFourarr = ['{% trans 'Can use Chinese for simple daily communication.' %}', '{% trans 'Improve Chinese skills, and be able to talk about various topics.' %}', '{% trans 'Improve Chinese skills and literature. (Writing, intensive reading, learning ancient literature)' %}']
+        var alterfiveArr = ['{% trans '6~8 years old' %}', '{% trans '8~10 years old' %}', '{%  trans '10~12 years old' %}', '{% trans '12~15 years old' %}', '{% trans 'More than15 years old' %}']
+        var altersixArr = ['{% trans 'Haven&#39t learned &learned Chinese 0~1year' %}', '{% trans 'learned Chinese 1~2years' %}', '{%  trans 'learned Chinese 2~3years' %}', '{% trans 'learned Chinese 3~4years' %}', '{% trans 'learned Chinese more than 5years' %}']
+        var altersevenArr = ['{% trans 'Doesn&#39t learn Chinese' %}', '{% trans '0~1hours a week' %}', '{%  trans '1~2hours a week' %}', '{% trans '2~3hours a week' %}', '{% trans 'At least 4hours' %}']
+        var altereightArr = ['{% static 'images/level_one.png' %}', '{% static 'images/level_two.png' %}', '{% static 'images/level_three.png' %}', '{% static 'images/level_four.png' %}', '{% static 'images/level_five.png' %}']
+        var alternineArr = ['{% static 'images/level_one.png' %}', '{% static 'images/level_two.png' %}', '{% static 'images/level_three.png' %}', '{% static 'images/level_four.png' %}', '{% static 'images/level_five.png' %}']
+        var altertenArr = ['{% trans 'doesn&#39t speak Chinese at home' %}', '{% trans 'doesn&#39t speak Chinese at home but can get access to Chinese. (With neighbors, relatives or friends)' %}', '{%  trans 'Can speak a little Chinese at home' %}', '{% trans 'One of the parents speaks another language' %}', '{% trans 'Chinese is the basic language' %}']
+
+        if (isPhone()) {
+            stemarray = new Array('{% trans 'Which programme will you choose for your child according to the introduction above?' %}', '{% trans 'How about parents&#39 Chinese?' %}', '{% trans 'How often does your child speak Chinese at home?' %}', '{% trans 'At present, what is your target for child&#39s Chinese?' %}', '{% trans 'How old is your child?' %}', '{% trans 'Have your child learned Chinese before? (If learned) How long have your child learned?'%}', '{% trans 'How long does your child usually spend on learning Chinese?' %}', '{% trans 'How is your child&#39s Chinese listening and speaking skills? (From low to high)' %}', '{% trans 'How is your child&#39s Chinese reading and writing skills? (From low to high)' %}', '{% trans 'What kind of language does your child speak at home?' %}')
+            alterOnearr = new Array('{% trans 'LingoAce Advanced Programme.'%}', '{% trans 'LingoAce International Programme.'%}', '{% trans ' Not sure.' %}')
+            alterTwoarr = new Array('{% trans 'Chinese is none of parents&#39 mother tongue.'%}', '{% trans 'Chinese is one of parents’ mother tongue.'%}', '{% trans 'Chinese is both of parents&#39 mother tongue.' %}')
+            alterThreearr = new Array('{% trans 'Never speak Chinese at home.'%}', '{% trans 'Sometimes speak simple Chinese at home.'%}', '{% trans 'Always speak Chinese at home.' %}')
+            alertFourarr = new Array('{% trans 'Can use Chinese for simple daily communication.' %}', '{% trans 'Improve Chinese skills, and be able to talk about ious topics.' %}', '{% trans 'Improve Chinese skills and literature. (Writing, intensive reading, learning ancient literature)' %}')
+            alterfiveArr = new Array('{% trans '6~8 years old' %}', '{% trans '8~10 years old' %}', '{%  trans '10~12 years old' %}', '{% trans '12~15 years old' %}', '{% trans 'More than15 years old' %}')
+            altersixArr = new Array('{% trans 'Haven&#39t learned &learned Chinese 0~1year' %}', '{% trans 'learned Chinese 1~2years' %}', '{%  trans 'learned Chinese 2~3years' %}', '{% trans 'learned Chinese 3~4years' %}', '{% trans 'learned Chinese more than 5years' %}')
+            altersevenArr = new Array('{% trans 'Doesn&#39t learn Chinese' %}', '{% trans '0~1hours a week' %}', '{%  trans '1~2hours a week' %}', '{% trans '2~3hours a week' %}', '{% trans 'At least 4hours' %}')
+            altereightArr = new Array('{% static 'images/level_one.png' %}', '{% static 'images/level_two.png' %}', '{% static 'images/level_three.png' %}', '{% static 'images/level_four.png' %}', '{% static 'images/level_five.png' %}')
+            alternineArr = new Array('{% static 'images/level_one.png' %}', '{% static 'images/level_two.png' %}', '{% static 'images/level_three.png' %}', '{% static 'images/level_four.png' %}', '{% static 'images/level_five.png' %}')
+            altertenArr = new Array('{% trans 'doesn&#39t speak Chinese at home' %}', '{% trans 'doesn&#39t speak Chinese at home but can get access to Chinese. (With neighbors, relatives or friends)' %}', '{%  trans 'Can speak a little Chinese at home' %}', '{% trans 'One of the parents speaks another language' %}', '{% trans 'Chinese is the basic language' %}')
+
+        }
+
+        var questioncontent = []
+        questioncontent.push(alterOnearr)
+        questioncontent.push(alterTwoarr)
+        questioncontent.push(alterThreearr)
+        questioncontent.push(alertFourarr)
+        questioncontent.push(alterfiveArr)
+        questioncontent.push(altersixArr)
+        questioncontent.push(altersevenArr)
+        questioncontent.push(altereightArr)
+        questioncontent.push(alternineArr)
+        questioncontent.push(altertenArr)
+        showstem(num)
+        showquestioncontent(num)
+
+        function showstem(number) {
+            $('#question_stem').empty();
+            $('#pc_question_stem').empty();
+            stemcontent = stemarray[number]
+            if (isPc()) {
+                stemHtml = '<li style="list-style: none"><label class="course-title">' + stemcontent + '</label></li>'
+            } else {
+                stemHtml = '<li style="list-style: none"><label style="font-size: 20px">' + stemcontent + '</label></li>';
+            }
+            $(stemHtml).appendTo('#question_stem');
+            $(stemHtml).appendTo('#pc_question_stem');
+        }
+
+        function showquestioncontent(number) {
+            if (isPc()) {
+                if (num === 0) {
+                    return;
+                }
+            }
+            $('#question_content').empty();
+            $('#pc_question_content').empty();
+            contentArr = questioncontent[number]
+            var selecthtml = ''
+            var alter = ''
+            for (var i = 0; i < contentArr.length; i++) {
+                switch (i) {
+                    case 0:
+                        alter = 'A'
+                        break
+                    case 1:
+                        alter = 'B'
+                        break
+                    case 2:
+                        alter = 'C'
+                        break
+                    case 3:
+                        alter = 'D'
+                        break
+                    case 4:
+                        alter = 'E'
+                        break
+                }
+                if (isPc()) {
+                    if (number == 7 || number == 8) {
+                        tempthtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value=' + alter + ' onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent;color:#6C7B8A">' + alter + ':' + '<img width="100%"  src="' + contentArr[i] + '"' + '>' + '</button></li>';
+                    } else {
+                        tempthtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value=' + alter + ' onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent;color:#6C7B8A">' + alter + ':' + contentArr[i] + '</button></li>';
+                    }
+                } else {
+                    if (number == 7 || number == 8) {
+                        tempthtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value=' + alter + ' onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + alter + ':' + '<img width="100%"  src="' + contentArr[i] + '"' + '>' + '</button></li>';
+                    } else {
+                        tempthtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value=' + alter + ' onclick="clickAnswer(this)" style="text-align: left;border: 0px;background-color: transparent">' + alter + ':' + contentArr[i] + '</button></li><br>';
+                    }
+                }
+                selecthtml = selecthtml + tempthtml
+            }
+            $(selecthtml).appendTo('#question_content')
+            $(selecthtml).appendTo('#pc_question_content')
+        }
+
+        function clickOK() {
+            submitResult(firstprogramm, firstlevel)
+        }
+
+        function showresult(programm, course_level) {
+            if (isPc()) {
+                $('#question_content').empty();
+                $('#pc_question_content').empty();
+                $('#question_stem').empty();
+                $('#pc_question_stem').empty();
+                $('#question_content').hide();
+                $('#pc_question_content').hide();
+                $('#pc_question_stem').hide();
+                var resultcontent = '{% trans 'The programme we recommend is' %}'
+                var tempname = '';
+                var description = '';
+                if (programm == 'LingoAce Advanced Programme') { // 高级版
+                    tempname = '{% trans 'LingoAce Advanced Programme' %}'
+                    description = '{% trans 'This course is divided into six levels, and follows the course book developed by China&#39s Ministry of Education. Students are expected to make progress in all aspects of Chinese language, including listening, speaking, reading and writing. This programme is suitable for students who have a certain basis for Chinese listening and speaking, or students who have Chinese listening and speaking environment and want to improve Chinese skills and literature (writing, intensive reading, ancient literature learning).' %}';
+                } else {
+                    tempname = '{% trans 'LingoAce International Programme' %}'
+                    description = '{% trans 'This course is designed for non-native Chinese speakers, and takes a fun approach to learning Chinese. Through the six levels, students will improve their listening, speaking, reading and writing skills and the understanding of Chinese culture. This course is suitable for students whose mother tongue are non-Chinese and want to learn daily communication, or students who have examination requirements such as YCT.' %}';
+                }
+                tempthtml = $('<li style="list-style: none;font-size: 20px;color: #00bbff;margin-top: 10px;font-weight:400;background:linear-gradient(135deg, rgba(45,201,235,1) 0%, rgba(20,210,184,1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">' + resultcontent + ' ' + tempname + '</li><br>');
+
+                var card = `<div style="display:flex;flex-direction: column;width: 359px;box-shadow:0 2px 30px 0 rgba(0,0,0,0.06);">
+                        <h5 style="text-align: center;font-size: 18px;color: #3B3B4D;margin-top: 20px">
+                            ${tempname}</h5>
+                        <p style="margin: 18px 7px 60px 18px;font-size: 12px;color: #6C7B8A">
+                            ${description}</p>
+                        </div>`;
+
+                var container = $('<div style="display:flex;flex-direction: column"></div>');
+
+                container.append(tempthtml)
+                container.append(card);
+
+                $("#result").prepend(container)
+            } else {
+                $('#question_content').empty();
+                $('#pc_question_content').empty();
+                $('#question_stem').empty();
+                $('#pc_question_stem').empty();
+                $('#pc_question_content').hide();
+                $('#question_stem').hide();
+                var resultcontent = '{% trans 'The programme we recommend is' %}'
+                var tempname = ''
+                if (programm == 'LingoAce Advanced Programme') {
+                    tempname = '{% trans 'LingoAce Advanced Programme' %}'
+                } else {
+                    tempname = '{% trans 'LingoAce International Programme' %}'
+                }
+                tempthtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px">' + resultcontent + ' ' + tempname + '</li><br>';
+                $(tempthtml).appendTo('#result_content')
+            }
+            $('#agreement_content').show();
+            $('#pc_agreement_content').show();
+            firstprogramm = programm
+            firstlevel = course_level
+        }
+
+        function clickAnswer(select) {
+            console.log(select)
+            if (isPc()) {
+                $("#question-container").show();
+            }
+            $('#programme_introduce').hide();
+            $('#pc_programme_introduce').hide();
+
+            var userselect = select.value;
+            if (num == 0) {
+                if (userselect == 'A') {
+                    showresult('LingoAce Advanced Programme', '1')
+                } else if (userselect == 'B') {
+                    $("#btn-modal").click();
+                    $("#pc_btn_yes").click(function () {
+                        document.getElementById('updateAssessment_programme').value = "International Lite",
+                            document.getElementById('updateAssessment_course_level').value = 1,
+                            document.getElementById('updateAssessment-form').submit()
+
+                    })
+                    $("#btn_yes").click(function () {
+                        document.getElementById('updateAssessment_programme').value = "International Lite",
+                            document.getElementById('updateAssessment_course_level').value = 1,
+                            document.getElementById('updateAssessment-form').submit()
+
+                    })
+                    num = 4
+                    showstem(num)
+                    showquestioncontent(num)
+                } else {
+                    clickNext()
+                }
+            } else if (num < 4) {
+                switch (userselect) {
+                    case 'A':
+                        userscore = userscore + 1
+                        break
+                    case 'B':
+                        userscore = userscore + 2
+                        break;
+                    case 'C':
+                        userscore = userscore + 3
+                        break;
+                }
+                if (userscore >= 6) {
+                    showresult('LingoAce Advanced Programme', '1')
+                }
+                clickNext()
+            } else {
+                switch (userselect) {
+                    case 'A':
+                        inscore = inscore + 1
+                        break
+                    case 'B':
+                        inscore = inscore + 2
+                        break;
+                    case 'C':
+                        inscore = inscore + 3
+                        break;
+                    case 'D':
+                        inscore = inscore + 4
+                        break;
+                    case 'E':
+                        inscore = inscore + 5
+                        break;
+                }
+                if (num == 9) {
+                    if (inscore <= 14 && inscore > 1) {
+                        showresult('LingoAce International Programme', '1')
+                    } else if (inscore <= 23 && inscore > 14) {
+                        showresult('LingoAce International Programme', '3')
+                    } else {
+                        showresult('LingoAce International Programme', '5')
+                    }
+                }
+                clickNext()
+            }
+        }
+
+        function clickNext() {
+            num++;
+            if (num == stemarray.length) {
+                num = stemarray.length - 1;
+            } else {
+                showstem(num);
+                showquestioncontent(num)
+            }
+        }
+
+        function clickLast() {
+            if (num == 0) {
+
+            } else {
+                num--;
+                showstem(num);
+                showquestioncontent(num)
+            }
+        }
+
+        function submitResult(programmer_name, course_level) {
+            var pgname = ''
+            if (programmer_name == 'LingoAce Advanced Programme') {
+                {#            pgname = 'NN - Chinese for Near Native Student'#}
+                pgname = 'Advanced'
+            } else if (programmer_name == 'LingoAce International Programme') {
+                {#            pgname = 'IN - Chinese for International Student'#}
+                pgname = 'International Lite'
+            }
+            document.getElementById("programmer_name").value = pgname
+            document.getElementById("course_level").value = course_level
+            document.getElementById("assessmentquestions_form").submit();
+        }
+    </script>
+{% endblock %}

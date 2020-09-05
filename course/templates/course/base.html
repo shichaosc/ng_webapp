@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block title %}{% trans "course" %}{% endblock %}
+
+{% block header %}
+{% if request.session.container != 'mobile' %}
+{{ block.super }}
+{% endif %}
+{% endblock %}
+
+{% block footer %}
+{% if request.session.container != 'mobile' %}
+{{ block.super }}
+{% endif %}
+{% endblock %}

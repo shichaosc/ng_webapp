@@ -1,0 +1,5946 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-24 10:17+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: about/templates/about/approach.html:8
+#: about/templates/about/approach.html:202
+#: about/templates/about/approach.html:236
+#: about/templates/about/approach.html:261 templates/base.html:461
+msgid "Teaching Approach"
+msgstr "教学模式"
+
+#: about/templates/about/approach.html:88
+#: about/templates/about/approach.html:104
+#: about/templates/about/approach.html:122
+msgid "Guiding Principle"
+msgstr "教学宗旨"
+
+#: about/templates/about/approach.html:88
+#: about/templates/about/approach.html:104
+#: about/templates/about/approach.html:122
+msgid "Student Centric"
+msgstr "以学生为中心"
+
+#: about/templates/about/approach.html:91
+#: about/templates/about/approach.html:107
+#: about/templates/about/approach.html:124
+msgid "Improve communication skills in Chinese"
+msgstr "提升语言交际能力"
+
+#: about/templates/about/approach.html:92
+#: about/templates/about/approach.html:109
+#: about/templates/about/approach.html:126
+msgid "Learn the foundation of Chinese language"
+msgstr "掌握基础语文知识"
+
+#: about/templates/about/approach.html:93
+#: about/templates/about/approach.html:111
+#: about/templates/about/approach.html:128
+msgid "Cultivate humanistic accomplishment"
+msgstr "人文素养培养学习"
+
+#: about/templates/about/approach.html:153
+msgid "Unique Value Proposition"
+msgstr "独特价值"
+
+#: about/templates/about/approach.html:155
+msgid "3 key features meet the need of parents and students."
+msgstr "PPChinese3大特色，满足家长、学员所需"
+
+#: about/templates/about/approach.html:163
+#, python-format
+msgid "100%% of teachers are from China"
+msgstr "100%%中国专业教师"
+
+#: about/templates/about/approach.html:164
+#: about/templates/about/approach.html:215
+msgid ""
+"The class is conducted by inspirational teachers from China, who are native "
+"language speakers."
+msgstr "中国专业教师授课，标准普通话教学，启发式教学"
+
+#: about/templates/about/approach.html:171
+msgid "Curriculum is aligned with schools in China"
+msgstr "同步国内教材"
+
+#: about/templates/about/approach.html:172
+#: about/templates/about/approach.html:217
+msgid ""
+"Systematic curriculum is aligned with the curriculum in public schools in "
+"China, with optimized structure."
+msgstr "同步国内教材，确保孩子学习系统、纯正的中文"
+
+#: about/templates/about/approach.html:179
+msgid "Enjoy the class any time"
+msgstr "随时约课上课"
+
+#: about/templates/about/approach.html:180
+msgid ""
+"The class is delivered via video call, which can be anytime and anywhere. It "
+"saves commuting time, and save money with its efficiency."
+msgstr "随时约课上课，高效率，省钱省时间"
+
+#: about/templates/about/approach.html:202
+msgid "1-on-1 Virtual Classroom with video and courseware"
+msgstr "一对一视频教学"
+
+#: about/templates/about/approach.html:209
+msgid "1-on-1 Video"
+msgstr "一对一视频教学"
+
+#: about/templates/about/approach.html:210
+msgid ""
+"1-on-1 session with teacher; intimate communications via video call; "
+"immersion learning environment"
+msgstr "专业教师一对一，面对面在线视频，浸入式教学"
+
+#: about/templates/about/approach.html:236
+msgid "Effective process"
+msgstr "完整系统学习知识"
+
+#: about/templates/about/approach.html:261
+msgid "Comprehensive Coverage"
+msgstr "听说读写全面训练"
+
+#: about/templates/about/approach.html:268
+msgid ""
+"teachers conduct classes in standard mandarin, to help students on the right "
+"way of pronounciation, tone and expression."
+msgstr "标准普通话一对一教学，让孩子准确掌握语音、语调、语序，纠正偏误"
+
+#: about/templates/about/approach.html:270
+msgid ""
+"integration of teaching and application helps students to interact with "
+"teachers, using hundreds of scenes."
+msgstr ""
+"课程与应用结合，巧妙安排上百个趣味性强的真实场景，师生互动，快速掌握中文交流"
+"和应用"
+
+#: about/templates/about/approach.html:272
+msgid ""
+"interaction between teacher and student, helps students to improve the "
+"reading techniques and skills, as well as the understanding of Chinese "
+"culture."
+msgstr "与老师零距离交流分析，让孩子积累文化知识、掌握阅读方法、提高阅读技巧"
+
+#: about/templates/about/approach.html:274
+msgid ""
+"writing practice is embeded in every class, and students can gradually "
+"improve his/her writing skills."
+msgstr "每课一练，习题灵活多样，培养孩子兴趣，逐步提高孩子写作水平"
+
+#: about/templates/about/curriculum.html:8
+#: about/templates/about/curriculum.html:30 templates/base.html:471
+msgid "Our Curriculum"
+msgstr "课程体系"
+
+#: about/templates/about/curriculum.html:33
+msgid ""
+"The PPChinese curriculum system is based on the Chinese language disciplines "
+"in terms of knowledge and skills, processes and methods, emotional "
+"attitudes, values and other aspects of the objectives and content and "
+"standards developed. Corresponding level of language skills, and "
+"requirements are aligned with the standard in China."
+msgstr ""
+"PPChinese课程体系是基于中国语文学科在知识与技能、过程与方法、情感态度与价值观"
+"等方面的目标与内容及其水平标准而研发的。相应级别的语文技能，和中国国内要求同"
+"步。"
+
+#: about/templates/about/curriculum.html:45
+msgid "Have a quick assessment"
+msgstr "做一个快速小测试，了解你的中文水平"
+
+#: about/templates/about/curriculum.html:54
+msgid "Unit Structure"
+msgstr "单元教学"
+
+#: about/templates/about/curriculum.html:59
+msgid ""
+"According to the same knowledge points and skill points of the unit "
+"curriculum, to strengthen the repetition of learning, the effect of immediate"
+msgstr "按相同的知识点和技能点编排的单元课程，强化重复学习，效果立竿见影。"
+
+#: about/templates/about/curriculum.html:61
+msgid ""
+"According to the same type of text as a whole, a reasonable layout, the "
+"effect of less with less, save time and save time."
+msgstr "按同类型课文整体、合理布局，省钱省时间，效果事半功倍。"
+
+#: about/templates/about/curriculum.html:163
+#: course/templates/course/teacherhomework.html:9
+#: course/templates/course/teacherhomework.html:191 templates/man/base.html:126
+#: userprofile/templates/userprofile/history_class.html:85
+#: userprofile/templates/userprofile/tutor_profile.html:91
+#: userprofile/templates/userprofile/tutor_profile.html:233
+#: virtualclass/templates/virtualclass/student_list_more.html:53
+msgid "Homework"
+msgstr "家庭作业"
+
+#: about/templates/about/curriculum.html:172
+msgid ""
+"Each class a practice, timely and effective to ensure the consolidation of "
+"classroom knowledge."
+msgstr "每课一练，及时有效地确保对课堂知识的巩固。"
+
+#: about/templates/about/curriculum.html:174
+msgid ""
+"The same knowledge points, different extracurricular classic reading, let "
+"the children flexible and use."
+msgstr "相同的知识点，不同的课外经典阅读，让孩子灵活掌握并运用。"
+
+#: about/templates/about/curriculum.html:176
+msgid ""
+"Homework feedback, the teacher quickly correct, zero distance communication, "
+"the level of rapid increase."
+msgstr "作业及时反馈，老师迅速指正，零距离交流，水平快速提升。"
+
+#: about/templates/about/tour.html:8
+msgid "Walkthrough"
+msgstr "浏览"
+
+#: about/templates/about/tutor.html:8 templates/base.html:466
+msgid "Our Tutors"
+msgstr "专业师资"
+
+#: about/templates/about/tutor.html:31 about/templates/about/tutor.html:44
+#: about/templates/about/tutor.html:57
+#, python-format
+msgid "100%%"
+msgstr "100%%"
+
+#: about/templates/about/tutor.html:31 about/templates/about/tutor.html:44
+#: about/templates/about/tutor.html:57
+msgid "of teachers are from China"
+msgstr "专业中国教师"
+
+#: about/templates/about/tutor.html:33 about/templates/about/tutor.html:46
+#: about/templates/about/tutor.html:59
+msgid ""
+"All PPChinese Certified teachers are teachers from public or private schools "
+"in China, with extensive knowledge and teaching experience. The restrict "
+"recruiting and training processes make sure students can receive systematic "
+"teaching and good online learning experience."
+msgstr ""
+"PPChinese教师均为来自中国的在职教师，拥有丰富的文化知识和中文教学经验，经过严"
+"格培训和筛选，确保为孩子提供优质的在线学习体验和系统地学习。"
+
+#: about/templates/about/tutor.html:84
+msgid "High Standard"
+msgstr "严格的录用标准"
+
+#: about/templates/about/tutor.html:94
+msgid "Outstanding Teachers"
+msgstr "优秀教师"
+
+#: about/templates/about/tutor.html:96
+msgid ""
+"All teachers are graduated from accredited University (by MoE) and Normal "
+"University. Some of them even have oversea study and working experience."
+msgstr ""
+"毕业于中国重点院校中文系或师范院校，文化底蕴深厚，专业知识性强，部分拥有海外"
+"留学或任教经历、对外汉语教学经历。"
+
+#: about/templates/about/tutor.html:106
+msgid "From China"
+msgstr "来自中国"
+
+#: about/templates/about/tutor.html:107
+msgid ""
+"All teachers are working in public or private educational institutes in "
+"China. They speak standard Mandarin, and pass national mandarin teaching "
+"test."
+msgstr ""
+"PPChinese教师均为在职教师，来自中国公立或私立学校，拥有丰富的中文教学经验，标"
+"准普通话教学，亲和力强。"
+
+#: about/templates/about/tutor.html:118
+msgid "Comprehensive Teacher Training"
+msgstr "培训审核"
+
+#: about/templates/about/tutor.html:120
+msgid ""
+"PPChinese certified teachers all pass 3 rounds of selection process, and "
+"more than 200 hours training. They can manage good student-teacher "
+"interaction with strong knowledge in the class."
+msgstr ""
+"按照标准对每一位教师进行5轮超过200小时的培训，通过3轮严格筛选，确保为孩子提供"
+"优质的在线学习体验和系统地学习。"
+
+#: about/templates/about/tutor.html:132 about/templates/about/tutor.html:170
+#: about/templates/about/tutor.html:217
+msgid "Star teachers of the Month"
+msgstr "本月明星教师"
+
+#: about/templates/about/tutor.html:141 about/templates/about/tutor.html:180
+#: about/templates/about/tutor.html:227
+msgid "Wen Laoshi."
+msgstr "文老师"
+
+#: about/templates/about/tutor.html:141
+msgid "Master degree."
+msgstr "硕士学位"
+
+#: about/templates/about/tutor.html:142 about/templates/about/tutor.html:181
+#: about/templates/about/tutor.html:228
+msgid ""
+"Wen Laoshi holds Master of International Education in Shaanxi Normal "
+"University. She has taught at overseas schools, and she is now a Chinese "
+"teacher at college in Xi An. Wen Laoshi is good at using a variety of "
+"teaching aids to make the classroom more fun, so that children in the "
+"language game to get the most direct Chinese sensory experience. She is good "
+"at teaching level 1-4 students ."
+msgstr ""
+"文老师有7年中文教学经验，陕西师范大学国际教育专业硕士，普通话标准，亲和力强，"
+"曾任教于海外学校，目前定居西安，现为西安某高校对外汉语教师。文老师善于运用各"
+"种教具使课堂更为丰富多彩，教学中穿插游戏，让孩子在语言的游戏中获得最直接的中"
+"文感官体验。擅长教授有一定中文基础的1-4级学生，也擅长教授无任何中文基础的学"
+"生。"
+
+#: about/templates/about/tutor.html:152 about/templates/about/tutor.html:192
+#: about/templates/about/tutor.html:239
+msgid "Ma Laoshi."
+msgstr "马老师"
+
+#: about/templates/about/tutor.html:152 about/templates/about/tutor.html:180
+#: about/templates/about/tutor.html:192 about/templates/about/tutor.html:227
+#: about/templates/about/tutor.html:240
+msgid "Master Degree."
+msgstr "硕士学位"
+
+#: about/templates/about/tutor.html:153 about/templates/about/tutor.html:193
+#: about/templates/about/tutor.html:242
+msgid ""
+"Ma Laoshi, Bachelor of Arts in Chinese Language and Literature from Beijing "
+"Normal University, Master of Education in University of Edinburgh, UK. With "
+"profound Chinese proficiency and good English proficiency, she is good at "
+"using \"Socratic\" questions to enable students to absorb and sublimate "
+"Chinese knowledge. Ma Laoshi has always regarded \"teaching students in "
+"accordance with their aptitudes\" as key principle."
+msgstr ""
+"马诗睿，北京师范大学汉语言文学专业本科，文学学士，英国爱丁堡大学教育学硕士，"
+"深厚的中文功底、良好的英文表达，可谓是中西方教育结合的典范。她的中文课堂娓娓"
+"道来，深入浅出，善于运用“苏格拉底式”提问，让学生在自我思辨中完成对于中文知识"
+"的汲取和升华。投身教育行业后，马老师一直将“因材施教”四个字奉为圭臬，PPChinese"
+"的一对一教学服务，正是对“因材施教”最好的诠释。"
+
+#: about/templates/about/tutor.html:159 about/templates/about/tutor.html:251
+#: scheduler/templates/scheduler/entry_subscription.html:16
+msgid "More Tutors"
+msgstr "更多教师"
+
+#: about/templates/about/tutor.html:202
+msgid "Check out more Tutors, and find out who you like the most"
+msgstr "了解更多的有效教师，看看你最喜欢哪一位"
+
+#: accounts/api_v2_views.py:74
+#: accounts/templates/accounts/transfer_success.html:36
+msgid "Teacher can't transfer lessson !"
+msgstr "教师不能转账"
+
+#: accounts/api_v2_views.py:79
+#: accounts/templates/accounts/transfer_success.html:39
+msgid "You can't transfer to yourself !"
+msgstr "不能转账给自己"
+
+#: accounts/api_v2_views.py:84
+#: accounts/templates/accounts/transfer_success.html:27
+msgid "User does not exist ！"
+msgstr "用户不存在"
+
+#: accounts/api_v2_views.py:88
+#: accounts/templates/accounts/transfer_success.html:33
+msgid "You can not transfer to the teacher !"
+msgstr "不能转账给教师"
+
+#: accounts/api_v2_views.py:100
+#: accounts/templates/accounts/transfer_success.html:30
+msgid "The number of lessons must be less than your account balance."
+msgstr "转账课时数量大于你的余额"
+
+#: accounts/api_v2_views.py:104
+#: accounts/templates/accounts/transfer_success.html:42
+msgid "The number of lessons must be an intege !"
+msgstr "课时数量必须是整数"
+
+#: accounts/api_v2_views.py:119
+#, fuzzy
+#| msgid "programme does not exist."
+msgid "programme_id is invalid."
+msgstr "课程不存在"
+
+#: accounts/api_v2_views.py:127
+#, fuzzy
+#| msgid "Change request has been raised successfully."
+msgid "The default usercourse has been set successfully!"
+msgstr "变更请求成功提交"
+
+#: accounts/api_v2_views.py:140
+msgid "permission denied"
+msgstr ""
+
+#: accounts/forms.py:14 student/templates/student/topup.html:106
+msgid "Coupon"
+msgstr "优惠券"
+
+#: accounts/models.py:46 accounts/models.py:232
+msgid "Price"
+msgstr "价格"
+
+#: accounts/models.py:57
+msgid "Balance"
+msgstr "余额"
+
+#: accounts/models.py:68 accounts/models.py:172 accounts/models.py:259
+#: accounts/models.py:295 accounts/models.py:310
+#: accounts/templates/accounts/withdrawal.html:46
+#: accounts/templates/accounts/withdrawal_review.html:109
+msgid "Amount"
+msgstr "金额"
+
+#: accounts/models.py:146
+msgid "NO_REASON"
+msgstr "没理由"
+
+#: accounts/models.py:147
+msgid "AD_HOC"
+msgstr "上课"
+
+#: accounts/models.py:148
+msgid "PACKAGE"
+msgstr "套件"
+
+#: accounts/models.py:149 accounts/templates/accounts/account_setting.html:78
+#: accounts/templates/accounts/account_setting.html:208
+msgid "TOP_UP"
+msgstr "充值"
+
+#: accounts/models.py:150 accounts/templates/accounts/account_setting.html:81
+#: accounts/templates/accounts/account_setting.html:211
+msgid "TOP UP BONUS"
+msgstr "充值奖励"
+
+#: accounts/models.py:151 accounts/templates/accounts/account_setting.html:84
+#: accounts/templates/accounts/account_setting.html:214
+msgid "REFERRAL BONUS"
+msgstr "推荐奖励课时"
+
+#: accounts/models.py:152
+#, fuzzy
+#| msgid "DELIVERY INCENTIVE"
+msgid "REFERRAL INCENTIVE"
+msgstr "奖励课时"
+
+#: accounts/models.py:153
+#, fuzzy
+#| msgid "FREE TRIAL"
+msgid "REFERRAL TRIAL"
+msgstr "免费试课"
+
+#: accounts/models.py:154
+msgid "FREE TRIAL"
+msgstr "免费试课"
+
+#: accounts/models.py:155 accounts/templates/accounts/account_setting.html:102
+#: accounts/templates/accounts/account_setting.html:232
+msgid "COMPENSATION"
+msgstr "补偿"
+
+#: accounts/models.py:156 accounts/templates/accounts/account_setting.html:57
+#: accounts/templates/accounts/account_setting.html:105
+#: accounts/templates/accounts/account_setting.html:187
+#: accounts/templates/accounts/account_setting.html:235
+msgid "ABSENCE_PENALTY"
+msgstr "缺席罚金"
+
+#: accounts/models.py:157
+msgid "NO_SHOW_COMPENSATION"
+msgstr "缺席补偿"
+
+#: accounts/models.py:158
+msgid "REFUND"
+msgstr "退款"
+
+#: accounts/models.py:159 accounts/templates/accounts/account_setting.html:99
+#: accounts/templates/accounts/account_setting.html:229
+msgid "COURSE DELIVERY"
+msgstr "老师授课"
+
+#: accounts/models.py:160 accounts/templates/accounts/account_setting.html:96
+#: accounts/templates/accounts/account_setting.html:226
+msgid "DELIVERY INCENTIVE"
+msgstr "奖励课时"
+
+#: accounts/models.py:161 accounts/templates/accounts/account_setting.html:93
+#: accounts/templates/accounts/account_setting.html:223
+msgid "WITHDRAW"
+msgstr "提现"
+
+#: accounts/models.py:162
+msgid "TRANSFER_IN"
+msgstr "转入"
+
+#: accounts/models.py:163
+msgid "TRANSFER_OUT"
+msgstr "转出"
+
+#: accounts/models.py:164
+msgid "TRIAL_CLASS"
+msgstr "老师免费授课"
+
+#: accounts/models.py:165 accounts/templates/accounts/account_setting.html:59
+#: accounts/templates/accounts/account_setting.html:108
+#: accounts/templates/accounts/account_setting.html:189
+#: accounts/templates/accounts/account_setting.html:238
+msgid "ABSENCE_COMPENSATION"
+msgstr "缺席补偿"
+
+#: accounts/models.py:166
+msgid "NO_SHOW_PENALTY"
+msgstr "缺席处罚"
+
+#: accounts/models.py:167
+msgid "REDEEM"
+msgstr ""
+
+#: accounts/models.py:252
+msgid "Pending"
+msgstr "等待"
+
+#: accounts/models.py:253 accounts/models.py:289
+msgid "Paid"
+msgstr "支付"
+
+#: accounts/models.py:254 accounts/models.py:290
+#: student/templates/student/small_class.html:390
+#: student/templates/student/small_class.html:415
+#: student/templates/student/small_class.html:459
+msgid "Canceled"
+msgstr "取消"
+
+#: accounts/models.py:255
+msgid "Refunded"
+msgstr "退款"
+
+#: accounts/models.py:288
+msgid "Submitted"
+msgstr "提交"
+
+#: accounts/models.py:291
+msgid "Rejected"
+msgstr "拒绝"
+
+#: accounts/templates/accounts/account_setting.html:5
+#: accounts/templates/accounts/account_setting.html:25
+#: accounts/templates/accounts/account_setting.html:157
+#: accounts/templates/accounts/base.html:31
+#: accounts/templates/accounts/base.html:114
+msgid "Transaction history"
+msgstr "交易历史记录"
+
+#: accounts/templates/accounts/account_setting.html:32
+#: accounts/templates/accounts/account_setting.html:164
+#: accounts/templates/accounts/referral_rewards.html:32
+#: accounts/templates/accounts/referral_rewards.html:124
+#: scheduler/templates/scheduler/occurrence.html:203
+#: scheduler/templates/scheduler/occurrence.html:219
+#: scheduler/templates/scheduler/tutors_occurrence.html:185
+#: scheduler/templates/scheduler/tutors_occurrence.html:201
+#: templates/postman/archives.html:30 templates/postman/base_folder.html:36
+#: templates/postman/trash.html:29
+msgid "Date"
+msgstr "日期"
+
+#: accounts/templates/accounts/account_setting.html:33
+#: accounts/templates/accounts/account_setting.html:165
+#: userprofile/templates/userprofile/profile.html:332
+#: userprofile/templates/userprofile/profile.html:335
+#: userprofile/templates/userprofile/profile.html:981
+#: userprofile/templates/userprofile/profile.html:987
+#: userprofile/templates/userprofile/tutor_profile.html:286
+msgid "Point"
+msgstr "课时"
+
+#: accounts/templates/accounts/account_setting.html:41
+#: accounts/templates/accounts/account_setting.html:171
+msgid "Filter"
+msgstr "筛选"
+
+#: accounts/templates/accounts/account_setting.html:43
+#: accounts/templates/accounts/account_setting.html:173
+msgid "ALL"
+msgstr "全部"
+
+#: accounts/templates/accounts/account_setting.html:46
+#: accounts/templates/accounts/account_setting.html:176
+#: accounts/templates/accounts/review.html:44
+#: accounts/templates/accounts/review.html:146
+#: accounts/templates/accounts/topup.html:5
+#: accounts/templates/accounts/topup.html:56
+#: accounts/templates/accounts/topup.html:126
+msgid "TOP UP"
+msgstr "充值"
+
+#: accounts/templates/accounts/account_setting.html:49
+#: accounts/templates/accounts/account_setting.html:179
+#: accounts/templates/accounts/transfer_account.html:5
+#: accounts/templates/accounts/transfer_success.html:4
+#: accounts/templates/accounts/transfer_success.html:18
+msgid "Transfer"
+msgstr "转账"
+
+#: accounts/templates/accounts/account_setting.html:52
+#: accounts/templates/accounts/account_setting.html:182
+msgid "Withdraw"
+msgstr "提现"
+
+#: accounts/templates/accounts/account_setting.html:55
+#: accounts/templates/accounts/account_setting.html:185
+msgid "Courese Fee"
+msgstr "课时费"
+
+#: accounts/templates/accounts/account_setting.html:61
+#: accounts/templates/accounts/account_setting.html:111
+#: accounts/templates/accounts/account_setting.html:191
+#: accounts/templates/accounts/account_setting.html:241
+msgid "REDEMPTION"
+msgstr "兑换卡"
+
+#: accounts/templates/accounts/account_setting.html:65
+#: accounts/templates/accounts/account_setting.html:195
+#: accounts/templates/accounts/referral_rewards.html:44
+#: accounts/templates/accounts/referral_rewards.html:127
+msgid "Remark"
+msgstr "备注"
+
+#: accounts/templates/accounts/account_setting.html:75
+#: accounts/templates/accounts/account_setting.html:205
+msgid "COURSE CONSUMPTION"
+msgstr "课时消费"
+
+#: accounts/templates/accounts/account_setting.html:87
+#: accounts/templates/accounts/account_setting.html:217
+msgid "TRANSFER OUT"
+msgstr "转出"
+
+#: accounts/templates/accounts/account_setting.html:90
+#: accounts/templates/accounts/account_setting.html:220
+msgid "TRANSFER IN"
+msgstr "转入"
+
+#: accounts/templates/accounts/account_setting.html:131
+#: accounts/templates/accounts/account_setting.html:261
+#: course/templates/course/ext_courseware_list.html:158
+#: student/templates/student/small_class.html:103
+#: virtualclass/templates/virtualclass/student_list_more.html:145
+msgid "current page"
+msgstr "当前页"
+
+#: accounts/templates/accounts/account_setting.html:316
+#: accounts/templates/accounts/account_setting.html:322
+msgid "Cost"
+msgstr "花费"
+
+#: accounts/templates/accounts/account_setting.html:316
+#: accounts/templates/accounts/account_setting.html:322
+#: accounts/templates/accounts/account_setting.html:352
+msgid "Order ID"
+msgstr "购买者ID"
+
+#: accounts/templates/accounts/account_setting.html:322
+#: campaign/templates/campaign/promotion.html:149
+#: campaign/templates/campaign/promotion_qrcode.html:44
+msgid "Bonus"
+msgstr "推荐奖励"
+
+#: accounts/templates/accounts/account_setting.html:326
+msgid "You recommend student"
+msgstr "您推荐了学生"
+
+#: accounts/templates/accounts/account_setting.html:326
+msgid "get"
+msgstr "获取"
+
+#: accounts/templates/accounts/account_setting.html:326
+#: accounts/templates/accounts/payment.html:43
+#: accounts/templates/accounts/payment.html:124
+#: accounts/templates/accounts/review.html:60
+#: accounts/templates/accounts/review.html:161
+#: accounts/templates/accounts/withdrawal.html:18
+#: campaign/templates/campaign/promotion.html:155
+#: campaign/templates/campaign/promotion.html:156
+#: campaign/templates/campaign/promotion.html:157
+#: campaign/templates/campaign/promotion_qrcode.html:50
+#: campaign/templates/campaign/promotion_qrcode.html:51
+#: campaign/templates/campaign/promotion_qrcode.html:52
+#: campaign/templates/campaign/promotion_qrcode.html:55
+#: campaign/templates/campaign/promotion_qrcode.html:56
+#: campaign/templates/campaign/promotion_qrcode.html:57
+#: campaign/templates/campaign/promotion_qrcode.html:60
+#: campaign/templates/campaign/promotion_qrcode.html:61
+#: campaign/templates/campaign/promotion_qrcode.html:62
+#: student/templates/student/topup.html:75
+#: student/templates/student/topup.html:86
+#: student/templates/student/topup.html:97
+msgid "point"
+msgstr "课时"
+
+#: accounts/templates/accounts/account_setting.html:329
+msgid "The new user is eligible for free trial class—"
+msgstr "这个新用户有资格获取免费课时-"
+
+#: accounts/templates/accounts/account_setting.html:332
+msgid "Class redemption—"
+msgstr "通过兑换卡获得课程—"
+
+#: accounts/templates/accounts/account_setting.html:337
+#: scheduler/templates/scheduler/entry.html:59
+#: scheduler/templates/scheduler/entry.html:123
+#: scheduler/templates/scheduler/entry_subscription.html:24
+#: tutor/templates/tutor/info_more.html:97
+#: virtualclass/templates/virtualclass/embedded_student_list.html:23
+#: virtualclass/templates/virtualclass/student_list_more.html:48
+msgid "Tutor"
+msgstr "教师"
+
+#: accounts/templates/accounts/account_setting.html:342
+#: accounts/templates/accounts/account_setting.html:348
+#: scheduler/templates/scheduler/entry_tutor.html:87
+msgid "Student"
+msgstr "学生信息"
+
+#: accounts/templates/accounts/account_setting.html:348
+msgid "Got Point"
+msgstr "获取课时"
+
+#: accounts/templates/accounts/account_setting.html:352
+#: accounts/templates/accounts/account_setting.html:357
+#: accounts/templates/accounts/account_setting.html:362
+#: accounts/templates/accounts/withdrawal.html:47
+#: accounts/templates/accounts/withdrawal_review.html:110
+#: course/templates/course/ext_up_courseware.html:133
+msgid "Status"
+msgstr "状态"
+
+#: accounts/templates/accounts/account_setting.html:357
+msgid "From"
+msgstr "转入 "
+
+#: accounts/templates/accounts/account_setting.html:357
+#: accounts/templates/accounts/account_setting.html:362
+msgid "Transfer ID"
+msgstr "转账ID"
+
+#: accounts/templates/accounts/account_setting.html:362
+msgid "To"
+msgstr "转出"
+
+#: accounts/templates/accounts/account_setting.html:372
+#: accounts/templates/accounts/account_setting.html:374
+#: accounts/templates/accounts/account_setting.html:393
+#: accounts/templates/accounts/account_setting.html:395
+#: accounts/templates/accounts/withdrawal_review.html:18
+#: templates/man/virtualclass/convert_list.html:40
+#: templates/man/virtualclass/list.html:40 tutor/templates/tutor/base.html:3
+#: virtualclass/templates/virtualclass/classroom_list.html:41
+#: virtualclass/templates/virtualclass/classroom_list.html:129
+msgid "tutor"
+msgstr "教师"
+
+#: accounts/templates/accounts/account_setting.html:379
+#: accounts/templates/accounts/account_setting.html:381
+#: accounts/templates/accounts/account_setting.html:400
+#: accounts/templates/accounts/account_setting.html:402
+#: templates/man/virtualclass/convert_list.html:41
+#: templates/man/virtualclass/list.html:41
+#: virtualclass/templates/virtualclass/classroom_list.html:42
+#: virtualclass/templates/virtualclass/classroom_list.html:130
+msgid "student"
+msgstr "学生信息"
+
+#: accounts/templates/accounts/base.html:3 templates/menu_member.html:157
+msgid "account setting"
+msgstr "帐户设置"
+
+#: accounts/templates/accounts/base.html:46
+#: accounts/templates/accounts/base.html:123
+#: accounts/templates/accounts/transfer_account.html:23
+msgid "Transfer to others"
+msgstr "课时转账"
+
+msgid "Close Class"
+msgstr "关闭班级"
+
+msgid "Once the class is closed, other students can't join your class, "
+msgstr "一旦关闭，其他学员就不能加入你的班级，"
+
+msgid "and you can't make an appointment for a small class. Sure to close the class?"
+msgstr "你也不能预约小班课，确定要关闭班级吗？"
+
+msgid "No classmates at present"
+msgstr "暂无学员加入"
+
+#: accounts/templates/accounts/base.html:62
+#: accounts/templates/accounts/base.html:133
+#: accounts/templates/accounts/nominate_referrer.html:4
+#: accounts/templates/accounts/nominate_referrer.html:71
+#: accounts/templates/accounts/nominate_referrer.html:131
+#: accounts/templates/accounts/review.html:129
+#: accounts/templates/accounts/review.html:232
+#: student/templates/student/topup.html:111
+#: userprofile/templates/userprofile/nominate_referrer.html:4
+#: userprofile/templates/userprofile/nominate_referrer.html:26
+msgid "Nominate Referrer"
+msgstr "设置推荐人"
+
+#: accounts/templates/accounts/base.html:80
+#: accounts/templates/accounts/base.html:145
+#: accounts/templates/accounts/referral_rewards.html:5
+#: accounts/templates/accounts/referral_rewards.html:22
+#: accounts/templates/accounts/referral_rewards.html:112
+msgid "Referral rewards details"
+msgstr "推荐奖励记录"
+
+#: accounts/templates/accounts/free_trial.html:12
+msgid "Free Trial Class"
+msgstr "免费试课"
+
+#: accounts/templates/accounts/free_trial.html:19
+msgid ""
+"We offer free trial class - 2 points, to help each student starting the "
+"learning experience without any concern on finance. The point for trial "
+"class will be directly deposited into your account balance, after you "
+"successfully apply the free trial class. Then you can start the assessment, "
+"reservation and attend class right away."
+msgstr ""
+"为了帮助学生快速体验我们的中文教学，我们提供2个课时的免费试课。成功申请以后，"
+"免费试课的课时会直接充入你的帐户。然后你就可以马上开始水平测试、预约和上课"
+"了。"
+
+#: accounts/templates/accounts/free_trial.html:22
+msgid "Term & Condition:"
+msgstr "服务条款与适用条件："
+
+#: accounts/templates/accounts/free_trial.html:23
+msgid ""
+"1. Every user can only enjoy one-time free trial class application. If the "
+"user already applied it once, the user can not enjoy it again."
+msgstr ""
+"1. 每位用户仅能享受一次申请免费试课的机会；如果用户已经申请过免费课时，该用户"
+"将不能再次享受该优惠。"
+
+#: accounts/templates/accounts/free_trial.html:25
+msgid "2. Free class is not eligible for refund."
+msgstr "2. 免费试课的课时不能通过退款方式返还现金；"
+
+#: accounts/templates/accounts/free_trial.html:27
+msgid ""
+"3. Only new user is eligible for free trial class. If the user already "
+"attended any class, the user can not enjoy the benefit anymore."
+msgstr ""
+"3. 只有新注册用户才能享受免费试课。如果用户已经参加过相关课程，不能再次享受免"
+"费试课。"
+
+#: accounts/templates/accounts/free_trial.html:31
+#: accounts/templates/accounts/review.html:119
+#: accounts/templates/accounts/review.html:222
+#: student/templates/student/topup.html:108
+msgid "Apply"
+msgstr "申请"
+
+#: accounts/templates/accounts/free_trial.html:37
+msgid "Point for free trial has been deposited into your account, please go to"
+msgstr "免费试课的课时，已经充到你的帐户，请前往"
+
+#: accounts/templates/accounts/free_trial.html:37
+#: scheduler/templates/scheduler/appointmentphone.html:3
+#: scheduler/templates/scheduler/base.html:3 stats/templates/stats/base.html:3
+msgid "scheduler"
+msgstr "预约"
+
+#: accounts/templates/accounts/free_trial.html:40
+msgid "There are some issues now, pls contact us for support."
+msgstr "非常抱歉，申请流程遇到一些问题，请联系我们。"
+
+#: accounts/templates/accounts/free_trial.html:45
+msgid ""
+"You are not eligible for free trial, as you may already have attended at "
+"least one class, or you already enjoy the free trial."
+msgstr ""
+"非常抱歉，你已经申请过免费试课或者参加过相关课程，不能再次享受免费试课。"
+
+#: accounts/templates/accounts/free_trial.html:48
+msgid "Return to my account."
+msgstr "返回我的帐户"
+
+#: accounts/templates/accounts/nominate_referrer.html:86
+#: accounts/templates/accounts/nominate_referrer.html:142
+#: accounts/templates/accounts/transfer_account.html:31
+#: accounts/templates/accounts/transfer_account.html:72
+#: userprofile/templates/userprofile/nominate_referrer.html:35
+msgid "User Name"
+msgstr "用户名"
+
+#: accounts/templates/accounts/nominate_referrer.html:91
+#: accounts/templates/accounts/nominate_referrer.html:149
+msgid ""
+"Fill in the username of your Referrer. If you top up 20 points or more at "
+"the first time, you and your Referrer will receive 3 points each!"
+msgstr ""
+"请在上方填写您推荐人的用户名。您首次充值 20 课时及以上，您和推荐人将各获得 3 "
+"课时赠课！"
+
+#: accounts/templates/accounts/nominate_referrer.html:93
+#: accounts/templates/accounts/nominate_referrer.html:152
+msgid "Once set, the Referrer cannot be changed."
+msgstr "推荐人一旦设置不可更改，请在设置前仔细确认。"
+
+#: accounts/templates/accounts/nominate_referrer.html:99
+#: accounts/templates/accounts/nominate_referrer.html:158
+#: accounts/templates/accounts/result.html:60
+#: course/templates/course/newassessmenthistory.html:77
+#: userprofile/templates/userprofile/nominate_referrer.html:48
+msgid "Go back to my account"
+msgstr "返回我的帐户"
+
+#: accounts/templates/accounts/nominate_referrer.html:105
+#: accounts/templates/accounts/nominate_referrer.html:164
+#: userprofile/templates/userprofile/nominate_referrer.html:53
+msgid "Continue to top up"
+msgstr "继续完成充值"
+
+#: accounts/templates/accounts/nominate_referrer.html:111
+#: accounts/templates/accounts/nominate_referrer.html:169
+#: accounts/templates/accounts/review.html:137
+#: accounts/templates/accounts/review.html:240
+#: accounts/templates/accounts/subscription.html:72
+#: accounts/templates/accounts/topup.html:113
+#: accounts/templates/accounts/topup.html:180
+#: accounts/templates/accounts/transfer_account.html:50
+#: accounts/templates/accounts/transfer_account.html:90
+#: accounts/templates/accounts/withdrawal.html:28
+#: course/templates/course/ext_up_courseware.html:212
+#: course/templates/course/teacherhomework.html:251
+#: student/templates/student/topup.html:112
+#: templates/man/virtualclass/monitor.html:187
+#: templates/man/virtualclass/monitor.html:251
+#: templates/man/virtualclass/student_rating.html:98
+#: templates/man/virtualclass/teacher_rating.html:162
+#: userprofile/templates/userprofile/nominate_referrer.html:58
+#: userprofile/templates/userprofile/userinfo_detail.html:131
+#: userprofile/templates/userprofile/userinfo_detail.html:165
+#: virtualclass/templates/virtualclass/classroom.html:298
+#: virtualclass/templates/virtualclass/classroom.html:378
+#: virtualclass/templates/virtualclass/room.html:185
+#: virtualclass/templates/virtualclass/room.html:249
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:158
+msgid "Submit"
+msgstr "提交"
+
+#: accounts/templates/accounts/payment.html:27
+#: accounts/templates/accounts/payment.html:108
+msgid "Payment"
+msgstr "支付"
+
+#: accounts/templates/accounts/payment.html:51
+#: accounts/templates/accounts/payment.html:132
+#: accounts/templates/accounts/review.html:68
+#: accounts/templates/accounts/review.html:169
+msgid "unit price"
+msgstr "单价"
+
+#: accounts/templates/accounts/payment.html:59
+#: accounts/templates/accounts/payment.html:140
+#: accounts/templates/accounts/review.html:76
+#: accounts/templates/accounts/review.html:177
+msgid "bonus point"
+msgstr "奖励课时"
+
+#: accounts/templates/accounts/payment.html:67
+#: accounts/templates/accounts/payment.html:148
+#: accounts/templates/accounts/review.html:92
+#: accounts/templates/accounts/review.html:195
+msgid "discount"
+msgstr "折扣"
+
+#: accounts/templates/accounts/payment.html:75
+#: accounts/templates/accounts/payment.html:156
+#: accounts/templates/accounts/review.html:108
+#: accounts/templates/accounts/review.html:211
+msgid "total saving"
+msgstr "节省"
+
+#: accounts/templates/accounts/payment.html:83
+#: accounts/templates/accounts/payment.html:164
+#: accounts/templates/accounts/review.html:100
+#: accounts/templates/accounts/review.html:203
+msgid "payable"
+msgstr "应付金额"
+
+#: accounts/templates/accounts/payment.html:89
+#: accounts/templates/accounts/payment.html:170
+msgid "Top up amount"
+msgstr "充值金额"
+
+#: accounts/templates/accounts/referral_rewards.html:36
+#: accounts/templates/accounts/referral_rewards.html:125
+msgid "Referee"
+msgstr "被推荐人"
+
+#: accounts/templates/accounts/referral_rewards.html:40
+#: accounts/templates/accounts/referral_rewards.html:126
+msgid "Reward point(s)"
+msgstr "奖励课时"
+
+#: accounts/templates/accounts/referral_rewards.html:59
+#: accounts/templates/accounts/referral_rewards.html:138
+msgid "point(s)"
+msgstr "课时"
+
+#: accounts/templates/accounts/referral_rewards.html:62
+#: accounts/templates/accounts/referral_rewards.html:141
+msgid "You recommend student "
+msgstr "您推荐了学生"
+
+#: accounts/templates/accounts/referral_rewards.html:62
+#: accounts/templates/accounts/referral_rewards.html:141
+msgid " top up "
+msgstr "充值"
+
+#: accounts/templates/accounts/referral_rewards.html:62
+#: accounts/templates/accounts/referral_rewards.html:141
+msgid " point(s)"
+msgstr "课时"
+
+#: accounts/templates/accounts/referral_rewards.html:116
+msgid "Total rewards : "
+msgstr "累计奖励 ："
+
+#: accounts/templates/accounts/referral_rewards.html:116
+#: accounts/templates/accounts/topup.html:82
+#: accounts/templates/accounts/topup.html:151
+msgid "points"
+msgstr "课时"
+
+#: accounts/templates/accounts/result.html:63
+#: student/templates/student/small_class.html:460
+#: userprofile/templates/userprofile/profile.html:341
+msgid "Top up"
+msgstr "充值"
+
+#: accounts/templates/accounts/review.html:84
+#: accounts/templates/accounts/review.html:187
+msgid "payable before discount"
+msgstr "折扣前应付"
+
+#: accounts/templates/accounts/review.html:128
+#: accounts/templates/accounts/review.html:231
+#: student/templates/student/topup.html:111
+msgid "If you don't nominate your referrer yet, you may go to "
+msgstr "如果你还没有设置你的推荐人，现在就可以去"
+
+#: accounts/templates/accounts/select_programme.html:5
+#: accounts/templates/accounts/select_programme.html:24
+#: accounts/templates/accounts/select_programme.html:63
+msgid "Select Programme"
+msgstr "选择课程"
+
+#: accounts/templates/accounts/select_programme.html:28
+#: accounts/templates/accounts/select_programme.html:70
+#: templates/cmsbase.html:515
+msgid "Programme"
+msgstr "课程"
+
+#: accounts/templates/accounts/select_programme.html:29
+#: accounts/templates/accounts/select_programme.html:71
+msgid "Select"
+msgstr "选择课程"
+
+#: accounts/templates/accounts/select_programme.html:37
+#: accounts/templates/accounts/select_programme.html:80
+msgid "default"
+msgstr "默认"
+
+#: accounts/templates/accounts/select_programme.html:45
+#: accounts/templates/accounts/select_programme.html:89
+msgid "set default"
+msgstr "设置为默认"
+
+#: accounts/templates/accounts/subscription.html:5
+#: accounts/templates/accounts/subscription.html:47
+#: accounts/templates/accounts/subscription.html:52
+#: student/templates/student/topup.html:5
+#: student/templates/student/topup.html:47
+#: student/templates/student/topup.html:52
+msgid "Small Class Top Up"
+msgstr "小班课充值"
+
+#: accounts/templates/accounts/subscription.html:65
+msgid "classes"
+msgstr "课时"
+
+#: accounts/templates/accounts/subscription.html:66
+msgid "Validity period: "
+msgstr "有效期:"
+
+#: accounts/templates/accounts/subscription.html:66
+msgid " months from the Top Up date"
+msgstr "个月自充值之日起"
+
+#: accounts/templates/accounts/topup.html:86
+#: accounts/templates/accounts/topup.html:155
+msgid "bonus points"
+msgstr "奖励课时"
+
+#: accounts/templates/accounts/topup.html:105
+#: accounts/templates/accounts/topup.html:172
+msgid "Any Other Amount"
+msgstr "其他课时数"
+
+#: accounts/templates/accounts/topup.html:205
+#: accounts/templates/accounts/topup.html:225
+msgid "You chose other amount, the input can not be empty!"
+msgstr "你选择了其他课时数选项，因此输入不能为空！"
+
+#: accounts/templates/accounts/topup.html:208
+#: accounts/templates/accounts/topup.html:228
+msgid "You chose other amount, the input must be a number!"
+msgstr "你选择了其他课时数选项，因此输入必须是数字！"
+
+#: accounts/templates/accounts/topup.html:211
+#: accounts/templates/accounts/topup.html:231
+msgid "You chose other amount, the input must be greater than zero!"
+msgstr "你选择了其他课时数选项，因此输入必须是数字！"
+
+#: accounts/templates/accounts/transfer_account.html:29
+#: accounts/templates/accounts/transfer_account.html:67
+msgid "Your lesson :"
+msgstr "你的课时："
+
+#: accounts/templates/accounts/transfer_account.html:39
+#: accounts/templates/accounts/transfer_account.html:79
+msgid "please input lesson number"
+msgstr "请输入希望转账的课时数量"
+
+#: accounts/templates/accounts/transfer_account.html:45
+#: accounts/templates/accounts/transfer_account.html:85
+msgid ""
+"You can transfer classes to your friends, the platform does not charge any "
+"fees；After the transfer, your account will reduce the corresponding "
+"classes；Make sure to enter the correct number."
+msgstr ""
+"你能转账课时给您的朋友，平台不会收取任何费用；转账后，您的账户将会减少相应的"
+"课时，请确保输入的是正确数字。"
+
+#: accounts/templates/accounts/transfer_success.html:24 accounts/views.py:394
+msgid "Transfer successful ！"
+msgstr "课时转账成功"
+
+#: accounts/templates/accounts/transfer_success.html:51
+#: course/templates/course/reminder.html:51
+#: course/templates/course/reminder.html:115
+#: course/templates/course/reminder.html:119 templates/postman/view.html:10
+msgid "Back"
+msgstr "返回"
+
+#: accounts/templates/accounts/withdrawal.html:12
+#: accounts/templates/accounts/withdrawal_review.html:11
+msgid "Withdrawal Request"
+msgstr "提现"
+
+#: accounts/templates/accounts/withdrawal.html:16
+msgid "Available account balance"
+msgstr "可用余额"
+
+#: accounts/templates/accounts/withdrawal.html:26
+msgid "CNY"
+msgstr "人民币"
+
+#: accounts/templates/accounts/withdrawal.html:28
+msgid ""
+"The application is successful, please be patient and wait for the "
+"administrator to review."
+msgstr "申请成功，请耐心等待审核。"
+
+#: accounts/templates/accounts/withdrawal.html:40
+#: accounts/templates/accounts/withdrawal_review.html:104
+msgid "Withdrawal History"
+msgstr "提现"
+
+#: accounts/templates/accounts/withdrawal.html:45
+msgid "Request Time"
+msgstr "变更开始时间"
+
+#: accounts/templates/accounts/withdrawal.html:69
+#: student/templates/student/my_class.html:156
+#: student/templates/student/my_class.html:223
+#: student/templates/student/my_class.html:382
+#: student/templates/student/my_class.html:440
+#: userprofile/templates/userprofile/history_class.html:20
+#: userprofile/templates/userprofile/profile.html:441
+#: userprofile/templates/userprofile/profile.html:1071
+#: userprofile/templates/userprofile/tutor_profile.html:166
+msgid "Recent Activity"
+msgstr "历史课堂记录"
+
+#: accounts/templates/accounts/withdrawal_review.html:24
+msgid "account balance"
+msgstr "帐户余额"
+
+#: accounts/templates/accounts/withdrawal_review.html:30
+msgid "withdrawal amount"
+msgstr "提款金额"
+
+#: accounts/templates/accounts/withdrawal_review.html:34
+#: campaign/templates/campaign/campaignaddress.html:47
+msgid "status"
+msgstr "状态"
+
+#: accounts/templates/accounts/withdrawal_review.html:38
+msgid "updated_on"
+msgstr "更新时间"
+
+#: accounts/templates/accounts/withdrawal_review.html:42
+#: campaign/templates/campaign/rechargerecordsquery.html:28
+msgid "created_on"
+msgstr "创建时间"
+
+#: accounts/templates/accounts/withdrawal_review.html:59
+msgid "Reference "
+msgstr "参考"
+
+#: accounts/templates/accounts/withdrawal_review.html:64
+msgid "Confirm Payment"
+msgstr "支付"
+
+#: accounts/templates/accounts/withdrawal_review.html:76
+msgid "Pending Withdrawal Request"
+msgstr "等待撤销的请求"
+
+#: accounts/templates/accounts/withdrawal_review.html:108
+msgid "Requester"
+msgstr "学期"
+
+#: accounts/templates/accounts/withdrawal_review.html:111
+msgid "Requested Time"
+msgstr "变更开始时间"
+
+#: accounts/views.py:128
+msgid "please choose another currency."
+msgstr "请选择其他币种。"
+
+#: accounts/views.py:129 accounts/views.py:159
+msgid "top up information is missing, please select it again."
+msgstr "缺少充值信息，请重新选择。"
+
+#: accounts/views.py:130
+msgid "top up amount is not accepted, please select/input it again."
+msgstr "充值信息不正确，请重新选择。"
+
+#: accounts/views.py:200 accounts/views.py:245
+msgid "payment detail is missing."
+msgstr "缺少支付细节"
+
+#: accounts/views.py:325
+msgid "order does not exist."
+msgstr "订单不存在"
+
+#: accounts/views.py:329
+msgid "payment confirmation"
+msgstr "支付确认"
+
+#: accounts/views.py:332
+msgid "Your payment is successful, and your order is processed: "
+msgstr "你的支付已经成功，课时已经充入你的帐户，订单号："
+
+#: accounts/views.py:334
+msgid "Your payment is successful, and we are processing your order: "
+msgstr "你的支付已经成功，我们正在处理你的订单："
+
+#: accounts/views.py:343
+msgid "payment cancellation"
+msgstr "支付取消"
+
+#: accounts/views.py:344
+msgid ""
+"Your payment request is cancelled, and your account is not charged. You may "
+"choose to top up any time, with our flexible refunding policy."
+msgstr ""
+"你的支付请求已经被取消，你的帐户未被扣款。欢迎随时再次充值，我们提供随时退款"
+"的服务条款。"
+
+#: accounts/views.py:608 accounts/views.py:659
+msgid ""
+"system could not find appropriate exchange rate, please contact our customer "
+"service agent."
+msgstr "系统找到合适的汇率，请联系我们的客服服务代理。"
+
+#: accounts/views.py:619
+msgid "You must withdraw amount, bigger than 0."
+msgstr "您提款的金额要大于零。"
+
+#: accounts/views.py:624
+msgid "You must withdraw amount as integer."
+msgstr "您提交的金额要是整数。"
+
+#: accounts/views.py:650
+msgid "request status is incorrect, please check it."
+msgstr "输入的信息不正确，请重试。"
+
+#: accounts/views.py:827
+msgid ""
+"you can't nominate yourself as referrer, please double check and choose "
+"again."
+msgstr "不能设置自己为推荐人，请检查以后重新设置。"
+
+#: accounts/views.py:834
+msgid ""
+"referrer doesn't exist in our user database, please double check and choose "
+"again."
+msgstr "我们在用户数据库中未能找到你设置的推荐人，请检查以后重新设置。"
+
+#: accounts/views.py:839
+msgid ""
+"you can't nominate teacher as referrer, please double check and choose again."
+msgstr "不能设置教师为推荐人，请检查以后重新设置。"
+
+#: accounts/views.py:842
+msgid "referrer is successfully nominated."
+msgstr "推荐人设置成功。"
+
+#: accounts/views.py:846
+msgid "referrer has already been nominated, and you can only nominate once."
+msgstr "你的推荐人已经设置了，不能再次设置。"
+
+#: ambassador/models.py:46 userprofile/models.py:67
+msgid "FirstName"
+msgstr "名"
+
+#: ambassador/models.py:47 userprofile/models.py:68
+msgid "LastName"
+msgstr "姓"
+
+#: ambassador/models.py:48
+#, fuzzy
+#| msgid "chat"
+msgid "Wechat"
+msgstr "文字聊天"
+
+#: ambassador/models.py:49
+msgid "Whatsapp"
+msgstr ""
+
+#: ambassador/models.py:50
+msgid "country_calling_code"
+msgstr "国际电话区号"
+
+#: ambassador/models.py:51
+msgid "telephone_no"
+msgstr ""
+
+#: ambassador/models.py:52
+#, fuzzy
+#| msgid "Notification"
+msgid "occupation"
+msgstr "消息"
+
+#: ambassador/models.py:55 userprofile/models.py:71
+msgid "Male"
+msgstr "男"
+
+#: ambassador/models.py:56 userprofile/models.py:72
+msgid "Female"
+msgstr "女"
+
+#: ambassador/models.py:57 userprofile/models.py:73
+msgid "N/A"
+msgstr ""
+
+#: ambassador/models.py:59 userprofile/models.py:75
+msgid "gender"
+msgstr "性别"
+
+#: ambassador/models.py:61 userprofile/models.py:76
+msgid "birthdate"
+msgstr "出生日期"
+
+#: ambassador/models.py:62 tutor/models.py:257 userprofile/models.py:80
+msgid "country_of_residence"
+msgstr "居住国"
+
+#: ambassador/models.py:82
+msgid "paypal_email"
+msgstr ""
+
+#: ambassador/models.py:83
+msgid "beneficiary_name"
+msgstr ""
+
+#: ambassador/models.py:84
+msgid "beneficiary_address"
+msgstr ""
+
+#: ambassador/models.py:85
+msgid "beneficiary_bank_name"
+msgstr ""
+
+#: ambassador/models.py:86
+msgid "beneficiary_bank_address"
+msgstr ""
+
+#: ambassador/models.py:87
+msgid "swift_code"
+msgstr ""
+
+#: ambassador/models.py:88
+msgid "iban"
+msgstr ""
+
+#: ambassador/models.py:89
+msgid "beneficiary_account_number"
+msgstr ""
+
+#: ambassador/models.py:91
+msgid "PayPal"
+msgstr ""
+
+#: ambassador/models.py:92
+msgid "Debit"
+msgstr ""
+
+#: ambassador/models.py:94
+#, fuzzy
+#| msgid "default"
+msgid "default_account"
+msgstr "默认"
+
+#: ambassador/models.py:124
+msgid "code"
+msgstr ""
+
+#: campaign/models.py:89
+msgid "BASE_PAY"
+msgstr "基础课时费"
+
+#: campaign/models.py:90
+msgid "INCENTIVE_PAY"
+msgstr "奖励课时费"
+
+#: campaign/models.py:91
+msgid "TOPUP_BONUS"
+msgstr "充值奖励"
+
+#: campaign/models.py:92
+msgid "REFERRAL_BONUS"
+msgstr "推荐奖励课时"
+
+#: campaign/models.py:93
+#, fuzzy
+#| msgid "DELIVERY INCENTIVE"
+msgid "REFERRAL_INCENTIVE"
+msgstr "奖励课时"
+
+#: campaign/models.py:94
+msgid "TRIAL_BONUS"
+msgstr "推荐奖励课时"
+
+#: campaign/templates/campaign/activity.html:9
+msgid "Activity"
+msgstr "活动"
+
+#: campaign/templates/campaign/activity.html:290
+#: templates/account/signup.html:112 templates/cmsbase.html:429
+msgid "Username"
+msgstr "用户名"
+
+#: campaign/templates/campaign/activity.html:297 templates/account/email.html:7
+#: templates/account/signup.html:122 templates/cmsbase.html:434
+#: userprofile/templates/userprofile/base.html:52
+#: userprofile/templates/userprofile/base.html:119
+msgid "Email"
+msgstr "邮箱"
+
+#: campaign/templates/campaign/activity.html:304
+#: templates/account/login.html:124 templates/account/signup.html:131
+#: templates/account/signup.html:133 templates/base.html:273
+#: templates/cmsbase.html:331 templates/cmsbase.html:439
+msgid "Password"
+msgstr "密码"
+
+#: campaign/templates/campaign/activity.html:311
+#: templates/account/signup.html:140 templates/account/signup.html:142
+#: templates/cmsbase.html:444
+msgid "re-enter password"
+msgstr "再次输入密码"
+
+#: campaign/templates/campaign/activity.html:322 templates/cmsbase.html:451
+msgid ""
+"By signing up, I agree to PPLingo Terms of Service, Nondiscrimination "
+"Policy, Payments Terms of Service, Privacy Policy."
+msgstr "点击注册按钮，我声明我同意PPlingo的服务条款、支付条款即隐私条款"
+
+#: campaign/templates/campaign/activity.html:327
+#: course/templates/course/assessment.html:57
+#: course/templates/course/assessment.html:143
+#: course/templates/course/assessmentResult.html:90
+#: course/templates/course/assessmentResult.html:151
+#: course/templates/course/inassessment.html:79
+#: course/templates/course/inassessment.html:181
+#: templates/account/login.html:101 templates/menu_anonymous.html:46
+msgid "Sign Up"
+msgstr "注册"
+
+#: campaign/templates/campaign/booksdetail.html:4
+#: campaign/templates/campaign/rechargerecordsquery.html:4
+#: templates/man/base.html:180 templates/man/tutor/management.html:4
+#: templates/man/tutor/management.html:27
+msgid "Teachers of management"
+msgstr "教师管理"
+
+#: campaign/templates/campaign/booksdetail.html:16
+msgid "title"
+msgstr ""
+
+#: campaign/templates/campaign/booksdetail.html:17
+msgid "author"
+msgstr ""
+
+#: campaign/templates/campaign/booksdetail.html:18
+#, fuzzy
+#| msgid "Progress"
+msgid "press"
+msgstr "进步程度"
+
+#: campaign/templates/campaign/booksdetail.html:19
+msgid "original_price"
+msgstr ""
+
+#: campaign/templates/campaign/booksdetail.html:20
+#: campaign/templates/campaign/campaignaddress.html:44
+#, fuzzy
+#| msgid "Price"
+msgid "price"
+msgstr "价格"
+
+#: campaign/templates/campaign/booksdetail.html:21
+#, fuzzy
+#| msgid "Quality"
+msgid "quality"
+msgstr "知识掌握程度"
+
+#: campaign/templates/campaign/booksdetail.html:22
+msgid "category"
+msgstr ""
+
+#: campaign/templates/campaign/booksdetail.html:23
+msgid "intro"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:4
+#, fuzzy
+#| msgid "Campaign Address"
+msgid "CampaignAddress"
+msgstr "活动地址"
+
+#: campaign/templates/campaign/campaignaddress.html:37
+msgid "order_id"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:39
+msgid "wechat_name"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:40
+msgid "wechat_avatar"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:41
+#, fuzzy
+#| msgid "E-mail Addresses"
+msgid "address"
+msgstr "电子邮箱地址"
+
+#: campaign/templates/campaign/campaignaddress.html:42
+msgid "phone"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:43
+msgid "is_freeDelivery"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:45
+msgid "deliveryCharge"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:46
+#, fuzzy
+#| msgid "Action"
+msgid "function"
+msgstr "操作"
+
+#: campaign/templates/campaign/campaignaddress.html:48
+msgid "shared_image"
+msgstr "分享图片"
+
+#: campaign/templates/campaign/promotion.html:6
+#: campaign/templates/campaign/promotion_qrcode.html:6
+msgid "Promotion"
+msgstr "价格及优惠"
+
+#: campaign/templates/campaign/promotion.html:15
+msgid "Our Price"
+msgstr "服务价格"
+
+#: campaign/templates/campaign/promotion.html:20
+msgid ""
+"Each class is 45 minutes, costing 1 point.The cost of each point is as "
+"listed as follows,with bonus points awarded depending on your top up amount."
+msgstr ""
+"每节课45分钟，消耗1课时。你无需承担风险、一次性承诺购买价值不菲的课时包。以下"
+"是我们的课时价格表，同时你还可以根据充值金额享受充值奖励。"
+
+#: campaign/templates/campaign/promotion.html:22
+msgid "check detail"
+msgstr "查看细节"
+
+#: campaign/templates/campaign/promotion.html:27
+msgid "Currency"
+msgstr "货币种类"
+
+#: campaign/templates/campaign/promotion.html:28
+msgid "Price per Class"
+msgstr "次课单价"
+
+#: campaign/templates/campaign/promotion.html:72
+#: campaign/templates/campaign/promotion.html:169
+#: campaign/templates/campaign/promotion.html:216
+#: campaign/templates/campaign/promotion_qrcode.html:71
+msgid "Terms and Conditions"
+msgstr "条款与适用条件"
+
+#: campaign/templates/campaign/promotion.html:73
+msgid ""
+"Refunds are available upon request,no questions asked.We’ll process the "
+"refund using the same payment gateway."
+msgstr ""
+"1.如果你改变主意，你可以随时申请退款。剩余课时费用会通过原始的付款方式退回给"
+"你。"
+
+#: campaign/templates/campaign/promotion.html:95
+#: userprofile/templates/userprofile/profile.html:1516
+msgid "Free trial class"
+msgstr "免费试课"
+
+#: campaign/templates/campaign/promotion.html:103
+msgid ""
+"We offer users 2 points to participate in Online Course for free,The points "
+"for trial class will be directly deposited into your account balance after "
+"you sign up,Then you will be asked to have an assessment,then making an "
+"appointment and enjoying the online class on time(Making an appointment one "
+"day in advance)."
+msgstr ""
+"为了帮助学生快速体验我们的中文教学，我们提供2个课时的免费试课。注册后，免费试"
+"课的课时会直接充入你的账户。然后你就可以马上开始水平测试和预约老师（试课需要"
+"提前一天预约课程）。"
+
+#: campaign/templates/campaign/promotion.html:105
+msgid ""
+"After signing up, you will be led to free trial class application "
+"automatically."
+msgstr "注册以后，你会被自动引导到免费试课申请页面。"
+
+#: campaign/templates/campaign/promotion.html:105
+#: campaign/templates/campaign/promotion.html:166
+#: campaign/templates/campaign/promotion.html:213
+#: campaign/templates/campaign/promotion_qrcode.html:32
+msgid "please go to"
+msgstr "请前往"
+
+#: campaign/templates/campaign/promotion.html:108
+#: campaign/templates/campaign/promotion.html:110
+msgid "apply free trial"
+msgstr "获取免费课程"
+
+#: campaign/templates/campaign/promotion.html:114
+msgid "Terms and Conditions:"
+msgstr "条款与适用条件："
+
+#: campaign/templates/campaign/promotion.html:115
+msgid ""
+"1.Every user can only enjoy one-time free trial class application. If the "
+"user already applied it once, the user can not enjoy it again."
+msgstr ""
+"1. 每位用户仅能享受一次申请免费试课的机会；如果用户已经申请过免费课时，该用户"
+"将不能再次享受该优惠。"
+
+#: campaign/templates/campaign/promotion.html:117
+msgid "2.The 2 points for free trial are not eligible for refund."
+msgstr "2. 免费试课的课时不能通过退款方式返还现金；"
+
+#: campaign/templates/campaign/promotion.html:119
+msgid ""
+"3.Only new registered users can enjoy free trials.If the user has already "
+"participated in related courses, the user can not enjoy the benefit anymore."
+msgstr ""
+"3. 只有新注册用户才能享受免费试课。如果用户已经参加过相关课程，不能再次享受免"
+"费试课。"
+
+#: campaign/templates/campaign/promotion.html:136
+msgid "Top-up Bonus"
+msgstr "充值奖励课时"
+
+#: campaign/templates/campaign/promotion.html:141
+msgid ""
+"We offer tiered bonuses based on your top-up amount.Refunds are available at "
+"any time,no questions asked."
+msgstr ""
+"我们根据你的充值金额提供不同的奖励课时。充值越多，惊喜越大；同时你可以随时申"
+"请退款。"
+
+#: campaign/templates/campaign/promotion.html:147
+msgid "Top-up"
+msgstr "充值"
+
+#: campaign/templates/campaign/promotion.html:148
+msgid "Special Promotion - Bonus"
+msgstr "特别促销-奖励"
+
+#: campaign/templates/campaign/promotion.html:167
+msgid "top up"
+msgstr "充值"
+
+#: campaign/templates/campaign/promotion.html:171
+msgid "1. Promotion period starts from "
+msgstr "1. 优惠促销期从"
+
+#: campaign/templates/campaign/promotion.html:171
+#: scheduler/templates/scheduler/event.html:481
+msgid " to "
+msgstr " 到 "
+
+#: campaign/templates/campaign/promotion.html:174
+msgid "2.The bonus will be deposited into your account instantly."
+msgstr "2. 奖励课时会即时充入你的帐户。"
+
+#: campaign/templates/campaign/promotion.html:176
+msgid ""
+"3.Bonus are not eligible for refund.When you request refund,the bonus of "
+"designated transaction will be deducted firstly,and the remaining points "
+"will be refunded."
+msgstr ""
+"3. 当你的朋友申请退款，推荐赠礼会被重新计算，可能会部分或者全部从你的帐户扣"
+"除。"
+
+#: campaign/templates/campaign/promotion.html:178
+msgid ""
+"4.You will receive extra bonus,if you register your referral information."
+msgstr "4. 如果登记推荐人信息，将会获得额外的充值奖励。"
+
+#: campaign/templates/campaign/promotion.html:200
+#: campaign/templates/campaign/promotion_qrcode.html:16
+msgid "Referral Awards"
+msgstr "推荐有礼"
+
+#: campaign/templates/campaign/promotion.html:208
+msgid ""
+"If you like PPChinese, please share it with your friends. While they enjoy "
+"the good service, you can also enjoy rewards. Every 10 points (1 point for 1 "
+"class) top-up from your referral, you will get 1 point referral reward."
+msgstr ""
+"如果你觉得PPChinese不错，请分享给更多朋友你的朋友可以享受更好的中文学习体验，"
+"你也可以得到赠礼。你的朋友每充值10个课时，你会获得1个课时作为推荐赠礼。"
+
+#: campaign/templates/campaign/promotion.html:209
+msgid ""
+"If you hear about PPChinese from your friend, please nominate your friend as "
+"referrer in the system, then you will also enjoy 1 point when you first top "
+"up."
+msgstr ""
+"如果您从您的朋友那了解的PPChinese，请在系统中把他/她设置为推荐人，那么您在第"
+"一次充值时也会获取1课时的奖励。"
+
+#: campaign/templates/campaign/promotion.html:213
+#: campaign/templates/campaign/promotion_qrcode.html:32
+msgid "referral"
+msgstr "推荐"
+
+#: campaign/templates/campaign/promotion.html:217
+msgid ""
+"1.The bonus will be deposited into your account instantly, when your "
+"referrals tops up."
+msgstr ""
+"1. 当你的朋友在平台把你设置为推荐人，并充值以后，赠礼会即时充入你的帐户。"
+
+#: campaign/templates/campaign/promotion.html:219
+msgid ""
+"2.You can get rewards - 1 point for every 10 points,your referee tops up."
+msgstr "2. 被推荐人每充值10课时，推荐人可以获得1课时的推荐奖励。"
+
+#: campaign/templates/campaign/promotion.html:221
+msgid ""
+"3.When your referral requests refund,referral bonus of designated "
+"transaction will be deducted accordingly."
+msgstr ""
+"3. 当你的朋友申请退款，推荐赠礼会被重新计算，可能会部分或者全部从你的帐户扣"
+"除。"
+
+#: campaign/templates/campaign/promotion_code.html:7
+#: campaign/templates/campaign/promotion_congratulations.html:7
+#: templates/account/login.html:7
+msgid "Sign In"
+msgstr "登录"
+
+#: campaign/templates/campaign/promotion_qrcode.html:28
+msgid ""
+"If you like PPChinese, please share it with your friends. While they enjoy "
+"the good service, you can also enjoy double rewards during promotion period."
+msgstr ""
+"如果你觉得PPChinese不错，请分享给更多朋友享受更好的中文学习体验，在活动期间推"
+"荐用户，你将获取翻倍赠礼！"
+
+#: campaign/templates/campaign/promotion_qrcode.html:42
+msgid "Top up by the referee"
+msgstr "被推荐人充值"
+
+#: campaign/templates/campaign/promotion_qrcode.html:43
+msgid "Special Promotion-Bonus"
+msgstr "推荐奖励翻倍-促销"
+
+#: campaign/templates/campaign/promotion_qrcode.html:72
+msgid ""
+"1.Promotion period starts from August 13, 2018, midnight to Sept. 30, 2018, "
+"midnight."
+msgstr "1、活动时间从 2018年8月13日 00:00 到 2018年9月30日 00:00。"
+
+#: campaign/templates/campaign/promotion_qrcode.html:74
+msgid ""
+"2.Share the photo with QR code to the friends circle or your friends. You "
+"will be your friend's referrer after your friend complete the registration "
+"by scanning the QR code."
+msgstr ""
+"2、活动期间将带有二维码的图片分享到朋友圈或者分享给你的朋友，你的朋友通过二维"
+"码扫描完成注册信息后，你就是推荐人；"
+
+#: campaign/templates/campaign/promotion_qrcode.html:76
+msgid ""
+"3.The bonus will be deposited into your account instantly, when your "
+"referrals tops up."
+msgstr ""
+"3、当你的朋友在平台把你设置为推荐人，并充值以后，赠礼会即时充入你的帐户。"
+
+#: campaign/templates/campaign/promotion_qrcode.html:78
+msgid ""
+"4.You can get rewards 2 points for every 10 points, your referee tops up "
+"(The highest is 10 points). "
+msgstr ""
+"4、被推荐人每充值10课时，推荐人可以获得2课时的推荐奖励。（最高可达10课时）"
+
+#: campaign/templates/campaign/promotion_qrcode.html:80
+msgid ""
+"5.When your referral requests refund, referral bonus of designated "
+"transaction will be deducted accordingly."
+msgstr ""
+"5、当你的朋友申请退款，推荐赠礼会被重新计算，可能会部分或者全部从你的帐户扣"
+"除。"
+
+#: campaign/templates/campaign/rechargerecordsquery.html:26
+#, fuzzy
+#| msgid "Username"
+msgid "username"
+msgstr "用户名"
+
+#: campaign/templates/campaign/rechargerecordsquery.html:27
+#, fuzzy
+#| msgid "Amount"
+msgid "amount"
+msgstr "金额"
+
+#: course/api_v2_views.py:173
+msgid "test does not exist"
+msgstr "测试时间不存在"
+
+#: course/api_v2_views.py:179
+msgid "question does not exist"
+msgstr "课程预约不存在"
+
+#: course/api_v2_views.py:188
+msgid "çourse does not exist"
+msgstr "课程不存在"
+
+#: course/api_v2_views.py:195
+msgid "requested question number exceeds the limitation"
+msgstr ""
+
+#: course/templates/course/assessment.html:5
+#: course/templates/course/assessment.html:13
+#: course/templates/course/inassessment.html:5
+#: course/templates/course/inassessment.html:25
+#: course/templates/course/inguideexam.html:5
+#: course/templates/course/reminder.html:19
+#: course/templates/course/reminder.html:70 templates/index.html:39
+#: templates/index.html:54 templates/index.html:74
+#: templates/menu_member.html:136
+msgid "Assessment"
+msgstr "水平测试"
+
+#: course/templates/course/assessment.html:38
+#: course/templates/course/assessment.html:116
+#: course/templates/course/inassessment.html:39
+#: course/templates/course/inassessment.html:135
+msgid "Notice"
+msgstr "通知"
+
+#: course/templates/course/assessment.html:40
+#: course/templates/course/assessment.html:118
+#: course/templates/course/inassessment.html:41
+#: course/templates/course/inassessment.html:137
+msgid "loading...."
+msgstr "加载中...."
+
+#: course/templates/course/assessment.html:72
+#: course/templates/course/assessment.html:156
+#: course/templates/course/assessmentHistory.html:45
+#: course/templates/course/assessmentHistory.html:90
+#: course/templates/course/historyexam.html:29
+#: course/templates/course/inassessment.html:94
+#: course/templates/course/inassessment.html:194
+#: course/templates/course/newassessmenthistory.html:73
+#: course/templates/course/unitexam.html:35
+msgid "previous"
+msgstr "上一题"
+
+#: course/templates/course/assessment.html:75
+#: course/templates/course/assessment.html:159
+#: course/templates/course/assessmentHistory.html:48
+#: course/templates/course/assessmentHistory.html:93
+#: course/templates/course/historyexam.html:31
+#: course/templates/course/inassessment.html:97
+#: course/templates/course/inassessment.html:197
+#: course/templates/course/newassessmenthistory.html:76
+#: course/templates/course/unitexam.html:37
+msgid "next"
+msgstr "下一题"
+
+#: course/templates/course/assessment.html:91
+#: course/templates/course/assessment.html:134
+#: course/templates/course/inassessment.html:110
+#: course/templates/course/inassessment.html:172
+msgid "skip"
+msgstr "跳过本题"
+
+#: course/templates/course/assessment.html:751
+#: course/templates/course/inassessment.html:951
+#: course/templates/course/unitexam.html:270
+msgid "List"
+msgstr "列表"
+
+#: course/templates/course/assessmentHistory.html:16
+#: course/templates/course/assessmentHistory.html:65
+#: course/templates/course/newassessmenthistory.html:31
+#: course/templates/course/reminder.html:17
+#: course/templates/course/reminder.html:68
+msgid "Assessmet History"
+msgstr "水平测试历史记录"
+
+#: course/templates/course/assessmentHistory.html:37
+#: course/templates/course/assessmentHistory.html:82
+#: course/templates/course/newassessmenthistory.html:65
+msgid "Back to result"
+msgstr "返回测试结果"
+
+#: course/templates/course/assessmentHistory.html:168
+#: course/templates/course/newassessmenthistory.html:398
+msgid "First question"
+msgstr "第一道题"
+
+#: course/templates/course/assessmentResult.html:62
+#: course/templates/course/assessmentResult.html:114
+#: course/templates/course/assessmentverify.html:12
+msgid "Assessment Result"
+msgstr "水平测试结果"
+
+#: course/templates/course/assessmentResult.html:86 templates/base.html:328
+#: userprofile/templates/userprofile/profile.html:1630
+msgid "Close"
+msgstr "关闭"
+
+#: course/templates/course/assessmentResult.html:96
+#: course/templates/course/assessmentResult.html:140
+msgid "Assessment History"
+msgstr "查看测试记录"
+
+#: course/templates/course/assessmentResult.html:119
+#: course/templates/course/assessmentverify.html:18
+msgid "A total of 20 questions,Your correct number is:"
+msgstr "一共20题，你正确的题数是："
+
+#: course/templates/course/assessmentResult.html:122
+#: course/templates/course/assessmentverify.html:21
+msgid "A total of 10 questions,Your correct number is:"
+msgstr "一共10题，你正确的题数是："
+
+#: course/templates/course/assessmentResult.html:126
+#: course/templates/course/assessmentverify.html:25
+msgid "Your programme  is:"
+msgstr "你的课程是："
+
+#: course/templates/course/assessmentResult.html:129
+#: course/templates/course/assessmentverify.html:34
+#, fuzzy
+#| msgid "Your programme  is:"
+msgid "Your level  is:"
+msgstr "你的课程是："
+
+#: course/templates/course/assessmentResult.html:146
+#: course/templates/course/show_usercourse.html:8
+#: userprofile/templates/userprofile/profile.html:8
+#: userprofile/templates/userprofile/tutor_profile.html:5
+msgid "My account"
+msgstr "我的帐户"
+
+#: course/templates/course/assessmentverify.html:27
+#: course/templates/course/inguideexam.html:33
+#: course/templates/course/inguideexam.html:330
+#: course/templates/course/inguideexam.html:360
+#: course/templates/course/show_usercourse.html:57
+msgid "LingoAce International Programme"
+msgstr "LingoAce国际中文课程"
+
+#: course/templates/course/assessmentverify.html:30
+#: course/templates/course/inguideexam.html:23
+#: course/templates/course/inguideexam.html:327
+#: course/templates/course/inguideexam.html:358
+msgid "LingoAce Advanced Programme"
+msgstr "LingoAce高级中文课程"
+
+#: course/templates/course/assessmentverify.html:37
+msgid "Do you modify the programm of your choice?"
+msgstr "你要修改你选择的课程吗？"
+
+#: course/templates/course/assessmentverify.html:44
+#: course/templates/course/inguideexam.html:184
+#: course/templates/course/reminder.html:35
+#: course/templates/course/reminder.html:110
+msgid "NO"
+msgstr "否"
+
+#: course/templates/course/assessmentverify.html:49
+#: student/templates/student/my_class.html:56
+#: student/templates/student/small_class.html:391
+#: student/templates/student/small_class.html:416
+#: student/templates/student/small_class.html:440
+msgid "OK"
+msgstr "确定"
+
+#: course/templates/course/base.html:3
+#: templates/man/course/assessment_preview.html:15
+#: templates/man/course/exambank.html:14 templates/man/course/homework.html:16
+#: templates/man/course/homeworkupload.html:11
+#: templates/man/course/preview.html:18
+msgid "course"
+msgstr "课程"
+
+#: course/templates/course/ext_courseware.html:11
+msgid "Set Extend Courseware"
+msgstr "设置扩展课件"
+
+#: course/templates/course/ext_courseware.html:18
+msgid "Student Name"
+msgstr "学生姓名"
+
+#: course/templates/course/ext_courseware.html:18
+#: userprofile/templates/userprofile/profile.html:327
+#: userprofile/templates/userprofile/profile.html:969
+msgid "Current level"
+msgstr "当前级别"
+
+#: course/templates/course/ext_courseware.html:36
+#: course/templates/course/ext_courseware_list.html:68
+msgid "Enter your search key word..."
+msgstr "请输入关键字..."
+
+#: course/templates/course/ext_courseware.html:49
+msgid "My Extend Courseware"
+msgstr "我的扩展课件"
+
+#: course/templates/course/ext_courseware.html:54
+msgid "My favorite"
+msgstr "我的收藏"
+
+#: course/templates/course/ext_courseware.html:59
+msgid "Shared library"
+msgstr "共享库"
+
+#: course/templates/course/ext_courseware.html:83
+#: course/templates/course/ext_courseware_list.html:92
+msgid "Preview"
+msgstr "预览"
+
+#: course/templates/course/ext_courseware.html:86
+#: course/templates/course/ext_courseware.html:123
+#: course/templates/course/ext_courseware_list.html:134
+msgid "Associated"
+msgstr "关联"
+
+#: course/templates/course/ext_courseware.html:95
+#: course/templates/course/ext_courseware_list.html:106
+msgid "New knowledge extension"
+msgstr "新知识扩展"
+
+#: course/templates/course/ext_courseware.html:97
+#: course/templates/course/ext_courseware_list.html:108
+msgid "Original file extension"
+msgstr "原文件扩展"
+
+#: course/templates/course/ext_courseware.html:115
+msgid "No labels"
+msgstr "暂无标签"
+
+#: course/templates/course/ext_courseware.html:147
+msgid "Current page"
+msgstr "当前页"
+
+#: course/templates/course/ext_courseware.html:171
+#: course/templates/course/ext_courseware_list.html:180
+#: student/templates/student/my_class.html:122
+#: student/templates/student/my_class.html:324
+#: student/templates/student/my_class.html:359
+#: userprofile/templates/userprofile/history_class.html:63
+#: userprofile/templates/userprofile/history_class.html:64
+#: userprofile/templates/userprofile/profile.html:396
+#: userprofile/templates/userprofile/tutor_profile.html:80
+#: userprofile/templates/userprofile/tutor_profile.html:150
+#: userprofile/templates/userprofile/tutor_profile.html:212
+#: userprofile/templates/userprofile/tutor_profile.html:213
+#: virtualclass/templates/virtualclass/classroom.html:126
+msgid "Extend Courseware"
+msgstr "扩展课件"
+
+#: course/templates/course/ext_courseware.html:206
+msgid "Extend Courseware association success"
+msgstr "扩展课件关联成功"
+
+#: course/templates/course/ext_courseware_list.html:11
+#: course/templates/course/ext_up_courseware.html:4
+#: course/templates/course/ext_up_courseware.html:12
+msgid "Manage Extend Courseware"
+msgstr "管理扩展课件"
+
+#: course/templates/course/ext_courseware_list.html:19
+#: course/templates/course/ext_up_courseware.html:20
+msgid "Add Extend Coursewares"
+msgstr "添加扩展课件"
+
+#: course/templates/course/ext_courseware_list.html:23
+#: course/templates/course/ext_up_courseware.html:24
+msgid " Browse My Extend Courseware"
+msgstr "浏览我的扩展课件"
+
+#: course/templates/course/ext_courseware_list.html:99
+msgid "Update"
+msgstr "更新"
+
+#: course/templates/course/ext_up_courseware.html:46
+msgid "Required"
+msgstr "必选"
+
+#: course/templates/course/ext_up_courseware.html:50
+msgid "CoursewareName"
+msgstr "课件名称"
+
+#: course/templates/course/ext_up_courseware.html:72
+msgid "Level"
+msgstr "级别"
+
+#: course/templates/course/ext_up_courseware.html:103
+msgid "Type"
+msgstr "类型"
+
+#: course/templates/course/ext_up_courseware.html:110
+#: course/templates/course/ext_up_courseware.html:115
+#: course/templates/course/ext_up_courseware.html:122
+msgid "Original courseware extension"
+msgstr "原课件扩展"
+
+#: course/templates/course/ext_up_courseware.html:111
+#: course/templates/course/ext_up_courseware.html:117
+#: course/templates/course/ext_up_courseware.html:123
+msgid "New courseware extension"
+msgstr "新知识扩展"
+
+#: course/templates/course/ext_up_courseware.html:139
+#: course/templates/course/ext_up_courseware.html:144
+#: course/templates/course/ext_up_courseware.html:150
+msgid "Public"
+msgstr "公有"
+
+#: course/templates/course/ext_up_courseware.html:140
+#: course/templates/course/ext_up_courseware.html:145
+#: course/templates/course/ext_up_courseware.html:151
+msgid "Private"
+msgstr "私有"
+
+#: course/templates/course/ext_up_courseware.html:162
+#: userprofile/templates/userprofile/edit_photo.html:28
+msgid "Choose File"
+msgstr "选择文件"
+
+#: course/templates/course/ext_up_courseware.html:180
+msgid "Please upload PPT/PPTX/PDF file"
+msgstr "请上传PPT/PPTX/PDF文件"
+
+#: course/templates/course/ext_up_courseware.html:186
+msgid "Browse"
+msgstr "浏览"
+
+#: course/templates/course/ext_up_courseware.html:196
+msgid "Option"
+msgstr "可选"
+
+#: course/templates/course/ext_up_courseware.html:200
+msgid "Label"
+msgstr "标签"
+
+#: course/templates/course/gradeExam.html:19
+#: course/templates/course/gradeExam.html:105
+msgid "Semester"
+msgstr "学期"
+
+#: course/templates/course/gradeExam.html:20
+#: course/templates/course/gradeExam.html:106
+msgid "Exam"
+msgstr "试题"
+
+#: course/templates/course/gradeExam.html:21
+#: course/templates/course/gradeExam.html:107
+msgid "Score"
+msgstr "分数"
+
+#: course/templates/course/gradeExam.html:26
+#: course/templates/course/gradeExam.html:112
+msgid "Mid"
+msgstr "期中"
+
+#: course/templates/course/gradeExam.html:32
+#: course/templates/course/gradeExam.html:63
+#: course/templates/course/gradeExam.html:118
+#: course/templates/course/gradeExam.html:150
+msgid "History Exam"
+msgstr "以往的测试"
+
+#: course/templates/course/gradeExam.html:38
+#: course/templates/course/gradeExam.html:40
+#: course/templates/course/gradeExam.html:69
+#: course/templates/course/gradeExam.html:71
+#: course/templates/course/gradeExam.html:124
+#: course/templates/course/gradeExam.html:126
+#: course/templates/course/gradeExam.html:156
+#: course/templates/course/gradeExam.html:158
+msgid "Start Test"
+msgstr "开始测试"
+
+#: course/templates/course/gradeExam.html:57
+#: course/templates/course/gradeExam.html:144
+msgid "Final"
+msgstr "最后"
+
+#: course/templates/course/historyexam.html:15
+msgid "Unit Test History"
+msgstr "单元测试历史"
+
+#: course/templates/course/inguideexam.html:14
+msgid "Recommended Course"
+msgstr "课程推荐"
+
+#: course/templates/course/inguideexam.html:25
+#: course/templates/course/inguideexam.html:100
+#: course/templates/course/inguideexam.html:328
+msgid ""
+"This course is divided into six levels, and follows the course book "
+"developed by China&#39s Ministry of Education. Students are expected to make "
+"progress in all aspects of Chinese language, including listening, speaking, "
+"reading and writing. This programme is suitable for students who have a "
+"certain basis for Chinese listening and speaking, or students who have "
+"Chinese listening and speaking environment and want to improve Chinese "
+"skills and literature (writing, intensive reading, ancient literature "
+"learning)."
+msgstr ""
+"此课程基于中国教育部指定的“人教版”和“部编版”语文学科教材研发，与中国国内要求"
+"同步。课程分为六个等级，以识字与写字、阅读、写作、口语交际等四个方面为目标，"
+"全方位提升中文技能与水平。"
+
+#: course/templates/course/inguideexam.html:28
+#: course/templates/course/inguideexam.html:38
+#, fuzzy
+#| msgid "Choose File"
+msgid "Choose"
+msgstr "选择文件"
+
+#: course/templates/course/inguideexam.html:35
+#: course/templates/course/inguideexam.html:108
+#: course/templates/course/inguideexam.html:331
+#: course/templates/course/show_usercourse.html:61
+msgid ""
+"This course is designed for non-native Chinese speakers, and takes a fun "
+"approach to learning Chinese. Through the six levels, students will improve "
+"their listening, speaking, reading and writing skills and the understanding "
+"of Chinese culture. This course is suitable for students whose mother tongue "
+"are non-Chinese and want to learn daily communication, or students who have "
+"examination requirements such as YCT."
+msgstr ""
+"此课程基于中国国家汉办指定教材研发，为母语不是中文的海外学生提供全套中文学习"
+"方案。课程分为六个等级，以贴近学习与生活的话题为主线，难度螺旋上升，同时寓教"
+"于乐，旨在帮助学生全面提高中文的听、说、读、写技能，了解中国文化。学习内容可"
+"与YCT等级考试衔接。"
+
+#: course/templates/course/inguideexam.html:44
+msgid "I am not sure what course my child should choose"
+msgstr "我不确定我的孩子应该选择什么课程"
+
+#: course/templates/course/inguideexam.html:74
+#: course/templates/course/inguideexam.html:132
+msgid "LingoAce Parents Agreement"
+msgstr "LingoAce 家长协议"
+
+#: course/templates/course/inguideexam.html:75
+#: course/templates/course/inguideexam.html:134
+msgid ""
+"I agree not to assist my child in any way to understand the content of the "
+"test (I may assist my child with technical difficulties).I agree to not "
+"provide any answers or read for my child during the test. I can understand "
+"that when I help my child answer the test questions, my child might place in "
+"a level that&#39s beyond their ability. This is bad for my child to learn "
+"Chinese."
+msgstr ""
+"我同意在测试过程中不帮助孩子理解测试内容（但是可以帮助解决技术困难），不会给"
+"孩子读题或向孩子透漏任何测试问题的答案。我能理解如果我帮助孩子回答问题，将导"
+"致测试结果高于孩子的实际水平，这将不利于孩子学习中文。"
+
+#: course/templates/course/inguideexam.html:76
+#: course/templates/course/inguideexam.html:136
+msgid "I agree, continue to the test."
+msgstr "我同意，继续测试。"
+
+#: course/templates/course/inguideexam.html:77
+#: course/templates/course/inguideexam.html:138
+msgid ""
+"Next, please ask your child to come to the computer. And ensure that your "
+"device can play the audio properly, then turn on the stereo or put on the "
+"earphone. If you are ready, please click \"OK\"."
+msgstr ""
+"现在，请您的孩子来到电脑面前准备测评，并确保您的设备可以正常播放音频，请您打"
+"开音响或者戴上耳机，准备好后请点击“OK”开始测评。"
+
+#: course/templates/course/inguideexam.html:98
+msgid "LingoAce Advanced Programme:"
+msgstr "LingoAce高级中文课程："
+
+#: course/templates/course/inguideexam.html:106
+msgid "LingoAce International Programme:"
+msgstr "LingoAce国际中文课程："
+
+#: course/templates/course/inguideexam.html:176
+msgid ""
+"My child is the beginner of Chinese learning, and I am sure level one is "
+"suitable for him(her), so the following test is unnnecessary."
+msgstr "我的孩子是汉语初学者，我确定level 1 适合他（她），不需要继续测试。"
+
+#: course/templates/course/inguideexam.html:182
+#: course/templates/course/reminder.html:39
+#: course/templates/course/reminder.html:127
+msgid "YES"
+msgstr "是"
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "How about parents&#39 Chinese?"
+msgstr "父母的中文怎么样？"
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "How often does your child speak Chinese at home?"
+msgstr "孩子在家说中文的情况？"
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "At present, what is your target for child&#39s Chinese?"
+msgstr "目前，你对孩子的中文需求是什么？"
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "How old is your child?"
+msgstr "孩子的年龄？"
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid ""
+"Have your child learned Chinese before? (If learned) How long have your "
+"child learned?"
+msgstr "孩子之前学过中文吗？（如果学过）学习中文多长时间？"
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "How long does your child usually spend on learning Chinese?"
+msgstr "孩子每周花多长时间学习中文？"
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid ""
+"How is your child&#39s Chinese listening and speaking skills? (From low to "
+"high)"
+msgstr "孩子的中文“听说”技能评分最符合下面哪个？"
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid ""
+"How is your child&#39s Chinese reading and writing skills? (From low to high)"
+msgstr "孩子的中文“读写”技能评分最符合下面哪个？"
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "What kind of language does your child speak at home?"
+msgstr "孩子在家说什么语言？"
+
+#: course/templates/course/inguideexam.html:207
+#: course/templates/course/inguideexam.html:222
+msgid "LingoAce Advanced Programme."
+msgstr "LingoAce高级中文课程"
+
+#: course/templates/course/inguideexam.html:207
+#: course/templates/course/inguideexam.html:222
+msgid "LingoAce International Programme."
+msgstr "LingoAce国际中文课程"
+
+#: course/templates/course/inguideexam.html:207
+#: course/templates/course/inguideexam.html:222
+msgid " Not sure."
+msgstr "不确定"
+
+#: course/templates/course/inguideexam.html:210
+#: course/templates/course/inguideexam.html:223
+msgid "Chinese is none of parents&#39 mother tongue."
+msgstr "中文不是父母双方的母语。"
+
+#: course/templates/course/inguideexam.html:210
+#: course/templates/course/inguideexam.html:223
+msgid "Chinese is one of parents’ mother tongue."
+msgstr "中文是父母双方中一方的母语。"
+
+#: course/templates/course/inguideexam.html:210
+#: course/templates/course/inguideexam.html:223
+msgid "Chinese is both of parents&#39 mother tongue."
+msgstr "中文是父母双方的母语。"
+
+#: course/templates/course/inguideexam.html:211
+#: course/templates/course/inguideexam.html:224
+msgid "Never speak Chinese at home."
+msgstr "孩子在家完全不说中文。"
+
+#: course/templates/course/inguideexam.html:211
+#: course/templates/course/inguideexam.html:224
+msgid "Sometimes speak simple Chinese at home."
+msgstr "孩子在家偶尔说中文。"
+
+#: course/templates/course/inguideexam.html:211
+#: course/templates/course/inguideexam.html:224
+msgid "Always speak Chinese at home."
+msgstr "孩子在家一直说中文。"
+
+#: course/templates/course/inguideexam.html:212
+#: course/templates/course/inguideexam.html:225
+msgid "Can use Chinese for simple daily communication."
+msgstr "能使用中文进行简单的日常交流。"
+
+#: course/templates/course/inguideexam.html:212
+msgid "Improve Chinese skills, and be able to talk about various topics."
+msgstr "提高听、说、读、写技能，能广泛地讨论一些话题。"
+
+#: course/templates/course/inguideexam.html:212
+#: course/templates/course/inguideexam.html:225
+msgid ""
+"Improve Chinese skills and literature. (Writing, intensive reading, learning "
+"ancient literature)"
+msgstr "全面提升中文技能和文学素养。（写作、精读、中国古代文化学习）"
+
+#: course/templates/course/inguideexam.html:213
+#: course/templates/course/inguideexam.html:226
+msgid "6~8 years old"
+msgstr "6~8岁"
+
+#: course/templates/course/inguideexam.html:213
+#: course/templates/course/inguideexam.html:226
+msgid "8~10 years old"
+msgstr "8~10岁"
+
+#: course/templates/course/inguideexam.html:213
+#: course/templates/course/inguideexam.html:226
+msgid "10~12 years old"
+msgstr "10~12岁"
+
+#: course/templates/course/inguideexam.html:213
+#: course/templates/course/inguideexam.html:226
+msgid "12~15 years old"
+msgstr "12~15岁"
+
+#: course/templates/course/inguideexam.html:213
+#: course/templates/course/inguideexam.html:226
+msgid "More than15 years old"
+msgstr "15~18岁"
+
+#: course/templates/course/inguideexam.html:214
+#: course/templates/course/inguideexam.html:227
+msgid "Haven&#39t learned &learned Chinese 0~1year"
+msgstr "没有，或者学习学中文0~1学年。"
+
+#: course/templates/course/inguideexam.html:214
+#: course/templates/course/inguideexam.html:227
+msgid "learned Chinese 1~2years"
+msgstr "学过，学中文1~2学年。"
+
+#: course/templates/course/inguideexam.html:214
+#: course/templates/course/inguideexam.html:227
+msgid "learned Chinese 2~3years"
+msgstr "学过，学中文2~3学年。"
+
+#: course/templates/course/inguideexam.html:214
+#: course/templates/course/inguideexam.html:227
+msgid "learned Chinese 3~4years"
+msgstr "学过，学中文3~4学年。"
+
+#: course/templates/course/inguideexam.html:214
+#: course/templates/course/inguideexam.html:227
+msgid "learned Chinese more than 5years"
+msgstr "学过，学中文5学年以上。"
+
+#: course/templates/course/inguideexam.html:215
+#: course/templates/course/inguideexam.html:228
+msgid "Doesn&#39t learn Chinese"
+msgstr "学生没有学过中文。（或生活中接触过一点中文） "
+
+#: course/templates/course/inguideexam.html:215
+#: course/templates/course/inguideexam.html:228
+msgid "0~1hours a week"
+msgstr "一周0-1小时"
+
+#: course/templates/course/inguideexam.html:215
+#: course/templates/course/inguideexam.html:228
+msgid "1~2hours a week"
+msgstr "一周1-2小时"
+
+#: course/templates/course/inguideexam.html:215
+#: course/templates/course/inguideexam.html:228
+msgid "2~3hours a week"
+msgstr "一周2-3小时"
+
+#: course/templates/course/inguideexam.html:215
+#: course/templates/course/inguideexam.html:228
+msgid "At least 4hours"
+msgstr "一周4小时及以上"
+
+#: course/templates/course/inguideexam.html:218
+#: course/templates/course/inguideexam.html:231
+msgid "doesn&#39t speak Chinese at home"
+msgstr "在家从来不说中文孩子，也从来没有接触过中文。"
+
+#: course/templates/course/inguideexam.html:218
+#: course/templates/course/inguideexam.html:231
+msgid ""
+"doesn&#39t speak Chinese at home but can get access to Chinese. (With "
+"neighbors, relatives or friends)"
+msgstr "在家不说中文，但是孩子在其他的地方可以接触到中文。"
+
+#: course/templates/course/inguideexam.html:218
+#: course/templates/course/inguideexam.html:231
+msgid "Can speak a little Chinese at home"
+msgstr "在家孩子能用中文练习一些词语，但是大部分时间不说。"
+
+#: course/templates/course/inguideexam.html:218
+#: course/templates/course/inguideexam.html:231
+msgid "One of the parents speaks another language"
+msgstr "父母中有一个说中文另一个说别的语言。"
+
+#: course/templates/course/inguideexam.html:218
+#: course/templates/course/inguideexam.html:231
+msgid "Chinese is the basic language"
+msgstr "中文是家里的基础语言。"
+
+#: course/templates/course/inguideexam.html:221
+msgid ""
+"Which programme will you choose for your child according to the introduction "
+"above?"
+msgstr "根据上面的介绍，你会为孩子选择什么课程?"
+
+#: course/templates/course/inguideexam.html:225
+#, fuzzy
+#| msgid "Improve Chinese skills, and be able to talk about various topics."
+msgid "Improve Chinese skills, and be able to talk about ious topics."
+msgstr "提高听、说、读、写技能，能广泛地讨论一些话题。"
+
+#: course/templates/course/inguideexam.html:323
+#: course/templates/course/inguideexam.html:355
+msgid "The programme we recommend is"
+msgstr "我们推荐的课程是"
+
+#: course/templates/course/level_questionnaire.html:5
+#: course/templates/course/programme_questionnaire.html:5
+#: templates/man/base.html:107
+msgid "Questionnaire"
+msgstr "家长问卷"
+
+#: course/templates/course/readhomework.html:23
+msgid "Ratings success"
+msgstr "评分成功"
+
+#: course/templates/course/readhomework.html:27
+msgid "Back My account"
+msgstr "返回我的帐户"
+
+#: course/templates/course/reminder.html:14
+#: course/templates/course/reminder.html:65
+msgid "Unit Test"
+msgstr "单元测试"
+
+#: course/templates/course/reminder.html:30
+#: course/templates/course/reminder.html:79
+msgid "Dear parents or guardian:"
+msgstr "亲爱的家长："
+
+#: course/templates/course/reminder.html:31
+#: course/templates/course/reminder.html:81
+msgid ""
+"Welcome to LingoAce computer-based placement test! In the following few "
+"minutes, you will be asked to give information about your child .Please "
+"answer all the questions to the best of your knowledge."
+msgstr ""
+"欢迎来到LingoAce中文水平测试。在这里将会看到一些与孩子中文学习经历相关的问"
+"题，请您根据实际情况作答。"
+
+#: course/templates/course/reminder.html:47
+#: course/templates/course/reminder.html:86
+msgid "Teacher can't test !"
+msgstr "教师不能参加测试"
+
+#: course/templates/course/reminder.html:89
+msgid "Please complete the level test first !"
+msgstr "请先完成水平测试！"
+
+#: course/templates/course/reminder.html:92
+msgid ""
+"Are you ready for an interesting challenge, to see how good your Chinese "
+"language skills is?"
+msgstr "愿意参加一个有趣的游戏，了解你的中文知识水平吗？"
+
+#: course/templates/course/reminder.html:94
+msgid ""
+"There are 20 questions, which will take about 10 minutes. If you don't know "
+"the answer, you may choose 'skip' and jump to next question."
+msgstr ""
+"一共有20道题，大概耗时10分钟。如果你不知道某道题的答案，你可以选择‘跳过本"
+"题’直接进入下一题。"
+
+#: course/templates/course/reminder.html:96
+msgid "Ready to go?"
+msgstr "准备好了吗？"
+
+#: course/templates/course/reminder.html:99
+msgid "There is no record"
+msgstr "无记录"
+
+#: course/templates/course/resultsuccess.html:13
+msgid "Upload Success"
+msgstr "上传成功"
+
+#: course/templates/course/resultsuccess.html:15
+msgid "Delete Success"
+msgstr "修改成功"
+
+#: course/templates/course/resultsuccess.html:21
+#: course/templates/course/submithomework.html:179
+#: course/templates/course/teacherhomework.html:197
+#: templates/man/course/homework.html:39 templates/man/course/preview.html:41
+#: templates/man/course/teachplan.html:39
+#: templates/man/virtualclass/student_rating.html:69
+#: templates/man/virtualclass/teacher_rating.html:117
+#: virtualclass/templates/virtualclass/comment_show.html:133
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:113
+msgid "session"
+msgstr "课时"
+
+#: course/templates/course/resultsuccess.html:31
+msgid "URL:"
+msgstr "链接："
+
+#: course/templates/course/resultsuccess.html:46
+#: course/templates/course/submithomework.html:5
+#: course/templates/course/submithomework.html:173
+msgid "Upload Homework"
+msgstr "上传家庭作业"
+
+#: course/templates/course/show_usercourse.html:39
+msgid "Advanced Programme"
+msgstr "高级中文课程"
+
+#: course/templates/course/show_usercourse.html:44
+msgid ""
+"This course is divided into six levels, and follows the course book "
+"developed by China's Ministry of Education. Students are expected to make "
+"progress in all aspects of Chinese language, including listening, speaking, "
+"reading and writing. This programme is suitable for students who have a "
+"certain basis for Chinese listening and speaking, or students who have "
+"Chinese listening and speaking environment and want to improve Chinese "
+"skills and literature (writing, intensive reading, ancient literature "
+"learning)."
+msgstr ""
+"此课程基于中国教育部指定的“人教版”和“部编版”语文学科教材研发，与中国国内要求"
+"同步。课程分为六个等级，以识字与写字、阅读、写作、口语交际等四个方面为目标，"
+"全方位提升中文技能与水平。"
+
+#: course/templates/course/show_usercourse.html:48
+#: course/templates/course/show_usercourse.html:65
+msgid "Select!"
+msgstr "选择课程"
+
+#: course/templates/course/showhomework.html:15
+msgid "Submit Homework"
+msgstr "提交家庭作业"
+
+#: course/templates/course/submithomework.html:175
+#: course/templates/course/teacherhomework.html:7
+#: course/templates/course/teacherhomework.html:189
+msgid "Homework corrected"
+msgstr "作业已批改"
+
+#: course/templates/course/submithomework.html:189
+msgid "Upload Again"
+msgstr "再次上传"
+
+#: course/templates/course/submithomework.html:197
+msgid "Done"
+msgstr "完成"
+
+#: course/templates/course/submithomework.html:200
+#: templates/man/course/assessment_preview.html:41
+msgid "Edit"
+msgstr "编辑"
+
+#: course/templates/course/submithomework.html:207
+#: course/templates/course/teacherhomework.html:210
+msgid "Score:"
+msgstr "得分："
+
+#: course/templates/course/submithomework.html:220
+#: course/templates/course/teacherhomework.html:266
+msgid "Homework has been uploaded successfully, please check later!"
+msgstr "家庭作业已经上传成功，请稍后查看！"
+
+#: course/templates/course/submithomework.html:344
+msgid "Select the file"
+msgstr "选择文件"
+
+#: course/templates/course/submithomework.html:387
+msgid "Start upload"
+msgstr "开始上传"
+
+#: course/templates/course/submithomework.html:388
+msgid "Delete All"
+msgstr "全部删除"
+
+#: course/templates/course/teacherhomework.html:235
+msgid "1"
+msgstr "1分"
+
+#: course/templates/course/teacherhomework.html:236
+msgid "2"
+msgstr "2分"
+
+#: course/templates/course/teacherhomework.html:237
+msgid "3"
+msgstr "3分"
+
+#: course/templates/course/teacherhomework.html:238
+msgid "4"
+msgstr "4分"
+
+#: course/templates/course/teacherhomework.html:239
+msgid "5"
+msgstr "5分"
+
+#: course/templates/course/teacherhomework.html:279
+msgid "There is no homework in this class ~"
+msgstr "这节课没有家庭作业~"
+
+#: course/templates/course/unitexam.html:27
+#: templates/man/course/assessment_upload.html:222
+msgid "submit"
+msgstr "提交"
+
+#: course/templates/course/user_course.html:11
+msgid "Change Student Course & Session Level"
+msgstr "调整学生的级别及课时"
+
+#: course/templates/course/user_course.html:18
+msgid "Select Student:"
+msgstr "选择学生："
+
+#: course/templates/course/user_course.html:43
+msgid "Change Course & Level:"
+msgstr "调整学生的级别的课时："
+
+#: course/templates/course/user_course.html:62
+msgid "Current session:"
+msgstr "当前课时："
+
+#: course/templates/course/user_course.html:69
+msgid "change"
+msgstr "变更"
+
+#: course/views.py:750
+#, fuzzy
+#| msgid "Parameter missing."
+msgid "Parameter error."
+msgstr "缺少支付细节"
+
+#: course/views.py:755
+#, fuzzy
+#| msgid "Event does not exist."
+msgid "Student does not exist."
+msgstr "约课时间不存在"
+
+#: course/views.py:768
+msgid "Adjust the grade student success."
+msgstr "调整学生年级成功。"
+
+#: course/views.py:2083
+msgid "Test is uploaded successfully"
+msgstr "试题上传成功"
+
+#: course/views.py:2798
+msgid "programme does not exist."
+msgstr "课程不存在"
+
+#: help/templates/help/base.html:3
+msgid "help"
+msgstr "帮助"
+
+#: scheduler/api_v2_views.py:51 scheduler/api_views.py:92
+#: scheduler/api_views.py:254
+msgid "Parameter missing."
+msgstr "缺少支付细节"
+
+#: scheduler/api_v2_views.py:56 tutor/api_v2_views.py:47
+msgid "Date format error"
+msgstr ""
+
+#: scheduler/api_v2_views.py:89 scheduler/api_v2_views.py:115
+#: scheduler/api_v2_views.py:236 scheduler/api_v2_views.py:243
+#: scheduler/api_v2_views.py:249
+msgid "subscription_start format error"
+msgstr "预约开始时间格式错误"
+
+#: scheduler/api_v2_views.py:94 scheduler/api_views.py:361
+msgid "Parameter missing1."
+msgstr "缺少支付细节"
+
+#: scheduler/api_v2_views.py:96 scheduler/api_views.py:364
+msgid "Parameter missing2."
+msgstr "缺少支付细节"
+
+#: scheduler/api_v2_views.py:99 scheduler/api_views.py:368
+msgid "start date and end date is mandatory input."
+msgstr "必须输入起始和结束日期"
+
+#: scheduler/api_v2_views.py:136 scheduler/api_views.py:406
+msgid "Event does not exist."
+msgstr "约课时间不存在"
+
+#: scheduler/api_v2_views.py:139 scheduler/api_views.py:410
+msgid "Subscription date range mismatches with event date range."
+msgstr "课程预约时间范围超出了约课时间的时间范围"
+
+#: scheduler/api_v2_views.py:145 scheduler/api_v2_views.py:150
+#: scheduler/api_views.py:417 scheduler/api_views.py:423
+#: scheduler/api_views.py:543 scheduler/api_views.py:548
+msgid "A time conflict exists."
+msgstr "约课时间存在冲突。"
+
+#: scheduler/api_v2_views.py:180 scheduler/api_v2_views.py:279
+msgid "cancel_remaining fomat error."
+msgstr "取消格式错误"
+
+#: scheduler/api_v2_views.py:185 scheduler/api_v2_views.py:284
+msgid "occurrence_start format error"
+msgstr ""
+
+#: scheduler/api_v2_views.py:190 scheduler/api_views.py:452
+#: scheduler/api_views.py:474 scheduler/views.py:301
+msgid "subscription id is null"
+msgstr "课程预约不存在"
+
+#: scheduler/api_v2_views.py:195 scheduler/api_v2_views.py:321
+#: scheduler/views.py:241 student/views.py:206
+msgid ""
+"If you need to cancel your appointment, please cancel it 2 hours before the "
+"class, otherwise you will not be able to cancel."
+msgstr "如需取消课程，请在课程开始2小时前取消，否则系统将无法取消"
+
+#: scheduler/api_v2_views.py:197
+#: scheduler/templates/scheduler/appointmentphone.html:648
+#: scheduler/views.py:323 scheduler/views.py:364
+msgid "The selected deleting date has expired, and it can not be deleted"
+msgstr "选择删除的日期已过期，不能删除"
+
+#: scheduler/api_v2_views.py:208 scheduler/api_views.py:484
+msgid ""
+"there is an error, this event subscription is not successfully cancelled."
+msgstr "如果有任何人已经预约了本约课时间，那么本约课时间不能被删除。"
+
+#: scheduler/api_v2_views.py:210 scheduler/api_views.py:465
+#: scheduler/api_views.py:487
+msgid "event subscription does not exist"
+msgstr "课程预约不存在"
+
+#: scheduler/api_v2_views.py:212 scheduler/api_views.py:489
+msgid "subscription with the date does not exist"
+msgstr "课程预约不存在"
+
+#: scheduler/api_v2_views.py:255
+msgid "User DoesNotExist"
+msgstr "用户不存在"
+
+#: scheduler/api_v2_views.py:263 scheduler/api_views.py:344
+msgid "it conflicts with existing event."
+msgstr "约课时间存在冲突。"
+
+#: scheduler/api_v2_views.py:296 scheduler/views.py:423
+msgid ""
+"there might be one or more associated subscriptions, and event was not "
+"successfully cancelled."
+msgstr "如果有任何人已经预约了本约课时间，那么本约课时间不能被删除。"
+
+#: scheduler/api_v2_views.py:317 scheduler/api_views.py:516
+#: scheduler/api_views.py:524 scheduler/views.py:236 student/views.py:201
+msgid "Appointment does not exist."
+msgstr "约课安排不存在"
+
+#: scheduler/api_v2_views.py:319 scheduler/views.py:238 student/views.py:203
+msgid "This class has already begun!Forbidden to cancel!"
+msgstr "这节课已经开始，禁止取消"
+
+#: scheduler/api_views.py:71 scheduler/api_views.py:234
+#: scheduler/api_views.py:274 scheduler/api_views.py:298
+#: scheduler/api_views.py:337 scheduler/api_views.py:438
+#: scheduler/api_views.py:706 tutor/api_views.py:142 tutor/api_views.py:276
+msgid "success."
+msgstr "评分成功"
+
+#: scheduler/api_views.py:231 tutor/api_views.py:272
+msgid "error."
+msgstr "错误"
+
+#: scheduler/api_views.py:388
+msgid "Subscription end date is not valid date."
+msgstr "预约结束日期必须是正确的日期格式"
+
+#: scheduler/api_views.py:459
+msgid ""
+"there is at least one appointment related to this event subscription, and it "
+"can not be deleted"
+msgstr "如果有任何人已经预约了本约课时间，那么本约课时间不能被删除。"
+
+#: scheduler/api_views.py:462
+msgid "delete is ok"
+msgstr "删除成功"
+
+#: scheduler/api_views.py:482
+msgid "the subscription is successfully cancelled"
+msgstr "评价提交成功"
+
+#: scheduler/api_views.py:496 scheduler/views.py:392
+msgid "event id is null"
+msgstr "可供约课时段不存在"
+
+#: scheduler/api_views.py:500 scheduler/views.py:396
+msgid "event does not exist"
+msgstr "约课时间不存在"
+
+#: scheduler/api_views.py:504 scheduler/views.py:402
+msgid "event has been subscribed, and it can not be deleted"
+msgstr "约课时间已经被预约，不能被删除。"
+
+#: scheduler/api_views.py:506 scheduler/views.py:400
+msgid "event is deleted successfully"
+msgstr "约课删除成功"
+
+#: scheduler/api_views.py:522 scheduler/views.py:233 student/views.py:198
+msgid "Appointment is cancelled successfully."
+msgstr "约课安排成功取消"
+
+#: scheduler/api_views.py:535 scheduler/views.py:253
+msgid "Change request does not exist."
+msgstr "约课变更请求不存在"
+
+#: scheduler/api_views.py:572 scheduler/views.py:280
+msgid "Change request has been confirmed successfully."
+msgstr "变更请求确认已经成功"
+
+#: scheduler/api_views.py:591 scheduler/views.py:283
+msgid "Change request has been rejected successfully."
+msgstr "变更请求被拒绝，请与对方再次沟通"
+
+#: scheduler/api_views.py:610 scheduler/views.py:415 scheduler/views.py:441
+msgid "event does not exist, pls check it again."
+msgstr "虚拟课堂不存在，请重新选择"
+
+#: scheduler/templates/scheduler/appointmentphone.html:34
+#: tutor/templates/tutor/all_tutors.html:106
+#: tutor/templates/tutor/embedded_info.html:53
+#: tutor/templates/tutor/tutors.html:223 tutor/templates/tutor/tutors.html:285
+#: tutor/templates/tutor/tutors.html:435
+msgid "Rating"
+msgstr "教师综合评分"
+
+#: scheduler/templates/scheduler/appointmentphone.html:56
+msgid "Last Week"
+msgstr "上周"
+
+#: scheduler/templates/scheduler/appointmentphone.html:59
+msgid "Next Week"
+msgstr "下周"
+
+#: scheduler/templates/scheduler/appointmentphone.html:71
+#: scheduler/templates/scheduler/calendar.html:165
+#: scheduler/templates/scheduler/event.html:214
+msgid "Class scheduled time"
+msgstr "预约时间"
+
+#: scheduler/templates/scheduler/appointmentphone.html:77
+msgid "Event date range"
+msgstr "约课日期范围"
+
+#: scheduler/templates/scheduler/appointmentphone.html:83
+#: scheduler/templates/scheduler/event.html:196
+msgid "Start of subscription"
+msgstr "预约起始日期"
+
+#: scheduler/templates/scheduler/appointmentphone.html:89
+#: scheduler/templates/scheduler/event.html:204
+msgid "End of subscription"
+msgstr "预约结束日期"
+
+#: scheduler/templates/scheduler/appointmentphone.html:98
+#: scheduler/templates/scheduler/event.html:228
+msgid "Make Multiple Regular Appointments"
+msgstr "多次定期约课"
+
+#: scheduler/templates/scheduler/appointmentphone.html:108
+#: scheduler/templates/scheduler/event.html:236
+msgid ""
+"You can only delete the recurring reservation, before you confirm any "
+"occurrence of this reservation."
+msgstr "你没有确认该课程预约的任何日程安排以前，你可以删除该课程预约。"
+
+#: scheduler/templates/scheduler/appointmentphone.html:112
+#: scheduler/templates/scheduler/event.html:261
+msgid "Make One-time Appointment"
+msgstr "只预约本节课"
+
+#: scheduler/templates/scheduler/appointmentphone.html:117
+#: scheduler/templates/scheduler/calendar.html:195
+#: scheduler/templates/scheduler/event.html:241
+msgid "Cancel this occurrence"
+msgstr "取消这次课程"
+
+#: scheduler/templates/scheduler/appointmentphone.html:118
+#: scheduler/templates/scheduler/calendar.html:197
+#: scheduler/templates/scheduler/event.html:243
+msgid "Cancel the remaining in the series"
+msgstr "取消将来所有课程"
+
+#: scheduler/templates/scheduler/appointmentphone.html:120
+#: scheduler/templates/scheduler/calendar.html:201
+#: scheduler/templates/scheduler/event.html:247
+#: tutor/templates/tutor/all_tutors.html:67
+msgid "Confirm"
+msgstr "确认"
+
+#: scheduler/templates/scheduler/appointmentphone.html:136
+#: templates/base.html:320
+msgid "Notification"
+msgstr "消息"
+
+#: scheduler/templates/scheduler/appointmentphone.html:140
+msgid "Cancel successful (The appointment within 2 hours cannot be cancelled)."
+msgstr "取消成功（2h之内的课程无法取消）"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:35
+#: tutor/templates/tutor/tutors.html:160
+msgid "Mon"
+msgstr "星期一"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:37
+#: tutor/templates/tutor/tutors.html:162
+msgid "Tue"
+msgstr "星期二"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:39
+#: tutor/templates/tutor/tutors.html:164
+msgid "Wed"
+msgstr "星期三"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:41
+#: tutor/templates/tutor/tutors.html:166
+msgid "Thu"
+msgstr "星期四"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:43
+#: tutor/templates/tutor/tutors.html:168
+msgid "Fri"
+msgstr "星期五"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:45
+#: tutor/templates/tutor/tutors.html:170
+msgid "Sat"
+msgstr "星期六"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:47
+#: tutor/templates/tutor/tutors.html:172
+msgid "Sun"
+msgstr "星期日"
+
+#: scheduler/templates/scheduler/appointmentphone.html:617
+#: scheduler/templates/scheduler/event.html:536
+msgid "you must fill a subscription Start Date."
+msgstr "您必须提供预约起始日期"
+
+#: scheduler/templates/scheduler/appointmentphone.html:619
+#: scheduler/templates/scheduler/event.html:539
+msgid "None quick appointment End Date is must fill"
+msgstr "您必须提供预约结束日期"
+
+#: scheduler/templates/scheduler/appointmentphone.html:621
+#: scheduler/templates/scheduler/event.html:548
+msgid "Subscription end must be later than the Subscription start date."
+msgstr "预约结束日期必须晚于可供约课时段的起始日期"
+
+#: scheduler/templates/scheduler/appointmentphone.html:623
+msgid "Please make an appointment one day earlier!"
+msgstr "请提前一天约课!"
+
+#: scheduler/templates/scheduler/calendar.html:110
+#: scheduler/templates/scheduler/event.html:148
+#: scheduler/templates/scheduler/occurrence.html:125
+#: scheduler/templates/scheduler/tutors_occurrence.html:121
+#: tutor/templates/tutor/tutors.html:143
+msgid "available"
+msgstr "可预约"
+
+#: scheduler/templates/scheduler/calendar.html:118
+#: scheduler/templates/scheduler/tutors_occurrence.html:130
+msgid "booked"
+msgstr "已预约"
+
+#: scheduler/templates/scheduler/calendar.html:126
+#: scheduler/templates/scheduler/calendar.html:135
+#: scheduler/templates/scheduler/event.html:158
+msgid "not available"
+msgstr "不可预约"
+
+#: scheduler/templates/scheduler/calendar.html:152
+msgid "Event Management"
+msgstr "约课管理"
+
+#: scheduler/templates/scheduler/calendar.html:170
+msgid "Event start"
+msgstr "起始日期"
+
+#: scheduler/templates/scheduler/calendar.html:175
+msgid "end recurring period"
+msgstr "截止日期"
+
+#: scheduler/templates/scheduler/calendar.html:368
+#: scheduler/templates/scheduler/calendar.html:408
+#: scheduler/templates/scheduler/event.html:471
+msgid " every "
+msgstr " 每 "
+
+#: scheduler/templates/scheduler/calendar.html:438
+msgid "you must fill a valid date for event end recurring period."
+msgstr "你必须选择正确的日期，作为约课的截止日期"
+
+#: scheduler/templates/scheduler/calendar.html:441
+msgid "Event start must be earlier than the Event end date."
+msgstr "可供约课时段起始日期必须早于可供约课时段的结束日期"
+
+#: scheduler/templates/scheduler/entry.html:43
+msgid "Future classes"
+msgstr "我的预约"
+
+#: scheduler/templates/scheduler/entry.html:51
+#: scheduler/templates/scheduler/entry.html:115
+#: student/templates/student/my_class.html:78
+#: student/templates/student/my_class.html:293
+#: userprofile/templates/userprofile/profile.html:1056
+msgid "Make Appointment"
+msgstr "进入约课"
+
+#: scheduler/templates/scheduler/entry.html:57
+#: scheduler/templates/scheduler/entry.html:122
+#: scheduler/templates/scheduler/entry_subscription.html:23
+#: scheduler/templates/scheduler/entry_tutor.html:86
+#: templates/man/virtualclass/convert_list.html:39
+#: templates/man/virtualclass/list.html:39
+#: virtualclass/templates/virtualclass/classroom_list.html:40
+#: virtualclass/templates/virtualclass/classroom_list.html:128
+msgid "Scheduled Time"
+msgstr "预约时间"
+
+#: scheduler/templates/scheduler/entry.html:60
+#: scheduler/templates/scheduler/entry.html:124
+#: scheduler/templates/scheduler/entry_subscription.html:25
+#: scheduler/templates/scheduler/entry_tutor.html:88
+#: templates/postman/base_folder.html:32
+msgid "Action"
+msgstr "操作"
+
+#: scheduler/templates/scheduler/entry.html:91
+#: scheduler/templates/scheduler/entry.html:97
+#: scheduler/templates/scheduler/entry.html:149
+#: scheduler/templates/scheduler/entry.html:155
+#: scheduler/templates/scheduler/entry_subscription.html:46
+#: student/templates/student/my_class.html:133
+#: student/templates/student/my_class.html:329
+#: student/templates/student/my_class.html:364
+#: templates/man/course/assessment_upload.html:227
+#: userprofile/templates/userprofile/edit_photo.html:36
+msgid "Cancel"
+msgstr "取消"
+
+#: scheduler/templates/scheduler/entry.html:112
+#: scheduler/templates/scheduler/entry_tutor.html:73
+#: student/templates/student/my_class.html:76
+#: student/templates/student/my_class.html:292
+#: student/templates/student/my_class.html:369
+#: userprofile/templates/userprofile/profile.html:348
+#: userprofile/templates/userprofile/profile.html:1010
+msgid "Appointment"
+msgstr "约课安排"
+
+#: scheduler/templates/scheduler/entry.html:187
+#: scheduler/templates/scheduler/entry_subscription.html:90
+#: student/templates/student/my_class.html:504
+msgid "Cancel Appointment"
+msgstr "取消预约"
+
+#: scheduler/templates/scheduler/entry.html:194
+#: scheduler/templates/scheduler/entry_subscription.html:98
+#: student/templates/student/my_class.html:510
+msgid ""
+"If you decide to cancel the appointment, you can't retrieve the appointment "
+"back. Are you sure you want to cancel it?"
+msgstr "如果你取消预约，就不能重新使用该预约记录。你确定要取消吗？"
+
+#: scheduler/templates/scheduler/entry.html:196
+#: scheduler/templates/scheduler/entry_subscription.html:99
+#: student/templates/student/my_class.html:512
+msgid "Yes, I am sure"
+msgstr "是的，我要取消"
+
+#: scheduler/templates/scheduler/entry_subscription.html:12
+#, fuzzy
+#| msgid "Start of subscription"
+msgid "Subscription"
+msgstr "预约起始日期"
+
+#: scheduler/templates/scheduler/entry_tutor.html:22
+msgid "Appointment - Change Request"
+msgstr "约课安排 - 变更请求"
+
+#: scheduler/templates/scheduler/entry_tutor.html:77
+msgid "Open My Calendar"
+msgstr "进入我的日程表"
+
+#: scheduler/templates/scheduler/entry_tutor.html:127
+msgid "Student Info"
+msgstr "学生信息"
+
+#: scheduler/templates/scheduler/event.html:153
+#: scheduler/templates/scheduler/occurrence.html:133
+msgid "booked by me"
+msgstr "我的预约"
+
+#: scheduler/templates/scheduler/event.html:255
+msgid ""
+"If you only want to make one-time appointment, then you do not need manually "
+"confirm before the reservation becomes effective."
+msgstr ""
+"如果你只是希望一次性预约本时段的课程，可以选择一键快捷预约；一键快捷预约后无"
+"需再次确认，约课安排即生效。"
+
+#: scheduler/templates/scheduler/event.html:302
+msgid "Today"
+msgstr "今天"
+
+#: scheduler/templates/scheduler/event.html:479
+msgid "From "
+msgstr "从 "
+
+#: scheduler/templates/scheduler/event.html:542
+msgid "Subscription start must be later than the Event start date."
+msgstr "预约起始日期必须晚于可供约课时段的起始日期"
+
+#: scheduler/templates/scheduler/event.html:544
+msgid "Subscription start must be earlier than the Event end date."
+msgstr "预约起始日期必须早于可供约课时段的结束日期"
+
+#: scheduler/templates/scheduler/event.html:546
+msgid "Subscription end must be later than the Event start date."
+msgstr "预约结束日期必须晚于可供约课时段的起始日期"
+
+#: scheduler/templates/scheduler/occurrence.html:141
+msgid "booked by others"
+msgstr "其他人的预约"
+
+#: scheduler/templates/scheduler/occurrence.html:149
+msgid "selected appointment"
+msgstr "已选预约"
+
+#: scheduler/templates/scheduler/occurrence.html:157
+msgid "timeslot in the past"
+msgstr "失效的时间"
+
+#: scheduler/templates/scheduler/occurrence.html:201
+#: scheduler/templates/scheduler/tutors_occurrence.html:183
+msgid "Current class start"
+msgstr "当前课程开始时间"
+
+#: scheduler/templates/scheduler/occurrence.html:209
+#: scheduler/templates/scheduler/occurrence.html:225
+#: scheduler/templates/scheduler/occurrence.html:273
+#: scheduler/templates/scheduler/tutors_occurrence.html:191
+#: scheduler/templates/scheduler/tutors_occurrence.html:207
+#: tutor/templates/tutor/info_more.html:96
+#: virtualclass/templates/virtualclass/embedded_student_list.html:22
+#: virtualclass/templates/virtualclass/student_list_more.html:47
+msgid "Time"
+msgstr "时间"
+
+#: scheduler/templates/scheduler/occurrence.html:217
+#: scheduler/templates/scheduler/tutors_occurrence.html:199
+msgid "New class start"
+msgstr "建议开始时间"
+
+#: scheduler/templates/scheduler/tutors_occurrence.html:140
+msgid "Current appointment"
+msgstr "当前约课安排"
+
+#: scheduler/views.py:201
+msgid "subscription does not exist."
+msgstr "课程预约不存在"
+
+#: scheduler/views.py:209
+msgid "appointment already exists."
+msgstr "约课安排已经存在"
+
+#: scheduler/views.py:225 scheduler/views.py:307
+msgid "Only the monitor can cancel class appointments"
+msgstr "只有班长才能取消约课"
+
+#: scheduler/views.py:317 scheduler/views.py:360
+msgid ""
+"If you need to cancel your appointment it 2 hours before the class, "
+"otherwise you will not be able to cancel."
+msgstr "如需取消课程，请在课程开始2小时前取消，否则系统将无法取消"
+
+#: scheduler/views.py:331
+msgid "the subscription is cancelled successfully."
+msgstr "约课安排成功取消"
+
+#: scheduler/views.py:334
+msgid "the subscription is not cancelled successfully, please try later."
+msgstr "这次预约没有取消成功，请稍后再尝试。"
+
+#: scheduler/views.py:354
+#, fuzzy
+#| msgid "event id is null"
+msgid "appointment id is null"
+msgstr "可供约课时段不存在"
+
+#: scheduler/views.py:375
+#, fuzzy
+#| msgid "Appointment is cancelled successfully."
+msgid "the appointment is cancelled successfully."
+msgstr "约课安排成功取消"
+
+#: scheduler/views.py:378
+#, fuzzy
+#| msgid "the subscription is not cancelled successfully, please try later."
+msgid "the appointment is not cancelled successfully, please try later."
+msgstr "这次预约没有取消成功，请稍后再尝试。"
+
+#: scheduler/views.py:420
+msgid "event is successfully cancelled."
+msgstr "约课成功取消"
+
+#: scheduler/views.py:449
+msgid "virtual class does not exist, pls check it again."
+msgstr "虚拟课堂不存在，请重新选择"
+
+#: scheduler/views.py:456
+msgid "You can not raise new change request, while there is pending request."
+msgstr "因为目前的变更请求尚未确认／取消，你不能发起新的变更请求"
+
+#: scheduler/views.py:482
+msgid "Change request has been raised successfully."
+msgstr "变更请求成功提交"
+
+#: scheduler/views.py:493
+msgid ""
+"appointment does not exist or the class has been delivered, pls check it "
+"again."
+msgstr "约课安排不存在，或者已经授课完成，请再次检查"
+
+#: scheduler/views.py:624
+msgid "event is successfully created."
+msgstr "课程创建成功."
+
+#: scheduler/views.py:627
+msgid "event is not successfully created."
+msgstr "约课创建失败"
+
+#: scheduler/views.py:664
+msgid "start date and end date is mandatory input"
+msgstr "必须输入起始和结束日期"
+
+#: scheduler/views.py:680 scheduler/views.py:684
+msgid "Subscription end date is not valid date"
+msgstr "预约结束日期必须是正确的日期格式"
+
+#: scheduler/views.py:687
+msgid "Subscription start date must be later than today"
+msgstr "预约起始日期必须晚于可供约课时段的起始日期"
+
+#: scheduler/views.py:705
+msgid "Event does not exist"
+msgstr "约课时间不存在"
+
+#: scheduler/views.py:728
+msgid "Subscription date range mismatches with event date range"
+msgstr "课程预约时间范围超出了约课时间的时间范围"
+
+#: scheduler/views.py:762
+msgid "Schedule appointment successfully!"
+msgstr "预约课程成功！"
+
+#: student/templates/student/my_class.html:5
+#: student/templates/student/my_class.html:31
+#: student/templates/student/my_class.html:270
+#: student/templates/student/small_class.html:472
+#: student/templates/student/small_class.html:500
+msgid "My Class"
+msgstr "我的班级"
+
+#: student/templates/student/my_class.html:17
+#: student/templates/student/my_class.html:263
+#: student/templates/student/small_class.html:18
+#: student/templates/student/small_class.html:136
+msgid "LingoAce Small Classes"
+msgstr "LingoAce 中文小班课"
+
+#: student/templates/student/my_class.html:18
+#: student/templates/student/my_class.html:264
+#: student/templates/student/small_class.html:19
+#: student/templates/student/small_class.html:137
+msgid "Learn Chinese with classmates from all over the world"
+msgstr "- 与来自全世界的小朋友做同学"
+
+#: student/templates/student/my_class.html:21
+#: student/templates/student/small_class.html:22
+msgid "Better learning effect"
+msgstr "同学互动学习效果更好"
+
+#: student/templates/student/my_class.html:22
+#: student/templates/student/small_class.html:23
+msgid "More interesting"
+msgstr "课堂氛围更活跃"
+
+#: student/templates/student/my_class.html:23
+#: student/templates/student/small_class.html:24
+msgid "Lower unit price"
+msgstr "价格更实惠"
+
+#: student/templates/student/my_class.html:35
+#: student/templates/student/my_class.html:274
+#: student/templates/student/small_class.html:56
+#: student/templates/student/small_class.html:166
+#: student/templates/student/small_class.html:212
+#: student/templates/student/small_class.html:258
+#: student/templates/student/small_class.html:304
+#: student/templates/student/small_class.html:376
+#: student/templates/student/small_class.html:408
+msgid "Course："
+msgstr "课程："
+
+#: student/templates/student/my_class.html:37
+#: student/templates/student/my_class.html:277
+#: student/templates/student/small_class.html:58
+#: student/templates/student/small_class.html:169
+#: student/templates/student/small_class.html:215
+#: student/templates/student/small_class.html:261
+#: student/templates/student/small_class.html:307
+#: student/templates/student/small_class.html:378
+#: student/templates/student/small_class.html:408
+msgid "Advanced Chinese"
+msgstr "高级中文"
+
+#: student/templates/student/my_class.html:39
+#: student/templates/student/small_class.html:60
+#: student/templates/student/small_class.html:380
+msgid "International Chinese"
+msgstr "国际中文"
+
+#: student/templates/student/my_class.html:51
+#: student/templates/student/small_class.html:65
+#: student/templates/student/small_class.html:180
+#: student/templates/student/small_class.html:226
+#: student/templates/student/small_class.html:272
+#: student/templates/student/small_class.html:318
+#: student/templates/student/small_class.html:384
+#: student/templates/student/small_class.html:410
+msgid "Planned class time："
+msgstr "计划上课时间段："
+
+#: student/templates/student/my_class.html:62
+msgid "Jioned："
+msgstr "同班同学："
+
+#: student/templates/student/my_class.html:110
+#: student/templates/student/my_class.html:184
+#: student/templates/student/my_class.html:311
+#: student/templates/student/my_class.html:315
+#: student/templates/student/my_class.html:346
+#: student/templates/student/my_class.html:350
+#: student/templates/student/my_class.html:402
+#: student/templates/student/my_class.html:428
+#: student/templates/student/my_class.html:549
+#: userprofile/templates/userprofile/profile.html:387
+#: userprofile/templates/userprofile/profile.html:485
+#: userprofile/templates/userprofile/profile.html:1889
+#: userprofile/templates/userprofile/tutor_profile.html:70
+msgid "courseware"
+msgstr "课件"
+
+#: student/templates/student/my_class.html:140
+#: student/templates/student/my_class.html:614
+#: student/templates/student/my_class.html:629
+msgid "More appointments"
+msgstr "更多约课安排"
+
+#: student/templates/student/my_class.html:147
+#: student/templates/student/my_class.html:375
+#: userprofile/templates/userprofile/profile.html:407
+msgid "You currently do not have any course appointments"
+msgstr "您目前没有任何课程预约"
+
+#: student/templates/student/my_class.html:196
+#: userprofile/templates/userprofile/profile.html:497
+#: userprofile/templates/userprofile/profile.html:1125
+msgid "extended courseware"
+msgstr "扩展课件"
+
+#: student/templates/student/my_class.html:204
+#: templates/man/virtualclass/teacher_rating.html:110
+#: userprofile/templates/userprofile/profile.html:504
+#: userprofile/templates/userprofile/profile.html:1132
+#: virtualclass/templates/virtualclass/comment_show.html:123
+#: virtualclass/templates/virtualclass/student_list_more.html:117
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:106
+msgid "Teacher comments"
+msgstr "老师评语"
+
+#: student/templates/student/my_class.html:209
+#: student/templates/student/my_class.html:406
+#: student/templates/student/my_class.html:432
+#: userprofile/templates/userprofile/history_class.html:169
+#: userprofile/templates/userprofile/profile.html:511
+#: userprofile/templates/userprofile/profile.html:1136
+#: userprofile/templates/userprofile/tutor_profile.html:338
+#: virtualclass/templates/virtualclass/student_list_more.html:104
+msgid "homework"
+msgstr "家庭作业"
+
+#: student/templates/student/my_class.html:214
+#: student/templates/student/my_class.html:408
+#: student/templates/student/my_class.html:434
+#: userprofile/templates/userprofile/history_class.html:73
+#: userprofile/templates/userprofile/profile.html:518
+#: userprofile/templates/userprofile/profile.html:1145
+#: userprofile/templates/userprofile/tutor_profile.html:221
+#: virtualclass/templates/virtualclass/student_list_more.html:110
+msgid "Record"
+msgstr "课堂回放"
+
+#: student/templates/student/my_class.html:223
+msgid "open"
+msgstr "展开"
+
+#: student/templates/student/my_class.html:223
+#: student/templates/student/my_class.html:369
+#: student/templates/student/my_class.html:440
+#: userprofile/templates/userprofile/profile.html:429
+#: userprofile/templates/userprofile/profile.html:443
+#: userprofile/templates/userprofile/profile.html:1044
+msgid "more"
+msgstr "更多"
+
+#: student/templates/student/my_class.html:230
+#: student/templates/student/my_class.html:445
+#: userprofile/templates/userprofile/profile.html:528
+msgid "You don't currently have any course records"
+msgstr "您目前没有任何课程记录"
+
+#: student/templates/student/my_class.html:241
+msgid "When other students join in your Small Class"
+msgstr "当有同学加入你的班级后"
+
+#: student/templates/student/my_class.html:242
+msgid "You can check the class schedule here"
+msgstr "你就可以在这里查看班级课表啦"
+
+#: student/templates/student/my_class.html:251
+#: student/templates/student/my_class.html:453
+msgid "You haven't joined any Small Classes yet."
+msgstr "你还没有加入任何班级"
+
+#: student/templates/student/my_class.html:252
+#: student/templates/student/my_class.html:454
+msgid "Go to see which classes are suitable for you."
+msgstr "看看现在有哪些班级可以加入吧"
+
+#: student/templates/student/my_class.html:253
+#: student/templates/student/my_class.html:455
+msgid "Find Small Classes"
+msgstr "找班级"
+
+#: student/templates/student/my_class.html:281
+#: student/templates/student/small_class.html:67
+#: student/templates/student/small_class.html:187
+#: student/templates/student/small_class.html:233
+#: student/templates/student/small_class.html:279
+#: student/templates/student/small_class.html:325
+msgid "Classmates："
+msgstr "已加入："
+
+#: student/templates/student/my_class.html:466
+#: student/templates/student/small_class.html:485
+msgid "Download APP"
+msgstr "下载 APP"
+
+#: student/templates/student/my_class.html:471
+#: student/templates/student/small_class.html:490
+msgid "Scan the QR Code to download Connect APP"
+msgstr "扫描二维码下载 <br/> Connect APP"
+
+#: student/templates/student/my_class.html:473
+#: student/templates/student/small_class.html:492
+msgid "Chat with your classmates and teachers"
+msgstr "随时随地 <br/> 与老师、家长沟通"
+
+#: student/templates/student/my_class.html:483
+#: userprofile/templates/userprofile/history_class.html:152
+#: userprofile/templates/userprofile/profile.html:570
+#: userprofile/templates/userprofile/tutor_profile.html:321
+#: virtualclass/templates/virtualclass/student_list_more.html:175
+msgid "Courseware"
+msgstr "课件"
+
+#: student/templates/student/my_class.html:485
+#: userprofile/templates/userprofile/profile.html:571
+#: virtualclass/templates/virtualclass/student_list_more.html:175
+msgid "Print"
+msgstr "打印"
+
+#: student/templates/student/my_class.html:611
+msgid "Less appointments"
+msgstr "收起更多约课安排"
+
+#: student/templates/student/small_class.html:5
+#: tutor/templates/tutor/tutors.html:145
+msgid "Small Classes"
+msgstr "小班课"
+
+#: student/templates/student/small_class.html:30
+#: student/templates/student/small_class.html:144
+msgid "Tips"
+msgstr "提示"
+
+#: student/templates/student/small_class.html:32
+#: student/templates/student/small_class.html:437
+msgid "You can launch or join a Small Class after the Trial Class."
+msgstr "参加完试听课才可以发起拼班或加入班级。"
+
+#: student/templates/student/small_class.html:33
+msgid ""
+"The planned class time is for reference only. The official class time shall "
+"be based on the actual appointment."
+msgstr "计划上课时间段仅供参考，正式上课时间以约课记录为准。"
+
+#: student/templates/student/small_class.html:34
+msgid ""
+"Chat with your classmates on Connect APP to determine the suitable class "
+"time, then the sponsor can make an appointment for you all."
+msgstr ""
+"同班同学可以在 connect 协商合适的上课时间，由拼班发起人作为代表进行约课。"
+
+#: student/templates/student/small_class.html:39
+#: student/templates/student/small_class.html:41
+#: student/templates/student/small_class.html:146
+#: student/templates/student/small_class.html:370
+msgid "Launch"
+msgstr "发起拼班"
+
+#: student/templates/student/small_class.html:78
+#: student/templates/student/small_class.html:84
+#: student/templates/student/small_class.html:152
+#: student/templates/student/small_class.html:198
+#: student/templates/student/small_class.html:244
+#: student/templates/student/small_class.html:290
+#: student/templates/student/small_class.html:405
+msgid "Join in"
+msgstr "加入班级"
+
+#: student/templates/student/small_class.html:82
+msgid "Joined"
+msgstr "已加入"
+
+msgid "Transfer to Others"
+msgstr "转让班级"
+
+msgid "Exit from Class"
+msgstr "退出班级"
+
+msgid "Once you exit from the class, you can't take a small class with "
+msgstr "一旦退出班级，你就不能和本班"
+
+msgid "your classmates. Sure to exit?"
+msgstr "同学一起上课啦，确定要退出班级吗？"
+
+msgid "Please choose which of the following students you wish to transfer the class to:"
+msgstr "请选择你希望把班级转让给以下哪位同学："
+
+#: student/templates/student/small_class.html:124
+#: student/templates/student/small_class.html:358
+msgid ""
+"There is no suitable Small Class for you, you can actively launch a Small "
+"Class and wait other students to join in."
+msgstr ""
+"目前还没有与你进度接近的班级，你可以主动发起拼班，等待或邀请其他学员加入，一"
+"起学习中文"
+
+#: student/templates/student/small_class.html:157
+#: student/templates/student/small_class.html:203
+#: student/templates/student/small_class.html:249
+#: student/templates/student/small_class.html:295
+msgid "sponsorname"
+msgstr "发起人用户名"
+
+#: student/templates/student/small_class.html:173
+#: student/templates/student/small_class.html:219
+#: student/templates/student/small_class.html:265
+#: student/templates/student/small_class.html:311
+msgid "Sponsor's Time Zone："
+msgstr "拼班发起人时区："
+
+#: student/templates/student/small_class.html:384
+msgid ""
+"Write down your planned class time so that other students can decide whether "
+"to join your class or not. The official class time shall be based on the "
+"actual appointment."
+msgstr ""
+"写下你计划上课的时间，以便其他学生判断是否加入你的班级。正式上课时间以约课记"
+"录为准。"
+
+#: student/templates/student/small_class.html:386
+msgid ""
+"e.g. Timezone：Australia/Sydney. around 21:00 every Wednesday, around 16:00 "
+"every Saturday."
+msgstr "示例：时区：澳大利亚 悉尼。每周三晚上 21:00左右，每周六下午16:00左右。"
+
+#: student/templates/student/small_class.html:411
+msgid ""
+"You can learn Chinese with your classmates after joining the Small Class. "
+"The official class time shall be based on the actual appointment.You can "
+"also chat with them on Connect APP, scan the QR code to download."
+msgstr ""
+"加入班级后，你就可以和同学们一起上课啦，正式上课时间以约课记录为准。还可以和"
+"同学们在 Connect APP 聊天，快扫描二维码下载体验吧。"
+
+#: student/templates/student/small_class.html:455
+msgid "You have no Small Class point now."
+msgstr "你现在没有小班课课时"
+
+#: student/templates/student/small_class.html:456
+msgid "You can launch or join a Small Class after top up."
+msgstr "充值后才可以发起拼班或加入班级哦"
+
+#: student/templates/student/small_class.html:478
+msgid "Click on the icon to enter My Class"
+msgstr "点击图标 <br/> 进入我的班级"
+
+#: student/templates/student/topup.html:76
+#, fuzzy
+#| msgid " months from the Top Up date"
+msgid "Validity period: 3 months from the Top Up date"
+msgstr "个月自充值之日起"
+
+#: student/templates/student/topup.html:87
+#, fuzzy
+#| msgid " months from the Top Up date"
+msgid "Validity period: 6 months from the Top Up date"
+msgstr "个月自充值之日起"
+
+#: student/templates/student/topup.html:98
+#, fuzzy
+#| msgid " months from the Top Up date"
+msgid "Validity period: 12 months from the Top Up date"
+msgstr "个月自充值之日起"
+
+#: templates/account/base.html:8 templates/cmsbase.html:231
+#: userprofile/templates/userprofile/profile.html:317
+#: userprofile/templates/userprofile/profile.html:965
+#: userprofile/templates/userprofile/tutor_profile.html:280
+msgid "My Account"
+msgstr "我的帐户"
+
+#: templates/account/base.html:12 templates/account/email.html:28
+#: templates/account/email.html:133
+msgid "E-mail Addresses"
+msgstr "电子邮箱地址"
+
+#: templates/account/base.html:15 templates/account/password_change.html:54
+#: templates/account/password_change.html:84
+#: userprofile/templates/userprofile/base.html:65
+#: userprofile/templates/userprofile/base.html:126
+msgid "Change Password"
+msgstr "修改密码"
+
+#: templates/account/base.html:20
+msgid "Connected Accounts"
+msgstr "已关联帐号"
+
+#: templates/account/email.html:30 templates/account/email.html:135
+msgid "The following e-mail addresses are associated with your account:"
+msgstr "下面的邮件地址已经与你的帐户关联"
+
+#: templates/account/email.html:48 templates/account/email.html:152
+msgid "Verified"
+msgstr "已验证"
+
+#: templates/account/email.html:51 templates/account/email.html:154
+msgid "Unverified"
+msgstr "未验证"
+
+#: templates/account/email.html:55 templates/account/email.html:157
+#: webapp/base.py:488
+msgid "Primary"
+msgstr "主要邮件地址"
+
+#: templates/account/email.html:62 templates/account/email.html:163
+msgid "Make Primary"
+msgstr "设成主要邮件地址"
+
+#: templates/account/email.html:65 templates/account/email.html:165
+msgid "Re-send Verification"
+msgstr "再次发送验证码"
+
+#: templates/account/email.html:68 templates/account/email.html:167
+msgid "Remove"
+msgstr "删除"
+
+#: templates/account/email.html:75 templates/account/email.html:174
+msgid "Warning:"
+msgstr "警告："
+
+#: templates/account/email.html:75 templates/account/email.html:174
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"你目前没有任何绑定的邮件地址。请添加一个邮件地址来接收通知、找回密码等等。"
+
+#: templates/account/email.html:78 templates/account/email.html:177
+msgid "Add E-mail Address"
+msgstr "添加电子邮箱地址"
+
+#: templates/account/email.html:85 templates/account/email.html:183
+msgid "Add E-mail"
+msgstr "添加电子邮箱"
+
+#: templates/account/login.html:100
+msgid "Don't have an account?"
+msgstr "还没有帐号？"
+
+#: templates/account/login.html:118 templates/base.html:268
+#: templates/cmsbase.html:326
+msgid "username or email"
+msgstr "用户名或电子邮件"
+
+#: templates/account/login.html:134 templates/base.html:280
+#: templates/cmsbase.html:338
+msgid "Remember Me"
+msgstr "记住我"
+
+#: templates/account/login.html:138 templates/base.html:284
+#: templates/cmsbase.html:341
+msgid "Forget Password？"
+msgstr "忘记密码?"
+
+#: templates/account/login.html:144 templates/base.html:292
+#: templates/cmsbase.html:349
+msgid "login"
+msgstr "登录"
+
+#: templates/account/login.html:156 templates/account/signup.html:170
+msgid "Sign in with Google"
+msgstr ""
+
+#: templates/account/login.html:169 templates/account/signup.html:183
+#, fuzzy
+#| msgid "Continue to top up"
+msgid "Continue with Facebook"
+msgstr "继续完成充值"
+
+#: templates/account/logout.html:5 templates/account/logout.html:17
+#: templates/account/logout.html:34 templates/menu_member.html:163
+msgid "Sign Out"
+msgstr "退出"
+
+#: templates/account/logout.html:21
+msgid "Are you sure you want to sign out ?"
+msgstr "你确定要退出登录吗？"
+
+#: templates/account/logout.html:31
+msgid "Go Back"
+msgstr "返回"
+
+#: templates/account/password_change.html:7
+msgid "change password"
+msgstr "修改密码"
+
+#: templates/account/password_change.html:29
+#, fuzzy
+#| msgid "Reset Password"
+msgid "Set Password"
+msgstr "重置密码"
+
+#: templates/account/password_change.html:33
+msgid "(Please verify the current password first)"
+msgstr "（请先验证当前密码）"
+
+#: templates/account/password_change.html:40
+#: templates/account/password_change.html:47
+msgid "The minimum length is 8 characters"
+msgstr "最小长度为8个字符"
+
+#: templates/account/password_reset.html:17
+msgid "reset password"
+msgstr "重置密码"
+
+#: templates/account/password_reset.html:39
+#: templates/account/password_reset_done.html:6
+#: templates/account/password_reset_done.html:20
+msgid "Password Reset"
+msgstr "密码重置"
+
+#: templates/account/password_reset.html:44
+msgid ""
+"Forget your password? Don't worry, please enter your bound email address and "
+"we will send you an email to help you reset your password."
+msgstr ""
+"忘记密码？不要着急，请输入绑定的电子邮箱，我们会发送一封邮件来帮助你重置密"
+"码。"
+
+#: templates/account/password_reset.html:49
+msgid "Reset Password"
+msgstr "重置密码"
+
+#: templates/account/password_reset.html:52
+msgid ""
+"If you have any questions about resetting your password, please contact us "
+"in time. Contact number: +65 8618 3670."
+msgstr ""
+"如果在重置密码的过程中有任何问题，请联系我们。联系电话：+65 8618 3670。"
+
+#: templates/account/password_reset_done.html:26
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: templates/account/signup.html:7 templates/cmsbase.html:237
+msgid "Signup"
+msgstr "注册"
+
+#: templates/account/signup.html:157 templates/cmsbase.html:459
+msgid "Create Account ->"
+msgstr "创建帐号 ->"
+
+#: templates/base.html:47
+msgid "Welcome to LingoAce"
+msgstr "欢迎访问LingoAce"
+
+#: templates/base.html:230 templates/cmsbase.html:288
+msgid "Welcome back!"
+msgstr "欢迎回来"
+
+#: templates/base.html:258 templates/cmsbase.html:316
+msgid "or, login here:"
+msgstr "或者，在这里登录"
+
+#: templates/base.html:451
+msgid "Company"
+msgstr "公司"
+
+#: templates/base.html:456
+msgid "Home"
+msgstr "主页"
+
+#: templates/base.html:476 templates/cmsbase.html:507
+msgid "About Us"
+msgstr "关于我们"
+
+#: templates/base.html:483 templates/cmsbase.html:523
+msgid "Support"
+msgstr "技术支持"
+
+#: templates/base.html:488 templates/base.html:516 templates/cmsbase.html:525
+msgid "Contact Us"
+msgstr "联系我们"
+
+#: templates/base.html:493 templates/index.html:128
+msgid "How it works"
+msgstr "如何使用"
+
+#: templates/base.html:498
+msgid "24/7 Available"
+msgstr "24/7 在线"
+
+#: templates/base.html:511 templates/menu_member.html:115
+msgid "Help"
+msgstr "帮助"
+
+#: templates/base.html:521 templates/cmsbase.html:526
+msgid "Terms & Conditions"
+msgstr "条款"
+
+#: templates/base.html:526 templates/cmsbase.html:527
+msgid "Privacy Policy"
+msgstr "隐私政策"
+
+#: templates/base.html:535
+msgid "Latest News"
+msgstr "最新消息"
+
+#: templates/cmsbase.html:214 templates/cmsbase.html:512
+#: templates/menu_anonymous.html:21
+msgid "How We Teach"
+msgstr "教学模式"
+
+#: templates/cmsbase.html:218 templates/cmsbase.html:517
+#: templates/menu_anonymous.html:33
+msgid "Curriculum"
+msgstr "课程体系"
+
+#: templates/cmsbase.html:222 templates/cmsbase.html:518
+#: templates/menu_anonymous.html:28
+msgid "Tutors"
+msgstr "教师"
+
+#: templates/cmsbase.html:226 templates/cmsbase.html:519
+#: templates/menu_anonymous.html:39
+msgid "Pricing"
+msgstr "价格"
+
+#: templates/cmsbase.html:241
+msgid "Login"
+msgstr "登录"
+
+#: templates/cmsbase.html:248 templates/menu_anonymous.html:62
+#: templates/menu_member.html:175
+msgid "Site Language"
+msgstr "网站语言"
+
+#: templates/cmsbase.html:393
+msgid "Sign up with PPChinese!"
+msgstr "注册平台帐号"
+
+#: templates/cmsbase.html:419
+msgid "or, create an account with us:"
+msgstr "或者，创建一个平台账号"
+
+#: templates/cmsbase.html:497
+msgid "Your Journey Starts Today."
+msgstr "你的旅程从这里开始"
+
+#: templates/cmsbase.html:501
+msgid "Find out which path you should take"
+msgstr "了解你应该选择哪个课程"
+
+#: templates/cmsbase.html:510
+msgid "Our Story"
+msgstr "我们的故事"
+
+#: templates/cmsbase.html:520
+msgid "FREE Assessment"
+msgstr "免费水平测试"
+
+#: templates/cmsbase.html:530
+msgid "Download our app"
+msgstr "下载应用"
+
+#: templates/cmsbase.html:540
+msgid "2018 PPLingo, Communication Inspires Future"
+msgstr "2018 PPLingo, 沟通开创未来"
+
+#: templates/index.html:6
+msgid "Homepage of PPLingo"
+msgstr "主页－PPCHINESE"
+
+#: templates/index.html:36 templates/index.html:51 templates/index.html:70
+#: templates/index.html:319
+msgid "Get a free class trial"
+msgstr "获取免费课程"
+
+#: templates/index.html:84
+msgid "Why choose PPChinese"
+msgstr "为什么选择PPChinese"
+
+#: templates/index.html:92
+msgid "Personalized support for your child"
+msgstr "一对一的中文辅导"
+
+#: templates/index.html:93
+msgid ""
+"PPLingo certified teachers will provide one-on-one Chinese tuition service, "
+"with personalized learning experience. A smart adaptive assessment will be "
+"conducted, to recommend appropriate level to you."
+msgstr ""
+"PPChinese精选资质优良的中文教师，为您提供一对一的中文辅导，以及个性化定制的中"
+"文教程。，系统根据智能中文水平测试结果向您推荐相应难度的中文教程。"
+
+#: templates/index.html:104
+msgid "Only certified, native language teachers"
+msgstr "权威的教师资格认证"
+
+#: templates/index.html:105
+msgid ""
+"All PPLingo certified tutors are public accredited teachers from public and "
+"private institutions in China. Those tutors have rich teaching experience, "
+"with native tongue."
+msgstr ""
+"目前在PPChinese注册的中文教师都是中国和新加坡已经取得教师资格认证的正式教员，"
+"教学经验丰富，口音纯正。"
+
+#: templates/index.html:115
+msgid "Proven curriculum, developed by experts"
+msgstr "系统的中文学习教程"
+
+#: templates/index.html:116
+msgid ""
+"PPLingo focuses on Chinese learning for K-12 students, from 6 to 18 years "
+"old. The curriculum adopts the same framework as public school in China. You "
+"may learn more culture in China together with the language."
+msgstr ""
+"PPChinese主攻K-12中文教育，为6到18岁孩子提供全套的中文学习教程。中国版教程的"
+"宗旨是帮助您深入了解中国文化，综合参考了人教版、北师大版、苏教版的中文教材，"
+"其中既有中国传统的诗词歌赋，也有当代作家的名篇选读，全面提升您的中文听说读写"
+"能力。"
+
+#: templates/index.html:167
+msgid "What people think..."
+msgstr "家长怎么说..."
+
+#: templates/index.html:177
+msgid ""
+"Jeremy told us that Yumeng Laoshi is very cute, and he would continue to "
+"learn from her. To us, it is the most important thing to keep him being "
+"interested in Chinese, and he will be there eventually. "
+msgstr ""
+"Jeremy说，老师很可爱，他愿意跟雨蒙老师继续上课。对于我们家长而言，孩子有兴趣"
+"才能坚持学习中文，这是最重要的事情。"
+
+#: templates/index.html:183
+msgid "Jeremy's Dad"
+msgstr "Jeremy爸爸"
+
+#: templates/index.html:194
+msgid ""
+"Jack hasn't been through a systematic learning as his friends in China, even "
+"though he is quite good at reading and speaking. Mr. Zou identifies the key "
+"areas to be improved, through 1-on-1 session. We can clearly see the "
+"improvement within 2 months."
+msgstr ""
+"Jack的中文基础虽然还算不错，但是毕竟没有经过国内学校比较系统的语文学习，所以"
+"基础打得并不牢；邹老师的一对一课程，能够根据Jack的短板有针对性的强化，经过短"
+"短两个月，我们就能看到Jack有非常显著的进步。"
+
+#: templates/index.html:201
+msgid "Jack's Mom"
+msgstr "Jack妈妈"
+
+#: templates/index.html:217
+msgid ""
+"We save the effort of commuting between tuition center and home, after we "
+"choose PPChinese. Emily can even attend the class with iPad, when we are not "
+"at home. Since it is so convenient, we can take more classes, and hope Emily "
+"can catch up with her friends in China."
+msgstr ""
+"上了PPChinese以后，我们节省了往返培训中心的时间；有时候我们不在家，Emily就可"
+"以用iPad上课，的确比较方便。这样的话，每周可以多上几次，进步更明显，也缩小与"
+"国内小伙伴的差距。"
+
+#: templates/index.html:224
+msgid "Emily's Dad"
+msgstr "Emily爸爸"
+
+#: templates/index.html:235
+msgid ""
+"Joanna spends much less time on Chinese learning, than her friends in China. "
+"The learning unit structure lets her focus on specific topic and area within "
+"one month, and it is a very effective approach, which is good for Joanna and "
+"students outside of China. Therefore, we can see her tangible improvement as "
+"well."
+msgstr ""
+"Joanna花在中文上的学习时间远远少于国内的小伙伴，也缺少中文的阅读、对话环境。"
+"PPChinese的学习单元帮助她在一个月的时间内重点学习一个专题，这种模式效率比较"
+"高，适合Joanna的情况，也让我们能够清楚的看到她的进步。"
+
+#: templates/index.html:241
+msgid "Joanna's Mom"
+msgstr "Joanna妈妈"
+
+#: templates/index.html:269
+msgid "Our Service Commitment"
+msgstr "我们的服务承诺"
+
+#: templates/index.html:279
+msgid "Easy-to-use, live video platform"
+msgstr "面对面的视频交流"
+
+#: templates/index.html:280
+msgid ""
+"PPLingo adopts rich media communication technologies. You can have face to "
+"face communications anywhere, without installing any client application. "
+"Courseware and tutor’s talk will be presented at same time, to deliver the "
+"best quality of class delivery. You can preview and review the courseware, "
+"as well as interact with tutor during the class. PPLingo’s online course can "
+"save your time commuting to tuition centre, and make sure you have same and "
+"even better progress as tuition centre."
+msgstr ""
+"PPlingo采用先进的视频交流技术，您无须安装客户端就能在网络课堂上与教师面对面沟"
+"通，从而达到语言学习的最佳成效。教师的讲课与讲义同步呈现，您既可以在课前预习"
+"课程，课上与教师积极互动，还可以在课后复习课程、完成家庭作业，并在下次课堂上"
+"交给教师检查。PPlingo的网络技术不仅节约了您上补习班的时间和精力，同时确保您能"
+"收获与线下教育同等的学习成效。"
+
+#: templates/index.html:294
+msgid "Keep track of your child progress"
+msgstr "直观记录学习成效"
+
+#: templates/index.html:295
+msgid ""
+"PPlingo keeps the learning record of each lesson, with evaluation from "
+"tutor. And periodic test will be held, to evaluate the progress of learning. "
+"All the records will clearly demonstrate the progress."
+msgstr ""
+"PPlingo记录了您在这里学习的每一节课程，以及每节课后教师对于您的知识掌握程度、"
+"进步程度、学习态度的评价。系统将在每个年级的课程过半之时进行一次期中考试，整"
+"个年级的课程上完之后进行一次期末考试。系统综合每节课程的教师评价以及期中、期"
+"末考试的结果，生成的曲线图将会清晰展示您的学习进程以及成效。"
+
+#: templates/index.html:309
+msgid "No commitment, just pay-as-you-go"
+msgstr "灵活支付便捷退款"
+
+#: templates/index.html:310
+msgid ""
+"PPLingo provide easy and hassle-free payment, and we accept most of the "
+"debit card and credit card globally. You can choose pay as lesson, or "
+"prepaid with discount. You can get refund anytime, if you choose prepaid "
+"mode."
+msgstr ""
+"PPlingo倡导最便捷、无负担的支付方式，接受国际上所有主流的信用卡和储蓄卡（通过"
+"papal系统）。您无需垫付任何押金，既可以选择按次付钱，也可以选择一次性充值（享"
+"有优惠）然后按次扣款。如果您充值之后想要退款，PPlingo扣除您已经消费的课时金"
+"额， 24小时之内返还剩余金额，免除您的后顾之忧。"
+
+#: templates/man/base.html:13
+msgid "Management Panel for PPLingo"
+msgstr "管理控制台"
+
+#: templates/man/base.html:94 templates/man/course/preview.html:4
+msgid "Courseware Preview"
+msgstr "课件预览"
+
+#: templates/man/base.html:100 templates/man/course/upload.html:4
+msgid "Courseware Upload"
+msgstr "课件上传"
+
+#: templates/man/base.html:114
+msgid "Exambank"
+msgstr "试题预览"
+
+#: templates/man/base.html:120 templates/man/course/assessment_upload.html:4
+#: templates/man/course/exambank_upload.html:4
+msgid "Exambank Upload"
+msgstr "试题上传"
+
+#: templates/man/base.html:132 templates/man/course/homeworkupload.html:4
+msgid "Homework Upload"
+msgstr "家庭作业上传"
+
+#: templates/man/base.html:138
+msgid "TeachingPlan Review"
+msgstr "预览教参"
+
+#: templates/man/base.html:144
+msgid "TeachingPlan Upload"
+msgstr "教参上传"
+
+#: templates/man/base.html:150
+msgid "Review schedule"
+msgstr "预约"
+
+#: templates/man/base.html:156
+msgid "Monitor Virtualclass"
+msgstr "旁听虚拟课堂"
+
+#: templates/man/base.html:162
+msgid "Convert Virtualclass"
+msgstr "教室转换"
+
+#: templates/man/base.html:168
+msgid "Withdrawal Review"
+msgstr "提现"
+
+#: templates/man/base.html:174
+msgid "Dashboard"
+msgstr "仪表盘"
+
+#: templates/man/base.html:186
+msgid "Campaign Address"
+msgstr "活动地址"
+
+#: templates/man/base.html:192
+msgid "Recharge Records Query"
+msgstr "充值记录"
+
+#: templates/man/base.html:198 templates/man/course/bunch_upload.html:4
+msgid "Bunch Upload"
+msgstr "批量上传"
+
+#: templates/man/course/assessment_preview.html:6
+msgid "Exambank Preview"
+msgstr "试题预览"
+
+#: templates/man/course/assessment_preview.html:40
+#: templates/postman/archives.html:17 templates/postman/base_folder.html:25
+#: templates/postman/inbox.html:16 templates/postman/sent.html:20
+#: templates/postman/view.html:16
+msgid "Delete"
+msgstr "删除"
+
+#: templates/man/course/assessment_upload.html:11
+msgid "Advance exam"
+msgstr "高级中文课程测试"
+
+#: templates/man/course/assessment_upload.html:17
+msgid "Advance Exambank Upload"
+msgstr "高级中文课程试题上传"
+
+#: templates/man/course/assessment_upload.html:37
+msgid "Select course"
+msgstr "选择课堂"
+
+#: templates/man/course/assessment_upload.html:56
+msgid "Select type"
+msgstr "选择类型"
+
+#: templates/man/course/assessment_upload.html:60
+#: templates/man/course/assessment_upload.html:62
+msgid "Single Choice"
+msgstr "单选"
+
+#: templates/man/course/assessment_upload.html:67
+#: templates/man/course/assessment_upload.html:69
+msgid "Multiple Choice"
+msgstr "多选"
+
+#: templates/man/course/assessment_upload.html:74
+#: templates/man/course/assessment_upload.html:76
+msgid "Drag_Drop"
+msgstr "连线"
+
+#: templates/man/course/assessment_upload.html:87
+#: templates/man/course/assessment_upload.html:89
+msgid "active"
+msgstr "激活"
+
+#: templates/man/course/assessment_upload.html:93
+#: templates/man/course/assessment_upload.html:95
+msgid "archived"
+msgstr "归档"
+
+#: templates/man/course/assessment_upload.html:103
+msgid "Stem"
+msgstr "题干"
+
+#: templates/man/course/assessment_upload.html:124
+msgid "Answer"
+msgstr "答案"
+
+#: templates/man/course/assessment_upload.html:190
+msgid "Correct Answer"
+msgstr "正确答案"
+
+#: templates/man/course/assessment_upload.html:205
+msgid "Degress of difficulty"
+msgstr "难度"
+
+#: templates/man/course/assessment_upload.html:230
+msgid "Save"
+msgstr ""
+
+#: templates/man/course/assessment_upload.html:234
+msgid "Save and add another"
+msgstr ""
+
+#: templates/man/course/exambank_upload.html:23
+msgid "select course_test to change"
+msgstr "选择年级上传题库"
+
+#: templates/man/course/homework.html:4
+msgid "Homewok Preview"
+msgstr "家庭作业预览"
+
+#: templates/man/course/homework.html:59 templates/man/course/teachplan.html:59
+msgid "preview"
+msgstr "预览"
+
+#: templates/man/course/homework.html:62 templates/man/course/teachplan.html:62
+msgid "File URL:"
+msgstr "文件URL："
+
+#: templates/man/course/preview.html:58
+msgid "session does not exist or course is not selected"
+msgstr "课时不存在，或者没有选择课程"
+
+#: templates/man/course/preview.html:86
+msgid "courseware does not exist or session is not selected"
+msgstr "课件不存在，或者没有选择课时"
+
+#: templates/man/course/questionnaire.html:5
+#, fuzzy
+#| msgid "Questionnaire"
+msgid "Questionnaire Upload"
+msgstr "家长问卷"
+
+#: templates/man/course/teachplan.html:4
+msgid "TeachPlan Preview"
+msgstr "预览教参"
+
+#: templates/man/course/teachplan.html:16
+msgid "Plan"
+msgstr "计划"
+
+#: templates/man/course/teachplanupload.html:4
+msgid "Teachplan Upload"
+msgstr "教参上传"
+
+#: templates/man/course/teachplanupload.html:11
+msgid "teachplan"
+msgstr "教参"
+
+#: templates/man/tutor/management.html:33
+msgid "Choose Tutor"
+msgstr "选择教师"
+
+#: templates/man/tutor/management.html:71
+msgid "Set Tutor Courses"
+msgstr "设置扩展课件"
+
+#: templates/man/tutor/management.html:75
+msgid "All courses"
+msgstr "所有课程"
+
+#: templates/man/tutor/management.html:86
+msgid "Tutor courses"
+msgstr "老师年级"
+
+#: templates/man/tutor/management.html:96
+#: templates/man/tutor/management.html:107
+msgid "Teachable Class Type"
+msgstr "可教班型"
+
+#: templates/man/virtualclass/convert_list.html:11
+#: templates/man/virtualclass/list.html:11
+msgid "Current Classes"
+msgstr "当前课程开始时间"
+
+#: templates/man/virtualclass/convert_list.html:11
+#: templates/man/virtualclass/list.html:11
+msgid "Pls select current class to attend:"
+msgstr "选择课堂旁听"
+
+#: templates/man/virtualclass/convert_list.html:28
+#: templates/man/virtualclass/list.html:28
+msgid "There is not any class currently."
+msgstr "当前没有课"
+
+#: templates/man/virtualclass/convert_list.html:36
+#: templates/man/virtualclass/list.html:36
+msgid "Classes in 3 days"
+msgstr "结束时间"
+
+#: templates/man/virtualclass/monitor.html:6 templates/menu_member.html:91
+#: virtualclass/templates/virtualclass/classroom.html:6
+#: virtualclass/templates/virtualclass/room.html:6
+msgid "Classroom"
+msgstr "课堂"
+
+#: templates/man/virtualclass/monitor.html:26
+#: virtualclass/templates/virtualclass/classroom.html:35
+#: virtualclass/templates/virtualclass/classroom_list.html:111
+#: virtualclass/templates/virtualclass/classroom_list.html:197
+#: virtualclass/templates/virtualclass/entry.html:53
+#: virtualclass/templates/virtualclass/entry.html:63
+#: virtualclass/templates/virtualclass/entry.html:83
+#: virtualclass/templates/virtualclass/entry.html:92
+#: virtualclass/templates/virtualclass/room.html:23
+msgid "Go back"
+msgstr "返回"
+
+#: templates/man/virtualclass/monitor.html:43
+#: virtualclass/templates/virtualclass/classroom.html:52
+#: virtualclass/templates/virtualclass/room.html:40
+msgid "Finish"
+msgstr "授课完成"
+
+#: templates/man/virtualclass/monitor.html:52
+#: virtualclass/templates/virtualclass/classroom.html:61
+#: virtualclass/templates/virtualclass/room.html:49
+msgid "Reconnect"
+msgstr "重新连接视频"
+
+#: templates/man/virtualclass/monitor.html:60
+#: templates/man/virtualclass/monitor.html:73
+#: virtualclass/templates/virtualclass/room.html:57
+#: virtualclass/templates/virtualclass/room.html:70
+msgid "Video"
+msgstr "视频"
+
+#: templates/man/virtualclass/monitor.html:86
+#: virtualclass/templates/virtualclass/classroom.html:82
+#: virtualclass/templates/virtualclass/room.html:84
+msgid "chat"
+msgstr "文字聊天"
+
+#: templates/man/virtualclass/monitor.html:93
+#: virtualclass/templates/virtualclass/classroom.html:116
+#: virtualclass/templates/virtualclass/room.html:91
+msgid "whiteboard"
+msgstr "白板"
+
+#: templates/man/virtualclass/monitor.html:120
+#: virtualclass/templates/virtualclass/classroom.html:121
+#: virtualclass/templates/virtualclass/room.html:118
+msgid "Last Session"
+msgstr "上一课"
+
+#: templates/man/virtualclass/monitor.html:122
+#: virtualclass/templates/virtualclass/classroom.html:123
+#: virtualclass/templates/virtualclass/room.html:120
+msgid "Current Session"
+msgstr "本节课"
+
+#: templates/man/virtualclass/monitor.html:126
+#: virtualclass/templates/virtualclass/classroom.html:128
+#: virtualclass/templates/virtualclass/room.html:124
+msgid "Double Click to activate/deactivate pointer."
+msgstr "双击鼠标，可以激活／关闭电子教鞭"
+
+#: templates/man/virtualclass/monitor.html:159
+#: templates/man/virtualclass/teacher_rating.html:130
+#: virtualclass/templates/virtualclass/classroom.html:253
+#: virtualclass/templates/virtualclass/comment_show.html:152
+#: virtualclass/templates/virtualclass/comment_show.html:174
+#: virtualclass/templates/virtualclass/room.html:157
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:126
+msgid "Practice Consistency and Quality"
+msgstr "知识掌握程度"
+
+#: templates/man/virtualclass/monitor.html:165
+#: templates/man/virtualclass/teacher_rating.html:136
+#: virtualclass/templates/virtualclass/classroom.html:265
+#: virtualclass/templates/virtualclass/comment_show.html:159
+#: virtualclass/templates/virtualclass/comment_show.html:179
+#: virtualclass/templates/virtualclass/room.html:163
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:132
+msgid "Skills and Progress"
+msgstr "进步程度"
+
+#: templates/man/virtualclass/monitor.html:171
+#: templates/man/virtualclass/teacher_rating.html:142
+#: virtualclass/templates/virtualclass/classroom.html:277
+#: virtualclass/templates/virtualclass/comment_show.html:166
+#: virtualclass/templates/virtualclass/comment_show.html:184
+#: virtualclass/templates/virtualclass/room.html:169
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:138
+msgid "Attitude and Responsibility"
+msgstr "学习态度"
+
+#: templates/man/virtualclass/monitor.html:177
+#: templates/man/virtualclass/monitor.html:242
+#: templates/man/virtualclass/student_rating.html:91
+#: templates/man/virtualclass/teacher_rating.html:148
+#: virtualclass/templates/virtualclass/classroom.html:289
+#: virtualclass/templates/virtualclass/classroom.html:369
+#: virtualclass/templates/virtualclass/comment_show.html:190
+#: virtualclass/templates/virtualclass/comment_show.html:223
+#: virtualclass/templates/virtualclass/room.html:175
+#: virtualclass/templates/virtualclass/room.html:240
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:144
+msgid "Comments"
+msgstr "评语"
+
+#: templates/man/virtualclass/monitor.html:179
+#: templates/man/virtualclass/monitor.html:244
+#: templates/man/virtualclass/student_rating.html:93
+#: templates/man/virtualclass/teacher_rating.html:150
+#: virtualclass/templates/virtualclass/classroom.html:291
+#: virtualclass/templates/virtualclass/classroom.html:370
+#: virtualclass/templates/virtualclass/room.html:177
+#: virtualclass/templates/virtualclass/room.html:242
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:146
+msgid "pls input your comments"
+msgstr "请输入你的评语"
+
+#: templates/man/virtualclass/monitor.html:224
+#: templates/man/virtualclass/student_rating.html:76
+#: tutor/templates/tutor/info_more.html:53
+#: virtualclass/templates/virtualclass/classroom.html:336
+#: virtualclass/templates/virtualclass/comment_show.html:208
+#: virtualclass/templates/virtualclass/room.html:222
+msgid "Professional Knowledge"
+msgstr "专业知识"
+
+#: templates/man/virtualclass/monitor.html:230
+#: templates/man/virtualclass/student_rating.html:81
+#: tutor/templates/tutor/info_more.html:65
+#: virtualclass/templates/virtualclass/classroom.html:347
+#: virtualclass/templates/virtualclass/comment_show.html:213
+#: virtualclass/templates/virtualclass/room.html:228
+msgid "Instructional Delivery"
+msgstr "教授方法"
+
+#: templates/man/virtualclass/monitor.html:236
+#: templates/man/virtualclass/student_rating.html:86
+#: tutor/templates/tutor/info_more.html:69
+#: virtualclass/templates/virtualclass/classroom.html:358
+#: virtualclass/templates/virtualclass/comment_show.html:218
+#: virtualclass/templates/virtualclass/room.html:234
+msgid "Learning Environment"
+msgstr "营造积极学习环境"
+
+#: templates/man/virtualclass/monitor.html:316
+#: virtualclass/templates/virtualclass/room.html:312
+msgid "the client does not support webrtc"
+msgstr "该浏览器不支持视频通话，请用火狐或者谷歌浏览器"
+
+#: templates/man/virtualclass/student_rating.html:62
+msgid "Student`s Feedback"
+msgstr "学生反馈"
+
+#: templates/man/virtualclass/student_rating.html:70
+#: virtualclass/templates/virtualclass/comment_show.html:135
+msgid "teacher"
+msgstr "老师"
+
+#: templates/menu_anonymous.html:52
+msgid "Log In"
+msgstr "登录"
+
+#: templates/menu_member.html:99
+#: userprofile/templates/userprofile/profile.html:432
+msgid "Schedule"
+msgstr "预约"
+
+#: templates/menu_member.html:107
+msgid "Top Up"
+msgstr "充值"
+
+#: templates/menu_member.html:130
+msgid "MyAccount"
+msgstr "我的帐户"
+
+#: templates/menu_member.html:150 userprofile/templates/userprofile/base.html:3
+#: userprofile/templates/userprofile/base.html:25
+#: userprofile/templates/userprofile/base.html:104
+msgid "Edit Profile"
+msgstr "修改个人资料"
+
+#: templates/menu_member.html:207
+msgid "Teaching Schedule"
+msgstr "发布时间"
+
+#: templates/postman/archives.html:14
+msgid "Archived Messages"
+msgstr "已归档消息"
+
+#: templates/postman/archives.html:27 templates/postman/base_folder.html:33
+#: templates/postman/inbox.html:30 templates/postman/trash.html:26
+msgid "Sender"
+msgstr "发件人"
+
+#: templates/postman/archives.html:28 templates/postman/base_folder.html:34
+#: templates/postman/sent.html:34 templates/postman/trash.html:27
+msgid "Recipient"
+msgstr "收件人"
+
+#: templates/postman/archives.html:29 templates/postman/base_folder.html:35
+#: templates/postman/inbox.html:31 templates/postman/sent.html:35
+#: templates/postman/trash.html:28 templates/postman/write.html:21
+msgid "Subject"
+msgstr "主题"
+
+#: templates/postman/archives.html:45 templates/postman/base_folder.html:51
+#: templates/postman/inbox.html:42 templates/postman/sent.html:48
+#: templates/postman/trash.html:44
+msgid "g:i A,M j,n/j/y"
+msgstr ""
+
+#: templates/postman/archives.html:55
+msgid ""
+"Messages in this folder will never be removed. You can use this folder for "
+"long term storage."
+msgstr "此目录内的消息永远不会删除。你可以使用此目录作为长期存储。"
+
+#: templates/postman/base.html:3
+msgid "Messaging"
+msgstr "消息"
+
+#: templates/postman/base.html:27
+msgid "Compose"
+msgstr "写消息"
+
+#: templates/postman/base.html:33
+msgid "Inbox"
+msgstr "收件箱"
+
+#: templates/postman/base.html:39 templates/postman/sent.html:36
+msgid "Sent"
+msgstr "已发送消息"
+
+#: templates/postman/base.html:45
+msgid "Archives"
+msgstr "归档"
+
+#: templates/postman/base.html:51
+msgid "Trash"
+msgstr "垃圾箱"
+
+#: templates/postman/base_folder.html:16
+msgid "Sorry, this page number is invalid."
+msgstr "对不起，页码无效"
+
+#: templates/postman/base_folder.html:20
+msgid "by conversation"
+msgstr "按照会话显示"
+
+#: templates/postman/base_folder.html:21
+msgid "by message"
+msgstr "按照消息显示"
+
+#: templates/postman/base_folder.html:26 templates/postman/inbox.html:19
+#: templates/postman/sent.html:23 templates/postman/view.html:17
+msgid "Archive"
+msgstr "归档"
+
+#: templates/postman/base_folder.html:27 templates/postman/trash.html:16
+msgid "Undelete"
+msgstr "恢复"
+
+#: templates/postman/base_folder.html:58
+msgid "No messages."
+msgstr "无消息"
+
+#: templates/postman/inbox.html:11
+msgid "Received Messages"
+msgstr "已接收消息"
+
+#: templates/postman/inbox.html:32
+msgid "Received"
+msgstr "已接收"
+
+#: templates/postman/sent.html:16
+msgid "Sent Messages"
+msgstr "已发送消息"
+
+#: templates/postman/trash.html:13
+msgid "Deleted Messages"
+msgstr "已删除消息"
+
+#: templates/postman/trash.html:54
+msgid ""
+"Messages in this folder can be removed from time to time. For long term "
+"storage, use instead the archive folder."
+msgstr "垃圾箱内的消息会被不定期清除。请将希望长期保存的消息存入归档。"
+
+#: templates/postman/view.html:28
+msgid "Sender:"
+msgstr "发件人："
+
+#: templates/postman/view.html:29
+msgid "Recipient:"
+msgstr "收件人："
+
+#: templates/postman/view.html:30
+msgid "Date:"
+msgstr "日期："
+
+#: templates/postman/view.html:31
+msgid "Subject:"
+msgstr "主题："
+
+#: templates/postman/view.html:41
+msgid "Reply"
+msgstr "回复"
+
+#: templates/postman/write.html:9
+msgid "Write"
+msgstr "写消息"
+
+#: templates/postman/write.html:16
+msgid "Recipients"
+msgstr "收件人"
+
+#: templates/postman/write.html:26
+msgid "Write some nice stuff or nothing..."
+msgstr "请输入内容..."
+
+#: templates/postman/write.html:31
+msgid "Send"
+msgstr "发送"
+
+#: templates/registration/registration_form.html:3
+msgid "Register for an account"
+msgstr "注册新帐户"
+
+#: templates/registration/registration_form.html:39
+msgid "Register"
+msgstr "注册"
+
+#: tutor/api_v2_views.py:57
+msgid "weekdays format error"
+msgstr "星期格式错误"
+
+#: tutor/api_v2_views.py:63
+msgid "timeperiods format error"
+msgstr "时间格式错误"
+
+#: tutor/api_v2_views.py:86
+msgid "exclusion format error"
+msgstr ""
+
+#: tutor/api_v2_views.py:103
+msgid "Object does not exist"
+msgstr "测试时间不存在"
+
+#: tutor/forms.py:11
+msgid "Start_of_teaching"
+msgstr "开始教学时间"
+
+#: tutor/models.py:254
+msgid "start of teaching"
+msgstr "开始教学时间"
+
+#: tutor/models.py:256 userprofile/models.py:79
+msgid "nationality"
+msgstr "国籍"
+
+#: tutor/models.py:264
+msgid "description_en"
+msgstr "英文自我介绍"
+
+#: tutor/models.py:266
+msgid "description_zhhans"
+msgstr "中文自我介绍"
+
+#: tutor/templates/tutor/all_tutors.html:27
+#, fuzzy
+#| msgid "Availablity"
+msgid "Availability"
+msgstr "筛选时间"
+
+#: tutor/templates/tutor/all_tutors.html:31
+#: tutor/templates/tutor/tutors.html:156
+msgid "day of the week"
+msgstr "选择星期"
+
+#: tutor/templates/tutor/all_tutors.html:53
+#: tutor/templates/tutor/tutors.html:178
+msgid "Select the time"
+msgstr "选择时间"
+
+#: tutor/templates/tutor/all_tutors.html:57
+#: tutor/templates/tutor/tutors.html:182
+msgid "06:00~12:00"
+msgstr ""
+
+#: tutor/templates/tutor/all_tutors.html:59
+#: tutor/templates/tutor/tutors.html:184
+msgid "12:00~18:00"
+msgstr ""
+
+#: tutor/templates/tutor/all_tutors.html:61
+#: tutor/templates/tutor/tutors.html:186
+msgid "18:00~24:00"
+msgstr ""
+
+#: tutor/templates/tutor/all_tutors.html:102
+#: tutor/templates/tutor/embedded_info.html:48
+#: tutor/templates/tutor/info_more.html:49
+#: tutor/templates/tutor/tutors.html:219 tutor/templates/tutor/tutors.html:281
+#: tutor/templates/tutor/tutors.html:429
+msgid "Years of teaching"
+msgstr "教学经验"
+
+#: tutor/templates/tutor/all_tutors.html:135
+#: tutor/templates/tutor/embedded_info.html:82
+#: tutor/templates/tutor/info_more.html:84
+#: tutor/templates/tutor/tutors.html:243 tutor/templates/tutor/tutors.html:305
+#: tutor/templates/tutor/tutors.html:446
+msgid "go to scheduler"
+msgstr "预约"
+
+#: tutor/templates/tutor/embedded_info.html:15
+msgid "Tutor Information"
+msgstr "教师信息"
+
+#: tutor/templates/tutor/embedded_info.html:65
+msgid "Number of Classes"
+msgstr "上课节数"
+
+#: tutor/templates/tutor/info_more.html:73
+msgid "On-time record"
+msgstr "出勤率"
+
+#: tutor/templates/tutor/info_more.html:98
+#: virtualclass/templates/virtualclass/embedded_student_list.html:24
+#: virtualclass/templates/virtualclass/student_list_more.html:49
+msgid "Session"
+msgstr "课时"
+
+#: tutor/templates/tutor/info_more.html:99
+#: virtualclass/templates/virtualclass/embedded_student_list.html:25
+#: virtualclass/templates/virtualclass/student_list_more.html:50
+msgid "Quality"
+msgstr "知识掌握程度"
+
+#: tutor/templates/tutor/info_more.html:100
+#: virtualclass/templates/virtualclass/embedded_student_list.html:26
+#: virtualclass/templates/virtualclass/student_list_more.html:51
+msgid "Progress"
+msgstr "进步程度"
+
+#: tutor/templates/tutor/info_more.html:101
+#: virtualclass/templates/virtualclass/embedded_student_list.html:27
+#: virtualclass/templates/virtualclass/student_list_more.html:52
+msgid "Attitude"
+msgstr "学习态度"
+
+#: tutor/templates/tutor/intro.html:39
+msgid "How to apply"
+msgstr "如何申请"
+
+#: tutor/templates/tutor/intro.html:43
+msgid "Simple Tutorial"
+msgstr "快速向导"
+
+#: tutor/templates/tutor/intro.html:45
+msgid "Step 1: Sign up a PPLINGO account. "
+msgstr "第一步：注册PPLINGO平台帐户，使用真实姓名，便于学生认识和记忆。"
+
+#: tutor/templates/tutor/intro.html:46
+msgid "Step 2: Apply to become a tutor, and wait for the approval. "
+msgstr ""
+"第二步：在本页申请成为教师，等待审批。如果没有注册帐号，申请流程会自动提醒注"
+"册／登录。"
+
+#: tutor/templates/tutor/intro.html:47
+msgid ""
+"Step 3: Once your application is reviewed and pre-approved, you can join "
+"online and/or classroom training. "
+msgstr "第三步：如果你的申请得到初步批准，你需要参加线上或者线下的教师培训。"
+
+#: tutor/templates/tutor/intro.html:48
+msgid ""
+"Step 4: If you get the final approval, you may start to publish your "
+"available time slot to teach. "
+msgstr "第四步：经过培训和正式批准，你就可以发布自己的可供约课时间，准备上课。"
+
+#: tutor/templates/tutor/intro.html:60
+msgid ""
+"By proceeding, you agree to the PPLINGO terms and conditions (“Terms”) for "
+"submitting an idea, concept or suggestion (“Information”) "
+msgstr "如果继续申请流程，代表你同意PPLINGO使用你的信息来进行学生服务与沟通。"
+
+#: tutor/templates/tutor/intro.html:65
+msgid "Apply now!"
+msgstr "现在申请！"
+
+#: tutor/templates/tutor/register.html:13
+msgid "tutor infor"
+msgstr "教师信息"
+
+#: tutor/templates/tutor/register.html:25
+msgid "apply"
+msgstr "申请"
+
+#: tutor/templates/tutor/tutors.html:146 tutor/templates/tutor/tutors.html:149
+msgid "1-on-1"
+msgstr "一对一"
+
+#: tutor/templates/tutor/tutors.html:193
+msgid "My Frequently Used Tutors"
+msgstr "我的常用老师"
+
+#: tutor/templates/tutor/tutors.html:234 tutor/templates/tutor/tutors.html:238
+#: tutor/templates/tutor/tutors.html:296 tutor/templates/tutor/tutors.html:300
+#: tutor/templates/tutor/tutors.html:440
+msgid "Read More"
+msgstr "阅读更多"
+
+#: tutor/templates/tutor/tutors.html:254
+msgid "Other Recommended Teachers"
+msgstr "其他推荐老师"
+
+#: tutor/views.py:166
+msgid "Student can not be a tutor!"
+msgstr "学生不是老师"
+
+#: tutor/views.py:178
+msgid "You have successfully registered"
+msgstr "您已经成功注册了"
+
+#: tutor/views.py:182
+msgid "Input data is incorrect, please try again"
+msgstr "输入的信息不正确，请重试。"
+
+#: userprofile/forms.py:27
+msgid "Birthdate"
+msgstr "出生日期"
+
+#: userprofile/models.py:77
+msgid "PhoneNumber"
+msgstr "电话号码"
+
+#: userprofile/models.py:82
+msgid "currency"
+msgstr "货币种类"
+
+#: userprofile/templates/userprofile/base.html:38
+#: userprofile/templates/userprofile/base.html:111
+msgid "Upload Photo"
+msgstr "上传头像"
+
+#: userprofile/templates/userprofile/edit_photo.html:31
+msgid "(Please ensure that the uploaded image size is within 2M)"
+msgstr "(请保证上传图片大小在2M以内)"
+
+#: userprofile/templates/userprofile/edit_photo.html:32
+msgid ""
+"Note: Positive, clear facial photos will help teachers and students better "
+"understand each other. Please upload a clear photo of your face."
+msgstr ""
+"注：正面、清晰的面部相片会帮助老师和学生更好的了解对方。请上传清晰的面部照"
+"片。"
+
+#: userprofile/templates/userprofile/edit_photo.html:39
+msgid "UPLOAD"
+msgstr "上传"
+
+#: userprofile/templates/userprofile/edit_photo.html:76
+msgid ""
+"Clear frontal face photos are an important way for tutors and students to "
+"learn about each other.  Please upload a photo that clearly shows your face."
+msgstr ""
+"正面、清晰的面部相片会帮助老师和学生更好的了解对方。请上传清晰的面部照片。"
+
+#: userprofile/templates/userprofile/edit_success.html:18
+msgid "Edit Success!"
+msgstr "修改成功"
+
+#: userprofile/templates/userprofile/edit_success.html:21
+msgid "Back to account"
+msgstr "返回我的帐户"
+
+#: userprofile/templates/userprofile/history_class.html:5
+msgid "History classes"
+msgstr "历史课堂记录"
+
+#: userprofile/templates/userprofile/history_class.html:93
+#: userprofile/templates/userprofile/tutor_profile.html:241
+#: virtualclass/templates/virtualclass/comment_show.html:125
+msgid "Students` Feedback"
+msgstr "学生反馈"
+
+#: userprofile/templates/userprofile/history_class.html:135
+#: userprofile/templates/userprofile/tutor_profile.html:304
+#: virtualclass/templates/virtualclass/student_list_more.html:32
+msgid "Student Learning Record"
+msgstr "学习记录"
+
+#: userprofile/templates/userprofile/history_class.html:186
+#: userprofile/templates/userprofile/tutor_profile.html:355
+msgid "Teach Plan"
+msgstr "教参"
+
+#: userprofile/templates/userprofile/history_class.html:208
+#: userprofile/templates/userprofile/profile.html:594
+#: userprofile/templates/userprofile/tutor_profile.html:377
+#: virtualclass/templates/virtualclass/student_list_more.html:220
+msgid "Your Record will be ready in 24h"
+msgstr "您的上课录像将在24小时内生成"
+
+#: userprofile/templates/userprofile/nominate_referrer.html:42
+msgid ""
+"Hints: You can't change referrer, once you nominate him/her. Please double "
+"check, before you submit."
+msgstr "提示：你一但设置了推荐人，就不能变更。请在设置以前仔细确认。"
+
+#: userprofile/templates/userprofile/profile.html:304
+msgid "Let your child take an assessment test before the class"
+msgstr "上课之前让孩子做一下免费水平测试，测测孩子中文水平吧！"
+
+#: userprofile/templates/userprofile/profile.html:304
+msgid "FREE assessment test"
+msgstr "免费水平测试"
+
+#: userprofile/templates/userprofile/profile.html:329
+#: userprofile/templates/userprofile/profile.html:975
+msgid "Attended class"
+msgstr "已参加课程数"
+
+#: userprofile/templates/userprofile/profile.html:331
+#: userprofile/templates/userprofile/profile.html:980
+#: userprofile/templates/userprofile/tutor_profile.html:286
+msgid "Account credit"
+msgstr "帐户余额"
+
+#: userprofile/templates/userprofile/profile.html:334
+#: userprofile/templates/userprofile/profile.html:986
+msgid "Smallclass credit"
+msgstr "小班课余额"
+
+#: userprofile/templates/userprofile/profile.html:336
+#: userprofile/templates/userprofile/profile.html:988
+msgid "Limited"
+msgstr "有效期"
+
+#: userprofile/templates/userprofile/profile.html:996
+msgid "You next class will start in 5 minutes."
+msgstr "课程即将开始"
+
+#: userprofile/templates/userprofile/profile.html:999
+msgid "Go to Classroom"
+msgstr "进入课堂"
+
+#: userprofile/templates/userprofile/profile.html:1053
+msgid "You don't have any appointment yet."
+msgstr "你目前没有任何课程预约"
+
+#: userprofile/templates/userprofile/profile.html:1179
+msgid "Last month course statistics"
+msgstr "历史30天课程统计"
+
+#: userprofile/templates/userprofile/profile.html:1185
+msgid "Stats"
+msgstr "统计"
+
+#: userprofile/templates/userprofile/profile.html:1508
+msgid "What’s next"
+msgstr "上课流程"
+
+#: userprofile/templates/userprofile/profile.html:1518
+msgid "Take a free trial class before long term commitment"
+msgstr "总价值30美元的试听课"
+
+#: userprofile/templates/userprofile/profile.html:1527
+msgid "Assessment test"
+msgstr "中文水平技能测试"
+
+#: userprofile/templates/userprofile/profile.html:1529
+msgid "Let us know what your level is now"
+msgstr "让老师了解孩子更多一点"
+
+#: userprofile/templates/userprofile/profile.html:1539
+msgid "Appointment in advance"
+msgstr "须提前一天预约老师"
+
+#: userprofile/templates/userprofile/profile.html:1541
+msgid "We can only accommodate classes booked 1 day in advance"
+msgstr "选择您心仪的老师，给老师 充分时间准备属于孩子的课堂。"
+
+#: userprofile/templates/userprofile/profile.html:1551
+msgid "Learn Chinese in the right way"
+msgstr "进入在线课堂体验"
+
+#: userprofile/templates/userprofile/profile.html:1553
+msgid "Come back on time for the most engaging Chinese class online"
+msgstr "中国老师带孩子开启原汁 原味，精彩的1对1中文课堂， 学习标准的普通话"
+
+#: userprofile/templates/userprofile/profile.html:1563
+msgid "Devices"
+msgstr "上课设备和应用"
+
+#: userprofile/templates/userprofile/profile.html:1570
+msgid "Desktop or laptop"
+msgstr "电脑上的设备"
+
+#: userprofile/templates/userprofile/profile.html:1572
+msgid "Make sure you have working camera and microphone"
+msgstr "台式电脑或笔记本+摄像头（耳机）"
+
+#: userprofile/templates/userprofile/profile.html:1578
+msgid "Browsers"
+msgstr "浏览器要求"
+
+#: userprofile/templates/userprofile/profile.html:1580
+msgid "Please use Chrome for online class"
+msgstr "电脑上课必须使用谷歌浏览器"
+
+#: userprofile/templates/userprofile/profile.html:1587
+msgid "iPad APP"
+msgstr "ipad上课"
+
+#: userprofile/templates/userprofile/profile.html:1589
+msgid "Download LingoAce from APP Store"
+msgstr "在APP Store里搜索下载LingoAce"
+
+#: userprofile/templates/userprofile/profile.html:1596
+msgid "iPhone APP"
+msgstr "手机APP"
+
+#: userprofile/templates/userprofile/profile.html:1598
+msgid "Appointment making and tutor communication only for IOS"
+msgstr "手机约课和联系老师，目前 只支持IOS版本"
+
+#: userprofile/templates/userprofile/profile.html:1608
+#, fuzzy
+#| msgid "We are ready to help."
+msgid "We are ready to help"
+msgstr "试听请咨询："
+
+#: userprofile/templates/userprofile/profile.html:1614
+msgid "Scan and add WeChat Contact"
+msgstr "添加微信客服"
+
+#: userprofile/templates/userprofile/profile.html:1615
+msgid "Customer service online time:"
+msgstr "客服在线时间："
+
+#: userprofile/templates/userprofile/profile.html:1754
+msgid "watch"
+msgstr "观看"
+
+#: userprofile/templates/userprofile/tutor_profile.html:34
+msgid "Teaching Scheduling"
+msgstr "教学安排"
+
+#: userprofile/templates/userprofile/tutor_profile.html:62
+msgid "Resources"
+msgstr "资源"
+
+msgid "Lesson preparation"
+msgstr "备课"
+
+#: userprofile/templates/userprofile/tutor_profile.html:101
+msgid "Teach plan"
+msgstr "教参"
+
+#: userprofile/templates/userprofile/tutor_profile.html:129
+msgid "Tutor's Toolbox"
+msgstr "教师工具箱"
+
+#: userprofile/templates/userprofile/tutor_profile.html:134
+msgid "online training"
+msgstr "在线培训"
+
+#: userprofile/templates/userprofile/tutor_profile.html:138
+msgid "change student grade"
+msgstr "调整学生级别"
+
+#: userprofile/templates/userprofile/tutor_profile.html:142
+msgid "reclaim unfinished class"
+msgstr "补登已完成课程"
+
+#: userprofile/templates/userprofile/tutor_profile.html:146
+msgid "withdraw request"
+msgstr "取款申请"
+
+#: userprofile/templates/userprofile/tutor_profile.html:283
+msgid "My remuneration"
+msgstr "我的课酬"
+
+msgid "Teaching Classes"
+msgstr "累计授课数量"
+
+msgid "Completed Classes This Month"
+msgstr "本月已完成课程数"
+
+#: userprofile/templates/userprofile/userinfo_detail.html:189
+msgid "Please enter the correct format of date! (2018-01-01)"
+msgstr "请输入正确的日期格式！(2018-01-01)"
+
+#: userprofile/views.py:217
+msgid "Your account balance is insufficient, please top up."
+msgstr "帐户余额不足，请尽快充值。"
+
+#: virtualclass/templates/virtualclass/base.html:3
+msgid "virtualclass"
+msgstr "旁听虚拟课堂"
+
+#: virtualclass/templates/virtualclass/class_list.html:10
+msgid "Reclaim classes"
+msgstr "补登课时"
+
+#: virtualclass/templates/virtualclass/class_list.html:21
+msgid "reclaim"
+msgstr "补登"
+
+#: virtualclass/templates/virtualclass/classroom.html:138
+#: virtualclass/templates/virtualclass/classroom.html:169
+msgid "Wipe my own drawing"
+msgstr "清空自己的线条"
+
+#: virtualclass/templates/virtualclass/classroom.html:152
+#: virtualclass/templates/virtualclass/classroom.html:172
+msgid "Select color for drawing"
+msgstr "选择画笔颜色"
+
+#: virtualclass/templates/virtualclass/classroom.html:154
+msgid "black"
+msgstr "黑色"
+
+#: virtualclass/templates/virtualclass/classroom.html:155
+msgid "red"
+msgstr "红色"
+
+#: virtualclass/templates/virtualclass/classroom.html:174
+msgid "blue"
+msgstr "蓝色"
+
+#: virtualclass/templates/virtualclass/classroom.html:553
+msgid "Your browser is not supported here"
+msgstr "您的浏览器不支持"
+
+#: virtualclass/templates/virtualclass/classroom.html:554
+msgid "You are currently using an unsupported browser"
+msgstr "您当前使用的浏览器不被支持"
+
+#: virtualclass/templates/virtualclass/classroom.html:555
+msgid "Please install one of the browsers below to proceed"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom_list.html:31
+#: virtualclass/templates/virtualclass/classroom_list.html:123
+msgid "Select classes"
+msgstr "选择课堂"
+
+#: virtualclass/templates/virtualclass/classroom_list.html:44
+#: virtualclass/templates/virtualclass/classroom_list.html:80
+#: virtualclass/templates/virtualclass/classroom_list.html:132
+msgid "End Class"
+msgstr "结束授课"
+
+#: virtualclass/templates/virtualclass/classroom_list.html:91
+#: virtualclass/templates/virtualclass/classroom_list.html:178
+#: virtualclass/templates/virtualclass/entry.html:59
+#: virtualclass/templates/virtualclass/entry.html:88
+msgid "Check online"
+msgstr "在线课堂检测"
+
+#: virtualclass/templates/virtualclass/classroom_list.html:100
+#: virtualclass/templates/virtualclass/classroom_list.html:105
+#: virtualclass/templates/virtualclass/classroom_list.html:186
+#: virtualclass/templates/virtualclass/classroom_list.html:191
+msgid "start class"
+msgstr "开始上课"
+
+#: virtualclass/templates/virtualclass/comment_show.html:198
+msgid "No comment yet"
+msgstr "老师还没写评语"
+
+#: virtualclass/templates/virtualclass/comment_show.html:231
+msgid "No feedback yet"
+msgstr "学生还没写反馈"
+
+#: virtualclass/templates/virtualclass/embedded_student_list.html:18
+msgid "Name"
+msgstr "姓名"
+
+#: virtualclass/templates/virtualclass/embedded_student_list.html:45
+msgid "More"
+msgstr "更多"
+
+#: virtualclass/templates/virtualclass/entry.html:39
+#: virtualclass/templates/virtualclass/entry.html:76
+msgid "Reminder"
+msgstr "友情提示"
+
+#: virtualclass/templates/virtualclass/entry_trial.html:10
+msgid "Immediate Trial Class"
+msgstr "免费试课"
+
+#: virtualclass/templates/virtualclass/entry_trial.html:19
+msgid "Access code: "
+msgstr "访问代码："
+
+#: virtualclass/templates/virtualclass/entry_trial.html:27
+msgid "Kind Remind:"
+msgstr "友情提示"
+
+#: virtualclass/templates/virtualclass/entry_trial.html:29
+msgid "1. The immediate trial will be available from 10am to 5pm (GMT+8)"
+msgstr "1. 立即的试课时间可用段是早上10点到下午5点"
+
+#: virtualclass/templates/virtualclass/entry_trial.html:31
+msgid ""
+"2. Please contact our course consultant to get an access code, before "
+"entering the immediate free trial"
+msgstr "在进入免费试课前，请联系我们的课程客服并获取通过码。"
+
+#: virtualclass/templates/virtualclass/entry_trial.html:33
+msgid ""
+"3. The purpose of the immediate trial is to demonstrate the course delivery "
+"process, in which the courseware may be different from final one."
+msgstr ""
+
+#: virtualclass/templates/virtualclass/onlinecheck.html:6
+msgid "Online Check"
+msgstr "在线课堂检测"
+
+#: virtualclass/templates/virtualclass/student_list_more.html:5
+msgid "Student learning records"
+msgstr "学生学习记录"
+
+#: virtualclass/templates/virtualclass/student_list_more.html:35
+msgid "Period"
+msgstr "时间范围"
+
+#: virtualclass/templates/virtualclass/student_list_more.html:37
+msgid "3 Months"
+msgstr "3个月"
+
+#: virtualclass/templates/virtualclass/student_list_more.html:38
+msgid "6 Months"
+msgstr "6个月"
+
+#: virtualclass/templates/virtualclass/student_list_more.html:39
+msgid "All"
+msgstr "全部"
+
+#: virtualclass/templates/virtualclass/student_list_more.html:98
+msgid "Extended Courseware"
+msgstr "扩展课件"
+
+#: virtualclass/views.py:96
+msgid "the class is finished successfully"
+msgstr "授课成功结束"
+
+#: virtualclass/views.py:98 virtualclass/views.py:133 virtualclass/views.py:246
+#: virtualclass/views.py:342 virtualclass/views.py:591
+msgid "You do not have any appointment within 5 minutes"
+msgstr "你在当前时段没有课程预约"
+
+#: virtualclass/views.py:99 virtualclass/views.py:134 virtualclass/views.py:247
+#: virtualclass/views.py:343 virtualclass/views.py:592
+msgid "user data is not correct"
+msgstr "用户数据不正确，请确认以后重试"
+
+#: virtualclass/views.py:345
+msgid "Please verify the access code with our course consultant"
+msgstr ""
+
+#: virtualclass/views.py:696
+msgid "The class is over."
+msgstr "当前课程已结束。"
+
+#: virtualclass/views.py:700
+msgid ""
+"You can not reclaim this class, please double check whether you deliver it."
+msgstr "你未能成功的补登改课时，请确认你已经完成授课。"
+
+#: virtualclass/views.py:713
+msgid "The rating must be integer."
+msgstr "评级必须是整数。"
+
+#: virtualclass/views.py:822
+msgid "the evaluation is successfully submitted"
+msgstr "评价提交成功"
+
+#: virtualclass/views.py:824
+msgid "the required evaluation data is missing"
+msgstr "缺少必要要的评估信息"
+
+#: virtualclass/views.py:1091 virtualclass/views.py:1095
+msgid ""
+"You can not finish this class, please double check whether you deliver it."
+msgstr "你未能成功的结束授课, 请确认你已经完成授课。"
+
+#: virtualclass/views.py:1138
+msgid "you have new record"
+msgstr "您有新的上课视频生成"
+
+#: webapp/base.py:283
+msgid "Chinese"
+msgstr "中文"
+
+#: webapp/base.py:284
+msgid "English"
+msgstr "英文"
+
+#: webapp/base.py:437
+msgid "Background image"
+msgstr ""
+
+#: webapp/base.py:443
+msgid "10%"
+msgstr "10%"
+
+#: webapp/base.py:444
+msgid "25%"
+msgstr ""
+
+#: webapp/base.py:445
+msgid "33%"
+msgstr ""
+
+#: webapp/base.py:446
+msgid "50%"
+msgstr ""
+
+#: webapp/base.py:447
+msgid "66%"
+msgstr ""
+
+#: webapp/base.py:448
+msgid "75%"
+msgstr ""
+
+#: webapp/base.py:449
+msgid "100%"
+msgstr "100%"
+
+#: webapp/base.py:455 webapp/base.py:472
+msgid "Default"
+msgstr "默认"
+
+#: webapp/base.py:460
+msgid "Container"
+msgstr "教学内容"
+
+#: webapp/base.py:461
+msgid "Fluid container"
+msgstr ""
+
+#: webapp/base.py:464
+msgid "Column"
+msgstr ""
+
+#: webapp/base.py:465
+msgid "Break"
+msgstr ""
+
+#: webapp/base.py:466
+msgid "Empty"
+msgstr ""
+
+#: webapp/base.py:489
+msgid "Secondary"
+msgstr ""
+
+#: webapp/base.py:490
+msgid "Success"
+msgstr "评分成功"
+
+#: webapp/base.py:491
+msgid "Danger"
+msgstr "变更"
+
+#: webapp/base.py:492
+msgid "Warning"
+msgstr "警告："
+
+#: webapp/base.py:493
+msgid "Info"
+msgstr ""
+
+#: webapp/base.py:494
+msgid "Light"
+msgstr ""
+
+#: webapp/base.py:495
+msgid "Dark"
+msgstr ""
+
+#: webapp/base.py:496
+msgid "Custom"
+msgstr ""
+
+
+msgid "preemption"
+msgstr "预占状态"
+
+msgid "Your account balance is insufficient, please top up for more lessons. [ LingoAce - Online Chinese learning platform for kids aged 6-15 ]"
+msgstr ""
+
+msgid "We have cancelled your current appointment due to the insufficient balance of your account. If you wish to continue the lesson, please top up and make another appointment. [ LingoAce - Online Chinese learning platform for kids aged 6-15 ]"
+msgstr ""
+
+
+msgid "Preemption"
+msgstr "等待老师开放时间"
+
+msgid "Make an Appointment"
+msgstr "预约课程"
+
+msgid "You can make appointment up to 3 months"
+msgstr "最多可以预约未来三个月的课程"
+
+msgid "Select “Make Multiple Regular Appointments” and we will book the classes from"
+msgstr "选择“多次定期约课”，我们将自动为您预约"
+
+msgid "every Thursday for you."
+msgstr "的课程。"
+
+msgid "to"
+msgstr "至"
+
+msgid "Class Time"
+msgstr "上课时间"
+
+msgid "Cancel This Appointment"
+msgstr "只取消本节课"
+
+msgid "Cancel Multiple Appointments"
+msgstr "取消多次课"
+
+msgid "If you select “Cancel Multiple Classes” , we will cancel the classes from"
+msgstr "选择“取消多次课”，我们将自动为您取消"
+
+msgid "Your Class Point has been used up so you can't book a class. Top up now ~"
+msgstr "您的账户余额消耗完了暂时无法约课，快去充值吧~"
+
+msgid "You have already reserved teacher"
+msgstr "您已经预约了同一时间"
+
+msgid "the same time. If you continue to make an appointment with Teacher"
+msgstr "老师的课程，如果继续预约"
+
+msgid "we will cancel the appointment of Teacher"
+msgstr "老师，我们将为您取消"
+
+msgid "for you."
+msgstr "老师的预约"
+
+msgid "Continue"
+msgstr "继续预约"
+
+msgid "Your account balance is less than 5 points. In order to learn Chinese in succession, please Top up in time ~"
+msgstr "您的账户余额已不足 5 课时，为不影响上课，请及时充值哦 ~"
+
+msgid "Unpublished time"
+msgstr "等待老师开放时间"
+
+msgid "The green status means that the class has been booked successfully. Please do remember to attend class on time."
+msgstr "绿色表示确定成功预约的课程，请您准备好时间按时上课哦。"
+
+msgid "The gray status means unpublished time, once the teacher releases time of this class, we will automatically reserve for you."
+msgstr "灰色表示等待老师发布时间，一旦老师发布本节课时间，我们将自动为您成功预约。"
+
+msgid "You have made an appointment already. If you want to make another appointment, please cancel the previous appointment first."
+msgstr "您已经预约了一节课，如您想预约其他的课程，请先取消之前的预约。"
+
+msgid "Got it"
+msgstr "我知道了"
+
+
+#~ msgid "your Homework is already assessed"
+#~ msgstr "您的作业已经被老师批改"
+
+#~ msgid "Apply a coupon"
+#~ msgstr "申请优惠"
+
+#~ msgid "Advanced Chinese LEVEL "
+#~ msgstr "你的级别是："
+
+#~ msgid "Training"
+#~ msgstr "教师培训"
+
+#~ msgid "Comment"
+#~ msgstr "教师评价"
+
+#~ msgid "check record"
+#~ msgstr "查看上课视频"
+
+#~ msgid "create virtual class"
+#~ msgstr "创建电子教室"
+
+#~ msgid "PPChinese Parents Agreement"
+#~ msgstr "PPChinese 家长协议"
+
+#~ msgid "International Lite Programme"
+#~ msgstr "国际中文课程-Lite版"
+
+#~ msgid "score"
+#~ msgstr "评分"
+
+#~ msgid "Please upload pictures in common format!"
+#~ msgstr "请上传常见格式的图片！"
+
+#~ msgid "example"
+#~ msgstr "例如"
+
+#~ msgid "Request Change"
+#~ msgstr "变更"
+
+#~ msgid "Reset My Password"
+#~ msgstr "重置我的密码"
+
+#~ msgid "Please contact us if you have any trouble resetting your password."
+#~ msgstr "如果在重置密码的过程中有任何问题，请联系我们。"
+
+#~ msgid ""
+#~ "Sorry, you have insufficient fund to make any additional reservation. "
+#~ "Please top-up your account first."
+#~ msgstr ""
+#~ "抱歉~！您当前剩余课时不足，请充值后再进行约课，或联系学管老师咨询详情~"
+
+#~ msgid "Become a Tutor"
+#~ msgstr "申请成为教师"
+
+#~ msgid "Homepage"
+#~ msgstr "主页"
+
+#~ msgid "Message"
+#~ msgstr "消息"
+
+#~ msgid "Unit Testing"
+#~ msgstr "单元测试"
+
+#~ msgid "teaching_style"
+#~ msgstr "教学特点"
+
+#~ msgid "Detail"
+#~ msgstr "介绍"
+
+#~ msgid "Not Assessed"
+#~ msgstr "未评估"
+
+#~ msgid "Go to assessment"
+#~ msgstr "进行水平测试"
+
+#~ msgid "You would know how it works?"
+#~ msgstr "你应该知道它如何工作？"
+
+#~ msgid "Experience it"
+#~ msgstr "体验它"
+
+#~ msgid "Entry History"
+#~ msgstr "进入历史记录"
+
+#~ msgid "resources"
+#~ msgstr "资源"
+
+#~ msgid "Number of classes"
+#~ msgstr "上课节数"
+
+#~ msgid ""
+#~ "Please finish the assessment to determine the appropriate level, before "
+#~ "attending any class."
+#~ msgstr "请在上课以前完成水平测试，这样可以为你制定合适的课程等级。"
+
+#~ msgid "Local Files"
+#~ msgstr "本地文件"
+
+#~ msgid ""
+#~ "(Test results are for reference only, the specific rating is determined "
+#~ "by the teacher)"
+#~ msgstr "（测试结果仅为参考，具体评级由教师决定）"
+
+#~ msgid "Free trial classes"
+#~ msgstr "注册即可领取奖品"
+
+#~ msgid "More class records"
+#~ msgstr "更多历史课堂记录"
+msgid "Parameter missing3"
+msgstr "参数缺失"
+
+msgid "There has a problem, please contact the staff"
+msgstr "出现问题，请联系工作人员"
+
+msgid "Payment of Teachers"
+msgstr "教师课酬发放"
+
+msgid "Payments to be paid last month"
+msgstr "上月待发放课酬"
+
+msgid "teacher name"
+msgstr "老师用户名"
+
+msgid "teacher realname"
+msgstr "老师姓名"
+
+msgid "the month salary"
+msgstr "本月课酬/元"
+
+msgid "the month class num"
+msgstr "本月上课课时"
+
+msgid "pay status"
+msgstr "课酬状态"
+
+msgid "students number"
+msgstr "本月学生数量"
+
+msgid "You can not transfer to anthers in two hours before class and after class"
+msgstr "不能在课程开始前和结束后2小时转换班级"
+
+msgid "You couldn't quite small class two hours before the course starts and ends"
+msgstr "不能在课程开始前和结束后2小时退出班级"
+
+msgid "student absence"
+msgstr "学生未出席"
+
+msgid "student equipment abnormal"
+msgstr "学生设备或网络故障"
+
+msgid "tutor absence"
+msgstr "教师缺席"
+
+msgid "tutor equipment abnormal"
+msgstr "老师设备或网络故障"
+
+msgid "other reason"
+msgstr "其他原因"
+
+msgid "Abnormal End Class"
+msgstr "授课异常"
+
+msgid "IT Test"
+msgstr "设备检测"
+
+msgid "The small class has been closed"
+msgstr "小班课已经关闭了"
+
+msgid "You have an unfinished class, please complete it before the new appointment."
+msgstr "您有一节未完成的课程，请完成后再进行新的预约。"
+
+msgid "less than 1 year"
+msgstr "一年以下"
+
+msgid "years"
+msgstr "年"
+
+msgid "more than 10 years"
+msgstr "十年以上"
+
+msgid "Please don't operate frequently"
+msgstr "请勿频繁操作"
+
+msgid "Many regular appointments"
+msgstr "多次定期约课"
+
+msgid "Sure to make appointment"
+msgstr "是否确定预约本节课"
+
+msgid "session does not exist."
+msgstr "当前课时不存在"
+
+msgid "Using Templates"
+msgstr "使用模板"
+
+msgid "Editing Template"
+msgstr "编辑模板"
+
+msgid "Save Templates"
+msgstr "保存模板"
+
+msgid "Release"
+msgstr "确定发布"
+
+msgid "Template content is empty, please edit the template first!"
+msgstr "模板内容为空，请先编辑模板！"
+
+msgid "Please choose the time before publishing!"
+msgstr "请先选择时间再发布！"
+
+msgid "PDetermine the release date ？"
+msgstr "确定此次发布时间？"
+
+msgid "Please wait patiently while we make an appointment for you."
+msgstr "正在帮您约课中，请耐心等待……"
+
+msgid "Please edit the template first!"
+msgstr "请先编辑模板！"
+

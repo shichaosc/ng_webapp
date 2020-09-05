@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% block title %}{% trans "Manage Extend Courseware" %}{% endblock %}
+{% block extra_head %}
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="{% static 'select2/select2.min.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+<div class="section section-gray">
+	<h4 class="text-center">{% trans 'Manage Extend Courseware' %}</h4>
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-8" style="padding-left: 0px;">
+				<ul class="nav nav-pills" role="tablist">
+					<li class="active">
+						<a href="/course/ext_up_courseware/" role="tab">
+							{% trans "Add Extend Coursewares" %}
+						</a>
+					</li>
+					<li>
+						<a href="/course/ext_courseware_list/" role="tab">{% trans " Browse My Extend Courseware" %}
+
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				&nbsp;
+			</div>
+		</div>
+
+
+		<div class="row">
+			<form role="form" method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="col-md-8 col-md-offset-3">
+					<div class="media media-post">
+						<div class="media-body">
+							<h4>
+								<small>{% trans "Required" %}</small>
+							</h4>
+							<div class="form-group">
+								<label class="col-sm-3 ">
+									<h6 class="pull-right text-muted">{% trans "CoursewareName" %}</h6>
+								</label>
+								<div class="col-sm-9">
+									{% if ext_course %}
+										<div class="form-group has-success">
+											<input type="text" name="ext_course_name" class="form-control"
+											       value="{{ ext_course.ext_course_name }}"/>
+
+										</div>
+									{% else %}
+										<div class="form-group has-success">
+											<input type="text" name="ext_course_name" class="form-control"/>
+											{{ error.ext_course_name_msg|safe }}
+										</div>
+									{% endif %}
+								</div>
+
+							</div>
+						</div>
+						<div class="media-body">
+							<div class="form-group">
+								<label class="col-sm-3 ">
+									<h6 class="pull-right text-muted"> {% trans "Level" %} </h6>
+								</label>
+								<div class="col-sm-9">
+									<div class="form-group has-success">
+										{% if ext_course %}
+										<select class="form-control" name="ext_course_tag">
+											{% for required_tag in required_tags %}
+											{% ifequal ext_course.ext_course_tag.id required_tag.id %}
+											<option selected="selected"
+											        value={{ required_tag.id }}>{{ required_tag.text }}</option>
+											{% else %}
+											<option value={{ required_tag.id }}>{{ required_tag.text }}</option>
+											{% endifequal %}
+											{% endfor %}
+										</select>
+										{{ error.ext_course_tag_msg|safe }}
+										{% else %}
+										<select class="form-control" name="ext_course_tag">
+											{% for required_tag in required_tags %}
+												<option value={{ required_tag.id }}>{{ required_tag.text }}</option>
+											{% endfor %}
+										</select>
+										{{ error.ext_course_tag_msg|safe }}
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="media-body">
+							<div class="form-group">
+								<label class="col-sm-3">
+									<h6 class="pull-right text-muted">{% trans "Type" %} </h6></label>
+								<div class="col-sm-9">
+									<div class="form-group has-success">
+										{% if ext_course %}
+										{% ifequal ext_course.ext_course_type 'old' %}
+										<select class="form-control" name="ext_course_type">
+											<option selected="selected"
+											        value="old">{% trans "Original courseware extension" %}</option>
+											<option value="new">{% trans "New courseware extension" %}</option>
+										</select>
+										{% else %}
+										<select class="form-control" name="ext_course_type">
+											<option value="old">{% trans "Original courseware extension" %}</option>
+											<option selected="selected"
+											        value="new">{% trans "New courseware extension" %}</option>
+										</select>
+										{% endifequal %}
+										{% else %}
+										<select class="form-control" name="ext_course_type">
+											<option value="old">{% trans "Original courseware extension" %}</option>
+											<option value="new">{% trans "New courseware extension" %}</option>
+										</select>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="media-body">
+							<div class="form-group">
+								<label class="col-sm-3 ">
+									<h6 class="pull-right text-muted">{% trans "Status" %} </h6></label>
+								<div class="col-sm-9">
+									<div class="form-group has-success">
+										{% if ext_course %}
+										{% ifequal ext_course.ext_course_status 'Public' %}
+										<select class="form-control" name="ext_course_status">
+											<option selected="selected" value="Public">{% trans "Public" %} </option>
+											<option value="Private">{% trans "Private" %}</option>
+										</select>
+										{% else %}
+										<select class="form-control" name="ext_course_status">
+											<option value="Public">{% trans "Public" %} </option>
+											<option selected="selected" value="Private">{% trans "Private" %}</option>
+										</select>
+										{% endifequal %}
+										{% else %}
+										<select class="form-control" name="ext_course_status">
+											<option value="Public">{% trans "Public" %} </option>
+											<option value="Private">{% trans "Private" %}</option>
+										</select>
+										{% endif %}
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="media-body">
+							<div class="form-group">
+								<label class="col-sm-3 ">
+									<h6 class="pull-right text-muted">{% trans "Choose File" %} </h6></label>
+
+								{% comment %}
+									<div class="col-sm-9">
+										<div class="form-group has-success">
+											<input type="file" name="ecw_content" class="form-control"/>
+										</div>
+									</div>
+								{% endcomment %}
+
+								<div class="col-sm-9">
+									<div class="col-md-9" style="padding-left: 0px;">
+										<div class="form-group has-success">
+											<input id="input_file" type="file" name="ecw_content"
+											       onchange="handleFile()" style="display: none;"/>
+											<input type="text" id="file_value" name="ecw_content_val"
+											       class="form-control">
+											{% trans "Please upload PPT/PPTX/PDF file" %}
+											{{ error.ecw_content_val_msg|safe }}
+										</div>
+									</div>
+									<div class="col-md-3">
+										<button type="button" id="file_button"
+										        class="btn btn-info btn-fill btn-block">{% trans "Browse" %}</button>
+									</div>
+
+								</div>
+
+
+							</div>
+						</div>
+						<div class="media-body">
+							<h4>
+								<small>{% trans "Option" %} </small>
+							</h4>
+							<div class="form-group">
+								<label class="col-sm-3 ">
+									<h6 class="pull-right text-muted">{% trans "Label" %}</h6></label>
+								<div class="col-sm-9">
+									<div class="form-group has-success">
+										<select class="form-control select2" multiple name="option_tags">
+										</select>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="media-body">
+								<div class="media-footer">
+									<button class="btn btn-info btn-fill btn-wd pull-right">{% trans "Submit" %} </button>
+								</div>
+							</div>
+						</div><!-- end media-post -->
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+</div>
+{% endblock %}
+
+
+
+{% block extra_ending %}
+	{{ block.super }}
+	<script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+	<script src="{% static "js/jquery-ui.js" %}" type="text/javascript"></script>
+	<script src="{% static "select2/select2.full.min.js" %}" type="text/javascript"></script>
+	<script type="text/javascript">
+		$('#file_button').on('click', function () {
+			$('#input_file').trigger('click');
+		});
+		function handleFile() {
+			$('#file_value').val($('#input_file').val());
+		}
+
+		function formatRepo(repo) {
+			if (repo.loading) return repo.name;
+
+			var markup = "<div class='select2-result-repository clearfix'>" +
+					"<div class='select2-result-repository__meta'>" +
+					"<div class='select2-result-repository__name'>" + repo.name + "</div>";
+
+			markup += "</div></div>";
+
+			return markup;
+		}
+
+		function formatRepoSelection(repo) {
+			return repo.text;
+		}
+
+		$(".select2").select2({
+			theme: "classic",
+			ajax: {
+				url: "/course/ext_required_tags/",
+				dataType: 'json',
+				delay: 250,
+				data: function (params) {
+					return {
+						q: params.term,
+						page: params.page
+					};
+				},
+				processResults: function (data, params) {
+					params.page = params.page || 1;
+					var items = []
+					data.option_tags.forEach(function (option_tag) {
+						items.push({
+							'id': option_tag.id,
+							'name': option_tag.text,
+							'text': option_tag.text,
+						});
+					});
+					return {
+						results: items,
+						pagination: {
+							more: (params.page * 10) < data.total_count
+						}
+					};
+				},
+				cache: true
+			},
+			escapeMarkup: function (markup) {
+				return markup;
+			},
+			// minimumInputLength: 1,
+			templateResult: formatRepo,
+			templateSelection: formatRepoSelection
+		});
+
+	</script>
+{% endblock %}

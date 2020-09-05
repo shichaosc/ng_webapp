@@ -1,0 +1,108 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+
+{% block content %}
+        <div class="content">
+            <div class="container-fluid">
+            	<div class="row">
+            	
+    {% if courses %}
+    	<table class="table">
+        <tr>
+            <td>{% trans 'course' %}</td>
+        
+        {% for course in courses %}
+            <td><a href="{% url 'exambank_preview' %}?course={{ course.id }}">{{ course.course_name }}</a></td> 
+        {% endfor %}
+        </tr>
+        </table>
+    {% else %}
+        <a href="{% url 'exambank' %}">Reselect course</a>
+    {% endif %}
+            	
+            	</div>
+    {% if questions %}
+            
+                <div class="row">
+					<div class="col-md-1">
+					<a href="{% url 'exambank_preview' %}?course={{ course }}&id={{ id }}&action=previous">
+					<h2><<</h2>
+					</a>
+					</div>
+                    <div class="col-md-8">
+                        <div class="card">
+                            {% for question in questions %}
+                                <li style="list-style: none;margin-bottom: 10px">题号：{{ question.no }}</li>
+                                {% for s in question.stem %}
+                                    <li style="list-style: none;font-size: 15px"> {{s}} </li>
+                                {% endfor %}
+                                {% if question.alternative.A %}
+                                <li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent">A:{{ question.alternative.A }}</button></li>
+                                {% endif %}
+                                {% if question.alternative.B %}
+                                <li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent">B:{{ question.alternative.B }}</button></li>
+                                {% endif %}
+                                {% if question.alternative.C %}
+                                <li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent ">C:{{ question.alternative.C }}</button></li>
+                                {% endif %}
+                                {% if question.alternative.D %}
+                                <li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent ">D:{{ question.alternative.D }}</button></li>
+                                {% endif %}
+                                <li style="list-style: none"><label style="font-size: 15px"> 答案：{{question.answer}} </label></li>
+                                <li style="list-style: none"><label style="font-size: 15px"> 难度：{{question.level}} </label></li>
+                            {% endfor %}
+						</div>
+					</div>	
+					<div class="col-md-2">
+					<a href="{% url 'exambank_preview' %}?course={{ course }}&id={{ id }}&action=next">
+					<h2>>></h2>
+					</a>
+						
+					</div>
+				</div>
+	{% elif course %}
+        No result
+    {% else %}
+        <a href="{% url 'exambank_preview' %}">Reselect course</a>
+	{% endif %}			
+			</div>
+		</div>
+{% endblock %}
+
+{#    <table class="table">#}
+{#                                        <tbody>#}
+{##}
+{#{% for question in questions %}#}
+{#                                            <tr>#}
+{#                                                <td>#}
+{##}
+{#题号：{{question.no}}#}
+{#</td></tr>#}
+{#                                            <tr>#}
+{#                                                <td>#}
+{##}
+{#{% for s in question.stem %}#}
+{#{{s}} <br>#}
+{#{% endfor %}#}
+{#</td></tr>#}
+{#                                            <tr>#}
+{#                                                <td>#}
+{##}
+{#{% if question.alternative.A %}A:  {{question.alternative.A}} {% endif %}<br>#}
+{#{% if question.alternative.B %}B:  {{question.alternative.B}} {% endif %}<br>#}
+{#{% if question.alternative.C %}C:  {{question.alternative.C}} {% endif %}<br>#}
+{#{% if question.alternative.D %}D:  {{question.alternative.D}} {% endif %}#}
+{#</td></tr>#}
+{#                                            <tr>#}
+{#                                                <td>#}
+{##}
+{#答案：{{question.answer}}#}
+{#</td></tr>#}
+{#                                            <tr>#}
+{#                                                <td>#}
+{##}
+{#难度：{{question.level}}#}
+{#</td></tr>#}
+{#{% endfor %}#}

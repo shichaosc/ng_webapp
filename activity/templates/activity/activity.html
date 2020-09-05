@@ -1,0 +1,347 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% load i18n %}
+{% load tz %}
+
+
+
+{% block title %}{% trans "Activity" %}{% endblock %}
+
+
+{% block header %}
+{#    {% if request.session.container != 'mobile' %}#}
+{#        {{ block.super }}#}
+{#    {% endif %}#}
+{% endblock %}
+
+{% block content %}
+    <style type="text/css">
+    p{
+        font-size: 13px;
+    }
+    .activity {
+        left:70px;
+        top: 13px;
+    }
+    .activity_text {
+        font-size: 12px;
+        margin-left: 20px;
+    }
+    .contenttext {
+        text-align:center;
+        margin-left: 10px;
+        top: 15px;
+    }
+    .teacherIntroduce {
+        top: 20%;
+        position:absolute;
+        z-index:2;
+        margin-left: 35%;
+        font-size: 10px;
+    }
+    .imggif {
+        top: 10px;
+        position:absolute;
+        margin-left: 10px;
+    }
+    .introduce {
+        top: 12%;
+        position:absolute;
+        z-index:2;
+        margin-left: 8%;
+    }
+    .one {
+        margin-left: 25px;
+        top: 230px;
+        position:absolute;
+        z-index:2;
+    }
+    .two {
+        position:absolute;
+        z-index:2;
+        margin-left: 15px;
+        margin-right: 10px;
+        top: 210px;
+        word-break: break-all;
+        word-wrap:break-word;
+    }
+    .three {
+        position:absolute;
+        z-index:2;
+        margin-left: 25px;
+        top: 145px;
+        margin-right: 5px;
+    }
+    .text_code {
+        position:absolute;
+        top: 80%;
+        left: 20%;
+        text-align: center;
+    }
+    @media screen and (max-width: 321px) { /*当屏幕尺寸小于321px时，应用下面的CSS样式*/
+        p{
+            font-size: 10px;
+        }
+        .activity {
+            left: 60px;
+            top: 15px;
+        }
+        .activity_text {
+            font-size: 9px;
+            margin-left: 30px;
+        }
+        .one {
+            margin-left: 25px;
+            top: 190px;
+            position:absolute;
+            z-index:2;
+        }
+        .two {
+            position:absolute;
+            z-index:2;
+            margin-left: 15px;
+            margin-right: 20px;
+            top:180px;
+            word-break: break-all;
+            word-wrap:break-word;
+        }
+        .three {
+            position:absolute;
+            z-index:2;
+            margin-left: 25px;
+            top: 135px;
+            margin-right: 10px;
+        }
+    }
+     @media screen and (min-width: 413px) { /* iPhone 7 Plus */
+         .one {
+            margin-left: 25px;
+            top: 250px;
+            position:absolute;
+            z-index:2;
+        }
+         .two {
+            position:absolute;
+            z-index:2;
+            margin-left: 15px;
+            margin-right: 20px;
+            top:220px;
+            word-break: break-all;
+            word-wrap:break-word;
+        }
+         .activity {
+             left:70px;
+             top: 20px;
+         }
+         .contenttext {
+            text-align:center;
+            margin-left: 7%;
+            top: 15px;
+        }
+         .text_code {
+            position:absolute;
+            top: 80%;
+            left: 22%;
+            text-align: center;
+        }
+     }
+    @media screen and (min-width: 622px) { /*当屏幕尺寸大于622px时，应用下面的CSS样式*/
+        p{
+            font-size: 28px;
+        }
+        .activity {
+            left:200px;
+            top: 60px;
+        }
+        .contenttext {
+            text-align:center;
+            margin-left: 15%;
+            top: 50px;
+            font-size: 30px;
+        }
+        .activity_text {
+            font-size: 28px;
+        }
+        .imggif {
+            top: 4%;
+            position:absolute;
+            margin-left: 4%;
+        }
+        .imgWith {
+            width: 105%;
+        }
+        .one {
+            margin-left: 8%;
+            top: 65%;
+            position:absolute;
+            z-index:2;
+            margin-right: 10%;
+        }
+        .two {
+            top: 65%;
+            position:absolute;
+            z-index:2;
+            margin-right: 7%;
+        }
+        .three {
+            top: 35%;
+            position:absolute;
+            z-index:2;
+            margin-left: 8%;
+        }
+    }
+
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12" style="padding: 0px">
+                <img src="{% static 'images/activity/bg_activity_001.jpg' %}" width="100%">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <p style="text-indent: 2em;">亲爱的家长朋友们，宝贝们新学期又开始啦！为了迎接孩子们返校，PPChinese推出开学豪礼大派送！</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1" style="padding: 0px">
+                <img src="{% static 'images/activity/number.png' %}" width="100%">
+                <div class="activity" style="position:absolute; z-index:2;">
+                    <p style="color: #eadd28;margin-bottom: 0px;margin-top: 0px">注册有礼:</p>
+                    <p style="color: #717078;margin-top: 0px">首次注册即可领取<span style="color:#eadd28 ">价值60美元</span>的试听课!</p>
+                    <p style="color: #eadd28;margin-bottom: 0px;margin-top: 0px">充值有礼:</p>
+                    <p style="color: #717078;margin-top: 0px">充值最高可领取<span style="color:#eadd28 ">价值150美元</span>的赠礼!</p>
+                    <p style="color: #eadd28;margin-bottom: 0px;margin-top: 0px">推荐有礼:</p>
+                    <p style="color: #717078;margin-top: 0px">填写推荐人，最高可领取<span style="color:#eadd28 ">150美元</span>优惠!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" style="margin-top: 10px;">
+                <img style="margin-left: 10px" src="{% static 'images/activity/frame.png' %}" width="95%">
+                <div class="contenttext" style="position:absolute;z-index:2">
+                    <p style="color: #43377e">活动期限：2018年8月13日00:00~9月30日00:00</p>
+                    <p class="activity_text" style="color: #43377e;">具体活动详情，可于本页底部添加微信客服，在线咨询</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1" style="margin-top: 30px">
+                <p><span style="color:#eadd28">PPChinese</span> 是一家拥有专业师资、权威教学体系和成熟技术的教学机构，一定能为您的孩子，带来最好的视听教学体验！</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12" style="padding: 0px">
+                <img src="{% static 'images/activity/activity_001.png' %}" width="100%">
+                <div class="one">
+                    <p style="color: #FFFFFF;margin-bottom: 10px;word-wrap:break-word;word-break:break-all; ">我们的老师,<span style="color:#eadd28 ">普通话发音标准，有教师资格证书</span>，在中国<span style="color:#eadd28 ">一、二线城市的公立、私立教学机构</span>从事中文教育工作，拥有丰富的中文教学经验，部分老师有海外留学、任教的经验。</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12" style="padding: 0px">
+                <img src="{% static 'images/activity/teacher_bg.png' %}" width="100%">
+                <div class="teacherIntroduce">
+                    <p style="color: #FFFFFF;margin-bottom: 10px;word-wrap:break-word;word-break:break-all;">马诗睿，北京师范大学汉语言文学专业本科，文学学士，英国爱丁堡大学教育学硕士，深厚的中文功底、良好的英文表达，可谓是中西方教育结合的典范。她的中文课堂娓娓道来，深入浅出，善于运用“苏格拉底式”提问，让学生在自我思辨中完成对于中文知识的汲取和升华。投身教育行业后，马老师一直将“因材施教”四个字奉为圭臬，PPChinese的一对一教学服务，正是对“因材施教”最好的诠释。</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12" style="padding: 0px">
+                <img src="{% static 'images/activity/activity_004.jpg' %}" width="100%">
+                <div class="introduce">
+                    <p style="color: #FFFFFF;margin-bottom: 0px;word-wrap:break-word;word-break:break-all;">我们的课程体系是根据国内教育部发行的小学语文教育目标，<span style="color:#eadd28 ">同时结合海外学生学习中文的现状和特点而设计的</span>。相应级别的<span style="color:#eadd28 ">语文技能，和中国国内要求同步。</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12" style="padding: 0px">
+                <img src="{% static 'images/activity/activity_005.jpg' %}" width="100%">
+                <div class="imggif">
+                    <img class="imgWith" src="{% static 'images/activity/promotion.gif' %}" width="50%">
+                </div>
+                <div class="two">
+                    <p style="color: #FFFFFF;margin-bottom: 0px;word-wrap:break-word;word-break:break-all; ">我们的教材是以<span style="color:#eadd28 ">中国国内新部编版教材为标准</span>，与国内同步，教学体系完整，知识点覆盖全面。针对海外学生中文学习特点，<span style="color:#eadd28 ">巩固听说，强化读写。</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12" style="padding: 0px">
+                <img src="{% static 'images/activity/activity_006.jpg' %}" width="100%">
+                <div class="three">
+                    <p style="color: #FFFFFF;margin-bottom: 0px;word-wrap:break-word;word-break:break-all; "><span style="color:#eadd28 ">在线一对一</span>网络中文云课堂，<span style="color:#eadd28 ">老师和孩子面对面</span>进行差异化教学，采用仿母语的学习环境，让孩子在原汁原味环境学习标准的普通话。</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form id="signup_form" method="post" action="/accounts/signup/?next={{ url }}">
+                            {% csrf_token %}
+                         {% if form.non_field_errors %}
+                            <div class="row text-center"><label style="color: red">{{form.non_field_errors }}</label></div>
+                         {% endif %}
+                            {% if redirect_field_value %}
+                                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                            {% endif %}
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i style="font-size: 20px" class="fa pe-7s-users"></i></span>
+                                    <input type="text" autofocus="autofocus" required="required" class="form-control" id="id_username" name="username" placeholder="{% trans "Username" %}" class="form-control">
+                                </div>
+                                 {% if form.username.errors  %}
+                                    <div class="help-block"><label style="color: red">{{form.username.errors }}</label></div>
+                                 {% endif %}
+                                <div style="margin-top: 10px" class="input-group">
+                                    <span class="input-group-addon"><i class="fa pe-7s-mail"></i></span>
+                                    <input id="id_email" name="email" title="" type="email" placeholder="{% trans "Email" %}" class="form-control">
+                                </div>
+                                {% if form.email.errors  %}
+                                    <div class="help-block"><label style="color: red">{{form.email.errors }}</label></div>
+                                 {% endif %}
+                                <div style="margin-top: 10px" class="input-group">
+                                    <span class="input-group-addon"><i style="font-size: 20px" class="fa pe-7s-unlock"></i></span>
+                                    <input required="required" id="id_password1" name="password1" type="password" placeholder="{% trans "Password" %}" class="form-control">
+                                </div>
+                                {% if form.password1.errors  %}
+                                    <div class="help-block"><label style="color: red">{{form.password1.errors }}</label></div>
+                                {% endif %}
+                                <div style="margin-top: 10px" class="input-group">
+                                    <span class="input-group-addon"><i style="font-size: 20px" class="fa pe-7s-unlock"></i></span>
+                                    <input required="required" id="id_password2" name="password2" type="password" placeholder="{% trans "re-enter password" %}" class="form-control">
+                                </div>
+                                {% if form.password2.errors  %}
+                                    <div class="help-block"><label style="color: red">{{form.password2.errors }}</label></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                        	<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center col-xs-10 col-xs-offset-1">
+                            	<p class="description">
+                           		{% trans "By signing up, I agree to PPLingo Terms of Service, Nondiscrimination Policy, Payments Terms of Service, Privacy Policy." %}</p>
+                        	</div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                                <button type="submit" class="btn btn-round btn-block btn-fill btn-info">{% trans "Sign Up" %}</button><br>
+                        	</div>
+                        </div>
+                        </form>
+        </div>
+        <div class="row">
+             <div class="col-md-12 col-xs-12" style="padding: 0px">
+                 <img src="{% static 'images/activity/code_activity.jpg' %}" width="100%">
+                 <div class="text_code">
+                     <p style="color: #717078">您可通过识别二维码添加微信咨询客服<br>客服在线时间：AM9:00~PM9:00</p>
+                 </div>
+             </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{#{% if request.session.container != 'mobile' %}#}
+{#        {{ block.super }}#}
+{#    {% endif %}#}
+{% endblock %}

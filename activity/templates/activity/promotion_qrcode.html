@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% load i18n %}
+{% load tz %}
+{% block title %}{% trans "Promotion" %}{% endblock %}
+
+
+{% block content %}
+<div class="section section-white">
+	<div class="container">
+		<div class="col-md-12">
+			
+				<div class="row">
+					<div class="col-md-12 text-center">
+					<h4>{% trans 'Referral Awards' %}</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5  img-wrapper" id="qrcode">
+                        <a href="{{ im_name }}">
+                            <img src="{{ im_name }}" class="img-responsive">
+                        </a>
+
+					</div>
+
+					<div class="col-md-5">
+						<p class="description">{% trans "If you like PPChinese, please share it with your friends. While they enjoy the good service, you can also enjoy double rewards during promotion period." %}</p>
+
+						<!-- 
+						<br>
+						<p class="description"> {% trans 'please go to' %} <a href="#">{% trans 'referral' %}</a>.</p>
+						 -->
+						<br>
+                        <div class="row">
+                        <div class="col">
+                            <br>
+						    <div class="table-responsive">
+					        <table class="table">
+					            <thead>
+					                <tr>
+                                        <th class="text-center">{% trans 'Top up by the referee' %}</th>
+                                        <th class="text-center">{% trans 'Special Promotion-Bonus' %}</th>
+                                        <th class="text-center">{% trans 'Bonus' %}</th>
+					                </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td class="text-center">10 {% trans 'point' %}</td>
+                                        <td class="text-center">2 {% trans 'point' %}</td>
+                                        <td class="text-center"><strike>1 {% trans 'point' %}</strike></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">20 {% trans 'point' %}</td>
+                                        <td class="text-center">4 {% trans 'point' %}</td>
+                                        <td class="text-center"><strike>2 {% trans 'point' %}</strike></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">50 {% trans 'point' %}</td>
+                                        <td class="text-center">10 {% trans 'point' %}</td>
+                                        <td class="text-center"><strike>5 {% trans 'point' %}</strike></td>
+                                    </tr>
+					            </tbody>
+					        </table>
+					    </div>
+                    </div>
+                    <br>
+					</div>
+						<br>
+						<p class="description">{% trans 'Terms and Conditions' %}</p>
+						{% trans '1.Promotion period starts from August 13, 2018, midnight to Sept. 30, 2018, midnight.' %}
+						<br>
+						{% trans "2.Share the photo with QR code to the friends circle or your friends. You will be your friend's referrer after your friend complete the registration by scanning the QR code." %}
+						<br>
+						{% trans '3.The bonus will be deposited into your account instantly, when your referrals tops up.' %}
+					    <br>
+						{% trans '4.You can get rewards 2 points for every 10 points, your referee tops up (The highest is 10 points). ' %}
+                        <br>
+						{% trans '5.When your referral requests refund, referral bonus of designated transaction will be deducted accordingly.' %}
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="space-50"></div>
+				</div>
+			
+		</div>
+	</div>
+</div>
+
+{% endblock %}

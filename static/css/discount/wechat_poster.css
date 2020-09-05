@@ -1,0 +1,145 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  color: #3B3B4D; }
+
+* {
+  outline: none;
+  margin: 0;
+  padding: 0; }
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+a:active, a:hover, a:visited {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none; }
+
+input {
+  -webkit-box-shadow: 0 0 0 1000px white inset; }
+
+.text-center {
+  text-align: center; }
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.logo {
+  width: 37.6vw;
+  display: block;
+  margin: 8.5333333333vw auto 0 auto; }
+
+.common-input {
+  width: 77.3333333333vw;
+  height: 10.1333333333vw;
+  padding: 0 2.6666666667vw;
+  font-size: 3.2vw;
+  box-sizing: border-box;
+  border: 1px #CBD6E2 solid;
+  border-radius: 1.0666666667vw;
+  outline: none;
+  display: block;
+  margin: auto; }
+
+.common-input::-webkit-input-placeholder {
+  color: #6C7B8A; }
+
+.submit-btn {
+  border-radius: 100px;
+  height: 10.9333333333vw;
+  background-color: #24CBDA;
+  margin: auto;
+  display: block;
+  width: 77.3333333333vw;
+  text-align: center;
+  color: white;
+  font-size: 4vw; }
+
+.submit-btn:disabled {
+  background-color: #EDEDED;
+  color: #999999; }
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+h1 {
+  font-size: 4.2666666667vw;
+  margin-top: 4vw;
+  color: #24CBDA;
+  font-weight: 500; }
+
+.poster-description-line-1 {
+  font-size: 3.2vw;
+  margin-top: 1.3333333333vw; }
+
+.poster-description-line-2 {
+  font-size: 3.2vw;
+  margin-top: 1.3333333333vw; }
+  .poster-description-line-2 span {
+    font-size: 3.7333333333vw;
+    color: #F88741; }
+
+.poster-container {
+  margin-top: 3.3333333333vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 2vw 2vw;
+  background-color: #F7F7F7;
+  border-width: 0.2666666667vw;
+  border-style: dashed;
+  border-color: #C4C4C4; }
+  .poster-container .shared-title-container {
+    padding: 1.8666666667vw 0 1.6vw;
+    display: flex;
+    align-items: center; }
+    .poster-container .shared-title-container img {
+      width: 5.0666666667vw;
+      display: block;
+      margin-right: 0.5333333333vw; }
+    .poster-container .shared-title-container p {
+      display: block;
+      color: #24CBDA;
+      font-size: 3.4666666667vw; }
+  .poster-container img {
+    width: 57.3333333333vw; }
+
+.shard-container {
+  margin-top: 4.2666666667vw; }
+  .shard-container h4 {
+    font-size: 3.4666666667vw;
+    display: block; }
+  .shard-container .shard-button-container {
+    display: flex;
+    margin-top: 1.3333333333vw; }
+    .shard-container .shard-button-container input {
+      width: 53.3333333333vw;
+      height: 8.2666666667vw;
+      padding-left: 2.6666666667vw;
+      font-size: 3.2vw;
+      color: #6C7B8A;
+      border-width: 0.2666666667vw;
+      border-color: #CBD6E2;
+      border-style: solid;
+      border-radius: 1.0666666667vw; }
+    .shard-container .shard-button-container button {
+      margin-left: 1.3333333333vw;
+      background-color: #24CBDA;
+      font-size: 4vw;
+      color: white;
+      border-radius: 1.0666666667vw;
+      padding: 0 3.0666666667vw; }
+      .shard-container .shard-button-container button:disabled {
+        background-color: #DFDFDF;
+        color: #999999; }
+
+/*# sourceMappingURL=wechat_poster.css.map */

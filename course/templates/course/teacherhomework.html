@@ -1,0 +1,340 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %} 
+    {% ifequal from_page 'morelist' %}
+        {% trans 'Homework corrected' %}
+    {% else %}
+        {% trans 'Homework' %}
+    {% endifequal %} 
+{% endblock %}
+
+
+{% block header %}
+    {% if request.session.container != 'mobile' %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block extra_head %}
+    <style>
+         .container .row{
+           margin:0 0 10px 0;
+        }
+        .homework-tit{
+            background:#EFF9FB;
+            padding:15px 0;
+            text-align:center;
+            color:#64CCDB;
+        }
+        .homework-tit h5{
+            font-size:24px; 
+        }
+        .card{
+            margin-top:30px;
+            overflow:hidden;
+        }
+        .homework-news img{
+            width:20px;
+            vertical-align:text-bottom;
+        }
+        .homework-news span{
+            margin-left:10px;
+        }
+        .card-block{
+            margin:30px 0;
+        }
+        .student-item ul{
+            padding:0;
+            display:flex;
+            height:60px;
+            line-height:60px;
+            background:#D0EFF4;
+            border-top:2px solid #64CCDB;
+            color:#64CCDB;
+        }
+        .student-item ul li{
+            width:100%;
+            border-left:1px solid #64CCDB;
+        }
+        .student-item ul li .list-list{
+            width:100%;
+            text-align:center;
+            display:flex;
+            align-items:center;
+            padding:0 5px;
+            cursor: pointer;
+        }
+        .student-item ul li span{
+            display:block;
+            height:60px;
+            line-height:60px;
+            white-space:nowrap;
+            overflow:hidden;
+
+            word-break:break-word;
+            text-overflow:ellipsis;
+        }
+        .student-item ul li select{
+            margin-left:10px;
+            height:30px;
+            line-height:30px;
+            width: 55px;
+            border:1px solid #64CCDB;
+            appearance:none;
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            padding-right: 14px;
+            padding-left:5px;
+            background: url("../../../static/images/small-class/icon-triangle.png") no-repeat scroll right center transparent;
+
+        }
+        select::-ms-expand { display: none; }
+        .student-item{
+            padding:0;
+        }
+        .student-item ul li:first-child{
+            border:none
+        }
+        .student-item ul li.active{
+            background:#fff;
+        }
+        .student-item ul li.active span{
+            color:#4A4A4A;
+        }
+        .submit-homework,.disable-homework{
+            background:#64CCDB;
+            border-radius:6px;
+            color:#fff;
+            height:60px;
+            width:100%;
+            line-height:60px;
+            display:block;
+            text-align:center;
+        }
+        .submit-homework:hover,.disable-homework:hover{
+            color:#fff;
+        }
+        .disable-homework{
+            opacity: 0.3;
+            cursor: default;
+        }
+        .div_img{
+            width:170px;
+            height:170px;
+            margin-right:30px;
+            margin-top:10px;
+            background:#f5f5f5;
+            box-shadow:0px 2px 30px 0px rgba(0, 0, 0, 0.06);
+            float:left;
+            border-radius:10px;
+            overflow:hidden;
+            border:1px solid #5CC2D0;
+        }
+        .look-img{
+            width:170px;
+            height:170px;
+        }
+        .div_img:nth-child(3n){
+            margin-right:0;
+        }
+        .modal-body,.modal-dialog{
+            padding:0;
+        }
+        .tit-results{
+            text-align:center;
+            padding:50px 0;
+            font-size:20px;
+        }
+        @media (max-device-width: 599px){
+            .parentFileBox>.fileBoxUl>li,.div_img{
+                margin:0 auto 5px auto;
+                float:inherit;
+            }
+            .student-item ul{
+                display:block;
+                height:auto;
+                overflow:hidden;
+            }
+            .student-item ul li{
+                width:50%;
+                float:left;
+            }
+            .student-item ul li span{
+                width:80%;
+                overflow:hidden;
+            }
+            .submit-homework, .disable-homework{
+                width:40%;
+                height:40px;
+                line-height:40px;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <div class="card" >
+                    <div class="card-block">
+                        {% if not result %}
+                            <div class="row homework-row">
+                                <div class="col-md-12">
+                                    <div class="homework-tit">
+                                        <h5>
+                                            {% ifequal from_page 'morelist' %}
+                                                {% trans 'Homework corrected' %}
+                                            {% else %}
+                                                {% trans 'Homework' %}
+                                            {% endifequal %}
+                                        </h5>
+                                        <p class="homework-news">
+                                            {% comment %} <img src="{% static 'images/small-class/icon-my-class-group.png' %}" /> {% endcomment %}
+                                            <span>{% trans 'session' %}：Level {{ session.course.course_level }} - lesson {{ session.session_no }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                {% ifequal from_page 'morelist' %}
+                                    {% comment %} 学生端展示的评分 {% endcomment %}
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>
+                                                <img src="{% static 'images/small-class/icon-student-score.png' %}" />
+                                                {% trans 'Score:' %} {{ homeworkList.0.homeworkResult }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-10 student-item">
+                                                <ul>
+                                                    {% for item in homeworkList %}
+                                                        <li {% if forloop.first %}class="active"{% endif %}>
+                                                            <form class="form-submit">
+                                                                <input type="hidden" name="student" value="{{ item.user_id }}" />
+                                                                <div class="list-list">
+                                                                    {% if homeworkList|length == 4 %}
+                                                                        <span title="{{ item.student_name }}">{{ item.student_name|truncatechars:11 }}</span>
+                                                                    {% elif homeworkList|length == 3 %}
+                                                                        <span title="{{ item.student_name }}">{{ item.student_name|truncatechars:18 }}</span>
+                                                                    {% elif homeworkList|length == 2 %}
+                                                                        <span title="{{ item.student_name }}">{{ item.student_name|truncatechars:26 }}</span>
+                                                                    {% else %}
+                                                                        <span title="{{ item.student_name }}">{{ item.student_name }}</span>
+                                                                    {% endif %}
+
+                                                                    <select name="score">
+                                                                        <option {% if item.homeworkResult == 1 %} selected {% endif %} value="1">{% trans "1" %} </option>
+                                                                        <option {% if item.homeworkResult == 2 %} selected {% endif %} value="2">{% trans "2" %} </option>
+                                                                        <option {% if item.homeworkResult == 3 %} selected {% endif %} value="3">{% trans "3" %} </option>
+                                                                        <option {% if item.homeworkResult == 4 %} selected {% endif %} value="4">{% trans "4" %} </option>
+                                                                        <option {% if item.homeworkResult == 5 %} selected {% endif %} value="5">{% trans "5" %} </option>
+                                                                    </select>
+                                                                </div>
+                                                            </form>
+                                                        </li>
+
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a href="javascript:;" {% ifequal homeworkList.0.homeworkResult None %}class="submit-homework" {% else %} class="disable-homework" {% endifequal %}>
+                                                    <img src="{% static 'images/small-class/icon-send-out.png' %}" />
+                                                    {% trans "Submit" %}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endifequal %}
+                            </div>
+                        {% endif %}
+                        {% if not result %}
+                            {% for item in homeworkList %}
+                                <div {% if forloop.first %} class="row tab-homework" {% else %} class="row tab-homework hidden" {% endif %}>
+                                    <div class="col-md-10 col-md-offset-1" id="homework_file">
+                                        {% for file in item.doneHomework %}
+                                            <div class="div_img">
+                                                <div class="img_picture">
+                                                    <img class="look-img" data-toggle="modal" data-target="#alertModalImg" alt="{% trans "Homework has been uploaded successfully, please check later!" %}"
+                                                            src="{{ file.result_content.url }}">
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                        {% if result %}
+                            <div class="tit-results">
+                            {% if result == 'no homework' %}
+                                {% trans "There is no homework in this class ~" %}
+                            {% else %}
+                                {{ result }}
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="/course/readhomework/" method="POST" id="form-rating">
+        {% csrf_token %}
+        <input class="data-form" type="hidden" name="data" value="">
+        <input type="hidden" name="session" value="{{ session.id }}" />
+    </form>
+    {#点击查看大图#}
+    <div class="modal fade" id="alertModalImg" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <div id="img_show">
+                        <img style="max-width:100%;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+{% if request.session.container != 'mobile' %}
+    {{ block.super }}
+{% endif %}
+<script>
+    $('#homework_file .div_img').on('click',function(){
+        var imgUrl = $(this).find('.look-img').attr('src');
+        $('#img_show').find('img').attr('src',imgUrl);
+    })
+    var lengHomework = {{ homeworkList|length }};
+    if(lengHomework > 1){
+        $('.student-item li').on('click',function(){
+            var index = $(this).index();
+            $(this).addClass('active').siblings('li').removeClass('active');
+            $('.tab-homework').eq(index).removeClass('hidden').siblings('.tab-homework').addClass('hidden');
+        })
+    }
+    $(document).on('click','.submit-homework',function(){
+        var arr = [];
+        for (var i = 0; i < $('.form-submit').length; i++) {
+            var formSerial = {};
+             $($("form.form-submit").eq(i).serializeArray()).each(function(){
+                 formSerial[this.name] = this.value;
+             });
+            arr.push(JSON.stringify(formSerial))
+        }
+        $('.data-form').val(arr)
+        if(arr.length > 0){
+            $('#form-rating').submit();
+
+        }
+
+    })
+</script>
+{% endblock %}

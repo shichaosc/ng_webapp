@@ -1,0 +1,50 @@
+{% extends 'discount_base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <title>生成海报页</title>
+    <link rel="stylesheet" href="{% static 'css/discount/wechat_poster.css' %}">
+{% endblock %}
+{% block content %}
+    <main>
+        <h1>共享给你的朋友吧</h1>
+
+        <p class="poster-description-line-1">每邀请1位好友购买相应课时</p>
+
+        <p class="poster-description-line-2">你们将同时获得<span>至少4节</span>赠课，多邀多得！</p>
+
+        <div class="poster-container">
+            <div class="shared-title-container">
+                <img src="{% static 'img/finger-point.png' %}">
+
+                <p>长按保存或分享</p>
+            </div>
+            <img src="{{ poster }}">
+        </div>
+
+{#        <div class="shard-container">#}
+{#            <h4>通过链接分享</h4>#}
+{#            <div class="shard-button-container">#}
+{#                <input id="shard-url" value="{{ redirect_url }}" readonly>#}
+{##}
+{#                <button id="shard-btn" data-clipboard-target="#shard-url">复制</button>#}
+{#            </div>#}
+{#        </div>#}
+    </main>
+{% endblock %}
+
+{% block script %}
+{#    <script type="text/javascript" src="{% static 'js/clipboard.min.js' %}"></script>#}
+{#    <script>#}
+{#        var clipboard = new ClipboardJS('#shard-btn');#}
+{#        clipboard.on('success', function (e) {#}
+{#            const btn = $("#shard-btn");#}
+{#            btn.attr("disabled", "");#}
+{#            btn.text("已复制");#}
+{#        });#}
+{##}
+{#        clipboard.on('error', function (e) {#}
+{#            console.error('复制失败')#}
+{#        })#}
+{#    </script>#}
+{% endblock %}

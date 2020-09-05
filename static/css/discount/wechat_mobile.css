@@ -1,0 +1,156 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  color: #3B3B4D; }
+
+* {
+  outline: none;
+  margin: 0;
+  padding: 0; }
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+a:active, a:hover, a:visited {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none; }
+
+input {
+  -webkit-box-shadow: 0 0 0 1000px white inset; }
+
+.text-center {
+  text-align: center; }
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.logo {
+  width: 37.6vw;
+  display: block;
+  margin: 8.5333333333vw auto 0 auto; }
+
+.common-input {
+  width: 77.3333333333vw;
+  height: 10.1333333333vw;
+  padding: 0 2.6666666667vw;
+  font-size: 3.2vw;
+  box-sizing: border-box;
+  border: 1px #CBD6E2 solid;
+  border-radius: 1.0666666667vw;
+  outline: none;
+  display: block;
+  margin: auto; }
+
+.common-input::-webkit-input-placeholder {
+  color: #6C7B8A; }
+
+.submit-btn {
+  border-radius: 100px;
+  height: 10.9333333333vw;
+  background-color: #24CBDA;
+  margin: auto;
+  display: block;
+  width: 77.3333333333vw;
+  text-align: center;
+  color: white;
+  font-size: 4vw; }
+
+.submit-btn:disabled {
+  background-color: #EDEDED;
+  color: #999999; }
+
+#phone-form {
+  position: relative;
+  width: 86.5333333333vw;
+  border: 0.2666666667vw dashed rgba(36, 203, 218, 0.68);
+  background-color: #F6FEFE;
+  margin: 13.0666666667vw auto 9.0666666667vw;
+  padding-top: 14.6666666667vw;
+  padding-bottom: 7.3333333333vw; }
+
+.error-message {
+  color: #F88741;
+  font-size: 2.9333333333vw;
+  margin-top: 1.3333333333vw;
+  margin-left: 4.8vw; }
+
+.head-image {
+  border-radius: 100px;
+  top: -7.4666666667vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  width: 16.5333333333vw; }
+
+h4 {
+  text-align: center;
+  font-size: 4.2666666667vw;
+  font-weight: 500;
+  line-height: 6vw;
+  color: #00CFDD; }
+  h4 span {
+    color: #F88741; }
+
+.area-code {
+  font-size: 3.4666666667vw;
+  width: 21.8666666667vw; }
+
+.phone-number {
+  font-size: 3.4666666667vw; }
+
+.input-title {
+  margin-left: 4.8vw;
+  margin-top: 11.0666666667vw;
+  display: flex;
+  margin-bottom: 1.4666666667vw; }
+
+#country {
+  padding: 2.2666666667vw 0 2.2666666667vw 2.6666666667vw;
+  color: #6C7B8A;
+  font-size: 3.2vw;
+  width: 18.9333333333vw;
+  margin-left: 4.8vw;
+  box-sizing: border-box;
+  border-radius: 1.0666666667vw 0 0 1.0666666667vw;
+  border: 0.2666666667vw #24CBDA solid; }
+
+#phone-input {
+  width: 56.5333333333vw;
+  box-sizing: border-box;
+  font-size: 3.2vw;
+  color: #6C7B8A;
+  padding: 2.2666666667vw 0 2.2666666667vw 2.6666666667vw;
+  border-radius: 0 1.0666666667vw 1.0666666667vw 0;
+  border: 0.2666666667vw #24CBDA solid; }
+
+.submit-btn {
+  margin-top: 8.2666666667vw; }
+
+.contact-us {
+  text-align: center;
+  font-size: 3.7333333333vw; }
+
+.contact-app {
+  margin-left: 19.0666666667vw; }
+
+.contact-group {
+  margin-top: 4.9333333333vw;
+  display: flex;
+  justify-content: center; }
+  .contact-group .title {
+    font-size: 3.4666666667vw; }
+  .contact-group .contact-img {
+    margin: 1.8666666667vw 0 1.6vw;
+    width: 22.1333333333vw; }
+  .contact-group .footer {
+    font-size: 3.4666666667vw; }
+
+/*# sourceMappingURL=wechat_mobile.css.map */

@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/welcome/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/welcome/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/welcome/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/welcome/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/welcome/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/welcome/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/welcome/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/welcome/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/welcome/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/welcome/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/welcome/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/welcome/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/welcome/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/static/welcome/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/welcome/favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>LingoAce</title>
+    <style type="text/css">
+        body {
+            font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+
+        /* ~~ Element/tag selectors ~~ */
+        ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+            padding: 0;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6, p {
+            margin-top: 0; /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+            padding-right: 15px;
+            padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+            font-family: PingFangSC-Light, sans-serif;
+            padding-top: 15px;
+        }
+
+        p {
+            font-size: 120%;
+        }
+
+        h1 {
+            color: #24CBDA;
+            font-size: 130%;
+            line-height: normal;
+            text-align: left;
+        }
+
+        h2 {
+            color: #000;
+            font-size: 130%;
+            line-height: normal;
+            text-align: center;
+        }
+
+        .signup {
+            text-align: center;
+            min-height: 1px;
+            padding: 15px;
+            width: 80%;
+            margin: auto;
+            border: 1px dashed #24CBDA;
+            font-size: 30px;
+            background: #F9FDFE;
+        }
+
+        #FNAME, #EMAIL, #custom_s1, #CUSTOM_S1 {
+            width: 70%;
+            max-width: 500px;
+            min-width: 250px;
+            font-size: 70%;
+            height: 45px;
+            text-align: center;
+            border-color: #24CBDA;
+            border-radius: 10px;
+            margin: 10px;
+            font-family: PingFangSC-Light, sans-serif;
+        }
+
+        .submitbutton {
+            border-radius: 30px;
+            font-size: 30px;
+            height: 50px;
+            width: 70%;
+            min-width: 250px;
+            max-width: 500px;
+            color: #fef4e9;
+            border: solid 1px #24CBDA;
+        / / background: #24CBDA;
+            background: -webkit-gradient(linear, left top, left bottom, from(#24CBDA), to(#24CBDA));
+            background: -moz-linear-gradient(top, #24CBDA, #24CBDA);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#24CBDA', endColorstr='#24CBDA');
+        }
+
+        .submitbutton:hover {
+            background: #f47c20;
+            background: -webkit-gradient(linear, left top, left bottom, from(#6CF), to(#6CF));
+            background: -moz-linear-gradient(top, #6CF, #6CF);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6CF', endColorstr='#6CF');
+        }
+
+        .submitbutton:active {
+            color: #fcd3a5;
+            background: -webkit-gradient(linear, left top, left bottom, from(#0FF), to(#0FF));
+            background: -moz-linear-gradient(top, #0FF, #0FF);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0FF', endColorstr='#0FF');
+        }
+
+        /* ~~ WIDE SCREEN ~~ */
+        @media screen and (min-width: 600px) {
+            h1 {
+                color: #24CBDA;
+                font-size: 200%;
+                line-height: normal;
+                text-align: left;
+            }
+
+            .imgleft {
+                float: left;
+                width: 50%;
+                padding-right: 10px;
+            }
+
+            .imgleftsmall {
+                width: 35%;
+                float: left;
+            / / text-align: center;
+                padding: 10px;
+            }
+
+            .imgrightsmall {
+                width: 35%;
+                float: right;
+                padding: 10px;
+            / / text-align: center;
+            }
+        }
+
+        /* ~~ SMALL SCREEN ~~ */
+        @media screen and (max-width: 599px) {
+            h1 {
+                color: #24CBDA;
+                font-size: 220%;
+                line-height: normal;
+                text-align: center;
+            }
+
+            .imgleft {
+                width: 100%;
+            }
+
+            .imgleftsmall {
+                width: 50%;
+                float: left;
+                padding: 10px;
+            }
+
+            .imgrightsmall {
+                width: 50%;
+                float: right;
+                padding: 10px;
+            }
+
+            .signup {
+                width: 80%;
+            }
+
+            #FNAME, #EMAIL, #custom_s1 {
+                width: 80%;
+            }
+
+            .submitbutton {
+                width: 80%;
+            }
+
+        }
+
+        img {
+            border-radius: 20px;
+            width: 100%;
+        }
+
+        .imgtop {
+            border-radius: 0px;
+        }
+
+        a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+            border: none;
+        }
+
+        /* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+        a:link {
+            color: #414958;
+            text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+        }
+
+        a:visited {
+            color: #4E5869;
+            text-decoration: underline;
+        }
+
+        a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+            text-decoration: none;
+        }
+
+        /* ~~ this container surrounds all other divs giving them their percentage-based width ~~ */
+        .container {
+            width: 100%;
+            max-width: 1024px; /* a max-width may be desirable to keep this layout from getting too wide on a large monitor. This keeps line length more readable. IE6 does not respect this declaration. */
+            min-width: 320px; /* a min-width may be desirable to keep this layout from getting too narrow. This keeps line length more readable in the side columns. IE6 does not respect this declaration. */
+            background-color: #FFF;
+            margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout. It is not needed if you set the .container's width to 100%. */
+        }
+
+        /* ~~ This is the layout information. ~~
+
+        1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+        */
+        .content {
+            padding: 0px 0px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ~~ This grouped selector gives the lists in the .content area space ~~ */
+        .content ul, .content ol {
+            padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+        }
+
+        /* ~~ miscellaneous float/clear classes ~~ */
+        .fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+            float: right;
+            margin-left: 8px;
+        }
+
+        .fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+            float: left;
+            margin-right: 8px;
+        }
+
+        .clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the overflow:hidden on the .container is removed */
+            clear: both;
+            height: 0;
+            font-size: 1px;
+            line-height: 0px;
+        }
+
+        .row {
+            display: flex;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 800px;
+        }
+
+        /* Create three equal columns that sits next to each other */
+        .column {
+            flex: 25%;
+            padding: 5px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+
+        .center {
+            text-align: center;
+        }
+
+
+        span {
+            color: #FF584D;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="content"><img class="imgtop" src="/static/welcome/header.png"/> <img class="imgleft"
+                                                                                     src="/static/welcome/girl-kids-training-school-159782.png"/>
+        <h1>如何利用课后时间高效提升孩子的中文综合能力？</h1>
+        <p>近年来，越来也多的海外家长开始重视起了孩子的中文学习，可身在海外，即使学校即使开设了中文课，孩子在大环境下，接受语言的能力就比较差。更何况，很多家长反应，<strong>学校的中文课程内容和学时都不够，没有大量的阅读及写作训练，孩子的基础也不牢靠</strong>；孩子本身就活泼好动，老师精力不够无法一一监督，孩子跟不上就会学习没动力，基础都没有打好，孩子未来基本的阅读和写作能力都没有，综合能力欠佳。这样，<strong>一来丢弃了历史悠久的原生文化，二来孩子的中文学习成绩欠佳，</strong>也失去了华文孩子本该拥有的中文学习优势，『文盲』无异。
+        </p>
+        <h1>那么如何有效利用孩子学习语言的黄金时期？</h1>
+        <img class="imgleftsmall" src="/static/welcome/fw658.png"/>
+        <p><strong>1. 首先<span>母语环境</span>是学习语言最好的办法之一。</strong>可以让孩子在附近华人较多的地方或者中国餐厅与中国人进行交谈，如果不能在附近遇到母语是中文的人，可以通过网络与国内的亲戚朋友保持频繁联络，而且他们能够轻松的帮你纠正语法和发音，还能教你许多俗语和当代用语，条件允许也可以带孩子回中国旅游。
+        </p>
+        <br/>
+        <img class="imgrightsmall" src="/static/welcome/kids-girl-pencil-drawing-159823.png"/>
+        <p><strong>2. 关于阅读和写作能力，是需要<span>汉字与词语的积累过程。</span></strong>汉字的偏旁部首结构复杂，可以让孩子用田字格米字格本子练习，也方便掌握结构。家长可以在家给孩子阅读有趣的绘本，比方说《神奇校车》系列，郑渊洁童话系列，低年级的可以选择有拼音的书籍，让孩子在理解的前提下跟读，每天可让孩子记下一个印象最深的新词语，通过阅读日积月累自然也就会用词写作。
+        </p>
+        <br/>
+        <img class="imgleftsmall" src="/static/welcome/timg.png"/>
+        <p><strong>3. 孩子不爱学中文主要是因为<span>枯燥</span>，所以<span>教学方法</span>很重要，需要<span>趣味性</span>的方式，</strong>平时可以<strong>看中文卡通或者电影，听中文广播，</strong>挑选一些简单有趣的内容，在娱乐中培养孩子的语感。
+        </p>
+        <br/>
+        <img class="imgrightsmall" src="/static/welcome/Bitmap.png"/>
+        <p>4. <strong>最快的方式可以借助外力来帮助孩子有效的提升中文，</strong>可以考虑参加语言课程，因为并不是会说中文就可以教中文的，需要教学的<span>专业性</span>，老师经验丰富，着重根据孩子的情况来进行系统讲解，孩子跟得上有成就感，自然会对中文有兴趣。
+        </p>
+        <br/>
+        <img class="row" src="/static/welcome/听说读写.png"/>
+        <p><strong>LingoAce</strong>在线一对一中文课程，提供免费的科学中文测评，根据孩子实际水平<span>个性化</span>教学，全面提升<span>听说读写</span>综合能力，拓展孩子的国际视野。
+        </p>
+        <div class="row">
+            <div class="column"><img src="/static/welcome/口语.png"/></div>
+            <div class="column"><img src="/static/welcome/阅读.png"/></div>
+            <div class="column"><img src="/static/welcome/写作.png"/></div>
+        </div>
+        <p>
+            我们的教材为国内教育部指定教材（其中涉及敏感的话题均已更换为当地的同等难度的文章），灵活教学会实际根据孩子的应试需求，重点训练<span>口语</span>，<span>阅读</span>，及<span>写作</span>的能力，兼顾了<span>文学性和实用性</span>，掌握最<span>地道的中文</span>。
+        </p>
+        <img class="row" src="/static/welcome/教师.png"/>
+        <p> 我们的教师经过层层筛选，均是国内本土在职教师，<span>100%持有中国教师资格证或对外汉语资格证</span>，普通话水平均为二级甲等以上，拥有丰富的教学经验。</p>
+        <img class="row" src="/static/welcome/一对一.png"/>
+        <p><span>一对一在线课程，课程游戏化设计</span>，趣味教学，根据孩子中文水平个性化教学，强化口语和写作兼顾中文考试的同时，强化了文学素养。</p>
+        <img class="row" src="/static/welcome/上课.png"/>
+        <p>约课上课<span>方便快捷</span>，可根据自己的需求，选择合适的老师，灵活约课在家就可以零距离学习中国文化</p>
+        <img class="row" src="/static/welcome/开心的孩子.png"/>
+        <p>孩子学习效果定期反馈，孩子的进步明显看得见，在考试中也将取得<span>优异的成绩</span>，生活中的交流也能够用到一些高级的词汇。</p>
+        <p>LingoAce保证提供孩子优质的学习质量，抓住孩子学习的黄金期，让孩子趣味学习的过程中，在提高文学素养的同时也取得理想的成绩。</p>
+        <a name="sign-up"></a>
+        <br/>
+        <div class="signup">
+            <table align="center" border="0" cellpadding="5" cellspacing="5" width="100%">
+                <tbody>
+                <tr>
+                    <td>
+                        <div class="center">
+                            <form name="myform"
+                                  action="http://global.lingoace.com/mail/index.php/lists/kn197wdzgvf47/subscribe"
+                                  method="post">
+                                <div class="box box-primary borderless">
+                                    <div class="box-header">
+                                        <h2>填写表格，立即领取价值S$84的2节免费试听课！</h2>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="form-group field-text wrap-email">
+                                            <label for="ListFieldValue_value" class="required"><span
+                                                    class="required"></span></label>
+                                            <input class="form-control field-email field-type-text" required
+                                                   aria-required="true" placeholder="Email地址" type="text" name="EMAIL"
+                                                   id="EMAIL"/>
+                                        </div>
+                                        <div class="form-group field-text wrap-fname">
+                                            <label for="ListFieldValue_value" class="required"></label>
+                                            <input class="form-control field-fname field-type-text" required
+                                                   aria-required="true" placeholder="用户名" type="text" name="FNAME"
+                                                   id="FNAME"/>
+                                        </div>
+
+                                        <input name="CUSTOM_S1" id="custom_s1" value="" type="hidden"/>
+                                        <input name="CUSTOM_S2" id="custom_s2" value="" type="hidden"/>
+                                        <input name="CUSTOM_S3" id="custom_s3" value="" type="hidden"/>
+                                        <input name="UTM_SOURCE" id="utm_source" value="" type="hidden"/>
+                                        <input name="UTM_MEDIUM" id="utm_medium" value="" type="hidden"/>
+                                        <input name="UTM_CAMPAIGN" id="utm_campaign" value="" type="hidden"/>
+                                        <input name="UTM_TERM" id="utm_term" value="" type="hidden"/>
+                                        <input name="UTM_CONTENT" id="utm_content" value="" type="hidden"/>
+                                        <input name="REFURL" id="refurl" value="" type="hidden"/>
+                                    </div>
+                                    <div class="box-footer">
+                                        <div class="pull-right">
+                                            <button class="submitbutton" type="submit" name="yt0" value="Submit"/>
+                                            提交
+                                            </button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br/>
+        <br/>
+        <p align="center">详细信息可到LingoAce官方网址进行了解：https://www.lingoace.com/</p>
+
+        <br/>
+        <br/>
+
+        <!-- end .content --></div>
+
+
+    <p id="ref" style="font-size:10px; color:#FFF;"></p>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/libs/tyler/tyler.js"></script>
+    <!-- end .container --></div>
+</body>
+</html>

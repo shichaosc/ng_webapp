@@ -1,0 +1,170 @@
+.upload-form {
+    margin-bottom: 30px;
+}
+
+.upload-form > .status-selector {
+    margin: 20px 0;
+}
+
+.upload-form > input[type='file'] {
+    margin: 20px 0;
+}
+
+.upload-form > select{
+    margin: 0 5px;
+}
+
+.opacity0 {opacity: 0;}
+.mr10 {margin-right: 10px;}
+.mb20 {margin-bottom: 20px;}
+.mt20 {margin-top: 20px;}
+.mb10 {margin-bottom: 10px;}
+.mb40 {margin-bottom: 40px;}
+.h40 {height: 40px;}
+.lh24 {line-height: 24px;}
+.lh40 {line-height: 40px;}
+.flex {display: flex;}
+.flex1 {flex: 1;}
+.pt20 {padding-top: 20px;}
+.pl20 {padding-left: 20px;}
+.pr20 {padding-right: 20px;}
+.pl150 {padding-left: 150px;}
+.mr20 {margin-right: 20px;}
+.mr30 {margin-right: 30px;}
+.mt50 {margin-top: 50px;}
+.w100 {width: 100px;}
+.text-align-center {text-align: center;}
+.chioce-stem-image {padding-left: 74px;}
+.subject-info-brief {height: 50px; background-color: #e5e5e5; justify-content: space-between; align-items: center;}
+
+.outline-form > button {margin-left: 10px;}
+.add-subject {margin-left: 10px;}
+
+div, span, p{word-break: break-all;}
+
+.homework-detail-content {background-color: #ffffff;}
+.homework-detail-content header {height: 40px; padding-left: 20px; display: flex; align-items: center; border-bottom: 1px solid #e5e5e5;}
+.homework-detail-content header button {margin-right: 30px;}
+
+.homework-detail-content section {margin-bottom: 20px;}
+.homework-detail-content section .choice-subject-title {display: flex; align-items: center; margin-bottom: 20px;}
+.homework-detail-content section .choice-subject-body {padding-left: 20px; margin-bottom: 20px;}
+
+.headerline {margin-right: 30px; font-size: 24px;}
+.description {font-size: 18px;}
+
+section .choice-subject-title .title-left{flex: 3; background-color: #e5e5e5; line-height: 40px; padding-left: 20px; display: flex; align-items: center;}
+section .choice-subject-title .title-right{flex: 1; padding-left: 20px;}
+
+section .choice-subject-body .option {display: flex; height: 40px; margin-bottom: 20px;}
+section .choice-subject-body .right-option {margin-bottom: 40px;}
+section .choice-subject-body .option-left {flex: 3; display: flex; line-height: 40px;}
+section .choice-subject-body .option-right {flex: 1; display: flex; align-items: center; padding-left: 20px;}
+section .choice-subject-body .option-left > input{margin-left: 30px; flex: 1; }
+section .choice-subject-body .option-right button {margin-right: 10px;}
+
+.connection-add-image {display: flex; align-items: center; line-height: normal;}
+.connection-add-image button {margin-left: 20px;}
+
+.preview-page-container {
+    padding: 0 40px 40px;
+    border: 1px solid #ddd;
+    margin: 30px auto;
+    border-radius: 4px;
+  }
+
+  .preview-title {
+    height: 50px;
+    width: 100%;
+    background: #ddd;
+    padding: 10px 20px;
+    line-height: 30px;
+    margin-top: 40px;
+  }
+
+  .sub-title {
+    margin-top: 20px;
+  }
+
+  .preview-single-chioce-options {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .preview-single-chioce-option {
+    width: 50%;
+    margin-top: 10px;
+  }
+
+  /*填空题*/
+  /* .preview-fill input {
+    border: 0px;
+    border-bottom: 1px solid #ddd;
+  } */
+
+  .preview-fill .single-fill {
+    padding: 20px 0;
+  }
+
+  .ibautowidth {
+    border-bottom: 1px solid #ddd;
+    width: auto;
+    padding: 0 10px 0 10px;
+    display: inline-block;
+  }
+
+  /*排序题*/
+  .group-A,
+  .group-B {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  .m-item {
+    flex: 1;
+    background: #cfd8dc;
+    border-radius: 8px;
+    color: #333;
+    text-align: center;
+    margin-right: 30px;
+  }
+
+  /*排序题*/
+  .single-sort-fill input {
+    border: 0px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .single-sort-fill {
+    padding: 20px 0;
+  }
+
+  .single-sort-options {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .single-sort-options .option {
+    flex: 1;
+    background: #cfd8dc;
+    padding: 10px 0 10px 0;
+    border-radius: 8px;
+    color: #333;
+    text-align: center;
+    margin-right: 30px;
+  }
+
+  /*阅读题*/
+  .preview-reader-disc {
+    padding: 20px;
+    width: 100%;
+  }
+
+  /*写作题*/
+  .preview-writing .preview-writing-title-img img {
+    width: 50%;
+    display: block;
+    margin: 15px 0;
+  }
+
+

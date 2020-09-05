@@ -1,0 +1,56 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+{% block title %}referrer list{% endblock %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <td colspan="3" class="text"><h5>referrer list</h5></td>
+        </tr>
+        <tr>
+            <td><b>list avatar</b></td>
+            <td><b>list name</b></td>
+            <td><b>phone number</b></td>
+            <td><b>referrer</b></td>
+            <td><b>referrer avatar</b></td>
+        </tr>
+        </thead>
+        {% for refer in refers_dict %}
+            <tr>
+                <td>
+                    <img src="/media/{{ refer.referree.app_avatar }}"/>
+                </td>
+                <td>
+                    {{ refer.referree.app_username}}
+                </td>
+                <td>
+                    {{ refer.referree.phone_num}}
+                </td>
+                <td>
+                    {{ refer.referrer.user.username }}
+                </td>
+                <td>
+                    <img src="/media/{{ refer.referrer.app_avatar }}"/>
+                </td>
+
+            </tr>
+        {% endfor %}
+    </table>
+<div class="pagination">
+    <span class="step-links">
+        {% if refers_dict.has_previous %}
+            <a href="?page={{ refers_dict.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ refers_dict.number }} of {{ refers_dict.paginator.num_pages }}.
+        </span>
+
+        {% if refers_dict.has_next %}
+            <a href="?page={{ refers_dict.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}

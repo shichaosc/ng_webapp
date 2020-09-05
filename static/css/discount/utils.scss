@@ -1,0 +1,23 @@
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function px2vw($values) {
+  $root: 7.5;
+  $unit: vw;
+  $list: ();
+  @each $v in $values {
+    @if ($v == auto) {
+      $list: append($list, auto);
+    } @else {
+      $value: (strip-units($v)) / $root;
+      @if ($value == 0) {
+        $list: append($list, 0);
+      } @else {
+        $res: $value + $unit;
+        $list: append($list, $res);
+      }
+    }
+  }
+  @return $list;
+}

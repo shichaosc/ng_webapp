@@ -1,0 +1,157 @@
+{% extends 'course/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{% trans "Questionnaire" %}{% endblock %}
+{% block header %}{% endblock header %}
+{% block extra_head %}
+    <link href="{% static "css/questionnaire.css" %}" rel="stylesheet"/>
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="nav-tp">
+            <img src="{% static 'images/questionnaire/logo.png' %}" />
+        </div>
+        <div class="content-ct">
+            <div class="cont-info info-tp" id="cont_info"></div>
+        </div>
+        <div class="mask-layer" >
+            <div class="col-md-6 layer-ct">
+                <div class="leavel-ct hide">
+                    <div class="bg-img"><img src="{% static "images/questionnaire/layer.png" %}" /></div>
+                    <p class="flex-column-center lang-switching lang-switching1">适合孩子学习的课程为</p>
+                    <p class="stars-img">
+                        <em class="active"></em><em></em><em></em><em></em><em></em><em></em>
+                    </p>
+                    <h4 class="grade-level lang-switching lang-switching2"><em></em>中文LEVEL<span></span></h4>
+                    <p class="resources-text lang-switching lang-switching3"><span>*</span>级别供参考，最终级别以授课老师评定为准。</p>
+                    <h4 class="admission lang-switching lang-switching4">免费试听课程已发放，即刻约课开启中文之旅吧</h4>
+                    <div class="submit-bt lang-switching lang-switching10" onclick="onClickButton() "><a href="javascript:;">确定</a></div>
+                </div>
+                <div class="leavel-ct hide">
+                    <div class="bg-img"><img src="{% static "images/questionnaire/layer.png" %}" /></div>
+                    <p class="flex-column-center senior-tips lang-switching lang-switching5">亲爱的家长，经过问卷调查</p>
+                    <p class="flex-column-center senior-tips lang-switching lang-switching6">恭喜您孩子中文水平达到了国际中文</p>
+                    <h4 class="grade-level lang-switching lang-switching7">国际中文LEVEL<span></span></h4>
+                    <p class="flex-column-center senior-tips lang-switching lang-switching8">适合您孩子的课程正在开发中</p>
+                    <p class="flex-column-center senior-tips lang-switching lang-switching9">课程上线后我们将向您的注册邮箱发送邮件通知，敬请期待</p>
+                    <div class="submit-bt lang-switching lang-switching10" onclick="onClickButton()"><a href="javascript:;">确定</a></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    <script>
+        var programme = {{ programme | safe}}; //存储所有题目
+        var level = {{ level }};
+        programmeList()
+        var lang_nav = (navigator.systemLanguage ? navigator.systemLanguage : navigator.language);
+        var lang = lang_nav.substr(0, 2);
+        function programmeList (){ // 定版本
+            var lang_nav = (navigator.systemLanguage ? navigator.systemLanguage : navigator.language);
+            var lang = lang_nav.substr(0, 2);
+            var stemHtml = '';
+            for(var val of programme){
+                var obj = JSON.parse(val.detail);
+                console.log(obj)
+                var alternatives = obj.alternatives;
+                stemHtml += `<div class="info-item">`
+                stemHtml += (lang == 'zh') ? `<h5>${ obj.tittle }</h5>` : `<h5>${ obj.tittle_en }</h5>`
+                for(var item of alternatives){
+                    if(item.detail.content){
+                        if(item.detail.type == 'image'){
+                             stemHtml += `<em class="select_sel select_img" data-only='num-${ obj.no }'  data-score='${ item.detail.score }'><span>${ item.id }.</span><img src="${ item.detail.content }" /></em>`
+                        }else{
+                             stemHtml += `<em class="select_sel" data-only='num-${ obj.no }'  data-score='${ item.detail.score }'>`
+                             stemHtml += (lang == 'zh') ? `<span>${ item.id }.${ item.detail.content }</span></em>` : `<span>${ item.id }.${ item.detail.content_en }</span></em>`
+                        }
+                    }
+                }
+                stemHtml += `</div>`
+            }
+            stemHtml += (lang == 'zh') ? `<button class="flex-column-center next-btn" type="button">下一步</button>` : `<button class="flex-column-center next-btn" type="button">Continue</button>`
+
+            $('#cont_info').html(stemHtml);
+            layerLang (lang); //弹框切换语言
+        }
+        $(document).on('click','.select_sel',function(){
+            $(this).find('span').addClass('active');
+            $(this).siblings('em').find('span').removeClass('active');
+             var activeLeng = $('.cont-info .info-item .active').length
+            if (activeLeng == programme.length) {
+                $('.next-btn').addClass('active')
+            }
+        })
+        $('.next-btn.active').off();
+        $(document).on('click','.next-btn.active',function(){
+            var num = 0;
+            var numObj = [];
+            for (var i=0;i<programme.length;i++){
+                    numObj.push($('.cont-info .info-item .active').eq(i).parents('.select_sel').attr('data-score'))
+            }
+            for(var k=0;k<numObj.length; k++){
+                num += Number(numObj[k])
+            }
+            var posturl = '/course/questionnaire_level_done/'
+            $.ajax({
+                type: "GET",
+                url: posturl,
+                data: { 'score': num,'programme':'0'+level },
+                datatype: "json",
+                success: function (data) {
+                    sessionStorage.setItem('levelData',data);
+                    leveFun(data)
+                },
+                //调用出错执行的函数
+                error: function () {
+                    //请求出错处理
+                    alert('网络开小差了')
+                }
+            });
+        })
+        function leveFun(data){
+            var obj = JSON.parse(data);
+            $('.mask-layer').show();
+            if(obj.programme == '03' && obj.level > 4){
+                $('.layer-ct .leavel-ct').eq(1).removeClass('hide');
+                $('.grade-level span').text(obj.level)
+            }else{
+                for(var i=0;i<obj.level;i++){
+                    $('.stars-img em').eq(i).addClass('active');
+                }
+                $('.grade-level span').text(obj.level)
+                if(obj.programme == '03'){ //国际
+                    (lang == 'zh') ? $('.grade-level em').text('国际') : $('.grade-level em').text('International')
+                }else{
+                     (lang == 'zh') ? $('.grade-level em').text('高级') : $('.grade-level em').text('Advanced')
+                }
+                $('.layer-ct .leavel-ct').eq(0).removeClass('hide');
+            }
+        }
+       function onClickButton() {
+            var url = window.location.href;
+            if((url.indexOf('source=') == -1 && !sessionStorage.getItem('source')) && !sessionStorage.getItem('connect')){ // 不是ipad和手机
+                window.location.href='/accounts/profile/';
+            }else{
+                window.webkit.messageHandlers.doFinishedQuestionnaire.postMessage(null);
+            }
+       }
+       function layerLang (lang) {
+            var leng = $('.lang-switching').length;
+            var arr = ['适合孩子学习的课程为','<em></em>中文LEVEL<span></span>','<span>*</span>级别供参考，最终级别以授课老师评定为准。','免费试听课程已发放，即刻约课开启中文之旅吧','亲爱的家长，经过问卷调查','恭喜您孩子中文水平达到了国际中文','国际中文LEVEL<span></span>','适合您孩子的课程正在开发中','课程上线后我们将向您的注册邮箱发送邮件通知，敬请期待','<a href="javascript:;">确定</a>'];
+            var arr_en = ['The course suitable for your child  is','<em></em> Chinese LEVEL<span></span>','<span>*</span>The level here is for reference only , the specific rating is determined by the teacher.','The free trial class is in your account , you can book a class and start a Chinese tour now !','Congratulations !',' Your child\'s Chinese language level has reached the','International Chinese LEVEL<span></span>','The course suitable for your child is under development , ','and we will send an email to your registered email address once completed , stay tuned please','<a href="javascript:;">OK</a>'];
+            if(lang == 'zh'){
+                for (var i=0;i<=leng; i++ ) {
+                    $(".lang-switching"+(i+1)).html(arr[i])
+                }
+            }else{
+                for (var i=0;i<=leng; i++ ) {
+                    $(".lang-switching"+(i+1)).html(arr_en[i])
+                }
+            }
+       }
+
+    </script>
+{% endblock footer %}

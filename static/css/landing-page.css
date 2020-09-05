@@ -1,0 +1,317 @@
+html, body {
+  color: #3B3B4D;
+  padding: 0;
+  margin: 0; }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+main {
+  flex: 1; }
+
+* {
+  margin: 0; }
+
+.banner {
+  background-color: #5CC2D0; }
+  .banner .banner-content {
+    padding: 18px 109px 21px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    position: relative; }
+    .banner .banner-content h1 {
+      font-size: 30px;
+      color: white;
+      line-height: 36px;
+      font-weight: bold;
+      font-family: Helvetica-Bold, sans-serif;
+      text-align: center; }
+    .banner .banner-content .description {
+      font-size: 16px;
+      color: white;
+      line-height: 20px;
+      font-family: Verdana, sans-serif;
+      margin: 11px 0 18px;
+      width: 629px;
+      text-align: center; }
+    .banner .banner-content .welcome-girl {
+      width: 253px;
+      position: absolute;
+      left: 73px;
+      bottom: 0; }
+    .banner .banner-content .welcome-boy {
+      width: 175px;
+      position: absolute;
+      right: 109px;
+      bottom: 0; }
+    .banner .banner-content .concat-form {
+      width: 470px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 22px 17px 24px;
+      box-sizing: border-box;
+      font-size: 12px; }
+      .banner .banner-content .concat-form label {
+        display: inline-block;
+        color: white; }
+      .banner .banner-content .concat-form .email-label {
+        margin-top: 23px; }
+      .banner .banner-content .concat-form .text-input {
+        box-sizing: border-box;
+        display: block;
+        padding: 8px 13px;
+        border: none;
+        outline: none;
+        margin-top: 4px;
+        width: 436px; }
+      .banner .banner-content .concat-form .submit-btn {
+        height: 30px;
+        margin-top: 30px;
+        width: 436px;
+        color: white;
+        display: block;
+        border: none;
+        background-color: #5CC2D0;
+        padding: 0; }
+
+.advantage {
+  padding-top: 29px; }
+  .advantage h2 {
+    font-size: 30px;
+    text-align: center;
+    font-family: Helvetica-Bold, sans-serif;
+    font-weight: bold; }
+  .advantage .advantage-list {
+    margin-top: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .advantage .advantage-list .item-container .num {
+      display: none; }
+    .advantage .advantage-list .item-container .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 22px; }
+      .advantage .advantage-list .item-container .item .title {
+        font-size: 20px;
+        font-family: Helvetica-Bold, sans-serif;
+        font-weight: bold; }
+      .advantage .advantage-list .item-container .item .description {
+        width: 229px;
+        height: 88px;
+        text-align: center;
+        font-size: 12px;
+        margin-top: 15px; }
+
+footer {
+  height: 60px;
+  background-color: #020202;
+  display: flex;
+  align-items: center;
+  padding: 0 17px 0 16px; }
+  footer p {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    flex: 1; }
+  footer .footer-icon-group img {
+    width: 22px;
+    height: 22px;
+    margin-left: 10px; }
+
+header {
+  height: 71px;
+  background-color: #FAFAFA;
+  display: flex;
+  align-items: center; }
+  header img {
+    width: 108px;
+    display: block;
+    margin-left: 12px; }
+
+@media (max-width: 767px) {
+  header {
+    height: auto; }
+    header img {
+      width: 19.4666666667vw;
+      margin: 0.8vw auto;
+      display: block; }
+
+  .banner .banner-content {
+    padding: 4vw 5.0666666667vw 6.9333333333vw; }
+    .banner .banner-content .welcome-children {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .banner .banner-content .welcome-children .welcome-girl-container {
+        width: 40.8vw;
+        height: 40.8vw;
+        border-radius: 100px;
+        background-color: #5BBCCA; }
+        .banner .banner-content .welcome-children .welcome-girl-container .welcome-girl {
+          width: 31.7333333333vw;
+          position: static;
+          display: block;
+          margin: auto;
+          padding-top: 1.8666666667vw; }
+      .banner .banner-content .welcome-children .welcome-boy-container {
+        margin-left: 6.9333333333vw;
+        width: 40.8vw;
+        height: 40.8vw;
+        border-radius: 100px;
+        background-color: #5BBCCA; }
+        .banner .banner-content .welcome-children .welcome-boy-container .welcome-boy {
+          display: block;
+          margin: auto;
+          padding-top: 1.8666666667vw;
+          width: 23.4666666667vw;
+          position: static; }
+    .banner .banner-content h1 {
+      font-size: 6.1333333333vw;
+      text-align: start;
+      line-height: 7.4666666667vw;
+      margin-top: 2.4vw; }
+    .banner .banner-content .description {
+      font-size: 3.4666666667vw;
+      line-height: 4.2666666667vw;
+      width: auto;
+      text-align: start;
+      margin: 2.9333333333vw 0; }
+    .banner .banner-content .concat-form {
+      width: 88vw;
+      padding: 4.8vw 2.6666666667vw 7.7333333333vw; }
+      .banner .banner-content .concat-form label {
+        font-size: 2.9333333333vw; }
+      .banner .banner-content .concat-form .text-input {
+        width: 82.6666666667vw;
+        height: 8vw; }
+      .banner .banner-content .concat-form .submit-btn {
+        font-size: 2.9333333333vw;
+        width: 82.6666666667vw; }
+
+  .advantage {
+    padding-top: 9.6vw; }
+    .advantage h2 {
+      font-size: 6.1333333333vw; }
+    .advantage .advantage-list {
+      flex-direction: column;
+      margin-bottom: 2.1333333333vw; }
+      .advantage .advantage-list .item-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 7.6vw; }
+        .advantage .advantage-list .item-container .num {
+          display: block;
+          width: 11.8666666667vw; }
+        .advantage .advantage-list .item-container .item {
+          align-items: start;
+          margin-left: 9.4666666667vw; }
+          .advantage .advantage-list .item-container .item .title {
+            font-size: 4.5333333333vw;
+            font-weight: bold;
+            text-align: start;
+            line-height: 4.2666666667vw; }
+          .advantage .advantage-list .item-container .item .description {
+            color: rgba(59, 59, 77, 0.6);
+            font-weight: bold;
+            text-align: start;
+            height: auto;
+            margin-top: 2.1333333333vw; }
+
+  footer {
+    height: 9.7333333333vw; }
+    footer p {
+      font-weight: 500;
+      font-size: 2.9333333333vw; }
+    footer .footer-icon-group img {
+      width: 2.9333333333vw;
+      height: 2.9333333333vw; } }
+@media (min-width: 768px) {
+  .banner .banner-content .concat-form {
+    width: 34.6666666667vw; }
+    .banner .banner-content .concat-form .text-input {
+      width: 30.6666666667vw;
+      height: 3.4666666667vw; }
+    .banner .banner-content .concat-form .submit-btn {
+      width: 30.6666666667vw;
+      font-size: 1.6vw; }
+    .banner .banner-content .concat-form .email-label {
+      margin-top: 2.1333333333vw; }
+  .banner .banner-content .welcome-girl {
+    width: 24vw; }
+  .banner .banner-content .welcome-boy {
+    width: 16.5333333333vw; } }
+@media (min-width: 1200px) {
+  .banner {
+    background-color: #5CC2D0; }
+    .banner .banner-content {
+      padding: 18px 109px 21px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1200px;
+      position: relative; }
+      .banner .banner-content h1 {
+        font-size: 30px;
+        color: white;
+        line-height: 36px;
+        font-weight: bold;
+        font-family: Helvetica-Bold, sans-serif;
+        text-align: center; }
+      .banner .banner-content .description {
+        font-size: 16px;
+        color: white;
+        line-height: 20px;
+        font-family: Verdana, sans-serif;
+        margin: 11px 0 18px;
+        width: 629px;
+        text-align: center; }
+      .banner .banner-content .welcome-girl {
+        width: 253px;
+        position: absolute;
+        left: 73px;
+        bottom: 0; }
+      .banner .banner-content .welcome-boy {
+        width: 175px;
+        position: absolute;
+        right: 109px;
+        bottom: 0; }
+      .banner .banner-content .concat-form {
+        width: 470px;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 22px 17px 24px;
+        box-sizing: border-box;
+        font-size: 12px; }
+        .banner .banner-content .concat-form label {
+          display: inline-block;
+          color: white; }
+        .banner .banner-content .concat-form .email-label {
+          margin-top: 23px; }
+        .banner .banner-content .concat-form .text-input {
+          height: auto;
+          box-sizing: border-box;
+          display: block;
+          padding: 8px 13px;
+          border: none;
+          outline: none;
+          margin-top: 4px;
+          width: 436px; }
+        .banner .banner-content .concat-form .submit-btn {
+          font-size: 14px;
+          height: 30px;
+          margin-top: 30px;
+          width: 436px;
+          color: white;
+          display: block;
+          border: none;
+          background-color: #5CC2D0;
+          padding: 0; } }
+
+/*# sourceMappingURL=landing-page.css.map */

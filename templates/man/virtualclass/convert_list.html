@@ -1,0 +1,65 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+
+{% block content %}
+
+<div class="container">
+	<div class="section">
+		<div class="span12">
+		<div class="text-center">
+		<h5>{% trans 'Current Classes' %} ({% trans 'Pls select current class to attend:' %})</h5>
+		</div>
+		{% if virtual_classes %}
+		{% for vc in virtual_classes %}
+            {% ifequal vc.virtualclass_type_id 1 %}
+                <p>
+                    <span><a href="/man/virtualclass/monitor_tk?vc_id={{vc.id}}">{{ vc }}</a></span>
+                    <span><a href="/man/virtualclass/revert?vc_id={{vc.id}}"><button style="color: #000;background: #2ba9e6;margin-left: 500px;" class="btn btn-primary">revert from Talk to Agaro</button></a></span>
+                </p>
+            {% else %}
+                <p>
+                    <span><a href="/man/virtualclass/monitor?vc_id={{vc.id}}">{{ vc }}</a></span>
+                    <span><a href="/man/virtualclass/revert?vc_id={{vc.id}}"><button style="color: #000;background: #2ba9e6;margin-left: 500px;" class="btn btn-primary">revert from Agaro to Talk </button></a></span>
+                </p>
+            {% endifequal %}
+		{% endfor %}
+		{% else %}
+		<p><a>{% trans 'There is not any class currently.' %}</a></p>
+
+		{% endif %}
+
+		<br><br><br>
+		<table class="table">
+				<thead>
+				<tr>
+					<td colspan="3" class="text-center"><h5>{% trans 'Classes in 3 days' %}</h5></td>
+				</tr>
+				<tr>
+					<td><b>{% trans 'Scheduled Time' %}</b></td>
+					<td><b>{% trans 'tutor' %}</b></td>
+					<td><b>{% trans 'student' %}</b></td>
+				</tr>
+				</thead>
+			{% for class in class_in_3_days %}
+				<tr>
+					<td>
+                    {{ class.start_time }}
+					</td>
+					<td>
+					{{ class.tutor_user }}
+					</td>
+					<td>
+					{% for student in class.students %}
+					{{ student }}
+					{% endfor %}
+					</td>
+
+				</tr>
+			{% endfor %}
+			</table>
+
+		</div>
+	</div>
+</div>
+{% endblock %}

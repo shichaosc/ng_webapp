@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block header %}
+    {{ block.super }}
+{% endblock %}
+
+{% block extra_head %}
+    <style>
+        .rating-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-body {
+            margin: 30px auto;
+            border-radius: 20px;
+            padding: 10px 80px;
+            background: #fff;
+        }
+
+        .rating-group {
+            display: flex;
+            margin: 10px 0;
+            min-width: 300px;
+            justify-content: space-between;
+        }
+
+        .rating-group span {
+            display: block;
+            margin-right: 20px;
+        }
+
+        .click-demo {
+            width: auto !important;
+        }
+
+        .click-demo img {
+            width: 20px;
+            margin-right: 5px;
+        }
+
+        .btn-gradient-background {
+            width: 200px;
+            height: 44px;
+            line-height: 44px;
+            display: block;
+            margin: 30px auto;
+            cursor: pointer;
+        }
+
+        .btn-gradient-disable {
+            width: 200px;
+            height: 44px;
+            line-height: 44px;
+            display: block;
+            margin: 30px auto;
+            background: #ddd;
+        }
+
+        .student-tabel {
+            display: flex;
+            justify-content: space-between;
+            background: #E0F5F8;
+            height: 60px;
+            line-height: 60px;
+            width: 500px;
+            border-top: 2px solid #64CCDB;
+            margin: 20px 0;
+
+        }
+
+        .student-tabel em {
+            font-style: normal;
+            display: block;
+            width: 100%;
+            color: #64CCDB;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .student-tabel em.active {
+            background: #fff;
+            color: #4A4A4A;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .homework-tit {
+            background: #EFF9FB;
+            padding: 15px 0;
+            text-align: center;
+            color: #64CCDB;
+        }
+
+        .homework-tit h5 {
+            font-size: 24px;
+        }
+
+        .homework-news img {
+            width: 20px;
+            vertical-align: text-bottom;
+        }
+
+        .homework-news span {
+            margin-left: 10px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div>
+        <div class="rating-form">
+            <div class="modal-body">
+                <div class="homework-tit">
+                    <h5>
+                        {% trans 'Teacher comments' %}
+                    </h5>
+                    <p class="homework-news">
+                        {% ifequal class_type.type_name 'smallclass' %}
+                            <img src="{% static 'images/small-class/icon-my-class-group.png' %}"/>
+                        {% endifequal %}
+                        <span>{{ scheduled_time }}</span>
+                        <span>{% trans 'session' %}：Level {{ session.course.course_level }} - lesson {{ session.session_no }}</span>
+                    </p>
+                </div>
+                <div class="student-tabel">
+                    {% for student in user %}
+                        <em {% if forloop.first %}class="active"{% endif %}>{{ student.username }}</em>
+                    {% endfor %}
+                </div>
+                {% for student in user %}
+                    <form {% if forloop.first %}class="form-groups classroom-score-form"{% else %}
+                          class="form-groups hide classroom-score-form" {% endif %}>
+
+                        <div class="rating-group">
+                            <span>{% trans 'Practice Consistency and Quality' %}</span>
+                            <div class="click-demo"></div>
+                            <input type="hidden" name="PQ" value="4">
+                        </div>
+
+                        <div class="rating-group">
+                            <span>{% trans 'Skills and Progress' %}</span>
+                            <div class="click-demo"></div>
+                            <input type="hidden" name="SP" value="4">
+                        </div>
+
+                        <div class="rating-group">
+                            <span>{% trans 'Attitude and Responsibility' %}</span>
+                            <div class="click-demo"></div>
+                            <input type="hidden" name="AR" value="4">
+                        </div>
+
+                        <div class="rating-group">
+                            <span>{% trans 'Comments' %}</span>
+                        </div>
+                        <textarea class="form-control" name="comment"
+                                  placeholder="{% trans 'pls input your comments' %}" rows="5"></textarea>
+                        <div class="form-group">
+                            <input type="hidden" name="user" value="{{ student.id }}">
+
+                        </div>
+                    </form>
+                {% endfor %}
+                <form action="/virtualclass/finish/" method="POST" id="form-rating">
+                    {% csrf_token %}
+                    <input class="data-form" type="hidden" name="data" value="">
+                    <input type="hidden" name="vc_id" value="{{ vc_id }}">
+                    <input type="hidden" name="session_id" value="{{ course_session_id }}">
+                    <span class="btn-gradient-background">{% trans "Submit" %}</span>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_ending %}
+    {{ block.super }}
+    <script src="{% static 'js/jquery.raty.min.js' %}"></script>
+    <script>
+        var lengStudent = {{ user|length }};
+        if (lengStudent > 1) {
+            $('.student-tabel em').on('click', function () {
+                var index = $(this).index();
+                console.log(index)
+                $(this).addClass('active').siblings('em').removeClass('active');
+                $(this).parents('.modal-body').find('.form-groups').eq(index).removeClass('hide').siblings('.form-groups').addClass('hide');
+            })
+        }
+        // 提交    必须写评语
+        $('.btn-gradient-background').click(function () {
+            {#if (($('textarea')[0].value).length > 0) {#}
+                var arr = [];
+                var commentArr = [];
+                var textareaComment = true;
+                for (var i = 0; i < $('.form-groups').length; i++) {
+
+                    var formSerial = {};
+                    $($("form.classroom-score-form").eq(i).serializeArray()).each(function () {
+                        if (this.name != 'score') {
+                            formSerial[this.name] = this.value;
+                        }
+                    });
+                    commentArr.push(formSerial)
+                    arr.push(JSON.stringify(formSerial))
+                }
+                $('.data-form').val(arr);
+                for(var j = 0;j<commentArr.length;j++){
+                    if(!commentArr[j].comment.length){
+                        textareaComment = false;
+                        continue;
+                    }
+                }
+                if (textareaComment) {
+                    $('#form-rating').submit();
+                }else{
+                    alert('请输入你的评语')
+                }
+
+        })
+        // 星星
+        $.fn.raty.defaults.path = "{% static 'libs/img' %}";
+        $('.click-demo').raty({
+            score: 4,
+            number: 5,
+            hints: ['1', '2', '3', '4', '5'],
+            click: function (score, evt) {
+                $(this).siblings('input').val(score)
+
+            }
+        });
+    </script>
+{% endblock %}
+{% block footer %}
+    {% ifnotequal model_type 'layer' %}
+        {{ block.super }}
+    {% endifnotequal %}
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Courseware Preview" %}{% endblock %}
+
+
+
+{% block content %}
+ 		<div class="content">
+            <div class="container-fluid">
+    <!-- List of courses -->
+    	<div class="row"> &nbsp;&nbsp;
+        {%  if courseware_types %}
+            <select id="class_type_id" onchange="class_type_preview()">
+                {% for courseware_type in courseware_types %}
+                    {% ifequal cur_courseware_type courseware_type.id %}
+                        <option value={{ courseware_type.id }} selected>{{ courseware_type.name }}</option>
+                    {% else %}
+                        <option value={{ courseware_type.id }}>{{ courseware_type.name }}</option>
+                    {% endifequal %}
+                {% endfor %}
+            </select>
+        {% endif %}
+    {% if courses %}
+
+        <table class="table" style="margin-bottom: 0px;">
+        <tr>
+        <td style="white-space: nowrap;">    {% trans 'course' %}</td>
+        {% for course in courses %}
+	        {% ifequal cur_course course.id %}
+	        <td><a style="color: red" href="/man/course/preview/?courseware_type={{ cur_courseware_type }}&course={{ course.id }}">{{ course.course_name }}</a></td>
+            {% else %}
+	        <td><a href="/man/course/preview/?courseware_type={{ cur_courseware_type }}&course={{ course.id }}">{{ course.course_name }}</a></td>
+	        {% endifequal %}
+        {% endfor %}
+        </tr>
+        </table>
+
+    {% else %}
+        <a href="/man/course/preview/">Reselect course</a>
+    {% endif %}
+    </div>
+
+    <!-- List of sessions -->
+    	<div class="row">
+
+    {% if sessions %}
+
+    <table class="table">
+        <tr>
+        <td style="white-space: nowrap;">lesson</td>
+        <td>
+        {% for session in sessions %}
+	        {% ifequal cur_session session.id %}
+            <a style="color: red" href="/man/course/preview/?courseware_type={{ cur_courseware_type }}&course={{ session.course.id }}&session={{ session.id}}">{{ session.lesson_no }}</a> &nbsp;
+            {% else %}
+	        <a href="/man/course/preview/?courseware_type={{ cur_courseware_type }}&course={{ session.course.id }}&session={{ session.id}}">{{ session.lesson_no }}</a> &nbsp;
+            {% endifequal %}
+	        {% if forloop.counter == 25 %}
+            <br>
+            {% endif %}
+        {% endfor %}
+        </td>
+        </tr>
+    </table>
+    {% else %}
+        <span style="padding-left: 8px">
+        {% trans 'session does not exist or course is not selected' %}
+        </span>
+    {% endif %}
+    </div>
+
+    <!-- List of uploaded documents -->
+    	<div class="row">
+			<div class="col-md-6" style="padding-left: 8px">
+
+{% if courseware %}
+					<div id="myCourseware" class="carousel slide" data-ride="carousel" data-interval="false">
+  						<!-- Wrapper for slides -->
+                           <a href="{{ courseware.tk_file_url }}" target="_blank">{{ courseware.cw_name }}</a>
+
+  						<!-- Controls -->
+{#  						<a class="left carousel-control" href="#myCourseware" data-slide="prev">#}
+{#    					<span class="glyphicon glyphicon-chevron-left"></span>#}
+{#  						</a>#}
+{#  						<a class="right carousel-control" href="#myCourseware" data-slide="next">#}
+{#    					<span class="glyphicon glyphicon-chevron-right"></span>#}
+{#  						</a>#}
+					</div>
+				</div>
+{% else %}
+        {% trans 'courseware does not exist or session is not selected' %}
+{% endif %}
+    	</div>
+
+    	</div>
+    </div>
+{% endblock %}
+
+{% block extra_ending %}
+{{ block.super }}
+<script type="text/javascript">
+$(document).ready(function(){
+	try{
+		$('.item').first().addClass('active');
+        var myCourse = $('#myCourseware');
+		myCourse.carousel({interval: false});
+        myCourse.mousewheel(function(event, delta) {
+        var dir = delta > 0 ? 'Up' : 'Down';
+        if (dir === 'Up') {
+            myCourse.carousel('prev');
+        } else {
+            myCourse.carousel('next');
+        }
+        return false;
+    });
+	}
+	catch(e){
+	  	alert("failure - retrieve courseware");
+    	alert(e);
+	}
+});
+
+function class_type_preview() {
+    var url = window.location.href;
+    var class_type = $("#class_type_id option:selected").val();
+    var new_url = changeUrlArg(url, 'courseware_type', class_type)
+    window.location.href = new_url
+}
+
+function changeUrlArg(url, arg, val){
+    var pattern = arg+'=([^&]*)';
+    var replaceText = arg+'='+val;
+    return url.match(pattern) ? url.replace(eval('/('+ arg+'=)([^&]*)/gi'), replaceText) : (url.match('[\?]') ? url+'&'+replaceText : url+'?'+replaceText);
+}
+
+</script>
+{% endblock %}
+

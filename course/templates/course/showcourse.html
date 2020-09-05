@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+    <div class="card">
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2" style="margin-top: 10px">
+                        <div class="col-md-4">
+                            
+                        </div>
+{#                        <div class="col-md-2 pull-right">#}
+{##}
+{#                            <button onclick="doPrint()" class="btn btn-info btn-primary btn-block btn-fill">#}
+{#                                {% trans "Print" %}#}
+{#                            </button>#}
+{##}
+{#                        </div>#}
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-md-8 col-md-offset-2">
+                        {% for cw in coursewares %}
+                            <iframe id="printIframe" width="100%" height="500" src="{{ cw.cw_content.url }}" type="application/pdf"> </iframe>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script>
+    function doPrint(){
+        $("#printIframe")[0].contentWindow.print();
+    }
+        var file_url='{{ file_url |safe }}'
+        console.log(file_url)
+        function downfile() {
+            var a;
+           a =window.open('/media/'+ file_url,"_blank", "width=0, height=0,status=0"); 
+           a.document.execCommand("SaveAs");     
+{#           a.close();    #}
+{#             window.location.href= '/media/'+ file_url;#}
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<script>
+var next = "{{request.GET.next}}";
+
+var isAuthenticated = "{{user.is_authenticated}}";
+
+if(next.length > 0)
+{
+	if(isAuthenticated == "True")
+		alert("Your account doesn't have access to this page. To proceed, please login with an account that has access.");
+	else
+		alert("Please login to see this page.");
+}
+</script>
+
+<div class="section">
+	<div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+		    	<div class="card card-horizontal">
+	
+					<div>{{form.errors}}</div>
+						<form method="post" action="{% url 'login' %}">
+						{% csrf_token %}
+			
+						<div class="input-group">
+          					<input type="text" class="form-control" name="username" placeholder="email" />
+          					<span class="input-group-addon"><i class="pe-7s-id"></i></span>
+          				</div>
+          
+          				<div class="input-group">
+          					<input type="password" class="form-control" name="password" placeholder="password" />
+          					<span class="input-group-addon"><i class="pe-7s-door-lock"></i></span>
+          				</div>
+          
+          				
+          				<div class="table-responsive">
+          					<table class="table">
+          						<tr>
+          						<td class="col-md-3">
+          							<input type="checkbox" value="" id="checkbox-remember" data-toggle="checkbox">
+        							Remember Me
+          						</td>
+          						<td class="col-md-3 text-right">
+          						<a href="#">Forget password</a>
+          						</td>
+          						</tr>
+          					</table>
+          				</div>
+          				
+          
+          
+          				<div class="form-group">
+          					<button type="submit" class="btn btn-primary btn-block">login</button>
+          				</div>
+          
+          				</form>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

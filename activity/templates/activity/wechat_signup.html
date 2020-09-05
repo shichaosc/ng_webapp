@@ -1,0 +1,188 @@
+{% extends 'discount_base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/discount/wechat_signup.css' %}">
+{% endblock %}
+{% block content %}
+    <main>
+    <h1>referrer_id: {{ referrer_id }}</h1>
+        <img alt="logo" src="{% static 'images/logo@2x.png' %}" class="logo"/>
+
+        <form class='form-register' id="form-register" action="{% url 'wechat_signup' %}" method="post">
+
+            <label for="id_username" class="username-label input-label">{{ register_form.username.label_tag }}</label>
+            <div class="username-input-container" onclick="toggleClass(this)">
+                <input type="text" name="username" class="form-control"
+                       value="{{ register_form.username.value|default_if_none:'' }}" maxlength="128" required=""
+                       id="id_username">
+            </div>
+            <input style="display: none" name="openid" value="{{ openid }}">
+            <input style="display: none" name="referrer" value="{{ referrer_id }}">
+            <p id="user-name-error-msg"></p>
+
+            <label for="id_email" class="username-label input-label">{{ register_form.email.label_tag }}</label>
+            <div class="email-input-container" onclick="toggleClass(this)">
+                <input type="email" name="email" class="form-control" required="" id="id_email"
+                       value="{{ register_form.email.value|default_if_none:'' }}">
+            </div>
+            <p id="email-name-error-msg"></p>
+
+            <label for="id_password" class="username-label input-label">{{ register_form.password.label_tag }}</label>
+            <div class="password-input-container" onclick="toggleClass(this)">
+                <input type="password" name="password" class="form-control" maxlength="256" required=""
+                       id="id_password">
+            </div>
+            <p id="password-name-error-msg"></p>
+
+            <label for="id_password2" class="username-label input-label">{{ register_form.password2.label_tag }}</label>
+            <div class="password-2-input-container" onclick="toggleClass(this)">
+                <input type="password" name="password2" class="form-control" maxlength="256" required=""
+                       id="id_password2">
+            </div>
+            <p id="password2-name-error-msg"></p>
+
+        </form>
+        <button onclick="signUp()" type="button" class="submit-btn">注册</button>
+    </main>
+{% endblock %}
+
+{% block script %}
+    <script>
+
+        function toggleClass(el) {
+            $("div[class*='input-container active']").each(((index, elem) => {
+                $(elem).removeClass("active");
+            }));
+            $(el).addClass("active")
+        }
+
+        let checkingUserName = false;
+        let checkingUserEmail = false;
+
+        let checkedUserName = false;
+        let checkedUserEmail = false;
+
+        function signUp() {
+            const username = $("#id_username").val();
+            const email = $("#id_email").val();
+            const password = $("#id_password").val();
+            const password2 = $("#id_password2").val();
+
+            const usernameChecker = new Validator();
+            usernameChecker.add(username, "isNotEmpty", "用户名不能为空");
+            const usernameErrorMsg = usernameChecker.check();
+            if (usernameErrorMsg) {
+                $("#user-name-error-msg").text(usernameErrorMsg);
+                return;
+            }
+
+            const emailChecker = new Validator();
+            emailChecker.add(email, "isNotEmpty", "电子邮箱不允许为空");
+            emailChecker.add(email, "isNotEmail", "请输入正确的电子邮箱");
+            const emailErrorMsg = emailChecker.check();
+            if (emailErrorMsg) {
+                $("#email-name-error-msg").text(emailErrorMsg);
+                return;
+            }
+
+            const passwordChecker = new Validator();
+            passwordChecker.add(password, "isNotEmpty", "密码不能为空");
+            passwordChecker.add([password, password2], "isNotSame", "两次密码必须一致");
+            const passwordErrorMsg = passwordChecker.check();
+            if (passwordErrorMsg) {
+                $("#password-name-error-msg").text(passwordErrorMsg);
+                return;
+            }
+
+            const password2Checker = new Validator();
+            password2Checker.add(password2, "isNotEmpty", "密码不能为空");
+            password2Checker.add([password, password2], "isNotSame", "两次密码必须一致");
+            const password2ErrorMsg = password2Checker.check();
+            if (password2ErrorMsg) {
+                $("#password2-name-error-msg").text(passwordErrorMsg);
+                return;
+            }
+
+            closeSubmitBtn();
+            checkUserName(username);
+            checkUserEmail(email);
+
+        }
+
+        function closeSubmitBtn() {
+            $(".submit-btn").attr("disabled", "");
+        }
+
+        function openSubmitBtn() {
+            $(".submit-btn").removeAttr("disabled");
+        }
+
+        function checkedValidatorResult() {
+            console.log("checkedValidatorResult");
+            // 请求中
+            if (checkingUserName || checkingUserEmail) {
+                console.log("正在请求中");
+                return;
+            }
+
+            if (checkedUserName && checkedUserEmail) {
+                console.log("提交");
+                $("#form-register").submit();
+            } else {
+                // 重置状态
+                console.log("数据重复");
+                checkingUserName = false;
+                checkingUserEmail = false;
+                checkedUserName = false;
+                checkedUserEmail = false;
+                openSubmitBtn();
+            }
+        }
+
+        function checkUserName(username) {
+            checkingUserName = true;
+            checkUserInfo({
+                param: {"username": username, "type": "username"},
+                success: function (data) {
+                    if (data.msg) {
+                        $("#user-name-error-msg").text("用户名已被使用");
+                    } else {
+                        checkedUserName = true;
+                    }
+                },
+                error: function () {
+                    window.alert("网络异常");
+                },
+
+                complete: function () {
+                    checkingUserName = false;
+                    checkedValidatorResult();
+                }
+            });
+
+        }
+
+        function checkUserEmail(email) {
+            checkingUserEmail = true;
+            checkUserInfo({
+                param: {"email": email, "type": "email"},
+                success: function (data) {
+                    if (data.msg) {
+                        $("#email-name-error-msg").text("邮箱已被使用");
+                    } else {
+                        checkedUserEmail = true;
+                    }
+                },
+                error: function () {
+                    window.alert("网络异常");
+                },
+
+                complete: function () {
+                    checkingUserEmail = false;
+                    checkedValidatorResult();
+                }
+            });
+        }
+    </script>
+{% endblock %}

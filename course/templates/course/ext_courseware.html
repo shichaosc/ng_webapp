@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block extra_head %}
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="section section-gray">
+    <h4 class="text-center">{% trans 'Set Extend Courseware' %}</h4>
+    <div class="container">
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-8" style="padding-right: 0px;">
+        <div class="form-group has-success">
+          <label class="col-sm-6 ">
+            <font class="pull-right text-muted">{% trans "Student Name" %}:{{ user_course.user.username }} {% trans "Current level" %}:Level{{ user_course.course.course_level }}</font>
+          </label>
+          <select id="search_level" onchange="doSearch();">
+            <option value='-1' {% ifequal search_level -1 %}selected{% endifequal %}>All</option>
+            {% for required_tag in required_tags %}
+              <option value={{ required_tag.id }} {% ifequal search_level required_tag.id %}selected{% endifequal %}>{{ required_tag.text }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+         <div class="col-sm-3 col-md-offset-9">
+            <form name="search_form" method="GET" role="search" enctype="multipart/form-data">
+                <input type="text" name="student_id" value="{{ student_id }}" hidden />
+                <input type="text" name="virtualclass_id" value="{{ virtualclass_id }}" hidden />
+                <div class="input-group">
+                    <input type="text" class="form-control" name="search_key"  placeholder="{% trans "Enter your search key word..." %}" onkeypress="if(event.keyCode == 13){document.search_form.submit();}" value="{{ search_key }}">
+
+                    <span class="input-group-addon" onclick="document.search_form.submit();"><i class="fa fa-search" style="cursor:pointer;"></i></span>
+                  </div>
+            </form>
+          </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="nav nav-pills" role="tablist">
+            <li class="active">
+              <a href="#info" role="tab" data-toggle="tab">
+                   {% trans "My Extend Courseware" %}
+              </a>
+            </li>
+            <li>
+              <a href="#description" role="tab" data-toggle="tab">
+                   {% trans "My favorite" %}
+              </a>
+            </li>
+            <li>
+              <a href="#concept" role="tab" data-toggle="tab">
+                   {% trans "Shared library" %}
+              </a>
+            </li>
+      </ul>
+    </div>
+    </div>
+
+    
+
+    <div class="row">
+      <div class="col-md-6">
+        &nbsp;
+      </div>
+    </div>
+
+      <div class="row">
+        
+        {% for client in clients %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="image">
+                    <img src="{{ client.res_ext_course_cover }}" alt="..."/>
+                    <div class="filter filter-white">
+                        <button type="button" class="btn btn-primary btn-simple" href="#" id="coursewareModalControl" data-toggle="modal" data-source="/course/ext_courseware_show/?client_id={{ client.ext_course_id }}" data-target="#coursewareModal">
+                            <i class="fa fa-image"></i> {% trans "Preview" %}
+                        </button>
+                        
+                        <a type="button" class="btn btn-success btn-simple" onclick="ext_courseware_bind({{ virtualclass_id }}, {{ client.ext_course_id }});"><i class="fa fa-check"></i> {% trans "Associated" %}</a>
+{#                        <a type="button" class="btn btn-danger btn-simple" href="/course/ext_courseware_del/?student_id={{ student_id }}&client_id={{ client.ext_course_id }}" onclick="return confirm('{% trans "Are you sure delete this extend the courseware?" %}')">#}
+{#                            <i class="fa fa-times"></i> {% trans "Delete" %}#}
+{#                        </a>#}
+                    </div>
+                </div>
+                <div class="content">
+                    <p class="category">
+                    {% if client.ext_course_type == 'new' %}
+                      <font color="red">{% trans "New knowledge extension" %}</font>
+                    {% else %}
+                      <font color="blue">{% trans "Original file extension" %}</font>
+                    {% endif %}
+                    </p>
+                    <a class="card-link" href="#">
+                        <h4 class="title">{{ client.ext_course_name }}</h4>
+                    </a>
+                     <div class="footer">
+                        <div class="author">
+                            <a class="card-link">
+                              {% if client.res_op_tag_list %}
+                              <font color="green">
+                                {% for op_tag in client.res_op_tag_list %}
+                                  {% if not forloop.first %}/{% endif %}
+                                  {{ op_tag }}
+                                {% endfor %}
+                               </font>
+                              {% else %}
+                              <font color="green">
+                                {% trans "No labels" %}
+                              </font>
+                              {% endif %}
+                            </a>
+                        </div>
+                        <div class="stats pull-right">
+                          <button type="button" class="btn btn-danger btn-simple">
+                            {% ifequal cur_ext_course_id client.ext_course_id %}
+                            <i class="fa fa-check"></i> {% trans "Associated"  %}
+                            {% endifequal %}
+                          </button> 
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end card -->
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <div class="col-md-6 col-md-offset-5">
+        <ul class="pagination ">
+                         
+          {% if clients.has_previous %}
+          <li>
+              <a href="?page={{ clients.previous_page_number }}&student_id={{ student_id }}&search_key={{ search_key }}&search_level={{ search_level }}&virtualclass_id={{ virtualclass_id }}" title="Pre">«</a>
+          </li>
+          {% endif %}
+
+          {% for p in page_range %}
+            {% ifequal p clients.number %}
+            <li class="active">
+                <span style="font-size:16px;" title="{% trans "Current page" %}"><b>{{ p }}</b></span>
+            </li>
+            {% else %}
+            <li>
+                <a href="?page={{ p }}&student_id={{ student_id }}&search_key={{ search_key }}&search_level={{ search_level }}&virtualclass_id={{ virtualclass_id }}" title="{{ p }} page">{{ p }}</a>
+            </li>
+            {% endifequal %}
+          {% endfor %}
+
+          {% if clients.has_next %}
+            <li>
+              <a href="?page={{ clients.next_page_number }}&student_id={{ student_id }}&search_key={{ search_key }}&search_level={{ search_level }}&virtualclass_id={{ virtualclass_id }}" title="Next">»</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-lg" id="coursewareModal" tabindex="-1" role="dialog" aria-labelledby="coursewareModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-wide modal-lg">
+        <div class="modal-content">
+      <div class="modal-header text-center">
+        <h6 class="modal-title">{% trans 'Extend Courseware' %}</h6>
+      </div>
+
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe class="embed-responsive-item"  frameborder="0" src="…"></iframe>
+        </div>
+
+      </div>        
+      </div>
+    </div>
+</div>
+
+
+<script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+<script src="{% static "js/jquery-ui.js" %}" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).on("click", "#coursewareModalControl", function(e) {
+        var src = $(this).attr('data-source');
+        var height = $(this).attr('data-height') || 420;
+        var width = $(this).attr('data-width') || 560;
+        $("#coursewareModal").find("iframe").attr({'src':src});
+    });
+
+  function doSearch() {
+    var search_level_val = $("#search_level").val();
+    var url = "/course/ext_courseware/?student_id={{ student_id }}&virtualclass_id={{ virtualclass_id }}&search_level=" + search_level_val;
+    window.location.href = url;
+  }
+
+  function ext_courseware_bind(virtualclassId, clientId) {
+      $.get( "/course/ext_courseware_bind/", { virtualclass_id: virtualclassId, client_id: clientId })
+      .done(function( data ) {
+            if(typeof(data) != "undefined"){
+{#              alert("Extend Courseware association success");#}
+              alert("{% trans 'Extend Courseware association success' %}")
+              window.location.href = "/userprofile/tutor_profile/";
+            }
+          }, "json" );
+  }
+
+</script>
+{% endblock %}

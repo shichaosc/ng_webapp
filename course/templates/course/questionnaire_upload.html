@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Courseware Upload</title>
+    </head>
+    <body>
+
+        <!-- Upload form. Note enctype attribute! -->
+        <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+            <p>{{ form.cw_conent.label_tag }} {{ form.cw_content.help_text }}</p>
+            {{ form.cw_content.errors }}
+
+                {{ form }}
+            <p><input type="submit" value="Upload" /></p>
+        </form>
+
+
+    <!-- List of uploaded documents -->
+    {% if coursewares %}
+        <ul>
+        {% for courseware in coursewares %}
+{#        {% ifequal courseware.cw_type 'image' %}#}
+        {% ifequal courseware.cw_type 'image' %}
+            <a href="#" onclick="changeImage('{{ courseware.cw_content.url }}')">{{ courseware.cw_seq }}</a>,
+        {% endifequal %}
+        {% endfor %}
+        </ul>
+    <ul>    <img src="" alt="courseware" id="myImage">
+    </ul>
+<script>
+function changeImage(target) {
+    var image = document.getElementById('myImage');
+
+    image.src = target;
+
+}
+</script>
+    {% else %}
+        <p>No courseware.</p>
+    {% endif %}
+
+
+    </body>
+</html>

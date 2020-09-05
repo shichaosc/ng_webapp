@@ -1,0 +1,94 @@
+{% extends 'userprofile/base.html' %}
+
+{% load i18n %}
+{% load staticfiles %}
+{% load humanize %}
+
+
+{% block title %}{% trans "My account" %}{% endblock %}
+{% block extra_head %}
+	<style type="text/css">
+		@media only screen and (min-width : 481px) {
+		    .flex-row {
+		        display: flex;
+		        flex-wrap: wrap;
+		    }
+		    .flex-row > [class*='col-'] {
+		        display: flex;
+		        flex-direction: column;
+
+		    }
+		    .flex-row.row:after,
+		    .flex-row.row:before {
+		        display: flex;
+	        }
+        }
+
+	</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+
+    <div class="section">
+
+            <div class="row flex-row">
+
+                <div class="col-sm-6 col-md-6 col-12 col-lg-6 col-xl-6 left-p ">
+                    <div class="thumbnail" style="height: 100%;">
+                        <h3 class="text-center">{% trans 'Advanced Programme' %}</h3>
+                         <img src="{% static '/images/adv-graphic.png' %}"
+                            alt="{{ programmes.0.programme_name }}">
+
+
+                        <p class="text-center p-left">{% trans "This course is divided into six levels, and follows the course book developed by China's Ministry of Education. Students are expected to make progress in all aspects of Chinese language, including listening, speaking, reading and writing. This programme is suitable for students who have a certain basis for Chinese listening and speaking, or students who have Chinese listening and speaking environment and want to improve Chinese skills and literature (writing, intensive reading, ancient literature learning)." %}</p>
+						<br><br><br><br>
+	                    <div style="position:absolute;bottom:5px;left: 50%;transform: translate(-50%, -50%);">
+	                        <a href="/course/select_usercourse/?programme_id={{ programmes.0.id }}" class="btn btn-success btn-lg btn-block" role="button">
+	                        {% trans 'Select!' %}
+	                        </a>
+						</div>
+
+                    </div>
+                </div>
+
+                 <div class="col-sm-6 col-md-6 col-12 col-lg-6 col-xl-6 right-p">
+                    <div class="thumbnail" style="height: 100%;">
+                        <h3 class="text-center">{% trans "LingoAce International Programme" %}</h3>
+                        <img src="{% static '/images/lite-graphic.png' %}"
+
+                            alt="{{ programmes.1.programme_name }}">
+                        <p class="text-center p-right">{% trans "This course is designed for non-native Chinese speakers, and takes a fun approach to learning Chinese. Through the six levels, students will improve their listening, speaking, reading and writing skills and the understanding of Chinese culture. This course is suitable for students whose mother tongue are non-Chinese and want to learn daily communication, or students who have examination requirements such as YCT." %}</p>
+                        <br><br><br><br>
+	                    <div style="position:absolute;bottom:5px;left: 50%;transform: translate(-50%, -50%);">
+	                    <a href="/course/select_usercourse/?programme_id={{ programmes.1.id }}" class="btn btn-success btn-lg btn-block" role="button">
+                        {% trans 'Select!' %}
+                        </a>
+	                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</div>
+<script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+<script src="{% static "js/jquery-ui.js" %}" type="text/javascript"></script>
+<script>
+{#    window.onload = function () {#}
+{#        if ($('.right-p').height() < $('.left-p').height()){#}
+{#            console.log('haha');#}
+{#            console.log($('.left-p').height());#}
+{#            console.log($('.right-p').height());#}
+{#            var h = $('.left-p').height()-$('.right-p').height();#}
+{#            console.log(h);#}
+{#            $('.p-right').css("margin-bottom",h+10);#}
+{#        }#}
+{#        else if ($('.left-p').height()< $('.right-p').height()){#}
+{#            var h = $('.right-p').height()-$('.left-p').height();#}
+{#            $('.p-left').css("margin-bottom",h+10);#}
+{#        }#}
+{#    };#}
+
+</script>
+{% endblock %}
+
+

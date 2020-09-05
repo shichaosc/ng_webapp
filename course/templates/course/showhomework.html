@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+    <div class="card">
+            <div class="card-block">
+                <div class="row" style="margin:10px 0;">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-2 pull-right">
+                            {% ifequal role "student" %}
+                            <a href="/course/submithomework/?session_id={{ homework.session_id }}" class="btn theme-background-color" style="border: none;color: white">
+                                {% trans "Submit Homework" %}
+                            </a>
+                            {% endifequal %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin:10px 0;">
+                    <div class="col-md-8 col-md-offset-2">
+                        <iframe id="printIframe" width="100%" height="500" src="{{homework.hw_content.url}}" type="application/pdf"> </iframe>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script>
+    function doPrint(){
+        $("#printIframe")[0].contentWindow.print();
+    }
+    </script>
+{% endblock %}

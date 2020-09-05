@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" >
+            <div class="col-md-8 col-md-offset-2">
+                <div class="card" >
+                    <div class="card-block" >
+                        <h4 class="text-center">
+                            {% ifequal type '1' %}
+                                {% trans 'Upload Success' %}
+                            {% else %}
+                                {% trans 'Delete Success' %}
+                            {% endifequal %}
+                        </h4>
+                        {% ifequal type '1' %}
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                   <p style="font-size: 16px">{% trans 'session' %}:
+                                       {% for foo in course %}
+                                            {{ foo }}-{{ session }}
+                                       {% endfor %}
+                                   </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    {% for file in doneHomework %}
+                                         <a href="{{ file.result_content.url }}" style="margin-left: 20px;color: #55acee">{% trans 'URL:' %}{{ file.result_content }}</a><br>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <div class="col-md-10 col-md-offset-1">
+                                    {% for file in doneHomework %}
+                                        <embed width="100%" height="auto" src="{{ file.result_content.url }}" type="application/pdf"> </embed>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="row text-center" style="margin-top: 10px;">
+                                <a href="/course/submithomework/?session_id={{ session_id }}&course_id={{ course_id }}" style="width: 150px; margin-bottom: 10px;margin-right: 10px" class="btn btn-info btn-primary">
+                                    {% trans "Upload Homework" %}
+                                </a>
+                            </div>
+                        {% endifequal %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

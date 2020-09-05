@@ -1,0 +1,560 @@
+{% extends 'man/base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Classroom" %} - {{ course_session.name }}{% endblock %}
+
+{% block extra_head %}
+    <link href="{% static 'css/opentok-textchat.css' %}" rel="stylesheet"/>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="section section-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="tim-title centre-block"><a href="/accounts/profile/"><h5>{% trans "Go back" %}</h5></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="tim-title centre-block">
+                        <h3>{{ request.session.lesson_name }}</h3>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+                    <div class="tim-title centre-block">
+                        <h5 class="pull-right">
+                            {% if role == 'tutor' %}
+                                <a href="#" data-toggle="modal" data-target="#rateModal"
+                                   id="modalControlLnk">{% trans "Finish" %}</a>
+                            {% endif %}
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="controlPanel" class="col-md-3 card card-white">
+                    <br>
+                    <h6><a href="#" onclick="reconnect()" class="pull-right">{% trans "Reconnect" %}</a></h6>
+                    <br>
+
+                    <h6>{{ virtual_class.tutor.username }}</h6>
+                    <div class="video" style="width:200px;height:150px;" id="video_{{ virtual_class.tutor.username }}"></div>
+                    {% if virtual_class.tutor.username == request.user.username %}
+                        <div class="pull-right">
+                            <input type="checkbox" id="videoControl" checked/>{% trans "Video" %}
+                        </div>
+                    {% endif %}
+
+                    <br>
+
+                    {% for student in virtual_class.virtual_class_member.all %}
+                        <h6>{{ student.real_name }}</h6>
+
+                        <div class="video"  style="width:200px;height:150px;" id="video_{{ student.real_name }}"></div>
+                    {% endfor %}
+
+                    <div class="card text_chart" style="left: -1em;top: -28em;position: relative; width: 17em;">
+                        <div id="chat">
+                        </div>
+                    </div>
+                    <div class="pull-down" style="width:100%;">
+                        <div class="">
+                            <a href="#" onclick="toggleChatBox()">
+                                <i class="pe-7s-chat"></i>
+                                {% trans "chat" %}
+                                <span class="notification ot-new-messages" style="border-radius: 8em;"></span>
+                            </a>
+                            <!--
+                				&nbsp;&nbsp;&nbsp;&nbsp;
+            					<a href="#" >
+                    			<i class="pe-7s-exapnd2"></i>
+                    			{% trans "whiteboard" %}
+                				</a>
+                				 -->
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-9">
+                    <div id="contentArea" class="card card-horizontal card-white">
+
+                        <div id="myCourseware" class="carousel slide" data-interval="false">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#myCourseware" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#myCourseware" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+
+			            	<div class="col-md-6" id="courseware_control">
+			            	<p class="text-info">
+			            	<a href="#" onclick="retrieveCourseware(course_session, 'prev');">{% trans 'Last Session' %}</a>
+							/
+							<a href="#" onclick="retrieveCourseware(course_session, 'current');">{% trans 'Current Session' %}</a>
+							</p>
+							</div>
+							<div class="col-md-6 pull-right">
+			            	<p class="text-info">{% trans 'Double Click to activate/deactivate pointer.' %}</p>
+			            	</div>
+
+
+                    </div>
+                    <div id="pointer" class="hidden">
+                        <img src="{% static 'images/arrow_up_left.gif' %}" class="img-fluid" width="20%">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Rate Modal Core -->
+
+    <div class="modal fade" id="rateModal" tabindex="-1" role="dialog" aria-labelledby="rateModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <div id="error-message"></div>
+                </div>
+
+                <div class="modal-body">
+
+                    <form action="/virtualclass/finish/" method="POST" id="login-form">
+                        {% csrf_token %}
+
+                        <div class="input-group">
+                            <label class="input-group-addon">{% trans 'Practice Consistency and Quality' %}</label>
+                            <input type="text" class="form-control" id="PQ" name="PQ" placeholder="1-5"/>
+                            <span class="input-group-addon"><i class="pe-7s-id"></i></span>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-group-addon">{% trans 'Skills and Progress' %}</label>
+                            <input type="text" class="form-control" id="SP" name="SP" placeholder="1-5"/>
+                            <span class="input-group-addon"><i class="pe-7s-door-lock"></i></span>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-group-addon">{% trans 'Attitude and Responsibility' %}</label>
+                            <input type="text" class="form-control" id="AR" name="AR" placeholder="1-5"/>
+                            <span class="input-group-addon"><i class="pe-7s-door-lock"></i></span>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-group-addon">{% trans 'Comments' %}</label>
+                            <input type="text" class="form-control" id="comment" name="comment"
+                                   placeholder="{% trans 'pls input your comments' %}"/>
+                            <span class="input-group-addon"><i class="pe-7s-door-lock"></i></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="hidden" name="vc_id" value="{{ virtual_class.id }}">
+                            <input type="hidden" name="session_id" value="{{ course_session.id }}">
+                            <input type="hidden" name="user" value="{{ student.id }}">
+                            <button type="submit" class="btn btn-primary btn-block">{% trans "Submit" %}</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Evaluation Modal Core -->
+
+    <div class="modal fade" id="evaluationModal" tabindex="-1" role="dialog" aria-labelledby="evaluationModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <div id="error-message"></div>
+                </div>
+
+                <div class="modal-body">
+
+                    <form action="/virtualclass/evaluate/" method="POST" id="login-form">
+                        {% csrf_token %}
+
+                        <div class="input-group">
+                            <label class=input-group-addon">{% trans 'Professional Knowledge' %}</label>
+                            <input type="text" class="form-control" id="PK" name="PK" placeholder="1-5"/>
+                            <span class="input-group-addon"><i class="pe-7s-id"></i></span>
+                        </div>
+
+                        <div class="input-group">
+                            <label class=input-group-addon">{% trans 'Instructional Delivery' %}</label>
+                            <input type="text" class="form-control" id="ID" name="ID" placeholder="1-5"/>
+                            <span class="input-group-addon"><i class="pe-7s-door-lock"></i></span>
+                        </div>
+
+                        <div class="input-group">
+                            <label class=input-group-addon">{% trans 'Learning Environment' %}</label>
+                            <input type="text" class="form-control" id="LE" name="LE" placeholder="1-5"/>
+                            <span class="input-group-addon"><i class="pe-7s-door-lock"></i></span>
+                        </div>
+
+                        <div class="input-group">
+                            <label class=input-group-addon">{% trans 'Comments' %}</label>
+                            <input type="text" class="form-control" id="comment" name="comment"
+                                   placeholder="{% trans 'pls input your comments' %}"/>
+                            <span class="input-group-addon"><i class="pe-7s-door-lock"></i></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="hidden" name="vc_id" value="{{ virtual_class.id }}">
+                            <input type="hidden" name="user" value="{{ tutor.id }}">
+                            <button type="submit" class="btn btn-primary btn-block">{% trans "Submit" %}</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block extra_ending %}
+    <script type="text/javascript" src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+    <!--  jQuery and Bootstrap core files    -->
+
+    <script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/bootstrap.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/opentok-text-chat.js" %}" type="text/javascript"></script>
+
+
+    <!--  Get Shit Done Kit PRO Core javascript 	 -->
+    <!--
+	it will introduce non-stop sliding issue, if it is enabled.
+	<script src="{% static "js/get-shit-done.js" %}" type="text/javascript"></script>
+ -->
+    <script type="text/javascript">
+        var api_key = '{{api_key}}';
+        var session_id = '{{session_id }}';
+        var token_id = '{{ token }}';
+        var session;
+        var publisher;
+        var role = "{{request.session.role}}";
+        var username = "{{request.user.username}}";
+        var course_session = "{{ course_session.id }}";
+
+        $(document).ready(function () {
+
+            //set the left sidebar height
+            $('#controlPanel').height($('#contentArea').height());
+            $('.notification').css('display', 'none');
+
+            if (OT.checkSystemRequirements() == 1) {
+                session = OT.initSession(api_key, session_id);
+
+                //initiate chat
+                var chatWidget = new OTSolution.TextChat.ChatWidget({
+                    session: session,
+                    container: '#chat'
+                });
+
+                toggleChatBox();
+                //connect the webRTC session
+                connect();
+            } else {
+                // The client does not support WebRTC.
+                alert("{% trans 'the client does not support webrtc' %}");
+            }
+
+            try {
+
+            	retrieveCourseware(course_session, 'current');
+                $('#myCourseware').carousel({interval: false});
+
+                //disable carousel control for student
+                if (role == "student") {
+                    $('.carousel-control').hide();
+                	$('#courseware_control').hide();
+                }
+
+                $("#myCourseware").on('slid.bs.carousel', function () {
+                    var index = $('#myCourseware .active').index('#myCourseware .item');
+                    if (role == "tutor") {
+                        send_signalling("pageControl", index.toString());
+                        //alert('The carousel has finished sliding to ' + index + ' !');
+                    }
+                });
+
+                $(window).load(function () {
+                    $('img').each(function () {
+                        if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+                            this.src = '/media/cw/error.jpg';
+                        }
+                    });
+                });
+            }
+            catch (e) {
+                alert("failure - retrieve courseware");
+                alert(e);
+            }
+
+            $('#videoControl').change(function () {
+                if ($(this).is(":checked")) {
+                    publisher.publishVideo(true);
+                }
+                else {
+                    publisher.publishVideo(false);
+                }
+            });
+
+            $("#modalControlLnk").click(function () {
+                send_signalling("classControl", "close");
+            });
+        });
+
+        function refreshCarousel(jsonString) {
+        	var json = jsonString.replace(/'/g, '"');
+            var cws = JSON.parse(json);
+
+            $("#myCourseware").find(".item").remove();
+
+            for (var i = 0; i < cws.length; i++) {
+                $('<div class="item"><img src="' + cws[i].cw_content + '" class="img-responsive center-block" style="cursor:pointer">   </div>').appendTo('.carousel-inner');
+            }
+            $('.item').first().addClass('active');
+
+            $('.img-responsive').dblclick(function (e) { //Offset mouse Position
+                var posX = $(this).offset().left;
+                var posY = $(this).offset().top;
+
+                var width = $(this).width();
+                var height = $(this).height();
+
+                var left = (e.pageX - posX) + 12;
+                var top = e.pageY - posY;
+
+                $("#pointer").css({top: top, left: left, position: 'absolute'});
+                $("#pointer").toggleClass('hidden');
+
+                var msg;
+                if ($("#pointer").hasClass('hidden'))
+                    msg = "hide";
+                else
+                    msg = '{"posX": ' + (e.pageX - posX) + ', "width": ' + width + ', "posY": ' + (e.pageY - posY) + ', "height": ' + height + '}';
+
+                send_signalling("pointer", msg);
+
+            });
+
+        }
+
+        function retrieveCourseware(sessionID, type) {
+        	$.get( "/course/retrieve_courseware", { session_id: sessionID, type: type })
+        	.done(function( data ) {
+        		  refreshCarousel(data);
+        		  if(role=="tutor") {
+        		  	var msg = '{"session_id": ' + sessionID + ', "type": "' + type + '"}';
+        		  	send_signalling("courseware", msg);
+        		  }
+        		}, "json" );
+        }
+
+        function toggleChatBox() {
+            $('.notification').css('display', 'none');
+            $("#chat").toggleClass("hidden");
+        }
+
+        function send_signalling(type, msg) {
+
+            //alert("enter signalling to send " + index);
+            if (session == null)
+                return;
+            session.signal(
+                {
+                    data: msg,
+                    type: type
+                },
+                function (error) {
+                    if (error) {
+                        alert("signal error ("
+                            + error.code
+                            + "): " + error.message);
+                    } else {
+                        //alert("signal sent.");
+                    }
+                }
+            );
+        }
+
+        function setBottomBar() {
+            //ajdust the position
+            $('.pull-down').each(function () {
+                var $this = $(this);
+                //$this.css("margin-top", $this.parent().height() - $this.height());
+                var margin_top = $this.parent().height();
+                $this.parent().children('div').each(function () {
+                    margin_top = margin_top - $(this).height();
+                });
+                //$this.css("margin-top", margin_top);
+            });
+        }
+
+        function connect() {
+            if (session == null)
+                return;
+
+            session.connect(token_id, function (error) {
+                if (error) {
+                    //alert("error");
+                    alert(error.code + error.message);
+                } else {
+                    //publishStream();
+                }
+            });
+            session.on('streamCreated', function (event) {
+                //console.log("connectionData:" + event.stream.connection.data);
+
+                var subscriberProperties = {insertMode: 'append', width: 200, height: 150};
+                var targetElement = document.getElementById('video_' + event.stream.name);
+                targetElement.innerHTML = '';
+                var subscriber = session.subscribe(event.stream,
+                    jq('video_' + event.stream.name),
+                    subscriberProperties,
+                    function (error) {
+                        if (error) {
+                            alert(error);
+                        }
+                    });
+
+                send_signalling("classControl", "open");
+
+            });
+			session.on("signal:courseware", function(event) {
+				if(role=="student") {
+                    var obj = jQuery.parseJSON(event.data);
+
+					retrieveCourseware(obj.session_id, obj.type);
+				}
+			});
+            session.on("signal:pageControl", function (event) {
+                if (role == "student") {
+                    //alert("Signal sent from connection " + event.from.id + ": " + event.data);
+                    $("#myCourseware").carousel(parseInt(event.data, 0));
+                }
+            });
+            session.on("signal:classControl", function (event) {
+                if (role == "student" && event.data == "close") {
+                    $('#evaluationModal').modal('show');
+                }
+            });
+            session.on("signal:pointer", function (event) {
+                //alert("Signal sent from connection " + event.from.id + ": " + event.data);
+                if (event.data == "hide")
+                    $("#pointer").addClass("hidden");
+                else {
+                    try {
+                        var obj = jQuery.parseJSON(event.data);
+                        var target_width = $('#myCourseware .active').width();
+                        var target_height = $('#myCourseware .active').height();
+                        //var target_height = $('#myCourseware').height();
+                        var left = obj.posX * target_width / obj.width + 12;
+                        var top = obj.posY * target_height / obj.height;
+                        //alert("target width:" + target_width + "; source width:" + obj.width + "; source posX:" + obj.posX);
+                        $("#pointer").css({top: top, left: left, position: 'absolute'});
+                        $("#pointer").removeClass("hidden");
+                    }
+                    catch (e) {
+                        console.log("failure - pointer");
+                        console.log(e);
+                    }
+                }
+            });
+
+        }
+
+        function jq(myid) {
+            return myid.replace(/(:|\.|\[|\]|,|=)/g, "\\$1")
+        }
+
+        function disconnect() {
+            session.disconnect();
+            $('.video').empty();
+        }
+
+        function reconnect() {
+            disconnect();
+
+            session.connect(token_id, function (error) {
+                if (error) {
+                    alert("error");
+                    alert(error.code + error.message);
+                } else {
+                    //alert("Connected to the session.");
+
+                    //publishStream();
+                }
+            });
+            console.log("reconnected");
+        }
+
+        function publishStream() {
+            var publisherProperties = {
+                name: username,
+                insertMode: 'append',
+                width: 200,
+                height: 150,
+                resolution: '320x240',
+                frameRate: 15
+            };
+            var targetElement = document.getElementById("video_" + username);
+            targetElement.innerHTML = '';
+            publisher = OT.initPublisher(targetElement, publisherProperties);
+            session.publish(publisher);
+        }
+
+    </script>
+
+{% endblock %}

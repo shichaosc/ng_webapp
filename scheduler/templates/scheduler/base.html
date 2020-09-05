@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% load tz_detect %}
+{% block title %}{% trans "scheduler" %}{% endblock %}
+
+{% block header %}
+{% if request.session.container != 'mobile' %}
+{{ block.super }}
+{% endif %}
+{% endblock %}
+
+{% block footer %}
+{% if request.session.container != 'mobile' %}
+{{ block.super }}
+{% endif %}
+{% endblock %}

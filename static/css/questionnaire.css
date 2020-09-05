@@ -1,0 +1,229 @@
+.select{
+    width:100%;
+}
+.content{
+    background:url("../images/questionnaire/bg.png") no-repeat;
+    background-size:cover;
+    padding-bottom:80px;
+}
+.title-lang{
+    width:80%;
+    margin:0 auto;
+    font-size:22px;
+}
+.nav-tp{
+    height:96px;
+    background:#fff;
+    width:100%;
+    overflow:hidden;
+}
+.nav-tp img{
+    width:138px;
+    display:block;
+    margin:24px auto 0;
+}
+.content-ct{
+    background:#fff;
+    max-width:1000px;
+    margin:30px auto 0 auto;
+    border-radius:20px;
+    padding-bottom:140px;
+}
+.content-ct h4{
+    text-align:center;
+    font-size:26px;
+    color:#5CC2D0;
+    padding-top:44px;
+}
+.content-ct h4 img:first-child{
+    width:22px;
+    margin-right:10px;
+}
+.content-ct h4 img:last-child{
+    width:26px;
+    margin-left:10px;
+}
+.nav-bor{
+    display:block;
+    height:2px;
+    width:126px;
+    border-radius:2px;
+    background:#CFEDFB;
+    margin:14px auto 0 auto;
+}
+.cont-info{
+    padding-left:140px;
+}
+.cont-info .info-item{
+    margin-top:50px;
+}
+.info-item h5{
+    font-size:20px;
+    color:#3B3B4D;
+    line-height:20px;
+    margin-bottom:0;
+}
+.info-item em{
+    display:block;
+    font-style:inherit;
+}
+.info-item span{
+    display:inline-block;
+    font-size:14px;
+    color:#6C7B8A;
+    margin:16px 0 0 18px;
+    padding:8px 16px;
+    border-radius:6px;
+    cursor: pointer;
+}
+.info-item span.active{
+    background:#5CC2D0;
+    color:#fff;
+}
+.info-item .select_img.active{
+    padding:8px 0;
+    color:#5CC2D0;
+    background:#fff;
+}
+.next-btn{
+    padding:0 20px;
+    height:52px;
+    border-radius:25px;
+    font-size:22px;
+    text-align:center;
+    line-height:52px;
+    margin:95px auto 0;
+    background:#5CC2D0;
+    color:#fff;
+    cursor:pointer;
+    border:none;
+}
+.next-btn.active{
+    background:#5CC2D0;
+    color:#fff;
+    cursor:pointer;
+}
+.info-tp{
+    padding-top:115px;
+}
+.mask-layer{
+    position:fixed;
+    left:0;
+    top:0;
+    background:rgba(0,0,0,.7);
+    width:100%;
+    height:100%;
+    display:none;
+}
+.layer-ct{
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    background:#fff;
+    border-radius:20px;
+    padding:0;
+    overflow:hidden;
+    width:700px;
+}
+.bg-img img{
+    width:100%;
+}
+.stars-img{
+    text-align: center;
+}
+.mask-layer .flex-column-center{
+    font-size:14px;
+}
+.stars-img em{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin-right:10px;
+    background:url("../images/questionnaire/stars1.png") no-repeat;
+    background-size:cover;
+}
+.stars-img em.active{
+    background:url("../images/questionnaire/stars2.png") no-repeat;
+    background-size:cover;
+}
+.grade-level{
+    color:#5CC2D0;
+    text-align:center;
+    margin-top:15px;
+    /*font-size:20px;*/
+}
+.grade-level em{
+    font-style:inherit;
+}
+.resources-text{
+    text-align:center;
+    font-size:12px;
+    color:#6C7B8A;
+}
+.resources-text span{
+    color:#EF5490;
+    font-size:14px;
+}
+.admission{
+    font-size:16px;
+    color:#383232;
+    text-align:center;
+    margin-top:0;
+    margin-bottom:0;
+}
+.submit-bt{
+    padding-top:20px;
+    text-align: center;
+    padding-bottom:60px;
+}
+.submit-bt a{
+    padding:10px 40px;
+    color:#fff;
+    display:inline-block;
+    margin:0 auto;
+    background:#5CC2D0;
+    font-size:16px;
+    border-radius:40px;
+}
+.submit-bt a:hover,.submit-bt a:focus{
+    color:#fff;
+}
+.senior-tips{
+    color:#6C7B8A;
+    line-height:16px;
+}
+@media (max-width: 750px) {
+  .content{
+      width:100%;
+      background-size:100% 100%;
+  }
+  .content-ct{
+      width:90%;
+      padding-bottom:40px;
+  }
+  .content-ct h4{
+      font-size:22px
+  }
+  .cont-info{
+      /*padding:0 10px;*/
+  }
+  .info-item h5{
+      padding-right:2px;
+      line-height:25px;
+      font-size:18px;
+  }
+  .info-item span{
+      padding: 8px 5px;
+      margin: 10px 0 0 0px;
+  }
+  .info-tp{
+      padding-top:10px;
+  }
+  .layer-ct{
+      width:90%;
+  }
+  .cont-info .info-item img{
+        /*max-width:90%;*/
+    }
+}

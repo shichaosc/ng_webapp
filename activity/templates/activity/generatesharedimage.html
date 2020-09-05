@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang=en>
+{% load staticfiles %}
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <title>图片生成器</title>
+    <link href="{% static 'css/campaign-pc-index.css' %} " rel="preload" as="style">
+    <link href="{% static 'css/campaign-chunk-vendors.css' %} " rel=preload as=style>
+    <link href="{% static 'js/campaign-pc-index.js' %} " rel=preload as=script>
+    <link href="{% static 'js/campaign-chunk-vendors.js' %} " rel=preload as=script>
+    <link href="{% static 'css/campaign-pc-index.css' %} " rel=stylesheet>
+    <link href="{% static 'css/campaign-chunk-vendors.css' %} " rel=stylesheet>
+    <link href="{% static 'css/campaign-chunk-vendors.css' %} " rel=stylesheet>
+</head>
+<body>
+<noscript><strong>We're sorry but taoyuan-project doesn't work properly without JavaScript enabled. Please enable it to
+    continue.</strong></noscript>
+<div id="pc"></div>
+<script src="{% static 'js/campaign-pc-index.js' %} "></script>
+<script src="{% static 'js/campaign-chunk-vendors.js' %} "></script>
+</body>
+</html>

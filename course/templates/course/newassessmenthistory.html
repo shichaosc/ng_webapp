@@ -1,0 +1,422 @@
+{% extends 'course/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+     <style>
+        .btn-lg.btn-round{
+            padding:10px 30px;
+        }
+     .m10{
+         margin:0 10px;
+     }
+     .accountBtn,.accountBtn:hover,.accountBtn:focus,.accountBtn:active{
+         margin-left:15px;
+         display:none;
+         background:#5CC2D0;
+         border-color:#5CC2D0;
+     }
+     .accountBtn a{
+         display:block;
+         color:#fff;
+     }
+    </style>
+    <div class="pc">
+        <div class="pop-card-container pc " style="width: 648px; margin: 50px auto">
+            <div class="pop-card-circle-container">
+                <div class="pop-card-circle">
+                    <div class="flex-column-center" style="margin-top: 23px">
+                        <img src="{% static 'images/pop-question.png' %}" style="width: 56px;height: 56px">
+                        <p>
+                            {% trans 'Assessmet History' %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+                <div class="pop-card-top-up pc" style="padding: 75px 10px 20px 10px">
+                    <div class="card-block">
+                        <div class="row m10" id="question_stem">
+
+                        </div>
+                        <div id="pc_question_content">
+                            <div class="row">
+                                <div class="col-md-6" id="alternativeA">
+
+                                </div>
+                                <div class="col-md-6" id="alternativeB">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6" id="alternativeC">
+
+                                </div>
+                                <div class="col-md-6" id="alternativeD">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
+                            {% if request.user.is_authenticated %}
+                            {% else %}
+                                <button onclick="goBack()" class="btn btn-social btn-fill btn-round btn-twitter">
+                                    {% trans "Back to result" %}
+                                </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 30px">
+                        <div style="margin-bottom: 10px" class="col-md-12 text-center">
+                            <button style="margin-right: 15px" onclick="clickLast()" class="btn btn-lg  btn-round">
+                                {% trans "previous" %}
+                            </button>
+                            <button style="margin-left: 15px" onclick="clickNext()"
+                                    class="btn btn-lg  btn-round nexBtn ">{% trans "next" %}</button>
+                            <button class="btn btn-lg  btn-round  accountBtn"><a href="/accounts/profile/">{% trans "Go back to my account" %}</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/jquery-ui.js" %}" type="text/javascript"></script>
+    <script>
+        var questList = {{questionList|safe}}; //store all questions
+        console.log(questList)
+        var num = 0; //current question num
+        showQuestion(0)
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function showQuestion(obj) {
+            $('#alternativeA').empty();
+            $('#alternativeB').empty();
+            $('#alternativeC').empty();
+            $('#alternativeD').empty();
+            var no = parseInt(obj);
+            var detailObj = questList[no]
+            showStem(detailObj)
+            var alternatives = detailObj.alternatives
+            var answer = detailObj.answer
+            var select = detailObj.select
+
+            var alternativesA = alternatives[0]
+            var alternativesB = alternatives[1]
+            var alternativesC = alternatives[2]
+            var alternativesD = alternatives[3]
+            var detailA = alternativesA.detail
+            var typeA = detailA.type
+            var contentA = detailA.content
+            var Dhtml = ''
+            if (typeA == 'text') {
+                Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent">' + 'A:' + contentA + '</button></li>';
+            } else if(typeA == 'audio'){
+               Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent">' + 'A:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentA + '"' + '><audio>' + '</button></li>';
+            }
+            else {
+                Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent">' +'<h3>A:</h3>' + '<img width="100%"  src="' + contentA + '"' + '>' + '</button></li>';
+            }
+            var detailB = alternativesB.detail
+            var typeB = detailB.type
+            var contentB = detailB.content
+            if (typeB == 'text') {
+                Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent ">' + 'B:' + contentB + '</button></li>';
+            }
+            else if(typeB == 'audio'){
+               Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent">' + 'B:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentB + '"' + '><audio>' + '</button></li>';
+            }
+            else {
+                Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent">' + '<h3>B:</h3> ' +'<img width="100%"  src="' + contentB + '"' + '>' + '</button></li>';
+            }
+            var detailC = alternativesC.detail
+            var typeC = detailC.type
+            var contentC = detailC.content
+            if (typeC == 'text') {
+                Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent ">' + 'C:' + contentC + '</button></li>';
+            }
+            else if(typeC  == 'audio'){
+               Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent">' + 'C:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentC+ '"' + '><audio>' + '</button></li>';
+            }
+            else {
+                Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent">' + '<h3>C:</h3> '+'<img width="100%"  src="' + contentC + '"' + '>' + '</button></li>';
+            }
+            var detailD = alternativesD.detail
+            var typeD = detailD.type
+            var contentD = detailD.content
+            if (typeD == 'text') {
+                if (contentD.length > 0) {
+                    Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent ">' + 'D:' + contentD + '</button></li>';
+                }
+
+            }
+            else if(typeD  == 'audio'){
+                if (contentD.length > 0){
+                    Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent">' + 'D:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentD+ '"' + '><audio>' + '</button></li>';
+                }
+            }
+
+            else {
+                if (contentD.length > 0) {
+                    Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 0px;background-color: transparent">' + '<h3>D:</h3>' +'<img width="100%"  src="' + contentD + '"' + '>' + '</button></li>';
+                }
+
+            }
+            if (answer == 'A') {
+                if (typeA == 'text') {
+                    Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'A:' + detailA.content + '</button></li>';
+                }
+                else if(typeA == 'audio'){
+                    Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'A:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + detailA.content+ '"' + '><audio>' + '</button></li>';
+
+                }
+                else {
+                    Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' +'<h3>A:</h3>' + '<img width="100%"  src="' + contentA + '"' + '>' + '</button></li>';
+                }
+            }
+            else if (answer == 'B') {
+                if (typeB == 'text') {
+                    Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button  style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'B:' + detailB.content + '</button></li>';
+                }
+                else if(typeB == 'audio'){
+                    Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'B:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + detailB.content+ '"' + '><audio>' + '</button></li>';
+                }
+                else {
+                    Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + '<h3>B:</h3>' + '<img width="100%"  src="' + contentB + '"' + '>' + '</button></li>';
+                }
+            }
+            else if (answer == 'C') {
+                if (typeC == 'text') {
+                    Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button  style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'C:' + detailC.content + '</button></li>';
+                }
+                else if(typeC == 'audio'){
+                    Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'C:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + detailC.content+ '"' + '><audio>' + '</button></li>';
+                }
+
+                else {
+                    Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + '<h3>C:</h3>' +'<img width="100%"  src="' + contentC + '"' + '>' + '</button></li>';
+                }
+            } else {
+                if (typeD == 'text') {
+                    if (contentD.length > 0) {
+                        Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button  style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'D:' + detailD.content + '</button></li>';
+                    }
+
+                }
+                else if(typeD == 'audio'){
+                    if(contentD.length > 0){
+                       Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + 'D:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + detailD.content+ '"' + '><audio>' + '</button></li>';
+                    }
+                }
+
+                else {
+                    if (contentD.length > 0) {
+                        Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: transparent">' + '<h3>D:</h3>' +'<img width="100%"  src="' + contentD + '"' + '>' + '</button></li>';
+                    }
+
+                }
+            }
+            if (answer != select) {
+                if (select == 'A') {
+                    if (typeA == 'text') {
+                        Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' + 'A:' + contentA + '</button></li>';
+                    }
+                    else if (typeA == 'audio'){
+                        Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' + 'A:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentA+ '"' + '><audio>' + '</button></li>';
+                    }
+                    else {
+                        Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' +'<h3>A:</h3>' + '<img width="100%"  src="' + contentA + '"' + '>' + '</button></li>';
+                    }
+                } else if (select == 'B') {
+                    if (typeB == 'text') {
+                        Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' + 'B:' + contentB + '</button></li>';
+                    }
+                    else if (typeB == 'audio'){
+                        Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' + 'B:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentB + '"' + '><audio>' + '</button></li>';
+                    }
+                    else {
+                        Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' +'<h3>B:</h3>' + '<img width="100%"  src="' + contentB + '"' + '>' + '</button></li>';
+                    }
+                } else if (select == 'C') {
+                    if (typeC == 'text') {
+                        Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' + 'C:' + contentC + '</button></li>';
+                    }
+                    else if (typeC == 'audio'){
+                        Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' + 'C:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentC + '"' + '><audio>' + '</button></li>';
+                    }
+
+                    else {
+                        Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' + '<h3>C:</h3>' +'<img width="100%"  src="' + contentC + '"' + '>' + '</button></li>';
+                    }
+                } else if (select == 'D') {
+                    if (typeD == 'text') {
+                        Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' + 'D:' + contentD + '</button></li>';
+                    }
+                    else if (typeD  == 'audio'){
+                        Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button value="A" id="errorBtn" style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' + 'D:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentD + '"' + '><audio>' + '</button></li>';
+                    }
+
+                    else {
+                        Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button  style="text-align: left;border: 0px;border-radius: 5px; background-color: #FF9500">' +'<h3>D:</h3>' + '<img width="100%"  src="' + contentD + '"' + '>' + '</button></li>';
+                    }
+                }
+            } else {
+                if (answer == 'A') {
+                    if (typeA == 'text') {
+                        Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'A:' + contentA + '</button></li>';
+                    }
+                    else if(typeA == 'audio'){
+                        Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'A:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentA + '"' + '><audio>' + '</button></li>';
+                    }
+
+                    else {
+                        Ahtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' +'<h3>A:</h3>' + '<img width="100%"  src="' + contentA + '"' + '>' + '</button></li>';
+                    }
+                } else if (answer == 'B') {
+                    if (typeB == 'text') {
+                        Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'B:' + contentB + '</button></li>';
+                    }
+                    else if(typeB == 'audio'){
+                        Bhtml  = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'B:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentB + '"' + '><audio>' + '</button></li>';
+                    }
+
+                    else {
+                        Bhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' +'<h3>B:</h3>' + '<img width="100%" src="' + contentB + '"' + '>' + '</button></li>';
+                    }
+                } else if (answer == 'C') {
+                    if (typeC == 'text') {
+                        Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button  style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'C:' + contentC + '</button></li>';
+                    }
+                    else if(typeC == 'audio'){
+                        Chtml  = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'C:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentC + '"' + '><audio>' + '</button></li>';
+                    }
+
+                    else {
+                        Chtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' +'<h3>C:</h3>' + '<img width="100%"  src="' + contentC + '"' + '>' + '</button></li>';
+                    }
+                } else if (answer == 'D') {
+                    if (typeD == 'text') {
+                        if (contentD.length > 0) {
+                            Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button  style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'D:' + contentD + '</button></li>';
+                        }
+                    }
+                    else if(typeD == 'audio'){
+                        Dhtml  = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + 'D:' + '<img class="alter" width="20px" src="/static/images/Thehorn.png">'+'<audio><source  src="' + contentD + '"' + '><audio>' + '</button></li>';
+                    }
+
+
+                    else {
+                        if (contentD.length > 0) {
+                            Dhtml = '<li style="list-style: none;font-size: 16px;color: #00bbff;margin-top: 10px"><button style="text-align: left;border: 2px solid deepskyblue;border-radius: 5px; background-color: #75ff0d">' + '<h3>D:</h3>' +'<img width="100%"  src="' + contentD + '"' + '>' + '</button></li>'
+                        }
+
+                    }
+                }
+            }
+            html = '<ul>' + stemHtml + Ahtml + Bhtml + Chtml + Dhtml + '</ul>';
+            $(Ahtml).appendTo('#alternativeA');
+            $(Bhtml).appendTo('#alternativeB');
+            $(Chtml).appendTo('#alternativeC');
+            $(Dhtml).appendTo('#alternativeD');
+
+        // 控制音频的播放/暂停
+        $(".alter").on("click", function () {
+            var audio = $(this).next()[0]
+            if (audio.paused) {
+                audio.play()
+            } else {
+                audio.pause()
+
+            }
+        })
+
+
+        var audios = document.getElementsByTagName("audio");
+        // 暂停函数
+        function pauseAll() {
+                var self = this;
+
+                [].forEach.call(audios, function (i) {
+                    // 将audios中其他的audio全部暂停
+                    i !== self && i.pause();
+                })
+            }
+
+        // 给play事件绑定暂停函数
+        [].forEach.call(audios, function (i) {
+                i.addEventListener("play", pauseAll.bind(i))
+
+            })
+
+        }
+
+
+
+        function showStem(obj) {
+            $('#question_stem').empty();
+
+            if (obj.stem.length === 2) {
+                if (obj.stem[0].type == 'text') {
+                    stemHtml = '<li style="list-style: none"><label style="font-size: 16px">' + '{% if isdebug  %}('
+                        + obj.no+ '){% endif %}' + ' ' + obj.stem[0].content + '</label></li>';
+                    $(stemHtml).appendTo('#question_stem');
+                    if (obj.stem[1].type == 'audio') {
+                        stemhtml = '<audio controls><source width="100%"  src="' + obj.stem[1].content + '"' + '><audio>'
+                    }
+                    else if (obj.stem[1].type == 'image') {
+                        stemhtml = '<img width="100%"  src="' + obj.stem[1].content + '"' + '>'
+                    }
+                    else {
+                        stemhtml = ""
+                    }
+                    $(stemhtml).appendTo('#question_stem');
+                }
+
+            } else {
+                var stemObj = obj.stem
+                var no = obj.no
+                var type = stemObj.type
+                var content = stemObj.content
+                if (type == 'text') {
+                    stemHtmls = '<li style="list-style: none"><label style="font-size: 16px">' + '{% if isdebug  %}'
+                        + obj.no+ '{% endif %}' + ' ' + content + '</label></li>';
+                } else {
+                    stemHtmls = '<p>' + '{% if isdebug  %}' + obj.no+
+                        '{% endif %}' + '</p>' + '<img width="100%"  src="' + content + '"' + '>'
+                }
+                $(stemHtmls).appendTo('#question_stem');
+            }
+
+        }
+
+        function clickLast() {
+            if (num == 0)
+                alert('{% trans 'First question' %}');
+            else {
+                num--;
+                showQuestion(num);
+                $('.nexBtn').show();
+                $('.accountBtn').hide();
+            }
+        }
+
+        function clickNext() {
+            num++;
+            console.log(num)
+            if(num == questList.length-1){
+                 $('.nexBtn').hide();
+                 $('.accountBtn').show();
+            }
+            if (num == questList.length) {
+
+                num = questList.length - 1;
+            } else {
+                showQuestion(num);
+            }
+        }
+    </script>
+{% endblock %}

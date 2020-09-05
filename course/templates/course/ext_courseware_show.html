@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %} 
+
+{% block header %}
+{% endblock %}
+
+
+{% block content %}
+<base target="_parent" />
+
+<div class="container">
+
+    <div class="col-md-12">
+        <div class="card card-horizontal">
+        {% if clients %}
+            <div id="myCourseware" class="carousel slide" data-ride="carousel" data-interval="false">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                {% for c in clients %}
+                    <div class="item"><img src="{{ c.ecw_content.url }}" class="img-responsive">   </div>
+                {% endfor %}
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#myCourseware" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" style="color: #2CA8FF;"></span>
+                </a>
+                <a class="right carousel-control" href="#myCourseware" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" style="color: #2CA8FF;"></span>
+                </a>
+            </div>
+        {% endif %}                         
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block extra_ending %}
+{{ block.super }}
+<script type="text/javascript">
+
+$(document).ready(function(){
+    try{
+        $('.item').first().addClass('active');
+        $('#myCourseware').carousel({interval: false});
+    } 
+    catch(e){
+        alert("failure - retrieve courseware");
+        alert(e); 
+    }
+});
+</script>
+
+{% endblock %}

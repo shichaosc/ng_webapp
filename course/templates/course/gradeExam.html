@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+<div class="section section-gray">
+    <h4 class="text-center">{% trans title %}</h4>
+    <div class="container">
+        <div class="row">
+            {% for i in numList %}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-block text-center">
+                        <h4><small>{% trans i %}</small></h4>
+		    		    <div class="content text-center" id="grade_content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="font-size: 16px;">{% trans "Semester" %}</th>
+                                        <th style="font-size: 16px;">{% trans "Exam" %}</th>
+                                        <th style="font-size: 16px;">{% trans "Score" %}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="text-align: left">
+                                        <td>{% trans "Mid" %}</td>
+                                        <td>
+                                            {% if unitTestResult %}
+                                                {% with num=forloop.counter %}
+                                                    {% for list in unitTestResult %}
+                                                        {% if list.course.course_level == num and list.test_level == 0.5 %}
+                                                             <a href="/course/historyexam/?course_level={{ num }}&test_level=0.5">{% trans "History Exam" %}</a>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                {% endwith %}
+                                            {% endif %}
+                                            {% if forloop.counter < levelDic.course_level %}
+                                                    <a id="mid{{  forloop.counter  }}" href="/course/unitexam/?course_level={{ forloop.counter }}&test_level=0.5">{% trans "Start Test" %}</a>
+                                                {% elif forloop.counter == levelDic.course_level and levelDic.test_level >= 0.5 %}
+                                                    <a id="mid{{  forloop.counter  }}" href="/course/unitexam/?course_level={{ forloop.counter }}&test_level=0.5">{% trans "Start Test" %}</a>
+                                                {% elif list.test_level != 0.5 %}
+                                                    <i style="font-size: 25px" class="pe-7s-close-circle"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% with num=forloop.counter %}
+                                                {% for list in unitTestResult %}
+                                                    {% if list.course.course_level == num and list.test_level == 0.5 %}
+                                                        {{ list.score }}
+                                                        {{ break }}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endwith %}
+                                        </td>
+                                    </tr>
+                                    <tr style="text-align: left">
+                                        <td>{% trans "Final" %}</td>
+                                        <td>
+                                        {% if unitTestResult %}
+                                            {% with num=forloop.counter %}
+                                                {% for list in unitTestResult %}
+                                                    {% if list.course.course_level == num and list.test_level == 1.0 %}
+                                                         <a href="/course/historyexam/?course_level={{ num }}&test_level=1.0">{% trans "History Exam" %}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endwith %}
+                                        {% endif %}
+                                        {% if forloop.counter < levelDic.course_level %}
+                                                <a id="final{{  forloop.counter  }}" href="/course/unitexam/?course_level={{ forloop.counter }}&test_level=1.0">{% trans "Start Test" %}</a>
+                                            {% elif forloop.counter == levelDic.course_level and levelDic.test_level == 1.0 %}
+                                                <a id="final{{  forloop.counter  }}" href="/course/unitexam/?course_level={{ forloop.counter }}&test_level=1.0">{% trans "Start Test" %}</a>
+                                            {% elif list.test_level != 1.0 %}
+                                                <i style="font-size: 25px" class="pe-7s-close-circle"></i>
+                                        {% endif %}
+                                        </td>
+                                        <td>
+                                        {% with num=forloop.counter %}
+                                            {% for list in unitTestResult %}
+                                                {% if list.course.course_level == num and list.test_level == 1.0 %}
+                                                    {{ list.score }}
+                                                    {{ break }}
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endwith %}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for i in gradeList %}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-block text-center">
+                        <h4><small>{% trans i %}</small></h4>
+		    		    <div class="content text-center">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="font-size: 16px;">{% trans "Semester" %}</th>
+                                        <th style="font-size: 16px;">{% trans "Exam" %}</th>
+                                        <th style="font-size: 16px;">{% trans "Score" %}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="text-align: left">
+                                        <td>{% trans "Mid" %}</td>
+                                        <td>
+                                             {% if unitTestResult %}
+                                                {% with num=forloop.counter %}
+                                                    {% for list in unitTestResult %}
+                                                        {% if list.course.course_level == num|add:3 and list.test_level == 0.5 %}
+                                                             <a href="/course/historyexam/?course_level={{ num|add:3 }}&test_level=0.5">{% trans "History Exam" %}</a>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                {% endwith %}
+                                            {% endif %}
+                                            {% if forloop.counter|add:3 < levelDic.course_level %}
+                                                <a id="final{{ forloop.counter|add:3 }}" href="/course/unitexam/?course_level={{ forloop.counter|add:3 }}&test_level=0.5">{% trans "Start Test" %}</a>
+                                            {% elif  forloop.counter|add:3 == levelDic.course_level and levelDic.test_level >= 0.5 %}
+                                                <a id="final{{ forloop.counter|add:3 }}" href="/course/unitexam/?course_level={{ forloop.counter|add:3 }}&test_level=0.5">{% trans "Start Test" %}</a>
+                                            {% elif list.test_level != 0.5 %}
+                                                <i style="font-size: 25px" class="pe-7s-close-circle"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% with num=forloop.counter %}
+                                                {% for list in unitTestResult %}
+                                                    {% if list.course.course_level == num|add:3 and levelDic.test_level == 0.5 %}
+                                                        {{ list.score }}
+                                                        {{ break }}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endwith %}
+                                        </td>
+
+                                    </tr>
+                                    <tr style="text-align: left">
+                                        <td>{% trans "Final" %}</td>
+                                        <td>
+                                            {% if unitTestResult %}
+                                            {% with num=forloop.counter %}
+                                                {% for list in unitTestResult %}
+                                                    {% if list.course.course_level == num|add:3 and list.test_level == 1.0 %}
+                                                         <a href="/course/historyexam/?course_level={{ num|add:3 }}&test_level=1.0">{% trans "History Exam" %}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endwith %}
+                                        {% endif %}
+                                        {% if forloop.counter|add:3 < levelDic.course_level %}
+                                            <a href="/course/unitexam/?course_level={{ forloop.counter|add:3 }}&test_level=1.0">{% trans "Start Test" %}</a>
+                                            {% elif forloop.counter|add:3 == levelDic.course_level and levelDic.test_level == 1.0 %}
+                                                <a href="/course/unitexam/?course_level={{ forloop.counter|add:3 }}&test_level=1.0">{% trans "Start Test" %}</a>
+                                            {% elif list.test_level != 1.0 %}
+                                                <i style="font-size: 25px" class="pe-7s-close-circle"></i>
+                                        {% endif %}
+                                        </td>
+                                        <td>
+                                            {% with num=forloop.counter %}
+                                                {% for list in unitTestResult %}
+                                                    {% if list.course.course_level == num|add:3 and levelDic.test_level == 1.0 %}
+                                                        {{ list.score }}
+                                                        {{ break }}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endwith %}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+<script src="{% static "js/jquery-ui.js" %}" type="text/javascript"></script>
+<script>
+var testResultList = {{ testList|safe}};
+for (var i = 0;i < testResultList.length; i++){
+    var resultObj=testResultList[i];
+    var fields=resultObj.fields;
+    var course=fields.course;
+    var test_level=fields.test_level;
+    var hide=course;
+    if (test_level == 0.5){
+        $('#mid'+hide).empty();
+    }else  {
+        $('#final'+hide).empty();
+    }
+}
+</script>
+{% endblock %}

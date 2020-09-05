@@ -1,0 +1,80 @@
+@import "base";
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  padding-left: px2vw(23);
+}
+
+p[id$='error-msg'] {
+  color: $common-error-color;
+  font-size: px2vw(22);
+  margin-top: px2vw(10);
+}
+
+@mixin input-container-template($background-url,$background-active-url) {
+  @extend .common-input;
+  padding-left: px2vw(74);
+
+  display: flex;
+  align-items: center;
+
+  background: {
+    image: url($background-url);
+    repeat: no-repeat;
+    size: px2vw(28 auto);
+    position: center left px2vw(24);
+  };
+
+  input {
+    border: none;
+    border-left: 1px solid #CBD6E2;
+  }
+
+  &.active {
+    border-color: $theme-blue;
+    background-image: url($background-active-url);
+  }
+}
+
+$background-url-list: ((normal:"/static/img/user.png", focus:"/static/img/user-focus.png") (normal:"/static/img/email.png", focus:"/static/img/email-focus.png") (normal:"/static/img/password.png", focus:"/static/img/password-focus.png"));
+
+.username-input-container {
+  @include input-container-template(map_get(nth($background-url-list, 1), normal), map_get(nth($background-url-list, 1), focus));
+}
+
+.email-input-container {
+  @include input-container-template(map_get(nth($background-url-list, 2), normal), map_get(nth($background-url-list, 2), focus));
+}
+
+.password-input-container {
+  @include input-container-template(map_get(nth($background-url-list, 3), normal), map_get(nth($background-url-list, 3), focus));
+}
+
+.password-2-input-container {
+  @include input-container-template(map_get(nth($background-url-list, 3), normal), map_get(nth($background-url-list, 3), focus));
+}
+
+.input-label {
+  display: block;
+  color: $common-label-gray;
+  font-size: px2vw(26);
+  margin-bottom: px2vw(14);
+  margin-top: px2vw(30);
+}
+
+.form-register {
+  margin-top: px2vw(56);
+}
+
+.username-label {
+  width: $common-widget-width;
+}
+
+.submit-btn {
+  margin-top: px2vw(119);
+}

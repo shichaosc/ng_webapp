@@ -1,0 +1,5838 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-24 10:17+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: about/templates/about/approach.html:8
+#: about/templates/about/approach.html:202
+#: about/templates/about/approach.html:236
+#: about/templates/about/approach.html:261 templates/base.html:461
+msgid "Teaching Approach"
+msgstr ""
+
+#: about/templates/about/approach.html:88
+#: about/templates/about/approach.html:104
+#: about/templates/about/approach.html:122
+msgid "Guiding Principle"
+msgstr ""
+
+#: about/templates/about/approach.html:88
+#: about/templates/about/approach.html:104
+#: about/templates/about/approach.html:122
+#, fuzzy
+#| msgid "Student Info"
+msgid "Student Centric"
+msgstr "学生信息"
+
+#: about/templates/about/approach.html:91
+#: about/templates/about/approach.html:107
+#: about/templates/about/approach.html:124
+msgid "Improve communication skills in Chinese"
+msgstr ""
+
+#: about/templates/about/approach.html:92
+#: about/templates/about/approach.html:109
+#: about/templates/about/approach.html:126
+msgid "Learn the foundation of Chinese language"
+msgstr ""
+
+#: about/templates/about/approach.html:93
+#: about/templates/about/approach.html:111
+#: about/templates/about/approach.html:128
+msgid "Cultivate humanistic accomplishment"
+msgstr ""
+
+#: about/templates/about/approach.html:153
+msgid "Unique Value Proposition"
+msgstr ""
+
+#: about/templates/about/approach.html:155
+msgid "3 key features meet the need of parents and students."
+msgstr ""
+
+#: about/templates/about/approach.html:163
+#, python-format
+msgid "100%% of teachers are from China"
+msgstr ""
+
+#: about/templates/about/approach.html:164
+#: about/templates/about/approach.html:215
+msgid ""
+"The class is conducted by inspirational teachers from China, who are native "
+"language speakers."
+msgstr ""
+
+#: about/templates/about/approach.html:171
+msgid "Curriculum is aligned with schools in China"
+msgstr ""
+
+#: about/templates/about/approach.html:172
+#: about/templates/about/approach.html:217
+msgid ""
+"Systematic curriculum is aligned with the curriculum in public schools in "
+"China, with optimized structure."
+msgstr ""
+
+#: about/templates/about/approach.html:179
+msgid "Enjoy the class any time"
+msgstr ""
+
+#: about/templates/about/approach.html:180
+msgid ""
+"The class is delivered via video call, which can be anytime and anywhere. It "
+"saves commuting time, and save money with its efficiency."
+msgstr ""
+
+#: about/templates/about/approach.html:202
+msgid "1-on-1 Virtual Classroom with video and courseware"
+msgstr ""
+
+#: about/templates/about/approach.html:209
+msgid "1-on-1 Video"
+msgstr ""
+
+#: about/templates/about/approach.html:210
+msgid ""
+"1-on-1 session with teacher; intimate communications via video call; "
+"immersion learning environment"
+msgstr ""
+
+#: about/templates/about/approach.html:236
+msgid "Effective process"
+msgstr ""
+
+#: about/templates/about/approach.html:261
+msgid "Comprehensive Coverage"
+msgstr ""
+
+#: about/templates/about/approach.html:268
+msgid ""
+"teachers conduct classes in standard mandarin, to help students on the right "
+"way of pronounciation, tone and expression."
+msgstr ""
+
+#: about/templates/about/approach.html:270
+msgid ""
+"integration of teaching and application helps students to interact with "
+"teachers, using hundreds of scenes."
+msgstr ""
+
+#: about/templates/about/approach.html:272
+msgid ""
+"interaction between teacher and student, helps students to improve the "
+"reading techniques and skills, as well as the understanding of Chinese "
+"culture."
+msgstr ""
+
+#: about/templates/about/approach.html:274
+msgid ""
+"writing practice is embeded in every class, and students can gradually "
+"improve his/her writing skills."
+msgstr ""
+
+#: about/templates/about/curriculum.html:8
+#: about/templates/about/curriculum.html:30 templates/base.html:471
+msgid "Our Curriculum"
+msgstr ""
+
+#: about/templates/about/curriculum.html:33
+msgid ""
+"The PPChinese curriculum system is based on the Chinese language disciplines "
+"in terms of knowledge and skills, processes and methods, emotional "
+"attitudes, values and other aspects of the objectives and content and "
+"standards developed. Corresponding level of language skills, and "
+"requirements are aligned with the standard in China."
+msgstr ""
+
+#: about/templates/about/curriculum.html:45
+msgid "Have a quick assessment"
+msgstr ""
+
+#: about/templates/about/curriculum.html:54
+msgid "Unit Structure"
+msgstr ""
+
+#: about/templates/about/curriculum.html:59
+msgid ""
+"According to the same knowledge points and skill points of the unit "
+"curriculum, to strengthen the repetition of learning, the effect of immediate"
+msgstr ""
+
+#: about/templates/about/curriculum.html:61
+msgid ""
+"According to the same type of text as a whole, a reasonable layout, the "
+"effect of less with less, save time and save time."
+msgstr ""
+
+#: about/templates/about/curriculum.html:163
+#: course/templates/course/teacherhomework.html:9
+#: course/templates/course/teacherhomework.html:191 templates/man/base.html:126
+#: userprofile/templates/userprofile/history_class.html:85
+#: userprofile/templates/userprofile/tutor_profile.html:91
+#: userprofile/templates/userprofile/tutor_profile.html:233
+#: virtualclass/templates/virtualclass/student_list_more.html:53
+msgid "Homework"
+msgstr ""
+
+#: about/templates/about/curriculum.html:172
+msgid ""
+"Each class a practice, timely and effective to ensure the consolidation of "
+"classroom knowledge."
+msgstr ""
+
+#: about/templates/about/curriculum.html:174
+msgid ""
+"The same knowledge points, different extracurricular classic reading, let "
+"the children flexible and use."
+msgstr ""
+
+#: about/templates/about/curriculum.html:176
+msgid ""
+"Homework feedback, the teacher quickly correct, zero distance communication, "
+"the level of rapid increase."
+msgstr ""
+
+#: about/templates/about/tour.html:8
+msgid "Walkthrough"
+msgstr ""
+
+#: about/templates/about/tutor.html:8 templates/base.html:466
+#, fuzzy
+#| msgid "Tutor"
+msgid "Our Tutors"
+msgstr "教师"
+
+#: about/templates/about/tutor.html:31 about/templates/about/tutor.html:44
+#: about/templates/about/tutor.html:57
+#, python-format
+msgid "100%%"
+msgstr ""
+
+#: about/templates/about/tutor.html:31 about/templates/about/tutor.html:44
+#: about/templates/about/tutor.html:57
+msgid "of teachers are from China"
+msgstr ""
+
+#: about/templates/about/tutor.html:33 about/templates/about/tutor.html:46
+#: about/templates/about/tutor.html:59
+msgid ""
+"All PPChinese Certified teachers are teachers from public or private schools "
+"in China, with extensive knowledge and teaching experience. The restrict "
+"recruiting and training processes make sure students can receive systematic "
+"teaching and good online learning experience."
+msgstr ""
+
+#: about/templates/about/tutor.html:84
+msgid "High Standard"
+msgstr ""
+
+#: about/templates/about/tutor.html:94
+msgid "Outstanding Teachers"
+msgstr ""
+
+#: about/templates/about/tutor.html:96
+msgid ""
+"All teachers are graduated from accredited University (by MoE) and Normal "
+"University. Some of them even have oversea study and working experience."
+msgstr ""
+
+#: about/templates/about/tutor.html:106
+msgid "From China"
+msgstr ""
+
+#: about/templates/about/tutor.html:107
+msgid ""
+"All teachers are working in public or private educational institutes in "
+"China. They speak standard Mandarin, and pass national mandarin teaching "
+"test."
+msgstr ""
+
+#: about/templates/about/tutor.html:118
+msgid "Comprehensive Teacher Training"
+msgstr ""
+
+#: about/templates/about/tutor.html:120
+msgid ""
+"PPChinese certified teachers all pass 3 rounds of selection process, and "
+"more than 200 hours training. They can manage good student-teacher "
+"interaction with strong knowledge in the class."
+msgstr ""
+
+#: about/templates/about/tutor.html:132 about/templates/about/tutor.html:170
+#: about/templates/about/tutor.html:217
+msgid "Star teachers of the Month"
+msgstr ""
+
+#: about/templates/about/tutor.html:141 about/templates/about/tutor.html:180
+#: about/templates/about/tutor.html:227
+msgid "Wen Laoshi."
+msgstr ""
+
+#: about/templates/about/tutor.html:141
+msgid "Master degree."
+msgstr ""
+
+#: about/templates/about/tutor.html:142 about/templates/about/tutor.html:181
+#: about/templates/about/tutor.html:228
+msgid ""
+"Wen Laoshi holds Master of International Education in Shaanxi Normal "
+"University. She has taught at overseas schools, and she is now a Chinese "
+"teacher at college in Xi An. Wen Laoshi is good at using a variety of "
+"teaching aids to make the classroom more fun, so that children in the "
+"language game to get the most direct Chinese sensory experience. She is good "
+"at teaching level 1-4 students ."
+msgstr ""
+
+#: about/templates/about/tutor.html:152 about/templates/about/tutor.html:192
+#: about/templates/about/tutor.html:239
+msgid "Ma Laoshi."
+msgstr ""
+
+#: about/templates/about/tutor.html:152 about/templates/about/tutor.html:180
+#: about/templates/about/tutor.html:192 about/templates/about/tutor.html:227
+#: about/templates/about/tutor.html:240
+msgid "Master Degree."
+msgstr ""
+
+#: about/templates/about/tutor.html:153 about/templates/about/tutor.html:193
+#: about/templates/about/tutor.html:242
+msgid ""
+"Ma Laoshi, Bachelor of Arts in Chinese Language and Literature from Beijing "
+"Normal University, Master of Education in University of Edinburgh, UK. With "
+"profound Chinese proficiency and good English proficiency, she is good at "
+"using \"Socratic\" questions to enable students to absorb and sublimate "
+"Chinese knowledge. Ma Laoshi has always regarded \"teaching students in "
+"accordance with their aptitudes\" as key principle."
+msgstr ""
+
+#: about/templates/about/tutor.html:159 about/templates/about/tutor.html:251
+#: scheduler/templates/scheduler/entry_subscription.html:16
+#, fuzzy
+#| msgid "Become a Tutor"
+msgid "More Tutors"
+msgstr "申请成为教师"
+
+#: about/templates/about/tutor.html:202
+msgid "Check out more Tutors, and find out who you like the most"
+msgstr ""
+
+#: accounts/api_v2_views.py:74
+#: accounts/templates/accounts/transfer_success.html:36
+msgid "Teacher can't transfer lessson !"
+msgstr ""
+
+#: accounts/api_v2_views.py:79
+#: accounts/templates/accounts/transfer_success.html:39
+msgid "You can't transfer to yourself !"
+msgstr ""
+
+#: accounts/api_v2_views.py:84
+#: accounts/templates/accounts/transfer_success.html:27
+msgid "User does not exist ！"
+msgstr ""
+
+#: accounts/api_v2_views.py:88
+#: accounts/templates/accounts/transfer_success.html:33
+msgid "You can not transfer to the teacher !"
+msgstr ""
+
+#: accounts/api_v2_views.py:100
+#: accounts/templates/accounts/transfer_success.html:30
+msgid "The number of lessons must be less than your account balance."
+msgstr ""
+
+#: accounts/api_v2_views.py:104
+#: accounts/templates/accounts/transfer_success.html:42
+msgid "The number of lessons must be an intege !"
+msgstr ""
+
+#: accounts/api_v2_views.py:119
+msgid "programme_id is invalid."
+msgstr ""
+
+#: accounts/api_v2_views.py:127
+#, fuzzy
+#| msgid "Change request has been raised successfully."
+msgid "The default usercourse has been set successfully!"
+msgstr "变更请求成功提交"
+
+#: accounts/api_v2_views.py:140
+msgid "permission denied"
+msgstr ""
+
+#: accounts/forms.py:14 student/templates/student/topup.html:106
+msgid "Coupon"
+msgstr ""
+
+#: accounts/models.py:46 accounts/models.py:232
+msgid "Price"
+msgstr ""
+
+#: accounts/models.py:57
+msgid "Balance"
+msgstr ""
+
+#: accounts/models.py:68 accounts/models.py:172 accounts/models.py:259
+#: accounts/models.py:295 accounts/models.py:310
+#: accounts/templates/accounts/withdrawal.html:46
+#: accounts/templates/accounts/withdrawal_review.html:109
+#, fuzzy
+#| msgid "MyAccount"
+msgid "Amount"
+msgstr "我的帐户"
+
+#: accounts/models.py:146
+msgid "NO_REASON"
+msgstr ""
+
+#: accounts/models.py:147
+msgid "AD_HOC"
+msgstr ""
+
+#: accounts/models.py:148
+msgid "PACKAGE"
+msgstr ""
+
+#: accounts/models.py:149 accounts/templates/accounts/account_setting.html:78
+#: accounts/templates/accounts/account_setting.html:208
+msgid "TOP_UP"
+msgstr ""
+
+#: accounts/models.py:150 accounts/templates/accounts/account_setting.html:81
+#: accounts/templates/accounts/account_setting.html:211
+msgid "TOP UP BONUS"
+msgstr ""
+
+#: accounts/models.py:151 accounts/templates/accounts/account_setting.html:84
+#: accounts/templates/accounts/account_setting.html:214
+msgid "REFERRAL BONUS"
+msgstr ""
+
+#: accounts/models.py:152
+msgid "REFERRAL INCENTIVE"
+msgstr ""
+
+#: accounts/models.py:153
+msgid "REFERRAL TRIAL"
+msgstr ""
+
+#: accounts/models.py:154
+msgid "FREE TRIAL"
+msgstr ""
+
+#: accounts/models.py:155 accounts/templates/accounts/account_setting.html:102
+#: accounts/templates/accounts/account_setting.html:232
+msgid "COMPENSATION"
+msgstr ""
+
+#: accounts/models.py:156 accounts/templates/accounts/account_setting.html:57
+#: accounts/templates/accounts/account_setting.html:105
+#: accounts/templates/accounts/account_setting.html:187
+#: accounts/templates/accounts/account_setting.html:235
+msgid "ABSENCE_PENALTY"
+msgstr ""
+
+#: accounts/models.py:157
+msgid "NO_SHOW_COMPENSATION"
+msgstr ""
+
+#: accounts/models.py:158
+msgid "REFUND"
+msgstr ""
+
+#: accounts/models.py:159 accounts/templates/accounts/account_setting.html:99
+#: accounts/templates/accounts/account_setting.html:229
+msgid "COURSE DELIVERY"
+msgstr ""
+
+#: accounts/models.py:160 accounts/templates/accounts/account_setting.html:96
+#: accounts/templates/accounts/account_setting.html:226
+msgid "DELIVERY INCENTIVE"
+msgstr ""
+
+#: accounts/models.py:161 accounts/templates/accounts/account_setting.html:93
+#: accounts/templates/accounts/account_setting.html:223
+msgid "WITHDRAW"
+msgstr ""
+
+#: accounts/models.py:162
+msgid "TRANSFER_IN"
+msgstr ""
+
+#: accounts/models.py:163
+msgid "TRANSFER_OUT"
+msgstr ""
+
+#: accounts/models.py:164
+msgid "TRIAL_CLASS"
+msgstr ""
+
+#: accounts/models.py:165 accounts/templates/accounts/account_setting.html:59
+#: accounts/templates/accounts/account_setting.html:108
+#: accounts/templates/accounts/account_setting.html:189
+#: accounts/templates/accounts/account_setting.html:238
+msgid "ABSENCE_COMPENSATION"
+msgstr ""
+
+#: accounts/models.py:166
+msgid "NO_SHOW_PENALTY"
+msgstr ""
+
+#: accounts/models.py:167
+msgid "REDEEM"
+msgstr ""
+
+#: accounts/models.py:252
+msgid "Pending"
+msgstr ""
+
+#: accounts/models.py:253 accounts/models.py:289
+msgid "Paid"
+msgstr ""
+
+#: accounts/models.py:254 accounts/models.py:290
+#: student/templates/student/small_class.html:390
+#: student/templates/student/small_class.html:415
+#: student/templates/student/small_class.html:459
+#, fuzzy
+#| msgid "Advanced"
+msgid "Canceled"
+msgstr "高级版"
+
+#: accounts/models.py:255
+msgid "Refunded"
+msgstr ""
+
+#: accounts/models.py:288
+#, fuzzy
+#| msgid "Submit"
+msgid "Submitted"
+msgstr "提交"
+
+#: accounts/models.py:291
+msgid "Rejected"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:5
+#: accounts/templates/accounts/account_setting.html:25
+#: accounts/templates/accounts/account_setting.html:157
+#: accounts/templates/accounts/base.html:31
+#: accounts/templates/accounts/base.html:114
+#, fuzzy
+#| msgid "nationality"
+msgid "Transaction history"
+msgstr "国籍"
+
+#: accounts/templates/accounts/account_setting.html:32
+#: accounts/templates/accounts/account_setting.html:164
+#: accounts/templates/accounts/referral_rewards.html:32
+#: accounts/templates/accounts/referral_rewards.html:124
+#: scheduler/templates/scheduler/occurrence.html:203
+#: scheduler/templates/scheduler/occurrence.html:219
+#: scheduler/templates/scheduler/tutors_occurrence.html:185
+#: scheduler/templates/scheduler/tutors_occurrence.html:201
+#: templates/postman/archives.html:30 templates/postman/base_folder.html:36
+#: templates/postman/trash.html:29
+msgid "Date"
+msgstr "日期"
+
+#: accounts/templates/accounts/account_setting.html:33
+#: accounts/templates/accounts/account_setting.html:165
+#: userprofile/templates/userprofile/profile.html:332
+#: userprofile/templates/userprofile/profile.html:335
+#: userprofile/templates/userprofile/profile.html:981
+#: userprofile/templates/userprofile/profile.html:987
+#: userprofile/templates/userprofile/tutor_profile.html:286
+msgid "Point"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:41
+#: accounts/templates/accounts/account_setting.html:171
+msgid "Filter"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:43
+#: accounts/templates/accounts/account_setting.html:173
+msgid "ALL"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:46
+#: accounts/templates/accounts/account_setting.html:176
+#: accounts/templates/accounts/review.html:44
+#: accounts/templates/accounts/review.html:146
+#: accounts/templates/accounts/topup.html:5
+#: accounts/templates/accounts/topup.html:56
+#: accounts/templates/accounts/topup.html:126
+msgid "TOP UP"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:49
+#: accounts/templates/accounts/account_setting.html:179
+#: accounts/templates/accounts/transfer_account.html:5
+#: accounts/templates/accounts/transfer_success.html:4
+#: accounts/templates/accounts/transfer_success.html:18
+msgid "Transfer"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:52
+#: accounts/templates/accounts/account_setting.html:182
+msgid "Withdraw"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:55
+#: accounts/templates/accounts/account_setting.html:185
+#, fuzzy
+#| msgid "Courseware"
+msgid "Courese Fee"
+msgstr "课件"
+
+#: accounts/templates/accounts/account_setting.html:61
+#: accounts/templates/accounts/account_setting.html:111
+#: accounts/templates/accounts/account_setting.html:191
+#: accounts/templates/accounts/account_setting.html:241
+msgid "REDEMPTION"
+msgstr "兑换卡"
+
+#: accounts/templates/accounts/account_setting.html:65
+#: accounts/templates/accounts/account_setting.html:195
+#: accounts/templates/accounts/referral_rewards.html:44
+#: accounts/templates/accounts/referral_rewards.html:127
+msgid "Remark"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:75
+#: accounts/templates/accounts/account_setting.html:205
+msgid "COURSE CONSUMPTION"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:87
+#: accounts/templates/accounts/account_setting.html:217
+msgid "TRANSFER OUT"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:90
+#: accounts/templates/accounts/account_setting.html:220
+msgid "TRANSFER IN"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:131
+#: accounts/templates/accounts/account_setting.html:261
+#: course/templates/course/ext_courseware_list.html:158
+#: student/templates/student/small_class.html:103
+#: virtualclass/templates/virtualclass/student_list_more.html:145
+msgid "current page"
+msgstr "当前页"
+
+#: accounts/templates/accounts/account_setting.html:316
+#: accounts/templates/accounts/account_setting.html:322
+msgid "Cost"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:316
+#: accounts/templates/accounts/account_setting.html:322
+#: accounts/templates/accounts/account_setting.html:352
+msgid "Order ID"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:322
+#: campaign/templates/campaign/promotion.html:149
+#: campaign/templates/campaign/promotion_qrcode.html:44
+msgid "Bonus"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:326
+msgid "You recommend student"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:326
+msgid "get"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:326
+#: accounts/templates/accounts/payment.html:43
+#: accounts/templates/accounts/payment.html:124
+#: accounts/templates/accounts/review.html:60
+#: accounts/templates/accounts/review.html:161
+#: accounts/templates/accounts/withdrawal.html:18
+#: campaign/templates/campaign/promotion.html:155
+#: campaign/templates/campaign/promotion.html:156
+#: campaign/templates/campaign/promotion.html:157
+#: campaign/templates/campaign/promotion_qrcode.html:50
+#: campaign/templates/campaign/promotion_qrcode.html:51
+#: campaign/templates/campaign/promotion_qrcode.html:52
+#: campaign/templates/campaign/promotion_qrcode.html:55
+#: campaign/templates/campaign/promotion_qrcode.html:56
+#: campaign/templates/campaign/promotion_qrcode.html:57
+#: campaign/templates/campaign/promotion_qrcode.html:60
+#: campaign/templates/campaign/promotion_qrcode.html:61
+#: campaign/templates/campaign/promotion_qrcode.html:62
+#: student/templates/student/topup.html:75
+#: student/templates/student/topup.html:86
+#: student/templates/student/topup.html:97
+msgid "point"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:329
+msgid "The new user is eligible for free trial class—"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:332
+msgid "Class redemption—"
+msgstr "通过兑换卡获得课程—"
+
+#: accounts/templates/accounts/account_setting.html:337
+#: scheduler/templates/scheduler/entry.html:59
+#: scheduler/templates/scheduler/entry.html:123
+#: scheduler/templates/scheduler/entry_subscription.html:24
+#: tutor/templates/tutor/info_more.html:97
+#: virtualclass/templates/virtualclass/embedded_student_list.html:23
+#: virtualclass/templates/virtualclass/student_list_more.html:48
+msgid "Tutor"
+msgstr "教师"
+
+#: accounts/templates/accounts/account_setting.html:342
+#: accounts/templates/accounts/account_setting.html:348
+#: scheduler/templates/scheduler/entry_tutor.html:87
+#, fuzzy
+#| msgid "Student Info"
+msgid "Student"
+msgstr "学生信息"
+
+#: accounts/templates/accounts/account_setting.html:348
+msgid "Got Point"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:352
+#: accounts/templates/accounts/account_setting.html:357
+#: accounts/templates/accounts/account_setting.html:362
+#: accounts/templates/accounts/withdrawal.html:47
+#: accounts/templates/accounts/withdrawal_review.html:110
+#: course/templates/course/ext_up_courseware.html:133
+#, fuzzy
+#| msgid "Statistics"
+msgid "Status"
+msgstr "统计"
+
+#: accounts/templates/accounts/account_setting.html:357
+msgid "From"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:357
+#: accounts/templates/accounts/account_setting.html:362
+msgid "Transfer ID"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:362
+msgid "To"
+msgstr ""
+
+#: accounts/templates/accounts/account_setting.html:372
+#: accounts/templates/accounts/account_setting.html:374
+#: accounts/templates/accounts/account_setting.html:393
+#: accounts/templates/accounts/account_setting.html:395
+#: accounts/templates/accounts/withdrawal_review.html:18
+#: templates/man/virtualclass/convert_list.html:40
+#: templates/man/virtualclass/list.html:40 tutor/templates/tutor/base.html:3
+#: virtualclass/templates/virtualclass/classroom_list.html:41
+#: virtualclass/templates/virtualclass/classroom_list.html:129
+msgid "tutor"
+msgstr "教师"
+
+#: accounts/templates/accounts/account_setting.html:379
+#: accounts/templates/accounts/account_setting.html:381
+#: accounts/templates/accounts/account_setting.html:400
+#: accounts/templates/accounts/account_setting.html:402
+#: templates/man/virtualclass/convert_list.html:41
+#: templates/man/virtualclass/list.html:41
+#: virtualclass/templates/virtualclass/classroom_list.html:42
+#: virtualclass/templates/virtualclass/classroom_list.html:130
+#, fuzzy
+#| msgid "Student Info"
+msgid "student"
+msgstr "学生信息"
+
+#: accounts/templates/accounts/base.html:3 templates/menu_member.html:157
+msgid "account setting"
+msgstr "帐户设置"
+
+#: accounts/templates/accounts/base.html:46
+#: accounts/templates/accounts/base.html:123
+#: accounts/templates/accounts/transfer_account.html:23
+msgid "Transfer to others"
+msgstr ""
+
+#: accounts/templates/accounts/base.html:62
+#: accounts/templates/accounts/base.html:133
+#: accounts/templates/accounts/nominate_referrer.html:4
+#: accounts/templates/accounts/nominate_referrer.html:71
+#: accounts/templates/accounts/nominate_referrer.html:131
+#: accounts/templates/accounts/review.html:129
+#: accounts/templates/accounts/review.html:232
+#: student/templates/student/topup.html:111
+#: userprofile/templates/userprofile/nominate_referrer.html:4
+#: userprofile/templates/userprofile/nominate_referrer.html:26
+msgid "Nominate Referrer"
+msgstr ""
+
+#: accounts/templates/accounts/base.html:80
+#: accounts/templates/accounts/base.html:145
+#: accounts/templates/accounts/referral_rewards.html:5
+#: accounts/templates/accounts/referral_rewards.html:22
+#: accounts/templates/accounts/referral_rewards.html:112
+msgid "Referral rewards details"
+msgstr ""
+
+#: accounts/templates/accounts/free_trial.html:12
+#, fuzzy
+#| msgid "Virtual Class"
+msgid "Free Trial Class"
+msgstr "虚拟课堂"
+
+#: accounts/templates/accounts/free_trial.html:19
+msgid ""
+"We offer free trial class - 2 points, to help each student starting the "
+"learning experience without any concern on finance. The point for trial "
+"class will be directly deposited into your account balance, after you "
+"successfully apply the free trial class. Then you can start the assessment, "
+"reservation and attend class right away."
+msgstr ""
+
+#: accounts/templates/accounts/free_trial.html:22
+msgid "Term & Condition:"
+msgstr ""
+
+#: accounts/templates/accounts/free_trial.html:23
+msgid ""
+"1. Every user can only enjoy one-time free trial class application. If the "
+"user already applied it once, the user can not enjoy it again."
+msgstr ""
+
+#: accounts/templates/accounts/free_trial.html:25
+msgid "2. Free class is not eligible for refund."
+msgstr ""
+
+#: accounts/templates/accounts/free_trial.html:27
+msgid ""
+"3. Only new user is eligible for free trial class. If the user already "
+"attended any class, the user can not enjoy the benefit anymore."
+msgstr ""
+
+#: accounts/templates/accounts/free_trial.html:31
+#: accounts/templates/accounts/review.html:119
+#: accounts/templates/accounts/review.html:222
+#: student/templates/student/topup.html:108
+#, fuzzy
+#| msgid "apply"
+msgid "Apply"
+msgstr "申请"
+
+#: accounts/templates/accounts/free_trial.html:37
+msgid "Point for free trial has been deposited into your account, please go to"
+msgstr ""
+
+#: accounts/templates/accounts/free_trial.html:37
+#: scheduler/templates/scheduler/appointmentphone.html:3
+#: scheduler/templates/scheduler/base.html:3 stats/templates/stats/base.html:3
+msgid "scheduler"
+msgstr "预约"
+
+#: accounts/templates/accounts/free_trial.html:40
+msgid "There are some issues now, pls contact us for support."
+msgstr ""
+
+#: accounts/templates/accounts/free_trial.html:45
+msgid ""
+"You are not eligible for free trial, as you may already have attended at "
+"least one class, or you already enjoy the free trial."
+msgstr ""
+
+#: accounts/templates/accounts/free_trial.html:48
+#, fuzzy
+#| msgid "Register for an account"
+msgid "Return to my account."
+msgstr "注册新帐户"
+
+#: accounts/templates/accounts/nominate_referrer.html:86
+#: accounts/templates/accounts/nominate_referrer.html:142
+#: accounts/templates/accounts/transfer_account.html:31
+#: accounts/templates/accounts/transfer_account.html:72
+#: userprofile/templates/userprofile/nominate_referrer.html:35
+#, fuzzy
+#| msgid "Username"
+msgid "User Name"
+msgstr "用户名"
+
+#: accounts/templates/accounts/nominate_referrer.html:91
+#: accounts/templates/accounts/nominate_referrer.html:149
+msgid ""
+"Fill in the username of your Referrer. If you top up 20 points or more at "
+"the first time, you and your Referrer will receive 3 points each!"
+msgstr ""
+
+#: accounts/templates/accounts/nominate_referrer.html:93
+#: accounts/templates/accounts/nominate_referrer.html:152
+msgid "Once set, the Referrer cannot be changed."
+msgstr ""
+
+#: accounts/templates/accounts/nominate_referrer.html:99
+#: accounts/templates/accounts/nominate_referrer.html:158
+#: accounts/templates/accounts/result.html:60
+#: course/templates/course/newassessmenthistory.html:77
+#: userprofile/templates/userprofile/nominate_referrer.html:48
+msgid "Go back to my account"
+msgstr ""
+
+#: accounts/templates/accounts/nominate_referrer.html:105
+#: accounts/templates/accounts/nominate_referrer.html:164
+#: userprofile/templates/userprofile/nominate_referrer.html:53
+#, fuzzy
+#| msgid "Continue with Facebook"
+msgid "Continue to top up"
+msgstr "使用Facebook登录"
+
+#: accounts/templates/accounts/nominate_referrer.html:111
+#: accounts/templates/accounts/nominate_referrer.html:169
+#: accounts/templates/accounts/review.html:137
+#: accounts/templates/accounts/review.html:240
+#: accounts/templates/accounts/subscription.html:72
+#: accounts/templates/accounts/topup.html:113
+#: accounts/templates/accounts/topup.html:180
+#: accounts/templates/accounts/transfer_account.html:50
+#: accounts/templates/accounts/transfer_account.html:90
+#: accounts/templates/accounts/withdrawal.html:28
+#: course/templates/course/ext_up_courseware.html:212
+#: course/templates/course/teacherhomework.html:251
+#: student/templates/student/topup.html:112
+#: templates/man/virtualclass/monitor.html:187
+#: templates/man/virtualclass/monitor.html:251
+#: templates/man/virtualclass/student_rating.html:98
+#: templates/man/virtualclass/teacher_rating.html:162
+#: userprofile/templates/userprofile/nominate_referrer.html:58
+#: userprofile/templates/userprofile/userinfo_detail.html:131
+#: userprofile/templates/userprofile/userinfo_detail.html:165
+#: virtualclass/templates/virtualclass/classroom.html:298
+#: virtualclass/templates/virtualclass/classroom.html:378
+#: virtualclass/templates/virtualclass/room.html:185
+#: virtualclass/templates/virtualclass/room.html:249
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:158
+msgid "Submit"
+msgstr "提交"
+
+#: accounts/templates/accounts/payment.html:27
+#: accounts/templates/accounts/payment.html:108
+msgid "Payment"
+msgstr ""
+
+#: accounts/templates/accounts/payment.html:51
+#: accounts/templates/accounts/payment.html:132
+#: accounts/templates/accounts/review.html:68
+#: accounts/templates/accounts/review.html:169
+msgid "unit price"
+msgstr ""
+
+#: accounts/templates/accounts/payment.html:59
+#: accounts/templates/accounts/payment.html:140
+#: accounts/templates/accounts/review.html:76
+#: accounts/templates/accounts/review.html:177
+msgid "bonus point"
+msgstr ""
+
+#: accounts/templates/accounts/payment.html:67
+#: accounts/templates/accounts/payment.html:148
+#: accounts/templates/accounts/review.html:92
+#: accounts/templates/accounts/review.html:195
+msgid "discount"
+msgstr ""
+
+#: accounts/templates/accounts/payment.html:75
+#: accounts/templates/accounts/payment.html:156
+#: accounts/templates/accounts/review.html:108
+#: accounts/templates/accounts/review.html:211
+msgid "total saving"
+msgstr ""
+
+#: accounts/templates/accounts/payment.html:83
+#: accounts/templates/accounts/payment.html:164
+#: accounts/templates/accounts/review.html:100
+#: accounts/templates/accounts/review.html:203
+#, fuzzy
+#| msgid "available"
+msgid "payable"
+msgstr "可预约"
+
+#: accounts/templates/accounts/payment.html:89
+#: accounts/templates/accounts/payment.html:170
+msgid "Top up amount"
+msgstr ""
+
+#: accounts/templates/accounts/referral_rewards.html:36
+#: accounts/templates/accounts/referral_rewards.html:125
+msgid "Referee"
+msgstr ""
+
+#: accounts/templates/accounts/referral_rewards.html:40
+#: accounts/templates/accounts/referral_rewards.html:126
+msgid "Reward point(s)"
+msgstr ""
+
+#: accounts/templates/accounts/referral_rewards.html:59
+#: accounts/templates/accounts/referral_rewards.html:138
+msgid "point(s)"
+msgstr ""
+
+#: accounts/templates/accounts/referral_rewards.html:62
+#: accounts/templates/accounts/referral_rewards.html:141
+msgid "You recommend student "
+msgstr ""
+
+#: accounts/templates/accounts/referral_rewards.html:62
+#: accounts/templates/accounts/referral_rewards.html:141
+msgid " top up "
+msgstr ""
+
+#: accounts/templates/accounts/referral_rewards.html:62
+#: accounts/templates/accounts/referral_rewards.html:141
+msgid " point(s)"
+msgstr ""
+
+#: accounts/templates/accounts/referral_rewards.html:116
+msgid "Total rewards : "
+msgstr ""
+
+#: accounts/templates/accounts/referral_rewards.html:116
+#: accounts/templates/accounts/topup.html:82
+#: accounts/templates/accounts/topup.html:151
+msgid "points"
+msgstr ""
+
+#: accounts/templates/accounts/result.html:63
+#: student/templates/student/small_class.html:460
+#: userprofile/templates/userprofile/profile.html:341
+msgid "Top up"
+msgstr ""
+
+#: accounts/templates/accounts/review.html:84
+#: accounts/templates/accounts/review.html:187
+msgid "payable before discount"
+msgstr ""
+
+#: accounts/templates/accounts/review.html:128
+#: accounts/templates/accounts/review.html:231
+#: student/templates/student/topup.html:111
+msgid "If you don't nominate your referrer yet, you may go to "
+msgstr ""
+
+#: accounts/templates/accounts/select_programme.html:5
+#: accounts/templates/accounts/select_programme.html:24
+#: accounts/templates/accounts/select_programme.html:63
+msgid "Select Programme"
+msgstr ""
+
+#: accounts/templates/accounts/select_programme.html:28
+#: accounts/templates/accounts/select_programme.html:70
+#: templates/cmsbase.html:515
+#, fuzzy
+#| msgid "Progress"
+msgid "Programme"
+msgstr "进步程度"
+
+#: accounts/templates/accounts/select_programme.html:29
+#: accounts/templates/accounts/select_programme.html:71
+msgid "Select"
+msgstr ""
+
+#: accounts/templates/accounts/select_programme.html:37
+#: accounts/templates/accounts/select_programme.html:80
+msgid "default"
+msgstr ""
+
+#: accounts/templates/accounts/select_programme.html:45
+#: accounts/templates/accounts/select_programme.html:89
+msgid "set default"
+msgstr ""
+
+#: accounts/templates/accounts/subscription.html:5
+#: accounts/templates/accounts/subscription.html:47
+#: accounts/templates/accounts/subscription.html:52
+#: student/templates/student/topup.html:5
+#: student/templates/student/topup.html:47
+#: student/templates/student/topup.html:52
+msgid "Small Class Top Up"
+msgstr ""
+
+#: accounts/templates/accounts/subscription.html:65
+msgid "classes"
+msgstr ""
+
+#: accounts/templates/accounts/subscription.html:66
+msgid "Validity period: "
+msgstr ""
+
+#: accounts/templates/accounts/subscription.html:66
+msgid " months from the Top Up date"
+msgstr ""
+
+#: accounts/templates/accounts/topup.html:86
+#: accounts/templates/accounts/topup.html:155
+msgid "bonus points"
+msgstr ""
+
+#: accounts/templates/accounts/topup.html:105
+#: accounts/templates/accounts/topup.html:172
+msgid "Any Other Amount"
+msgstr ""
+
+#: accounts/templates/accounts/topup.html:205
+#: accounts/templates/accounts/topup.html:225
+msgid "You chose other amount, the input can not be empty!"
+msgstr ""
+
+#: accounts/templates/accounts/topup.html:208
+#: accounts/templates/accounts/topup.html:228
+msgid "You chose other amount, the input must be a number!"
+msgstr ""
+
+#: accounts/templates/accounts/topup.html:211
+#: accounts/templates/accounts/topup.html:231
+msgid "You chose other amount, the input must be greater than zero!"
+msgstr ""
+
+#: accounts/templates/accounts/transfer_account.html:29
+#: accounts/templates/accounts/transfer_account.html:67
+msgid "Your lesson :"
+msgstr ""
+
+#: accounts/templates/accounts/transfer_account.html:39
+#: accounts/templates/accounts/transfer_account.html:79
+msgid "please input lesson number"
+msgstr ""
+
+#: accounts/templates/accounts/transfer_account.html:45
+#: accounts/templates/accounts/transfer_account.html:85
+msgid ""
+"You can transfer classes to your friends, the platform does not charge any "
+"fees；After the transfer, your account will reduce the corresponding "
+"classes；Make sure to enter the correct number."
+msgstr ""
+
+#: accounts/templates/accounts/transfer_success.html:24 accounts/views.py:394
+msgid "Transfer successful ！"
+msgstr ""
+
+#: accounts/templates/accounts/transfer_success.html:51
+#: course/templates/course/reminder.html:51
+#: course/templates/course/reminder.html:115
+#: course/templates/course/reminder.html:119 templates/postman/view.html:10
+msgid "Back"
+msgstr "返回"
+
+#: accounts/templates/accounts/withdrawal.html:12
+#: accounts/templates/accounts/withdrawal_review.html:11
+msgid "Withdrawal Request"
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal.html:16
+msgid "Available account balance"
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal.html:26
+msgid "CNY"
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal.html:28
+msgid ""
+"The application is successful, please be patient and wait for the "
+"administrator to review."
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal.html:40
+#: accounts/templates/accounts/withdrawal_review.html:104
+msgid "Withdrawal History"
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal.html:45
+#, fuzzy
+#| msgid "Scheduled Time"
+msgid "Request Time"
+msgstr "预约时间"
+
+#: accounts/templates/accounts/withdrawal.html:69
+#: student/templates/student/my_class.html:156
+#: student/templates/student/my_class.html:223
+#: student/templates/student/my_class.html:382
+#: student/templates/student/my_class.html:440
+#: userprofile/templates/userprofile/history_class.html:20
+#: userprofile/templates/userprofile/profile.html:441
+#: userprofile/templates/userprofile/profile.html:1071
+#: userprofile/templates/userprofile/tutor_profile.html:166
+msgid "Recent Activity"
+msgstr "最近活动"
+
+#: accounts/templates/accounts/withdrawal_review.html:24
+#, fuzzy
+#| msgid "account setting"
+msgid "account balance"
+msgstr "帐户设置"
+
+#: accounts/templates/accounts/withdrawal_review.html:30
+msgid "withdrawal amount"
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal_review.html:34
+#: campaign/templates/campaign/campaignaddress.html:47
+msgid "status"
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal_review.html:38
+msgid "updated_on"
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal_review.html:42
+#: campaign/templates/campaign/rechargerecordsquery.html:28
+msgid "created_on"
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal_review.html:59
+msgid "Reference "
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal_review.html:64
+#, fuzzy
+#| msgid "Comments"
+msgid "Confirm Payment"
+msgstr "评语"
+
+#: accounts/templates/accounts/withdrawal_review.html:76
+msgid "Pending Withdrawal Request"
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal_review.html:108
+msgid "Requester"
+msgstr ""
+
+#: accounts/templates/accounts/withdrawal_review.html:111
+#, fuzzy
+#| msgid "Scheduled Time"
+msgid "Requested Time"
+msgstr "预约时间"
+
+#: accounts/views.py:128
+msgid "please choose another currency."
+msgstr ""
+
+#: accounts/views.py:129 accounts/views.py:159
+msgid "top up information is missing, please select it again."
+msgstr ""
+
+#: accounts/views.py:130
+msgid "top up amount is not accepted, please select/input it again."
+msgstr ""
+
+#: accounts/views.py:200 accounts/views.py:245
+msgid "payment detail is missing."
+msgstr ""
+
+#: accounts/views.py:325
+msgid "order does not exist."
+msgstr ""
+
+#: accounts/views.py:329
+#, fuzzy
+#| msgid "by conversation"
+msgid "payment confirmation"
+msgstr "按照会话显示"
+
+#: accounts/views.py:332
+msgid "Your payment is successful, and your order is processed: "
+msgstr ""
+
+#: accounts/views.py:334
+msgid "Your payment is successful, and we are processing your order: "
+msgstr ""
+
+#: accounts/views.py:343
+msgid "payment cancellation"
+msgstr ""
+
+#: accounts/views.py:344
+msgid ""
+"Your payment request is cancelled, and your account is not charged. You may "
+"choose to top up any time, with our flexible refunding policy."
+msgstr ""
+
+#: accounts/views.py:608 accounts/views.py:659
+msgid ""
+"system could not find appropriate exchange rate, please contact our customer "
+"service agent."
+msgstr ""
+
+#: accounts/views.py:619
+msgid "You must withdraw amount, bigger than 0."
+msgstr ""
+
+#: accounts/views.py:624
+msgid "You must withdraw amount as integer."
+msgstr ""
+
+#: accounts/views.py:650
+msgid "request status is incorrect, please check it."
+msgstr ""
+
+#: accounts/views.py:827
+msgid ""
+"you can't nominate yourself as referrer, please double check and choose "
+"again."
+msgstr ""
+
+#: accounts/views.py:834
+msgid ""
+"referrer doesn't exist in our user database, please double check and choose "
+"again."
+msgstr ""
+
+#: accounts/views.py:839
+msgid ""
+"you can't nominate teacher as referrer, please double check and choose again."
+msgstr ""
+
+#: accounts/views.py:842
+#, fuzzy
+#| msgid "the evaluation is successfully submitted"
+msgid "referrer is successfully nominated."
+msgstr "评价提交成功"
+
+#: accounts/views.py:846
+msgid "referrer has already been nominated, and you can only nominate once."
+msgstr ""
+
+#: ambassador/models.py:46 userprofile/models.py:67
+#, fuzzy
+#| msgid "Name"
+msgid "FirstName"
+msgstr "姓名"
+
+#: ambassador/models.py:47 userprofile/models.py:68
+#, fuzzy
+#| msgid "Name"
+msgid "LastName"
+msgstr "姓名"
+
+#: ambassador/models.py:48
+#, fuzzy
+#| msgid "chat"
+msgid "Wechat"
+msgstr "文字聊天"
+
+#: ambassador/models.py:49
+msgid "Whatsapp"
+msgstr ""
+
+#: ambassador/models.py:50
+#, fuzzy
+#| msgid "country_of_residence"
+msgid "country_calling_code"
+msgstr "居住国"
+
+#: ambassador/models.py:51
+msgid "telephone_no"
+msgstr ""
+
+#: ambassador/models.py:52
+#, fuzzy
+#| msgid "Action"
+msgid "occupation"
+msgstr "操作"
+
+#: ambassador/models.py:55 userprofile/models.py:71
+msgid "Male"
+msgstr ""
+
+#: ambassador/models.py:56 userprofile/models.py:72
+msgid "Female"
+msgstr ""
+
+#: ambassador/models.py:57 userprofile/models.py:73
+msgid "N/A"
+msgstr ""
+
+#: ambassador/models.py:59 userprofile/models.py:75
+#, fuzzy
+#| msgid "Sender"
+msgid "gender"
+msgstr "发件人"
+
+#: ambassador/models.py:61 userprofile/models.py:76
+msgid "birthdate"
+msgstr ""
+
+#: ambassador/models.py:62 tutor/models.py:257 userprofile/models.py:80
+msgid "country_of_residence"
+msgstr "居住国"
+
+#: ambassador/models.py:82
+msgid "paypal_email"
+msgstr ""
+
+#: ambassador/models.py:83
+msgid "beneficiary_name"
+msgstr ""
+
+#: ambassador/models.py:84
+msgid "beneficiary_address"
+msgstr ""
+
+#: ambassador/models.py:85
+msgid "beneficiary_bank_name"
+msgstr ""
+
+#: ambassador/models.py:86
+msgid "beneficiary_bank_address"
+msgstr ""
+
+#: ambassador/models.py:87
+msgid "swift_code"
+msgstr ""
+
+#: ambassador/models.py:88
+msgid "iban"
+msgstr ""
+
+#: ambassador/models.py:89
+msgid "beneficiary_account_number"
+msgstr ""
+
+#: ambassador/models.py:91
+msgid "PayPal"
+msgstr ""
+
+#: ambassador/models.py:92
+msgid "Debit"
+msgstr ""
+
+#: ambassador/models.py:94
+#, fuzzy
+#| msgid "My account"
+msgid "default_account"
+msgstr "我的帐户"
+
+#: ambassador/models.py:124
+msgid "code"
+msgstr ""
+
+#: campaign/models.py:89
+msgid "BASE_PAY"
+msgstr ""
+
+#: campaign/models.py:90
+msgid "INCENTIVE_PAY"
+msgstr ""
+
+#: campaign/models.py:91
+msgid "TOPUP_BONUS"
+msgstr ""
+
+#: campaign/models.py:92
+msgid "REFERRAL_BONUS"
+msgstr ""
+
+#: campaign/models.py:93
+msgid "REFERRAL_INCENTIVE"
+msgstr ""
+
+#: campaign/models.py:94
+msgid "TRIAL_BONUS"
+msgstr ""
+
+#: campaign/templates/campaign/activity.html:9
+#, fuzzy
+#| msgid "Recent Activity"
+msgid "Activity"
+msgstr "最近活动"
+
+#: campaign/templates/campaign/activity.html:290
+#: templates/account/signup.html:112 templates/cmsbase.html:429
+msgid "Username"
+msgstr "用户名"
+
+#: campaign/templates/campaign/activity.html:297 templates/account/email.html:7
+#: templates/account/signup.html:122 templates/cmsbase.html:434
+#: userprofile/templates/userprofile/base.html:52
+#: userprofile/templates/userprofile/base.html:119
+msgid "Email"
+msgstr ""
+
+#: campaign/templates/campaign/activity.html:304
+#: templates/account/login.html:124 templates/account/signup.html:131
+#: templates/account/signup.html:133 templates/base.html:273
+#: templates/cmsbase.html:331 templates/cmsbase.html:439
+msgid "Password"
+msgstr "密码"
+
+#: campaign/templates/campaign/activity.html:311
+#: templates/account/signup.html:140 templates/account/signup.html:142
+#: templates/cmsbase.html:444
+msgid "re-enter password"
+msgstr "再次输入密码"
+
+#: campaign/templates/campaign/activity.html:322 templates/cmsbase.html:451
+msgid ""
+"By signing up, I agree to PPLingo Terms of Service, Nondiscrimination "
+"Policy, Payments Terms of Service, Privacy Policy."
+msgstr ""
+
+#: campaign/templates/campaign/activity.html:327
+#: course/templates/course/assessment.html:57
+#: course/templates/course/assessment.html:143
+#: course/templates/course/assessmentResult.html:90
+#: course/templates/course/assessmentResult.html:151
+#: course/templates/course/inassessment.html:79
+#: course/templates/course/inassessment.html:181
+#: templates/account/login.html:101 templates/menu_anonymous.html:46
+msgid "Sign Up"
+msgstr "注册"
+
+#: campaign/templates/campaign/booksdetail.html:4
+#: campaign/templates/campaign/rechargerecordsquery.html:4
+#: templates/man/base.html:180 templates/man/tutor/management.html:4
+#: templates/man/tutor/management.html:27
+msgid "Teachers of management"
+msgstr ""
+
+#: campaign/templates/campaign/booksdetail.html:16
+msgid "title"
+msgstr ""
+
+#: campaign/templates/campaign/booksdetail.html:17
+msgid "author"
+msgstr ""
+
+#: campaign/templates/campaign/booksdetail.html:18
+#, fuzzy
+#| msgid "Progress"
+msgid "press"
+msgstr "进步程度"
+
+#: campaign/templates/campaign/booksdetail.html:19
+msgid "original_price"
+msgstr ""
+
+#: campaign/templates/campaign/booksdetail.html:20
+#: campaign/templates/campaign/campaignaddress.html:44
+msgid "price"
+msgstr ""
+
+#: campaign/templates/campaign/booksdetail.html:21
+#, fuzzy
+#| msgid "Quality"
+msgid "quality"
+msgstr "知识掌握程度"
+
+#: campaign/templates/campaign/booksdetail.html:22
+msgid "category"
+msgstr ""
+
+#: campaign/templates/campaign/booksdetail.html:23
+msgid "intro"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:4
+#, fuzzy
+#| msgid "E-mail Addresses"
+msgid "CampaignAddress"
+msgstr "电子邮箱地址"
+
+#: campaign/templates/campaign/campaignaddress.html:37
+msgid "order_id"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:39
+msgid "wechat_name"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:40
+msgid "wechat_avatar"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:41
+#, fuzzy
+#| msgid "E-mail Addresses"
+msgid "address"
+msgstr "电子邮箱地址"
+
+#: campaign/templates/campaign/campaignaddress.html:42
+msgid "phone"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:43
+msgid "is_freeDelivery"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:45
+msgid "deliveryCharge"
+msgstr ""
+
+#: campaign/templates/campaign/campaignaddress.html:46
+#, fuzzy
+#| msgid "Action"
+msgid "function"
+msgstr "操作"
+
+#: campaign/templates/campaign/campaignaddress.html:48
+msgid "shared_image"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:6
+#: campaign/templates/campaign/promotion_qrcode.html:6
+msgid "Promotion"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:15
+msgid "Our Price"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:20
+msgid ""
+"Each class is 45 minutes, costing 1 point.The cost of each point is as "
+"listed as follows,with bonus points awarded depending on your top up amount."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:22
+msgid "check detail"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:27
+msgid "Currency"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:28
+msgid "Price per Class"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:72
+#: campaign/templates/campaign/promotion.html:169
+#: campaign/templates/campaign/promotion.html:216
+#: campaign/templates/campaign/promotion_qrcode.html:71
+msgid "Terms and Conditions"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:73
+msgid ""
+"Refunds are available upon request,no questions asked.We’ll process the "
+"refund using the same payment gateway."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:95
+#: userprofile/templates/userprofile/profile.html:1516
+#, fuzzy
+#| msgid "Virtual Class"
+msgid "Free trial class"
+msgstr "虚拟课堂"
+
+#: campaign/templates/campaign/promotion.html:103
+msgid ""
+"We offer users 2 points to participate in Online Course for free,The points "
+"for trial class will be directly deposited into your account balance after "
+"you sign up,Then you will be asked to have an assessment,then making an "
+"appointment and enjoying the online class on time(Making an appointment one "
+"day in advance)."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:105
+msgid ""
+"After signing up, you will be led to free trial class application "
+"automatically."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:105
+#: campaign/templates/campaign/promotion.html:166
+#: campaign/templates/campaign/promotion.html:213
+#: campaign/templates/campaign/promotion_qrcode.html:32
+msgid "please go to"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:108
+#: campaign/templates/campaign/promotion.html:110
+msgid "apply free trial"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:114
+msgid "Terms and Conditions:"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:115
+msgid ""
+"1.Every user can only enjoy one-time free trial class application. If the "
+"user already applied it once, the user can not enjoy it again."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:117
+msgid "2.The 2 points for free trial are not eligible for refund."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:119
+msgid ""
+"3.Only new registered users can enjoy free trials.If the user has already "
+"participated in related courses, the user can not enjoy the benefit anymore."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:136
+msgid "Top-up Bonus"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:141
+msgid ""
+"We offer tiered bonuses based on your top-up amount.Refunds are available at "
+"any time,no questions asked."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:147
+msgid "Top-up"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:148
+msgid "Special Promotion - Bonus"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:167
+msgid "top up"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:171
+msgid "1. Promotion period starts from "
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:171
+#: scheduler/templates/scheduler/event.html:481
+msgid " to "
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:174
+msgid "2.The bonus will be deposited into your account instantly."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:176
+msgid ""
+"3.Bonus are not eligible for refund.When you request refund,the bonus of "
+"designated transaction will be deducted firstly,and the remaining points "
+"will be refunded."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:178
+msgid ""
+"4.You will receive extra bonus,if you register your referral information."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:200
+#: campaign/templates/campaign/promotion_qrcode.html:16
+msgid "Referral Awards"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:208
+msgid ""
+"If you like PPChinese, please share it with your friends. While they enjoy "
+"the good service, you can also enjoy rewards. Every 10 points (1 point for 1 "
+"class) top-up from your referral, you will get 1 point referral reward."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:209
+msgid ""
+"If you hear about PPChinese from your friend, please nominate your friend as "
+"referrer in the system, then you will also enjoy 1 point when you first top "
+"up."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:213
+#: campaign/templates/campaign/promotion_qrcode.html:32
+msgid "referral"
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:217
+msgid ""
+"1.The bonus will be deposited into your account instantly, when your "
+"referrals tops up."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:219
+msgid ""
+"2.You can get rewards - 1 point for every 10 points,your referee tops up."
+msgstr ""
+
+#: campaign/templates/campaign/promotion.html:221
+msgid ""
+"3.When your referral requests refund,referral bonus of designated "
+"transaction will be deducted accordingly."
+msgstr ""
+
+#: campaign/templates/campaign/promotion_code.html:7
+#: campaign/templates/campaign/promotion_congratulations.html:7
+#: templates/account/login.html:7
+#, fuzzy
+#| msgid "Signup"
+msgid "Sign In"
+msgstr "登录"
+
+#: campaign/templates/campaign/promotion_qrcode.html:28
+msgid ""
+"If you like PPChinese, please share it with your friends. While they enjoy "
+"the good service, you can also enjoy double rewards during promotion period."
+msgstr ""
+
+#: campaign/templates/campaign/promotion_qrcode.html:42
+msgid "Top up by the referee"
+msgstr ""
+
+#: campaign/templates/campaign/promotion_qrcode.html:43
+msgid "Special Promotion-Bonus"
+msgstr ""
+
+#: campaign/templates/campaign/promotion_qrcode.html:72
+msgid ""
+"1.Promotion period starts from August 13, 2018, midnight to Sept. 30, 2018, "
+"midnight."
+msgstr ""
+
+#: campaign/templates/campaign/promotion_qrcode.html:74
+msgid ""
+"2.Share the photo with QR code to the friends circle or your friends. You "
+"will be your friend's referrer after your friend complete the registration "
+"by scanning the QR code."
+msgstr ""
+
+#: campaign/templates/campaign/promotion_qrcode.html:76
+msgid ""
+"3.The bonus will be deposited into your account instantly, when your "
+"referrals tops up."
+msgstr ""
+
+#: campaign/templates/campaign/promotion_qrcode.html:78
+msgid ""
+"4.You can get rewards 2 points for every 10 points, your referee tops up "
+"(The highest is 10 points). "
+msgstr ""
+
+#: campaign/templates/campaign/promotion_qrcode.html:80
+msgid ""
+"5.When your referral requests refund, referral bonus of designated "
+"transaction will be deducted accordingly."
+msgstr ""
+
+#: campaign/templates/campaign/rechargerecordsquery.html:26
+#, fuzzy
+#| msgid "Username"
+msgid "username"
+msgstr "用户名"
+
+#: campaign/templates/campaign/rechargerecordsquery.html:27
+#, fuzzy
+#| msgid "My account"
+msgid "amount"
+msgstr "我的帐户"
+
+#: course/api_v2_views.py:173
+msgid "test does not exist"
+msgstr ""
+
+#: course/api_v2_views.py:179
+msgid "question does not exist"
+msgstr ""
+
+#: course/api_v2_views.py:188
+msgid "çourse does not exist"
+msgstr ""
+
+#: course/api_v2_views.py:195
+msgid "requested question number exceeds the limitation"
+msgstr ""
+
+#: course/templates/course/assessment.html:5
+#: course/templates/course/assessment.html:13
+#: course/templates/course/inassessment.html:5
+#: course/templates/course/inassessment.html:25
+#: course/templates/course/inguideexam.html:5
+#: course/templates/course/reminder.html:19
+#: course/templates/course/reminder.html:70 templates/index.html:39
+#: templates/index.html:54 templates/index.html:74
+#: templates/menu_member.html:136
+msgid "Assessment"
+msgstr ""
+
+#: course/templates/course/assessment.html:38
+#: course/templates/course/assessment.html:116
+#: course/templates/course/inassessment.html:39
+#: course/templates/course/inassessment.html:135
+msgid "Notice"
+msgstr ""
+
+#: course/templates/course/assessment.html:40
+#: course/templates/course/assessment.html:118
+#: course/templates/course/inassessment.html:41
+#: course/templates/course/inassessment.html:137
+msgid "loading...."
+msgstr ""
+
+#: course/templates/course/assessment.html:72
+#: course/templates/course/assessment.html:156
+#: course/templates/course/assessmentHistory.html:45
+#: course/templates/course/assessmentHistory.html:90
+#: course/templates/course/historyexam.html:29
+#: course/templates/course/inassessment.html:94
+#: course/templates/course/inassessment.html:194
+#: course/templates/course/newassessmenthistory.html:73
+#: course/templates/course/unitexam.html:35
+msgid "previous"
+msgstr ""
+
+#: course/templates/course/assessment.html:75
+#: course/templates/course/assessment.html:159
+#: course/templates/course/assessmentHistory.html:48
+#: course/templates/course/assessmentHistory.html:93
+#: course/templates/course/historyexam.html:31
+#: course/templates/course/inassessment.html:97
+#: course/templates/course/inassessment.html:197
+#: course/templates/course/newassessmenthistory.html:76
+#: course/templates/course/unitexam.html:37
+msgid "next"
+msgstr ""
+
+#: course/templates/course/assessment.html:91
+#: course/templates/course/assessment.html:134
+#: course/templates/course/inassessment.html:110
+#: course/templates/course/inassessment.html:172
+msgid "skip"
+msgstr ""
+
+#: course/templates/course/assessment.html:751
+#: course/templates/course/inassessment.html:951
+#: course/templates/course/unitexam.html:270
+msgid "List"
+msgstr ""
+
+#: course/templates/course/assessmentHistory.html:16
+#: course/templates/course/assessmentHistory.html:65
+#: course/templates/course/newassessmenthistory.html:31
+#: course/templates/course/reminder.html:17
+#: course/templates/course/reminder.html:68
+msgid "Assessmet History"
+msgstr ""
+
+#: course/templates/course/assessmentHistory.html:37
+#: course/templates/course/assessmentHistory.html:82
+#: course/templates/course/newassessmenthistory.html:65
+msgid "Back to result"
+msgstr ""
+
+#: course/templates/course/assessmentHistory.html:168
+#: course/templates/course/newassessmenthistory.html:398
+msgid "First question"
+msgstr ""
+
+#: course/templates/course/assessmentResult.html:62
+#: course/templates/course/assessmentResult.html:114
+#: course/templates/course/assessmentverify.html:12
+msgid "Assessment Result"
+msgstr ""
+
+#: course/templates/course/assessmentResult.html:86 templates/base.html:328
+#: userprofile/templates/userprofile/profile.html:1630
+msgid "Close"
+msgstr ""
+
+#: course/templates/course/assessmentResult.html:96
+#: course/templates/course/assessmentResult.html:140
+msgid "Assessment History"
+msgstr ""
+
+#: course/templates/course/assessmentResult.html:119
+#: course/templates/course/assessmentverify.html:18
+msgid "A total of 20 questions,Your correct number is:"
+msgstr ""
+
+#: course/templates/course/assessmentResult.html:122
+#: course/templates/course/assessmentverify.html:21
+msgid "A total of 10 questions,Your correct number is:"
+msgstr ""
+
+#: course/templates/course/assessmentResult.html:126
+#: course/templates/course/assessmentverify.html:25
+msgid "Your programme  is:"
+msgstr ""
+
+#: course/templates/course/assessmentResult.html:129
+#: course/templates/course/assessmentverify.html:34
+msgid "Your level  is:"
+msgstr ""
+
+#: course/templates/course/assessmentResult.html:146
+#: course/templates/course/show_usercourse.html:8
+#: userprofile/templates/userprofile/profile.html:8
+#: userprofile/templates/userprofile/tutor_profile.html:5
+msgid "My account"
+msgstr "我的帐户"
+
+#: course/templates/course/assessmentverify.html:27
+#: course/templates/course/inguideexam.html:33
+#: course/templates/course/inguideexam.html:330
+#: course/templates/course/inguideexam.html:360
+#: course/templates/course/show_usercourse.html:57
+#, fuzzy
+#| msgid "International Lite"
+msgid "LingoAce International Programme"
+msgstr "国际精简版"
+
+#: course/templates/course/assessmentverify.html:30
+#: course/templates/course/inguideexam.html:23
+#: course/templates/course/inguideexam.html:327
+#: course/templates/course/inguideexam.html:358
+msgid "LingoAce Advanced Programme"
+msgstr ""
+
+#: course/templates/course/assessmentverify.html:37
+msgid "Do you modify the programm of your choice?"
+msgstr ""
+
+#: course/templates/course/assessmentverify.html:44
+#: course/templates/course/inguideexam.html:184
+#: course/templates/course/reminder.html:35
+#: course/templates/course/reminder.html:110
+msgid "NO"
+msgstr ""
+
+#: course/templates/course/assessmentverify.html:49
+#: student/templates/student/my_class.html:56
+#: student/templates/student/small_class.html:391
+#: student/templates/student/small_class.html:416
+#: student/templates/student/small_class.html:440
+msgid "OK"
+msgstr ""
+
+#: course/templates/course/base.html:3
+#: templates/man/course/assessment_preview.html:15
+#: templates/man/course/exambank.html:14 templates/man/course/homework.html:16
+#: templates/man/course/homeworkupload.html:11
+#: templates/man/course/preview.html:18
+msgid "course"
+msgstr "课程"
+
+#: course/templates/course/ext_courseware.html:11
+#, fuzzy
+#| msgid "Courseware"
+msgid "Set Extend Courseware"
+msgstr "课件"
+
+#: course/templates/course/ext_courseware.html:18
+#, fuzzy
+#| msgid "Student Info"
+msgid "Student Name"
+msgstr "学生信息"
+
+#: course/templates/course/ext_courseware.html:18
+#: userprofile/templates/userprofile/profile.html:327
+#: userprofile/templates/userprofile/profile.html:969
+#, fuzzy
+#| msgid "current page"
+msgid "Current level"
+msgstr "当前页"
+
+#: course/templates/course/ext_courseware.html:36
+#: course/templates/course/ext_courseware_list.html:68
+msgid "Enter your search key word..."
+msgstr ""
+
+#: course/templates/course/ext_courseware.html:49
+#, fuzzy
+#| msgid "Courseware"
+msgid "My Extend Courseware"
+msgstr "课件"
+
+#: course/templates/course/ext_courseware.html:54
+msgid "My favorite"
+msgstr ""
+
+#: course/templates/course/ext_courseware.html:59
+msgid "Shared library"
+msgstr ""
+
+#: course/templates/course/ext_courseware.html:83
+#: course/templates/course/ext_courseware_list.html:92
+msgid "Preview"
+msgstr ""
+
+#: course/templates/course/ext_courseware.html:86
+#: course/templates/course/ext_courseware.html:123
+#: course/templates/course/ext_courseware_list.html:134
+msgid "Associated"
+msgstr ""
+
+#: course/templates/course/ext_courseware.html:95
+#: course/templates/course/ext_courseware_list.html:106
+msgid "New knowledge extension"
+msgstr ""
+
+#: course/templates/course/ext_courseware.html:97
+#: course/templates/course/ext_courseware_list.html:108
+msgid "Original file extension"
+msgstr ""
+
+#: course/templates/course/ext_courseware.html:115
+msgid "No labels"
+msgstr ""
+
+#: course/templates/course/ext_courseware.html:147
+#, fuzzy
+#| msgid "current page"
+msgid "Current page"
+msgstr "当前页"
+
+#: course/templates/course/ext_courseware.html:171
+#: course/templates/course/ext_courseware_list.html:180
+#: student/templates/student/my_class.html:122
+#: student/templates/student/my_class.html:324
+#: student/templates/student/my_class.html:359
+#: userprofile/templates/userprofile/history_class.html:63
+#: userprofile/templates/userprofile/history_class.html:64
+#: userprofile/templates/userprofile/profile.html:396
+#: userprofile/templates/userprofile/tutor_profile.html:80
+#: userprofile/templates/userprofile/tutor_profile.html:150
+#: userprofile/templates/userprofile/tutor_profile.html:212
+#: userprofile/templates/userprofile/tutor_profile.html:213
+#: virtualclass/templates/virtualclass/classroom.html:126
+#, fuzzy
+#| msgid "Courseware"
+msgid "Extend Courseware"
+msgstr "课件"
+
+#: course/templates/course/ext_courseware.html:206
+msgid "Extend Courseware association success"
+msgstr ""
+
+#: course/templates/course/ext_courseware_list.html:11
+#: course/templates/course/ext_up_courseware.html:4
+#: course/templates/course/ext_up_courseware.html:12
+msgid "Manage Extend Courseware"
+msgstr ""
+
+#: course/templates/course/ext_courseware_list.html:19
+#: course/templates/course/ext_up_courseware.html:20
+#, fuzzy
+#| msgid "Courseware"
+msgid "Add Extend Coursewares"
+msgstr "课件"
+
+#: course/templates/course/ext_courseware_list.html:23
+#: course/templates/course/ext_up_courseware.html:24
+msgid " Browse My Extend Courseware"
+msgstr ""
+
+#: course/templates/course/ext_courseware_list.html:99
+msgid "Update"
+msgstr ""
+
+#: course/templates/course/ext_up_courseware.html:46
+msgid "Required"
+msgstr ""
+
+#: course/templates/course/ext_up_courseware.html:50
+#, fuzzy
+#| msgid "Courseware"
+msgid "CoursewareName"
+msgstr "课件"
+
+#: course/templates/course/ext_up_courseware.html:72
+msgid "Level"
+msgstr ""
+
+#: course/templates/course/ext_up_courseware.html:103
+msgid "Type"
+msgstr ""
+
+#: course/templates/course/ext_up_courseware.html:110
+#: course/templates/course/ext_up_courseware.html:115
+#: course/templates/course/ext_up_courseware.html:122
+msgid "Original courseware extension"
+msgstr ""
+
+#: course/templates/course/ext_up_courseware.html:111
+#: course/templates/course/ext_up_courseware.html:117
+#: course/templates/course/ext_up_courseware.html:123
+msgid "New courseware extension"
+msgstr ""
+
+#: course/templates/course/ext_up_courseware.html:139
+#: course/templates/course/ext_up_courseware.html:144
+#: course/templates/course/ext_up_courseware.html:150
+msgid "Public"
+msgstr ""
+
+#: course/templates/course/ext_up_courseware.html:140
+#: course/templates/course/ext_up_courseware.html:145
+#: course/templates/course/ext_up_courseware.html:151
+msgid "Private"
+msgstr ""
+
+#: course/templates/course/ext_up_courseware.html:162
+#: userprofile/templates/userprofile/edit_photo.html:28
+msgid "Choose File"
+msgstr ""
+
+#: course/templates/course/ext_up_courseware.html:180
+msgid "Please upload PPT/PPTX/PDF file"
+msgstr ""
+
+#: course/templates/course/ext_up_courseware.html:186
+msgid "Browse"
+msgstr ""
+
+#: course/templates/course/ext_up_courseware.html:196
+#, fuzzy
+#| msgid "Action"
+msgid "Option"
+msgstr "操作"
+
+#: course/templates/course/ext_up_courseware.html:200
+msgid "Label"
+msgstr ""
+
+#: course/templates/course/gradeExam.html:19
+#: course/templates/course/gradeExam.html:105
+msgid "Semester"
+msgstr ""
+
+#: course/templates/course/gradeExam.html:20
+#: course/templates/course/gradeExam.html:106
+#, fuzzy
+#| msgid "Exambank"
+msgid "Exam"
+msgstr "试题预览"
+
+#: course/templates/course/gradeExam.html:21
+#: course/templates/course/gradeExam.html:107
+msgid "Score"
+msgstr ""
+
+#: course/templates/course/gradeExam.html:26
+#: course/templates/course/gradeExam.html:112
+msgid "Mid"
+msgstr ""
+
+#: course/templates/course/gradeExam.html:32
+#: course/templates/course/gradeExam.html:63
+#: course/templates/course/gradeExam.html:118
+#: course/templates/course/gradeExam.html:150
+msgid "History Exam"
+msgstr ""
+
+#: course/templates/course/gradeExam.html:38
+#: course/templates/course/gradeExam.html:40
+#: course/templates/course/gradeExam.html:69
+#: course/templates/course/gradeExam.html:71
+#: course/templates/course/gradeExam.html:124
+#: course/templates/course/gradeExam.html:126
+#: course/templates/course/gradeExam.html:156
+#: course/templates/course/gradeExam.html:158
+msgid "Start Test"
+msgstr ""
+
+#: course/templates/course/gradeExam.html:57
+#: course/templates/course/gradeExam.html:144
+msgid "Final"
+msgstr ""
+
+#: course/templates/course/historyexam.html:15
+msgid "Unit Test History"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:14
+msgid "Recommended Course"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:25
+#: course/templates/course/inguideexam.html:100
+#: course/templates/course/inguideexam.html:328
+msgid ""
+"This course is divided into six levels, and follows the course book "
+"developed by China&#39s Ministry of Education. Students are expected to make "
+"progress in all aspects of Chinese language, including listening, speaking, "
+"reading and writing. This programme is suitable for students who have a "
+"certain basis for Chinese listening and speaking, or students who have "
+"Chinese listening and speaking environment and want to improve Chinese "
+"skills and literature (writing, intensive reading, ancient literature "
+"learning)."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:28
+#: course/templates/course/inguideexam.html:38
+msgid "Choose"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:35
+#: course/templates/course/inguideexam.html:108
+#: course/templates/course/inguideexam.html:331
+#: course/templates/course/show_usercourse.html:61
+msgid ""
+"This course is designed for non-native Chinese speakers, and takes a fun "
+"approach to learning Chinese. Through the six levels, students will improve "
+"their listening, speaking, reading and writing skills and the understanding "
+"of Chinese culture. This course is suitable for students whose mother tongue "
+"are non-Chinese and want to learn daily communication, or students who have "
+"examination requirements such as YCT."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:44
+msgid "I am not sure what course my child should choose"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:74
+#: course/templates/course/inguideexam.html:132
+msgid "LingoAce Parents Agreement"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:75
+#: course/templates/course/inguideexam.html:134
+msgid ""
+"I agree not to assist my child in any way to understand the content of the "
+"test (I may assist my child with technical difficulties).I agree to not "
+"provide any answers or read for my child during the test. I can understand "
+"that when I help my child answer the test questions, my child might place in "
+"a level that&#39s beyond their ability. This is bad for my child to learn "
+"Chinese."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:76
+#: course/templates/course/inguideexam.html:136
+msgid "I agree, continue to the test."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:77
+#: course/templates/course/inguideexam.html:138
+msgid ""
+"Next, please ask your child to come to the computer. And ensure that your "
+"device can play the audio properly, then turn on the stereo or put on the "
+"earphone. If you are ready, please click \"OK\"."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:98
+msgid "LingoAce Advanced Programme:"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:106
+msgid "LingoAce International Programme:"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:176
+msgid ""
+"My child is the beginner of Chinese learning, and I am sure level one is "
+"suitable for him(her), so the following test is unnnecessary."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:182
+#: course/templates/course/reminder.html:39
+#: course/templates/course/reminder.html:127
+msgid "YES"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "How about parents&#39 Chinese?"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "How often does your child speak Chinese at home?"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "At present, what is your target for child&#39s Chinese?"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "How old is your child?"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid ""
+"Have your child learned Chinese before? (If learned) How long have your "
+"child learned?"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "How long does your child usually spend on learning Chinese?"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid ""
+"How is your child&#39s Chinese listening and speaking skills? (From low to "
+"high)"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid ""
+"How is your child&#39s Chinese reading and writing skills? (From low to high)"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:204
+#: course/templates/course/inguideexam.html:221
+msgid "What kind of language does your child speak at home?"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:207
+#: course/templates/course/inguideexam.html:222
+msgid "LingoAce Advanced Programme."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:207
+#: course/templates/course/inguideexam.html:222
+msgid "LingoAce International Programme."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:207
+#: course/templates/course/inguideexam.html:222
+msgid " Not sure."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:210
+#: course/templates/course/inguideexam.html:223
+msgid "Chinese is none of parents&#39 mother tongue."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:210
+#: course/templates/course/inguideexam.html:223
+msgid "Chinese is one of parents’ mother tongue."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:210
+#: course/templates/course/inguideexam.html:223
+msgid "Chinese is both of parents&#39 mother tongue."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:211
+#: course/templates/course/inguideexam.html:224
+msgid "Never speak Chinese at home."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:211
+#: course/templates/course/inguideexam.html:224
+msgid "Sometimes speak simple Chinese at home."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:211
+#: course/templates/course/inguideexam.html:224
+msgid "Always speak Chinese at home."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:212
+#: course/templates/course/inguideexam.html:225
+msgid "Can use Chinese for simple daily communication."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:212
+msgid "Improve Chinese skills, and be able to talk about various topics."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:212
+#: course/templates/course/inguideexam.html:225
+msgid ""
+"Improve Chinese skills and literature. (Writing, intensive reading, learning "
+"ancient literature)"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:213
+#: course/templates/course/inguideexam.html:226
+msgid "6~8 years old"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:213
+#: course/templates/course/inguideexam.html:226
+msgid "8~10 years old"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:213
+#: course/templates/course/inguideexam.html:226
+msgid "10~12 years old"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:213
+#: course/templates/course/inguideexam.html:226
+msgid "12~15 years old"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:213
+#: course/templates/course/inguideexam.html:226
+msgid "More than15 years old"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:214
+#: course/templates/course/inguideexam.html:227
+msgid "Haven&#39t learned &learned Chinese 0~1year"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:214
+#: course/templates/course/inguideexam.html:227
+msgid "learned Chinese 1~2years"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:214
+#: course/templates/course/inguideexam.html:227
+msgid "learned Chinese 2~3years"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:214
+#: course/templates/course/inguideexam.html:227
+msgid "learned Chinese 3~4years"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:214
+#: course/templates/course/inguideexam.html:227
+msgid "learned Chinese more than 5years"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:215
+#: course/templates/course/inguideexam.html:228
+msgid "Doesn&#39t learn Chinese"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:215
+#: course/templates/course/inguideexam.html:228
+msgid "0~1hours a week"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:215
+#: course/templates/course/inguideexam.html:228
+msgid "1~2hours a week"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:215
+#: course/templates/course/inguideexam.html:228
+msgid "2~3hours a week"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:215
+#: course/templates/course/inguideexam.html:228
+msgid "At least 4hours"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:218
+#: course/templates/course/inguideexam.html:231
+msgid "doesn&#39t speak Chinese at home"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:218
+#: course/templates/course/inguideexam.html:231
+msgid ""
+"doesn&#39t speak Chinese at home but can get access to Chinese. (With "
+"neighbors, relatives or friends)"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:218
+#: course/templates/course/inguideexam.html:231
+msgid "Can speak a little Chinese at home"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:218
+#: course/templates/course/inguideexam.html:231
+msgid "One of the parents speaks another language"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:218
+#: course/templates/course/inguideexam.html:231
+msgid "Chinese is the basic language"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:221
+msgid ""
+"Which programme will you choose for your child according to the introduction "
+"above?"
+msgstr ""
+
+#: course/templates/course/inguideexam.html:225
+msgid "Improve Chinese skills, and be able to talk about ious topics."
+msgstr ""
+
+#: course/templates/course/inguideexam.html:323
+#: course/templates/course/inguideexam.html:355
+msgid "The programme we recommend is"
+msgstr ""
+
+#: course/templates/course/level_questionnaire.html:5
+#: course/templates/course/programme_questionnaire.html:5
+#: templates/man/base.html:107
+msgid "Questionnaire"
+msgstr ""
+
+#: course/templates/course/readhomework.html:23
+msgid "Ratings success"
+msgstr ""
+
+#: course/templates/course/readhomework.html:27
+#, fuzzy
+#| msgid "My account"
+msgid "Back My account"
+msgstr "我的帐户"
+
+#: course/templates/course/reminder.html:14
+#: course/templates/course/reminder.html:65
+msgid "Unit Test"
+msgstr ""
+
+#: course/templates/course/reminder.html:30
+#: course/templates/course/reminder.html:79
+msgid "Dear parents or guardian:"
+msgstr ""
+
+#: course/templates/course/reminder.html:31
+#: course/templates/course/reminder.html:81
+msgid ""
+"Welcome to LingoAce computer-based placement test! In the following few "
+"minutes, you will be asked to give information about your child .Please "
+"answer all the questions to the best of your knowledge."
+msgstr ""
+
+#: course/templates/course/reminder.html:47
+#: course/templates/course/reminder.html:86
+msgid "Teacher can't test !"
+msgstr ""
+
+#: course/templates/course/reminder.html:89
+msgid "Please complete the level test first !"
+msgstr ""
+
+#: course/templates/course/reminder.html:92
+msgid ""
+"Are you ready for an interesting challenge, to see how good your Chinese "
+"language skills is?"
+msgstr ""
+
+#: course/templates/course/reminder.html:94
+msgid ""
+"There are 20 questions, which will take about 10 minutes. If you don't know "
+"the answer, you may choose 'skip' and jump to next question."
+msgstr ""
+
+#: course/templates/course/reminder.html:96
+msgid "Ready to go?"
+msgstr ""
+
+#: course/templates/course/reminder.html:99
+msgid "There is no record"
+msgstr ""
+
+#: course/templates/course/resultsuccess.html:13
+msgid "Upload Success"
+msgstr ""
+
+#: course/templates/course/resultsuccess.html:15
+#, fuzzy
+#| msgid "Deleted Messages"
+msgid "Delete Success"
+msgstr "已删除消息"
+
+#: course/templates/course/resultsuccess.html:21
+#: course/templates/course/submithomework.html:179
+#: course/templates/course/teacherhomework.html:197
+#: templates/man/course/homework.html:39 templates/man/course/preview.html:41
+#: templates/man/course/teachplan.html:39
+#: templates/man/virtualclass/student_rating.html:69
+#: templates/man/virtualclass/teacher_rating.html:117
+#: virtualclass/templates/virtualclass/comment_show.html:133
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:113
+msgid "session"
+msgstr "课时"
+
+#: course/templates/course/resultsuccess.html:31
+msgid "URL:"
+msgstr ""
+
+#: course/templates/course/resultsuccess.html:46
+#: course/templates/course/submithomework.html:5
+#: course/templates/course/submithomework.html:173
+msgid "Upload Homework"
+msgstr ""
+
+#: course/templates/course/show_usercourse.html:39
+#, fuzzy
+#| msgid "Advanced"
+msgid "Advanced Programme"
+msgstr "高级版"
+
+#: course/templates/course/show_usercourse.html:44
+msgid ""
+"This course is divided into six levels, and follows the course book "
+"developed by China's Ministry of Education. Students are expected to make "
+"progress in all aspects of Chinese language, including listening, speaking, "
+"reading and writing. This programme is suitable for students who have a "
+"certain basis for Chinese listening and speaking, or students who have "
+"Chinese listening and speaking environment and want to improve Chinese "
+"skills and literature (writing, intensive reading, ancient literature "
+"learning)."
+msgstr ""
+
+#: course/templates/course/show_usercourse.html:48
+#: course/templates/course/show_usercourse.html:65
+msgid "Select!"
+msgstr ""
+
+#: course/templates/course/showhomework.html:15
+msgid "Submit Homework"
+msgstr ""
+
+#: course/templates/course/submithomework.html:175
+#: course/templates/course/teacherhomework.html:7
+#: course/templates/course/teacherhomework.html:189
+#, fuzzy
+#| msgid "Courseware Upload"
+msgid "Homework corrected"
+msgstr "课件上传"
+
+#: course/templates/course/submithomework.html:189
+msgid "Upload Again"
+msgstr ""
+
+#: course/templates/course/submithomework.html:197
+msgid "Done"
+msgstr ""
+
+#: course/templates/course/submithomework.html:200
+#: templates/man/course/assessment_preview.html:41
+msgid "Edit"
+msgstr ""
+
+#: course/templates/course/submithomework.html:207
+#: course/templates/course/teacherhomework.html:210
+msgid "Score:"
+msgstr ""
+
+#: course/templates/course/submithomework.html:220
+#: course/templates/course/teacherhomework.html:266
+msgid "Homework has been uploaded successfully, please check later!"
+msgstr ""
+
+#: course/templates/course/submithomework.html:344
+msgid "Select the file"
+msgstr ""
+
+#: course/templates/course/submithomework.html:387
+msgid "Start upload"
+msgstr ""
+
+#: course/templates/course/submithomework.html:388
+#, fuzzy
+#| msgid "Delete"
+msgid "Delete All"
+msgstr "删除"
+
+#: course/templates/course/teacherhomework.html:235
+msgid "1"
+msgstr ""
+
+#: course/templates/course/teacherhomework.html:236
+msgid "2"
+msgstr ""
+
+#: course/templates/course/teacherhomework.html:237
+msgid "3"
+msgstr ""
+
+#: course/templates/course/teacherhomework.html:238
+msgid "4"
+msgstr ""
+
+#: course/templates/course/teacherhomework.html:239
+msgid "5"
+msgstr ""
+
+#: course/templates/course/teacherhomework.html:279
+msgid "There is no homework in this class ~"
+msgstr ""
+
+#: course/templates/course/unitexam.html:27
+#: templates/man/course/assessment_upload.html:222
+#, fuzzy
+#| msgid "Submit"
+msgid "submit"
+msgstr "提交"
+
+#: course/templates/course/user_course.html:11
+msgid "Change Student Course & Session Level"
+msgstr ""
+
+#: course/templates/course/user_course.html:18
+msgid "Select Student:"
+msgstr ""
+
+#: course/templates/course/user_course.html:43
+msgid "Change Course & Level:"
+msgstr ""
+
+#: course/templates/course/user_course.html:62
+#, fuzzy
+#| msgid "session"
+msgid "Current session:"
+msgstr "课时"
+
+#: course/templates/course/user_course.html:69
+#, fuzzy
+#| msgid "Change"
+msgid "change"
+msgstr "变更"
+
+#: course/views.py:750
+msgid "Parameter error."
+msgstr ""
+
+#: course/views.py:755
+msgid "Student does not exist."
+msgstr ""
+
+#: course/views.py:768
+msgid "Adjust the grade student success."
+msgstr ""
+
+#: course/views.py:2083
+msgid "Test is uploaded successfully"
+msgstr "试题上传成功"
+
+#: course/views.py:2798
+msgid "programme does not exist."
+msgstr ""
+
+#: help/templates/help/base.html:3
+msgid "help"
+msgstr "帮助"
+
+#: scheduler/api_v2_views.py:51 scheduler/api_views.py:92
+#: scheduler/api_views.py:254
+msgid "Parameter missing."
+msgstr ""
+
+#: scheduler/api_v2_views.py:56 tutor/api_v2_views.py:47
+msgid "Date format error"
+msgstr ""
+
+#: scheduler/api_v2_views.py:89 scheduler/api_v2_views.py:115
+#: scheduler/api_v2_views.py:236 scheduler/api_v2_views.py:243
+#: scheduler/api_v2_views.py:249
+#, fuzzy
+#| msgid "subscriptions has duplicate."
+msgid "subscription_start format error"
+msgstr "预约纪录重复"
+
+#: scheduler/api_v2_views.py:94 scheduler/api_views.py:361
+msgid "Parameter missing1."
+msgstr ""
+
+#: scheduler/api_v2_views.py:96 scheduler/api_views.py:364
+msgid "Parameter missing2."
+msgstr ""
+
+#: scheduler/api_v2_views.py:99 scheduler/api_views.py:368
+#, fuzzy
+#| msgid "start date and end date is must"
+msgid "start date and end date is mandatory input."
+msgstr "必须输入起始和结束日期"
+
+#: scheduler/api_v2_views.py:136 scheduler/api_views.py:406
+msgid "Event does not exist."
+msgstr ""
+
+#: scheduler/api_v2_views.py:139 scheduler/api_views.py:410
+#, fuzzy
+#| msgid "Subscription end must less than the Event end date."
+msgid "Subscription date range mismatches with event date range."
+msgstr "预约结束日期必须早于可供约课时段的结束日期"
+
+#: scheduler/api_v2_views.py:145 scheduler/api_v2_views.py:150
+#: scheduler/api_views.py:417 scheduler/api_views.py:423
+#: scheduler/api_views.py:543 scheduler/api_views.py:548
+msgid "A time conflict exists."
+msgstr ""
+
+#: scheduler/api_v2_views.py:180 scheduler/api_v2_views.py:279
+msgid "cancel_remaining fomat error."
+msgstr ""
+
+#: scheduler/api_v2_views.py:185 scheduler/api_v2_views.py:284
+msgid "occurrence_start format error"
+msgstr ""
+
+#: scheduler/api_v2_views.py:190 scheduler/api_views.py:452
+#: scheduler/api_views.py:474 scheduler/views.py:301
+#, fuzzy
+#| msgid "subscriptions has duplicate."
+msgid "subscription id is null"
+msgstr "预约纪录重复"
+
+#: scheduler/api_v2_views.py:195 scheduler/api_v2_views.py:321
+#: scheduler/views.py:241 student/views.py:206
+msgid ""
+"If you need to cancel your appointment, please cancel it 2 hours before the "
+"class, otherwise you will not be able to cancel."
+msgstr ""
+
+#: scheduler/api_v2_views.py:197
+#: scheduler/templates/scheduler/appointmentphone.html:648
+#: scheduler/views.py:323 scheduler/views.py:364
+msgid "The selected deleting date has expired, and it can not be deleted"
+msgstr ""
+
+#: scheduler/api_v2_views.py:208 scheduler/api_views.py:484
+msgid ""
+"there is an error, this event subscription is not successfully cancelled."
+msgstr ""
+
+#: scheduler/api_v2_views.py:210 scheduler/api_views.py:465
+#: scheduler/api_views.py:487
+msgid "event subscription does not exist"
+msgstr ""
+
+#: scheduler/api_v2_views.py:212 scheduler/api_views.py:489
+msgid "subscription with the date does not exist"
+msgstr ""
+
+#: scheduler/api_v2_views.py:255
+msgid "User DoesNotExist"
+msgstr ""
+
+#: scheduler/api_v2_views.py:263 scheduler/api_views.py:344
+msgid "it conflicts with existing event."
+msgstr ""
+
+#: scheduler/api_v2_views.py:296 scheduler/views.py:423
+msgid ""
+"there might be one or more associated subscriptions, and event was not "
+"successfully cancelled."
+msgstr ""
+
+#: scheduler/api_v2_views.py:317 scheduler/api_views.py:516
+#: scheduler/api_views.py:524 scheduler/views.py:236 student/views.py:201
+msgid "Appointment does not exist."
+msgstr ""
+
+#: scheduler/api_v2_views.py:319 scheduler/views.py:238 student/views.py:203
+msgid "This class has already begun!Forbidden to cancel!"
+msgstr ""
+
+#: scheduler/api_views.py:71 scheduler/api_views.py:234
+#: scheduler/api_views.py:274 scheduler/api_views.py:298
+#: scheduler/api_views.py:337 scheduler/api_views.py:438
+#: scheduler/api_views.py:706 tutor/api_views.py:142 tutor/api_views.py:276
+msgid "success."
+msgstr ""
+
+#: scheduler/api_views.py:231 tutor/api_views.py:272
+msgid "error."
+msgstr ""
+
+#: scheduler/api_views.py:388
+#, fuzzy
+#| msgid "Subscription end must less than the Event end date."
+msgid "Subscription end date is not valid date."
+msgstr "预约结束日期必须早于可供约课时段的结束日期"
+
+#: scheduler/api_views.py:459
+msgid ""
+"there is at least one appointment related to this event subscription, and it "
+"can not be deleted"
+msgstr ""
+
+#: scheduler/api_views.py:462
+msgid "delete is ok"
+msgstr "删除成功"
+
+#: scheduler/api_views.py:482
+#, fuzzy
+#| msgid "the evaluation is successfully submitted"
+msgid "the subscription is successfully cancelled"
+msgstr "评价提交成功"
+
+#: scheduler/api_views.py:496 scheduler/views.py:392
+msgid "event id is null"
+msgstr "可供约课时段不存在"
+
+#: scheduler/api_views.py:500 scheduler/views.py:396
+msgid "event does not exist"
+msgstr ""
+
+#: scheduler/api_views.py:504 scheduler/views.py:402
+msgid "event has been subscribed, and it can not be deleted"
+msgstr ""
+
+#: scheduler/api_views.py:506 scheduler/views.py:400
+#, fuzzy
+#| msgid "Test is uploaded successfully"
+msgid "event is deleted successfully"
+msgstr "试题上传成功"
+
+#: scheduler/api_views.py:522 scheduler/views.py:233 student/views.py:198
+#, fuzzy
+#| msgid "Test is uploaded successfully"
+msgid "Appointment is cancelled successfully."
+msgstr "试题上传成功"
+
+#: scheduler/api_views.py:535 scheduler/views.py:253
+msgid "Change request does not exist."
+msgstr ""
+
+#: scheduler/api_views.py:572 scheduler/views.py:280
+#, fuzzy
+#| msgid "Change request has been raised successfully."
+msgid "Change request has been confirmed successfully."
+msgstr "变更请求成功提交"
+
+#: scheduler/api_views.py:591 scheduler/views.py:283
+#, fuzzy
+#| msgid "Change request has been raised successfully."
+msgid "Change request has been rejected successfully."
+msgstr "变更请求成功提交"
+
+#: scheduler/api_views.py:610 scheduler/views.py:415 scheduler/views.py:441
+#, fuzzy
+#| msgid "virtual class does not exist, pls check it again."
+msgid "event does not exist, pls check it again."
+msgstr "虚拟课堂不存在，请重新选择"
+
+#: scheduler/templates/scheduler/appointmentphone.html:34
+#: tutor/templates/tutor/all_tutors.html:106
+#: tutor/templates/tutor/embedded_info.html:53
+#: tutor/templates/tutor/tutors.html:223 tutor/templates/tutor/tutors.html:285
+#: tutor/templates/tutor/tutors.html:435
+msgid "Rating"
+msgstr ""
+
+#: scheduler/templates/scheduler/appointmentphone.html:56
+msgid "Last Week"
+msgstr ""
+
+#: scheduler/templates/scheduler/appointmentphone.html:59
+msgid "Next Week"
+msgstr ""
+
+#: scheduler/templates/scheduler/appointmentphone.html:71
+#: scheduler/templates/scheduler/calendar.html:165
+#: scheduler/templates/scheduler/event.html:214
+#, fuzzy
+#| msgid "Scheduled Time"
+msgid "Class scheduled time"
+msgstr "预约时间"
+
+#: scheduler/templates/scheduler/appointmentphone.html:77
+msgid "Event date range"
+msgstr ""
+
+#: scheduler/templates/scheduler/appointmentphone.html:83
+#: scheduler/templates/scheduler/event.html:196
+msgid "Start of subscription"
+msgstr "预约起始日期"
+
+#: scheduler/templates/scheduler/appointmentphone.html:89
+#: scheduler/templates/scheduler/event.html:204
+msgid "End of subscription"
+msgstr "预约结束日期"
+
+#: scheduler/templates/scheduler/appointmentphone.html:98
+#: scheduler/templates/scheduler/event.html:228
+#, fuzzy
+#| msgid "Quick Appointment"
+msgid "Make Recurring Appointment"
+msgstr "一键快捷预约"
+
+#: scheduler/templates/scheduler/appointmentphone.html:108
+#: scheduler/templates/scheduler/event.html:236
+msgid ""
+"You can only delete the recurring reservation, before you confirm any "
+"occurrence of this reservation."
+msgstr ""
+
+#: scheduler/templates/scheduler/appointmentphone.html:112
+#: scheduler/templates/scheduler/event.html:261
+#, fuzzy
+#| msgid "Quick Appointment"
+msgid "Make One-time Appointment"
+msgstr "一键快捷预约"
+
+#: scheduler/templates/scheduler/appointmentphone.html:117
+#: scheduler/templates/scheduler/calendar.html:195
+#: scheduler/templates/scheduler/event.html:241
+msgid "Cancel this occurrence"
+msgstr ""
+
+#: scheduler/templates/scheduler/appointmentphone.html:118
+#: scheduler/templates/scheduler/calendar.html:197
+#: scheduler/templates/scheduler/event.html:243
+msgid "Cancel the remaining in the series"
+msgstr ""
+
+#: scheduler/templates/scheduler/appointmentphone.html:120
+#: scheduler/templates/scheduler/calendar.html:201
+#: scheduler/templates/scheduler/event.html:247
+#: tutor/templates/tutor/all_tutors.html:67
+msgid "Confirm"
+msgstr ""
+
+#: scheduler/templates/scheduler/appointmentphone.html:136
+#: templates/base.html:320
+msgid "Notification"
+msgstr ""
+
+#: scheduler/templates/scheduler/appointmentphone.html:140
+msgid "Cancel successful (The appointment within 2 hours cannot be cancelled)."
+msgstr ""
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:35
+#: tutor/templates/tutor/tutors.html:160
+msgid "Mon"
+msgstr "星期一"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:37
+#: tutor/templates/tutor/tutors.html:162
+msgid "Tue"
+msgstr "星期二"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:39
+#: tutor/templates/tutor/tutors.html:164
+msgid "Wed"
+msgstr "星期三"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:41
+#: tutor/templates/tutor/tutors.html:166
+msgid "Thu"
+msgstr "星期四"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:43
+#: tutor/templates/tutor/tutors.html:168
+msgid "Fri"
+msgstr "星期五"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:45
+#: tutor/templates/tutor/tutors.html:170
+msgid "Sat"
+msgstr "星期六"
+
+#: scheduler/templates/scheduler/appointmentphone.html:183
+#: scheduler/templates/scheduler/calendar.html:225
+#: scheduler/templates/scheduler/event.html:287
+#: scheduler/templates/scheduler/occurrence.html:263
+#: scheduler/templates/scheduler/tutors_occurrence.html:242
+#: tutor/templates/tutor/all_tutors.html:47
+#: tutor/templates/tutor/tutors.html:172
+msgid "Sun"
+msgstr "星期日"
+
+#: scheduler/templates/scheduler/appointmentphone.html:617
+#: scheduler/templates/scheduler/event.html:536
+msgid "you must fill a subscription Start Date."
+msgstr "您必须提供预约起始日期"
+
+#: scheduler/templates/scheduler/appointmentphone.html:619
+#: scheduler/templates/scheduler/event.html:539
+msgid "None quick appointment End Date is must fill"
+msgstr "您必须提供预约结束日期"
+
+#: scheduler/templates/scheduler/appointmentphone.html:621
+#: scheduler/templates/scheduler/event.html:548
+#, fuzzy
+#| msgid "Subscription end must more than the Event start date."
+msgid "Subscription end must be later than the Subscription start date."
+msgstr "预约结束日期必须晚于可供约课时段的起始日期"
+
+#: scheduler/templates/scheduler/appointmentphone.html:623
+msgid "Please make an appointment one day earlier!"
+msgstr ""
+
+#: scheduler/templates/scheduler/calendar.html:110
+#: scheduler/templates/scheduler/event.html:148
+#: scheduler/templates/scheduler/occurrence.html:125
+#: scheduler/templates/scheduler/tutors_occurrence.html:121
+#: tutor/templates/tutor/tutors.html:143
+msgid "available"
+msgstr "可预约"
+
+#: scheduler/templates/scheduler/calendar.html:118
+#: scheduler/templates/scheduler/tutors_occurrence.html:130
+msgid "booked"
+msgstr "已预约"
+
+#: scheduler/templates/scheduler/calendar.html:126
+#: scheduler/templates/scheduler/calendar.html:135
+#: scheduler/templates/scheduler/event.html:158
+msgid "not available"
+msgstr "不可预约"
+
+#: scheduler/templates/scheduler/calendar.html:152
+msgid "Event Management"
+msgstr ""
+
+#: scheduler/templates/scheduler/calendar.html:170
+msgid "Event start"
+msgstr ""
+
+#: scheduler/templates/scheduler/calendar.html:175
+msgid "end recurring period"
+msgstr ""
+
+#: scheduler/templates/scheduler/calendar.html:368
+#: scheduler/templates/scheduler/calendar.html:408
+#: scheduler/templates/scheduler/event.html:471
+msgid " every "
+msgstr " 每 "
+
+#: scheduler/templates/scheduler/calendar.html:438
+msgid "you must fill a valid date for event end recurring period."
+msgstr ""
+
+#: scheduler/templates/scheduler/calendar.html:441
+#, fuzzy
+#| msgid "Subscription start must less than the Event end date."
+msgid "Event start must be earlier than the Event end date."
+msgstr "预约起始日期必须早于可供约课时段的结束日期"
+
+#: scheduler/templates/scheduler/entry.html:43
+msgid "Future classes"
+msgstr ""
+
+#: scheduler/templates/scheduler/entry.html:51
+#: scheduler/templates/scheduler/entry.html:115
+#: student/templates/student/my_class.html:78
+#: student/templates/student/my_class.html:293
+#: userprofile/templates/userprofile/profile.html:1056
+#, fuzzy
+#| msgid "Quick Appointment"
+msgid "Make Appointment"
+msgstr "一键快捷预约"
+
+#: scheduler/templates/scheduler/entry.html:57
+#: scheduler/templates/scheduler/entry.html:122
+#: scheduler/templates/scheduler/entry_subscription.html:23
+#: scheduler/templates/scheduler/entry_tutor.html:86
+#: templates/man/virtualclass/convert_list.html:39
+#: templates/man/virtualclass/list.html:39
+#: virtualclass/templates/virtualclass/classroom_list.html:40
+#: virtualclass/templates/virtualclass/classroom_list.html:128
+msgid "Scheduled Time"
+msgstr "预约时间"
+
+#: scheduler/templates/scheduler/entry.html:60
+#: scheduler/templates/scheduler/entry.html:124
+#: scheduler/templates/scheduler/entry_subscription.html:25
+#: scheduler/templates/scheduler/entry_tutor.html:88
+#: templates/postman/base_folder.html:32
+msgid "Action"
+msgstr "操作"
+
+#: scheduler/templates/scheduler/entry.html:91
+#: scheduler/templates/scheduler/entry.html:97
+#: scheduler/templates/scheduler/entry.html:149
+#: scheduler/templates/scheduler/entry.html:155
+#: scheduler/templates/scheduler/entry_subscription.html:46
+#: student/templates/student/my_class.html:133
+#: student/templates/student/my_class.html:329
+#: student/templates/student/my_class.html:364
+#: templates/man/course/assessment_upload.html:227
+#: userprofile/templates/userprofile/edit_photo.html:36
+msgid "Cancel"
+msgstr ""
+
+#: scheduler/templates/scheduler/entry.html:112
+#: scheduler/templates/scheduler/entry_tutor.html:73
+#: student/templates/student/my_class.html:76
+#: student/templates/student/my_class.html:292
+#: student/templates/student/my_class.html:369
+#: userprofile/templates/userprofile/profile.html:348
+#: userprofile/templates/userprofile/profile.html:1010
+#, fuzzy
+#| msgid "Quick Appointment"
+msgid "Appointment"
+msgstr "一键快捷预约"
+
+#: scheduler/templates/scheduler/entry.html:187
+#: scheduler/templates/scheduler/entry_subscription.html:90
+#: student/templates/student/my_class.html:504
+#, fuzzy
+#| msgid "Quick Appointment"
+msgid "Cancel Appointment"
+msgstr "一键快捷预约"
+
+#: scheduler/templates/scheduler/entry.html:194
+#: scheduler/templates/scheduler/entry_subscription.html:98
+#: student/templates/student/my_class.html:510
+msgid ""
+"If you decide to cancel the appointment, you can't retrieve the appointment "
+"back. Are you sure you want to cancel it?"
+msgstr ""
+
+#: scheduler/templates/scheduler/entry.html:196
+#: scheduler/templates/scheduler/entry_subscription.html:99
+#: student/templates/student/my_class.html:512
+msgid "Yes, I am sure"
+msgstr ""
+
+#: scheduler/templates/scheduler/entry_subscription.html:12
+#, fuzzy
+#| msgid "description"
+msgid "Subscription"
+msgstr "自我介绍"
+
+#: scheduler/templates/scheduler/entry_tutor.html:22
+msgid "Appointment - Change Request"
+msgstr ""
+
+#: scheduler/templates/scheduler/entry_tutor.html:77
+msgid "Open My Calendar"
+msgstr ""
+
+#: scheduler/templates/scheduler/entry_tutor.html:127
+msgid "Student Info"
+msgstr "学生信息"
+
+#: scheduler/templates/scheduler/event.html:153
+#: scheduler/templates/scheduler/occurrence.html:133
+msgid "booked by me"
+msgstr "我的预约"
+
+#: scheduler/templates/scheduler/event.html:255
+msgid ""
+"If you only want to make one-time appointment, then you do not need manually "
+"confirm before the reservation becomes effective."
+msgstr ""
+
+#: scheduler/templates/scheduler/event.html:302
+msgid "Today"
+msgstr ""
+
+#: scheduler/templates/scheduler/event.html:479
+msgid "From "
+msgstr ""
+
+#: scheduler/templates/scheduler/event.html:542
+#, fuzzy
+#| msgid "Subscription start must more than the Event start date."
+msgid "Subscription start must be later than the Event start date."
+msgstr "预约起始日期必须晚于可供约课时段的起始日期"
+
+#: scheduler/templates/scheduler/event.html:544
+#, fuzzy
+#| msgid "Subscription start must less than the Event end date."
+msgid "Subscription start must be earlier than the Event end date."
+msgstr "预约起始日期必须早于可供约课时段的结束日期"
+
+#: scheduler/templates/scheduler/event.html:546
+#, fuzzy
+#| msgid "Subscription end must more than the Event start date."
+msgid "Subscription end must be later than the Event start date."
+msgstr "预约结束日期必须晚于可供约课时段的起始日期"
+
+#: scheduler/templates/scheduler/occurrence.html:141
+msgid "booked by others"
+msgstr "其他人的预约"
+
+#: scheduler/templates/scheduler/occurrence.html:149
+#, fuzzy
+#| msgid "Quick Appointment"
+msgid "selected appointment"
+msgstr "一键快捷预约"
+
+#: scheduler/templates/scheduler/occurrence.html:157
+msgid "timeslot in the past"
+msgstr ""
+
+#: scheduler/templates/scheduler/occurrence.html:201
+#: scheduler/templates/scheduler/tutors_occurrence.html:183
+#, fuzzy
+#| msgid "Class start"
+msgid "Current class start"
+msgstr "开始时间"
+
+#: scheduler/templates/scheduler/occurrence.html:209
+#: scheduler/templates/scheduler/occurrence.html:225
+#: scheduler/templates/scheduler/occurrence.html:273
+#: scheduler/templates/scheduler/tutors_occurrence.html:191
+#: scheduler/templates/scheduler/tutors_occurrence.html:207
+#: tutor/templates/tutor/info_more.html:96
+#: virtualclass/templates/virtualclass/embedded_student_list.html:22
+#: virtualclass/templates/virtualclass/student_list_more.html:47
+msgid "Time"
+msgstr "时间"
+
+#: scheduler/templates/scheduler/occurrence.html:217
+#: scheduler/templates/scheduler/tutors_occurrence.html:199
+#, fuzzy
+#| msgid "Class start"
+msgid "New class start"
+msgstr "开始时间"
+
+#: scheduler/templates/scheduler/tutors_occurrence.html:140
+#, fuzzy
+#| msgid "Quick Appointment"
+msgid "Current appointment"
+msgstr "一键快捷预约"
+
+#: scheduler/views.py:201
+#, fuzzy
+#| msgid "subscriptions has duplicate."
+msgid "subscription does not exist."
+msgstr "预约纪录重复"
+
+#: scheduler/views.py:209
+msgid "appointment already exists."
+msgstr ""
+
+#: scheduler/views.py:225 scheduler/views.py:307
+msgid "Only the monitor can cancel class appointments"
+msgstr ""
+
+#: scheduler/views.py:317 scheduler/views.py:360
+msgid ""
+"If you need to cancel your appointment it 2 hours before the class, "
+"otherwise you will not be able to cancel."
+msgstr ""
+
+#: scheduler/views.py:331
+#, fuzzy
+#| msgid "the class is finished successfully"
+msgid "the subscription is cancelled successfully."
+msgstr "授课成功结束"
+
+#: scheduler/views.py:334
+msgid "the subscription is not cancelled successfully, please try later."
+msgstr ""
+
+#: scheduler/views.py:354
+#, fuzzy
+#| msgid "event id is null"
+msgid "appointment id is null"
+msgstr "可供约课时段不存在"
+
+#: scheduler/views.py:375
+#, fuzzy
+#| msgid "the class is finished successfully"
+msgid "the appointment is cancelled successfully."
+msgstr "授课成功结束"
+
+#: scheduler/views.py:378
+msgid "the appointment is not cancelled successfully, please try later."
+msgstr ""
+
+#: scheduler/views.py:420
+#, fuzzy
+#| msgid "the evaluation is successfully submitted"
+msgid "event is successfully cancelled."
+msgstr "评价提交成功"
+
+#: scheduler/views.py:449
+msgid "virtual class does not exist, pls check it again."
+msgstr "虚拟课堂不存在，请重新选择"
+
+#: scheduler/views.py:456
+msgid "You can not raise new change request, while there is pending request."
+msgstr "因为目前的变更请求尚未确认／取消，你不能发起新的变更请求"
+
+#: scheduler/views.py:482
+msgid "Change request has been raised successfully."
+msgstr "变更请求成功提交"
+
+#: scheduler/views.py:493
+msgid ""
+"appointment does not exist or the class has been delivered, pls check it "
+"again."
+msgstr ""
+
+#: scheduler/views.py:624
+#, fuzzy
+#| msgid "You have successfully registered"
+msgid "event is successfully created."
+msgstr "您已经成功注册了"
+
+#: scheduler/views.py:627
+#, fuzzy
+#| msgid "You have successfully registered"
+msgid "event is not successfully created."
+msgstr "您已经成功注册了"
+
+#: scheduler/views.py:664
+#, fuzzy
+#| msgid "start date and end date is must"
+msgid "start date and end date is mandatory input"
+msgstr "必须输入起始和结束日期"
+
+#: scheduler/views.py:680 scheduler/views.py:684
+#, fuzzy
+#| msgid "Subscription end must less than the Event end date."
+msgid "Subscription end date is not valid date"
+msgstr "预约结束日期必须早于可供约课时段的结束日期"
+
+#: scheduler/views.py:687
+#, fuzzy
+#| msgid "Subscription start must less than the Event end date."
+msgid "Subscription start date must be later than today"
+msgstr "预约起始日期必须早于可供约课时段的结束日期"
+
+#: scheduler/views.py:705
+msgid "Event does not exist"
+msgstr ""
+
+#: scheduler/views.py:728
+#, fuzzy
+#| msgid "Subscription end must less than the Event end date."
+msgid "Subscription date range mismatches with event date range"
+msgstr "预约结束日期必须早于可供约课时段的结束日期"
+
+#: scheduler/views.py:762
+msgid "Schedule appointment successfully!"
+msgstr ""
+
+#: student/templates/student/my_class.html:5
+#: student/templates/student/my_class.html:31
+#: student/templates/student/my_class.html:270
+#: student/templates/student/small_class.html:472
+#: student/templates/student/small_class.html:500
+msgid "My Class"
+msgstr ""
+
+#: student/templates/student/my_class.html:17
+#: student/templates/student/my_class.html:263
+#: student/templates/student/small_class.html:18
+#: student/templates/student/small_class.html:136
+msgid "LingoAce Small Classes"
+msgstr ""
+
+#: student/templates/student/my_class.html:18
+#: student/templates/student/my_class.html:264
+#: student/templates/student/small_class.html:19
+#: student/templates/student/small_class.html:137
+msgid "Learn Chinese with classmates from all over the world"
+msgstr ""
+
+#: student/templates/student/my_class.html:21
+#: student/templates/student/small_class.html:22
+#, fuzzy
+#| msgid "Student Learning Record"
+msgid "Better learning effect"
+msgstr "学习记录"
+
+#: student/templates/student/my_class.html:22
+#: student/templates/student/small_class.html:23
+msgid "More interesting"
+msgstr ""
+
+#: student/templates/student/my_class.html:23
+#: student/templates/student/small_class.html:24
+msgid "Lower unit price"
+msgstr ""
+
+#: student/templates/student/my_class.html:35
+#: student/templates/student/my_class.html:274
+#: student/templates/student/small_class.html:56
+#: student/templates/student/small_class.html:166
+#: student/templates/student/small_class.html:212
+#: student/templates/student/small_class.html:258
+#: student/templates/student/small_class.html:304
+#: student/templates/student/small_class.html:376
+#: student/templates/student/small_class.html:408
+#, fuzzy
+#| msgid "course"
+msgid "Course："
+msgstr "课程"
+
+#: student/templates/student/my_class.html:37
+#: student/templates/student/my_class.html:277
+#: student/templates/student/small_class.html:58
+#: student/templates/student/small_class.html:169
+#: student/templates/student/small_class.html:215
+#: student/templates/student/small_class.html:261
+#: student/templates/student/small_class.html:307
+#: student/templates/student/small_class.html:378
+#: student/templates/student/small_class.html:408
+#, fuzzy
+#| msgid "Advanced"
+msgid "Advanced Chinese"
+msgstr "高级版"
+
+#: student/templates/student/my_class.html:39
+#: student/templates/student/small_class.html:60
+#: student/templates/student/small_class.html:380
+#, fuzzy
+#| msgid "Internation medium"
+msgid "International Chinese"
+msgstr "国际中级版"
+
+#: student/templates/student/my_class.html:51
+#: student/templates/student/small_class.html:65
+#: student/templates/student/small_class.html:180
+#: student/templates/student/small_class.html:226
+#: student/templates/student/small_class.html:272
+#: student/templates/student/small_class.html:318
+#: student/templates/student/small_class.html:384
+#: student/templates/student/small_class.html:410
+msgid "Planned class time："
+msgstr ""
+
+#: student/templates/student/my_class.html:62
+msgid "Jioned："
+msgstr ""
+
+#: student/templates/student/my_class.html:110
+#: student/templates/student/my_class.html:184
+#: student/templates/student/my_class.html:311
+#: student/templates/student/my_class.html:315
+#: student/templates/student/my_class.html:346
+#: student/templates/student/my_class.html:350
+#: student/templates/student/my_class.html:402
+#: student/templates/student/my_class.html:428
+#: student/templates/student/my_class.html:549
+#: userprofile/templates/userprofile/profile.html:387
+#: userprofile/templates/userprofile/profile.html:485
+#: userprofile/templates/userprofile/profile.html:1889
+#: userprofile/templates/userprofile/tutor_profile.html:70
+msgid "courseware"
+msgstr "课件"
+
+#: student/templates/student/my_class.html:140
+#: student/templates/student/my_class.html:614
+#: student/templates/student/my_class.html:629
+#, fuzzy
+#| msgid "Quick Appointment"
+msgid "More appointments"
+msgstr "一键快捷预约"
+
+#: student/templates/student/my_class.html:147
+#: student/templates/student/my_class.html:375
+#: userprofile/templates/userprofile/profile.html:407
+#, fuzzy
+#| msgid "You do not have any appointment within 5 minutes"
+msgid "You currently do not have any course appointments"
+msgstr "你在当前时段没有课程预约"
+
+#: student/templates/student/my_class.html:196
+#: userprofile/templates/userprofile/profile.html:497
+#: userprofile/templates/userprofile/profile.html:1125
+#, fuzzy
+#| msgid "courseware"
+msgid "extended courseware"
+msgstr "课件"
+
+#: student/templates/student/my_class.html:204
+#: templates/man/virtualclass/teacher_rating.html:110
+#: userprofile/templates/userprofile/profile.html:504
+#: userprofile/templates/userprofile/profile.html:1132
+#: virtualclass/templates/virtualclass/comment_show.html:123
+#: virtualclass/templates/virtualclass/student_list_more.html:117
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:106
+msgid "Teacher comments"
+msgstr ""
+
+#: student/templates/student/my_class.html:209
+#: student/templates/student/my_class.html:406
+#: student/templates/student/my_class.html:432
+#: userprofile/templates/userprofile/history_class.html:169
+#: userprofile/templates/userprofile/profile.html:511
+#: userprofile/templates/userprofile/profile.html:1136
+#: userprofile/templates/userprofile/tutor_profile.html:338
+#: virtualclass/templates/virtualclass/student_list_more.html:104
+msgid "homework"
+msgstr ""
+
+#: student/templates/student/my_class.html:214
+#: student/templates/student/my_class.html:408
+#: student/templates/student/my_class.html:434
+#: userprofile/templates/userprofile/history_class.html:73
+#: userprofile/templates/userprofile/profile.html:518
+#: userprofile/templates/userprofile/profile.html:1145
+#: userprofile/templates/userprofile/tutor_profile.html:221
+#: virtualclass/templates/virtualclass/student_list_more.html:110
+msgid "Record"
+msgstr ""
+
+#: student/templates/student/my_class.html:223
+msgid "open"
+msgstr ""
+
+#: student/templates/student/my_class.html:223
+#: student/templates/student/my_class.html:369
+#: student/templates/student/my_class.html:440
+#: userprofile/templates/userprofile/profile.html:429
+#: userprofile/templates/userprofile/profile.html:443
+#: userprofile/templates/userprofile/profile.html:1044
+msgid "more"
+msgstr ""
+
+#: student/templates/student/my_class.html:230
+#: student/templates/student/my_class.html:445
+#: userprofile/templates/userprofile/profile.html:528
+msgid "You don't currently have any course records"
+msgstr ""
+
+#: student/templates/student/my_class.html:241
+msgid "When other students join in your Small Class"
+msgstr ""
+
+#: student/templates/student/my_class.html:242
+msgid "You can check the class schedule here"
+msgstr ""
+
+#: student/templates/student/my_class.html:251
+#: student/templates/student/my_class.html:453
+msgid "You haven't joined any Small Classes yet."
+msgstr ""
+
+#: student/templates/student/my_class.html:252
+#: student/templates/student/my_class.html:454
+msgid "Go to see which classes are suitable for you."
+msgstr ""
+
+#: student/templates/student/my_class.html:253
+#: student/templates/student/my_class.html:455
+msgid "Find Small Classes"
+msgstr ""
+
+#: student/templates/student/my_class.html:281
+#: student/templates/student/small_class.html:67
+#: student/templates/student/small_class.html:187
+#: student/templates/student/small_class.html:233
+#: student/templates/student/small_class.html:279
+#: student/templates/student/small_class.html:325
+msgid "Classmates："
+msgstr ""
+
+#: student/templates/student/my_class.html:466
+#: student/templates/student/small_class.html:485
+msgid "Download APP"
+msgstr ""
+
+#: student/templates/student/my_class.html:471
+#: student/templates/student/small_class.html:490
+msgid "Scan the QR Code to download Connect APP"
+msgstr ""
+
+#: student/templates/student/my_class.html:473
+#: student/templates/student/small_class.html:492
+msgid "Chat with your classmates and teachers"
+msgstr ""
+
+#: student/templates/student/my_class.html:483
+#: userprofile/templates/userprofile/history_class.html:152
+#: userprofile/templates/userprofile/profile.html:570
+#: userprofile/templates/userprofile/tutor_profile.html:321
+#: virtualclass/templates/virtualclass/student_list_more.html:175
+msgid "Courseware"
+msgstr "课件"
+
+#: student/templates/student/my_class.html:485
+#: userprofile/templates/userprofile/profile.html:571
+#: virtualclass/templates/virtualclass/student_list_more.html:175
+msgid "Print"
+msgstr ""
+
+#: student/templates/student/my_class.html:611
+#, fuzzy
+#| msgid "Quick Appointment"
+msgid "Less appointments"
+msgstr "一键快捷预约"
+
+#: student/templates/student/small_class.html:5
+#: tutor/templates/tutor/tutors.html:145
+msgid "Small Classes"
+msgstr ""
+
+#: student/templates/student/small_class.html:30
+#: student/templates/student/small_class.html:144
+msgid "Tips"
+msgstr ""
+
+#: student/templates/student/small_class.html:32
+#: student/templates/student/small_class.html:437
+msgid "You can launch or join a Small Class after the Trial Class."
+msgstr ""
+
+#: student/templates/student/small_class.html:33
+msgid ""
+"The planned class time is for reference only. The official class time shall "
+"be based on the actual appointment."
+msgstr ""
+
+#: student/templates/student/small_class.html:34
+msgid ""
+"Chat with your classmates on Connect APP to determine the suitable class "
+"time, then the sponsor can make an appointment for you all."
+msgstr ""
+
+#: student/templates/student/small_class.html:39
+#: student/templates/student/small_class.html:41
+#: student/templates/student/small_class.html:146
+#: student/templates/student/small_class.html:370
+msgid "Launch"
+msgstr ""
+
+#: student/templates/student/small_class.html:78
+#: student/templates/student/small_class.html:84
+#: student/templates/student/small_class.html:152
+#: student/templates/student/small_class.html:198
+#: student/templates/student/small_class.html:244
+#: student/templates/student/small_class.html:290
+#: student/templates/student/small_class.html:405
+msgid "Join in"
+msgstr ""
+
+#: student/templates/student/small_class.html:82
+msgid "Joined"
+msgstr ""
+
+#: student/templates/student/small_class.html:124
+#: student/templates/student/small_class.html:358
+msgid ""
+"There is no suitable Small Class for you, you can actively launch a Small "
+"Class and wait other students to join in."
+msgstr ""
+
+#: student/templates/student/small_class.html:157
+#: student/templates/student/small_class.html:203
+#: student/templates/student/small_class.html:249
+#: student/templates/student/small_class.html:295
+#, fuzzy
+#| msgid "Username"
+msgid "sponsorname"
+msgstr "用户名"
+
+#: student/templates/student/small_class.html:173
+#: student/templates/student/small_class.html:219
+#: student/templates/student/small_class.html:265
+#: student/templates/student/small_class.html:311
+msgid "Sponsor's Time Zone："
+msgstr ""
+
+#: student/templates/student/small_class.html:384
+msgid ""
+"Write down your planned class time so that other students can decide whether "
+"to join your class or not. The official class time shall be based on the "
+"actual appointment."
+msgstr ""
+
+#: student/templates/student/small_class.html:386
+msgid ""
+"e.g. Timezone：Australia/Sydney. around 21:00 every Wednesday, around 16:00 "
+"every Saturday."
+msgstr ""
+
+#: student/templates/student/small_class.html:411
+msgid ""
+"You can learn Chinese with your classmates after joining the Small Class. "
+"The official class time shall be based on the actual appointment.You can "
+"also chat with them on Connect APP, scan the QR code to download."
+msgstr ""
+
+#: student/templates/student/small_class.html:455
+msgid "You have no Small Class point now."
+msgstr ""
+
+#: student/templates/student/small_class.html:456
+msgid "You can launch or join a Small Class after top up."
+msgstr ""
+
+#: student/templates/student/small_class.html:478
+msgid "Click on the icon to enter My Class"
+msgstr ""
+
+#: student/templates/student/topup.html:76
+msgid "Validity period: 3 months from the Top Up date"
+msgstr ""
+
+#: student/templates/student/topup.html:87
+msgid "Validity period: 6 months from the Top Up date"
+msgstr ""
+
+#: student/templates/student/topup.html:98
+msgid "Validity period: 12 months from the Top Up date"
+msgstr ""
+
+#: templates/account/base.html:8 templates/cmsbase.html:231
+#: userprofile/templates/userprofile/profile.html:317
+#: userprofile/templates/userprofile/profile.html:965
+#: userprofile/templates/userprofile/tutor_profile.html:280
+msgid "My Account"
+msgstr "我的帐户"
+
+#: templates/account/base.html:12 templates/account/email.html:28
+#: templates/account/email.html:133
+msgid "E-mail Addresses"
+msgstr "电子邮箱地址"
+
+#: templates/account/base.html:15 templates/account/password_change.html:54
+#: templates/account/password_change.html:84
+#: userprofile/templates/userprofile/base.html:65
+#: userprofile/templates/userprofile/base.html:126
+msgid "Change Password"
+msgstr "修改密码"
+
+#: templates/account/base.html:20
+msgid "Connected Accounts"
+msgstr "已关联帐号"
+
+#: templates/account/email.html:30 templates/account/email.html:135
+msgid "The following e-mail addresses are associated with your account:"
+msgstr ""
+
+#: templates/account/email.html:48 templates/account/email.html:152
+msgid "Verified"
+msgstr ""
+
+#: templates/account/email.html:51 templates/account/email.html:154
+msgid "Unverified"
+msgstr ""
+
+#: templates/account/email.html:55 templates/account/email.html:157
+#: webapp/base.py:488
+msgid "Primary"
+msgstr ""
+
+#: templates/account/email.html:62 templates/account/email.html:163
+msgid "Make Primary"
+msgstr ""
+
+#: templates/account/email.html:65 templates/account/email.html:165
+#, fuzzy
+#| msgid "Reservation"
+msgid "Re-send Verification"
+msgstr "预约"
+
+#: templates/account/email.html:68 templates/account/email.html:167
+msgid "Remove"
+msgstr ""
+
+#: templates/account/email.html:75 templates/account/email.html:174
+msgid "Warning:"
+msgstr ""
+
+#: templates/account/email.html:75 templates/account/email.html:174
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+
+#: templates/account/email.html:78 templates/account/email.html:177
+#, fuzzy
+#| msgid "E-mail Addresses"
+msgid "Add E-mail Address"
+msgstr "电子邮箱地址"
+
+#: templates/account/email.html:85 templates/account/email.html:183
+msgid "Add E-mail"
+msgstr ""
+
+#: templates/account/login.html:100
+#, fuzzy
+#| msgid "Already have an PPLingo account?"
+msgid "Don't have an account?"
+msgstr "已经有平台帐号"
+
+#: templates/account/login.html:118 templates/base.html:268
+#: templates/cmsbase.html:326
+msgid "username or email"
+msgstr "用户名或电子邮件"
+
+#: templates/account/login.html:134 templates/base.html:280
+#: templates/cmsbase.html:338
+msgid "Remember Me"
+msgstr "记住我"
+
+#: templates/account/login.html:138 templates/base.html:284
+#: templates/cmsbase.html:341
+#, fuzzy
+#| msgid "Forget password"
+msgid "Forget Password？"
+msgstr "忘记密码"
+
+#: templates/account/login.html:144 templates/base.html:292
+#: templates/cmsbase.html:349
+msgid "login"
+msgstr "登录"
+
+#: templates/account/login.html:156 templates/account/signup.html:170
+msgid "Sign in with Google"
+msgstr "使用Google登录"
+
+#: templates/account/login.html:169 templates/account/signup.html:183
+msgid "Continue with Facebook"
+msgstr "使用Facebook登录"
+
+#: templates/account/logout.html:5 templates/account/logout.html:17
+#: templates/account/logout.html:34 templates/menu_member.html:163
+#, fuzzy
+#| msgid "Signup"
+msgid "Sign Out"
+msgstr "注销"
+
+#: templates/account/logout.html:21
+#, fuzzy
+#| msgid "Are you sure you want to sing out ?"
+msgid "Are you sure you want to sign out ?"
+msgstr "你确定要退出吗？"
+
+#: templates/account/logout.html:31
+msgid "Go Back"
+msgstr "返回"
+
+#: templates/account/password_change.html:7
+#, fuzzy
+#| msgid "Change Password"
+msgid "change password"
+msgstr "修改密码"
+
+#: templates/account/password_change.html:29
+#, fuzzy
+#| msgid "Password"
+msgid "Set Password"
+msgstr "密码"
+
+#: templates/account/password_change.html:33
+msgid "(Please verify the current password first)"
+msgstr "（请先验证当前密码）"
+
+#: templates/account/password_change.html:40
+#: templates/account/password_change.html:47
+#, fuzzy
+#| msgid "The minimum length is 6 characters"
+msgid "The minimum length is 8 characters"
+msgstr "最小长度为6个字符"
+
+#: templates/account/password_reset.html:17
+#, fuzzy
+#| msgid "re-enter password"
+msgid "reset password"
+msgstr "再次输入密码"
+
+#: templates/account/password_reset.html:39
+#: templates/account/password_reset_done.html:6
+#: templates/account/password_reset_done.html:20
+#, fuzzy
+#| msgid "Password"
+msgid "Password Reset"
+msgstr "密码"
+
+#: templates/account/password_reset.html:44
+msgid ""
+"Forget your password? Don't worry, please enter your bound email address and "
+"we will send you an email to help you reset your password."
+msgstr ""
+
+#: templates/account/password_reset.html:49
+#, fuzzy
+#| msgid "Password"
+msgid "Reset Password"
+msgstr "密码"
+
+#: templates/account/password_reset.html:52
+msgid ""
+"If you have any questions about resetting your password, please contact us "
+"in time. Contact number: +65 8618 3670."
+msgstr ""
+
+#: templates/account/password_reset_done.html:26
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: templates/account/signup.html:7 templates/cmsbase.html:237
+msgid "Signup"
+msgstr "注册"
+
+#: templates/account/signup.html:157 templates/cmsbase.html:459
+#, fuzzy
+#| msgid "Connected Accounts"
+msgid "Create Account ->"
+msgstr "已关联帐号"
+
+#: templates/base.html:47
+msgid "Welcome to LingoAce"
+msgstr "欢迎访问LingoAce"
+
+#: templates/base.html:230 templates/cmsbase.html:288
+#, fuzzy
+#| msgid "Go back"
+msgid "Welcome back!"
+msgstr "返回"
+
+#: templates/base.html:258 templates/cmsbase.html:316
+msgid "or, login here:"
+msgstr ""
+
+#: templates/base.html:451
+msgid "Company"
+msgstr ""
+
+#: templates/base.html:456
+msgid "Home"
+msgstr ""
+
+#: templates/base.html:476 templates/cmsbase.html:507
+msgid "About Us"
+msgstr ""
+
+#: templates/base.html:483 templates/cmsbase.html:523
+msgid "Support"
+msgstr ""
+
+#: templates/base.html:488 templates/base.html:516 templates/cmsbase.html:525
+msgid "Contact Us"
+msgstr ""
+
+#: templates/base.html:493 templates/index.html:128
+msgid "How it works"
+msgstr ""
+
+#: templates/base.html:498
+#, fuzzy
+#| msgid "available"
+msgid "24/7 Available"
+msgstr "可预约"
+
+#: templates/base.html:511 templates/menu_member.html:115
+msgid "Help"
+msgstr "帮助"
+
+#: templates/base.html:521 templates/cmsbase.html:526
+msgid "Terms & Conditions"
+msgstr ""
+
+#: templates/base.html:526 templates/cmsbase.html:527
+msgid "Privacy Policy"
+msgstr ""
+
+#: templates/base.html:535
+msgid "Latest News"
+msgstr ""
+
+#: templates/cmsbase.html:214 templates/cmsbase.html:512
+#: templates/menu_anonymous.html:21
+msgid "How We Teach"
+msgstr ""
+
+#: templates/cmsbase.html:218 templates/cmsbase.html:517
+#: templates/menu_anonymous.html:33
+msgid "Curriculum"
+msgstr ""
+
+#: templates/cmsbase.html:222 templates/cmsbase.html:518
+#: templates/menu_anonymous.html:28
+#, fuzzy
+#| msgid "Tutor"
+msgid "Tutors"
+msgstr "教师"
+
+#: templates/cmsbase.html:226 templates/cmsbase.html:519
+#: templates/menu_anonymous.html:39
+msgid "Pricing"
+msgstr ""
+
+#: templates/cmsbase.html:241
+#, fuzzy
+#| msgid "login"
+msgid "Login"
+msgstr "登录"
+
+#: templates/cmsbase.html:248 templates/menu_anonymous.html:62
+#: templates/menu_member.html:175
+msgid "Site Language"
+msgstr ""
+
+#: templates/cmsbase.html:393
+#, fuzzy
+#| msgid "Sign Up with PPLingo"
+msgid "Sign up with PPChinese!"
+msgstr "注册平台帐号"
+
+#: templates/cmsbase.html:419
+msgid "or, create an account with us:"
+msgstr ""
+
+#: templates/cmsbase.html:497
+msgid "Your Journey Starts Today."
+msgstr ""
+
+#: templates/cmsbase.html:501
+msgid "Find out which path you should take"
+msgstr ""
+
+#: templates/cmsbase.html:510
+msgid "Our Story"
+msgstr ""
+
+#: templates/cmsbase.html:520
+msgid "FREE Assessment"
+msgstr ""
+
+#: templates/cmsbase.html:530
+msgid "Download our app"
+msgstr ""
+
+#: templates/cmsbase.html:540
+msgid "2018 PPLingo, Communication Inspires Future"
+msgstr ""
+
+#: templates/index.html:6
+msgid "Homepage of PPLingo"
+msgstr "主页－LingoAce"
+
+#: templates/index.html:36 templates/index.html:51 templates/index.html:70
+#: templates/index.html:319
+msgid "Get a free class trial"
+msgstr ""
+
+#: templates/index.html:84
+msgid "Why choose PPChinese"
+msgstr ""
+
+#: templates/index.html:92
+msgid "Personalized support for your child"
+msgstr ""
+
+#: templates/index.html:93
+msgid ""
+"PPLingo certified teachers will provide one-on-one Chinese tuition service, "
+"with personalized learning experience. A smart adaptive assessment will be "
+"conducted, to recommend appropriate level to you."
+msgstr ""
+
+#: templates/index.html:104
+msgid "Only certified, native language teachers"
+msgstr ""
+
+#: templates/index.html:105
+msgid ""
+"All PPLingo certified tutors are public accredited teachers from public and "
+"private institutions in China. Those tutors have rich teaching experience, "
+"with native tongue."
+msgstr ""
+
+#: templates/index.html:115
+msgid "Proven curriculum, developed by experts"
+msgstr ""
+
+#: templates/index.html:116
+msgid ""
+"PPLingo focuses on Chinese learning for K-12 students, from 6 to 18 years "
+"old. The curriculum adopts the same framework as public school in China. You "
+"may learn more culture in China together with the language."
+msgstr ""
+
+#: templates/index.html:167
+msgid "What people think..."
+msgstr ""
+
+#: templates/index.html:177
+msgid ""
+"Jeremy told us that Yumeng Laoshi is very cute, and he would continue to "
+"learn from her. To us, it is the most important thing to keep him being "
+"interested in Chinese, and he will be there eventually. "
+msgstr ""
+
+#: templates/index.html:183
+msgid "Jeremy's Dad"
+msgstr ""
+
+#: templates/index.html:194
+msgid ""
+"Jack hasn't been through a systematic learning as his friends in China, even "
+"though he is quite good at reading and speaking. Mr. Zou identifies the key "
+"areas to be improved, through 1-on-1 session. We can clearly see the "
+"improvement within 2 months."
+msgstr ""
+
+#: templates/index.html:201
+msgid "Jack's Mom"
+msgstr ""
+
+#: templates/index.html:217
+msgid ""
+"We save the effort of commuting between tuition center and home, after we "
+"choose PPChinese. Emily can even attend the class with iPad, when we are not "
+"at home. Since it is so convenient, we can take more classes, and hope Emily "
+"can catch up with her friends in China."
+msgstr ""
+
+#: templates/index.html:224
+msgid "Emily's Dad"
+msgstr ""
+
+#: templates/index.html:235
+msgid ""
+"Joanna spends much less time on Chinese learning, than her friends in China. "
+"The learning unit structure lets her focus on specific topic and area within "
+"one month, and it is a very effective approach, which is good for Joanna and "
+"students outside of China. Therefore, we can see her tangible improvement as "
+"well."
+msgstr ""
+
+#: templates/index.html:241
+msgid "Joanna's Mom"
+msgstr ""
+
+#: templates/index.html:269
+msgid "Our Service Commitment"
+msgstr ""
+
+#: templates/index.html:279
+msgid "Easy-to-use, live video platform"
+msgstr ""
+
+#: templates/index.html:280
+msgid ""
+"PPLingo adopts rich media communication technologies. You can have face to "
+"face communications anywhere, without installing any client application. "
+"Courseware and tutor’s talk will be presented at same time, to deliver the "
+"best quality of class delivery. You can preview and review the courseware, "
+"as well as interact with tutor during the class. PPLingo’s online course can "
+"save your time commuting to tuition centre, and make sure you have same and "
+"even better progress as tuition centre."
+msgstr ""
+
+#: templates/index.html:294
+msgid "Keep track of your child progress"
+msgstr ""
+
+#: templates/index.html:295
+msgid ""
+"PPlingo keeps the learning record of each lesson, with evaluation from "
+"tutor. And periodic test will be held, to evaluate the progress of learning. "
+"All the records will clearly demonstrate the progress."
+msgstr ""
+
+#: templates/index.html:309
+msgid "No commitment, just pay-as-you-go"
+msgstr ""
+
+#: templates/index.html:310
+msgid ""
+"PPLingo provide easy and hassle-free payment, and we accept most of the "
+"debit card and credit card globally. You can choose pay as lesson, or "
+"prepaid with discount. You can get refund anytime, if you choose prepaid "
+"mode."
+msgstr ""
+
+#: templates/man/base.html:13
+msgid "Management Panel for PPLingo"
+msgstr "管理控制台"
+
+#: templates/man/base.html:94 templates/man/course/preview.html:4
+msgid "Courseware Preview"
+msgstr "课件预览"
+
+#: templates/man/base.html:100 templates/man/course/upload.html:4
+msgid "Courseware Upload"
+msgstr "课件上传"
+
+#: templates/man/base.html:114
+msgid "Exambank"
+msgstr "试题预览"
+
+#: templates/man/base.html:120 templates/man/course/assessment_upload.html:4
+#: templates/man/course/exambank_upload.html:4
+msgid "Exambank Upload"
+msgstr "试题上传"
+
+#: templates/man/base.html:132 templates/man/course/homeworkupload.html:4
+#, fuzzy
+#| msgid "Courseware Upload"
+msgid "Homework Upload"
+msgstr "课件上传"
+
+#: templates/man/base.html:138
+msgid "TeachingPlan Review"
+msgstr ""
+
+#: templates/man/base.html:144
+msgid "TeachingPlan Upload"
+msgstr ""
+
+#: templates/man/base.html:150
+#, fuzzy
+#| msgid "scheduler"
+msgid "Review schedule"
+msgstr "预约"
+
+#: templates/man/base.html:156
+#, fuzzy
+#| msgid "Virtual Class"
+msgid "Monitor Virtualclass"
+msgstr "虚拟课堂"
+
+#: templates/man/base.html:162
+#, fuzzy
+#| msgid "Virtual Class"
+msgid "Convert Virtualclass"
+msgstr "虚拟课堂"
+
+#: templates/man/base.html:168
+msgid "Withdrawal Review"
+msgstr ""
+
+#: templates/man/base.html:174
+#, fuzzy
+#| msgid "whiteboard"
+msgid "Dashboard"
+msgstr "白板"
+
+#: templates/man/base.html:186
+#, fuzzy
+#| msgid "E-mail Addresses"
+msgid "Campaign Address"
+msgstr "电子邮箱地址"
+
+#: templates/man/base.html:192
+msgid "Recharge Records Query"
+msgstr ""
+
+#: templates/man/base.html:198 templates/man/course/bunch_upload.html:4
+msgid "Bunch Upload"
+msgstr ""
+
+#: templates/man/course/assessment_preview.html:6
+#, fuzzy
+#| msgid "Exambank"
+msgid "Exambank Preview"
+msgstr "试题预览"
+
+#: templates/man/course/assessment_preview.html:40
+#: templates/postman/archives.html:17 templates/postman/base_folder.html:25
+#: templates/postman/inbox.html:16 templates/postman/sent.html:20
+#: templates/postman/view.html:16
+msgid "Delete"
+msgstr "删除"
+
+#: templates/man/course/assessment_upload.html:11
+#, fuzzy
+#| msgid "Advanced"
+msgid "Advance exam"
+msgstr "高级版"
+
+#: templates/man/course/assessment_upload.html:17
+#, fuzzy
+#| msgid "Exambank Upload"
+msgid "Advance Exambank Upload"
+msgstr "试题上传"
+
+#: templates/man/course/assessment_upload.html:37
+#, fuzzy
+#| msgid "course"
+msgid "Select course"
+msgstr "课程"
+
+#: templates/man/course/assessment_upload.html:56
+msgid "Select type"
+msgstr ""
+
+#: templates/man/course/assessment_upload.html:60
+#: templates/man/course/assessment_upload.html:62
+msgid "Single Choice"
+msgstr ""
+
+#: templates/man/course/assessment_upload.html:67
+#: templates/man/course/assessment_upload.html:69
+msgid "Multiple Choice"
+msgstr ""
+
+#: templates/man/course/assessment_upload.html:74
+#: templates/man/course/assessment_upload.html:76
+msgid "Drag_Drop"
+msgstr ""
+
+#: templates/man/course/assessment_upload.html:87
+#: templates/man/course/assessment_upload.html:89
+msgid "active"
+msgstr ""
+
+#: templates/man/course/assessment_upload.html:93
+#: templates/man/course/assessment_upload.html:95
+#, fuzzy
+#| msgid "Archive"
+msgid "archived"
+msgstr "归档"
+
+#: templates/man/course/assessment_upload.html:103
+msgid "Stem"
+msgstr ""
+
+#: templates/man/course/assessment_upload.html:124
+msgid "Answer"
+msgstr ""
+
+#: templates/man/course/assessment_upload.html:190
+msgid "Correct Answer"
+msgstr ""
+
+#: templates/man/course/assessment_upload.html:205
+msgid "Degress of difficulty"
+msgstr ""
+
+#: templates/man/course/assessment_upload.html:230
+msgid "Save"
+msgstr ""
+
+#: templates/man/course/assessment_upload.html:234
+msgid "Save and add another"
+msgstr ""
+
+#: templates/man/course/exambank_upload.html:23
+msgid "select course_test to change"
+msgstr "选择年级上传题库"
+
+#: templates/man/course/homework.html:4
+#, fuzzy
+#| msgid "Courseware Preview"
+msgid "Homewok Preview"
+msgstr "课件预览"
+
+#: templates/man/course/homework.html:59 templates/man/course/teachplan.html:59
+msgid "preview"
+msgstr ""
+
+#: templates/man/course/homework.html:62 templates/man/course/teachplan.html:62
+msgid "File URL:"
+msgstr ""
+
+#: templates/man/course/preview.html:58
+msgid "session does not exist or course is not selected"
+msgstr "课时不存在，或者没有选择课程"
+
+#: templates/man/course/preview.html:86
+msgid "courseware does not exist or session is not selected"
+msgstr "课件不存在，或者没有选择课时"
+
+#: templates/man/course/questionnaire.html:5
+#, fuzzy
+#| msgid "Courseware Upload"
+msgid "Questionnaire Upload"
+msgstr "课件上传"
+
+#: templates/man/course/teachplan.html:4
+msgid "TeachPlan Preview"
+msgstr ""
+
+#: templates/man/course/teachplan.html:16
+msgid "Plan"
+msgstr ""
+
+#: templates/man/course/teachplanupload.html:4
+#, fuzzy
+#| msgid "Exambank Upload"
+msgid "Teachplan Upload"
+msgstr "试题上传"
+
+#: templates/man/course/teachplanupload.html:11
+msgid "teachplan"
+msgstr ""
+
+#: templates/man/tutor/management.html:33
+#, fuzzy
+#| msgid "Become a Tutor"
+msgid "Choose Tutor"
+msgstr "申请成为教师"
+
+#: templates/man/tutor/management.html:71
+msgid "Set Tutor Courses"
+msgstr ""
+
+#: templates/man/tutor/management.html:75
+#, fuzzy
+#| msgid "course"
+msgid "All courses"
+msgstr "课程"
+
+#: templates/man/tutor/management.html:86
+#, fuzzy
+#| msgid "course"
+msgid "Tutor courses"
+msgstr "课程"
+
+#: templates/man/tutor/management.html:96
+#: templates/man/tutor/management.html:107
+#, fuzzy
+#| msgid "current page"
+msgid "Teachable Class Type"
+msgstr "当前页"
+
+#: templates/man/virtualclass/convert_list.html:11
+#: templates/man/virtualclass/list.html:11
+#, fuzzy
+#| msgid "current page"
+msgid "Current Classes"
+msgstr "当前页"
+
+#: templates/man/virtualclass/convert_list.html:11
+#: templates/man/virtualclass/list.html:11
+#, fuzzy
+#| msgid "select course_test to change"
+msgid "Pls select current class to attend:"
+msgstr "选择年级上传题库"
+
+#: templates/man/virtualclass/convert_list.html:28
+#: templates/man/virtualclass/list.html:28
+msgid "There is not any class currently."
+msgstr ""
+
+#: templates/man/virtualclass/convert_list.html:36
+#: templates/man/virtualclass/list.html:36
+#, fuzzy
+#| msgid "Class end"
+msgid "Classes in 3 days"
+msgstr "结束时间"
+
+#: templates/man/virtualclass/monitor.html:6 templates/menu_member.html:91
+#: virtualclass/templates/virtualclass/classroom.html:6
+#: virtualclass/templates/virtualclass/room.html:6
+msgid "Classroom"
+msgstr "教室"
+
+#: templates/man/virtualclass/monitor.html:26
+#: virtualclass/templates/virtualclass/classroom.html:35
+#: virtualclass/templates/virtualclass/classroom_list.html:111
+#: virtualclass/templates/virtualclass/classroom_list.html:197
+#: virtualclass/templates/virtualclass/entry.html:53
+#: virtualclass/templates/virtualclass/entry.html:63
+#: virtualclass/templates/virtualclass/entry.html:83
+#: virtualclass/templates/virtualclass/entry.html:92
+#: virtualclass/templates/virtualclass/room.html:23
+msgid "Go back"
+msgstr "返回"
+
+#: templates/man/virtualclass/monitor.html:43
+#: virtualclass/templates/virtualclass/classroom.html:52
+#: virtualclass/templates/virtualclass/room.html:40
+msgid "Finish"
+msgstr "授课完成"
+
+#: templates/man/virtualclass/monitor.html:52
+#: virtualclass/templates/virtualclass/classroom.html:61
+#: virtualclass/templates/virtualclass/room.html:49
+msgid "Reconnect"
+msgstr "重新连接视频"
+
+#: templates/man/virtualclass/monitor.html:60
+#: templates/man/virtualclass/monitor.html:73
+#: virtualclass/templates/virtualclass/room.html:57
+#: virtualclass/templates/virtualclass/room.html:70
+msgid "Video"
+msgstr "视频"
+
+#: templates/man/virtualclass/monitor.html:86
+#: virtualclass/templates/virtualclass/classroom.html:82
+#: virtualclass/templates/virtualclass/room.html:84
+msgid "chat"
+msgstr "文字聊天"
+
+#: templates/man/virtualclass/monitor.html:93
+#: virtualclass/templates/virtualclass/classroom.html:116
+#: virtualclass/templates/virtualclass/room.html:91
+msgid "whiteboard"
+msgstr "白板"
+
+#: templates/man/virtualclass/monitor.html:120
+#: virtualclass/templates/virtualclass/classroom.html:121
+#: virtualclass/templates/virtualclass/room.html:118
+#, fuzzy
+#| msgid "Session"
+msgid "Last Session"
+msgstr "课时"
+
+#: templates/man/virtualclass/monitor.html:122
+#: virtualclass/templates/virtualclass/classroom.html:123
+#: virtualclass/templates/virtualclass/room.html:120
+#, fuzzy
+#| msgid "Session"
+msgid "Current Session"
+msgstr "课时"
+
+#: templates/man/virtualclass/monitor.html:126
+#: virtualclass/templates/virtualclass/classroom.html:128
+#: virtualclass/templates/virtualclass/room.html:124
+#, fuzzy
+#| msgid "Double Click the courseware to activate/deactivate pointer."
+msgid "Double Click to activate/deactivate pointer."
+msgstr "双击鼠标，可以激活／关闭电子教鞭"
+
+#: templates/man/virtualclass/monitor.html:159
+#: templates/man/virtualclass/teacher_rating.html:130
+#: virtualclass/templates/virtualclass/classroom.html:253
+#: virtualclass/templates/virtualclass/comment_show.html:152
+#: virtualclass/templates/virtualclass/comment_show.html:174
+#: virtualclass/templates/virtualclass/room.html:157
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:126
+msgid "Practice Consistency and Quality"
+msgstr "知识掌握程度"
+
+#: templates/man/virtualclass/monitor.html:165
+#: templates/man/virtualclass/teacher_rating.html:136
+#: virtualclass/templates/virtualclass/classroom.html:265
+#: virtualclass/templates/virtualclass/comment_show.html:159
+#: virtualclass/templates/virtualclass/comment_show.html:179
+#: virtualclass/templates/virtualclass/room.html:163
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:132
+msgid "Skills and Progress"
+msgstr "进步程度"
+
+#: templates/man/virtualclass/monitor.html:171
+#: templates/man/virtualclass/teacher_rating.html:142
+#: virtualclass/templates/virtualclass/classroom.html:277
+#: virtualclass/templates/virtualclass/comment_show.html:166
+#: virtualclass/templates/virtualclass/comment_show.html:184
+#: virtualclass/templates/virtualclass/room.html:169
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:138
+msgid "Attitude and Responsibility"
+msgstr "学习态度"
+
+#: templates/man/virtualclass/monitor.html:177
+#: templates/man/virtualclass/monitor.html:242
+#: templates/man/virtualclass/student_rating.html:91
+#: templates/man/virtualclass/teacher_rating.html:148
+#: virtualclass/templates/virtualclass/classroom.html:289
+#: virtualclass/templates/virtualclass/classroom.html:369
+#: virtualclass/templates/virtualclass/comment_show.html:190
+#: virtualclass/templates/virtualclass/comment_show.html:223
+#: virtualclass/templates/virtualclass/room.html:175
+#: virtualclass/templates/virtualclass/room.html:240
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:144
+msgid "Comments"
+msgstr "评语"
+
+#: templates/man/virtualclass/monitor.html:179
+#: templates/man/virtualclass/monitor.html:244
+#: templates/man/virtualclass/student_rating.html:93
+#: templates/man/virtualclass/teacher_rating.html:150
+#: virtualclass/templates/virtualclass/classroom.html:291
+#: virtualclass/templates/virtualclass/classroom.html:370
+#: virtualclass/templates/virtualclass/room.html:177
+#: virtualclass/templates/virtualclass/room.html:242
+#: virtualclass/templates/virtualclass/teacher_reclaim.html:146
+msgid "pls input your comments"
+msgstr "请输入你的评语"
+
+#: templates/man/virtualclass/monitor.html:224
+#: templates/man/virtualclass/student_rating.html:76
+#: tutor/templates/tutor/info_more.html:53
+#: virtualclass/templates/virtualclass/classroom.html:336
+#: virtualclass/templates/virtualclass/comment_show.html:208
+#: virtualclass/templates/virtualclass/room.html:222
+msgid "Professional Knowledge"
+msgstr "专业知识"
+
+#: templates/man/virtualclass/monitor.html:230
+#: templates/man/virtualclass/student_rating.html:81
+#: tutor/templates/tutor/info_more.html:65
+#: virtualclass/templates/virtualclass/classroom.html:347
+#: virtualclass/templates/virtualclass/comment_show.html:213
+#: virtualclass/templates/virtualclass/room.html:228
+msgid "Instructional Delivery"
+msgstr "教授方法"
+
+#: templates/man/virtualclass/monitor.html:236
+#: templates/man/virtualclass/student_rating.html:86
+#: tutor/templates/tutor/info_more.html:69
+#: virtualclass/templates/virtualclass/classroom.html:358
+#: virtualclass/templates/virtualclass/comment_show.html:218
+#: virtualclass/templates/virtualclass/room.html:234
+msgid "Learning Environment"
+msgstr "营造积极学习环境"
+
+#: templates/man/virtualclass/monitor.html:316
+#: virtualclass/templates/virtualclass/room.html:312
+msgid "the client does not support webrtc"
+msgstr "该浏览器不支持视频通话，请用火狐或者谷歌浏览器"
+
+#: templates/man/virtualclass/student_rating.html:62
+#, fuzzy
+#| msgid "Student Info"
+msgid "Student`s Feedback"
+msgstr "学生信息"
+
+#: templates/man/virtualclass/student_rating.html:70
+#: virtualclass/templates/virtualclass/comment_show.html:135
+msgid "teacher"
+msgstr ""
+
+#: templates/menu_anonymous.html:52
+msgid "Log In"
+msgstr "登录"
+
+#: templates/menu_member.html:99
+#: userprofile/templates/userprofile/profile.html:432
+msgid "Schedule"
+msgstr "预约"
+
+#: templates/menu_member.html:107
+msgid "Top Up"
+msgstr ""
+
+#: templates/menu_member.html:130
+msgid "MyAccount"
+msgstr "我的帐户"
+
+#: templates/menu_member.html:150 userprofile/templates/userprofile/base.html:3
+#: userprofile/templates/userprofile/base.html:25
+#: userprofile/templates/userprofile/base.html:104
+msgid "Edit Profile"
+msgstr ""
+
+#: templates/menu_member.html:207
+#, fuzzy
+#| msgid "Schedule"
+msgid "Teaching Schedule"
+msgstr "预约"
+
+#: templates/postman/archives.html:14
+msgid "Archived Messages"
+msgstr "已归档消息"
+
+#: templates/postman/archives.html:27 templates/postman/base_folder.html:33
+#: templates/postman/inbox.html:30 templates/postman/trash.html:26
+msgid "Sender"
+msgstr "发件人"
+
+#: templates/postman/archives.html:28 templates/postman/base_folder.html:34
+#: templates/postman/sent.html:34 templates/postman/trash.html:27
+msgid "Recipient"
+msgstr "收件人"
+
+#: templates/postman/archives.html:29 templates/postman/base_folder.html:35
+#: templates/postman/inbox.html:31 templates/postman/sent.html:35
+#: templates/postman/trash.html:28 templates/postman/write.html:21
+msgid "Subject"
+msgstr "主题"
+
+#: templates/postman/archives.html:45 templates/postman/base_folder.html:51
+#: templates/postman/inbox.html:42 templates/postman/sent.html:48
+#: templates/postman/trash.html:44
+msgid "g:i A,M j,n/j/y"
+msgstr ""
+
+#: templates/postman/archives.html:55
+msgid ""
+"Messages in this folder will never be removed. You can use this folder for "
+"long term storage."
+msgstr ""
+
+#: templates/postman/base.html:3
+msgid "Messaging"
+msgstr "消息"
+
+#: templates/postman/base.html:27
+msgid "Compose"
+msgstr "写消息"
+
+#: templates/postman/base.html:33
+msgid "Inbox"
+msgstr "收件箱"
+
+#: templates/postman/base.html:39 templates/postman/sent.html:36
+msgid "Sent"
+msgstr "已发送消息"
+
+#: templates/postman/base.html:45
+msgid "Archives"
+msgstr "归档"
+
+#: templates/postman/base.html:51
+msgid "Trash"
+msgstr "垃圾箱"
+
+#: templates/postman/base_folder.html:16
+msgid "Sorry, this page number is invalid."
+msgstr "对不起，页码无效"
+
+#: templates/postman/base_folder.html:20
+msgid "by conversation"
+msgstr "按照会话显示"
+
+#: templates/postman/base_folder.html:21
+msgid "by message"
+msgstr "按照消息显示"
+
+#: templates/postman/base_folder.html:26 templates/postman/inbox.html:19
+#: templates/postman/sent.html:23 templates/postman/view.html:17
+msgid "Archive"
+msgstr "归档"
+
+#: templates/postman/base_folder.html:27 templates/postman/trash.html:16
+msgid "Undelete"
+msgstr "恢复"
+
+#: templates/postman/base_folder.html:58
+msgid "No messages."
+msgstr "无消息"
+
+#: templates/postman/inbox.html:11
+msgid "Received Messages"
+msgstr "已接收消息"
+
+#: templates/postman/inbox.html:32
+msgid "Received"
+msgstr "已接收"
+
+#: templates/postman/sent.html:16
+msgid "Sent Messages"
+msgstr "已发送消息"
+
+#: templates/postman/trash.html:13
+msgid "Deleted Messages"
+msgstr "已删除消息"
+
+#: templates/postman/trash.html:54
+msgid ""
+"Messages in this folder can be removed from time to time. For long term "
+"storage, use instead the archive folder."
+msgstr ""
+
+#: templates/postman/view.html:28
+msgid "Sender:"
+msgstr "发件人："
+
+#: templates/postman/view.html:29
+msgid "Recipient:"
+msgstr "收件人："
+
+#: templates/postman/view.html:30
+msgid "Date:"
+msgstr "日期："
+
+#: templates/postman/view.html:31
+msgid "Subject:"
+msgstr "主题："
+
+#: templates/postman/view.html:41
+msgid "Reply"
+msgstr "回复"
+
+#: templates/postman/write.html:9
+msgid "Write"
+msgstr "写消息"
+
+#: templates/postman/write.html:16
+#, fuzzy
+#| msgid "Recipient"
+msgid "Recipients"
+msgstr "收件人"
+
+#: templates/postman/write.html:26
+msgid "Write some nice stuff or nothing..."
+msgstr ""
+
+#: templates/postman/write.html:31
+msgid "Send"
+msgstr "发送"
+
+#: templates/registration/registration_form.html:3
+msgid "Register for an account"
+msgstr "注册新帐户"
+
+#: templates/registration/registration_form.html:39
+msgid "Register"
+msgstr ""
+
+#: tutor/api_v2_views.py:57
+msgid "weekdays format error"
+msgstr ""
+
+#: tutor/api_v2_views.py:63
+msgid "timeperiods format error"
+msgstr ""
+
+#: tutor/api_v2_views.py:86
+msgid "exclusion format error"
+msgstr ""
+
+#: tutor/api_v2_views.py:103
+msgid "Object does not exist"
+msgstr ""
+
+#: tutor/forms.py:11
+#, fuzzy
+#| msgid "start_of_teaching"
+msgid "Start_of_teaching"
+msgstr "初次任教日期"
+
+#: tutor/models.py:254
+#, fuzzy
+#| msgid "start_of_teaching"
+msgid "start of teaching"
+msgstr "初次任教日期"
+
+#: tutor/models.py:256 userprofile/models.py:79
+msgid "nationality"
+msgstr "国籍"
+
+#: tutor/models.py:264
+#, fuzzy
+#| msgid "description"
+msgid "description_en"
+msgstr "自我介绍"
+
+#: tutor/models.py:266
+#, fuzzy
+#| msgid "description"
+msgid "description_zhhans"
+msgstr "自我介绍"
+
+#: tutor/templates/tutor/all_tutors.html:27
+#, fuzzy
+#| msgid "available"
+msgid "Availability"
+msgstr "可预约"
+
+#: tutor/templates/tutor/all_tutors.html:31
+#: tutor/templates/tutor/tutors.html:156
+msgid "day of the week"
+msgstr ""
+
+#: tutor/templates/tutor/all_tutors.html:53
+#: tutor/templates/tutor/tutors.html:178
+msgid "Select the time"
+msgstr ""
+
+#: tutor/templates/tutor/all_tutors.html:57
+#: tutor/templates/tutor/tutors.html:182
+msgid "06:00~12:00"
+msgstr ""
+
+#: tutor/templates/tutor/all_tutors.html:59
+#: tutor/templates/tutor/tutors.html:184
+msgid "12:00~18:00"
+msgstr ""
+
+#: tutor/templates/tutor/all_tutors.html:61
+#: tutor/templates/tutor/tutors.html:186
+msgid "18:00~24:00"
+msgstr ""
+
+#: tutor/templates/tutor/all_tutors.html:102
+#: tutor/templates/tutor/embedded_info.html:48
+#: tutor/templates/tutor/info_more.html:49
+#: tutor/templates/tutor/tutors.html:219 tutor/templates/tutor/tutors.html:281
+#: tutor/templates/tutor/tutors.html:429
+msgid "Years of teaching"
+msgstr "教学经验"
+
+#: tutor/templates/tutor/all_tutors.html:135
+#: tutor/templates/tutor/embedded_info.html:82
+#: tutor/templates/tutor/info_more.html:84
+#: tutor/templates/tutor/tutors.html:243 tutor/templates/tutor/tutors.html:305
+#: tutor/templates/tutor/tutors.html:446
+msgid "go to scheduler"
+msgstr "预约"
+
+#: tutor/templates/tutor/embedded_info.html:15
+#, fuzzy
+#| msgid "Tutor Info"
+msgid "Tutor Information"
+msgstr "教师信息"
+
+#: tutor/templates/tutor/embedded_info.html:65
+msgid "Number of Classes"
+msgstr ""
+
+#: tutor/templates/tutor/info_more.html:73
+msgid "On-time record"
+msgstr "出勤率"
+
+#: tutor/templates/tutor/info_more.html:98
+#: virtualclass/templates/virtualclass/embedded_student_list.html:24
+#: virtualclass/templates/virtualclass/student_list_more.html:49
+msgid "Session"
+msgstr "课时"
+
+#: tutor/templates/tutor/info_more.html:99
+#: virtualclass/templates/virtualclass/embedded_student_list.html:25
+#: virtualclass/templates/virtualclass/student_list_more.html:50
+msgid "Quality"
+msgstr "知识掌握程度"
+
+#: tutor/templates/tutor/info_more.html:100
+#: virtualclass/templates/virtualclass/embedded_student_list.html:26
+#: virtualclass/templates/virtualclass/student_list_more.html:51
+msgid "Progress"
+msgstr "进步程度"
+
+#: tutor/templates/tutor/info_more.html:101
+#: virtualclass/templates/virtualclass/embedded_student_list.html:27
+#: virtualclass/templates/virtualclass/student_list_more.html:52
+msgid "Attitude"
+msgstr "学习态度"
+
+#: tutor/templates/tutor/intro.html:39
+msgid "How to apply"
+msgstr "如何申请"
+
+#: tutor/templates/tutor/intro.html:43
+msgid "Simple Tutorial"
+msgstr "快速向导"
+
+#: tutor/templates/tutor/intro.html:45
+msgid "Step 1: Sign up a PPLINGO account. "
+msgstr ""
+
+#: tutor/templates/tutor/intro.html:46
+msgid "Step 2: Apply to become a tutor, and wait for the approval. "
+msgstr ""
+
+#: tutor/templates/tutor/intro.html:47
+msgid ""
+"Step 3: Once your application is reviewed and pre-approved, you can join "
+"online and/or classroom training. "
+msgstr ""
+
+#: tutor/templates/tutor/intro.html:48
+msgid ""
+"Step 4: If you get the final approval, you may start to publish your "
+"available time slot to teach. "
+msgstr ""
+
+#: tutor/templates/tutor/intro.html:60
+msgid ""
+"By proceeding, you agree to the PPLINGO terms and conditions (“Terms”) for "
+"submitting an idea, concept or suggestion (“Information”) "
+msgstr ""
+
+#: tutor/templates/tutor/intro.html:65
+msgid "Apply now!"
+msgstr ""
+
+#: tutor/templates/tutor/register.html:13
+#, fuzzy
+#| msgid "Tutor Info"
+msgid "tutor infor"
+msgstr "教师信息"
+
+#: tutor/templates/tutor/register.html:25
+msgid "apply"
+msgstr "申请"
+
+#: tutor/templates/tutor/tutors.html:146 tutor/templates/tutor/tutors.html:149
+msgid "1-on-1"
+msgstr ""
+
+#: tutor/templates/tutor/tutors.html:193
+msgid "My Frequently Used Tutors"
+msgstr ""
+
+#: tutor/templates/tutor/tutors.html:234 tutor/templates/tutor/tutors.html:238
+#: tutor/templates/tutor/tutors.html:296 tutor/templates/tutor/tutors.html:300
+#: tutor/templates/tutor/tutors.html:440
+#, fuzzy
+#| msgid "More"
+msgid "Read More"
+msgstr "更多"
+
+#: tutor/templates/tutor/tutors.html:254
+msgid "Other Recommended Teachers"
+msgstr ""
+
+#: tutor/views.py:166
+#, fuzzy
+#| msgid "Student Learning Record"
+msgid "Student can not be a tutor!"
+msgstr "学习记录"
+
+#: tutor/views.py:178
+msgid "You have successfully registered"
+msgstr "您已经成功注册了"
+
+#: tutor/views.py:182
+msgid "Input data is incorrect, please try again"
+msgstr ""
+
+#: userprofile/forms.py:27
+msgid "Birthdate"
+msgstr ""
+
+#: userprofile/models.py:77
+msgid "PhoneNumber"
+msgstr ""
+
+#: userprofile/models.py:82
+#, fuzzy
+#| msgid "current page"
+msgid "currency"
+msgstr "当前页"
+
+#: userprofile/templates/userprofile/base.html:38
+#: userprofile/templates/userprofile/base.html:111
+msgid "Upload Photo"
+msgstr ""
+
+#: userprofile/templates/userprofile/edit_photo.html:31
+msgid "(Please ensure that the uploaded image size is within 2M)"
+msgstr ""
+
+#: userprofile/templates/userprofile/edit_photo.html:32
+msgid ""
+"Note: Positive, clear facial photos will help teachers and students better "
+"understand each other. Please upload a clear photo of your face."
+msgstr ""
+
+#: userprofile/templates/userprofile/edit_photo.html:39
+msgid "UPLOAD"
+msgstr ""
+
+#: userprofile/templates/userprofile/edit_photo.html:76
+msgid ""
+"Clear frontal face photos are an important way for tutors and students to "
+"learn about each other.  Please upload a photo that clearly shows your face."
+msgstr ""
+
+#: userprofile/templates/userprofile/edit_success.html:18
+msgid "Edit Success!"
+msgstr ""
+
+#: userprofile/templates/userprofile/edit_success.html:21
+#, fuzzy
+#| msgid "My account"
+msgid "Back to account"
+msgstr "我的帐户"
+
+#: userprofile/templates/userprofile/history_class.html:5
+msgid "History classes"
+msgstr ""
+
+#: userprofile/templates/userprofile/history_class.html:93
+#: userprofile/templates/userprofile/tutor_profile.html:241
+#: virtualclass/templates/virtualclass/comment_show.html:125
+#, fuzzy
+#| msgid "Student Info"
+msgid "Students` Feedback"
+msgstr "学生信息"
+
+#: userprofile/templates/userprofile/history_class.html:135
+#: userprofile/templates/userprofile/tutor_profile.html:304
+#: virtualclass/templates/virtualclass/student_list_more.html:32
+msgid "Student Learning Record"
+msgstr "学习记录"
+
+#: userprofile/templates/userprofile/history_class.html:186
+#: userprofile/templates/userprofile/tutor_profile.html:355
+msgid "Teach Plan"
+msgstr ""
+
+#: userprofile/templates/userprofile/history_class.html:208
+#: userprofile/templates/userprofile/profile.html:594
+#: userprofile/templates/userprofile/tutor_profile.html:377
+#: virtualclass/templates/virtualclass/student_list_more.html:220
+msgid "Your Record will be ready in 24h"
+msgstr ""
+
+#: userprofile/templates/userprofile/nominate_referrer.html:42
+msgid ""
+"Hints: You can't change referrer, once you nominate him/her. Please double "
+"check, before you submit."
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:304
+msgid "Let your child take an assessment test before the class"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:304
+msgid "FREE assessment test"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:329
+#: userprofile/templates/userprofile/profile.html:975
+msgid "Attended class"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:331
+#: userprofile/templates/userprofile/profile.html:980
+#: userprofile/templates/userprofile/tutor_profile.html:286
+#, fuzzy
+#| msgid "account setting"
+msgid "Account credit"
+msgstr "帐户设置"
+
+#: userprofile/templates/userprofile/profile.html:334
+#: userprofile/templates/userprofile/profile.html:986
+msgid "Smallclass credit"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:336
+#: userprofile/templates/userprofile/profile.html:988
+msgid "Limited"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:996
+msgid "You next class will start in 5 minutes."
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:999
+#, fuzzy
+#| msgid "Classroom"
+msgid "Go to Classroom"
+msgstr "教室"
+
+#: userprofile/templates/userprofile/profile.html:1053
+#, fuzzy
+#| msgid "You do not have any appointment within 5 minutes"
+msgid "You don't have any appointment yet."
+msgstr "你在当前时段没有课程预约"
+
+#: userprofile/templates/userprofile/profile.html:1179
+msgid "Last month course statistics"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1185
+#, fuzzy
+#| msgid "Statistics"
+msgid "Stats"
+msgstr "统计"
+
+#: userprofile/templates/userprofile/profile.html:1508
+msgid "What’s next"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1518
+msgid "Take a free trial class before long term commitment"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1527
+msgid "Assessment test"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1529
+msgid "Let us know what your level is now"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1539
+msgid "Appointment in advance"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1541
+msgid "We can only accommodate classes booked 1 day in advance"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1551
+msgid "Learn Chinese in the right way"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1553
+msgid "Come back on time for the most engaging Chinese class online"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1563
+msgid "Devices"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1570
+msgid "Desktop or laptop"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1572
+msgid "Make sure you have working camera and microphone"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1578
+msgid "Browsers"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1580
+msgid "Please use Chrome for online class"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1587
+msgid "iPad APP"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1589
+msgid "Download LingoAce from APP Store"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1596
+msgid "iPhone APP"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1598
+msgid "Appointment making and tutor communication only for IOS"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1608
+msgid "We are ready to help"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1614
+msgid "Scan and add WeChat Contact"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1615
+msgid "Customer service online time:"
+msgstr ""
+
+#: userprofile/templates/userprofile/profile.html:1754
+msgid "watch"
+msgstr ""
+
+#: userprofile/templates/userprofile/tutor_profile.html:34
+msgid "Teaching Scheduling"
+msgstr ""
+
+#: userprofile/templates/userprofile/tutor_profile.html:62
+msgid "Resources"
+msgstr ""
+
+#: userprofile/templates/userprofile/tutor_profile.html:101
+msgid "Teach plan"
+msgstr ""
+
+#: userprofile/templates/userprofile/tutor_profile.html:129
+msgid "Tutor's Toolbox"
+msgstr ""
+
+#: userprofile/templates/userprofile/tutor_profile.html:134
+msgid "online training"
+msgstr ""
+
+#: userprofile/templates/userprofile/tutor_profile.html:138
+msgid "change student grade"
+msgstr ""
+
+#: userprofile/templates/userprofile/tutor_profile.html:142
+#, fuzzy
+#| msgid "the class is finished successfully"
+msgid "reclaim unfinished class"
+msgstr "授课成功结束"
+
+#: userprofile/templates/userprofile/tutor_profile.html:146
+msgid "withdraw request"
+msgstr ""
+
+#: userprofile/templates/userprofile/tutor_profile.html:283
+#, fuzzy
+#| msgid "current page"
+msgid "Teaching Classes"
+msgstr "当前页"
+
+#: userprofile/templates/userprofile/userinfo_detail.html:189
+msgid "Please enter the correct format of date! (2018-01-01)"
+msgstr ""
+
+#: userprofile/views.py:217
+msgid "Your account balance is insufficient, please top up."
+msgstr ""
+
+#: virtualclass/templates/virtualclass/base.html:3
+#, fuzzy
+#| msgid "Virtual Class"
+msgid "virtualclass"
+msgstr "虚拟课堂"
+
+#: virtualclass/templates/virtualclass/class_list.html:10
+msgid "Reclaim classes"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/class_list.html:21
+msgid "reclaim"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom.html:138
+#: virtualclass/templates/virtualclass/classroom.html:169
+msgid "Wipe my own drawing"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom.html:152
+#: virtualclass/templates/virtualclass/classroom.html:172
+msgid "Select color for drawing"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom.html:154
+msgid "black"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom.html:155
+#, fuzzy
+#| msgid "Wed"
+msgid "red"
+msgstr "星期三"
+
+#: virtualclass/templates/virtualclass/classroom.html:174
+msgid "blue"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom.html:553
+msgid "Your browser is not supported here"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom.html:554
+msgid "You are currently using an unsupported browser"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom.html:555
+msgid "Please install one of the browsers below to proceed"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom_list.html:31
+#: virtualclass/templates/virtualclass/classroom_list.html:123
+msgid "Select classes"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom_list.html:44
+#: virtualclass/templates/virtualclass/classroom_list.html:80
+#: virtualclass/templates/virtualclass/classroom_list.html:132
+msgid "End Class"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom_list.html:91
+#: virtualclass/templates/virtualclass/classroom_list.html:178
+#: virtualclass/templates/virtualclass/entry.html:59
+#: virtualclass/templates/virtualclass/entry.html:88
+msgid "Check online"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/classroom_list.html:100
+#: virtualclass/templates/virtualclass/classroom_list.html:105
+#: virtualclass/templates/virtualclass/classroom_list.html:186
+#: virtualclass/templates/virtualclass/classroom_list.html:191
+msgid "start class"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/comment_show.html:198
+msgid "No comment yet"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/comment_show.html:231
+msgid "No feedback yet"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/embedded_student_list.html:18
+msgid "Name"
+msgstr "姓名"
+
+#: virtualclass/templates/virtualclass/embedded_student_list.html:45
+msgid "More"
+msgstr "更多"
+
+#: virtualclass/templates/virtualclass/entry.html:39
+#: virtualclass/templates/virtualclass/entry.html:76
+#, fuzzy
+#| msgid "Sender"
+msgid "Reminder"
+msgstr "发件人"
+
+#: virtualclass/templates/virtualclass/entry_trial.html:10
+msgid "Immediate Trial Class"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/entry_trial.html:19
+msgid "Access code: "
+msgstr ""
+
+#: virtualclass/templates/virtualclass/entry_trial.html:27
+msgid "Kind Remind:"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/entry_trial.html:29
+msgid "1. The immediate trial will be available from 10am to 5pm (GMT+8)"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/entry_trial.html:31
+msgid ""
+"2. Please contact our course consultant to get an access code, before "
+"entering the immediate free trial"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/entry_trial.html:33
+msgid ""
+"3. The purpose of the immediate trial is to demonstrate the course delivery "
+"process, in which the courseware may be different from final one."
+msgstr ""
+
+#: virtualclass/templates/virtualclass/onlinecheck.html:6
+msgid "Online Check"
+msgstr ""
+
+#: virtualclass/templates/virtualclass/student_list_more.html:5
+#, fuzzy
+#| msgid "Student Learning Record"
+msgid "Student learning records"
+msgstr "学习记录"
+
+#: virtualclass/templates/virtualclass/student_list_more.html:35
+msgid "Period"
+msgstr "时间范围"
+
+#: virtualclass/templates/virtualclass/student_list_more.html:37
+msgid "3 Months"
+msgstr "3个月"
+
+#: virtualclass/templates/virtualclass/student_list_more.html:38
+msgid "6 Months"
+msgstr "6个月"
+
+#: virtualclass/templates/virtualclass/student_list_more.html:39
+msgid "All"
+msgstr "全部"
+
+#: virtualclass/templates/virtualclass/student_list_more.html:98
+#, fuzzy
+#| msgid "Courseware"
+msgid "Extended Courseware"
+msgstr "课件"
+
+#: virtualclass/views.py:96
+msgid "the class is finished successfully"
+msgstr "授课成功结束"
+
+#: virtualclass/views.py:98 virtualclass/views.py:133 virtualclass/views.py:246
+#: virtualclass/views.py:342 virtualclass/views.py:591
+msgid "You do not have any appointment within 5 minutes"
+msgstr "你在当前时段没有课程预约"
+
+#: virtualclass/views.py:99 virtualclass/views.py:134 virtualclass/views.py:247
+#: virtualclass/views.py:343 virtualclass/views.py:592
+msgid "user data is not correct"
+msgstr "用户数据不正确，请确认以后重试"
+
+#: virtualclass/views.py:345
+msgid "Please verify the access code with our course consultant"
+msgstr ""
+
+#: virtualclass/views.py:696
+msgid "The class is over."
+msgstr ""
+
+#: virtualclass/views.py:700
+msgid ""
+"You can not reclaim this class, please double check whether you deliver it."
+msgstr ""
+
+#: virtualclass/views.py:713
+msgid "The rating must be integer."
+msgstr ""
+
+#: virtualclass/views.py:822
+msgid "the evaluation is successfully submitted"
+msgstr "评价提交成功"
+
+#: virtualclass/views.py:824
+msgid "the required evaluation data is missing"
+msgstr ""
+
+#: virtualclass/views.py:1091 virtualclass/views.py:1095
+msgid ""
+"You can not finish this class, please double check whether you deliver it."
+msgstr ""
+
+#: virtualclass/views.py:1138
+msgid "you have new record"
+msgstr ""
+
+#: webapp/base.py:283
+msgid "Chinese"
+msgstr ""
+
+#: webapp/base.py:284
+msgid "English"
+msgstr ""
+
+#: webapp/base.py:437
+msgid "Background image"
+msgstr ""
+
+#: webapp/base.py:443
+msgid "10%"
+msgstr ""
+
+#: webapp/base.py:444
+msgid "25%"
+msgstr ""
+
+#: webapp/base.py:445
+msgid "33%"
+msgstr ""
+
+#: webapp/base.py:446
+msgid "50%"
+msgstr ""
+
+#: webapp/base.py:447
+msgid "66%"
+msgstr ""
+
+#: webapp/base.py:448
+msgid "75%"
+msgstr ""
+
+#: webapp/base.py:449
+msgid "100%"
+msgstr ""
+
+#: webapp/base.py:455 webapp/base.py:472
+msgid "Default"
+msgstr ""
+
+#: webapp/base.py:460
+msgid "Container"
+msgstr ""
+
+#: webapp/base.py:461
+msgid "Fluid container"
+msgstr ""
+
+#: webapp/base.py:464
+msgid "Column"
+msgstr ""
+
+#: webapp/base.py:465
+msgid "Break"
+msgstr ""
+
+#: webapp/base.py:466
+msgid "Empty"
+msgstr ""
+
+#: webapp/base.py:489
+msgid "Secondary"
+msgstr ""
+
+#: webapp/base.py:490
+msgid "Success"
+msgstr ""
+
+#: webapp/base.py:491
+#, fuzzy
+#| msgid "Change"
+msgid "Danger"
+msgstr "变更"
+
+#: webapp/base.py:492
+msgid "Warning"
+msgstr ""
+
+#: webapp/base.py:493
+msgid "Info"
+msgstr ""
+
+#: webapp/base.py:494
+msgid "Light"
+msgstr ""
+
+#: webapp/base.py:495
+msgid "Dark"
+msgstr ""
+
+#: webapp/base.py:496
+msgid "Custom"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Change"
+#~ msgid "Request Change"
+#~ msgstr "变更"
+
+#, fuzzy
+#~| msgid "available"
+#~ msgid "Available"
+#~ msgstr "可预约"
+
+#~ msgid "Confirmed request has been raised successfully."
+#~ msgstr "确认请求成功提交"
+
+#~ msgid "Cancelled request has been raised successfully."
+#~ msgstr "取消请求成功提交"
+
+#~ msgid "no find event"
+#~ msgstr "可供约课时段不存在"
+
+#~ msgid "Sign Up with Facebook"
+#~ msgstr "用Facebook帐号注册"
+
+#~ msgid "Sign Up with Google"
+#~ msgstr "用Google帐号注册"
+
+#~ msgid ""
+#~ "--------------------&nbsp&nbsp&nbspOR&nbsp&nbsp&nbsp--------------------"
+#~ msgstr ""
+#~ "--------------------&nbsp&nbsp&nbsp或者&nbsp&nbsp&nbsp--------------------"
+
+#~ msgid "Message"
+#~ msgstr "消息"
+
+#~ msgid "Settings"
+#~ msgstr "设置"
+
+#~ msgid "log out"
+#~ msgstr "注销"
+
+#~ msgid "password"
+#~ msgstr "密码"
+
+#~ msgid "Detel"
+#~ msgstr "删除"
+
+#~ msgid "Undetel"
+#~ msgstr "恢复"
+
+#~ msgid "Regsiter"
+#~ msgstr "注册"
+
+#~ msgid "teaching_style"
+#~ msgstr "教学特点"
+
+#~ msgid "Detail"
+#~ msgstr "介绍"
+
+#~ msgid "< pre page "
+#~ msgstr "< 前一页"
+
+#~ msgid "next page>"
+#~ msgstr "后一页 >"
+
+#~ msgid "sum "
+#~ msgstr "总计"
+
+#~ msgid "page"
+#~ msgstr "页"
+msgid "Parameter missing"
+msgstr "请登录"
+
+msgid "please try again later."
+msgstr "请稍后再试"

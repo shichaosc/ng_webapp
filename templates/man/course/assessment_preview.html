@@ -1,0 +1,322 @@
+{% extends 'man/base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+
+{% block title %}{% trans "Exambank Preview" %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+            {% if courses %}
+                <table class="table">
+                    <tr>
+                        <td> {% trans 'course' %}</td>
+                        <td>
+                            {% for course in courses %}
+	                            {% ifequal cur_course course.id %}
+                                <a style="color: red;" href="/man/examassement/preview/?course_id={{ course.id }}">{{ course.course_name }}</a>
+                                {% else %}
+	                            <a href="/man/examassement/preview/?course_id={{ course.id }}">{{ course.course_name }}</a>
+                                {% endifequal %}
+	                            {% if forloop.counter == 6 %}
+                                    <br>
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                </table>
+            {% endif %}
+        </div>
+
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-2 col-md-offset-1">
+                <button onclick="laststemp()">
+                    <h2><<</h2>
+                </button>
+            </div>
+            <div class="col-md-6">
+                <div id="delete_title" class="btn btn-danger" style="float:right;">{% trans "Delete" %}</div>
+                <div id="edit_item" class="btn btn-info" style="float:right;">{% trans "Edit" %}</div>
+                <div class="row">
+                    <div id="stem" style="font-size: 15px">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="question_content" style="font-size: 15px">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="correct_A" style="font-size: 14px">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="correct_B" style="font-size: 14px">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="correct_C" style="font-size: 14px">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="correct_D" style="font-size: 14px">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4" id="answer" style="font-size: 14px">
+
+                    </div>
+                    <div class="col-md-4" id="level" style="font-size: 14px">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-2">
+                <button onclick="nextstemp()">
+                    <h2>>></h2>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="{% static "js/jquery.js" %}" type="text/javascript"></script>
+    {#    <script src="{% static "js/jquery-ui.js"%}" type="text/javascript"></script>#}
+    <script>
+        var questionList = {{testquestions|safe}}; //存储所有题目
+        var current_num = 0;
+        showquestion()
+
+        function showquestion() {
+
+            var current_question = questionList[current_num]
+            var detailjson = current_question.fields.detail
+            var detailobj = JSON.parse(detailjson)
+            testquestion_pk = current_question.pk
+            console.log(detailobj)
+            showstem(detailobj)
+            var alternatives = detailobj.alternatives
+            var alterA = alternatives[0]
+            showAlterA(alterA)
+
+            var alterB = alternatives[1]
+            showAlterB(alterB)
+            var alterC = alternatives[2]
+            showAlterC(alterC)
+            var alterD = alternatives[3]
+            showAlterD(alterD)
+            answer = detailobj.answer
+            level = detailobj.level
+            showlevelAndAnswer(answer, level)
+
+
+            // 控制音频的播放/暂停
+            $(".alter").on("click", function () {
+                var audio = $(this).next()[0]
+                if (audio.paused) {
+                    audio.play()
+                } else {
+                    audio.pause()
+
+                }
+            })
+
+            var audios = document.getElementsByTagName("audio");
+
+            // 暂停函数
+            function pauseAll() {
+                var self = this;
+
+                [].forEach.call(audios, function (i) {
+                    // 将audios中其他的audio全部暂停
+                    i !== self && i.pause();
+                })
+            }
+
+            // 给play事件绑定暂停函数
+            [].forEach.call(audios, function (i) {
+                i.addEventListener("play", pauseAll.bind(i))
+
+            })
+
+
+        }
+
+        function showlevelAndAnswer(answer, level) {
+            $('#answer').empty();
+            $('#level').empty();
+            answerhtml = '<p>' + '答案:' + answer + '</p>'
+            $(answerhtml).appendTo('#answer');
+            levelhtml = '<p>' + '难度:' + +level + '</p>'
+            $(levelhtml).appendTo('#level');
+        }
+
+        function showstem(stempobj) {
+            $('#stem').empty();
+
+            if (stempobj.stem.length === 2) {
+                var stemtype = stempobj.stem[0].type
+                var stemno = stempobj.no
+                if (stemtype == 'text') {
+                    stemhtmls = '<p>' + stemno + '、' + stempobj.stem[0].content + '</p>';
+                    $(stemhtmls).appendTo('#stem');
+
+                    if (stempobj.stem[1].type == 'audio') {
+
+                        stemhtml = '<audio controls><source width="100%"  src="' + stempobj.stem[1].content + '"' + '><audio>'
+
+                    } else if (stempobj.stem[1].type == 'image') {
+
+                        stemhtml = '<img width="100%"  src="' + stempobj.stem[1].content + '"' + '>'
+
+                    }
+                    else {
+                        stemhtml = ""
+                    }
+                }
+
+                $(stemhtml).appendTo('#stem');
+
+            } else {
+                var stemtype = stempobj.stem.type
+                var stemcontent = stempobj.stem.content
+                var stemno = stempobj.no
+                if (stemtype == 'text') {
+                    stemhtml = '<p>' + stemno + '、' + stemcontent + '</p>'
+                }
+                else {
+                    stemhtml = '<img width="100%"  src="' + stemcontent + '"' + '>'
+                    stemhtml = '<p>' + stemno + '</p>' + stemhtml
+                }
+
+                $(stemhtml).appendTo('#stem');
+            }
+        }
+
+
+        function showAlterA(alterA) {
+            $('#correct_A').empty();
+            var alterAtype = alterA.detail.type
+            var content = alterA.detail.content
+            var contenthtml = ''
+            if (alterAtype == 'text') {
+                contenthtml = '<p>' + 'A ' + content + '</p>'
+            }
+            else if (alterAtype == 'audio') {
+                contenthtml = '<audio><source  src="' + content + '"' + '><audio>'
+                contenthtml = '<img class="alter" width="20px" src="/static/images/Thehorn.png">' + contenthtml
+            }
+            else {
+                contenthtml = '<img width="100%"  src="' + content + '"' + '>'
+            }
+            $(contenthtml).appendTo('#correct_A')
+        }
+
+        function showAlterB(alterB) {
+            $('#correct_B').empty();
+            var alterBtype = alterB.detail.type
+            var content = alterB.detail.content
+            var contenthtml = ''
+            if (alterBtype == 'text') {
+
+                contenthtml = '<p>' + 'B ' + content + '</p>'
+            }
+            else if (alterBtype == 'audio') {
+                contenthtml = '<audio><source  src="' + content + '"' + '><audio>'
+                contenthtml = '<img class="alter" width="20px" src="/static/images/Thehorn.png">' + contenthtml
+            }
+            else {
+                contenthtml = '<img width="100%"  src="' + content + '"' + '>'
+            }
+            $(contenthtml).appendTo('#correct_B');
+        }
+
+        function showAlterC(alterC) {
+            $('#correct_C').empty();
+            var alterCtype = alterC.detail.type
+            var content = alterC.detail.content
+            var contenthtml = ''
+            if (alterCtype == 'text') {
+                contenthtml = '<p>' + 'C ' + content + '</p>'
+            }
+            else if (alterCtype == 'audio') {
+                contenthtml = '<audio><source  src="' + content + '"' + '><audio>'
+                contenthtml = '<img class="alter" width="20px" src="/static/images/Thehorn.png">' + contenthtml
+            }
+            else {
+                contenthtml = '<img width="100%"  src="' + content + '"' + '>'
+            }
+            $(contenthtml).appendTo('#correct_C');
+        }
+
+        function showAlterD(alterD) {
+            $('#correct_D').empty();
+            var alterDtype = alterD.detail.type
+            var content = alterD.detail.content
+            var contenthtml = ''
+            if (alterDtype == 'text') {
+                if (content.length > 0) {
+                    contenthtml = '<p>' + 'D ' + content + '</p>'
+                }
+            }
+            else if (alterDtype == 'audio') {
+                if (content.length > 0) {
+                    contenthtml = '<audio><source  src="' + content + '"' + '><audio>'
+                    contenthtml = '<img class="alter" width="20px" src="/static/images/Thehorn.png">' + contenthtml
+                }
+            }
+            else {
+                if (content.length > 0) {
+                    contenthtml = '<img width="100%"  src="' + content + '"' + '>'
+                }
+            }
+            $(contenthtml).appendTo('#correct_D');
+        }
+
+        function laststemp() {
+            if (current_num == 0) {
+                return;
+            }
+            current_num--
+            showquestion()
+        }
+
+        function nextstemp() {
+            if (current_num == questionList.length - 1) {
+                return;
+            }
+            current_num++
+            showquestion()
+        }
+
+
+        $("#delete_title").on("click", function () {
+            $.ajax({
+                url: "/man/examassement/preview/",
+                type: "get",
+                data: {
+                    "assessment_question_id": testquestion_pk
+                },
+                success: function () {
+                    location.href = location.href
+                },
+                error: function () {
+                    alert("删除失败！")
+                }
+            })
+        });
+
+
+        $("#edit_item").on("click", function () {
+            location.href = "/man/examassement/list/?assessment_question_id=" + testquestion_pk
+        })
+
+
+    </script>
+{% endblock %}

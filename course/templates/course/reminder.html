@@ -1,0 +1,145 @@
+{% extends 'course/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="pop-card-container pc" style="width: 951px; margin: 50px auto">
+        <div class="pop-card-circle-container">
+            <div class="pop-card-circle">
+                <div class="flex-column-center" style="margin-top: 23px">
+                    <img src="{% static 'images/course_test.png' %}" style="width: 56px;height: 56px">
+                    <p>
+                        {% ifequal userRole 2 %}
+                            {% trans "Unit Test" %}
+                        {% else %}
+                            {% ifequal userRole 4 %}
+                                {% trans "Assessmet History" %}
+                            {% else %}
+                                {% trans "Assessment" %}
+                            {% endifequal %}
+                        {% endifequal %}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pop-card-top-up pc" style="padding-top: 80px;padding-bottom: 1px">
+            {% ifequal userRole 0 %}
+                <div style="padding: 0 75px">
+                    <p style="color: #3B3B4D;font-size: 18px;font-weight: 400;margin: 0 0 7px 0">{% trans 'Dear parents or guardian:' %}</p>
+                    <p style="color: #3B3B4D;font-size: 16px;margin: 0">{% trans 'Welcome to LingoAce computer-based placement test! In the following few minutes, you will be asked to give information about your child .Please answer all the questions to the best of your knowledge.' %}</p>
+
+                    <div style="display: flex;margin-top: 29px;justify-content: center;margin-bottom: 46px">
+                        <button onclick="goBack()" style="width: 121px;height: 37px;font-size: 16px;color: #2CC9E9;"
+                                class="btn-gradient-border">{% trans "NO" %}</button>
+
+                        <a href="/course/assessment/">
+                            <button class="btn-gradient-background"
+                                    style="width: 121px;height: 37px;font-size: 16px;margin-left: 63px">{% trans "YES" %}</button>
+                        </a>
+                    </div>
+                </div>
+            {% endifequal %}
+
+            {% ifequal userRole 1 %}
+                {#                教师不能测试   ----- 1  #}
+                <p style="font-size: 18px;text-align: center;margin: 0 0 40px 0">{% trans "Teacher can't test !" %}</p>
+
+                <div style="display: flex;margin-top: 29px;justify-content: center;margin-bottom: 46px">
+                    <button onclick="goBack()" style="width: 121px;height: 37px;font-size: 16px;color: #2CC9E9;"
+                            class="btn-gradient-border">{% trans "Back" %}</button>
+                </div>
+            {% endifequal %}
+        </div>
+    </div>
+
+
+    <div class="section section-gray phone">
+        <div class="container">
+            <div class="row">
+                <div class="card">
+                    <div class="card-block">
+                        <div class="row text-center">
+                            {% ifequal userRole 2 %}
+                                <h4>{% trans "Unit Test" %}</h4>
+                            {% else %}
+                                {% ifequal userRole 4 %}
+                                    <h4>{% trans "Assessmet History" %}</h4>
+                                {% else %}
+                                    <h4>{% trans "Assessment" %}</h4>
+                                {% endifequal %}
+                            {% endifequal %}
+
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-10 col-md-offset-1">
+                                <label>
+                                    {% ifequal userRole 0 %}
+                                        {% trans 'Dear parents or guardian:' %}
+                                        <br>
+                                        {% trans 'Welcome to LingoAce computer-based placement test! In the following few minutes, you will be asked to give information about your child .Please answer all the questions to the best of your knowledge.' %}
+                                        <br>
+
+                                    {% endifequal %}
+                                    {% ifequal userRole 1 %}
+                                        {% trans "Teacher can't test !" %}
+                                    {% endifequal %}
+                                    {% ifequal userRole 2 %}
+                                        {% trans "Please complete the level test first !" %}
+                                    {% endifequal %}
+                                    {% ifequal userRole 3 %}
+                                        {% trans "Are you ready for an interesting challenge, to see how good your Chinese language skills is?" %}
+                                        <br><br>
+                                        {% trans "There are 20 questions, which will take about 10 minutes. If you don't know the answer, you may choose 'skip' and jump to next question." %}
+                                        <br><br>
+                                        {% trans "Ready to go?" %}
+                                    {% endifequal %}
+                                    {% ifequal userRole 4 %}
+                                        {% trans "There is no record" %}
+                                    {% endifequal %}
+                                </label>
+                                <br><br>
+                            </div>
+                        </div>
+
+                        <div class="row text-center" style="margin-top: 10px;">
+
+                            {% ifequal userRole 0 %}
+                                <button onclick="goBack()" style="width: 100px; margin-bottom: 10px;margin-right: 10px"
+                                        class="btn btn-info btn-primary">{% trans "NO" %}</button>
+                            {% else %}
+                                {% ifequal userRole 4 %}
+                                    <a href="/accounts/profile/"
+                                       style="width: 100px; margin-bottom: 10px;margin-right: 10px"
+                                       class="btn btn-info btn-primary">{% trans "Back" %}</a>
+                                {% else %}
+                                    <button onclick="goBack()"
+                                            style="width: 100px; margin-bottom: 10px;margin-right: 10px"
+                                            class="btn btn-info btn-primary">{% trans "Back" %}</button>
+                                {% endifequal %}
+                            {% endifequal %}
+
+                            {% if userRole == 1 or userRole == 4 %}
+                            {% else %}
+                                <a style="width: 100px;margin-bottom: 10px;margin-left: 10px"
+                                   class="btn btn-fill btn-info btn-primary"
+                                   href="/course/assessment/">{% trans "YES" %}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            if (navigator.userAgent && /(iPad|iPod)/i.test(navigator.userAgent)) {
+                window.location.href = window.document.referrer + "&go=home"; // go=home是ipad让app端返回到主页
+            } else {
+                window.history.back();
+            }
+        }
+
+    </script>
+{% endblock %}

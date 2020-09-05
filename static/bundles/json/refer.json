@@ -1,0 +1,34 @@
+[
+	{
+		"skill": "PPChinese Foundation",
+		"level": "（Level 1/Level 2）",
+		"upgrade": [
+						"1.Understand 3-5 sentences in a simple dialogue context.",
+						"2.Develop appropriate way to speak Chinese.",
+						"3.Read the entry level chapter book for children.",
+						"4.Write a simple paragraph with right logic and grammar."
+		],
+		"id":1
+	},
+	{
+		"skill": "PPChinese Intermediate",
+		"level": "（Level 3/Level 4）",
+		"upgrade": [
+			 "1.Comprehend the content in a complex dialogue context.",
+			 "2.Speak with standard pronunciation and tones.",
+			 "3.Summarize the key points of an article, and retell the story.",
+			 "4.Write a comprehensive article with 200-300 words."
+		],
+		"id":2
+	},
+	{
+		"skill": "PPChinese Advanced",
+		"level": "（Level 5/Level 6）",
+		"upgrade": [
+			 "1.Articulate own opinions with good logic and confidence.",
+			 "2.Develop advanced Chinese reading skill, and form independent point of view with analysis of the reading material.",
+		 	 "3.Write an article with good structure and power words."
+		],
+		"id":3
+	}
+]

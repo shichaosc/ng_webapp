@@ -1,0 +1,39 @@
+{% extends 'discount_base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/discount/wechat_guide.css' %}">
+{% endblock %}
+{% block content %}
+    <main>
+        <img src="{% static 'img/smile.png' %}" class="smile">
+
+        <p class="congratulations">恭喜您获得<span>2</span>节价值共<span> S$84 </span>的试听课程！！</p>
+
+        <div class="contact-wrapper">
+            <div class="contact-container">
+                <div class="add-wechat-label">
+                    <img class="path" src="{% static 'img/path.png' %}">
+                    <p class="label">添加课程顾问微信号或Whatsapp,开始体验试听课程,了解S$420赠课获取方法</p>
+                </div>
+                <div class="contact-group">
+                    <div class="contact-wechat flex-column-center">
+                        <p class="title">Wechat:</p>
+                        <img src="{% static 'img/qr-code.png' %}" class="contact-img">
+                        <p class="footer">扫码咨询</p>
+                    </div>
+
+                    <div class="contact-app flex-column-center">
+                        <p class="title">WhatsApp:</p>
+                        <img src="{% static 'img/contact-lingoace.png' %}" class="contact-img">
+                        <p class="footer">+65 8618 3670</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
